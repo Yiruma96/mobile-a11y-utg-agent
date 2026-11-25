@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "该应用从启动器主屏“更多操作→设置→手势”进入，以“此操作需启用无障碍服务”横幅和“授予”按钮诱导跳转系统无障碍授权；在系统警告页拒绝后仍返回并停留在同一手势设置诱导页，形成 TRAPPED_ON_LURE_SCREEN。整体为极简桌面功能引导，但授权链路依赖无障碍高危权限，拒权后无法脱离诱导页。",
+  "observed_lure_rhetoric_zh": [
+    "英文“This action requires the launcher's accessibility service to be enabled.” -> “此操作需要启用启动器的无障碍服务。”（手势设置页提示横幅）",
+    "英文“Grant” -> “授予”（手势设置页按钮，引导跳转无障碍授权）",
+    "英文“Use Kvaesitso” -> “使用 Kvaesitso”（无障碍服务详情页开关标题）",
+    "英文“No description provided.” -> “未提供说明。”（无障碍服务详情页说明）",
+    "英文“Allow Kvaesitso to have full control of your device?” -> “允许 Kvaesitso 完全控制你的设备？”（系统无障碍授权警告弹窗标题）",
+    "英文“Full control is appropriate for apps that help you with accessibility needs, but not for most apps.” -> “完全控制适用于帮助无障碍需求的 App，但不适合大多数 App。”（系统警告说明）",
+    "英文“View and control screen: It can read all content on the screen and display content over other apps.” -> “查看并控制屏幕：可读取屏幕全部内容并覆盖显示在其他 App 上。”（系统警告权限说明）",
+    "英文“View and perform actions: It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.” -> “查看并执行操作：可跟踪交互并代表你操作其他 App。”（系统警告权限说明）",
+    "英文“Allow / Deny” -> “允许 / 拒绝”（系统警告弹窗按钮，审核中应拒绝）"
+  ],
+  "frame_captions": {
+    "step_01": "启动器主屏：显示时间04:41、100%充电、搜索与“更多操作”；点击右上角“更多操作”展开菜单，无通知/遮罩。",
+    "step_02": "展开菜单仅含“壁纸/设置/帮助”；点击“设置”进入配置页，意图打开手势与无障碍相关选项，无通知/遮罩。",
+    "step_03": "启动器设置列表：外观、主屏、网格图标、搜索、手势、集成、插件；点击“手势”进入手势动作配置。",
+    "step_04": "手势设置页：列下滑/左滑/上滑等动作；提示“此操作需启用启动器无障碍服务”并有“授予”按钮，点击授予。",
+    "step_05": "跳转系统无障碍列表：Kvaesitso 显示“关闭”；含屏幕阅读器、显示项；自动终止并记录钩子探针，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍设置页，文本为空，通知0、遮罩0，未见额外诱导弹窗。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为系统无障碍设置，文本为空，通知0、遮罩0，未出现延迟弹窗或覆盖层。",
+    "detail_1_service_detail_page": "Kvaesitso 服务详情：有“使用 Kvaesitso”、快捷方式“关闭”、快捷设置；说明为“未提供说明”，为授权前置页。",
+    "detail_2_system_warning_dialog": "系统敏感权限警告：询问是否允许 Kvaesitso 完全控制设备，列明可查看/控制屏幕与代操作；提供“允许/拒绝”。",
+    "refusal_2.0s": "拒绝授权后2秒：返回启动器手势设置页，仍显示“授予”与无障碍服务提示，无法脱离该诱导页，状态 TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒绝授权后10.5秒：仍被困在手势设置页，“授予”提示未消失，无通知/遮罩，状态 TRAPPED_ON_LURE_SCREEN。"
+  }
+}

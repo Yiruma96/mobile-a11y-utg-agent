@@ -1,0 +1,371 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_032__6380a328e2",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "com.pedronveloso.a11ybutton",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "4a54cd703fac",
+  "hook_node_ids": [
+    "10ea16af9da3",
+    "45c387d45e02",
+    "118d19b2a851"
+  ],
+  "nodes": [
+    {
+      "node_id": "4a54cd703fac",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.pedronveloso.a11ybutton",
+      "abilityName": "com.pedronveloso.a11ybutton.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Step 1 of 4",
+        "Skip setup",
+        "One button, one app",
+        "Once you enable Android’s Accessibility button and choose an app or app shortcut, you can open it while using other apps. The button belongs to Android itself. It may appear in the navigation bar or float at the edge of your screen, depending on your device and settings.",
+        "Accessibility button at the bottom right of Android’s navigation bar",
+        "Navigation bar button",
+        "Accessibility button floating at the right edge of the screen",
+        "Accept and continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "edbb54e66b8b",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.pedronveloso.a11ybutton",
+      "abilityName": "com.pedronveloso.a11ybutton.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Setup needed",
+        "3 steps left",
+        "Accessibility disclosure",
+        "Accessibility service",
+        "Turn it on in Accessibility settings so the button can work.",
+        "What the button opens",
+        "Choose the app or shortcut the button opens.",
+        "Unrestricted battery",
+        "Stops your phone from putting the service to sleep.",
+        "Button action",
+        "Nothing assigned to the button yet",
+        "Pick an app, or a specific action inside an app (an app shortcut), to open when you press the accessibility button.",
+        "Choose what to open",
+        "Accessibility Button Launcher",
+        "Preferences"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "10ea16af9da3",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Accessibility Button Launcher",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "45c387d45e02",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility Button Launcher",
+        "OPTIONS",
+        "Accessibility Button Launcher shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Launches your selected app from the accessibility button or shortcut."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "118d19b2a851",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Accessibility Button Launcher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "4a54cd703fac",
+      "to": "edbb54e66b8b",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([10] View (click) center=(540,2038))"
+    },
+    {
+      "from": "edbb54e66b8b",
+      "to": "10ea16af9da3",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([6] View (click) center=(540,817))"
+    },
+    {
+      "from": "10ea16af9da3",
+      "to": "45c387d45e02",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "45c387d45e02",
+      "to": "118d19b2a851",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "10ea16af9da3",
+      "to": "edbb54e66b8b",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "edbb54e66b8b",
+      "to": "edbb54e66b8b",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "edbb54e66b8b",
+      "to": "edbb54e66b8b",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Accessibility Button Launcher OPTIONS Accessibility But",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility Button Launcher",
+        "OPTIONS",
+        "Accessibility Button Launcher shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Launches your selected app from the accessibility button or shortcut."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Accessibility Button Launcher to have f",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Accessibility Button Launcher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.pedronveloso.a11ybutton",
+      "top_activity": "com.pedronveloso.a11ybutton.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Setup needed",
+        "3 steps left",
+        "Accessibility disclosure",
+        "Accessibility service",
+        "Turn it on in Accessibility settings so the button can work.",
+        "What the button opens",
+        "Choose the app or shortcut the button opens.",
+        "Unrestricted battery",
+        "Stops your phone from putting the service to sleep.",
+        "Button action"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.pedronveloso.a11ybutton",
+      "top_activity": "com.pedronveloso.a11ybutton.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Setup needed",
+        "3 steps left",
+        "Accessibility disclosure",
+        "Accessibility service",
+        "Turn it on in Accessibility settings so the button can work.",
+        "What the button opens",
+        "Choose the app or shortcut the button opens.",
+        "Unrestricted battery",
+        "Stops your phone from putting the service to sleep.",
+        "Button action"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.pedronveloso.a11ybutton",
+      "top_activity": "com.pedronveloso.a11ybutton.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Setup needed",
+        "3 steps left",
+        "Accessibility disclosure",
+        "Accessibility service",
+        "Turn it on in Accessibility settings so the button can work.",
+        "What the button opens",
+        "Choose the app or shortcut the button opens.",
+        "Unrestricted battery",
+        "Stops your phone from putting the service to sleep.",
+        "Button action"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.pedronveloso.a11ybutton__6380a328e2",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以4步引导让用户接受无障碍按钮启动器，随后跳转系统无障碍设置并弹出“完全控制设备”高危授权；点击拒绝后仍反复回到设置待办页，无跳过或退出，表现为拒权即滞留的诱导链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “一个按钮，一个应用；启用后可在其他应用中打开所选应用或快捷方式”（Step 1 主引导页）",
+    "英文 -> “无障碍披露：需在设置中开启服务，按钮才能工作”（Step 2 设置待办页）",
+    "英文 -> “不受限电池：防止系统休眠该服务”（Step 2 设置待办页）",
+    "英文 -> “按钮动作：尚未分配；请选择应用或应用内快捷方式供按下时打开”（Step 2 设置待办页）",
+    "英文 -> “允许Accessibility Button Launcher完全控制设备？适用于无障碍需求，不适用于多数应用”（系统警告弹窗）",
+    "英文 -> “查看并控制屏幕：可读取全部屏幕内容并覆盖其他应用显示”（系统警告弹窗）",
+    "英文 -> “查看并执行操作：可追踪与应用的交互并代表你操作”（系统警告弹窗）",
+    "英文 -> “从无障碍按钮或快捷方式启动所选应用”（服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用引导第1/4步，宣称“一个按钮，一个应用”，展示无障碍按钮位于导航栏或屏幕边缘，点击“接受并继续”进入下一步。",
+    "step_02": "设置待办页称还需3步，分无障碍服务、按钮打开对象、电池不限三项；点击“无障碍服务”卡片，准备跳系统设置。",
+    "step_03": "跳转系统无障碍列表，见“Accessibility Button Launcher”处于关闭；探针命中无障碍设置钩子后自动终止，未执行授权。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留在系统无障碍设置页，未发现弹窗或悬浮遮罩，等待未操作。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍停留在系统无障碍设置页，未发现弹窗或悬浮遮罩，等待未操作。",
+    "detail_1_service_detail_page": "应用无障碍服务详情页，选项显示快捷方式关闭；说明“通过无障碍按钮或快捷方式启动所选应用”，本步仅检查未操作。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗警告“完全控制设备”，列出读取屏幕、显示悬浮窗、追踪交互并以应用代操作；提供允许/拒绝。",
+    "refusal_2.0s": "点“拒绝”返回应用后仍停在“设置待办/3步剩余”页，反复要求开启无障碍服务，未提供跳过或退出，形成拒权滞留。",
+    "refusal_10.5s": "拒权10.5秒后仍停留在同一设置待办页，无障碍服务项与“3步剩余”持续催促，无取消/退出路径，确认被困于诱导页。"
+  }
+}

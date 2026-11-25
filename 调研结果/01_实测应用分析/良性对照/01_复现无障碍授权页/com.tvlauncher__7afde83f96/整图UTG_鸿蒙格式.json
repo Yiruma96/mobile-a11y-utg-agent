@@ -1,0 +1,359 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_036__7afde83f96",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "com.tvlauncher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "92748cd44318",
+  "hook_node_ids": [
+    "16faf50fccd9",
+    "43722e347a07"
+  ],
+  "nodes": [
+    {
+      "node_id": "92748cd44318",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.tvlauncher",
+      "abilityName": "com.tvlauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "3:32 AM",
+        "Wednesday, November 25",
+        "Wallpaper Settings",
+        "Settings",
+        "+",
+        "Add App",
+        "About & Settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6e6656e7274d",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.tvlauncher",
+      "abilityName": "com.tvlauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Settings & About",
+        "TV Launcher",
+        "v1.6.2 (FOSS)",
+        "Fast, lightweight, minimal RAM launcher",
+        "Settings",
+        "Override TV Default Launcher",
+        "Intercepts TV Home key on devices that lock the default launcher",
+        "Kill Stock Launcher Background RAM",
+        "CLOSE",
+        "OPEN GITHUB"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "16faf50fccd9",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "TV Launcher",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "6f58f8b8d9ea",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "TV Launcher",
+        "Use TV Launcher",
+        "OPTIONS",
+        "TV Launcher shortcut",
+        "Off",
+        "Shortcut settings",
+        "Allows TV Launcher to detect the Home button on TV remotes and return to this launcher."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "43722e347a07",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow TV Launcher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "92748cd44318",
+      "to": "6e6656e7274d",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([8] LinearLayout id=aboutButton (click) center=(1894,997))"
+    },
+    {
+      "from": "6e6656e7274d",
+      "to": "16faf50fccd9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch text=\"Override TV Default Launcher\" id=homeOverrideSwitch (unchecked) center=(1074,685))"
+    },
+    {
+      "from": "16faf50fccd9",
+      "to": "6f58f8b8d9ea",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "6f58f8b8d9ea",
+      "to": "43722e347a07",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "16faf50fccd9",
+      "to": "6e6656e7274d",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "6e6656e7274d",
+      "to": "6e6656e7274d",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "6e6656e7274d",
+      "to": "6e6656e7274d",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back TV Launcher Use TV Launcher OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "TV Launcher",
+        "Use TV Launcher",
+        "OPTIONS",
+        "TV Launcher shortcut",
+        "Off",
+        "Shortcut settings",
+        "Allows TV Launcher to detect the Home button on TV remotes and return to this launcher."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow TV Launcher to have full control of you",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow TV Launcher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.tvlauncher",
+      "top_activity": "com.tvlauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings & About",
+        "TV Launcher",
+        "v1.6.2 (FOSS)",
+        "Fast, lightweight, minimal RAM launcher",
+        "Settings",
+        "Override TV Default Launcher",
+        "Intercepts TV Home key on devices that lock the default launcher",
+        "Kill Stock Launcher Background RAM",
+        "CLOSE",
+        "OPEN GITHUB"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.tvlauncher",
+      "top_activity": "com.tvlauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings & About",
+        "TV Launcher",
+        "v1.6.2 (FOSS)",
+        "Fast, lightweight, minimal RAM launcher",
+        "Settings",
+        "Override TV Default Launcher",
+        "Intercepts TV Home key on devices that lock the default launcher",
+        "Kill Stock Launcher Background RAM",
+        "CLOSE",
+        "OPEN GITHUB"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.tvlauncher",
+      "top_activity": "com.tvlauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings & About",
+        "TV Launcher",
+        "v1.6.2 (FOSS)",
+        "Fast, lightweight, minimal RAM launcher",
+        "Settings",
+        "Override TV Default Launcher",
+        "Intercepts TV Home key on devices that lock the default launcher",
+        "Kill Stock Launcher Background RAM",
+        "CLOSE",
+        "OPEN GITHUB"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以极简电视桌面为入口，先打开“About & Settings”，再拨动“Override TV Default Launcher”，跳转系统无障碍并进入服务详情；点授权触发全控警告，拒权后返回设置弹窗并停留在该诱导页（TRAPPED_ON_LURE_SCREEN）。整体以桌面增强为由引导开启无障碍/全控权限，拒权后流程被困。",
+  "observed_lure_rhetoric_zh": [
+    "英文「Override TV Default Launcher」-> 覆盖电视默认桌面（关于设置页）",
+    "英文「Intercepts TV Home key on devices that lock the default launcher」-> 在锁定默认桌面的设备上拦截电视Home键（关于设置页）",
+    "英文「Kill Stock Launcher Background RAM」-> 杀掉原厂桌面后台内存（关于设置页）",
+    "英文「Use TV Launcher」「TV Launcher shortcut」及检测Home键说明 -> 允许TV Launcher检测电视遥控Home键并返回桌面（服务详情页）",
+    "英文「Allow TV Launcher to have full control of your device?」-> 允许TV Launcher完全控制设备（系统警告弹窗）",
+    "英文「View and control screen」「View and perform actions」-> 可查看控制屏幕、读取屏幕全部内容、悬浮显示并代为操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主桌面显示时间、日期和壁纸/设置入口，本步点击“About & Settings”打开设置弹窗。",
+    "step_02": "关于设置弹窗展示TV Launcher版本及“覆盖默认桌面、拦截Home键、杀原厂后台”等项；本步拨动覆盖开关。",
+    "step_03": "跳转系统无障碍页，下载应用列表出现TV Launcher且为Off；探针记录无障碍设置钩子后自动停止，无通知/遮罩。",
+    "post_jump_0.8s": "无障碍页跳后0.8秒探针：界面无可见文本、无通知、遮罩为0，等待未出现新弹窗。",
+    "post_jump_2.0s": "无障碍页跳后2.0秒探针：仍无可见文本、无通知、遮罩为0，等待结束无新增交互。",
+    "detail_1_service_detail_page": "TV Launcher无障碍服务详情：说明可检测电视遥控Home键并返回桌面，含“Use TV Launcher”和快捷方式开关。",
+    "detail_2_system_warning_dialog": "系统全控警告弹窗：称可查看控制屏幕、读取全部内容、悬浮显示并代为操作；本步仅检查，不点Allow/Deny。",
+    "refusal_2.0s": "拒权后2秒回到“Settings & About”弹窗，仍显示覆盖/杀后台选项，停留在诱导页且无取消退出路径。",
+    "refusal_10.5s": "拒权后10.5秒仍停留在同一“Settings & About”弹窗，覆盖与杀后台选项未变，持续困在诱导页。"
+  }
+}

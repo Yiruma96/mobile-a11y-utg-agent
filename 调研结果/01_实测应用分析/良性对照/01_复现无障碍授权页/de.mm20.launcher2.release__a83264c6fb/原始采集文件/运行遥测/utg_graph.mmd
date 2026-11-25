@@ -1,0 +1,18 @@
+flowchart TD
+    N_9c55107d5507["Step 1: LauncherActivity\n04
+41"]
+    N_4f4a5121d754["Step 2: LauncherActivity\nWallpaper"]
+    N_c6eb1b0717b9["Step 3: SettingsActivity\nAppearance"]
+    N_6104623d9b6d["Step 4: SettingsActivity\nSwipe down"]
+    N_03c4a02b9c46["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_d7c9874be895["Step 5: SubSettings\nBack"]
+    N_1a861bc122f4["Step 5: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Kvaesitso to hav"]
+    N_9c55107d5507 -->|"ui_click: click([8] View desc='More action"| N_4f4a5121d754
+    N_4f4a5121d754 -->|"ui_click: click([4] TextView text='Setting"| N_c6eb1b0717b9
+    N_c6eb1b0717b9 -->|"ui_click: click([14] View (click) center=("| N_6104623d9b6d
+    N_6104623d9b6d -->|"ui_click: click([16] TextView text='Grant'"| N_03c4a02b9c46
+    N_03c4a02b9c46 -->|"detail_probe: click_service()"| N_d7c9874be895
+    N_d7c9874be895 -->|"warning_probe: click_use_service_switch"| N_1a861bc122f4
+    N_03c4a02b9c46 -->|"refusal_probe: Back_refuse"| N_6104623d9b6d
+    N_6104623d9b6d -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6104623d9b6d
+    N_6104623d9b6d -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6104623d9b6d

@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用以极简电视桌面为入口，先打开“About & Settings”，再拨动“Override TV Default Launcher”，跳转系统无障碍并进入服务详情；点授权触发全控警告，拒权后返回设置弹窗并停留在该诱导页（TRAPPED_ON_LURE_SCREEN）。整体以桌面增强为由引导开启无障碍/全控权限，拒权后流程被困。",
+  "observed_lure_rhetoric_zh": [
+    "英文「Override TV Default Launcher」-> 覆盖电视默认桌面（关于设置页）",
+    "英文「Intercepts TV Home key on devices that lock the default launcher」-> 在锁定默认桌面的设备上拦截电视Home键（关于设置页）",
+    "英文「Kill Stock Launcher Background RAM」-> 杀掉原厂桌面后台内存（关于设置页）",
+    "英文「Use TV Launcher」「TV Launcher shortcut」及检测Home键说明 -> 允许TV Launcher检测电视遥控Home键并返回桌面（服务详情页）",
+    "英文「Allow TV Launcher to have full control of your device?」-> 允许TV Launcher完全控制设备（系统警告弹窗）",
+    "英文「View and control screen」「View and perform actions」-> 可查看控制屏幕、读取屏幕全部内容、悬浮显示并代为操作（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "主桌面显示时间、日期和壁纸/设置入口，本步点击“About & Settings”打开设置弹窗。",
+    "step_02": "关于设置弹窗展示TV Launcher版本及“覆盖默认桌面、拦截Home键、杀原厂后台”等项；本步拨动覆盖开关。",
+    "step_03": "跳转系统无障碍页，下载应用列表出现TV Launcher且为Off；探针记录无障碍设置钩子后自动停止，无通知/遮罩。",
+    "post_jump_0.8s": "无障碍页跳后0.8秒探针：界面无可见文本、无通知、遮罩为0，等待未出现新弹窗。",
+    "post_jump_2.0s": "无障碍页跳后2.0秒探针：仍无可见文本、无通知、遮罩为0，等待结束无新增交互。",
+    "detail_1_service_detail_page": "TV Launcher无障碍服务详情：说明可检测电视遥控Home键并返回桌面，含“Use TV Launcher”和快捷方式开关。",
+    "detail_2_system_warning_dialog": "系统全控警告弹窗：称可查看控制屏幕、读取全部内容、悬浮显示并代为操作；本步仅检查，不点Allow/Deny。",
+    "refusal_2.0s": "拒权后2秒回到“Settings & About”弹窗，仍显示覆盖/杀后台选项，停留在诱导页且无取消退出路径。",
+    "refusal_10.5s": "拒权后10.5秒仍停留在同一“Settings & About”弹窗，覆盖与杀后台选项未变，持续困在诱导页。"
+  }
+}

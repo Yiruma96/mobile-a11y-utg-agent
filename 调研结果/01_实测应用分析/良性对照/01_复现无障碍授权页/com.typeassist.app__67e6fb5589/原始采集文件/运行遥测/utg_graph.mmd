@@ -1,0 +1,13 @@
+flowchart TD
+    N_dcca3c868808["Step 1: MainActivity\nWelcome to"]
+    N_a2ef24ad9349["Step 2: MainActivity\nPermissions"]
+    N_53503d95c820["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_9798570a5388["Step 3: SubSettings\nBack"]
+    N_6e724ced905e["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow TypeAssist AI to"]
+    N_dcca3c868808 -->|"ui_click: click([6] View (click) center=(5"| N_a2ef24ad9349
+    N_a2ef24ad9349 -->|"ui_click: click([4] View (click) center=(5"| N_53503d95c820
+    N_53503d95c820 -->|"detail_probe: click_service()"| N_9798570a5388
+    N_9798570a5388 -->|"warning_probe: click_use_service_switch"| N_6e724ced905e
+    N_53503d95c820 -->|"refusal_probe: Back_refuse"| N_a2ef24ad9349
+    N_a2ef24ad9349 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_a2ef24ad9349
+    N_a2ef24ad9349 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_a2ef24ad9349

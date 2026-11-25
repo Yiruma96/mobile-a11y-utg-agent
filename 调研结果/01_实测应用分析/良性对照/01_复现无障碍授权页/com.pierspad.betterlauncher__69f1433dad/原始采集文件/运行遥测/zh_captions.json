@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "应用先请求设为默认桌面，随后以无障碍说明引导进入系统无障碍设置，并展示“完全控制设备”高危警告；拒绝授权后回到 BetterLauncher 主屏提示页并持续停留（TRAPPED_ON_LURE_SCREEN）。",
+  "observed_lure_rhetoric_zh": [
+    "Set BetterLauncher as your default home app? -> 是否将 BetterLauncher 设为默认主屏幕应用？（默认桌面请求页）",
+    "I agree — open settings -> 我同意——打开设置（应用内无障碍说明页）",
+    "No thanks -> 不用了（应用内无障碍说明页）",
+    "BetterLauncher uses the Android AccessibilityService API for optional double-tap screen locking and app limits you configure -> BetterLauncher 使用无障碍服务实现可选的双击锁屏与你设置的应用限额（应用内/服务详情说明）",
+    "When a selected app is in cooldown, it returns to the home screen and displays the remaining cooldown -> 当所选应用处于冷却期，会返回主屏并显示剩余冷却时间（应用内/服务详情说明）",
+    "Accessibility data is processed on your device and is not sent to servers or shared with third parties -> 无障碍数据仅在设备本地处理，不发送服务器或共享第三方（应用内/服务详情说明）",
+    "Use BetterLauncher -> 使用 BetterLauncher（服务详情页）",
+    "Allow BetterLauncher to have full control of your device? -> 允许 BetterLauncher 完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于帮助无障碍需求的 App，但不适合大多数 App（系统警告弹窗）",
+    "View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "View and perform actions -> 查看并执行操作（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "默认主屏选择页：系统询问是否将 BetterLauncher 设为默认桌面；本步点“Cancel”取消该无关请求。",
+    "step_02": "应用内无障碍说明页：长文解释双击锁屏、应用限额与本地处理；本步点“I agree — open settings”打开系统设置。",
+    "step_03": "系统无障碍列表：BetterLauncher 显示为 Off（未开启）；探针在捕获无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍设置页，界面文本为空、无通知横幅、遮罩为0，未发生交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在无障碍设置页，无可见文本、无通知、无遮罩，页面状态未变，等待结束。",
+    "detail_1_service_detail_page": "服务详情页：显示“Use BetterLauncher”与快捷方式选项、同段隐私说明；本步仅检查详情/警告，未开启服务。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：警告“完全控制设备”，列读屏与代操作能力；本步仅检查，标题称点 Deny，未确认 Allow。",
+    "refusal_2.0s": "拒权返回2.0秒：回到 BetterLauncher 主屏，显示时间、锁定布局说明与上滑/长按提示；无遮罩但停留此诱导页。",
+    "refusal_10.5s": "拒权返回10.5秒：仍停在 BetterLauncher 主屏同一提示页，仅有时间/操作说明，无通知无遮罩，未能离开。"
+  }
+}

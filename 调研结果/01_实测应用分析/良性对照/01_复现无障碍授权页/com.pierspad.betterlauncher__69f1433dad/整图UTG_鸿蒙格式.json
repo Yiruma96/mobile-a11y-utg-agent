@@ -1,0 +1,364 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_033__69f1433dad",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "com.pierspad.betterlauncher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "058aca3dec24",
+  "hook_node_ids": [
+    "b63e15f62d95",
+    "c5a6337342dc",
+    "c34f09835c4a"
+  ],
+  "nodes": [
+    {
+      "node_id": "058aca3dec24",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set BetterLauncher as your default home app?",
+        "BetterLauncher",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "77e90b22fdcd",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.pierspad.betterlauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility service",
+        "BetterLauncher uses the Android AccessibilityService API for optional double-tap screen locking and app limits you configure.\n\nIt accesses foreground app package names and window-change events to detect when a limited app opens or closes, and clicked view information (view type and accessibility label) to recognise the screen-lock gesture. When a selected app is in cooldown, it returns to the home screen and displays the remaining cooldown. App-limit settings and cooldown timestamps are stored only on your device.\n\nAccessibility data is processed on your device and is not sent to servers or shared with third parties. You can decline and continue using the launcher without these features, or disable the service at any time in Android Accessibility settings.\n\nOptional Xiaomi gestures use this same service to detect edge swipes and perform Back, Home and Recents. Unused edge touches are replayed locally. No additional accessibility service is required.",
+        "I agree — open settings",
+        "No thanks"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "b63e15f62d95",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BetterLauncher",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "c5a6337342dc",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "BetterLauncher",
+        "Use BetterLauncher",
+        "OPTIONS",
+        "BetterLauncher shortcut",
+        "Off",
+        "Shortcut settings",
+        "BetterLauncher uses the Android AccessibilityService API for optional double-tap screen locking and app limits you configure.\n\nIt accesses foreground app package names and window-change events to detect when a limited app opens or closes, and clicked view information (view type and accessibility label) to recognise the screen-lock gesture. When a selected app is in cooldown, it returns to the home screen and displays the remaining cooldown. App-limit settings and cooldown timestamps are stored only on your device.\n\nAccessibility data is processed on your device and is not sent to servers or shared with third parties. You can decline and continue using the launcher without these features, or disable the service at any time in Android Accessibility settings.\n\nOptional Xiaomi gestures use this same service to detect edge swipes and perform Back, Home and Recents. Unused edge touches are replayed locally. No additional accessibility service is required."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "c34f09835c4a",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow BetterLauncher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    },
+    {
+      "node_id": "8c2e047ba462",
+      "first_step": 3,
+      "role": "refusal_probe",
+      "bundleName": "com.pierspad.betterlauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "4:39",
+        "Wed, 25 Nov, 100%",
+        "1. Swipe up for all apps\n2. Long press anywhere for settings"
+      ],
+      "harmony_layout_json": "step_03_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_03_refusal_2000ms_layout.xml",
+      "screenshot": "step_03_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "058aca3dec24",
+      "to": "77e90b22fdcd",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Cancel\" id=button2 (click) center=(577,1451))"
+    },
+    {
+      "from": "77e90b22fdcd",
+      "to": "b63e15f62d95",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"I agree — open settings\" id=consentAccept (click) center=(540,1821))"
+    },
+    {
+      "from": "b63e15f62d95",
+      "to": "c5a6337342dc",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "c5a6337342dc",
+      "to": "c34f09835c4a",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "b63e15f62d95",
+      "to": "8c2e047ba462",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "8c2e047ba462",
+      "to": "8c2e047ba462",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "8c2e047ba462",
+      "to": "8c2e047ba462",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back BetterLauncher Use BetterLauncher OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BetterLauncher",
+        "Use BetterLauncher",
+        "OPTIONS",
+        "BetterLauncher shortcut",
+        "Off",
+        "Shortcut settings",
+        "BetterLauncher uses the Android AccessibilityService API for optional double-tap screen locking and app limits you configure.\n\nIt accesses foreground app package names and window-change events to detect when a limited app opens or closes, and clicked view information (view type and accessibility label) to recognise the screen-lock gesture. When a selected app is in cooldown, it returns to the home screen and displays the remaining cooldown. App-limit settings and cooldown timestamps are stored only on your device.\n\nAccessibility data is processed on your device and is not sent to servers or shared with third parties. You can decline and continue using the launcher without these features, or disable the service at any time in Android Accessibility settings.\n\nOptional Xiaomi gestures use this same service to detect edge swipes and perform Back, Home and Recents. Unused edge touches are replayed locally. No additional accessibility service is required."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow BetterLauncher to have full control of ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow BetterLauncher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.pierspad.betterlauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "4:39",
+        "Wed, 25 Nov, 100%",
+        "1. Swipe up for all apps\n2. Long press anywhere for settings"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.pierspad.betterlauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "4:39",
+        "Wed, 25 Nov, 100%",
+        "1. Swipe up for all apps\n2. Long press anywhere for settings"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.pierspad.betterlauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "4:39",
+        "Wed, 25 Nov, 100%",
+        "1. Swipe up for all apps\n2. Long press anywhere for settings"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.pierspad.betterlauncher__69f1433dad",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先请求设为默认桌面，随后以无障碍说明引导进入系统无障碍设置，并展示“完全控制设备”高危警告；拒绝授权后回到 BetterLauncher 主屏提示页并持续停留（TRAPPED_ON_LURE_SCREEN）。",
+  "observed_lure_rhetoric_zh": [
+    "Set BetterLauncher as your default home app? -> 是否将 BetterLauncher 设为默认主屏幕应用？（默认桌面请求页）",
+    "I agree — open settings -> 我同意——打开设置（应用内无障碍说明页）",
+    "No thanks -> 不用了（应用内无障碍说明页）",
+    "BetterLauncher uses the Android AccessibilityService API for optional double-tap screen locking and app limits you configure -> BetterLauncher 使用无障碍服务实现可选的双击锁屏与你设置的应用限额（应用内/服务详情说明）",
+    "When a selected app is in cooldown, it returns to the home screen and displays the remaining cooldown -> 当所选应用处于冷却期，会返回主屏并显示剩余冷却时间（应用内/服务详情说明）",
+    "Accessibility data is processed on your device and is not sent to servers or shared with third parties -> 无障碍数据仅在设备本地处理，不发送服务器或共享第三方（应用内/服务详情说明）",
+    "Use BetterLauncher -> 使用 BetterLauncher（服务详情页）",
+    "Allow BetterLauncher to have full control of your device? -> 允许 BetterLauncher 完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于帮助无障碍需求的 App，但不适合大多数 App（系统警告弹窗）",
+    "View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "View and perform actions -> 查看并执行操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "默认主屏选择页：系统询问是否将 BetterLauncher 设为默认桌面；本步点“Cancel”取消该无关请求。",
+    "step_02": "应用内无障碍说明页：长文解释双击锁屏、应用限额与本地处理；本步点“I agree — open settings”打开系统设置。",
+    "step_03": "系统无障碍列表：BetterLauncher 显示为 Off（未开启）；探针在捕获无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍设置页，界面文本为空、无通知横幅、遮罩为0，未发生交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在无障碍设置页，无可见文本、无通知、无遮罩，页面状态未变，等待结束。",
+    "detail_1_service_detail_page": "服务详情页：显示“Use BetterLauncher”与快捷方式选项、同段隐私说明；本步仅检查详情/警告，未开启服务。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：警告“完全控制设备”，列读屏与代操作能力；本步仅检查，标题称点 Deny，未确认 Allow。",
+    "refusal_2.0s": "拒权返回2.0秒：回到 BetterLauncher 主屏，显示时间、锁定布局说明与上滑/长按提示；无遮罩但停留此诱导页。",
+    "refusal_10.5s": "拒权返回10.5秒：仍停在 BetterLauncher 主屏同一提示页，仅有时间/操作说明，无通知无遮罩，未能离开。"
+  }
+}

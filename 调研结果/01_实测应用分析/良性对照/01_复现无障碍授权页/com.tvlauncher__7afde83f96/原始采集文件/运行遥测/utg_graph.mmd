@@ -1,0 +1,13 @@
+flowchart TD
+    N_92748cd44318["Step 1: MainActivity\n3:32 AM"]
+    N_6e6656e7274d["Step 2: MainActivity\nSettings & About"]
+    N_16faf50fccd9["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_6f58f8b8d9ea["Step 3: SubSettings\nBack"]
+    N_43722e347a07["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow TV Launcher to h"]
+    N_92748cd44318 -->|"ui_click: click([8] LinearLayout id=aboutB"| N_6e6656e7274d
+    N_6e6656e7274d -->|"ui_click: click([9] Switch text='Override "| N_16faf50fccd9
+    N_16faf50fccd9 -->|"detail_probe: click_service()"| N_6f58f8b8d9ea
+    N_6f58f8b8d9ea -->|"warning_probe: click_use_service_switch"| N_43722e347a07
+    N_16faf50fccd9 -->|"refusal_probe: Back_refuse"| N_6e6656e7274d
+    N_6e6656e7274d -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6e6656e7274d
+    N_6e6656e7274d -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6e6656e7274d

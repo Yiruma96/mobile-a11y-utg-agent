@@ -1,0 +1,359 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_058__0f3e7536e6",
+  "label": "benign",
+  "family_or_category": "自动化与跳广告",
+  "static_visibility": "clear",
+  "target_package": "com.zfdang.touchhelper",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "8b5abf147d6e",
+  "hook_node_ids": [
+    "c0bd00079798",
+    "3409d03eec8a",
+    "7ef1c2fef092"
+  ],
+  "nodes": [
+    {
+      "node_id": "8b5abf147d6e",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.zfdang.touchhelper",
+      "abilityName": "com.zfdang.touchhelper.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "状态",
+        "\"开屏跳过\"基于安卓系统的无障碍服务来实现跳过自动广告功能，开源不联网，绝对安全！为保证程序能正常工作，请检查以下设置：",
+        "1. 在\"无障碍\"设置里，打开\"开屏跳过 - 无障碍服务\"。",
+        "2. 在\"电池优化\"设置里，设置\"开屏跳过\"为\"不优化\"。",
+        "3. 在电池管理里，设置\"开屏跳过\"为\"允许后台耗电\"。设置方法因品牌不同有所差异，比如VIVO系统为：\"设置\" -> \"电池\" -> \"后台耗电管理\"。",
+        "4. 在\"任务管理\"里，锁定\"开屏跳过\"。",
+        "更多信息，请访问网址:",
+        "https://touchhelper.zfdang.com/enable",
+        "设置",
+        "关于"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "c5fc24eee4e5",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.zfdang.touchhelper",
+      "abilityName": "com.zfdang.touchhelper.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "开启无障碍服务前请了解",
+        "\"开屏跳过\"通过安卓无障碍服务读取当前屏幕上的界面内容（控件文字、描述和位置），用于识别并自动点击开屏广告的\"跳过\"按钮。\n\n· 自动识别时，这些内容只在本机内存中即时比对，不保存。\n· 当您使用\"添加程序的跳过方法\"时，您所选控件的文字、描述和坐标会作为规则保存在本机的应用数据中，可在设置中查看或删除。\n· 当您使用\"复制窗口控件\"时，当前窗口的控件信息会按您的操作复制到系统剪贴板。\n\n本程序不申请网络权限，不会收集或上传任何数据。同意后即可开启无障碍服务；未同意前服务不会读取任何界面内容。",
+        "取消",
+        "同意并前往设置"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c0bd00079798",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "开屏跳过-无障碍服务",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "3409d03eec8a",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "开屏跳过-无障碍服务",
+        "Use 开屏跳过-无障碍服务",
+        "OPTIONS",
+        "开屏跳过-无障碍服务 shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "\"开屏跳过\"是基于安卓系统的无障碍服务来实现自动跳过广告功能的，为了保证程序能正常工作，打开此服务。\n\n本程序为开源程序，不需要网络权限，不会收集或上传任何个人信息，请放心使用！"
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "7ef1c2fef092",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow 开屏跳过-无障碍服务 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8b5abf147d6e",
+      "to": "c5fc24eee4e5",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] ImageButton id=button_accessibility_permission (click) center=(110,785))"
+    },
+    {
+      "from": "c5fc24eee4e5",
+      "to": "c0bd00079798",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"同意并前往设置\" id=button1 (click) center=(805,1749))"
+    },
+    {
+      "from": "c0bd00079798",
+      "to": "3409d03eec8a",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "3409d03eec8a",
+      "to": "7ef1c2fef092",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "c0bd00079798",
+      "to": "8b5abf147d6e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "8b5abf147d6e",
+      "to": "8b5abf147d6e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "8b5abf147d6e",
+      "to": "8b5abf147d6e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back 开屏跳过-无障碍服务 Use 开屏跳过-无障碍服务 OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "开屏跳过-无障碍服务",
+        "Use 开屏跳过-无障碍服务",
+        "OPTIONS",
+        "开屏跳过-无障碍服务 shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "\"开屏跳过\"是基于安卓系统的无障碍服务来实现自动跳过广告功能的，为了保证程序能正常工作，打开此服务。\n\n本程序为开源程序，不需要网络权限，不会收集或上传任何个人信息，请放心使用！"
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow 开屏跳过-无障碍服务 to have full control of your",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow 开屏跳过-无障碍服务 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.zfdang.touchhelper",
+      "top_activity": "com.zfdang.touchhelper.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "状态",
+        "\"开屏跳过\"基于安卓系统的无障碍服务来实现跳过自动广告功能，开源不联网，绝对安全！为保证程序能正常工作，请检查以下设置：",
+        "1. 在\"无障碍\"设置里，打开\"开屏跳过 - 无障碍服务\"。",
+        "2. 在\"电池优化\"设置里，设置\"开屏跳过\"为\"不优化\"。",
+        "3. 在电池管理里，设置\"开屏跳过\"为\"允许后台耗电\"。设置方法因品牌不同有所差异，比如VIVO系统为：\"设置\" -> \"电池\" -> \"后台耗电管理\"。",
+        "4. 在\"任务管理\"里，锁定\"开屏跳过\"。",
+        "更多信息，请访问网址:",
+        "https://touchhelper.zfdang.com/enable",
+        "设置",
+        "关于"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.zfdang.touchhelper",
+      "top_activity": "com.zfdang.touchhelper.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "状态",
+        "\"开屏跳过\"基于安卓系统的无障碍服务来实现跳过自动广告功能，开源不联网，绝对安全！为保证程序能正常工作，请检查以下设置：",
+        "1. 在\"无障碍\"设置里，打开\"开屏跳过 - 无障碍服务\"。",
+        "2. 在\"电池优化\"设置里，设置\"开屏跳过\"为\"不优化\"。",
+        "3. 在电池管理里，设置\"开屏跳过\"为\"允许后台耗电\"。设置方法因品牌不同有所差异，比如VIVO系统为：\"设置\" -> \"电池\" -> \"后台耗电管理\"。",
+        "4. 在\"任务管理\"里，锁定\"开屏跳过\"。",
+        "更多信息，请访问网址:",
+        "https://touchhelper.zfdang.com/enable",
+        "设置",
+        "关于"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.zfdang.touchhelper",
+      "top_activity": "com.zfdang.touchhelper.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "状态",
+        "\"开屏跳过\"基于安卓系统的无障碍服务来实现跳过自动广告功能，开源不联网，绝对安全！为保证程序能正常工作，请检查以下设置：",
+        "1. 在\"无障碍\"设置里，打开\"开屏跳过 - 无障碍服务\"。",
+        "2. 在\"电池优化\"设置里，设置\"开屏跳过\"为\"不优化\"。",
+        "3. 在电池管理里，设置\"开屏跳过\"为\"允许后台耗电\"。设置方法因品牌不同有所差异，比如VIVO系统为：\"设置\" -> \"电池\" -> \"后台耗电管理\"。",
+        "4. 在\"任务管理\"里，锁定\"开屏跳过\"。",
+        "更多信息，请访问网址:",
+        "https://touchhelper.zfdang.com/enable",
+        "设置",
+        "关于"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用入口主界面以“开源不联网、绝对安全”安抚用户，并要求开启无障碍、电池不优化、后台耗电和任务锁定；点击权限后先展示本机数据处理说明，同意即跳系统无障碍列表并进入服务详情，在系统“完全控制”警告处被拒绝后返回主界面并优雅降级停留，无通知、无遮罩、无崩溃。",
+  "observed_lure_rhetoric_zh": [
+    "中文 -> “开源不联网，绝对安全”，并称为保证正常工作需开启无障碍、电池不优化、允许后台耗电及锁定任务（主界面/拒权返回页）",
+    "中文 -> 无障碍服务读取屏幕控件文字、描述和位置以识别并点击开屏广告“跳过”，称仅本机内存即时比对、不保存、不联网不上传（授权说明弹窗）",
+    "中文 -> 添加程序跳过方法会保存所选控件文字、描述和坐标，复制窗口控件会写入系统剪贴板，可在设置查看或删除（授权说明弹窗）",
+    "English -> “Allow 开屏跳过-无障碍服务 to have full control of your device?”即允许其完全控制设备，并提示可查看控制屏幕、读取所有内容及代用户操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面要求检查四项设置：开无障碍、电池不优化、允许后台耗电、锁定任务；本步点无障碍权限按钮，无通知无遮罩。",
+    "step_02": "授权前说明弹窗，中文解释仅本机识别“跳过”按钮、不保存不联网；本步点“同意并前往设置”跳系统无障碍。",
+    "step_03": "系统无障碍列表页，DOWNLOADED APPS 下见“开屏跳过-无障碍服务”为 Off；触发设置钩子后自动终止，无通知无遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留在系统无障碍列表页，界面文本为空，overlays=0，无通知横幅或遮罩。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍在系统无障碍列表页，界面文本为空，overlays=0，未见通知或悬浮层。",
+    "detail_1_service_detail_page": "服务详情页，含 Use 开屏跳过-无障碍服务、OPTIONS 与 Shortcut 为 Off；说明称开源、无网络权限、不收集上传。",
+    "detail_2_system_warning_dialog": "系统警告弹窗，英文提示允许后完全控制设备、查看控制屏幕并代操作，含 Allow/Deny；本步检查后选择拒绝。",
+    "refusal_2.0s": "拒绝授权返回主界面 2 秒，仍显示四项设置说明与网址；应用未强制退出，状态为优雅停留或降级，无通知遮罩。",
+    "refusal_10.5s": "拒绝授权返回主界面 10.5 秒，界面与之前一致，仍引导检查设置；无二次弹窗、无通知、无遮罩，保持降级停留。"
+  }
+}

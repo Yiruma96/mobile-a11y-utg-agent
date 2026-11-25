@@ -1,0 +1,325 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_006__d9933fc2de",
+  "label": "benign",
+  "family_or_category": "专注自律与防沉迷管控",
+  "static_visibility": "clear",
+  "target_package": "com.sarangem.zenwell",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "8767798cdbf1",
+  "hook_node_ids": [
+    "954b79b93410",
+    "61ffd9eb29a2"
+  ],
+  "nodes": [
+    {
+      "node_id": "8767798cdbf1",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.sarangem.zenwell",
+      "abilityName": "com.sarangem.zenwell.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let’s unlock your focus goals! Zenwell needs Accessibility permission to see which apps are open so it can keep your screen time in check.",
+        "Grant permission",
+        "Create schedules to lock distracting apps. Tap '+' to begin.",
+        "Zenwell",
+        "Home",
+        "Stats",
+        "Settings",
+        "Skip guide",
+        "Enable permissions to unlock your focus"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "954b79b93410",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Zenwell",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "6fd85456e16f",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Zenwell",
+        "Use Zenwell",
+        "OPTIONS",
+        "Zenwell shortcut",
+        "Off",
+        "Shortcut settings",
+        "Zenwell uses this service to know which app you are using and locks that app to cure your addiction."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "61ffd9eb29a2",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Zenwell to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8767798cdbf1",
+      "to": "954b79b93410",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Grant permission\" center=(885,468))"
+    },
+    {
+      "from": "954b79b93410",
+      "to": "6fd85456e16f",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "6fd85456e16f",
+      "to": "61ffd9eb29a2",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "954b79b93410",
+      "to": "8767798cdbf1",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "8767798cdbf1",
+      "to": "8767798cdbf1",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "8767798cdbf1",
+      "to": "8767798cdbf1",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Zenwell Use Zenwell OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Zenwell",
+        "Use Zenwell",
+        "OPTIONS",
+        "Zenwell shortcut",
+        "Off",
+        "Shortcut settings",
+        "Zenwell uses this service to know which app you are using and locks that app to cure your addiction."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Zenwell to have full control of your de",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Zenwell to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.sarangem.zenwell",
+      "top_activity": "com.sarangem.zenwell.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let’s unlock your focus goals! Zenwell needs Accessibility permission to see which apps are open so it can keep your screen time in check.",
+        "Grant permission",
+        "Create schedules to lock distracting apps. Tap '+' to begin.",
+        "Zenwell",
+        "Home",
+        "Stats",
+        "Settings",
+        "Skip guide",
+        "Enable permissions to unlock your focus"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.sarangem.zenwell",
+      "top_activity": "com.sarangem.zenwell.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let’s unlock your focus goals! Zenwell needs Accessibility permission to see which apps are open so it can keep your screen time in check.",
+        "Grant permission",
+        "Create schedules to lock distracting apps. Tap '+' to begin.",
+        "Zenwell",
+        "Home",
+        "Stats",
+        "Settings",
+        "Skip guide",
+        "Enable permissions to unlock your focus"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.sarangem.zenwell",
+      "top_activity": "com.sarangem.zenwell.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let’s unlock your focus goals! Zenwell needs Accessibility permission to see which apps are open so it can keep your screen time in check.",
+        "Grant permission",
+        "Create schedules to lock distracting apps. Tap '+' to begin.",
+        "Zenwell",
+        "Home",
+        "Stats",
+        "Settings",
+        "Skip guide",
+        "Enable permissions to unlock your focus"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.sarangem.zenwell__d9933fc2de",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用入口主界面以“解锁专注目标”为由请求无障碍权限，点击后跳转系统无障碍列表与 Zenwell 服务详情，最终弹出系统全权控制警告；拒绝授权后返回主界面仍保持原页并可降级使用，未出现强制遮挡或通知骚扰。",
+  "observed_lure_rhetoric_zh": [
+    "Let’s unlock your focus goals! Zenwell needs Accessibility permission to see which apps are open so it can keep your screen time in check. -> 让我们解锁你的专注目标！Zenwell 需要无障碍权限查看哪些应用正在打开，以便管控屏幕时间。（主界面）",
+    "Enable permissions to unlock your focus -> 启用权限以解锁你的专注（主界面底部提示）",
+    "Grant permission -> 授予权限（主界面按钮）",
+    "Zenwell uses this service to know which app you are using and locks that app to cure your addiction. -> Zenwell 使用此服务了解你正在使用哪个应用，并锁定该应用来戒除你的成瘾。（服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面以“解锁专注目标”为由请求无障碍权限，说明可查看已开应用以管控屏幕时间；点击“Grant permission”，无通知、无遮罩。",
+    "step_02": "跳至系统无障碍列表，DOWNLOADED APPS 下 Zenwell 显示“Off”；采集到无障碍设置钩子与探针后自动终止，尚未授权。",
+    "post_jump_0.8s": "授权跳转后 0.8 秒探针：仍停留在系统无障碍设置页，界面文本为空，无通知横幅、无悬浮遮罩（overlays=0），状态未变。",
+    "post_jump_2.0s": "跳转后 2.0 秒二次探针：系统无障碍设置页保持原样，无弹窗、无通知、无遮罩（overlays=0），未发生授权操作。",
+    "detail_1_service_detail_page": "进入 Zenwell 服务详情页，有“Use Zenwell”开关与“Off”状态；说明称用该服务识别当前应用并锁定以戒瘾，属权限用途说明。",
+    "detail_2_system_warning_dialog": "系统弹出全权控制警告：允许 Zenwell 完全控制设备？列出可查看屏幕内容、代操作等能力；提供“Allow/Deny”，本步未点允许。",
+    "refusal_2.0s": "在系统警告中点“Deny”拒权后 2 秒返回主界面；仍显示授权引导与“Grant permission”，无通知、无遮罩，应用保持原页降级。",
+    "refusal_10.5s": "拒权返回 10.5 秒后主界面未变，继续展示“启用权限以解锁专注”等引导；无通知横幅、无悬浮遮罩，未强制跳转或锁屏。"
+  }
+}

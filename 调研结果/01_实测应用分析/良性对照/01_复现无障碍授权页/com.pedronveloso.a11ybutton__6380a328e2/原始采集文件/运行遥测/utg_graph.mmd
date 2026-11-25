@@ -1,0 +1,13 @@
+flowchart TD
+    N_4a54cd703fac["Step 1: MainActivity\nStep 1 of 4"]
+    N_edbb54e66b8b["Step 2: MainActivity\nSetup needed"]
+    N_10ea16af9da3["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_45c387d45e02["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_118d19b2a851["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Accessibility Bu"]
+    N_4a54cd703fac -->|"ui_click: click([10] View (click) center=("| N_edbb54e66b8b
+    N_edbb54e66b8b -->|"ui_click: click([6] View (click) center=(5"| N_10ea16af9da3
+    N_10ea16af9da3 -->|"detail_probe: click_service()"| N_45c387d45e02
+    N_45c387d45e02 -->|"warning_probe: click_use_service_switch"| N_118d19b2a851
+    N_10ea16af9da3 -->|"refusal_probe: Back_refuse"| N_edbb54e66b8b
+    N_edbb54e66b8b -->|"refusal_probe: wait(5.5s)_after_refusal"| N_edbb54e66b8b
+    N_edbb54e66b8b -->|"refusal_probe: wait(10.5s)_after_refusal"| N_edbb54e66b8b
