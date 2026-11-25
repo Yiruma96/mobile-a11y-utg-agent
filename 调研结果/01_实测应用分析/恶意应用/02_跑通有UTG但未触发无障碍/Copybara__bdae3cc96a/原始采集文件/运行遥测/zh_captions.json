@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "本次运行始终停留在NexusLauncher桌面，未进入恶意包界面；点击疑似仿冒的“BBVA Codigo”图标未加载，随后对 service2、AdminReceiver2、service1、notificationservice 的静态跳转均回落桌面；未出现授权弹窗、通知或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文/西班牙语“BBVA Codigo” -> 中文“BBVA验证码/编码”（Step 3–8桌面图标）：疑似冒充银行应用名称，非弹窗诱导话术"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，显示“Apps list/应用列表”等英文；点击“Apps list”未进入应用，无通知横幅与遮罩。",
+    "step_02": "仍在桌面，英文“Apps list”意为应用列表；上滑尝试打开抽屉，页面未变，无通知横幅与悬浮遮罩。",
+    "step_03": "桌面抽屉展开，出现“BBVA Codigo”（BBVA验证码）等图标；点击该疑似仿冒银行图标，未见应用界面，无通知遮罩。",
+    "step_04": "仍在桌面抽屉，“BBVA Codigo”意为BBVA验证码；再次点击仍未加载WebView或应用页，无通知与遮罩。",
+    "step_05": "仍停桌面抽屉，无新增界面；静态跳转 service2 服务组件失败并回落桌面，无通知横幅、无遮罩。",
+    "step_06": "桌面抽屉未变；静态引导跳转 AdminReceiver2（设备管理接收器）未显示界面，仍无通知横幅与遮罩。",
+    "step_07": "仍在桌面抽屉；探针跳转 service1 服务组件后回落，页面无变化，未见授权弹窗、通知或遮罩。",
+    "step_08": "桌面抽屉保持原样；尝试跳转 notificationservice（通知服务）未进入应用页，无通知、遮罩或授权提示。"
+  }
+}

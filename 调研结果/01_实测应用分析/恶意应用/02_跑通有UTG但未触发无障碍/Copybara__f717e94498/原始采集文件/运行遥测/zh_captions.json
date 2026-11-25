@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "样本 com.dohpgfr.qarthpc 启动后未展示自身界面，始终停留在 NexusLauncherActivity 桌面启动器；测试依次尝试包名直启及静态跳转 service2_BR、AdminReceiver2、service1_BR、notificationservice_BR、startatbootreceiver，均未出现授权弹窗、通知横幅或遮罩，未观察到诱导话术，授权/拒权链路未完成。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "桌面启动器，显示应用列表、11月25日星期三、信息、Chrome、搜索、语音搜索；尝试启动目标应用未成功，仍停留桌面。",
+    "step_02": "仍为桌面启动器同一页面，含应用列表、日期、信息、Chrome、搜索等；改用包名直启目标应用，应用未启动，无新界面。",
+    "step_03": "仍为桌面启动器；尝试静态跳转 service2_BR 组件，页面未变，无目标界面、通知横幅或遮罩，未见授权弹窗。",
+    "step_04": "桌面启动器页面；点击“应用列表”入口（坐标540,1688），拟手动查找目标应用，仍停留桌面，无通知或遮罩。",
+    "step_05": "桌面启动器；静态跳转 AdminReceiver2 组件后无界面变化，仍显示应用列表与搜索等，无设备管理授权弹窗。",
+    "step_06": "桌面启动器未变；静态跳转 service1_BR 组件后仍无目标页面，无通知横幅、悬浮遮罩或授权提示，交互无可见结果。",
+    "step_07": "仍为桌面启动器；静态跳转 notificationservice_BR 后未出现通知授权界面或通知横幅，仅见应用列表、搜索等桌面元素。",
+    "step_08": "仍为桌面启动器；静态跳转 startatbootreceiver 组件后页面无变化，无开机自启授权提示、通知或遮罩，未进入应用界面。"
+  }
+}

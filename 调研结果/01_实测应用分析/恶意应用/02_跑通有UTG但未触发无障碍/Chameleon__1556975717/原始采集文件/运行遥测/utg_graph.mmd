@@ -1,0 +1,9 @@
+flowchart TD
+    N_9af2d91754ca["Step 1: MainActivity\nApps list"]
+    N_9af2d91754ca -->|"ui_open: open()"| N_9af2d91754ca
+    N_9af2d91754ca -->|"ui_swipe: swipe([540, 1800])"| N_9af2d91754ca
+    N_9af2d91754ca -->|"static_guided_activity_jump: am_start(GmailNew)"| N_9af2d91754ca
+    N_9af2d91754ca -->|"ui_open: open()"| N_9af2d91754ca
+    N_9af2d91754ca -->|"static_guided_activity_jump: am_start(Facebook)"| N_9af2d91754ca
+    N_9af2d91754ca -->|"static_guided_activity_jump: am_start(Chrome)"| N_9af2d91754ca
+    N_9af2d91754ca -->|"static_guided_activity_jump: am_start(Youtube)"| N_9af2d91754ca

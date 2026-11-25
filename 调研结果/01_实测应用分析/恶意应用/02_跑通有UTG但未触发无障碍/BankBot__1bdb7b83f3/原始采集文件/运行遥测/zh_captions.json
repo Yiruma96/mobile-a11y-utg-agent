@@ -1,0 +1,9 @@
+{
+  "app_chain_summary_zh": "该应用伪装为“Asistan/助手”，通过 Cordova WebView 静默跳转至系统无障碍设置页，借土语“Aktif Ediniz”诱导用户为恶意服务开启无障碍权限；本次未出现通知或遮罩，动态探针在该授权页终止，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “请激活/启用”（Step 1 系统无障碍设置页的 Aktif Ediniz 提示）"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍设置页，土语“Aktif Ediniz”即“请激活”，以开启无障碍服务诱导授权；无通知/遮罩，页面终止。"
+  }
+}

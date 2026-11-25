@@ -1,0 +1,10 @@
+flowchart TD
+    N_3d06f7d1365a["Step 1: GrantPermissionsActivity\nAllow Qibla to access "]
+    N_b26acf28c113["Step 2: ActivityLocation\nNavigate up"]
+    N_3d06f7d1365a -->|"ui_click: click([5] Button text='While usi"| N_b26acf28c113
+    N_b26acf28c113 -->|"ui_click: click([4] Button text='AUTOMATIC"| N_b26acf28c113
+    N_b26acf28c113 -->|"ui_click: click([5] Button text='MANUAL' i"| N_b26acf28c113
+    N_b26acf28c113 -->|"static_guided_activity_jump: am_start(onActivityResult)"| N_b26acf28c113
+    N_b26acf28c113 -->|"ui_swipe: swipe([540, 1600])"| N_b26acf28c113
+    N_b26acf28c113 -->|"static_guided_activity_jump: am_start(SplashActivity)"| N_b26acf28c113
+    N_b26acf28c113 -->|"static_guided_activity_jump: am_start(PackageInstallReceiver)"| N_b26acf28c113

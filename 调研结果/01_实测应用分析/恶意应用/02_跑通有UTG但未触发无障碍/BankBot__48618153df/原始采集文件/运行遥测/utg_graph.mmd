@@ -1,0 +1,10 @@
+flowchart TD
+    N_2260bbc27658["Step 1: MainActivity\nAtenção"]
+    N_f6a3588f0886["Step 2: NexusLauncherActivity\nApps list"]
+    N_2260bbc27658 -->|"ui_click: click([3] Button text='CONTINUAR"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(AccService)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(MainActivity)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(MainActivity$a)"| N_f6a3588f0886

@@ -1,0 +1,324 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_135__cf59012780",
+  "label": "malicious",
+  "family_or_category": "donot",
+  "static_visibility": "clear",
+  "target_package": "com.system.android.updater",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "d2eb91bc1864",
+  "hook_node_ids": [
+    "24ef46e521fc"
+  ],
+  "nodes": [
+    {
+      "node_id": "d2eb91bc1864",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Google Play Service to access",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "214cddba66dc",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play Service",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "9416606e703b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Search settings",
+        "Network & internet",
+        "Wi‑Fi, mobile, data usage, and hotspot",
+        "Connected devices",
+        "Bluetooth, Android Auto",
+        "Apps & notifications",
+        "Recent apps, default apps",
+        "Battery",
+        "100%",
+        "Display",
+        "Wallpaper, sleep, font size",
+        "Sound",
+        "Volume, vibration, Do Not Disturb",
+        "Storage",
+        "28% used - 5.77 GB free"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "24ef46e521fc",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sound",
+        "Volume, vibration, Do Not Disturb",
+        "Storage",
+        "28% used - 5.77 GB free",
+        "Privacy",
+        "Permissions, account activity, personal data",
+        "Location",
+        "On - 3 apps have access to location",
+        "Security",
+        "Screen lock, fingerprint",
+        "Accounts",
+        "No accounts added",
+        "Accessibility",
+        "Screen readers, display, interaction controls",
+        "Digital Wellbeing & parental controls"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d2eb91bc1864",
+      "to": "214cddba66dc",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "214cddba66dc",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "9416606e703b",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "9416606e703b",
+      "to": "24ef46e521fc",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "24ef46e521fc",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "donot__cf59012780",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用伪装成“Google Play 服务/系统更新器”，先展示高危权限审查并诱导点击继续，再以旧版 Android 兼容提示和返回桌面隐藏自身，随后跳转系统设置并滚动至无障碍入口，触发 HOOK_A11Y_SETTINGS 后被终止；拒权后仅停留桌面，呈优雅降级。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “选择允许 Google Play 服务访问哪些内容”（Step 1 权限审查页）",
+    "English -> “发送和查看短信”（Step 1 权限审查页）",
+    "English -> “访问设备上的照片、媒体和文件”（Step 1 权限审查页）",
+    "English -> “访问您的联系人”（Step 1 权限审查页）",
+    "English -> “读取和写入通话记录”（Step 1 权限审查页）",
+    "English -> “拨打和管理电话”（Step 1 权限审查页）",
+    "English -> “录制音频”（Step 1 权限审查页）",
+    "English -> “定位”（Step 1 权限审查页）",
+    "English -> “Google Play 服务”仿冒应用名（Step 1/Step 2 权限与兼容提示）",
+    "English -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容性提示）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪装成“Google Play 服务”的权限审查页，列出短信、联系人、通话记录、电话、麦克风、定位等敏感权限，点击“Continue”继续。",
+    "step_02": "桌面弹出“Google Play 服务”旧版兼容警告，称可能无法正常工作，建议检查更新或联系开发者；点击“OK”关闭。",
+    "step_03": "返回桌面应用列表，未见应用界面，说明应用启动后自行隐藏或退至后台；此步为打开动作，无通知或遮罩。",
+    "step_04": "进入系统设置主列表，含网络、应用、电池、显示、隐私、安全等项；下滑查找“Accessibility（无障碍）”入口，无通知或遮罩。",
+    "step_05": "设置页已滚动至“Accessibility（无障碍）”入口，旁有屏幕阅读器/显示/交互控制说明；触发 HOOK_A11Y_SETTINGS 与探针后自动终止，未见通知或遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在系统设置页，无任何可见 UI 文本、通知横幅或遮罩（overlays=0），仅等待。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍为系统设置空白页，无 UI 文本、通知或遮罩，overlays=0，未见进一步诱导动作。",
+    "refusal_2.0s": "拒权/返回后 2 秒：回到桌面应用列表，应用未弹二次诱导或错误提示，结果为 GRACEFUL_STAY_OR_DEGRADE，无通知或遮罩。",
+    "refusal_10.5s": "拒权/返回后 10.5 秒：仍停留在桌面应用列表，无补偿弹窗、通知或遮罩，维持 GRACEFUL_STAY_OR_DEGRADE 的优雅降级状态。"
+  }
+}

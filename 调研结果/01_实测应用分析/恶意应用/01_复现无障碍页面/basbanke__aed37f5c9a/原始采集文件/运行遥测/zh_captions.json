@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "该应用以“Max Cupons”优惠券/门票为名，先显示远程IP网页加载失败，再以激活门票、防止门票被共享为由，用葡语弹窗引导用户前往系统无障碍设置；用户拒权后仍反复重弹同一诱导框，核心目的是骗取无障碍完全控制权限。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语/英语 -> “Max Cupons!! / Ativar Cupom!!”：最大优惠券！/ 激活优惠券！！（Step 1 主页面）",
+    "葡萄牙语 -> “VOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET... Configurações > Acessibilidade > Max Cupons”：您需要激活该功能以验证门票；请开启以下权限，以免您的门票被共享；在店内可找员工协助；设置>无障碍>Max Cupons（Step 2 原生弹窗）",
+    "葡萄牙语 -> “Ativando o recurso você tem ativação do seu ticket... Precisamos da permissão para evitar que seu ticket seja usado por outros clientes”：开启功能即可激活门票；每周多张门票；20至190雷亚尔折扣；有问题找支持；官方应用；需要权限防止门票被他人使用（服务详情页）",
+    "英语/系统文案 -> “Allow Max Cupons to have full control of your device? ... View and control screen ... View and perform actions ... Allow / Deny”：允许Max Cupons完全控制设备？可查看并控制屏幕、查看并执行操作；允许/拒绝（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "主页以Max Cupons优惠券为入口，网页报断网无法加载远程IP，仍留“Ativar Cupom!!”按钮；点击触发无障碍授权提示。",
+    "step_02": "原生葡语弹窗称必须激活无障碍功能以验证门票并防止门票被共享，指引前往设置>无障碍>Max Cupons；点击OK继续。",
+    "step_03": "跳转至系统无障碍列表，已下载应用中出现Max Cupons且状态为Off；探针捕获无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍列表页，无新增UI文本，通知为空、overlays=0，未见遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍停留系统无障碍列表页，无新增UI文本，通知为空、overlays=0，未见遮罩。",
+    "detail_1_service_detail_page": "服务详情页显示“Use Max Cupons”及快捷选项；葡语说明以多张门票、20至190雷亚尔折扣、防他人使用为由诱导开启无障碍。",
+    "detail_2_system_warning_dialog": "系统警告称将授予Max Cupons完全控制设备，可读取屏幕、覆盖应用并代操作，含Allow/Deny；本步仅检视未确认。",
+    "refusal_2.0s": "拒权返回2秒后，应用重弹同一葡语诱导框，称需激活无障碍以验证门票并防共享，再次给出OK；overlays=0。",
+    "refusal_10.5s": "拒权返回10.5秒后仍反复重弹同一葡语诱导框，持续要求开启无障碍验证门票；overlays=0，未提供取消退出。"
+  }
+}

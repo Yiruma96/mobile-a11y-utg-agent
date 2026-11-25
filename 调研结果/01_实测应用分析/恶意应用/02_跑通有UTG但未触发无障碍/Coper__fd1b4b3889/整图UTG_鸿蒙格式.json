@@ -1,0 +1,180 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_049__fd1b4b3889",
+  "label": "malicious",
+  "family_or_category": "Coper",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.nameown12",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "706b7f66d366",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "706b7f66d366",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "e5d822d510c9",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to send and view SMS messages?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "432c587a942d",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.chrome",
+      "abilityName": "org.chromium.chrome.browser.firstrun.FirstRunActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome to Chrome",
+        "By using Chrome, you agree to the Google Terms of Service, and the Google Chrome and Chrome OS Additional Terms of Service.",
+        "Help make Chrome better by sending usage statistics and crash reports to Google.",
+        "Accept & continue"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "8f5097ae6ffd",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.nameown12",
+      "abilityName": "com.nameown12.p041j",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "706b7f66d366",
+      "to": "e5d822d510c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "e5d822d510c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "432c587a942d",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([7] TextView text=\"Chrome\" (click) center=(741,1804))"
+    },
+    {
+      "from": "432c587a942d",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Home)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(p075f)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "8f5097ae6ffd",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(p045l)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Coper__fd1b4b3889",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先以Chrome名义请求通话与短信权限，再用桌面通知“启用服务/Chrome”和同名图标诱导点击；点击一度误入真实Chrome，之后通过静态跳转进入恶意包空白页继续探针，未测试到拒权路径。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “允许Chrome拨打和管理电话？”（Step 1 系统权限弹窗）",
+    "英语 -> “允许Chrome发送和查看短信？”（Step 2 系统权限弹窗）",
+    "土耳其语 -> “启用服务”，正文“Chrome”（Step 3/5/6/7/8 通知横幅）",
+    "英语 -> “欢迎使用Chrome”“接受并继续”及服务条款/使用统计说明（Step 4 真实Chrome首启页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限弹窗：请求“允许Chrome拨打和管理电话？”，点击“Allow”授权；无遮罩、无通知，属敏感通话权限诱导。",
+    "step_02": "系统权限弹窗：请求“允许Chrome发送和查看短信？”，再次点击“Allow”授权；无遮罩、无通知，属短信权限诱导。",
+    "step_03": "桌面应用列表：通知横幅显示土耳其语“启用服务”、正文“Chrome”，点击Chrome图标却启动真实Chrome，未进入仿冒页。",
+    "step_04": "真实Chrome首启页：显示“欢迎使用Chrome”及服务条款/使用统计说明，点击Home退出；仿冒应用通知横幅仍留在通知栏。",
+    "step_05": "返回桌面：通知横幅仍为“启用服务/Chrome”，点击“Apps list”打开应用抽屉，试图区分同名Chrome并定位仿冒入口。",
+    "step_06": "桌面应用列表：静态引导跳转至恶意包内.p075f探针，界面仍停在桌面，通知横幅“启用服务/Chrome”持续显示。",
+    "step_07": "桌面应用列表：再次静态跳转至恶意包内.p045l探针，仍无恶意页面内容可见，通知横幅“启用服务/Chrome”继续存在。",
+    "step_08": "进入恶意包空白页p041j：无可见文字或控件，仅保留“启用服务/Chrome”通知，随即静态跳转至.p042g继续探针。"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用从主WebView入口下滑露出“Shizuku LP集成”说明页，借“修改他应用/系统应用需启用无障碍Star Patcher”话术诱导点击Continue；随后反复弹出“No internet”阻断框，并以静态跳转探针指向service与AdminReceiver，未实际完成授权/拒权测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “Shizuku LP Integration…Required to edit other apps memory with ADB/Shizuku…Also needed to edit system apps like the Google Playstore”核心意译：声称需用ADB/Shizuku修改其他应用内存，甚至系统应用与Play商店（Step2、Step5）。",
+    "英文 -> “Click the ‘Continue’ button…The normal functions…not used…but the service must exist…”核心意译：诱导点击Continue并按步骤启用服务，谎称读屏与模拟点击不被使用但服务必须存在（Step2、Step5）。",
+    "英文 -> “1 Open settings / 2 In Accessibility… / 3 Activate the ‘Star Patcher’ option.”核心意译：手把手引导进入设置、无障碍已下载/已安装服务并激活Star Patcher（Step2、Step5）。",
+    "英文 -> “No internet / Please make sure you are connected to the internet / OK”核心意译：以未联网阻断弹窗催促仅点OK，制造无法继续的假象（Step3、Step4、Step6-Step8）。"
+  ],
+  "frame_captions": {
+    "step_01": "第1页为主WebView空白页，无可见文案；向下滑动以露出疑似Continue按钮，未见通知、遮罩或取消键。",
+    "step_02": "第2页为Shizuku LP集成诱导页，称需ADB/Shizuku修改他应用内存与系统应用；点击Continue引导开启无障碍Star Patcher，无遮罩。",
+    "step_03": "第3页弹出“No internet/请确保联网”阻断弹窗，仅有OK按钮，无取消键、通知或遮罩；点击OK试图继续引导流程。",
+    "step_04": "第4页仍为“No internet”联网阻断弹窗，仅OK无取消；因上次点击未生效再次点击OK，未见通知横幅或遮罩。",
+    "step_05": "第5页回到Shizuku LP集成说明页，重复要求点击Continue并按步骤激活Star Patcher无障碍服务；无通知、遮罩或取消键。",
+    "step_06": "第6页仍显示“No internet”联网阻断弹窗，仅有OK；探针执行静态Activity跳转至service2_BR，未注册点击，无通知或遮罩。",
+    "step_07": "第7页继续停留“No internet”弹窗，仅OK无取消；探针静态跳转AdminReceiver2，疑似设备管理/管理员接收器，无通知或遮罩。",
+    "step_08": "第8页仍为“No internet”阻断弹窗，仅OK；探针静态跳转service1_BR，未完成授权交互，无通知横幅与遮罩。"
+  }
+}

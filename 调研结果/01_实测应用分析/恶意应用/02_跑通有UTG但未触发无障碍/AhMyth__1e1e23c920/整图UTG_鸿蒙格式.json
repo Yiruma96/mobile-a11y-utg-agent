@@ -1,0 +1,201 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_026__1e1e23c920",
+  "label": "malicious",
+  "family_or_category": "AhMyth",
+  "static_visibility": "clear",
+  "target_package": "com.android.vendng",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "695b574ed9aa",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "695b574ed9aa",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Flashlight to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "4f7844dd185f",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flashlight to take pictures and record video?",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "bde70348a339",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flashlight to access this device’s location?",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "e3921a4edbcc",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flashlight to record audio?",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "871d9f66586d",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flashlight to access your contacts?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "5c0c0d9dda53",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flashlight to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "695b574ed9aa",
+      "to": "4f7844dd185f",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1318))"
+    },
+    {
+      "from": "4f7844dd185f",
+      "to": "bde70348a339",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1136))"
+    },
+    {
+      "from": "bde70348a339",
+      "to": "e3921a4edbcc",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1136))"
+    },
+    {
+      "from": "e3921a4edbcc",
+      "to": "871d9f66586d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1104))"
+    },
+    {
+      "from": "871d9f66586d",
+      "to": "5c0c0d9dda53",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "5c0c0d9dda53",
+      "to": "5c0c0d9dda53",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AppAccessibilityService)"
+    },
+    {
+      "from": "5c0c0d9dda53",
+      "to": "5c0c0d9dda53",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PackageReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用借“手电筒”名义先引导开启电池后台豁免，再连续索取相机、定位、麦克风、联系人和电话权限，随后静态跳转至无障碍服务及包/屏幕接收器，呈现AhMyth式远控与持久化特征。",
+  "observed_lure_rhetoric_zh": [
+    "Let app always run in background?（英文）-> 让应用始终在后台运行？（Step 1 电池优化豁免页）",
+    "Allowing Flashlight to always run in the background may reduce battery life...（英文）-> 允许“手电筒”始终后台运行可能缩短电池续航，可稍后在设置中更改（Step 1 电池优化豁免页）",
+    "Allow Flashlight to take pictures and record video?（英文）-> 允许“手电筒”拍照和录像？（Step 2 相机权限页）",
+    "Allow Flashlight to access this device’s location?（英文）-> 允许“手电筒”访问本机位置？（Step 3 定位权限页）",
+    "Allow Flashlight to record audio?（英文）-> 允许“手电筒”录制音频？（Step 4 录音权限页）",
+    "Allow Flashlight to access your contacts?（英文）-> 允许“手电筒”访问联系人？（Step 5 联系人权限页）",
+    "Allow Flashlight to make and manage phone calls?（英文）-> 允许“手电筒”拨打电话和管理通话？（Step 6-8 电话权限页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "电池优化豁免页，英文询问是否让“手电筒”始终后台运行；有vendng空通知、无遮罩，本步点Allow。",
+    "step_02": "相机权限页，英文请求允许“手电筒”拍照和录像；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_03": "定位权限页，英文请求允许“手电筒”访问本机位置；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_04": "录音权限页，英文请求允许“手电筒”录制音频；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_05": "联系人权限页，英文请求允许“手电筒”访问联系人；有vendng空通知、无遮罩，本步点Allow。",
+    "step_06": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转无障碍服务。",
+    "step_07": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转包监听接收器。",
+    "step_08": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转屏幕接收器。"
+  }
+}

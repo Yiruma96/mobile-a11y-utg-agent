@@ -1,0 +1,140 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_138__bf56b2f456",
+  "label": "malicious",
+  "family_or_category": "Copybara",
+  "static_visibility": "clear",
+  "target_package": "com.sqhiibt.wdqknqa",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "901bd5616bf4",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "My BNL",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "901bd5616bf4",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "901bd5616bf4",
+      "to": "901bd5616bf4",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([13] TextView text=\"My BNL\" id=icon (click) center=(338,1058))"
+    },
+    {
+      "from": "901bd5616bf4",
+      "to": "901bd5616bf4",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([13] TextView text=\"My BNL\" id=icon (click) center=(338,1058))"
+    },
+    {
+      "from": "901bd5616bf4",
+      "to": "901bd5616bf4",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(service2$service2_BR)"
+    },
+    {
+      "from": "901bd5616bf4",
+      "to": "901bd5616bf4",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AdminReceiver2)"
+    },
+    {
+      "from": "901bd5616bf4",
+      "to": "901bd5616bf4",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(service1$service1_BR)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Copybara__bf56b2f456",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "动态链路从桌面/应用抽屉开始，点击“My BNL”两次均未进入应用界面，随后静态跳转探测 service2、AdminReceiver2、service1、notificationservice 等组件也均未渲染；全程未见授权/拒权页或应用内诱导话术，仅有系统“数据未备份”通知，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “你的数据未备份”（主屏/应用抽屉系统通知，非应用界面）",
+    "英文 -> “立即添加备份账户”（同上，系统通知引导）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主屏/应用抽屉入口，英文“Apps list”意为应用列表；点击应用列表，顶部系统通知提示“数据未备份”，无遮罩。",
+    "step_02": "仍为主屏/应用抽屉，显示搜索、Chrome等；上滑试图打开抽屉寻找“My BNL”，系统备份通知仍在，无遮罩。",
+    "step_03": "应用抽屉列表出现“My BNL”；点击该图标尝试启动恶意应用，但页面未切换，系统备份通知仍在，无遮罩。",
+    "step_04": "仍在应用抽屉，再次点击“My BNL”并等待；可能被模拟器检测提示阻挡，未进入应用界面，通知不变且无遮罩。",
+    "step_05": "应用抽屉未变；静态跳转探针指向 service2_BR 服务组件，未渲染新界面，仅见系统备份通知，无遮罩。",
+    "step_06": "应用抽屉未变；静态跳转探针指向 AdminReceiver2 设备管理组件，未弹出授权页，系统备份通知仍在，无遮罩。",
+    "step_07": "应用抽屉未变；静态跳转探针指向 service1_BR 服务组件，仍停留启动器，未出现诱导或授权界面，无遮罩。",
+    "step_08": "应用抽屉未变；静态跳转探针指向 notificationservice_BR 通知服务组件，未渲染页面，仅系统备份通知，无遮罩。"
+  }
+}

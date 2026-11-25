@@ -1,0 +1,320 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_015__facb9c5af7",
+  "label": "malicious",
+  "family_or_category": "basbanke",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "coyzin.lasterm.malanko",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "97ef9fc3dbe3",
+  "hook_node_ids": [
+    "6407ea376ab2",
+    "03a1002f0f0b"
+  ],
+  "nodes": [
+    {
+      "node_id": "97ef9fc3dbe3",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "coyzin.lasterm.malanko",
+      "abilityName": "coyzin.lasterm.malanko.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ATIVAR"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "a751da054722",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "coyzin.lasterm.malanko",
+      "abilityName": "coyzin.lasterm.malanko.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "CleanDroid\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID\n\nAtive a permissão a seguir!.\n\nCaso você esteja com dificuldades pode procurar nosso suporte para auxiliar.\n\nConfigurações >  Acessibilidade > CleanDroid",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "6407ea376ab2",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "CleanDroid",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "24ba15c6a224",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "CleanDroid",
+        "Use CleanDroid",
+        "OPTIONS",
+        "CleanDroid shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "CleanDroid\nAtivando o recurso você tem ativação do seu recurso. \n* Em caso de duvidas procure nosso suporte \n* Aplicativo oficial da rede \n* Precisamos da permissão para o funcionamento do aplicativo."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "03a1002f0f0b",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow CleanDroid to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "97ef9fc3dbe3",
+      "to": "a751da054722",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([2] TextView text=\"ATIVAR\" (click) center=(538,1868))"
+    },
+    {
+      "from": "a751da054722",
+      "to": "6407ea376ab2",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"OK\" id=button1 (click) center=(887,1483))"
+    },
+    {
+      "from": "6407ea376ab2",
+      "to": "24ba15c6a224",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "24ba15c6a224",
+      "to": "03a1002f0f0b",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "6407ea376ab2",
+      "to": "a751da054722",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "a751da054722",
+      "to": "a751da054722",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "a751da054722",
+      "to": "a751da054722",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back CleanDroid Use CleanDroid OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "CleanDroid",
+        "Use CleanDroid",
+        "OPTIONS",
+        "CleanDroid shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "CleanDroid\nAtivando o recurso você tem ativação do seu recurso. \n* Em caso de duvidas procure nosso suporte \n* Aplicativo oficial da rede \n* Precisamos da permissão para o funcionamento do aplicativo."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow CleanDroid to have full control of your",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow CleanDroid to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "coyzin.lasterm.malanko",
+      "top_activity": "coyzin.lasterm.malanko.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "CleanDroid\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID\n\nAtive a permissão a seguir!.\n\nCaso você esteja com dificuldades pode procurar nosso suporte para auxiliar.\n\nConfigurações >  Acessibilidade > CleanDroid",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "coyzin.lasterm.malanko",
+      "top_activity": "coyzin.lasterm.malanko.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "CleanDroid\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID\n\nAtive a permissão a seguir!.\n\nCaso você esteja com dificuldades pode procurar nosso suporte para auxiliar.\n\nConfigurações >  Acessibilidade > CleanDroid",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "coyzin.lasterm.malanko",
+      "top_activity": "coyzin.lasterm.malanko.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "CleanDroid\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID\n\nAtive a permissão a seguir!.\n\nCaso você esteja com dificuldades pode procurar nosso suporte para auxiliar.\n\nConfigurações >  Acessibilidade > CleanDroid",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "basbanke__facb9c5af7",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "主页面以“ATIVAR”按钮诱导进入教程弹窗，声称必须开启CleanDroid无障碍服务并跳转系统设置；在服务详情页与系统高危警告中继续施压，用户拒绝后应用反复重启同一诱导弹窗。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语“ATIVAR” -> “激活”按钮，作为入口诱导点击（主页面）",
+    "葡萄牙语“VOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID...” -> “您必须激活该功能才能使用CleanDroid；请激活以下权限；如遇困难可联系支持；设置>无障碍>CleanDroid”（教程弹窗）",
+    "葡萄牙语“Ativando o recurso você tem ativação do seu recurso...” -> “激活此功能即可启用；如有疑问联系支持；官方网络应用；需要权限才能运行”（服务详情页）",
+    "英语“Allow CleanDroid to have full control of your device?” -> “允许CleanDroid完全控制您的设备？”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主页面仅见葡萄牙语“ATIVAR”（激活）按钮，作为入口诱导点击；无通知/遮罩，点击后触发无障碍授权引导。",
+    "step_02": "教程弹窗称必须激活CleanDroid功能，否则无法使用，并指引到设置>无障碍>CleanDroid；点“OK”跳系统无障碍页。",
+    "step_03": "系统无障碍列表显示CleanDroid为Off，页面有下载应用等项；探针在此捕获无障碍钩子后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍设置页，无通知横幅、无遮罩，未出现额外诱导界面。",
+    "post_jump_2.0s": "跳转后2.0秒探针：系统无障碍页保持静止，遮罩数0、通知为空，未见自动点击或浮层。",
+    "detail_1_service_detail_page": "服务详情页显示“Use CleanDroid”开关与快捷键选项；葡语说明称激活后可用、需权限运行，属官方应用，并引导开启。",
+    "detail_2_system_warning_dialog": "系统高危警告要求允许CleanDroid完全控制设备，可读屏、显示悬浮层并代操作；含Allow/Deny，点Deny拒权。",
+    "refusal_2.0s": "拒权返回2秒后，应用重新弹出同一葡语教程弹窗，反复要求激活无障碍权限；无通知/遮罩，属拒权后重试诱导。",
+    "refusal_10.5s": "拒权返回10.5秒后教程弹窗仍持续存在，重复“必须激活”话术并仅给OK，形成循环施压，未新增通知/遮罩。"
+  }
+}

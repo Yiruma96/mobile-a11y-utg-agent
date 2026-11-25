@@ -1,0 +1,191 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_018__b8ea749026",
+  "label": "malicious",
+  "family_or_category": "Chameleon",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.stub",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "bb920e2d48c2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "bb920e2d48c2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "2e51323c1265",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Document",
+        "Hey, Login Now",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "38c4c9864a1f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Document",
+        "Hey, Login Now",
+        "EMP1001",
+        "Next"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "76aae04fd198",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Document",
+        "Hey, Login Now",
+        "EMP1001",
+        "Next",
+        "Forgot password?"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "369ecad6f31a",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Document"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "fb9c542ddd4b",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.stub",
+      "abilityName": "com.stub.webview.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Document",
+        "Hey, Login Now",
+        "Next",
+        "Forgot password?"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "bb920e2d48c2",
+      "to": "2e51323c1265",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([241, 1256])"
+    },
+    {
+      "from": "2e51323c1265",
+      "to": "38c4c9864a1f",
+      "step": 2,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "38c4c9864a1f",
+      "to": "76aae04fd198",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Next\" (click) center=(903,1215))"
+    },
+    {
+      "from": "76aae04fd198",
+      "to": "76aae04fd198",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] EditText text=\"EMP1001\" (click) center=(443,871))"
+    },
+    {
+      "from": "76aae04fd198",
+      "to": "369ecad6f31a",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Next\" (click) center=(903,1215))"
+    },
+    {
+      "from": "369ecad6f31a",
+      "to": "fb9c542ddd4b",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MainActivity$MyJavaScriptInterface)"
+    },
+    {
+      "from": "fb9c542ddd4b",
+      "to": "fb9c542ddd4b",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MainActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以MainActivity承载假CRM WebView登录页，用“Hey, Login Now”“Next”“Forgot password?”及EMP1001占位员工ID诱导提交；随后静态跳转至MyJavaScriptInterface/WebView主活动，未触发系统授权或拒权（not_tested），元数据标记malicious/Chameleon。",
+  "observed_lure_rhetoric_zh": [
+    "Hey, Login Now -> 嘿，立即登录（假CRM登录页，Step 2-5、7-8）",
+    "Next -> 下一步（假CRM登录页，Step 2-5、7）",
+    "Forgot password? -> 忘记密码？（假CRM登录页，Step 4-5、7-8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "假CRM WebView登录页，界面无可见文案；点击坐标[241,1256]疑似“员工ID”输入框，无通知或遮罩。",
+    "step_02": "同一假CRM登录页显示“Hey, Login Now（嘿，立即登录）”“Next（下一步）”；向聚焦输入框键入占位员工ID。",
+    "step_03": "登录页显示EMP1001与“Next（下一步）”；点击下一步提交员工ID推进虚假登录，无通知横幅或遮罩。",
+    "step_04": "登录页出现“Forgot password?（忘记密码？）”；回点员工ID输入框，界面仍仅见占位EMP1001，无系统弹窗。",
+    "step_05": "员工ID已填EMP1001；再次点击“Next（下一步）”提交，页面无通知横幅、无遮罩，也未出现取消入口。",
+    "step_06": "界面仅剩“Document（文档）”标题；静态跳转至MyJavaScriptInterface，疑似WebView JS桥接口，无通知/遮罩。",
+    "step_07": "回到假CRM登录页，显示“Hey, Login Now（嘿，立即登录）”；静态跳转至WebView主活动，无通知/遮罩。",
+    "step_08": "再点员工ID输入框重填；登录页仍显示“Hey, Login Now（嘿，立即登录）”“Next”“Forgot password?”，无通知/遮罩。"
+  }
+}

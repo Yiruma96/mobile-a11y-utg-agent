@@ -1,0 +1,11 @@
+flowchart TD
+    N_29e2f02065f2["Step 1: main\n"]
+    N_3533926c978c["Step 2: main\nIgUZCQFSnEDVRQvzrjDBCU"]
+    N_d3655297c40e["Step 3: main\nNo internet"]
+    N_29e2f02065f2 -->|"ui_swipe: swipe([540, 1800])"| N_3533926c978c
+    N_3533926c978c -->|"ui_click: click([10] Button text='Continue"| N_d3655297c40e
+    N_d3655297c40e -->|"ui_click: click([3] Button text='OK' id=bu"| N_d3655297c40e
+    N_d3655297c40e -->|"ui_click: click([3] Button text='OK' id=bu"| N_3533926c978c
+    N_3533926c978c -->|"ui_click: click([10] Button text='Continue"| N_d3655297c40e
+    N_d3655297c40e -->|"static_guided_activity_jump: am_start(service2$service2_BR)"| N_d3655297c40e
+    N_d3655297c40e -->|"static_guided_activity_jump: am_start(AdminReceiver2)"| N_d3655297c40e

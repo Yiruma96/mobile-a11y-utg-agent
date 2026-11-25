@@ -1,0 +1,12 @@
+flowchart TD
+    N_0371201ed897["Step 1: Settings$WriteSettingsActivi\nBack"]
+    N_ffcd748d29dd["Step 2: Settings$OverlaySettingsActi\nBack"]
+    N_64f3d71e057b["Step 4: SubSettings\nBack"]
+    N_75af34fee5f3["Step 6: Settings$OverlaySettingsActi\nBack"]
+    N_0371201ed897 -->|"ui_system_button: system_button(Back)"| N_ffcd748d29dd
+    N_ffcd748d29dd -->|"ui_system_button: system_button(Back)"| N_ffcd748d29dd
+    N_ffcd748d29dd -->|"ui_click: click([8] LinearLayout desc='DEF"| N_64f3d71e057b
+    N_64f3d71e057b -->|"ui_click: click([9] Switch id=switch_widge"| N_64f3d71e057b
+    N_64f3d71e057b -->|"ui_system_button: system_button(Back)"| N_75af34fee5f3
+    N_75af34fee5f3 -->|"static_guided_activity_jump: am_start(AppMeasurementInstallRe"| N_75af34fee5f3
+    N_75af34fee5f3 -->|"static_guided_activity_jump: am_start(FirebaseInstanceIdRecei"| N_75af34fee5f3

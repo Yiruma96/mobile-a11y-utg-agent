@@ -1,0 +1,10 @@
+flowchart TD
+    N_1159e24777c9["Step 1: NexusLauncherActivity\nApps list"]
+    N_6ca6daedd70f["Step 3: NexusLauncherActivity\nApps list"]
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_swipe: swipe([540, 1900])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_swipe: swipe([540, 1800])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_swipe: swipe([540, 1200])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(ScriptExecuteActivity)"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(returnMyActivity)"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(perhaps)"| N_6ca6daedd70f

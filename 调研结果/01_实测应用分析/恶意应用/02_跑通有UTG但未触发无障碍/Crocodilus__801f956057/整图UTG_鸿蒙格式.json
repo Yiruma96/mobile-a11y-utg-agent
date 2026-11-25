@@ -1,0 +1,254 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_143__801f956057",
+  "label": "malicious",
+  "family_or_category": "Crocodilus",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "unrelated.hamburger",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "3e15f87de149",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "IKO Lokata",
+        "Clear"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "89e272b00b6c",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.googlequicksearchbox",
+      "abilityName": "com.google.android.apps.gsa.searchnow.SearchNowActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ALL",
+        "Mobile data is off",
+        "No data connection. Consider turning on mobile data or turning on Wi-Fi.",
+        "Turn on mobile data",
+        "Try again",
+        "FEEDBACK",
+        "Go to Discover",
+        "IKO Lokata",
+        "Voice Search",
+        "Discover",
+        "Updates",
+        "Search",
+        "Collections",
+        "More"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "fcc4feba7df6",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "unrelated.hamburger",
+      "abilityName": "unrelated.hamburger.lQQPRSNed.yXfRlQHtIHgw",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ALL",
+        "Mobile data is off",
+        "No data connection. Consider turning on mobile data or turning on Wi-Fi.",
+        "Turn on mobile data",
+        "Try again",
+        "FEEDBACK",
+        "Go to Discover",
+        "IKO Lokata",
+        "Voice Search",
+        "Discover",
+        "Updates",
+        "Search",
+        "Collections",
+        "More"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "3a02a0b5a1a2",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "unrelated.hamburger",
+      "abilityName": "unrelated.hamburger.lQQPRSNed.yXfRlQHtIHgw",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Erişilebilirlik İzni",
+        "Chrome Icon",
+        "Accessibility Permission Required",
+        "You need to grant accessibility permission for the app to function properly.",
+        "Enable Accessibility",
+        "Accessibility settings can be found under installed applications or in the Accessibility section."
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1500])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "f3c915fd6aa2",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([19] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "3e15f87de149",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "3e15f87de149",
+      "to": "89e272b00b6c",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Enter)"
+    },
+    {
+      "from": "89e272b00b6c",
+      "to": "fcc4feba7df6",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(iAAwZTABYUutsi)"
+    },
+    {
+      "from": "fcc4feba7df6",
+      "to": "3a02a0b5a1a2",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TrumpTayyip)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Crocodilus__801f956057",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面启动器查找“IKO Lokata”，经 Google 搜索页无数据提示后静态跳转至 unrelated.hamburger 随机 Activity，最终弹出混合土耳其语/英语的无障碍权限诱导页；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “移动数据已关闭/无数据连接，建议开启移动数据或 Wi-Fi”（Step 6/7 Google 搜索页）",
+    "土耳其语 -> “无障碍权限”（Step 8 权限页）",
+    "英文 -> “需要无障碍权限”（Step 8 权限页）",
+    "英文 -> “需授予无障碍权限应用才能正常运行”（Step 8 权限页）",
+    "英文 -> “启用无障碍”（Step 8 权限页）",
+    "英文 -> “可在已安装应用或无障碍设置中找到该权限”（Step 8 权限页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器主页，显示 Apps list 与 Messages、Chrome 等图标；代理点击“Apps list”寻找目标应用，未跳转。",
+    "step_02": "仍在桌面主页，应用列表入口无响应；代理上滑屏幕尝试打开应用抽屉，界面未变化。",
+    "step_03": "应用抽屉网格显示 Calendar、Camera、Chrome 等图标；代理点击顶部 Search 搜索框，准备查找目标应用。",
+    "step_04": "启动器搜索页显示“Search apps, web, and more…”和 Voice Search；代理输入疑似应用名 IKO Lokata。",
+    "step_05": "搜索框已填入 IKO Lokata 并显示 Clear；代理按 Enter 执行启动器搜索，等待结果跳转。",
+    "step_06": "跳转 Google 搜索页，显示 Mobile data is off/无数据连接及 Turn on mobile data、Try again；随后静态跳转。",
+    "step_07": "页面外观仍是 Google 搜索页与无数据提示，但包名已变为 unrelated.hamburger，静态跳转进入随机命名 Activity。",
+    "step_08": "弹出无障碍权限页，土耳其语 Erişilebilirlik İzni 混英文说明，要求 Enable Accessibility；未见取消项，未记录授权结果。"
+  }
+}

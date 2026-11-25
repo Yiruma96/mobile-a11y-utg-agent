@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用从桌面入口启动后始终未进入 Copybara 页面：按包名启动、点击应用列表及多次静态组件跳转均停留在 NexusLauncher，另见反模拟器提示“App can't work on Emulators”。未观察到实际诱导界面、通知横幅、遮罩或授权/拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “应用无法在模拟器上运行”（Step 2 启动重试时出现；属反模拟器/环境检测提示，非用户诱导话术）"
+  ],
+  "frame_captions": {
+    "step_01": "Nexus 桌面，含应用列表、11月25日星期三、信息、Chrome、搜索/语音搜索；按包名启动 Copybara 未切换页面，仍无通知或遮罩。",
+    "step_02": "仍为 Nexus 桌面；启动后疑似提示“App can't work on Emulators”（应用无法在模拟器运行），重试后仍未进入目标页，无横幅/遮罩。",
+    "step_03": "仍为 Nexus 桌面，显示应用列表、日期、信息、Chrome、搜索等；静态跳转至 service2_BR 后台组件未加载新界面，无通知/遮罩。",
+    "step_04": "仍为 Nexus 桌面；点击“Apps list（应用列表）”后未见抽屉或目标页变化，仍显示日期、信息、Chrome、搜索等，无通知/遮罩。",
+    "step_05": "仍为 Nexus 桌面；静态跳转至 AdminReceiver2 设备管理组件未呈现页面，桌面日期、信息、Chrome、搜索不变，无通知/遮罩。",
+    "step_06": "仍为 Nexus 桌面；静态跳转至 service1_BR 后台服务未切换界面，应用列表、日期、信息、Chrome、搜索保持原样，无通知/遮罩。",
+    "step_07": "仍为 Nexus 桌面；静态跳转至 notificationservice_BR 未显示通知页，界面仍为应用列表、日期、信息、Chrome、搜索，无横幅/遮罩。",
+    "step_08": "仍为 Nexus 桌面；静态跳转至 startatbootreceiver 开机接收器未加载界面，仍见应用列表、日期、信息、Chrome、搜索，无通知/遮罩。"
+  }
+}

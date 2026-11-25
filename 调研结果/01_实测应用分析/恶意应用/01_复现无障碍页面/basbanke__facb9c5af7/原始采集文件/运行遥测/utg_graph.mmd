@@ -1,0 +1,15 @@
+flowchart TD
+    N_97ef9fc3dbe3["Step 1: main\nATIVAR"]
+    N_a751da054722["Step 2: main\nCleanDroid
+
+VOCÊ PRECI"]
+    N_6407ea376ab2["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_24ba15c6a224["Step 3: SubSettings\nBack"]
+    N_03a1002f0f0b["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow CleanDroid to ha"]
+    N_97ef9fc3dbe3 -->|"ui_click: click([2] TextView text='ATIVAR'"| N_a751da054722
+    N_a751da054722 -->|"ui_click: click([2] Button text='OK' id=bu"| N_6407ea376ab2
+    N_6407ea376ab2 -->|"detail_probe: click_service()"| N_24ba15c6a224
+    N_24ba15c6a224 -->|"warning_probe: click_use_service_switch"| N_03a1002f0f0b
+    N_6407ea376ab2 -->|"refusal_probe: Back_refuse"| N_a751da054722
+    N_a751da054722 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_a751da054722
+    N_a751da054722 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_a751da054722

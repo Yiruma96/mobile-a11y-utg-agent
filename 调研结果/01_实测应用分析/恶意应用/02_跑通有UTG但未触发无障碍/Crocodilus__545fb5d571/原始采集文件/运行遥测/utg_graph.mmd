@@ -1,0 +1,14 @@
+flowchart TD
+    N_372469b85e92["Step 1: PackageInstallerActivity\nChrome"]
+    N_c48661863cfd["Step 2: Settings$ManageAppExternalSo\nBack"]
+    N_7776767f45c2["Step 4: PackageInstallerActivity\nChrome"]
+    N_f6a3588f0886["Step 5: NexusLauncherActivity\nApps list"]
+    N_d68aa36b52c0["Step 7: WjsaScCKITSBsc\nApps list"]
+    N_50123da0c91d["Step 8: WjsaScCKITSBsc\nErişilebilirlik İzni"]
+    N_372469b85e92 -->|"ui_click: click([4] Button text='Settings'"| N_c48661863cfd
+    N_c48661863cfd -->|"ui_click: click([9] Switch id=switch_widge"| N_c48661863cfd
+    N_c48661863cfd -->|"ui_system_button: system_button(Back)"| N_7776767f45c2
+    N_7776767f45c2 -->|"ui_click: click([4] Button text='Install' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_wait: wait()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(NWqrdTFTiwRe)"| N_d68aa36b52c0
+    N_d68aa36b52c0 -->|"static_guided_activity_jump: am_start(QtNtWyFDj)"| N_50123da0c91d

@@ -1,0 +1,128 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_108__48618153df",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "clear",
+  "target_package": "com.gelini",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "2260bbc27658",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "2260bbc27658",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.gelini",
+      "abilityName": "com.irifix.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Atenção",
+        "Atualização aplicada com sucesso.",
+        "CONTINUAR"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2260bbc27658",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"CONTINUAR\" id=button3 (click) center=(247,1254))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccService)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MainActivity)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MainActivity$a)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以葡语“更新成功”弹窗为入口，仅提供“继续”诱导点击，随后退至桌面并隐藏图标；多次重启动失败后，探针改以静态跳转尝试进入 com.irifix 的 AccService 与 MainActivity 内部类，未观察到授权或拒权页面。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 -> 注意（Step 1 MainActivity）",
+    "葡萄牙语 -> 更新已成功应用（Step 1 MainActivity）",
+    "葡萄牙语 -> 继续（Step 1 MainActivity，唯一按钮）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "入口弹窗：葡语“注意，更新已成功应用”，仅“继续”按钮；点击后应用退到后台并隐藏图标。",
+    "step_02": "桌面首页：显示应用列表、日期、Messages、Chrome、搜索等；从桌面重新打开目标失败，未见应用界面。",
+    "step_03": "仍为桌面首页：应用列表与常规图标可见；再次按包名启动仍无效，目标图标已被隐藏，无通知或遮罩。",
+    "step_04": "桌面首页停留：常规图标与搜索可见；自动静态跳转探针指向 com.irifix.AccService，未呈现可交互应用页面。",
+    "step_05": "桌面首页：Messages、Chrome、搜索可见；尝试按包名强制重启仍未进入应用，图标隐藏状态持续，无通知横幅。",
+    "step_06": "桌面首页无变化：应用列表、日期和搜索仍在；静态跳转探针指向 com.irifix.MainActivity，仍未显示业务界面。",
+    "step_07": "桌面首页：图标与搜索可见，无遮罩通知；静态跳转探针指向 com.irifix.MainActivity$a 内部类，未发生可见页面切换。",
+    "step_08": "桌面首页：应用列表与常规图标可见；静态跳转探针指向 com.irifix.MainActivity$a$1，仍无可见界面或权限弹窗。"
+  }
+}

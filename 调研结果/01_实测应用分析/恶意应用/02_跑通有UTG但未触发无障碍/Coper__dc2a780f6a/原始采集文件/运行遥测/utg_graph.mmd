@@ -1,0 +1,11 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_6ca6daedd70f["Step 5: NexusLauncherActivity\nApps list"]
+    N_435d16bf6f5b["Step 7: GrantPermissionsActivity\nAllow Google Chrome to"]
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(p078w)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 1800])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_swipe: swipe([540, 2200])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(p063j)"| N_435d16bf6f5b
+    N_435d16bf6f5b -->|"static_guided_activity_jump: am_start(p064x)"| N_435d16bf6f5b

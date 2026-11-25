@@ -1,0 +1,11 @@
+flowchart TD
+    N_618b3efc3072["Step 1: ReviewPermissionsActivity\nChoose what to allow J"]
+    N_28be4c3489ac["Step 2: UnityPlayerActivity\nJewels Star Classic"]
+    N_02d19fdfae49["Step 3: UnityPlayerActivity\n"]
+    N_618b3efc3072 -->|"ui_click: click([11] Button text='Continue"| N_28be4c3489ac
+    N_28be4c3489ac -->|"ui_click: click([3] Button text='OK' id=bu"| N_02d19fdfae49
+    N_02d19fdfae49 -->|"ui_wait: wait()"| N_02d19fdfae49
+    N_02d19fdfae49 -->|"ui_wait: wait()"| N_02d19fdfae49
+    N_02d19fdfae49 -->|"static_guided_activity_jump: am_start(MyAccessibilityService)"| N_02d19fdfae49
+    N_02d19fdfae49 -->|"static_guided_activity_jump: am_start(UnityPlayerActivity)"| N_02d19fdfae49
+    N_02d19fdfae49 -->|"static_guided_activity_jump: am_start(AppMeasurementInstallRe"| N_02d19fdfae49

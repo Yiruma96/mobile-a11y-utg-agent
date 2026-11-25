@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "该应用从伪造的“Certificato HYPE”证书更新页与无障碍启用引导入口开始，反复以英文“No internet”弹窗阻断并诱导用户点击继续，随后通过静态回退依次跳转Common.StartActivity、service2_BR与AdminReceiver2，指向无障碍/设备管理授权链；拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语/英语 -> “HYPE证书；更新您的HYPE证书。点击‘Continue’并按照安装步骤操作”（伪造HYPE证书页）",
+    "英语 -> “打开设置；在无障碍中进入‘Downloaded Services’或‘Installed Services’；启用‘Certificato HYPE’选项”（伪造HYPE证书页）",
+    "英语 -> “无网络；请确认已连接互联网；确定”（No internet错误弹窗，step_02/04/05）"
+  ],
+  "frame_captions": {
+    "step_01": "当前为未采集文本的伪造HYPE证书页，点击Continue尝试开始安装引导，未出现通知或遮罩。",
+    "step_02": "弹出英文“No internet/请确认联网/OK”错误框；点击OK关闭后重试继续，未出现通知或遮罩。",
+    "step_03": "伪造HYPE证书页展示更新证书及无障碍启用三步说明；点击Continue继续，未出现通知或遮罩。",
+    "step_04": "再次弹出英文无网络提示与OK按钮；点击OK后计划返回查看原生备用指南，弹窗仍是阻断点。",
+    "step_05": "同一“No internet/请联网/OK”弹窗持续阻断；改用系统返回键关闭，仍未进入系统无障碍设置，无通知遮罩。",
+    "step_06": "仍停留伪造HYPE证书页；静态回退触发跳转Common.StartActivity，绕过页面交互继续安装链路。",
+    "step_07": "证书页未变，静态回退跳至service2$service2_BR服务组件，疑似转入后台启用流程，无通知遮罩。",
+    "step_08": "证书页仍显示；静态回退跳至AdminReceiver2设备管理接收器，疑似请求设备管理权限，未现通知遮罩。"
+  }
+}

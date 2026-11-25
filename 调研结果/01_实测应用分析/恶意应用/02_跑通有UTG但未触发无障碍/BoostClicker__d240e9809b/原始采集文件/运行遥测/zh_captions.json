@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "该应用未从桌面直接进入前台，而是先经启动器，再通过静态跳转拉起伪装成“SystemSecurityServices”的权限审查页，诱导用户授予文件和媒体、电话、联系人权限；点击继续后弹出旧版Android兼容警告，随后多次静态跳转并停在空白“系统安全服务”页等待。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 SystemSecurityServices（系统安全服务）访问哪些内容”（Step 4 权限审查页）",
+    "英文 -> “文件和媒体：访问设备上的照片、媒体和文件”（Step 4 权限审查页）",
+    "英文 -> “电话：拨打和管理电话”（Step 4 权限审查页）",
+    "英文 -> “联系人：访问您的联系人”（Step 4 权限审查页）",
+    "英文 -> “此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（Step 5 兼容性警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，显示Apps list、日期及Messages/Chrome/搜索；目标应用未在前台，本步为打开探针，无通知或遮罩。",
+    "step_02": "仍在桌面应用列表页，界面同上；点击“Apps list”试图展开抽屉定位目标应用，页面未明显变化，无通知或遮罩。",
+    "step_03": "桌面应用列表页无变化；执行静态活动跳转至com.axl.mngp.dibd，为后续权限页或目标组件探针路径，无通知遮罩。",
+    "step_04": "系统权限审查页，标题称允许SystemSecurityServices访问文件媒体、电话、联系人；有取消/继续，本步点“Continue”继续。",
+    "step_05": "应用dibd页弹出旧版Android兼容警告，标题SystemSecurityServices；提示可能无法正常运行，本步点“OK”关闭，无通知遮罩。",
+    "step_06": "SystemSecurityServices空白页；无可见内容，执行静态跳转至com.axl.mngp.lwwny，未见通知横幅或悬浮遮罩。",
+    "step_07": "SystemSecurityServices空白页；无可见内容，执行静态跳转至com.services.AccService，未见通知横幅或悬浮遮罩。",
+    "step_08": "仍为SystemSecurityServices空白页；按静态指引等待无障碍或授权相关组件，页面无可见诱导文本、通知或遮罩。"
+  }
+}

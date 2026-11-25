@@ -1,0 +1,143 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_141__8b6d047c9a",
+  "label": "malicious",
+  "family_or_category": "Copybara",
+  "static_visibility": "clear",
+  "target_package": "com.orijucaroma.newicon",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "c0d0242ed248",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "c0d0242ed248",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.orijucaroma.newicon",
+      "abilityName": "com.orijucaroma.newicon.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1342ebc78ee2",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.orijucaroma.newicon",
+      "abilityName": "com.orijucaroma.newicon.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "No internet",
+        "Please make sure you are connected to the internet",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "cb9eaf1f96d1",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.orijucaroma.newicon",
+      "abilityName": "com.orijucaroma.newicon.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Pv3qrDFdzRl0fhmsf83FqGZJFDou2N6d85cNOu+Uu9tMB76riKoncSSUQ8+iiGmWq7nKLVta",
+        "Certificato HYPE",
+        "Update your Certificato HYPE.",
+        "Click the \"Continue\" button and follow the installation steps.",
+        "1 Open settings",
+        "2 In Accessibility, open the \"Downloaded Services\" or \"Installed Services\" section.",
+        "3 Activate the \"Certificato HYPE\" option.",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "c0d0242ed248",
+      "to": "1342ebc78ee2",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1560])"
+    },
+    {
+      "from": "1342ebc78ee2",
+      "to": "cb9eaf1f96d1",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1212))"
+    },
+    {
+      "from": "cb9eaf1f96d1",
+      "to": "1342ebc78ee2",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"Continue\" (click) center=(540,1752))"
+    },
+    {
+      "from": "1342ebc78ee2",
+      "to": "1342ebc78ee2",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1212))"
+    },
+    {
+      "from": "1342ebc78ee2",
+      "to": "cb9eaf1f96d1",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "cb9eaf1f96d1",
+      "to": "cb9eaf1f96d1",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(StartActivity)"
+    },
+    {
+      "from": "cb9eaf1f96d1",
+      "to": "cb9eaf1f96d1",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(service2$service2_BR)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用从伪造的“Certificato HYPE”证书更新页与无障碍启用引导入口开始，反复以英文“No internet”弹窗阻断并诱导用户点击继续，随后通过静态回退依次跳转Common.StartActivity、service2_BR与AdminReceiver2，指向无障碍/设备管理授权链；拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语/英语 -> “HYPE证书；更新您的HYPE证书。点击‘Continue’并按照安装步骤操作”（伪造HYPE证书页）",
+    "英语 -> “打开设置；在无障碍中进入‘Downloaded Services’或‘Installed Services’；启用‘Certificato HYPE’选项”（伪造HYPE证书页）",
+    "英语 -> “无网络；请确认已连接互联网；确定”（No internet错误弹窗，step_02/04/05）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "当前为未采集文本的伪造HYPE证书页，点击Continue尝试开始安装引导，未出现通知或遮罩。",
+    "step_02": "弹出英文“No internet/请确认联网/OK”错误框；点击OK关闭后重试继续，未出现通知或遮罩。",
+    "step_03": "伪造HYPE证书页展示更新证书及无障碍启用三步说明；点击Continue继续，未出现通知或遮罩。",
+    "step_04": "再次弹出英文无网络提示与OK按钮；点击OK后计划返回查看原生备用指南，弹窗仍是阻断点。",
+    "step_05": "同一“No internet/请联网/OK”弹窗持续阻断；改用系统返回键关闭，仍未进入系统无障碍设置，无通知遮罩。",
+    "step_06": "仍停留伪造HYPE证书页；静态回退触发跳转Common.StartActivity，绕过页面交互继续安装链路。",
+    "step_07": "证书页未变，静态回退跳至service2$service2_BR服务组件，疑似转入后台启用流程，无通知遮罩。",
+    "step_08": "证书页仍显示；静态回退跳至AdminReceiver2设备管理接收器，疑似请求设备管理权限，未现通知遮罩。"
+  }
+}

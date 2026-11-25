@@ -1,0 +1,14 @@
+flowchart TD
+    N_bb920e2d48c2["Step 1: MainActivity\n"]
+    N_2e51323c1265["Step 2: MainActivity\nDocument"]
+    N_38c4c9864a1f["Step 3: MainActivity\nDocument"]
+    N_76aae04fd198["Step 4: MainActivity\nDocument"]
+    N_369ecad6f31a["Step 6: MainActivity\nDocument"]
+    N_fb9c542ddd4b["Step 7: MainActivity\nDocument"]
+    N_bb920e2d48c2 -->|"ui_click: click([241, 1256])"| N_2e51323c1265
+    N_2e51323c1265 -->|"ui_type: type()"| N_38c4c9864a1f
+    N_38c4c9864a1f -->|"ui_click: click([4] Button text='Next' (cl"| N_76aae04fd198
+    N_76aae04fd198 -->|"ui_click: click([3] EditText text='EMP1001"| N_76aae04fd198
+    N_76aae04fd198 -->|"ui_click: click([4] Button text='Next' (cl"| N_369ecad6f31a
+    N_369ecad6f31a -->|"static_guided_activity_jump: am_start(MainActivity$MyJavaScri"| N_fb9c542ddd4b
+    N_fb9c542ddd4b -->|"static_guided_activity_jump: am_start(MainActivity)"| N_fb9c542ddd4b

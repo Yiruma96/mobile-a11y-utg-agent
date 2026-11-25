@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "目标应用无桌面图标，探针从启动器静态直达 AdTransActivity；权限审核页打包索取文件媒体、电话、联系人并点击 Continue，随后兼容性警告点 OK，再跳转 TransActivity、MReceiver、AccService，未见拒权。核心特征是无图标隐蔽入口、权限聚合索取与组件链过渡。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 ConfigAPKs 访问哪些权限（系统权限审核页）",
+    "英文 -> 文件与媒体：访问设备上的照片、媒体和文件（系统权限审核页）",
+    "英文 -> 电话：拨打和管理电话（系统权限审核页）",
+    "英文 -> 联系人：访问联系人（系统权限审核页）",
+    "英文 -> 该应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（兼容性警告弹窗）",
+    "英文 -> 应用显示名为 ConfigAPKs，用于权限审核与兼容性提示（权限页/弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "Nexus 启动器桌面：显示应用列表、日期天气和搜索入口；尝试直接打开目标包但未见图标，无通知或遮罩。",
+    "step_02": "仍为同一启动器桌面：目标应用无桌面图标，直接启动未成功；页面无通知、无遮罩，外文入口均为系统常规元素。",
+    "step_03": "启动器未变，探针静态跳转至 com.app.assists.AdTransActivity；无可见诱导文案，属绕过桌面图标的组件直达。",
+    "step_04": "系统权限审核页：英文提示选择允许 ConfigAPKs 访问，列出文件媒体、电话、联系人；本步点击 Continue，仍保留 Cancel。",
+    "step_05": "应用内兼容性警告：英文称 ConfigAPKs 为旧版 Android 构建、可能无法正常运行；点击 OK 关闭后继续跳转。",
+    "step_06": "AdTransActivity 空白过渡页：无文案、通知或遮罩；探针静态跳转至 com.app.assists.TransActivity，继续组件链。",
+    "step_07": "AdTransActivity 无可见 UI；探针静态跳转至 MReceiver 接收器，无通知、无遮罩，也无取消或拒绝入口。",
+    "step_08": "AdTransActivity 无可见界面；继续静态跳转至 com.app.assists.service.AccService，链路进入后台服务组件，无通知或遮罩。"
+  }
+}

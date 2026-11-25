@@ -1,0 +1,325 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_166__aed37f5c9a",
+  "label": "malicious",
+  "family_or_category": "basbanke",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "pine.coyzinhu.infee",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "c860415df59b",
+  "hook_node_ids": [
+    "82d3bfce0191",
+    "19de1e41d135"
+  ],
+  "nodes": [
+    {
+      "node_id": "c860415df59b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "pine.coyzinhu.infee",
+      "abilityName": "pine.coyzinhu.infee.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Max Cupons!!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at http://80.82.67.246/MaxCupons/ could not be loaded because:",
+        "net::ERR_INTERNET_DISCONNECTED",
+        "Ativar Cupom!!"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "224c4ccb2db8",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "pine.coyzinhu.infee",
+      "abilityName": "pine.coyzinhu.infee.main",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MAX CUPONS\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET\n\nAtive a permissão a seguir, para evitar compartilhamento do seu ticket.\n\nCaso você esteja em um estabelecimento você pode procurar um de nossos funcionários para auxiliar.\n\nConfigurações >  Acessibilidade > Max Cupons",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "82d3bfce0191",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Max Cupons",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "b9dc2e86db9c",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Max Cupons",
+        "Use Max Cupons",
+        "OPTIONS",
+        "Max Cupons shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Max Cupons\nAtivando o recurso você tem ativação do seu ticket. \n* Varios ticket por semana \n* Descontos de 20R$ até 190R$ \n* Em caso de duvidas procure nosso suporte \n* Aplicativo oficial da rede Max Cupons \n* Precisamos da permissão para evitar que seu ticket seja usado por outros clientes"
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "19de1e41d135",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Max Cupons to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "c860415df59b",
+      "to": "224c4ccb2db8",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] TextView text=\"Ativar Cupom!!\" (click) center=(539,1981))"
+    },
+    {
+      "from": "224c4ccb2db8",
+      "to": "82d3bfce0191",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"OK\" id=button1 (click) center=(887,1530))"
+    },
+    {
+      "from": "82d3bfce0191",
+      "to": "b9dc2e86db9c",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "b9dc2e86db9c",
+      "to": "19de1e41d135",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "82d3bfce0191",
+      "to": "224c4ccb2db8",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "224c4ccb2db8",
+      "to": "224c4ccb2db8",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "224c4ccb2db8",
+      "to": "224c4ccb2db8",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Max Cupons Use Max Cupons OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Max Cupons",
+        "Use Max Cupons",
+        "OPTIONS",
+        "Max Cupons shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Max Cupons\nAtivando o recurso você tem ativação do seu ticket. \n* Varios ticket por semana \n* Descontos de 20R$ até 190R$ \n* Em caso de duvidas procure nosso suporte \n* Aplicativo oficial da rede Max Cupons \n* Precisamos da permissão para evitar que seu ticket seja usado por outros clientes"
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Max Cupons to have full control of your",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Max Cupons to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "pine.coyzinhu.infee",
+      "top_activity": "pine.coyzinhu.infee.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "MAX CUPONS\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET\n\nAtive a permissão a seguir, para evitar compartilhamento do seu ticket.\n\nCaso você esteja em um estabelecimento você pode procurar um de nossos funcionários para auxiliar.\n\nConfigurações >  Acessibilidade > Max Cupons",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "pine.coyzinhu.infee",
+      "top_activity": "pine.coyzinhu.infee.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "MAX CUPONS\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET\n\nAtive a permissão a seguir, para evitar compartilhamento do seu ticket.\n\nCaso você esteja em um estabelecimento você pode procurar um de nossos funcionários para auxiliar.\n\nConfigurações >  Acessibilidade > Max Cupons",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "pine.coyzinhu.infee",
+      "top_activity": "pine.coyzinhu.infee.main",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "MAX CUPONS\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET\n\nAtive a permissão a seguir, para evitar compartilhamento do seu ticket.\n\nCaso você esteja em um estabelecimento você pode procurar um de nossos funcionários para auxiliar.\n\nConfigurações >  Acessibilidade > Max Cupons",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "basbanke__aed37f5c9a",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用以“Max Cupons”优惠券/门票为名，先显示远程IP网页加载失败，再以激活门票、防止门票被共享为由，用葡语弹窗引导用户前往系统无障碍设置；用户拒权后仍反复重弹同一诱导框，核心目的是骗取无障碍完全控制权限。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语/英语 -> “Max Cupons!! / Ativar Cupom!!”：最大优惠券！/ 激活优惠券！！（Step 1 主页面）",
+    "葡萄牙语 -> “VOCÊ PRECISA ATIVAR O RECURSO PARA VALIDAR SEU TICKET... Configurações > Acessibilidade > Max Cupons”：您需要激活该功能以验证门票；请开启以下权限，以免您的门票被共享；在店内可找员工协助；设置>无障碍>Max Cupons（Step 2 原生弹窗）",
+    "葡萄牙语 -> “Ativando o recurso você tem ativação do seu ticket... Precisamos da permissão para evitar que seu ticket seja usado por outros clientes”：开启功能即可激活门票；每周多张门票；20至190雷亚尔折扣；有问题找支持；官方应用；需要权限防止门票被他人使用（服务详情页）",
+    "英语/系统文案 -> “Allow Max Cupons to have full control of your device? ... View and control screen ... View and perform actions ... Allow / Deny”：允许Max Cupons完全控制设备？可查看并控制屏幕、查看并执行操作；允许/拒绝（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主页以Max Cupons优惠券为入口，网页报断网无法加载远程IP，仍留“Ativar Cupom!!”按钮；点击触发无障碍授权提示。",
+    "step_02": "原生葡语弹窗称必须激活无障碍功能以验证门票并防止门票被共享，指引前往设置>无障碍>Max Cupons；点击OK继续。",
+    "step_03": "跳转至系统无障碍列表，已下载应用中出现Max Cupons且状态为Off；探针捕获无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍列表页，无新增UI文本，通知为空、overlays=0，未见遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍停留系统无障碍列表页，无新增UI文本，通知为空、overlays=0，未见遮罩。",
+    "detail_1_service_detail_page": "服务详情页显示“Use Max Cupons”及快捷选项；葡语说明以多张门票、20至190雷亚尔折扣、防他人使用为由诱导开启无障碍。",
+    "detail_2_system_warning_dialog": "系统警告称将授予Max Cupons完全控制设备，可读取屏幕、覆盖应用并代操作，含Allow/Deny；本步仅检视未确认。",
+    "refusal_2.0s": "拒权返回2秒后，应用重弹同一葡语诱导框，称需激活无障碍以验证门票并防共享，再次给出OK；overlays=0。",
+    "refusal_10.5s": "拒权返回10.5秒后仍反复重弹同一葡语诱导框，持续要求开启无障碍验证门票；overlays=0，未提供取消退出。"
+  }
+}

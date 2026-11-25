@@ -1,0 +1,110 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_150__1556975717",
+  "label": "malicious",
+  "family_or_category": "Chameleon",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.because.toe",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "9af2d91754ca",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "9af2d91754ca",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.because.toe",
+      "abilityName": "cb0666d436d81.c7704d5c9ab2d.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GmailNew)"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 4,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Facebook)"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Chrome)"
+    },
+    {
+      "from": "9af2d91754ca",
+      "to": "9af2d91754ca",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Youtube)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Chameleon__1556975717",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用入口MainActivity未展示自身界面，而是反复退至系统桌面，并多次通过静态引导跳转至内部命名为GmailNew、Facebook、Chrome、Youtube、Play的Activity，呈现Chameleon式仿冒常用应用入口特征；全程无通知/遮罩，未实际测试授权或拒权。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "系统桌面非应用界面：应用列表、11月25日周三、-1°C多云、消息/Chrome/搜索；打开后仍停留桌面，无通知遮罩。",
+    "step_02": "系统桌面仍在前台：应用列表、日期天气、消息/Chrome/搜索；上滑后未进入应用，仍无通知与遮罩。",
+    "step_03": "系统桌面未变：应用列表、日期天气、消息/Chrome/搜索；静态跳转至内部GmailNew，画面仍桌面，无通知遮罩。",
+    "step_04": "系统桌面仍在前台：应用列表、日期天气、消息/Chrome/搜索；按包名重开未显示应用，仍无通知遮罩。",
+    "step_05": "系统桌面未变：应用列表、日期天气、消息/Chrome/搜索；静态跳转至内部Facebook，实际仍桌面，无通知遮罩。",
+    "step_06": "系统桌面未变：应用列表、日期天气、消息/Chrome/搜索；静态跳转至内部Chrome，实际仍桌面，无通知遮罩。",
+    "step_07": "系统桌面未变：应用列表、日期天气、消息/Chrome/搜索；静态跳转至内部Youtube，实际仍桌面，无通知遮罩。",
+    "step_08": "系统桌面未变：应用列表、日期天气、消息/Chrome/搜索；静态跳转至内部Play，实际仍桌面，无通知遮罩。"
+  }
+}

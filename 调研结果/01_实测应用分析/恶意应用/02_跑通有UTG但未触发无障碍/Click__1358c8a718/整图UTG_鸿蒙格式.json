@@ -1,0 +1,129 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_087__1358c8a718",
+  "label": "malicious",
+  "family_or_category": "Click",
+  "static_visibility": "clear",
+  "target_package": "com.qiblafinder.prayertime.hijricalendar",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "3d06f7d1365a",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "3d06f7d1365a",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Qibla to access this device’s location?",
+        "This app may want to access your location all the time, even when you’re not using the app. Allow in settings.",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b26acf28c113",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.qiblafinder.prayertime.hijricalendar",
+      "abilityName": "com.qiblacompass.ActivityLocation",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "Qibla",
+        "Please, choose the method of detection of your city",
+        "AUTOMATIC",
+        "MANUAL"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3d06f7d1365a",
+      "to": "b26acf28c113",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1243))"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"AUTOMATIC\" id=automatic (click) center=(540,1187))"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"MANUAL\" id=manual (click) center=(540,1452))"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 4,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(onActivityResult)"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 5,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SplashActivity)"
+    },
+    {
+      "from": "b26acf28c113",
+      "to": "b26acf28c113",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PackageInstallReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先请求系统定位授权，用户选择“使用应用时”后进入Qibla城市检测方式页；自动/手动选择均未带来可见页面变化，后续轨迹被静态探针连续跳转至指南针回调、启动页、包安装接收器与电池状态接收器，未见通知或遮罩。整体诱导话术较弱，风险集中在定位索取及安装包/系统状态监听线索。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “允许Qibla访问此设备的位置？”（Step 1 系统定位授权页）",
+    "英文 -> “该应用可能希望始终访问你的位置，即使你未使用应用；可在设置中允许。”（Step 1 系统定位授权页）",
+    "英文 -> “请选择检测你所在城市的方式”（Step 2-8 定位方式页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统定位授权页：请求允许Qibla访问位置，并称可能始终访问；本步点“使用应用时”授权前台定位，无通知或遮罩。",
+    "step_02": "应用城市检测页：提示选择城市检测方式，提供自动/手动；本步点击AUTOMATIC，未见跳转、通知横幅或遮罩。",
+    "step_03": "同一城市检测页：仍显示自动/手动选项；本步改点MANUAL，后续观察无明显效果，无通知或遮罩。",
+    "step_04": "界面仍为城市检测页且无可见变化；轨迹以静态跳转探针指向Qibla指南针Activity回调，无通知或遮罩。",
+    "step_05": "城市检测页未变；向上滑动查找搜索框或下一步，仍未出现新控件或跳转，无通知横幅与遮罩。",
+    "step_06": "页面仍停在城市检测页；探针静态跳转至应用启动页SplashActivity，无用户可见新界面、通知或遮罩。",
+    "step_07": "界面仍为城市检测页；轨迹探针跳转至包安装接收器PackageInstallReceiver，反映安装包事件监听线索，无可见UI或遮罩。",
+    "step_08": "界面仍为城市检测页；探针跳转至BatteryOkayReceiver电池状态接收器，反映系统状态监听线索，无可见UI或通知。"
+  }
+}

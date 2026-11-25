@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用借“手电筒”名义先引导开启电池后台豁免，再连续索取相机、定位、麦克风、联系人和电话权限，随后静态跳转至无障碍服务及包/屏幕接收器，呈现AhMyth式远控与持久化特征。",
+  "observed_lure_rhetoric_zh": [
+    "Let app always run in background?（英文）-> 让应用始终在后台运行？（Step 1 电池优化豁免页）",
+    "Allowing Flashlight to always run in the background may reduce battery life...（英文）-> 允许“手电筒”始终后台运行可能缩短电池续航，可稍后在设置中更改（Step 1 电池优化豁免页）",
+    "Allow Flashlight to take pictures and record video?（英文）-> 允许“手电筒”拍照和录像？（Step 2 相机权限页）",
+    "Allow Flashlight to access this device’s location?（英文）-> 允许“手电筒”访问本机位置？（Step 3 定位权限页）",
+    "Allow Flashlight to record audio?（英文）-> 允许“手电筒”录制音频？（Step 4 录音权限页）",
+    "Allow Flashlight to access your contacts?（英文）-> 允许“手电筒”访问联系人？（Step 5 联系人权限页）",
+    "Allow Flashlight to make and manage phone calls?（英文）-> 允许“手电筒”拨打电话和管理通话？（Step 6-8 电话权限页）"
+  ],
+  "frame_captions": {
+    "step_01": "电池优化豁免页，英文询问是否让“手电筒”始终后台运行；有vendng空通知、无遮罩，本步点Allow。",
+    "step_02": "相机权限页，英文请求允许“手电筒”拍照和录像；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_03": "定位权限页，英文请求允许“手电筒”访问本机位置；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_04": "录音权限页，英文请求允许“手电筒”录制音频；有vendng空通知、无遮罩，本步点“仅使用时允许”。",
+    "step_05": "联系人权限页，英文请求允许“手电筒”访问联系人；有vendng空通知、无遮罩，本步点Allow。",
+    "step_06": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转无障碍服务。",
+    "step_07": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转包监听接收器。",
+    "step_08": "电话权限页，英文请求允许“手电筒”拨打电话和管理通话；有vendng空通知、无遮罩，未点按钮，静态跳转屏幕接收器。"
+  }
+}

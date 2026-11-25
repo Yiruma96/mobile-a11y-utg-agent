@@ -1,0 +1,13 @@
+flowchart TD
+    N_d2eb91bc1864["Step 1: ReviewPermissionsActivity\nChoose what to allow G"]
+    N_214cddba66dc["Step 2: NexusLauncherActivity\nGoogle Play Service"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_9416606e703b["Step 4: Settings\nSearch settings"]
+    N_24ef46e521fc["Step 5: Settings [HOOK_A11Y_SETTINGS]\nSound"]
+    N_d2eb91bc1864 -->|"ui_click: click([31] Button text='Continue"| N_214cddba66dc
+    N_214cddba66dc -->|"ui_click: click([3] Button text='OK' id=bu"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_9416606e703b
+    N_9416606e703b -->|"ui_swipe: swipe([540, 1800])"| N_24ef46e521fc
+    N_24ef46e521fc -->|"refusal_probe: Back_refuse"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1159e24777c9

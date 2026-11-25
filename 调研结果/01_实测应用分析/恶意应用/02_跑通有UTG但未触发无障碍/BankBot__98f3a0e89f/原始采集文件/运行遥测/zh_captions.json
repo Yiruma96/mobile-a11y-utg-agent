@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用以“Willhaben”名义请求电话/短信权限，经旧版Android兼容提示进入仿冒登录WebView，但因网络断开无法加载；随后通过静态Activity跳转在空白页间推进至推送接收器，未形成正常取消或退出闭环。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow Willhaben to access -> 选择允许 Willhaben 访问的内容（Step1 权限页）",
+    "Phone / make and manage phone calls -> 电话/拨打和管理电话（Step1 权限项）",
+    "SMS / send and view SMS messages -> 短信/发送和查看短信（Step1 权限项）",
+    "This app was built for an older version of Android and may not work properly... -> 该应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者（Step2 兼容警告）",
+    "Willhaben -> 仿冒品牌名，用于包装权限请求与登录流程（Step1-6）",
+    "http://www-willhaben.com/willhaben/login_web.php?id=... -> 仿冒 Willhaben 登录地址（Step4-6 离线错误页）",
+    "Webpage not available / net::ERR_INTERNET_DISCONNECTED -> 网页不可用/网络已断开（Step4-6）",
+    "Your data isn’t backed up / Add a backup account now -> 你的数据未备份/立即添加备份账户（系统通知横幅，非应用界面）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限页以“Willhaben”名义请求电话、短信权限；点“Continue”继续，顶部有数据未备份通知。",
+    "step_02": "兼容警告页称 Willhaben 为旧版 Android 构建、可能异常；点“OK”关闭并继续，顶部有未备份通知。",
+    "step_03": "空白 ZbActivity 页，暂无可见文案；短暂等待后台线程弹出伪造 Google Play 服务停止对话框。",
+    "step_04": "WebView 离线错误页，仿冒 Willhaben 登录网址因网络断开无法加载；继续等待伪造 Google Play 服务弹窗。",
+    "step_05": "同一 WebView 离线错误页仍停留；按系统返回键试图退出失败页面，仿冒登录链接未加载。",
+    "step_06": "仍为离线错误页且无可见操作；执行静态 Activity 跳转回 .wb.ZbActivity，继续尝试推进流程。",
+    "step_07": "空白 ZbActivity 过渡页，无可见文案；经静态引导跳转至 .ui.BomposeSActivity，维持流程推进。",
+    "step_08": "BomposeSActivity 空白页，无可见界面内容；再静态跳转至 .sm.receiver.PushSRec，疑似推送接收组件。"
+  }
+}

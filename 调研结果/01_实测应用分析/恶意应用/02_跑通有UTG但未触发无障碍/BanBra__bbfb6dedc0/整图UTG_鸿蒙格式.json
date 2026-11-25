@@ -1,0 +1,192 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_041__bbfb6dedc0",
+  "label": "malicious",
+  "family_or_category": "BanBra",
+  "static_visibility": "clear",
+  "target_package": "com.secure.protect.world",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "0371201ed897",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "0371201ed897",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$WriteSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Modify system settings",
+        "Search",
+        "More options",
+        "Camera",
+        "Allowed",
+        "Contacts",
+        "DEFENSOR ID",
+        "Not allowed",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ffcd748d29dd",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "DEFENSOR ID",
+        "Not allowed",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "64f3d71e057b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search settings",
+        "DEFENSOR ID",
+        "1.4",
+        "Allow display over other apps",
+        "Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen."
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "75af34fee5f3",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "DEFENSOR ID",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0371201ed897",
+      "to": "ffcd748d29dd",
+      "step": 1,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "ffcd748d29dd",
+      "to": "ffcd748d29dd",
+      "step": 2,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "ffcd748d29dd",
+      "to": "64f3d71e057b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([8] LinearLayout desc=\"DEFENSOR ID\" (click) center=(540,537))"
+    },
+    {
+      "from": "64f3d71e057b",
+      "to": "64f3d71e057b",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "64f3d71e057b",
+      "to": "75af34fee5f3",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "75af34fee5f3",
+      "to": "75af34fee5f3",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AppMeasurementInstallReferrerReceiver)"
+    },
+    {
+      "from": "75af34fee5f3",
+      "to": "75af34fee5f3",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FirebaseInstanceIdReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用动态轨迹主要停留在系统设置：先打开“修改系统设置”，再进入“显示在其他应用上层”并为 DEFENSOR ID 开启悬浮窗权限；后续仅出现 Google 测量/Firebase 组件的静态跳转，未采集到应用自身诱导文案或拒权结果。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "安卓“修改系统设置”授权列表页，列出 DEFENSOR ID 等应用及允许状态；本步发现目标不是无障碍提示，点击返回。",
+    "step_02": "安卓“显示在其他应用上层”总列表，显示 DEFENSOR ID 等应用及允许状态；仍非目标页，本步按返回键退出。",
+    "step_03": "仍在“显示在其他应用上层”列表；本步点击 DEFENSOR ID 条目，进入该应用的悬浮窗单独授权页。",
+    "step_04": "DEFENSOR ID 1.4 的悬浮窗单独授权页，含英文开关与说明；本步点击未勾选开关开启“允许显示在其他应用上层”。",
+    "step_05": "同一悬浮窗授权页，开关已开启；系统提示该应用可覆盖屏幕并读取点击位置，本步按返回键回到列表。",
+    "step_06": "返回“显示在其他应用上层”列表，界面无新增授权；静态引导尝试跳转 Google 测量安装来源组件，未出现应用诱导页。",
+    "step_07": "界面仍为悬浮窗总列表，DEFENSOR ID 等状态未变；静态引导转向 Firebase 消息接收器，未观察到实际页面变化。",
+    "step_08": "仍停留在悬浮窗总列表；静态引导再跳 Firebase 实例 ID 服务，仅组件级探针，无可见界面或诱导话术。"
+  }
+}

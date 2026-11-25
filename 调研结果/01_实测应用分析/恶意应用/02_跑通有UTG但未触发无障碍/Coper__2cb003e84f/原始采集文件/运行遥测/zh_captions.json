@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该应用先诱导用户为Google Chrome授予电话和短信权限，再通过土耳其语“启用服务/Google Chrome”通知横幅反复诱导点击，并多次展示“启用无障碍服务、找到Google Chrome并打开开关”的指引页，试图引导开启无障碍权限，呈现Coper典型的权限滥用与通知诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "Allow Google Chrome to make and manage phone calls? -> 允许Google Chrome拨打和管理电话（Step 1）",
+    "Allow Google Chrome to send and view SMS messages? -> 允许Google Chrome发送和查看短信（Step 2）",
+    "Servisi etkinleştirin -> 启用服务（Step 3/Step 7/Step 8通知横幅）",
+    "Enable Accessibility Service -> 启用无障碍服务（Step 6/Step 7/Step 8）",
+    "Find 'Google Chrome' -> 找到“Google Chrome”（Step 6/Step 7/Step 8）",
+    "Set switch ON -> 打开开关（Step 6/Step 7/Step 8）",
+    "Open Settings -> 打开设置（Step 6/Step 7/Step 8）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限弹窗请求允许Google Chrome拨打/管理电话，仅“允许/拒绝”；探针点击“允许”放行，顶部另有Google备份通知。",
+    "step_02": "第二个系统权限弹窗请求Google Chrome收发短信，继续点击“允许”放行；顶部Google备份通知仍在。",
+    "step_03": "桌面/应用列表页顶部出现com.trybirdpene通知“Servisi etkinleştirin/启用服务”，副文本Google Chrome；点击该横幅尝试触发无障碍引导。",
+    "step_04": "Google日历欢迎页显示“Make the most of every day/充分利用每一天”，但恶意通知横幅仍置顶；探针再次点击顶部横幅，未进入日历介绍。",
+    "step_05": "应用内p084d页面，UI文本未捕获，疑为无障碍前置引导空白页；点击屏幕中部推进，顶部仅显示Google备份通知。",
+    "step_06": "应用内引导页显示“Enable Accessibility Service/启用无障碍服务”，指示找到“Google Chrome”并打开开关、点“Open Settings/打开设置”；探针静态跳转p098p。",
+    "step_07": "同一无障碍引导页再次出现，顶部新增“Servisi etkinleştirin/启用服务”通知；探针静态跳转p067f，持续施压开启无障碍。",
+    "step_08": "同一无障碍指引页重复显示“启用服务/找到Google Chrome/打开开关”；恶意与备份通知并存，探针静态跳转p054t。"
+  }
+}

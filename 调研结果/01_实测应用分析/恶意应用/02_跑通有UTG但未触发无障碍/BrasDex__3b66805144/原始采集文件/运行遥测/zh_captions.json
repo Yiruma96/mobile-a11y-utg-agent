@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "该应用动态轨迹从系统桌面与应用抽屉的查找开始，未真正展示 com.ourselves.resort 的业务页面，随后通过静态引导连续尝试跳转 AutoJS 脚本执行、empower 回调、com.price.sixty.perhaps 及自启动接收器。全程无通知横幅、遮罩或授权弹窗，未观察到授权/拒权结果（not_tested）。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "系统桌面/启动器，显示天气、日期、信息、Chrome、搜索等英文系统标签；点击“应用列表”未打开抽屉，无横幅或遮罩。",
+    "step_02": "仍在系统桌面/启动器，英文天气、日期与信息、Chrome、搜索标签不变；上滑尝试打开应用抽屉，仍无通知横幅或遮罩。",
+    "step_03": "应用抽屉展开，显示日历、相机、Chrome、时钟、联系人等英文系统应用名；上滑翻页找目标应用，无通知横幅或遮罩。",
+    "step_04": "应用抽屉仍显示日历、相机、Chrome、时钟、联系人等系统应用；再次上滑翻页寻找目标应用，未出现通知横幅或遮罩。",
+    "step_05": "界面仍停在应用抽屉（日历、相机、Chrome等）；未显示目标应用，探针转为静态跳转ScriptExecuteActivity，页面无通知/遮罩。",
+    "step_06": "仍为应用抽屉系统应用列表；静态探针尝试跳转empowerCallback.returnMyActivity，未见实际页面变化，无通知横幅或遮罩。",
+    "step_07": "仍停留应用抽屉（日历、相机、Chrome等系统应用）；静态探针改为跳转com.price.sixty.perhaps，未显示新页面，无通知或遮罩。",
+    "step_08": "仍为应用抽屉系统应用列表；静态探针尝试跳转AutoBootReceiver（自启动接收器），界面未变化，无通知横幅或遮罩。"
+  }
+}

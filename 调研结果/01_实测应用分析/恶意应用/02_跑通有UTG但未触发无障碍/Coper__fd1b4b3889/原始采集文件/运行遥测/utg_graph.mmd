@@ -1,0 +1,13 @@
+flowchart TD
+    N_706b7f66d366["Step 1: GrantPermissionsActivity\nAllow Chrome to make a"]
+    N_e5d822d510c9["Step 2: GrantPermissionsActivity\nAllow Chrome to send a"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_432c587a942d["Step 4: FirstRunActivity\nWelcome to Chrome"]
+    N_8f5097ae6ffd["Step 8: p041j\n"]
+    N_706b7f66d366 -->|"ui_click: click([4] Button text='Allow' id"| N_e5d822d510c9
+    N_e5d822d510c9 -->|"ui_click: click([4] Button text='Allow' id"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([7] TextView text='Chrome'"| N_432c587a942d
+    N_432c587a942d -->|"ui_system_button: system_button(Home)"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(p075f)"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(p045l)"| N_8f5097ae6ffd

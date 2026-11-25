@@ -1,0 +1,170 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_091__c91327f7e4",
+  "label": "malicious",
+  "family_or_category": "BoostClicker",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.xolo.qifyf",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "a38b3f4921fa",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow ConfigAPKs to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Phone",
+        "make and manage phone calls",
+        "Contacts",
+        "access your contacts",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "e72f4d3e1620",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.xolo.qifyf",
+      "abilityName": "com.app.assists.AdTransActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ConfigAPKs",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "fd2ea38b27e8",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.xolo.qifyf",
+      "abilityName": "com.app.assists.AdTransActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "a38b3f4921fa",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AdTransActivity)"
+    },
+    {
+      "from": "a38b3f4921fa",
+      "to": "e72f4d3e1620",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "e72f4d3e1620",
+      "to": "fd2ea38b27e8",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "fd2ea38b27e8",
+      "to": "fd2ea38b27e8",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TransActivity)"
+    },
+    {
+      "from": "fd2ea38b27e8",
+      "to": "fd2ea38b27e8",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "BoostClicker__c91327f7e4",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "目标应用无桌面图标，探针从启动器静态直达 AdTransActivity；权限审核页打包索取文件媒体、电话、联系人并点击 Continue，随后兼容性警告点 OK，再跳转 TransActivity、MReceiver、AccService，未见拒权。核心特征是无图标隐蔽入口、权限聚合索取与组件链过渡。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 ConfigAPKs 访问哪些权限（系统权限审核页）",
+    "英文 -> 文件与媒体：访问设备上的照片、媒体和文件（系统权限审核页）",
+    "英文 -> 电话：拨打和管理电话（系统权限审核页）",
+    "英文 -> 联系人：访问联系人（系统权限审核页）",
+    "英文 -> 该应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（兼容性警告弹窗）",
+    "英文 -> 应用显示名为 ConfigAPKs，用于权限审核与兼容性提示（权限页/弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Nexus 启动器桌面：显示应用列表、日期天气和搜索入口；尝试直接打开目标包但未见图标，无通知或遮罩。",
+    "step_02": "仍为同一启动器桌面：目标应用无桌面图标，直接启动未成功；页面无通知、无遮罩，外文入口均为系统常规元素。",
+    "step_03": "启动器未变，探针静态跳转至 com.app.assists.AdTransActivity；无可见诱导文案，属绕过桌面图标的组件直达。",
+    "step_04": "系统权限审核页：英文提示选择允许 ConfigAPKs 访问，列出文件媒体、电话、联系人；本步点击 Continue，仍保留 Cancel。",
+    "step_05": "应用内兼容性警告：英文称 ConfigAPKs 为旧版 Android 构建、可能无法正常运行；点击 OK 关闭后继续跳转。",
+    "step_06": "AdTransActivity 空白过渡页：无文案、通知或遮罩；探针静态跳转至 com.app.assists.TransActivity，继续组件链。",
+    "step_07": "AdTransActivity 无可见 UI；探针静态跳转至 MReceiver 接收器，无通知、无遮罩，也无取消或拒绝入口。",
+    "step_08": "AdTransActivity 无可见界面；继续静态跳转至 com.app.assists.service.AccService，链路进入后台服务组件，无通知或遮罩。"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_156__3b66805144",
+  "label": "malicious",
+  "family_or_category": "BrasDex",
+  "static_visibility": "clear",
+  "target_package": "com.ourselves.resort",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1200])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ScriptExecuteActivity)"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(returnMyActivity)"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(perhaps)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "BrasDex__3b66805144",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用动态轨迹从系统桌面与应用抽屉的查找开始，未真正展示 com.ourselves.resort 的业务页面，随后通过静态引导连续尝试跳转 AutoJS 脚本执行、empower 回调、com.price.sixty.perhaps 及自启动接收器。全程无通知横幅、遮罩或授权弹窗，未观察到授权/拒权结果（not_tested）。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "系统桌面/启动器，显示天气、日期、信息、Chrome、搜索等英文系统标签；点击“应用列表”未打开抽屉，无横幅或遮罩。",
+    "step_02": "仍在系统桌面/启动器，英文天气、日期与信息、Chrome、搜索标签不变；上滑尝试打开应用抽屉，仍无通知横幅或遮罩。",
+    "step_03": "应用抽屉展开，显示日历、相机、Chrome、时钟、联系人等英文系统应用名；上滑翻页找目标应用，无通知横幅或遮罩。",
+    "step_04": "应用抽屉仍显示日历、相机、Chrome、时钟、联系人等系统应用；再次上滑翻页寻找目标应用，未出现通知横幅或遮罩。",
+    "step_05": "界面仍停在应用抽屉（日历、相机、Chrome等）；未显示目标应用，探针转为静态跳转ScriptExecuteActivity，页面无通知/遮罩。",
+    "step_06": "仍为应用抽屉系统应用列表；静态探针尝试跳转empowerCallback.returnMyActivity，未见实际页面变化，无通知横幅或遮罩。",
+    "step_07": "仍停留应用抽屉（日历、相机、Chrome等系统应用）；静态探针改为跳转com.price.sixty.perhaps，未显示新页面，无通知或遮罩。",
+    "step_08": "仍为应用抽屉系统应用列表；静态探针尝试跳转AutoBootReceiver（自启动接收器），界面未变化，无通知横幅或遮罩。"
+  }
+}

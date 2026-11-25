@@ -1,0 +1,62 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_011__1bdb7b83f3",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "melt.pull.leg",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "ee7ad35b4aba",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "ee7ad35b4aba",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "melt.pull.leg",
+      "abilityName": "spin.window.mobile.cimtbvqevr.nwv",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Erişilebilirlik",
+        "Accessibility Service",
+        "DOWNLOADED SERVICES",
+        "Select to speak",
+        "OFF",
+        "Aktif Ediniz",
+        "Switch Access",
+        "TalkBack",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Magnification"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "BankBot__1bdb7b83f3",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用伪装为“Asistan/助手”，通过 Cordova WebView 静默跳转至系统无障碍设置页，借土语“Aktif Ediniz”诱导用户为恶意服务开启无障碍权限；本次未出现通知或遮罩，动态探针在该授权页终止，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “请激活/启用”（Step 1 系统无障碍设置页的 Aktif Ediniz 提示）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统无障碍设置页，土语“Aktif Ediniz”即“请激活”，以开启无障碍服务诱导授权；无通知/遮罩，页面终止。"
+  }
+}

@@ -1,0 +1,12 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_6d86138fd23e["Step 4: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_29332d41d2e2["Step 5: dibd\nSystemSecurityServices"]
+    N_e6d4d86d2586["Step 6: dibd\nSystemSecurityServices"]
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(dibd)"| N_6d86138fd23e
+    N_6d86138fd23e -->|"ui_click: click([15] Button text='Continue"| N_29332d41d2e2
+    N_29332d41d2e2 -->|"ui_click: click([3] Button text='OK' id=bu"| N_e6d4d86d2586
+    N_e6d4d86d2586 -->|"static_guided_activity_jump: am_start(lwwny)"| N_e6d4d86d2586
+    N_e6d4d86d2586 -->|"static_guided_activity_jump: am_start(AccService)"| N_e6d4d86d2586

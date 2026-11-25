@@ -1,0 +1,11 @@
+{
+  "app_chain_summary_zh": "应用启动后进入隐藏 Activity HerwEHxXO，页面无可见应用内 UI，仅伴随 Google 系统备份通知；等待刷新未显示无障碍授权弹窗，随后在疑似无障碍服务提示/隐藏 Activity 触发点终止，呈现隐藏入口与授权诱导痕迹。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “您的数据尚未备份”（系统通知横幅，Step 1/2）",
+    "英文 -> “立即添加备份账户”（系统通知横幅，Step 1/2）"
+  ],
+  "frame_captions": {
+    "step_01": "进入 HerwEHxXO 空白页，无应用内文字；仅见系统通知“数据未备份/添加备份账户”，等待刷新仍未出现授权提示。",
+    "step_02": "仍为同一空白 Activity；未见应用内遮罩，探针在疑似无障碍服务授权节点终止，并记录隐藏 Activity 触发。"
+  }
+}

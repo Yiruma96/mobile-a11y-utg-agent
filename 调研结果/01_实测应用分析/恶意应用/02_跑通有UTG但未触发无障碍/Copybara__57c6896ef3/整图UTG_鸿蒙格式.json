@@ -1,0 +1,110 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_139__57c6896ef3",
+  "label": "malicious",
+  "family_or_category": "Copybara",
+  "static_visibility": "clear",
+  "target_package": "com.frmsena.mwhsgxz",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(service2$service2_BR)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AdminReceiver2)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(service1$service1_BR)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(notificationservice$notificationservice_BR)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Copybara__57c6896ef3",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面入口启动后始终未进入 Copybara 页面：按包名启动、点击应用列表及多次静态组件跳转均停留在 NexusLauncher，另见反模拟器提示“App can't work on Emulators”。未观察到实际诱导界面、通知横幅、遮罩或授权/拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “应用无法在模拟器上运行”（Step 2 启动重试时出现；属反模拟器/环境检测提示，非用户诱导话术）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Nexus 桌面，含应用列表、11月25日星期三、信息、Chrome、搜索/语音搜索；按包名启动 Copybara 未切换页面，仍无通知或遮罩。",
+    "step_02": "仍为 Nexus 桌面；启动后疑似提示“App can't work on Emulators”（应用无法在模拟器运行），重试后仍未进入目标页，无横幅/遮罩。",
+    "step_03": "仍为 Nexus 桌面，显示应用列表、日期、信息、Chrome、搜索等；静态跳转至 service2_BR 后台组件未加载新界面，无通知/遮罩。",
+    "step_04": "仍为 Nexus 桌面；点击“Apps list（应用列表）”后未见抽屉或目标页变化，仍显示日期、信息、Chrome、搜索等，无通知/遮罩。",
+    "step_05": "仍为 Nexus 桌面；静态跳转至 AdminReceiver2 设备管理组件未呈现页面，桌面日期、信息、Chrome、搜索不变，无通知/遮罩。",
+    "step_06": "仍为 Nexus 桌面；静态跳转至 service1_BR 后台服务未切换界面，应用列表、日期、信息、Chrome、搜索保持原样，无通知/遮罩。",
+    "step_07": "仍为 Nexus 桌面；静态跳转至 notificationservice_BR 未显示通知页，界面仍为应用列表、日期、信息、Chrome、搜索，无横幅/遮罩。",
+    "step_08": "仍为 Nexus 桌面；静态跳转至 startatbootreceiver 开机接收器未加载界面，仍见应用列表、日期、信息、Chrome、搜索，无通知/遮罩。"
+  }
+}

@@ -1,0 +1,11 @@
+flowchart TD
+    N_c0d0242ed248["Step 1: main\n"]
+    N_1342ebc78ee2["Step 2: main\nNo internet"]
+    N_cb9eaf1f96d1["Step 3: main\nPv3qrDFdzRl0fhmsf83FqG"]
+    N_c0d0242ed248 -->|"ui_click: click([540, 1560])"| N_1342ebc78ee2
+    N_1342ebc78ee2 -->|"ui_click: click([3] Button text='OK' id=bu"| N_cb9eaf1f96d1
+    N_cb9eaf1f96d1 -->|"ui_click: click([10] Button text='Continue"| N_1342ebc78ee2
+    N_1342ebc78ee2 -->|"ui_click: click([3] Button text='OK' id=bu"| N_1342ebc78ee2
+    N_1342ebc78ee2 -->|"ui_system_button: system_button(Back)"| N_cb9eaf1f96d1
+    N_cb9eaf1f96d1 -->|"static_guided_activity_jump: am_start(StartActivity)"| N_cb9eaf1f96d1
+    N_cb9eaf1f96d1 -->|"static_guided_activity_jump: am_start(service2$service2_BR)"| N_cb9eaf1f96d1

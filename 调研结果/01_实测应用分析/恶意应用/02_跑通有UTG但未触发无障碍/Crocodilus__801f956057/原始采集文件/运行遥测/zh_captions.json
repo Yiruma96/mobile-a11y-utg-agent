@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用从桌面启动器查找“IKO Lokata”，经 Google 搜索页无数据提示后静态跳转至 unrelated.hamburger 随机 Activity，最终弹出混合土耳其语/英语的无障碍权限诱导页；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “移动数据已关闭/无数据连接，建议开启移动数据或 Wi-Fi”（Step 6/7 Google 搜索页）",
+    "土耳其语 -> “无障碍权限”（Step 8 权限页）",
+    "英文 -> “需要无障碍权限”（Step 8 权限页）",
+    "英文 -> “需授予无障碍权限应用才能正常运行”（Step 8 权限页）",
+    "英文 -> “启用无障碍”（Step 8 权限页）",
+    "英文 -> “可在已安装应用或无障碍设置中找到该权限”（Step 8 权限页）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面启动器主页，显示 Apps list 与 Messages、Chrome 等图标；代理点击“Apps list”寻找目标应用，未跳转。",
+    "step_02": "仍在桌面主页，应用列表入口无响应；代理上滑屏幕尝试打开应用抽屉，界面未变化。",
+    "step_03": "应用抽屉网格显示 Calendar、Camera、Chrome 等图标；代理点击顶部 Search 搜索框，准备查找目标应用。",
+    "step_04": "启动器搜索页显示“Search apps, web, and more…”和 Voice Search；代理输入疑似应用名 IKO Lokata。",
+    "step_05": "搜索框已填入 IKO Lokata 并显示 Clear；代理按 Enter 执行启动器搜索，等待结果跳转。",
+    "step_06": "跳转 Google 搜索页，显示 Mobile data is off/无数据连接及 Turn on mobile data、Try again；随后静态跳转。",
+    "step_07": "页面外观仍是 Google 搜索页与无数据提示，但包名已变为 unrelated.hamburger，静态跳转进入随机命名 Activity。",
+    "step_08": "弹出无障碍权限页，土耳其语 Erişilebilirlik İzni 混英文说明，要求 Enable Accessibility；未见取消项，未记录授权结果。"
+  }
+}

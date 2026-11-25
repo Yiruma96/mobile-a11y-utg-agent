@@ -1,0 +1,148 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_046__6406d67b9a",
+  "label": "malicious",
+  "family_or_category": "Coper",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.nightcommonwz",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "432c587a942d",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.chrome",
+      "abilityName": "org.chromium.chrome.browser.firstrun.FirstRunActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome to Chrome",
+        "By using Chrome, you agree to the Google Terms of Service, and the Google Chrome and Chrome OS Additional Terms of Service.",
+        "Help make Chrome better by sending usage statistics and crash reports to Google.",
+        "Accept & continue"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "378eef60b92c",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Google Chrome to send and view SMS messages?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "432c587a942d",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] TextView text=\"Chrome\" (click) center=(741,1804))"
+    },
+    {
+      "from": "432c587a942d",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Home)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(p034a)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "378eef60b92c",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(p090b)"
+    },
+    {
+      "from": "378eef60b92c",
+      "to": "378eef60b92c",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(p066z)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Coper__6406d67b9a",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本（com.nightcommonwz，伪装名 Google Chrome）无桌面启动图标，探针只能从桌面反复按包名/静态跳转拉起；链路最终落在借用“Google Chrome”名义的系统短信权限弹窗上，反复索要收发与查看短信的高危权限。全程未见自有业务界面，属以正版 Chrome 名义掩护的权限骗取型链路，最终未完成允许/拒绝测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “允许 Google Chrome 发送和查看短信？”（Step 7/8 系统权限弹窗，应用名被伪造成 Google Chrome，仅“允许/拒绝”两项、无取消键）",
+    "英文 -> “欢迎使用 Chrome……接受并继续”（Step 2 真实 Chrome 首次运行页，为样本借用的正版外壳话术，非样本自身诱导）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面主页，可见 Chrome、信息等图标；探针点击 Chrome 图标，误启正版 Chrome，说明恶意包伪装同名但无启动图标。",
+    "step_02": "正版 Chrome 首次运行欢迎页，提示接受服务条款并发送使用统计；探针按 Home 键退出，确认非目标样本界面。",
+    "step_03": "回到桌面主页，仍无恶意应用图标；探针改为按包名直接启动其主 Activity，画面未发生变化。",
+    "step_04": "仍停留桌面，第二次尝试按包名拉起恶意主入口；界面无任何响应，说明其入口被隐藏或延迟加载。",
+    "step_05": "桌面静止画面，探针改用静态引导跳转回退至 .p034a 组件；UI 无变化，无通知横幅、无遮罩。",
+    "step_06": "桌面静止画面，再次静态跳转至 .p090b；前台仍无落地界面，跳转疑似在后台静默完成。",
+    "step_07": "系统权限弹窗，以“Google Chrome”名义请求发送与查看短信；仅有允许/拒绝，无取消键，属高危短信权限诱导。",
+    "step_08": "同一短信权限弹窗重复出现，探针再次以静态跳转触发；反复索权强化诱导，仍无取消或暂不选项。"
+  }
+}

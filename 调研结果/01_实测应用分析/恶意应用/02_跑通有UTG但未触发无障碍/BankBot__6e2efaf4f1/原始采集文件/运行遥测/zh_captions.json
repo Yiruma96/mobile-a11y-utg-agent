@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用以“Jewels Star Classic”游戏为名，先经系统权限复核页请求文件媒体和电话权限并点 Continue，再进入 Unity 启动/主菜单等待延迟的假“Google Service”弹窗；轨迹未捕获该弹窗，后续以静态引导跳转 MyAccessibilityService、Unity、InstallReferrer 与 Firebase 接收器等组件，呈现 BankBot 常见的无障碍服务与后台组件探测特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许 Jewels Star Classic 访问的内容；文件与媒体：访问设备上的照片、媒体和文件；电话：拨打和管理电话”（Step 1 权限复核页）",
+    "英语 -> “此应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容警告弹窗）",
+    "英语 -> “String (Your data isn’t backed up) / String (Add a backup account now)”，核心意译“你的数据未备份/立即添加备份账户”（各步顶部 Google 通知横幅）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，列出文件媒体与电话权限；文案意译“选择允许 Jewels Star Classic 访问”；点 Continue 继续，顶部 Google 未备份通知，无遮罩。",
+    "step_02": "旧版 Android 兼容警告弹窗：“此应用为旧版构建，可能无法正常运行”；点 OK 关闭进入 Unity 页，顶部 Google 未备份通知，无遮罩。",
+    "step_03": "Unity 加载页，无可见文字；等待加载完成及延迟假“Google Service”弹窗，顶部 Google 未备份通知，无遮罩。",
+    "step_04": "Unity 主菜单已显示但无文字；继续等待延迟假“Google Service”弹窗，未见授权框，顶部 Google 未备份通知，无遮罩。",
+    "step_05": "仍为 UnityPlayerActivity 且无文字；静态引导跳转“.MyAccessibilityService”探针，顶部 Google 未备份通知，无遮罩。",
+    "step_06": "仍为 UnityPlayerActivity 且无文字；静态引导回跳 UnityPlayerActivity，未见授权/诱导弹窗，顶部 Google 未备份通知，无遮罩。",
+    "step_07": "界面无可见文字；静态引导跳转 AppMeasurementInstallReferrer 组件探针，未见诱导话术，顶部 Google 未备份通知，无遮罩。",
+    "step_08": "仍无可见界面文字；静态引导跳转 FirebaseInstanceIdReceiver 组件探针，未见授权/诱导弹窗，顶部 Google 未备份通知，无遮罩。"
+  }
+}

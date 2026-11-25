@@ -1,0 +1,14 @@
+flowchart TD
+    N_695b574ed9aa["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_4f7844dd185f["Step 2: GrantPermissionsActivity\nAllow Flashlight to ta"]
+    N_bde70348a339["Step 3: GrantPermissionsActivity\nAllow Flashlight to ac"]
+    N_e3921a4edbcc["Step 4: GrantPermissionsActivity\nAllow Flashlight to re"]
+    N_871d9f66586d["Step 5: GrantPermissionsActivity\nAllow Flashlight to ac"]
+    N_5c0c0d9dda53["Step 6: GrantPermissionsActivity\nAllow Flashlight to ma"]
+    N_695b574ed9aa -->|"ui_click: click([4] Button text='Allow' id"| N_4f7844dd185f
+    N_4f7844dd185f -->|"ui_click: click([4] Button text='While usi"| N_bde70348a339
+    N_bde70348a339 -->|"ui_click: click([4] Button text='While usi"| N_e3921a4edbcc
+    N_e3921a4edbcc -->|"ui_click: click([4] Button text='While usi"| N_871d9f66586d
+    N_871d9f66586d -->|"ui_click: click([4] Button text='Allow' id"| N_5c0c0d9dda53
+    N_5c0c0d9dda53 -->|"static_guided_activity_jump: am_start(AppAccessibilityService"| N_5c0c0d9dda53
+    N_5c0c0d9dda53 -->|"static_guided_activity_jump: am_start(PackageReceiver)"| N_5c0c0d9dda53

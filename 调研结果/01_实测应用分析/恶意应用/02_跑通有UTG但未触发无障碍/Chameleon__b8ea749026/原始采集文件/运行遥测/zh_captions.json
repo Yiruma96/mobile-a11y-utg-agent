@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "该应用以MainActivity承载假CRM WebView登录页，用“Hey, Login Now”“Next”“Forgot password?”及EMP1001占位员工ID诱导提交；随后静态跳转至MyJavaScriptInterface/WebView主活动，未触发系统授权或拒权（not_tested），元数据标记malicious/Chameleon。",
+  "observed_lure_rhetoric_zh": [
+    "Hey, Login Now -> 嘿，立即登录（假CRM登录页，Step 2-5、7-8）",
+    "Next -> 下一步（假CRM登录页，Step 2-5、7）",
+    "Forgot password? -> 忘记密码？（假CRM登录页，Step 4-5、7-8）"
+  ],
+  "frame_captions": {
+    "step_01": "假CRM WebView登录页，界面无可见文案；点击坐标[241,1256]疑似“员工ID”输入框，无通知或遮罩。",
+    "step_02": "同一假CRM登录页显示“Hey, Login Now（嘿，立即登录）”“Next（下一步）”；向聚焦输入框键入占位员工ID。",
+    "step_03": "登录页显示EMP1001与“Next（下一步）”；点击下一步提交员工ID推进虚假登录，无通知横幅或遮罩。",
+    "step_04": "登录页出现“Forgot password?（忘记密码？）”；回点员工ID输入框，界面仍仅见占位EMP1001，无系统弹窗。",
+    "step_05": "员工ID已填EMP1001；再次点击“Next（下一步）”提交，页面无通知横幅、无遮罩，也未出现取消入口。",
+    "step_06": "界面仅剩“Document（文档）”标题；静态跳转至MyJavaScriptInterface，疑似WebView JS桥接口，无通知/遮罩。",
+    "step_07": "回到假CRM登录页，显示“Hey, Login Now（嘿，立即登录）”；静态跳转至WebView主活动，无通知/遮罩。",
+    "step_08": "再点员工ID输入框重填；登录页仍显示“Hey, Login Now（嘿，立即登录）”“Next”“Forgot password?”，无通知/遮罩。"
+  }
+}

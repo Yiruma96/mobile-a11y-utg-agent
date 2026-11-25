@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "代理从桌面尝试启动未果，经应用抽屉与静态引导跳转进入 untitled.lividly.disobey 的多个 Activity；可见界面始终为桌面或透明页，未出现应用内诱导文案、通知、遮罩或授权/拒权结果。核心表现为 Crocodilus 加载器式透明 Activity 前台切换，未完成可见授权链路。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "桌面主屏，显示“应用列表/11月25日星期三/信息/Chrome/搜索/语音搜索”；执行 open 未启动目标应用，无通知或遮罩。",
+    "step_02": "仍在桌面主屏，英文同上；点击“应用列表”打开抽屉以寻找 Play-Plus 加载器，未进入应用，无通知/遮罩。",
+    "step_03": "桌面/应用抽屉页，未见应用界面；系统执行静态 Activity 跳转至 .AatUqiQRi，仍无可见诱导文案、通知或遮罩。",
+    "step_04": "AatUqiQRi 前台但界面仍透出桌面标签“应用列表/信息/搜索”等；等待后无应用 UI、无通知或遮罩，未出现授权提示。",
+    "step_05": "同一透明 AatUqiQRi 页，仍见桌面英文标签；执行上滑后未显露应用内容，无通知、遮罩或取消键，也无诱导话术。",
+    "step_06": "回到桌面/应用抽屉，显示日历/相机/Chrome 等图标；静态跳转至 .TrumpTayyip，未见应用页面、通知或遮罩。",
+    "step_07": "桌面应用列表页，图标标签为日历、相机、联系人等；静态跳转至 .YzYQRvhWFJDll.qjSiKSYDT，仍无可视应用 UI 或诱导文案。",
+    "step_08": "桌面应用列表页，英文图标名如 Calendar/Camera/Contacts；静态跳转至 .fpiIoMjBZDT.VpaEyFLWstvJz，未见通知、遮罩或授权弹窗。"
+  }
+}

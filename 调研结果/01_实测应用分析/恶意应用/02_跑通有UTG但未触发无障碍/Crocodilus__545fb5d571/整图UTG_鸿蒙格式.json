@@ -1,0 +1,213 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_016__545fb5d571",
+  "label": "malicious",
+  "family_or_category": "Crocodilus",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "stinky.massive",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "372469b85e92",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "372469b85e92",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.packageinstaller",
+      "abilityName": "com.android.packageinstaller.PackageInstallerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Chrome",
+        "For your security, your phone is not allowed to install unknown apps from this source.",
+        "Cancel",
+        "Settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "c48661863cfd",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$ManageAppExternalSourcesActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Install unknown apps",
+        "Search settings",
+        "Chrome",
+        "1.0",
+        "Allow from this source",
+        "Your phone and personal data are more vulnerable to attack by unknown apps. By installing apps from this source, you agree that you are responsible for any damage to your phone or loss of data that may result from their use."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "7776767f45c2",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.packageinstaller",
+      "abilityName": "com.android.packageinstaller.PackageInstallerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Chrome",
+        "Do you want to install this application?",
+        "Cancel",
+        "Install"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "d68aa36b52c0",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "sizing.catsup.thriving",
+      "abilityName": "sizing.catsup.thriving.urgMfidfFmKizs.WjsaScCKITSBsc",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "50123da0c91d",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "sizing.catsup.thriving",
+      "abilityName": "sizing.catsup.thriving.urgMfidfFmKizs.WjsaScCKITSBsc",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Erişilebilirlik İzni",
+        "Chrome Icon",
+        "Erişilebilirlik İzni Gerekli",
+        "Uygulamanın çalışabilmesi için erişilebilirlik izni vermelisiniz.",
+        "Erişilebilirliği Etkinleştir",
+        "Erişilebilirlik ayarları, yüklü uygulamalar altında veya Erişilebilirlik bölümünde bulunabilir."
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "372469b85e92",
+      "to": "c48661863cfd",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Settings\" id=button1 (click) center=(870,1276))"
+    },
+    {
+      "from": "c48661863cfd",
+      "to": "c48661863cfd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "c48661863cfd",
+      "to": "7776767f45c2",
+      "step": 3,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "7776767f45c2",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Install\" id=button1 (click) center=(887,1276))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "d68aa36b52c0",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(NWqrdTFTiwRe)"
+    },
+    {
+      "from": "d68aa36b52c0",
+      "to": "50123da0c91d",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(QtNtWyFDj)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Crocodilus__545fb5d571",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先借 Chrome 触发系统安装器，诱导用户放行未知来源并确认安装内嵌 APK，随后回到桌面并通过静态跳转拉起新包。最终以土耳其语“无障碍权限必需”页面诱导开启无障碍服务，呈现典型投放器与权限滥用链路。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 出于安全，你的手机不允许此来源安装未知应用（Step 1 系统安装器拦截页）",
+    "英语 -> 未知应用更易攻击手机和个人数据，安装即自担风险（Step 2 系统设置授权页）",
+    "英语 -> 是否安装此应用？（Step 4 系统安装确认页）",
+    "土耳其语 -> 需要无障碍权限（Step 8 无障碍诱导页标题）",
+    "土耳其语 -> 应用要运行，你必须授予无障碍权限（Step 8 无障碍诱导页说明）",
+    "土耳其语 -> 启用无障碍（Step 8 无障碍诱导页按钮）",
+    "土耳其语 -> 无障碍设置可在已安装应用或无障碍栏目中找到（Step 8 设置指引）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统安装器拦截页：提示出于安全不允许Chrome安装未知应用，含取消/设置；本步点击“设置”转去授权，无通知与遮罩。",
+    "step_02": "系统设置“安装未知应用”页：为Chrome开启“Allow from this source”；页面警告未知应用风险。本步勾选开关，无通知与遮罩。",
+    "step_03": "同一授权页：Chrome的“允许此来源”开关已打开，页面仍显示安全风险说明；本步按返回键回到投放器，无通知与遮罩。",
+    "step_04": "系统安装确认页：询问是否安装该应用，含取消/安装；本步点击“安装”确认装入内嵌APK，无通知与遮罩。",
+    "step_05": "回到桌面启动器：显示应用列表、日期、信息/Chrome/搜索等；安装完成后等待观察是否出现新图标，无通知与遮罩。",
+    "step_06": "仍在桌面启动器，界面无变化；探针以静态活动跳转尝试拉起目标组件，未出现通知或遮罩。",
+    "step_07": "跳转至新包sizing.catsup.thriving的空白活动，界面仍残留桌面元素；无可见诱导文案，随后继续静态跳转，无通知与遮罩。",
+    "step_08": "土耳其语无障碍诱导页：称应用运行必须授予无障碍权限，并指引到设置；本步点击“启用无障碍”按钮，无通知与遮罩。"
+  }
+}
