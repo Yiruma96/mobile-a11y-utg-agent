@@ -1,0 +1,13 @@
+flowchart TD
+    N_cdbd1b37bb50["Step 1: ReviewPermissionsActivity\nChoose what to allow P"]
+    N_0312f0cda72e["Step 2: smstapge\nPowerful Security"]
+    N_b8da9709f30e["Step 3: smstapge\nPowerful Security"]
+    N_680891570f28["Step 4: smmain\nRISKY"]
+    N_15cf9c7d1d7d["Step 6: smscanres\nIN DANGER"]
+    N_cdbd1b37bb50 -->|"ui_click: click([31] Button text='Continue"| N_0312f0cda72e
+    N_0312f0cda72e -->|"ui_click: click([3] Button text='OK' id=bu"| N_b8da9709f30e
+    N_b8da9709f30e -->|"ui_click: click([6] TextView text='START' "| N_680891570f28
+    N_680891570f28 -->|"ui_click: click([4] LinearLayout id=rl_sca"| N_680891570f28
+    N_680891570f28 -->|"ui_wait: wait()"| N_15cf9c7d1d7d
+    N_15cf9c7d1d7d -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_15cf9c7d1d7d
+    N_15cf9c7d1d7d -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_15cf9c7d1d7d

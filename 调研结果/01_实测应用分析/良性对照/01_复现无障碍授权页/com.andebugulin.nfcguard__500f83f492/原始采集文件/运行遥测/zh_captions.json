@@ -1,0 +1,30 @@
+{
+  "app_chain_summary_zh": "该应用以5页NFC自律/防沉迷引导开场，随后进入权限页，要求使用情况、悬浮窗、电池与无障碍权限；点GRANT后跳转系统无障碍设置并显示“完全控制设备”高风险警告。拒绝授权后仅退回权限页，无退出或降级路径，形成TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “APPS YOU CAN'T OPEN / BLOCK the apps that pull you in / LOCK it behind a physical tag / TAP the tag when you really need it”意译：封锁拉你上瘾的应用，用实体标签锁住，需要时再刷标签（Step 1 首屏）",
+    "英文 -> “PICK WHAT'S BLOCKED / DEEP WORK / LINKED TO: KITCHEN TAG / MANUAL · NFC TO UNLOCK”意译：选择要封锁的内容，深度工作模式绑定厨房标签，手动NFC解锁（Step 2 模式页）",
+    "英文 -> “SCHEDULES / TURN ON BY THEMSELVES / WORK HOURS”意译：日程会自动生效，工作时段为周一至周五09:00-17:00（Step 3 日程页）",
+    "英文 -> “NFC TAGS / TAP TO UNLOCK / UNLOCKED”意译：NFC标签，点按解锁，当前已解锁（Step 4 标签页）",
+    "英文 -> “LOST YOUR TAG? YOU CAN STILL GET BACK IN / SAFE REGIME / Stay on this screen and tap whenever it asks / CHALLENGE FAILED / That is what happens if you walk away”意译：丢标签仍可进入安全模式，需留在屏上按要求点按；挑战失败/走开就会重来（Step 5 找回说明页）",
+    "英文 -> “PERMISSIONS / LET IT WORK / See which app is open / Show the block screen / Keep running in the background / Required on this device”意译：让应用运作，需查看前台应用、显示拦截屏、后台运行，无障碍标为必需（Step 6 权限页）",
+    "英文 -> “nfcGuard uses Android's Accessibility API only to see which app is in the foreground... never reads, records, or sends screen content, typed text, or any other personal data”意译：声称仅用无障碍API识别前台应用，不读取/记录/发送屏幕内容、输入文本或任何个人数据（Step 7 无障碍说明弹窗）",
+    "英文 -> “NFCGUARD uses this to reliably detect which app is in the foreground... does NOT read any screen content or user data”意译：声称用于可靠识别前台应用，不读取屏幕内容或用户数据（服务详情页）",
+    "英文 -> “Allow nfcGuard to have full control of your device? / View and control screen / View and perform actions”意译：系统警告询问是否允许nfcGuard完全控制设备，可查看并控制屏幕、代你操作（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "首屏品牌引导：NFCGUARD宣称封锁“吸引你的应用”，用实体标签锁住、需要时再刷开；点击NEXT进入下一页。",
+    "step_02": "模式页：列出DEEP WORK封锁7个应用、绑定厨房标签及手动NFC解锁，含ACTIVE/PAUSED；点NEXT继续。",
+    "step_03": "日程页：WORK HOURS周一至周五09:00-17:00自动生效，另列DEEP WORK可编辑删除；点击NEXT进入下一引导页。",
+    "step_04": "NFC标签页：显示“点按解锁/已解锁”，以实体标签控制开关；目前仅BACK/NEXT，点击NEXT继续引导。",
+    "step_05": "找回说明页：称丢标签仍可用SAFE REGIME，需留屏按时点按；展示挑战失败/重试与走开将重来；点NEXT。",
+    "step_06": "权限页：要求USAGE ACCESS查看前台应用、DISPLAY OVER APPS显示拦截屏、BATTERY后台运行及ACCESSIBILITY必需；点击ACCESSIBILITY旁GRANT。",
+    "step_07": "无障碍说明弹窗：声称仅用无障碍API识别前台应用以即时关闭被拦应用，不读取/发送屏幕内容或个人数据；点ALLOW。",
+    "step_08": "系统无障碍列表页：DOWNLOADED APPS下nfcGuard为Off；采集到无障碍设置钩子与探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：停留在系统无障碍设置页，UI文本为空，overlays=0，无通知横幅或遮罩；等待观察。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在系统无障碍设置页，UI为空，overlays=0，无通知或遮罩；等待未触发新界面。",
+    "detail_1_service_detail_page": "nfcGuard服务详情页：开启“Use nfcGuard”，含快捷方式Off与说明，称仅为可靠识别前台应用，不读屏幕或用户数据。",
+    "detail_2_system_warning_dialog": "系统高风险警告弹窗：询问是否允许nfcGuard完全控制设备，列可查看/控制屏幕与代操作；本步检查弹窗，未点Allow/Deny。",
+    "refusal_2.0s": "拒权返回2秒：按Back拒绝后回到PERMISSIONS权限页，仍列USAGE/OVERLAY/BATTERY授权；状态为困在诱导页。",
+    "refusal_10.5s": "拒权返回10.5秒：仍停在PERMISSIONS权限页，无新增弹窗或通知，GRANT持续可见；状态为困在诱导页。"
+  }
+}

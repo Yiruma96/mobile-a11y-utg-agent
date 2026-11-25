@@ -1,0 +1,15 @@
+flowchart TD
+    N_00d909bc6264["Step 1: OnboardingActivity\nPlug your brain back i"]
+    N_70dda142cc39["Step 2: OnboardingActivity\nLet's get set up"]
+    N_5a9940d56f9e["Step 3: OnboardingActivity\nClose sheet"]
+    N_7fbda6807fb7["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_c6b10cf01eda["Step 4: SubSettings\nBack"]
+    N_8bc18d8f91e2["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow PlugBrain 🧠 to h"]
+    N_00d909bc6264 -->|"ui_click: click([8] View (click) center=(5"| N_70dda142cc39
+    N_70dda142cc39 -->|"ui_click: click([9] View (click,unchecked)"| N_5a9940d56f9e
+    N_5a9940d56f9e -->|"ui_click: click([8] TextView text='Agree a"| N_7fbda6807fb7
+    N_7fbda6807fb7 -->|"detail_probe: click_service()"| N_c6b10cf01eda
+    N_c6b10cf01eda -->|"warning_probe: click_use_service_switch"| N_8bc18d8f91e2
+    N_7fbda6807fb7 -->|"refusal_probe: Back_refuse"| N_70dda142cc39
+    N_70dda142cc39 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_70dda142cc39
+    N_70dda142cc39 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_70dda142cc39

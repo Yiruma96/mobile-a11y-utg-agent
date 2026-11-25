@@ -1,0 +1,16 @@
+flowchart TD
+    N_f07b542d97d3["Step 1: ReviewPermissionsActivity\nChoose what to allow D"]
+    N_b6a156f7df3f["Step 2: cmstapge\nDeep Cleaner"]
+    N_b94721111e92["Step 3: cmstapge\nDeep Cleaner"]
+    N_6d4c95892f79["Step 4: CleanMainActivity\nCLEAN"]
+    N_e1ec23886b18["Step 5: cmbatsaver\n100"]
+    N_b25a2094a97c["Step 6: cmressafe\nNavigate up"]
+    N_624526fd0340["Step 7: cmshcutani\nNavigate up"]
+    N_4e5ba5fae579["Step 8: cmstapge\nNavigate up"]
+    N_f07b542d97d3 -->|"ui_click: click([31] Button text='Continue"| N_b6a156f7df3f
+    N_b6a156f7df3f -->|"ui_click: click([3] Button text='OK' id=bu"| N_b94721111e92
+    N_b94721111e92 -->|"ui_click: click([6] TextView text='START' "| N_6d4c95892f79
+    N_6d4c95892f79 -->|"ui_click: click([12] RelativeLayout id=kee"| N_e1ec23886b18
+    N_e1ec23886b18 -->|"ui_wait: wait()"| N_b25a2094a97c
+    N_b25a2094a97c -->|"static_guided_activity_jump: am_start(cmshcutani)"| N_624526fd0340
+    N_624526fd0340 -->|"static_guided_activity_jump: am_start(cmstapge)"| N_4e5ba5fae579

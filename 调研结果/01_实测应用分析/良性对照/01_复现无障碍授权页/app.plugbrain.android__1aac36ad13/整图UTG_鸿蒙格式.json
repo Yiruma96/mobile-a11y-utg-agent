@@ -1,0 +1,385 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_001__1aac36ad13",
+  "label": "benign",
+  "family_or_category": "专注自律与防沉迷管控",
+  "static_visibility": "clear",
+  "target_package": "app.plugbrain.android",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "00d909bc6264",
+  "hook_node_ids": [
+    "7fbda6807fb7",
+    "8bc18d8f91e2"
+  ],
+  "nodes": [
+    {
+      "node_id": "00d909bc6264",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "app.plugbrain.android",
+      "abilityName": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Plug your brain back in.",
+        "Focus your attention",
+        "Spend less time on apps that distract you.",
+        "Unlock with a challenge",
+        "Solve a quick math challenge to keep using the app.",
+        "Gets harder the longer you stay",
+        "Challenges increase in difficulty the longer you keep scrolling.",
+        "Get started"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "70dda142cc39",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "app.plugbrain.android",
+      "abilityName": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let's get set up",
+        "PlugBrain needs the following permissions to work correctly.",
+        "App usage access",
+        "Lets PlugBrain track app usage so it can block distracting apps at the right time.",
+        "Display over other apps",
+        "Allows PlugBrain to display a challenge while you use a distracting app.",
+        "Accessibility permission",
+        "Allows PlugBrain to detect when apps are open.",
+        "Battery optimization (optional)",
+        "Ensures that PlugBrain keeps running reliably even when your device tries to save battery.",
+        "Proceed",
+        "Allow the required permissions to proceed."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "5a9940d56f9e",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "app.plugbrain.android",
+      "abilityName": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Close sheet",
+        "Drag handle",
+        "Turn the accessibility service on",
+        "PlugBrain uses the Accessibility service to see which app is open. When you open an app you chose to block, or a calculator during a challenge, PlugBrain shows a math challenge first.\n\nPlugBrain only reads the app's name. It doesn't read what's on your screen or what you type, and nothing leaves your phone.",
+        "Find PlugBrain, then turn on the switch and confirm.",
+        "Agree and continue",
+        "Not now"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "7fbda6807fb7",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "PlugBrain 🧠",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "c6b10cf01eda",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "PlugBrain 🧠",
+        "Use PlugBrain 🧠",
+        "OPTIONS",
+        "PlugBrain 🧠 shortcut",
+        "Off",
+        "Shortcut settings",
+        "Detects when you open an app you chose to block so PlugBrain can show a math challenge. Only the app's name is read."
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "8bc18d8f91e2",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow PlugBrain 🧠 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "00d909bc6264",
+      "to": "70dda142cc39",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([8] View (click) center=(540,2035))"
+    },
+    {
+      "from": "70dda142cc39",
+      "to": "5a9940d56f9e",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] View (click,unchecked) center=(540,1169))"
+    },
+    {
+      "from": "5a9940d56f9e",
+      "to": "7fbda6807fb7",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([8] TextView text=\"Agree and continue\" center=(540,1809))"
+    },
+    {
+      "from": "7fbda6807fb7",
+      "to": "c6b10cf01eda",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "c6b10cf01eda",
+      "to": "8bc18d8f91e2",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7fbda6807fb7",
+      "to": "70dda142cc39",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "70dda142cc39",
+      "to": "70dda142cc39",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "70dda142cc39",
+      "to": "70dda142cc39",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back PlugBrain 🧠 Use PlugBrain 🧠 OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "PlugBrain 🧠",
+        "Use PlugBrain 🧠",
+        "OPTIONS",
+        "PlugBrain 🧠 shortcut",
+        "Off",
+        "Shortcut settings",
+        "Detects when you open an app you chose to block so PlugBrain can show a math challenge. Only the app's name is read."
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow PlugBrain 🧠 to have full control of you",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow PlugBrain 🧠 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "app.plugbrain.android",
+      "top_activity": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let's get set up",
+        "PlugBrain needs the following permissions to work correctly.",
+        "App usage access",
+        "Lets PlugBrain track app usage so it can block distracting apps at the right time.",
+        "Display over other apps",
+        "Allows PlugBrain to display a challenge while you use a distracting app.",
+        "Accessibility permission",
+        "Allows PlugBrain to detect when apps are open.",
+        "Battery optimization (optional)",
+        "Ensures that PlugBrain keeps running reliably even when your device tries to save battery."
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "app.plugbrain.android",
+      "top_activity": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let's get set up",
+        "PlugBrain needs the following permissions to work correctly.",
+        "App usage access",
+        "Lets PlugBrain track app usage so it can block distracting apps at the right time.",
+        "Display over other apps",
+        "Allows PlugBrain to display a challenge while you use a distracting app.",
+        "Accessibility permission",
+        "Allows PlugBrain to detect when apps are open.",
+        "Battery optimization (optional)",
+        "Ensures that PlugBrain keeps running reliably even when your device tries to save battery."
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "app.plugbrain.android",
+      "top_activity": "app.plugbrain.android.ui.onboarding.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let's get set up",
+        "PlugBrain needs the following permissions to work correctly.",
+        "App usage access",
+        "Lets PlugBrain track app usage so it can block distracting apps at the right time.",
+        "Display over other apps",
+        "Allows PlugBrain to display a challenge while you use a distracting app.",
+        "Accessibility permission",
+        "Allows PlugBrain to detect when apps are open.",
+        "Battery optimization (optional)",
+        "Ensures that PlugBrain keeps running reliably even when your device tries to save battery."
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "app.plugbrain.android__1aac36ad13",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "Step 1: OnboardingActivity（OnboardingActivity）：Plug your brain back in. / Focus your at；动作 click",
+    "step_02": "Step 2: OnboardingActivity（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 click",
+    "step_03": "Step 3: OnboardingActivity（OnboardingActivity）：Close sheet / Drag handle / Turn the acc；动作 click",
+    "step_04": "Step 4: [无障碍列表页]（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 terminate",
+    "post_jump_0.8s": "跳后探针 +0.8s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(0.8s)",
+    "post_jump_2.0s": "跳后探针 +2.0s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(2.0s)",
+    "detail_1_service_detail_page": "服务详情页（SubSettings）：Back / PlugBrain 🧠 / Use PlugBrain 🧠；动作 inspect_detail_or_warning",
+    "detail_2_system_warning_dialog": "系统警告弹窗(点Deny)（SubSettings）：Allow PlugBrain 🧠 to have full control o；动作 inspect_detail_or_warning",
+    "refusal_2.0s": "拒权返回 +2.0s（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN",
+    "refusal_10.5s": "拒权返回 +10.5s（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN"
+  }
+}

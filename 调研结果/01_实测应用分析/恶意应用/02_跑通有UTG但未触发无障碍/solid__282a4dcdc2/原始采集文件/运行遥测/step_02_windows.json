@@ -1,0 +1,54 @@
+{
+  "timestamp": 1795576541.7739928,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{8f9e9c u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{b2559cd u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #5 Window{d781e3 u0 com.clean.antivirus.security}:",
+      "mOwnerUid": "mOwnerUid=10237 showForAllUsers=false package=com.clean.antivirus.security appop=SYSTEM_ALERT_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(1xfill) gr=TOP LEFT CENTER sim={adjust=pan} ty=PHONE fmt=RGBA_8888",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{897609e u0 DeprecatedTargetSdkVersionDialog}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=true package=android appop=SYSTEM_ALERT_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER sim={adjust=pan forwardNavigation} ty=PHONE fmt=TRANSLUCENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #8 Window{54877b1 u0 com.clean.antivirus.security/com.anti.security.activity.StartPageActivity}:",
+      "mOwnerUid": "mOwnerUid=10237 showForAllUsers=false package=com.clean.antivirus.security appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #9 Window{5f02203 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+      "mOwnerUid": "mOwnerUid=10123 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) gr=LEFT CENTER_HORIZONTAL sim={adjust=resize} layoutInDisplayCutoutMode=always ty=DRAWN_APPLICATION fmt=TRANSPARENT wanim=0x10302f2 alpha=0.0",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #10 Window{a639d5b u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}:",
+      "mOwnerUid": "mOwnerUid=10153 showForAllUsers=false package=com.google.android.apps.nexuslauncher appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} layoutInDisplayCutoutMode=always ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #11 Window{91b6c7c u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=false package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(2767x2280) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103030e",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": []
+}

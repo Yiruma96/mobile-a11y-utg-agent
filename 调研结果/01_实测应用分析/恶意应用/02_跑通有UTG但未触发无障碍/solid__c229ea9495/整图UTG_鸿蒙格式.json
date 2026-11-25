@@ -1,0 +1,274 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_175__c229ea9495",
+  "label": "malicious",
+  "family_or_category": "solid",
+  "static_visibility": "clear",
+  "target_package": "com.antivirus.deep.cleaner",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f07b542d97d3",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f07b542d97d3",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Deep Cleaner to access",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Camera",
+        "take pictures and record video",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "Physical activity",
+        "access your physical activity"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b6a156f7df3f",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmstapge",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Deep Cleaner",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "b94721111e92",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmstapge",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Deep Cleaner",
+        "I agree to Privacy Policy by starting the app",
+        "I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)",
+        "START",
+        "Powered by Deep Cleaner Team"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "6d4c95892f79",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "com.anti.security.activity.CleanMainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "CLEAN",
+        "Scan",
+        "Junk Clean",
+        "Phone Boost",
+        "Battery Saver",
+        "Cpu Cooler",
+        "WiFi Optimizer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "e1ec23886b18",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmbatsaver",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "100",
+        "%",
+        "Analyzing power usage"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "b25a2094a97c",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmressafe",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "BATTERY SAVED",
+        "Phone Boost",
+        "Temperature Detect",
+        "Battery Saver",
+        "Catch your privacy invaders",
+        "Lock apps to prevent snooping",
+        "PROTECT",
+        "Possible security risks",
+        "Scan now to avoid pricacy leaking",
+        "SCAN"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "624526fd0340",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmshcutani",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "BATTERY SAVED",
+        "Phone Boost",
+        "Temperature Detect",
+        "Battery Saver",
+        "Catch your privacy invaders",
+        "Lock apps to prevent snooping",
+        "PROTECT",
+        "Possible security risks",
+        "Scan now to avoid pricacy leaking",
+        "SCAN"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "4e5ba5fae579",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.deep.cleaner",
+      "abilityName": "cn.sc.sec.act.cmstapge",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "BATTERY SAVED",
+        "Phone Boost",
+        "Temperature Detect",
+        "Battery Saver",
+        "Catch your privacy invaders",
+        "Lock apps to prevent snooping",
+        "PROTECT",
+        "Possible security risks",
+        "Scan now to avoid pricacy leaking",
+        "SCAN"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f07b542d97d3",
+      "to": "b6a156f7df3f",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "b6a156f7df3f",
+      "to": "b94721111e92",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "b94721111e92",
+      "to": "6d4c95892f79",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"START\" id=guide_btn (click) center=(539,1705))"
+    },
+    {
+      "from": "6d4c95892f79",
+      "to": "e1ec23886b18",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([12] RelativeLayout id=keep_rl_battery (click) center=(180,1816))"
+    },
+    {
+      "from": "e1ec23886b18",
+      "to": "b25a2094a97c",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "b25a2094a97c",
+      "to": "624526fd0340",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(cmshcutani)"
+    },
+    {
+      "from": "624526fd0340",
+      "to": "4e5ba5fae579",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(cmstapge)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "solid__c229ea9495",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先经系统权限总览申请电话、文件、联系人、相机、定位和通话记录等敏感权限，再以旧版兼容提示和默认勾选的隐私/功能同意页进入清理主界面；随后用省电扫描伪进度及“隐私泄露/安全风险”结果页反复诱导扫描并静态跳转。",
+  "observed_lure_rhetoric_zh": [
+    "English: Choose what to allow Deep Cleaner to access -> 选择允许Deep Cleaner访问的内容（Step 1 系统权限总览页）",
+    "English: This app was built for an older version of Android and may not work properly -> 本应用为旧版Android构建，可能无法正常工作（Step 2 兼容性警告页）",
+    "English: I agree to Privacy Policy by starting the app -> 启动应用即视为同意隐私政策（Step 3 启动同意页）",
+    "English: I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents) -> 同意开启自动清理、智能锁、智能滑动、挂断、WiFi优化，且可能含赞助内容（Step 3 启动同意页）",
+    "English: Analyzing power usage -> 正在分析电量使用（Step 5 省电扫描页）",
+    "English: Catch your privacy invaders / Lock apps to prevent snooping -> 抓住隐私入侵者 / 锁定应用防止窥探（Step 6-8 安全结果页）",
+    "English: Possible security risks / Scan now to avoid pricacy leaking -> 可能存在安全风险 / 立即扫描避免隐私泄露（Step 6-8 安全结果页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限总览页，逐项请求电话、文件媒体、联系人、相机、定位、通话记录权限；点击Continue继续。",
+    "step_02": "应用内兼容性警告页，提示Deep Cleaner为旧版Android构建、可能异常；点击OK关闭并继续。",
+    "step_03": "启动同意页，默认勾选隐私政策及自动清理、智能锁、智能滑动、挂断、WiFi优化等含赞助内容；点START。",
+    "step_04": "清理主界面，展示Scan、垃圾清理、手机加速、省电、降温、WiFi优化等入口；点击Battery Saver。",
+    "step_05": "省电扫描页，显示100%与“正在分析电量使用”的伪进度；本步等待扫描结束，为后续无障碍授权铺垫。",
+    "step_06": "安全结果页，宣称“电池已省”，展示隐私入侵、锁应用、安全风险及“立即扫描避免隐私泄露”；本步静态跳至cmshcutani。",
+    "step_07": "同一安全结果页在cmshcutani重现，保留省电、隐私保护和风险扫描话术；本步无点击，静态跳转至cmstapge。",
+    "step_08": "同一结果页在cmstapge再次呈现，仍以隐私泄露风险和SCAN诱导；本步无点击，静态跳至cmsnpinf。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "该应用先在系统权限审查页请求电话、文件、联系人、相机、位置等多项权限，经旧版兼容提示后进入启动页，以点击 START 捆绑同意隐私政策及实时保护、自动清理等含赞助功能，随后进入清理主界面和侧边菜单；探针尝试静态跳转到授权页与无障碍弹窗页，但界面仍停留菜单，未出现可见授权弹窗。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 Power Cleaner 访问的内容（Step 1: ReviewPermissionsActivity）",
+    "英文 -> 该应用为旧版 Android 构建，可能无法正常工作；请检查更新或联系开发者（Step 2: StartPageActivity）",
+    "英文 -> 开始使用应用即表示同意隐私政策（Step 3: StartPageActivity）",
+    "英文 -> 同意开启实时保护、自动清理、智能锁、智能滑动、通话结束、WiFi 优化（可能含赞助内容）（Step 3: StartPageActivity）",
+    "英文 -> 安全等级：基础（Step 5-8: CleanMainActivity 菜单）",
+    "英文 -> 权限检查器、实时保护等入口名称（Step 6-8: CleanMainActivity 菜单）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页，列出电话、文件媒体、联系人、相机、位置、通话记录等；点击Continue继续，无通知/遮罩。",
+    "step_02": "启动页弹出旧版Android兼容性提示，称可能无法正常工作；点击OK关闭，无通知/遮罩。",
+    "step_03": "启动页点击START即同意隐私政策，并捆绑开启实时保护、自动清理等含赞助内容功能；无通知/遮罩。",
+    "step_04": "进入主界面，显示存储5%、内存等仪表盘及扫描、垃圾清理、省电、降温入口；点击左上菜单打开抽屉，无通知/遮罩。",
+    "step_05": "侧边菜单展开，含安全等级Basic、扫描、应用锁、消息安全、垃圾清理等；本步下滑菜单露出更多条目，无通知/遮罩。",
+    "step_06": "菜单续显权限检查、实时保护等入口；静态跳转GrantPermissonsActivity授权页，界面仍停留菜单，无通知/遮罩。",
+    "step_07": "菜单仍停留原页，未出现授权弹窗；探针再次静态跳转GrantPermissonsActivity$4，疑为权限引导内部类。",
+    "step_08": "菜单未变化，无可见授权/无障碍弹窗；静态跳转AccessibilityDialogActivity，疑似引导开启无障碍权限。"
+  }
+}

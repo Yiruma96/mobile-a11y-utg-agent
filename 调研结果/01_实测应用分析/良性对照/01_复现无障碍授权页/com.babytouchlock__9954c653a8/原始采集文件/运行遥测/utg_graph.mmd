@@ -1,0 +1,13 @@
+flowchart TD
+    N_b36e3a956277["Step 1: MainActivity\nBaby Touch Lock"]
+    N_a637156734cf["Step 2: MainActivity\nAccessibility Service "]
+    N_39966bc6c1f3["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_eee37c2e6150["Step 3: SubSettings\nBack"]
+    N_98f13157ae2a["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Baby Touch Lock "]
+    N_b36e3a956277 -->|"ui_click: click([6] Button text='Enable Se"| N_a637156734cf
+    N_a637156734cf -->|"ui_click: click([4] Button text='Accept & "| N_39966bc6c1f3
+    N_39966bc6c1f3 -->|"detail_probe: click_service()"| N_eee37c2e6150
+    N_eee37c2e6150 -->|"warning_probe: click_use_service_switch"| N_98f13157ae2a
+    N_39966bc6c1f3 -->|"refusal_probe: Back_refuse"| N_b36e3a956277
+    N_b36e3a956277 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_b36e3a956277
+    N_b36e3a956277 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_b36e3a956277

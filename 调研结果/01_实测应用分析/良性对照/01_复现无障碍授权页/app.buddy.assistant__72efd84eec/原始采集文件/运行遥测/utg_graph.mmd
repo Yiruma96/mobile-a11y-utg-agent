@@ -1,0 +1,17 @@
+flowchart TD
+    N_5b5c9737dc70["Step 1: OnboardingActivity\nSkip setup"]
+    N_6a4c7c99750a["Step 2: OnboardingActivity\nstep 1 of 6"]
+    N_6ba2c75a38e7["Step 3: OnboardingActivity\nstep 2 of 6"]
+    N_4df3d87a53ef["Step 4: OnboardingActivity\nHow Buddy uses accessi"]
+    N_0e892cdde6a1["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ea02560dbdd6["Step 5: SubSettings\nBack"]
+    N_59ab73da8b0a["Step 5: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Buddy assistant "]
+    N_5b5c9737dc70 -->|"ui_click: click([11] Button text='Get star"| N_6a4c7c99750a
+    N_6a4c7c99750a -->|"ui_click: click([30] Button text='Continue"| N_6ba2c75a38e7
+    N_6ba2c75a38e7 -->|"ui_click: click([7] Button text='Open acce"| N_4df3d87a53ef
+    N_4df3d87a53ef -->|"ui_click: click([8] Button text='Agree and"| N_0e892cdde6a1
+    N_0e892cdde6a1 -->|"detail_probe: click_service()"| N_ea02560dbdd6
+    N_ea02560dbdd6 -->|"warning_probe: click_use_service_switch"| N_59ab73da8b0a
+    N_0e892cdde6a1 -->|"refusal_probe: Back_refuse"| N_6ba2c75a38e7
+    N_6ba2c75a38e7 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6ba2c75a38e7
+    N_6ba2c75a38e7 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6ba2c75a38e7

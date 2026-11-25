@@ -1,0 +1,14 @@
+flowchart TD
+    N_ea28801f9854["Step 1: ReviewPermissionsActivity\nChoose what to allow P"]
+    N_cd281f0219e3["Step 2: StartPageActivity\nPower Cleaner"]
+    N_a59ffb1d9408["Step 3: StartPageActivity\nPower Cleaner"]
+    N_f4698efc0e10["Step 4: CleanMainActivity\n5"]
+    N_55c5abef57b7["Step 5: CleanMainActivity\nMenu"]
+    N_a06c2a7d4dc2["Step 6: CleanMainActivity\nMenu"]
+    N_ea28801f9854 -->|"ui_click: click([31] Button text='Continue"| N_cd281f0219e3
+    N_cd281f0219e3 -->|"ui_click: click([3] Button text='OK' id=bu"| N_a59ffb1d9408
+    N_a59ffb1d9408 -->|"ui_click: click([6] TextView text='START' "| N_f4698efc0e10
+    N_f4698efc0e10 -->|"ui_click: click([3] RelativeLayout id=rl_m"| N_55c5abef57b7
+    N_55c5abef57b7 -->|"ui_swipe: swipe([540, 1600])"| N_a06c2a7d4dc2
+    N_a06c2a7d4dc2 -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_a06c2a7d4dc2
+    N_a06c2a7d4dc2 -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_a06c2a7d4dc2

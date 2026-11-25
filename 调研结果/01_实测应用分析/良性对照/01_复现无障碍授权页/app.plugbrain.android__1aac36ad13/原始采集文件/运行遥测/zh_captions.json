@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "Step 1: OnboardingActivity（OnboardingActivity）：Plug your brain back in. / Focus your at；动作 click",
+    "step_02": "Step 2: OnboardingActivity（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 click",
+    "step_03": "Step 3: OnboardingActivity（OnboardingActivity）：Close sheet / Drag handle / Turn the acc；动作 click",
+    "step_04": "Step 4: [无障碍列表页]（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 terminate",
+    "post_jump_0.8s": "跳后探针 +0.8s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(0.8s)",
+    "post_jump_2.0s": "跳后探针 +2.0s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(2.0s)",
+    "detail_1_service_detail_page": "服务详情页（SubSettings）：Back / PlugBrain 🧠 / Use PlugBrain 🧠；动作 inspect_detail_or_warning",
+    "detail_2_system_warning_dialog": "系统警告弹窗(点Deny)（SubSettings）：Allow PlugBrain 🧠 to have full control o；动作 inspect_detail_or_warning",
+    "refusal_2.0s": "拒权返回 +2.0s（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN",
+    "refusal_10.5s": "拒权返回 +10.5s（OnboardingActivity）：Let's get set up / PlugBrain needs the f；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN"
+  }
+}

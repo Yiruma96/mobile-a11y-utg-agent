@@ -1,0 +1,15 @@
+flowchart TD
+    N_1384eafe1038["Step 1: MainActivity\nRustDesk"]
+    N_7fcd81f73f38["Step 2: MainActivity\nRustDesk"]
+    N_a44087feb670["Step 3: MainActivity\nRustDesk"]
+    N_5cb074062760["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ad3d05b3a415["Step 4: SubSettings\nBack"]
+    N_782edc6e2da9["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow RustDesk Input t"]
+    N_1384eafe1038 -->|"ui_click: click([14] Button desc='Share sc"| N_7fcd81f73f38
+    N_7fcd81f73f38 -->|"ui_click: click([7] Switch desc='Input con"| N_a44087feb670
+    N_a44087feb670 -->|"ui_click: click([18] Button desc='Open sys"| N_5cb074062760
+    N_5cb074062760 -->|"detail_probe: click_service()"| N_ad3d05b3a415
+    N_ad3d05b3a415 -->|"warning_probe: click_use_service_switch"| N_782edc6e2da9
+    N_5cb074062760 -->|"refusal_probe: Back_refuse"| N_7fcd81f73f38
+    N_7fcd81f73f38 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_7fcd81f73f38
+    N_7fcd81f73f38 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_7fcd81f73f38

@@ -1,0 +1,22 @@
+flowchart TD
+    N_5143646fd099["Step 1: RequestRoleActivity\nSet Olauncher as your "]
+    N_7f81588ce7a2["Step 2: MainActivity\nApp"]
+    N_1349e95096c4["Step 3: MainActivity\nOlauncher"]
+    N_fd775818254d["Step 4: MainActivity\nOlauncher"]
+    N_d1312716cf49["Step 5: MainActivity\nShow date time"]
+    N_cc00051b31ac["Step 6: MainActivity\nGestures"]
+    N_6062f4a73c73["Step 7: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ac6ed19a6e13["Step 7: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_cb93770c774a["Step 7: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Olauncher to hav"]
+    N_f5b19dea3e19["Step 7: MainActivity\nApp"]
+    N_5143646fd099 -->|"ui_click: click([6] Button text='Cancel' i"| N_7f81588ce7a2
+    N_7f81588ce7a2 -->|"ui_long_press: long_press([540, 1400])"| N_1349e95096c4
+    N_1349e95096c4 -->|"ui_click: click([4] TextView text='Okay' i"| N_fd775818254d
+    N_fd775818254d -->|"ui_swipe: swipe([540, 1900])"| N_d1312716cf49
+    N_d1312716cf49 -->|"ui_click: click([27] TextView text='Off' i"| N_cc00051b31ac
+    N_cc00051b31ac -->|"ui_click: click([5] TextView text='Enable'"| N_6062f4a73c73
+    N_6062f4a73c73 -->|"detail_probe: click_service()"| N_ac6ed19a6e13
+    N_ac6ed19a6e13 -->|"warning_probe: click_use_service_switch"| N_cb93770c774a
+    N_6062f4a73c73 -->|"refusal_probe: Back_refuse"| N_f5b19dea3e19
+    N_f5b19dea3e19 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f5b19dea3e19
+    N_f5b19dea3e19 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f5b19dea3e19

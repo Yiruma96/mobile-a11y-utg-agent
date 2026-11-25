@@ -1,0 +1,23 @@
+flowchart TD
+    N_e6a054dbe341["Step 1: MainActivity\nNFCGUARD"]
+    N_ced37bfdaed2["Step 2: MainActivity\nMODES"]
+    N_8fe94589ba86["Step 3: MainActivity\nSCHEDULES"]
+    N_d2e11f9503ba["Step 4: MainActivity\nNFC TAGS"]
+    N_d00af91b0852["Step 5: MainActivity\nLOST YOUR TAG?"]
+    N_46903d593e4f["Step 6: MainActivity\nPERMISSIONS"]
+    N_d23bd7cbdc8c["Step 7: MainActivity\nACCESSIBILITY ACCESS"]
+    N_9933593f0fd8["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_998cd29189b3["Step 8: SubSettings\nBack"]
+    N_ae1527e4150f["Step 8: SubSettings [HOOK_A11Y_SETTINGS]\nAllow nfcGuard to have"]
+    N_e6a054dbe341 -->|"ui_click: click([11] TextView text='NEXT' "| N_ced37bfdaed2
+    N_ced37bfdaed2 -->|"ui_click: click([28] TextView text='NEXT' "| N_8fe94589ba86
+    N_8fe94589ba86 -->|"ui_click: click([18] View (click) center=("| N_d2e11f9503ba
+    N_d2e11f9503ba -->|"ui_click: click([8] TextView text='NEXT' c"| N_d00af91b0852
+    N_d00af91b0852 -->|"ui_click: click([13] View (click) center=("| N_46903d593e4f
+    N_46903d593e4f -->|"ui_click: click([26] View (click) center=("| N_d23bd7cbdc8c
+    N_d23bd7cbdc8c -->|"ui_click: click([5] View (click) center=(8"| N_9933593f0fd8
+    N_9933593f0fd8 -->|"detail_probe: click_service()"| N_998cd29189b3
+    N_998cd29189b3 -->|"warning_probe: click_use_service_switch"| N_ae1527e4150f
+    N_9933593f0fd8 -->|"refusal_probe: Back_refuse"| N_46903d593e4f
+    N_46903d593e4f -->|"refusal_probe: wait(5.5s)_after_refusal"| N_46903d593e4f
+    N_46903d593e4f -->|"refusal_probe: wait(10.5s)_after_refusal"| N_46903d593e4f

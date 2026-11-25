@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用先经系统权限总览申请电话、文件、联系人、相机、定位和通话记录等敏感权限，再以旧版兼容提示和默认勾选的隐私/功能同意页进入清理主界面；随后用省电扫描伪进度及“隐私泄露/安全风险”结果页反复诱导扫描并静态跳转。",
+  "observed_lure_rhetoric_zh": [
+    "English: Choose what to allow Deep Cleaner to access -> 选择允许Deep Cleaner访问的内容（Step 1 系统权限总览页）",
+    "English: This app was built for an older version of Android and may not work properly -> 本应用为旧版Android构建，可能无法正常工作（Step 2 兼容性警告页）",
+    "English: I agree to Privacy Policy by starting the app -> 启动应用即视为同意隐私政策（Step 3 启动同意页）",
+    "English: I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents) -> 同意开启自动清理、智能锁、智能滑动、挂断、WiFi优化，且可能含赞助内容（Step 3 启动同意页）",
+    "English: Analyzing power usage -> 正在分析电量使用（Step 5 省电扫描页）",
+    "English: Catch your privacy invaders / Lock apps to prevent snooping -> 抓住隐私入侵者 / 锁定应用防止窥探（Step 6-8 安全结果页）",
+    "English: Possible security risks / Scan now to avoid pricacy leaking -> 可能存在安全风险 / 立即扫描避免隐私泄露（Step 6-8 安全结果页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限总览页，逐项请求电话、文件媒体、联系人、相机、定位、通话记录权限；点击Continue继续。",
+    "step_02": "应用内兼容性警告页，提示Deep Cleaner为旧版Android构建、可能异常；点击OK关闭并继续。",
+    "step_03": "启动同意页，默认勾选隐私政策及自动清理、智能锁、智能滑动、挂断、WiFi优化等含赞助内容；点START。",
+    "step_04": "清理主界面，展示Scan、垃圾清理、手机加速、省电、降温、WiFi优化等入口；点击Battery Saver。",
+    "step_05": "省电扫描页，显示100%与“正在分析电量使用”的伪进度；本步等待扫描结束，为后续无障碍授权铺垫。",
+    "step_06": "安全结果页，宣称“电池已省”，展示隐私入侵、锁应用、安全风险及“立即扫描避免隐私泄露”；本步静态跳至cmshcutani。",
+    "step_07": "同一安全结果页在cmshcutani重现，保留省电、隐私保护和风险扫描话术；本步无点击，静态跳转至cmstapge。",
+    "step_08": "同一结果页在cmstapge再次呈现，仍以隐私泄露风险和SCAN诱导；本步无点击，静态跳至cmsnpinf。"
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_060__47cd38a059",
+  "label": "benign",
+  "family_or_category": "远程协助与跨设备互联",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.carriez.flutter_hbb",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "1384eafe1038",
+  "hook_node_ids": [
+    "5cb074062760",
+    "782edc6e2da9"
+  ],
+  "nodes": [
+    {
+      "node_id": "1384eafe1038",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.carriez.flutter_hbb",
+      "abilityName": "com.carriez.flutter_hbb.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "RustDesk",
+        "Oops, no recent sessions!\nTime to plan a new one.",
+        "Connection\nTab 1 of 4",
+        "Chat\nTab 2 of 4",
+        "Share screen\nTab 3 of 4",
+        "Settings\nTab 4 of 4"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7fcd81f73f38",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.carriez.flutter_hbb",
+      "abilityName": "com.carriez.flutter_hbb.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "RustDesk",
+        "Service is not running\nTap [Start service] or enable [Screen capture] permission to start the screen sharing service.",
+        "Start service",
+        "Permissions\nChange path",
+        "Screen capture",
+        "Input control",
+        "Transfer file",
+        "Audio capture",
+        "Enable clipboard",
+        "Connection\nTab 1 of 4",
+        "Chat\nTab 2 of 4",
+        "Share screen\nTab 3 of 4",
+        "Settings\nTab 4 of 4"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "a44087feb670",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.carriez.flutter_hbb",
+      "abilityName": "com.carriez.flutter_hbb.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "RustDesk",
+        "Service is not running\nTap [Start service] or enable [Screen capture] permission to start the screen sharing service.",
+        "Start service",
+        "Permissions\nChange path",
+        "Screen capture",
+        "Input control",
+        "Transfer file",
+        "Audio capture",
+        "Enable clipboard",
+        "Connection\nTab 1 of 4",
+        "Chat\nTab 2 of 4",
+        "Share screen\nTab 3 of 4",
+        "Settings\nTab 4 of 4",
+        "How to get Android input permission?",
+        "In order for a remote device to control your Android device via mouse or touch, you need to allow RustDesk to use the \"Accessibility\" service.\nPlease go to the next system settings page, find and enter [Installed Services], turn on [RustDesk Input] service."
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "5cb074062760",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "RustDesk Input",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "ad3d05b3a415",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "RustDesk Input",
+        "Use RustDesk Input",
+        "OPTIONS",
+        "RustDesk Input shortcut",
+        "Off",
+        "Shortcut settings",
+        "Allow other devices to control your phone using virtual touch, when RustDesk screen sharing is established"
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "782edc6e2da9",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow RustDesk Input to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1384eafe1038",
+      "to": "7fcd81f73f38",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([14] Button desc=\"Share screen\nTab 3 of 4\" (click) center=(675,2071))"
+    },
+    {
+      "from": "7fcd81f73f38",
+      "to": "a44087feb670",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([7] Switch desc=\"Input control\" (click,unchecked) center=(540,1048))"
+    },
+    {
+      "from": "a44087feb670",
+      "to": "5cb074062760",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([18] Button desc=\"Open system setting\" (click) center=(701,1449))"
+    },
+    {
+      "from": "5cb074062760",
+      "to": "ad3d05b3a415",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "ad3d05b3a415",
+      "to": "782edc6e2da9",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "5cb074062760",
+      "to": "7fcd81f73f38",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "7fcd81f73f38",
+      "to": "7fcd81f73f38",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "7fcd81f73f38",
+      "to": "7fcd81f73f38",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back RustDesk Input Use RustDesk Input OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "RustDesk Input",
+        "Use RustDesk Input",
+        "OPTIONS",
+        "RustDesk Input shortcut",
+        "Off",
+        "Shortcut settings",
+        "Allow other devices to control your phone using virtual touch, when RustDesk screen sharing is established"
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow RustDesk Input to have full control of ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow RustDesk Input to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.carriez.flutter_hbb",
+      "top_activity": "com.carriez.flutter_hbb.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "RustDesk",
+        "Service is not running\nTap [Start service] or enable [Screen capture] permission to start the screen sharing service.",
+        "Start service",
+        "Permissions\nChange path",
+        "Screen capture",
+        "Input control",
+        "Transfer file",
+        "Audio capture",
+        "Enable clipboard",
+        "Connection\nTab 1 of 4"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.carriez.flutter_hbb",
+      "top_activity": "com.carriez.flutter_hbb.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "RustDesk",
+        "Service is not running\nTap [Start service] or enable [Screen capture] permission to start the screen sharing service.",
+        "Start service",
+        "Permissions\nChange path",
+        "Screen capture",
+        "Input control",
+        "Transfer file",
+        "Audio capture",
+        "Enable clipboard",
+        "Connection\nTab 1 of 4"
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.carriez.flutter_hbb",
+      "top_activity": "com.carriez.flutter_hbb.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "RustDesk",
+        "Service is not running\nTap [Start service] or enable [Screen capture] permission to start the screen sharing service.",
+        "Start service",
+        "Permissions\nChange path",
+        "Screen capture",
+        "Input control",
+        "Transfer file",
+        "Audio capture",
+        "Enable clipboard",
+        "Connection\nTab 1 of 4"
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.carriez.flutter_hbb__47cd38a059",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "该应用以 RustDesk 远程协助为入口，先引导进入“共享屏幕—输入控制”，再弹出“如何获取 Android 输入权限？”并跳转系统无障碍开启 RustDesk Input，最终触发“完全控制设备”的高危授权警告；拒绝后返回应用仍停在权限引导页，呈现 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “哎呀，暂无最近会话！该规划新会话了。”（RustDesk 主页）",
+    "英语 -> “服务未运行：点[启动服务]或启用[屏幕捕获]权限以启动屏幕共享服务。”（共享屏幕权限页）",
+    "英语 -> “如何获取 Android 输入权限？”（共享屏幕权限页弹窗）",
+    "英语 -> “当 RustDesk 屏幕共享建立后，允许其他设备使用虚拟触控控制你的手机。”（RustDesk Input 服务详情页）",
+    "英语 -> “允许 RustDesk Input 完全控制你的设备吗？”（系统警告弹窗）",
+    "英语 -> “完全控制适合帮助无障碍需求的 App，但不适合大多数 App。”（系统警告弹窗）",
+    "英语 -> “查看并控制屏幕：可读取屏幕所有内容并悬浮显示在其他应用上。”（系统警告弹窗）",
+    "英语 -> “查看并执行操作：可跟踪你与应用或硬件传感器的交互，并代表你操作应用。”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "RustDesk 主页，底部四标签；空会话提示意为“暂无最近会话，去新建一个”。本步点击“共享屏幕”标签，无通知、无遮罩。",
+    "step_02": "共享屏幕权限页，提示服务未运行，可启动服务或开屏幕捕获。本步点击“输入控制”开关（未勾选），无通知、无遮罩。",
+    "step_03": "权限页弹出“如何获取 Android 输入权限？”说明；本步点“打开系统设置”，仍未启动服务，无通知、无遮罩。",
+    "step_04": "跳系统无障碍列表，“RustDesk Input”显示为“关闭”；捕获无障碍设置钩子后终止，无通知、无遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍设置页；无新增文本、无通知，遮罩数为 0。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍在系统无障碍设置页；无可读文本更新、无通知，遮罩数为 0。",
+    "detail_1_service_detail_page": "RustDesk Input 详情页，含“使用”开关与快捷键；说明称共享后他机可用虚拟触控控制本机，无通知、无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗询问是否允许 RustDesk Input 完全控制设备，列屏幕/操作控制项，有允许/拒绝；本步点拒绝。",
+    "refusal_2.0s": "拒绝后 2 秒返回应用权限页，仍显示服务未运行与输入控制等开关；停留诱导页，无通知、无遮罩。",
+    "refusal_10.5s": "拒绝后 10.5 秒仍困在应用权限引导页，服务未运行提示与输入控制开关未消失，无通知、无遮罩，未自动退出。"
+  }
+}

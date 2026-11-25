@@ -1,0 +1,13 @@
+flowchart TD
+    N_685e1b076b58["Step 1: ReviewPermissionsActivity\nChoose what to allow D"]
+    N_3afa7164e000["Step 2: StartPageActivity\nDr. Security"]
+    N_0857a4fd3940["Step 3: StartPageActivity\nDR.SECURITY"]
+    N_5c65a4efd5e4["Step 4: MainActivity\nDR.SECURITY"]
+    N_d690fe9c1cbb["Step 6: ScanResultActivity\nIN DANGER"]
+    N_685e1b076b58 -->|"ui_click: click([35] Button text='Continue"| N_3afa7164e000
+    N_3afa7164e000 -->|"ui_click: click([3] Button text='OK' id=bu"| N_0857a4fd3940
+    N_0857a4fd3940 -->|"ui_click: click([6] TextView text='START' "| N_5c65a4efd5e4
+    N_5c65a4efd5e4 -->|"ui_click: click([539, 1307])"| N_5c65a4efd5e4
+    N_5c65a4efd5e4 -->|"ui_wait: wait()"| N_d690fe9c1cbb
+    N_d690fe9c1cbb -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_d690fe9c1cbb
+    N_d690fe9c1cbb -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_d690fe9c1cbb

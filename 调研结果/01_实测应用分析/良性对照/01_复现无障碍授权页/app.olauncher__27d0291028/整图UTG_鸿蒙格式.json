@@ -1,0 +1,486 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_025__27d0291028",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "app.olauncher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "5143646fd099",
+  "hook_node_ids": [
+    "6062f4a73c73",
+    "ac6ed19a6e13",
+    "cb93770c774a"
+  ],
+  "nodes": [
+    {
+      "node_id": "5143646fd099",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set Olauncher as your default home app?",
+        "Olauncher",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7f81588ce7a2",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "3:48",
+        "Wed, 25 Nov, 100%",
+        "1. Swipe up for all apps\n2. Long press anywhere for settings"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1349e95096c4",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Olauncher",
+        "Close",
+        "Welcome to the settings! \n\nRemember, if you have any questions, our About page has the answer.",
+        "Okay"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "fd775818254d",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Olauncher",
+        "Set as default launcher",
+        "About and FAQs",
+        "More features…",
+        "Home screen",
+        "Apps on home screen",
+        "4",
+        "Show date time",
+        "On",
+        "App alignment",
+        "Left",
+        "Screen time",
+        "Off",
+        "Appearance",
+        "Auto show keyboard"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "d1312716cf49",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Show date time",
+        "On",
+        "App alignment",
+        "Left",
+        "Screen time",
+        "Off",
+        "Appearance",
+        "Auto show keyboard",
+        "Daily new wallpaper",
+        "Notification bar",
+        "Theme mode",
+        "Dark",
+        "Bold font",
+        "Text size",
+        "1.0"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "cc00051b31ac",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Gestures",
+        "Close",
+        "Please turn on Olauncher's accessibility service in your device's settings to enable Double tap to lock gesture. \n\nPlease note that this service is only used for this particular feature. Our accessibility service does not collect or share any data.",
+        "Not working?",
+        "Enable"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "6062f4a73c73",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Olauncher",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "ac6ed19a6e13",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Olauncher",
+        "Use Olauncher",
+        "OPTIONS",
+        "Olauncher shortcut",
+        "Off",
+        "Shortcut settings",
+        "The accessibility permission is required to enable the gesture - double tap to lock . Any data acquired by Olauncher via this service will not leave your device."
+      ],
+      "harmony_layout_json": "step_07_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_07_service_detail_layout.xml",
+      "screenshot": "step_07_service_detail_screen.png"
+    },
+    {
+      "node_id": "cb93770c774a",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Olauncher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_07_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_07_system_warning_layout.xml",
+      "screenshot": "step_07_system_warning_screen.png"
+    },
+    {
+      "node_id": "f5b19dea3e19",
+      "first_step": 7,
+      "role": "refusal_probe",
+      "bundleName": "app.olauncher",
+      "abilityName": "app.olauncher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "3:49",
+        "Wed, 25 Nov, 100%",
+        "Set as default launcher"
+      ],
+      "harmony_layout_json": "step_07_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_07_refusal_2000ms_layout.xml",
+      "screenshot": "step_07_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5143646fd099",
+      "to": "7f81588ce7a2",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Cancel\" id=button2 (click) center=(577,1451))"
+    },
+    {
+      "from": "7f81588ce7a2",
+      "to": "1349e95096c4",
+      "step": 2,
+      "edge_type": "ui_long_press",
+      "action": "long_press([540, 1400])"
+    },
+    {
+      "from": "1349e95096c4",
+      "to": "fd775818254d",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"Okay\" id=tvAction (click) center=(874,1389))"
+    },
+    {
+      "from": "fd775818254d",
+      "to": "d1312716cf49",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "d1312716cf49",
+      "to": "cc00051b31ac",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([27] TextView text=\"Off\" id=toggleLock (click) center=(950,2122))"
+    },
+    {
+      "from": "cc00051b31ac",
+      "to": "6062f4a73c73",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([5] TextView text=\"Enable\" id=tvAction (click) center=(855,1517))"
+    },
+    {
+      "from": "6062f4a73c73",
+      "to": "ac6ed19a6e13",
+      "step": 7,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "ac6ed19a6e13",
+      "to": "cb93770c774a",
+      "step": 7,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "6062f4a73c73",
+      "to": "f5b19dea3e19",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f5b19dea3e19",
+      "to": "f5b19dea3e19",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f5b19dea3e19",
+      "to": "f5b19dea3e19",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 7,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_07_screen.png",
+      "raw_layout_path": "step_07_layout.xml",
+      "harmony_layout_path": "step_07_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_800ms_screen.png",
+          "harmony_layout_path": "step_07_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_07_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Olauncher Use Olauncher OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Olauncher",
+        "Use Olauncher",
+        "OPTIONS",
+        "Olauncher shortcut",
+        "Off",
+        "Shortcut settings",
+        "The accessibility permission is required to enable the gesture - double tap to lock . Any data acquired by Olauncher via this service will not leave your device."
+      ],
+      "screenshot_path": "step_07_service_detail_screen.png",
+      "harmony_layout_path": "step_07_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Olauncher to have full control of your ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Olauncher to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_07_system_warning_screen.png",
+      "harmony_layout_path": "step_07_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "app.olauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "3:49",
+        "Wed, 25 Nov, 100%",
+        "Set as default launcher"
+      ],
+      "screenshot_path": "step_07_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "app.olauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "3:49",
+        "Wed, 25 Nov, 100%",
+        "Set as default launcher"
+      ],
+      "screenshot_path": "step_07_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "app.olauncher",
+      "top_activity": "app.olauncher.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "App",
+        "lock layout description to be used a unique id to lock screen",
+        "3:49",
+        "Wed, 25 Nov, 100%",
+        "Set as default launcher"
+      ],
+      "screenshot_path": "step_07_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先取消系统默认桌面设置，进入极简桌面并长按呼出设置；开启双击锁屏时以无障碍说明引导跳转系统授权，拒权后返回桌面反复显示「设为默认启动器」入口，形成被困诱导页。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 中文：将 Olauncher 设为默认主屏幕应用？（系统角色页，提供取消/设为默认）",
+    "英文 -> 中文：欢迎来到设置！如有问题，关于页面有答案。（欢迎弹窗，Okay 关闭）",
+    "英文 -> 中文：请在设备设置中开启 Olauncher 无障碍服务以启用双击锁屏；该服务仅用于此功能，不收集或分享任何数据。（无障碍说明弹窗）",
+    "英文 -> 中文：启用双击锁屏手势需要无障碍权限；Olauncher 经此服务获取的任何数据都不会离开你的设备。（服务详情页）",
+    "英文 -> 中文：允许 Olauncher 完全控制你的设备？适合无障碍需求应用，不适合多数应用；可查看控制屏幕、跟踪交互并代为操作。（系统警告弹窗）",
+    "英文 -> 中文：将 Olauncher 设为默认启动器（拒权返回桌面上的入口）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统默认主屏角色页，询问是否将 Olauncher 设为默认主屏；列出 Pixel Launcher，并提供取消与设为默认，本步点击取消。",
+    "step_02": "Olauncher 主屏首次进入，显示时间日期、100% 电量及上滑应用/长按设置提示；本步长按空白处打开设置。",
+    "step_03": "主屏弹出英文欢迎弹窗，称有疑问可看关于页，按钮 Okay；本步点击 Okay 关闭并露出设置页。",
+    "step_04": "Olauncher 设置页上半部，含设为默认启动器、关于、主屏应用数、日期时间与外观；本步下滑寻找双击锁屏项。",
+    "step_05": "设置页下半部外观与手势项，可见自动键盘、每日壁纸、通知栏、主题及 Off 开关；本步点击双击锁屏行的 Off。",
+    "step_06": "手势说明弹窗称开启无障碍服务可启用双击锁屏，并称不收集共享数据；有 Enable 按钮，本步点击跳系统设置。",
+    "step_07": "系统无障碍设置页，下载应用列表显示 Olauncher 为 Off，另有搜索、屏幕阅读器与显示项；采集 hook 后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍设置页，无通知横幅、无悬浮遮罩，页面文本暂未采集。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，系统无障碍设置页保持稳定，仍无通知与遮罩，未出现覆盖层诱导。",
+    "detail_1_service_detail_page": "Olauncher 无障碍服务详情页，含 Use Olauncher、Olauncher shortcut 为 Off 与隐私说明；称权限仅用于双击锁屏且数据不离设备。",
+    "detail_2_system_warning_dialog": "系统全权控制警告弹窗，说明可查看控制屏幕、跟踪交互并代为操作，提供 Allow/Deny；本步检查后选择拒绝。",
+    "refusal_2.0s": "拒绝无障碍权限后 2 秒返回 Olauncher 主屏，仅见时间日期与「设为默认启动器」入口，无取消关闭，形成被困诱导页。",
+    "refusal_10.5s": "拒权返回 10.5 秒后仍停在 Olauncher 主屏，同样显示「设为默认启动器」入口，无退出或取消，持续被困。"
+  }
+}

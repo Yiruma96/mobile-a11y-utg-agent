@@ -1,0 +1,359 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_041__9954c653a8",
+  "label": "benign",
+  "family_or_category": "残障辅助与无障碍支持",
+  "static_visibility": "clear",
+  "target_package": "com.babytouchlock",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "b36e3a956277",
+  "hook_node_ids": [
+    "39966bc6c1f3",
+    "98f13157ae2a"
+  ],
+  "nodes": [
+    {
+      "node_id": "b36e3a956277",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.babytouchlock",
+      "abilityName": "com.babytouchlock.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Baby Touch Lock",
+        "Screen and buttons lock for kids",
+        "Activation Required",
+        "Enable the Accessibility Service to intercept touches and buttons.",
+        "Enable Service",
+        "Privacy Policy and Accessibility Disclosure",
+        "SETTINGS",
+        "Lock Volume Keys",
+        "Prevents adjusting the volume while locked",
+        "Wake Screen on Power",
+        "Instantly turns the screen back on if the Power button is pressed",
+        "Require PIN to Unlock",
+        "Asks for a PIN after the unlock slider is completed",
+        "QUICK ACCESS",
+        "Quick Settings Tile"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "a637156734cf",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.babytouchlock",
+      "abilityName": "com.babytouchlock.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility Service Disclosure",
+        "Baby Touch Lock uses Android's AccessibilityService API solely to block accidental screen taps, navigation gestures, and hardware buttons during media viewing.\n\n🔒 100% Local & Private: No screen content, keystrokes, or personal data is ever accessed, stored, or transmitted over the internet.",
+        "Cancel",
+        "Accept & Continue"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "39966bc6c1f3",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Baby Touch Lock Service",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "eee37c2e6150",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Baby Touch Lock Service",
+        "Use Baby Touch Lock Service",
+        "OPTIONS",
+        "Baby Touch Lock Service shortcut",
+        "Off",
+        "Shortcut settings",
+        "Prevents accidental touches, navigation gestures, notification shade expansion, and volume key presses to protect media playback."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "98f13157ae2a",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Baby Touch Lock Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "b36e3a956277",
+      "to": "a637156734cf",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Enable Service\" id=btn_grant_accessibility (click) center=(540,626))"
+    },
+    {
+      "from": "a637156734cf",
+      "to": "39966bc6c1f3",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Accept & Continue\" id=button1 (click) center=(722,1499))"
+    },
+    {
+      "from": "39966bc6c1f3",
+      "to": "eee37c2e6150",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "eee37c2e6150",
+      "to": "98f13157ae2a",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "39966bc6c1f3",
+      "to": "b36e3a956277",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "b36e3a956277",
+      "to": "b36e3a956277",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "b36e3a956277",
+      "to": "b36e3a956277",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Baby Touch Lock Service Use Baby Touch Lock Service OPT",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Baby Touch Lock Service",
+        "Use Baby Touch Lock Service",
+        "OPTIONS",
+        "Baby Touch Lock Service shortcut",
+        "Off",
+        "Shortcut settings",
+        "Prevents accidental touches, navigation gestures, notification shade expansion, and volume key presses to protect media playback."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Baby Touch Lock Service to have full co",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Baby Touch Lock Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.babytouchlock",
+      "top_activity": "com.babytouchlock.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Baby Touch Lock",
+        "Screen and buttons lock for kids",
+        "Activation Required",
+        "Enable the Accessibility Service to intercept touches and buttons.",
+        "Enable Service",
+        "Privacy Policy and Accessibility Disclosure",
+        "SETTINGS",
+        "Lock Volume Keys",
+        "Prevents adjusting the volume while locked",
+        "Wake Screen on Power"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.babytouchlock",
+      "top_activity": "com.babytouchlock.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Baby Touch Lock",
+        "Screen and buttons lock for kids",
+        "Activation Required",
+        "Enable the Accessibility Service to intercept touches and buttons.",
+        "Enable Service",
+        "Privacy Policy and Accessibility Disclosure",
+        "SETTINGS",
+        "Lock Volume Keys",
+        "Prevents adjusting the volume while locked",
+        "Wake Screen on Power"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.babytouchlock",
+      "top_activity": "com.babytouchlock.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Baby Touch Lock",
+        "Screen and buttons lock for kids",
+        "Activation Required",
+        "Enable the Accessibility Service to intercept touches and buttons.",
+        "Enable Service",
+        "Privacy Policy and Accessibility Disclosure",
+        "SETTINGS",
+        "Lock Volume Keys",
+        "Prevents adjusting the volume while locked",
+        "Wake Screen on Power"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以儿童触控锁为名，入口页强调必须激活并引导开启无障碍服务；接受应用内披露后进入系统无障碍列表与详情，弹出完全控制警告，拒绝后仍反复回到激活页形成卡点。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Activation Required / Enable the Accessibility Service to intercept touches and buttons.” -> 中文：要求启用无障碍服务以拦截触摸和按键（主界面 step_01）",
+    "English: “Baby Touch Lock uses Android's AccessibilityService API solely to block accidental screen taps...” -> 中文：声称仅用于拦截误触且100%本地隐私，不读取、存储或传输屏幕/按键/个人数据（披露弹窗 step_02）",
+    "English: “Prevents accidental touches, navigation gestures, notification shade expansion, and volume key presses...” -> 中文：宣称可防止误触、导航手势、通知栏展开和音量键，以保护媒体播放（服务详情 detail_1）",
+    "English: “Allow Baby Touch Lock Service to have full control of your device?” -> 中文：系统警告询问是否允许该服务完全控制设备，并称可查看控制屏幕、跟踪交互并代为操作（系统警告 detail_2）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面显示“Baby Touch Lock”和“需要激活”，提示启用无障碍服务拦截触摸与按键；本步点击“Enable Service”进入同意流程，无通知或遮罩。",
+    "step_02": "应用内无障碍披露弹窗，英文称仅用于拦截误触、全本地隐私且不读取屏幕/按键/个人数据；本步点击“Accept & Continue”准备跳转系统设置。",
+    "step_03": "系统无障碍列表页，“Baby Touch Lock Service”显示关闭；采集到无障碍设置钩子后自动终止，无通知横幅或遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停留在系统无障碍列表，界面文本为空，无活动通知与遮罩；仅等待观察，未发生点击。",
+    "post_jump_2.0s": "跳转后2.0秒探针仍处于系统无障碍列表，文本为空、通知与遮罩均为0；继续等待，未见自动跳转或覆盖层。",
+    "detail_1_service_detail_page": "服务详情页显示“Use Baby Touch Lock Service”及快捷键关闭；说明称防误触、导航手势、通知栏与音量键，本步仅查看。",
+    "detail_2_system_warning_dialog": "系统“完全控制设备”警告弹窗，列明可查看控制屏幕、跟踪交互并代操作；含允许/拒绝，本步仅检查警告未授权。",
+    "refusal_2.0s": "拒权返回2秒后仍回到主界面“需要激活”页，继续提示启用无障碍服务；未退出也未提供可用替代，形成卡点。",
+    "refusal_10.5s": "拒权返回10.5秒后仍停留在同一激活引导页，重复显示“Enable Service”；无通知或遮罩，应用未放行。"
+  }
+}

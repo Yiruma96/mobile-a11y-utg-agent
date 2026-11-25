@@ -1,0 +1,210 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_095__282a4dcdc2",
+  "label": "malicious",
+  "family_or_category": "solid",
+  "static_visibility": "clear",
+  "target_package": "com.clean.antivirus.security",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "685e1b076b58",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "685e1b076b58",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Dr. Security to access",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Camera",
+        "take pictures and record video",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "3afa7164e000",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.clean.antivirus.security",
+      "abilityName": "com.anti.security.activity.StartPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Dr. Security",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "0857a4fd3940",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.clean.antivirus.security",
+      "abilityName": "com.anti.security.activity.StartPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "DR.SECURITY",
+        "I agree to Privacy Policy by starting the app",
+        "I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)",
+        "START",
+        "Powered by Dr. Security Team"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "5c65a4efd5e4",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.clean.antivirus.security",
+      "abilityName": "com.anti.security.activity.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "DR.SECURITY",
+        "I agree to Privacy Policy by starting the app",
+        "I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)",
+        "START",
+        "Powered by Dr. Security Team"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "d690fe9c1cbb",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.clean.antivirus.security",
+      "abilityName": "com.anti.security.activity.ScanResultActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "IN DANGER",
+        "4 problem(s)",
+        "Security Grant Failed",
+        "System",
+        "Grant for full & advanced protection",
+        "No private data will be collected",
+        "GRANT",
+        "Real-time protection",
+        "No more virus or privacy leak",
+        "Auto scan newly installed apps",
+        "24-hours protection against malwares",
+        "Device will be out of protection if Dr. Security is uninstalled",
+        "ENABLE NOW",
+        "System Vulnerability",
+        "Fraud SMS Broadcast Vulnerability"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "685e1b076b58",
+      "to": "3afa7164e000",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "3afa7164e000",
+      "to": "0857a4fd3940",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "0857a4fd3940",
+      "to": "5c65a4efd5e4",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"START\" id=guide_btn (click) center=(539,1705))"
+    },
+    {
+      "from": "5c65a4efd5e4",
+      "to": "5c65a4efd5e4",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([539, 1307])"
+    },
+    {
+      "from": "5c65a4efd5e4",
+      "to": "d690fe9c1cbb",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "d690fe9c1cbb",
+      "to": "d690fe9c1cbb",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity)"
+    },
+    {
+      "from": "d690fe9c1cbb",
+      "to": "d690fe9c1cbb",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity$4)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先请求电话、文件媒体、联系人、相机、定位、通话记录和短信等权限，再以旧版Android警告及隐私/赞助内容同意页诱导点击START；随后展示“4项危险”的假扫描结果，并借GRANT/ENABLE NOW将流程跳转至授权与无障碍对话框。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 选择允许“Dr. Security”访问的内容（权限页）",
+    "English -> 该应用为旧版Android构建，可能无法正常运行（旧版警告页）",
+    "English -> 启动应用即表示同意隐私政策（启动页）",
+    "English -> 同意开启自动清理、智能锁、智能滑动、通话结束、WiFi优化，可能含赞助内容（启动页）",
+    "English -> 处于危险/4个问题/安全授权失败（扫描结果页）",
+    "English -> 授予完整与高级保护；不会收集私人数据；授予（扫描结果页）",
+    "English -> 实时保护、无病毒或隐私泄露、自动扫描新装应用、24小时防恶意软件、卸载即失去保护（扫描结果页）",
+    "English -> 立即启用（扫描结果页）",
+    "English -> 系统漏洞（扫描结果页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限选择页，列出电话、文件媒体、联系人、相机、定位、通话记录和短信；点击“Continue”继续，无通知横幅或遮罩。",
+    "step_02": "应用启动页弹出旧版Android兼容警告，含“Dr. Security”和“OK”；点击OK关闭警告，未出现通知或遮罩。",
+    "step_03": "启动页展示DR.SECURITY，含隐私政策与开启多项清理/优化功能的赞助内容同意文案；点击START进入，无遮罩。",
+    "step_04": "仍为同一启动页文案，点击疑似橙色扫描按钮，未捕获扫描进度新文案；无通知横幅和遮罩。",
+    "step_05": "停留MainActivity等待假扫描完成；页面仍显示START及同意文案，未见结果或FIX按钮，无通知横幅或遮罩。",
+    "step_06": "扫描结果页显示“IN DANGER/4个问题/安全授权失败”，诱导GRANT/ENABLE NOW；静态跳转权限授予页，无遮罩。",
+    "step_07": "同一扫描结果页仍展示危险、授权失败及实时保护宣传；再次静态跳转权限授予页的匿名回调，无通知或遮罩。",
+    "step_08": "扫描结果页重复“处于危险/4问题/授权失败”，并以立即启用诱导；静态跳转至无障碍对话框页，无通知或遮罩。"
+  }
+}

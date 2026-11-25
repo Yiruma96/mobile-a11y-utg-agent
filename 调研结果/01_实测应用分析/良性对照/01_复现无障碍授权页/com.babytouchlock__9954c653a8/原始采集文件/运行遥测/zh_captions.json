@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用以儿童触控锁为名，入口页强调必须激活并引导开启无障碍服务；接受应用内披露后进入系统无障碍列表与详情，弹出完全控制警告，拒绝后仍反复回到激活页形成卡点。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Activation Required / Enable the Accessibility Service to intercept touches and buttons.” -> 中文：要求启用无障碍服务以拦截触摸和按键（主界面 step_01）",
+    "English: “Baby Touch Lock uses Android's AccessibilityService API solely to block accidental screen taps...” -> 中文：声称仅用于拦截误触且100%本地隐私，不读取、存储或传输屏幕/按键/个人数据（披露弹窗 step_02）",
+    "English: “Prevents accidental touches, navigation gestures, notification shade expansion, and volume key presses...” -> 中文：宣称可防止误触、导航手势、通知栏展开和音量键，以保护媒体播放（服务详情 detail_1）",
+    "English: “Allow Baby Touch Lock Service to have full control of your device?” -> 中文：系统警告询问是否允许该服务完全控制设备，并称可查看控制屏幕、跟踪交互并代为操作（系统警告 detail_2）"
+  ],
+  "frame_captions": {
+    "step_01": "主界面显示“Baby Touch Lock”和“需要激活”，提示启用无障碍服务拦截触摸与按键；本步点击“Enable Service”进入同意流程，无通知或遮罩。",
+    "step_02": "应用内无障碍披露弹窗，英文称仅用于拦截误触、全本地隐私且不读取屏幕/按键/个人数据；本步点击“Accept & Continue”准备跳转系统设置。",
+    "step_03": "系统无障碍列表页，“Baby Touch Lock Service”显示关闭；采集到无障碍设置钩子后自动终止，无通知横幅或遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停留在系统无障碍列表，界面文本为空，无活动通知与遮罩；仅等待观察，未发生点击。",
+    "post_jump_2.0s": "跳转后2.0秒探针仍处于系统无障碍列表，文本为空、通知与遮罩均为0；继续等待，未见自动跳转或覆盖层。",
+    "detail_1_service_detail_page": "服务详情页显示“Use Baby Touch Lock Service”及快捷键关闭；说明称防误触、导航手势、通知栏与音量键，本步仅查看。",
+    "detail_2_system_warning_dialog": "系统“完全控制设备”警告弹窗，列明可查看控制屏幕、跟踪交互并代操作；含允许/拒绝，本步仅检查警告未授权。",
+    "refusal_2.0s": "拒权返回2秒后仍回到主界面“需要激活”页，继续提示启用无障碍服务；未退出也未提供可用替代，形成卡点。",
+    "refusal_10.5s": "拒权返回10.5秒后仍停留在同一激活引导页，重复显示“Enable Service”；无通知或遮罩，应用未放行。"
+  }
+}
