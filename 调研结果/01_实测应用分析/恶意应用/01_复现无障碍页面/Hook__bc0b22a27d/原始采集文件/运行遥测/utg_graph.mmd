@@ -1,0 +1,7 @@
+flowchart TD
+    N_95a3f0aff5de["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_908d7b2a18c7["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_cf9202a10a33["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow BBVA4 to have fu"]
+    N_95a3f0aff5de -->|"detail_probe: click_service()"| N_908d7b2a18c7
+    N_908d7b2a18c7 -->|"warning_probe: click_use_service_switch"| N_cf9202a10a33
+    N_95a3f0aff5de -->|"refusal_probe: Back_refuse"| N_95a3f0aff5de

@@ -1,0 +1,24 @@
+{
+  "app_chain_summary_zh": "应用先以仿冒无障碍页和通知横幅诱导启用 GrabAssistService，再跳转系统无障碍列表/详情；拒绝返回后仍被困在同一仿冒诱导页，无法脱离，呈现 Hook 式无障碍劫持特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 抓取（全局通知横幅）",
+    "英文 -> 启用 GrabAssistService（全局通知横幅）",
+    "英文 -> 开始无障碍（仿冒无障碍页/拒权返回页）",
+    "英文 -> 若无障碍权限已开启，请先关闭再开启（系统服务详情页）",
+    "英文 -> 使用 GrabAssistService（系统服务详情页）",
+    "英文 -> 长按音量键（系统服务详情页）",
+    "英文 -> 已下载服务（仿冒无障碍页）",
+    "英文 -> 无障碍服务（仿冒无障碍页）",
+    "英文 -> 切换访问 关闭（仿冒无障碍页）"
+  ],
+  "frame_captions": {
+    "step_01": "仿冒应用内无障碍授权页，通知横幅为“Grab/Enable GrabAssistService”（抓取/启用服务），本步点击启动无障碍区域，无遮罩。",
+    "step_02": "系统无障碍列表，显示 GrabAssistService 为 Off（关闭）；本步终止并捕获无障碍设置 Hook 与探针，通知横幅仍在，无遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍页，界面文本为空；启用 GrabAssistService 通知横幅持续，遮罩数 0。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍在系统无障碍页，界面文本为空；启用服务通知横幅持续，遮罩数 0，无额外交互。",
+    "detail_1_service_detail_page": "系统无障碍服务详情页，含“Use GrabAssistService”（使用服务）、“Hold volume keys”（长按音量键）及开启提示；本步仅查看详情，通知横幅仍在。",
+    "detail_2_system_warning_dialog": "返回仿冒无障碍页，列“Accessibility Service”“DOWNLOADED SERVICES”（已下载服务）、Switch Access/TalkBack 及随机串；本步检查警告，无遮罩。",
+    "refusal_2.0s": "拒权返回 2 秒后仍被困在仿冒无障碍页，显示“Start Accessibility”（开始无障碍）等；通知横幅持续，遮罩 0，未脱离诱导页。",
+    "refusal_10.5s": "拒权返回 10.5 秒后仍停留仿冒无障碍页，核心话术与“Start Accessibility”未变；无遮罩，状态为 TRAPPED_ON_LURE_SCREEN。"
+  }
+}

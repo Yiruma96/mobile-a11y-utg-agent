@@ -1,0 +1,244 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_089__bc0b22a27d",
+  "label": "malicious",
+  "family_or_category": "Hook",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.fisececitinoje.lalole",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "95a3f0aff5de",
+  "hook_node_ids": [
+    "95a3f0aff5de",
+    "908d7b2a18c7",
+    "cf9202a10a33"
+  ],
+  "nodes": [
+    {
+      "node_id": "95a3f0aff5de",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BBVA4",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "908d7b2a18c7",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "BBVA4",
+        "Use BBVA4",
+        "OPTIONS",
+        "BBVA4 shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "cf9202a10a33",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow BBVA4 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "95a3f0aff5de",
+      "to": "908d7b2a18c7",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "908d7b2a18c7",
+      "to": "cf9202a10a33",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "95a3f0aff5de",
+      "to": "95a3f0aff5de",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back BBVA4 Use BBVA4 OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BBVA4",
+        "Use BBVA4",
+        "OPTIONS",
+        "BBVA4 shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow BBVA4 to have full control of your devi",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow BBVA4 to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BBVA4",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hook__bc0b22a27d",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "应用以「BBVA4」无障碍服务名义，通过持续通知引导用户进入系统无障碍设置并打开服务详情，展示授权说明与系统全权控制警告；用户拒绝后应用会重新拉起无障碍设置页，呈现反复诱导授权特征。",
+  "observed_lure_rhetoric_zh": [
+    "Enable BBVA4（通知横幅） -> 启用 BBVA4（无障碍列表页及跳后探针）",
+    "Use BBVA4（服务详情页） -> 使用 BBVA4（服务详情页）",
+    "If accessibility permission has been on, please turn off then turn on.（服务详情页） -> 若无障碍权限曾开启，请先关闭再开启（服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页：下载应用区BBVA4显示关闭，通知横幅提示Enable BBVA4（启用）；捕获设置Hook与探针后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停留在无障碍列表页，界面文本为空，遮罩为0；通知横幅持续显示启用BBVA4诱导文案。",
+    "post_jump_2.0s": "跳后2.0秒探针：无障碍列表页无可见文本、无遮罩，应用通知仍提示Enable BBVA4（启用BBVA4），未发生跳转。",
+    "detail_1_service_detail_page": "服务详情页：展示BBVA4、Use BBVA4（使用）及快捷键选项；提示若权限曾开启需先关再开，通知横幅仍在。",
+    "detail_2_system_warning_dialog": "系统授权警告：询问是否允许BBVA4完全控制设备，列明可查看屏幕、执行操作；提供Allow/Deny，本步查看未授权。",
+    "refusal_2.0s": "拒权返回：点Deny后回到无障碍列表，BBVA4仍为Off（关闭）；应用随即重新拉起无障碍设置页，呈现反复诱导。"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "app_chain_summary_zh": "应用先以假冒“Android Protect”安全扫描页显示未发现有害应用并诱导点击Scan，随后跳转系统无障碍设置引导开启“Android Protect”服务；服务详情页展示开关与快捷方式，拒权后自动重新拉起无障碍设置，体现社工诱导与反复施压。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 安卓保护（假冒安全品牌，Step1/通知/无障碍页）",
+    "English -> 未发现有害应用（Step1）",
+    "English -> Android Protect 尚未扫描（Step1）",
+    "English -> 扫描（Step1）",
+    "English -> 最近扫描的应用（Step1）",
+    "English -> 还有20项（Step1）",
+    "English -> 应用尚未被扫描（Step1）",
+    "English -> Android Protect定期检查应用与设备的有害行为，发现风险会通知你（Step1）",
+    "English -> 了解更多（Step1）",
+    "English -> 手机正受Android Protect保护（通知横幅）",
+    "English -> 请激活以使更新生效（通知/无障碍页）",
+    "English -> 使用Android Protect（服务详情页）",
+    "English -> Android Protect快捷方式（服务详情页）",
+    "English -> 未提供描述（服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "假冒安全扫描页：英文称未发现有害应用、尚未扫描，含Scan按钮；点击Scan，顶部有手机受保护等通知，无遮罩。",
+    "step_02": "系统无障碍列表：DOWNLOADED APPS下Android Protect为Off，通知催促请激活；捕获无障碍钩子/探针后终止，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停在无障碍设置页且文本为空；应用继续推送请激活及空正文通知，遮罩为0。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为无障碍设置、无界面文本；请激活与空正文通知持续存在，遮罩为0，未发生点击。",
+    "detail_1_service_detail_page": "无障碍服务详情页：标题Android Protect，Use开关为Off、快捷方式Off、未提供描述；本步查看详情，遮罩0。",
+    "detail_2_system_warning_dialog": "服务详情页/警告检查：仍见Android Protect与Use开关Off、快捷方式Off；未捕获系统警告弹窗，遮罩0，通知仍催促激活。",
+    "refusal_2.0s": "拒权后返回无障碍列表：Android Protect仍为Off，通知继续请激活；Back_refuse触发RELAUNCHED_A11Y_SETTINGS，自动重拉设置页。"
+  }
+}

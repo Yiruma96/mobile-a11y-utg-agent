@@ -1,0 +1,275 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_094__75cc07a1af",
+  "label": "malicious",
+  "family_or_category": "GodFather",
+  "static_visibility": "clear",
+  "target_package": "com.alphainventor.filemanager",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "88b6d5df8b72",
+  "hook_node_ids": [
+    "7a37789071bb",
+    "863df395ff3c"
+  ],
+  "nodes": [
+    {
+      "node_id": "88b6d5df8b72",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.alphainventor.filemanager",
+      "abilityName": "com.alphainventor.filemanager.Activitys.vivacissimoselftimer",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7a37789071bb",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "dd93102a75eb",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "Use Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "OPTIONS",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "863df395ff3c",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "88b6d5df8b72",
+      "to": "7a37789071bb",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "7a37789071bb",
+      "to": "dd93102a75eb",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "dd93102a75eb",
+      "to": "863df395ff3c",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7a37789071bb",
+      "to": "88b6d5df8b72",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "88b6d5df8b72",
+      "to": "7a37789071bb",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i Use Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "Use Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "OPTIONS",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i to have full cont",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.alphainventor.filemanager",
+      "top_activity": "com.alphainventor.filemanager.Activitys.vivacissimoselftimer",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "Step 1: vivacissimoselftimer（vivacissimoselftimer）：无文本；动作 wait",
+    "step_02": "Step 2: [无障碍列表页]（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 terminate",
+    "post_jump_0.8s": "跳后探针 +0.8s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(0.8s)",
+    "post_jump_2.0s": "跳后探针 +2.0s（Settings$AccessibilitySettingsActivity）：无文本；动作 wait(2.0s)",
+    "detail_1_service_detail_page": "服务详情页（SubSettings）：Back / Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i / Use Ş‎a‎r；动作 inspect_detail_or_warning",
+    "detail_2_system_warning_dialog": "系统警告弹窗(点Deny)（SubSettings）：Allow Ş‎a‎r‎k‎ı E‎v‎r‎e‎n‎i to have full；动作 inspect_detail_or_warning",
+    "refusal_2.0s": "拒权返回 +2.0s（vivacissimoselftimer）：无文本；动作 Back_refuse -> RELAUNCHED_A11Y_SETTINGS",
+    "refusal_5.5s": "拒权返回 +5.5s（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 Back_refuse -> RELAUNCHED_A11Y_SETTINGS"
+  }
+}

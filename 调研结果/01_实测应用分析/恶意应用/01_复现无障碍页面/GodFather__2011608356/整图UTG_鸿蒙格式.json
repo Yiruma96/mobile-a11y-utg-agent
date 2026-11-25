@@ -1,0 +1,304 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_100__2011608356",
+  "label": "malicious",
+  "family_or_category": "GodFather",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.melting.mantaught",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "0881e9556639",
+  "hook_node_ids": [
+    "ffe926a5d606",
+    "513f72149242"
+  ],
+  "nodes": [
+    {
+      "node_id": "0881e9556639",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.melting.mantaught",
+      "abilityName": "com.melting.mantaught.arcuses",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ffe926a5d606",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "63b8ca6f925f",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "513f72149242",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0881e9556639",
+      "to": "ffe926a5d606",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"ALLOW\" id=button (click) center=(540,2024))"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "63b8ca6f925f",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "63b8ca6f925f",
+      "to": "513f72149242",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "0881e9556639",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "0881e9556639",
+      "to": "0881e9556639",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "0881e9556639",
+      "to": "0881e9556639",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Chrome to have full control of your dev",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Chrome to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.melting.mantaught",
+      "top_activity": "com.melting.mantaught.arcuses",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.melting.mantaught",
+      "top_activity": "com.melting.mantaught.arcuses",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.melting.mantaught",
+      "top_activity": "com.melting.mantaught.arcuses",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "GodFather__2011608356",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用以伪装成 Play Store/Chrome 的权限引导页诱导用户授予无障碍权限；点击 ALLOW 后跳转系统无障碍设置，若用户拒绝则返回原诱导页并反复重新拉起同一弹窗与通知催促。",
+  "observed_lure_rhetoric_zh": [
+    "Please grant the permission shown above for the application to run. -> 请授予上方所示权限以便应用运行（入口 arcuses 诱导页）",
+    "ALLOW -> 允许（入口诱导按钮）",
+    "Please grant accessibility permission to use the application. -> 请授予无障碍权限以使用应用（拒权返回后的 Chrome 通知）",
+    "Allow Chrome to have full control of your device? -> 允许 Chrome 完全控制你的设备？（系统授权警告页）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适合辅助无障碍需求的应用，但多数应用不适合（系统授权警告页）",
+    "View and control screen; It can read all content on the screen and display content over other apps. -> 查看并控制屏幕：可读取屏幕全部内容并覆盖显示在其他应用上（系统授权警告页）",
+    "View and perform actions; It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 查看并执行操作：可跟踪交互并代表你操作应用（系统授权警告页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "入口 arcuses 伪装 Play Store 引导页：提示请授予上方权限以便运行，点击 ALLOW 触发无障碍设置；通知横幅为 Play Store，遮罩 0。",
+    "step_02": "系统无障碍设置列表：显示 Chrome Off 等应用项；命中 A11Y 设置钩子与探针后自动终止，尚未授权，Play Store 通知仍在，遮罩 0。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置列表，无可读文本；未检测到悬浮遮罩，Play Store 通知横幅仍显示，仅等待。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面仍为无障碍设置列表且无文本，悬浮遮罩为 0；Play Store 通知继续存在，仅等待，无交互。",
+    "detail_1_service_detail_page": "Chrome 无障碍服务详情页：显示“Use Chrome”、快捷键关闭、“未提供描述”；本步仅检查详情，未授权，遮罩 0。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗：询问是否允许 Chrome 完全控制设备，说明可读屏、覆盖与代操作；含允许/拒绝，本步仅检查未授权，遮罩 0。",
+    "refusal_2.0s": "拒权返回 arcuses 诱导页并重拉同一弹窗；Chrome 通知催促“请授予无障碍权限以使用应用”，Play Store 通知仍在，遮罩 0。",
+    "refusal_10.5s": "拒权返回+10.5 秒仍停 arcuses 诱导页并再次拉起弹窗；Chrome 催促通知已消失，仅剩 Play Store 空通知，遮罩 0。"
+  }
+}

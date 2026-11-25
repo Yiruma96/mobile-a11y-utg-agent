@@ -1,0 +1,363 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_009__a6ed100ae4",
+  "label": "malicious",
+  "family_or_category": "GodFather",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.motivities.grubroot",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [
+    "faa0668add7e",
+    "234133a38d00"
+  ],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "2fb7866c6393",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.motivities.grubroot",
+      "abilityName": "com.motivities.grubroot.selffertility",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Please follow the steps below on the next screen:",
+        "1.",
+        "On the Accessibility screen, find Download Music and tap on it",
+        "Attention: may be different for each device",
+        "2.",
+        "Enable the Download Music switch",
+        "OK"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "faa0668add7e",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Music Downloader",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "0fce50adffc3",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Music Downloader",
+        "Use Music Downloader",
+        "OPTIONS",
+        "Music Downloader shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    },
+    {
+      "node_id": "234133a38d00",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Music Downloader to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_05_system_warning_layout.xml",
+      "screenshot": "step_05_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "2fb7866c6393",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(truthfully)"
+    },
+    {
+      "from": "2fb7866c6393",
+      "to": "faa0668add7e",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"OK\" id=button_open (click) center=(540,2049))"
+    },
+    {
+      "from": "faa0668add7e",
+      "to": "0fce50adffc3",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0fce50adffc3",
+      "to": "234133a38d00",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "faa0668add7e",
+      "to": "2fb7866c6393",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "2fb7866c6393",
+      "to": "2fb7866c6393",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "2fb7866c6393",
+      "to": "2fb7866c6393",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Music Downloader Use Music Downloader OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Music Downloader",
+        "Use Music Downloader",
+        "OPTIONS",
+        "Music Downloader shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Music Downloader to have full control o",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Music Downloader to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.motivities.grubroot",
+      "top_activity": "com.motivities.grubroot.selffertility",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Please follow the steps below on the next screen:",
+        "1.",
+        "On the Accessibility screen, find Download Music and tap on it",
+        "Attention: may be different for each device",
+        "2.",
+        "Enable the Download Music switch",
+        "OK"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.motivities.grubroot",
+      "top_activity": "com.motivities.grubroot.selffertility",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Please follow the steps below on the next screen:",
+        "1.",
+        "On the Accessibility screen, find Download Music and tap on it",
+        "Attention: may be different for each device",
+        "2.",
+        "Enable the Download Music switch",
+        "OK"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.motivities.grubroot",
+      "top_activity": "com.motivities.grubroot.selffertility",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Please follow the steps below on the next screen:",
+        "1.",
+        "On the Accessibility screen, find Download Music and tap on it",
+        "Attention: may be different for each device",
+        "2.",
+        "Enable the Download Music switch",
+        "OK"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "GodFather__a6ed100ae4",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用从桌面启动失败后经静态跳转进入伪装教程页，引导用户在系统无障碍中开启“Music Downloader/下载音乐”权限；用户点 Deny 返回后，应用反复重启同一诱导对话框/教程，呈现典型 GodFather 无障碍滥用与拒权后重试特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “请按下一屏步骤操作：在无障碍页找到 Download Music 并点击；启用 Download Music 开关；注意不同设备可能不同”（selffertility 教程页）",
+    "英语 -> 通知：“请授予无障碍权限以使用本应用”，标题为“Music Downloader/Settings”（无障碍列表页、系统警告弹窗）",
+    "英语 -> 系统警告：“允许 Music Downloader 完全控制你的设备？”并说明可查看/控制屏幕、读取全部屏幕内容、叠加显示及代你操作应用（系统警告弹窗）",
+    "英语 -> 服务详情：“Use Music Downloader”“未提供描述”（设备服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面应用列表页，显示天气与 Messages、Chrome、Search 等；代理从启动器打开 com.motivities.grubroot.truthfully，尚无应用界面。",
+    "step_02": "仍为桌面应用列表，上次目标未启动；代理再次直接打开该包尝试拉起应用，页面无通知、无遮罩。",
+    "step_03": "仍在桌面页，启动失败后触发静态引导 Activity 跳转兜底至 .truthfully，未见应用界面或授权内容。",
+    "step_04": "应用教程页，英文提示在无障碍中找 Download Music 并开启开关，点 OK 前往系统设置；含误导性名称与步骤说明。",
+    "step_05": "系统无障碍列表，DOWNLOADED APPS 下 Music Downloader 为 Off；通知横幅催授无障碍权限，采集到设置钩子/探针后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针，仍停在无障碍设置页，界面文本为空，仅见应用 Settings 通知，无遮罩或弹窗。",
+    "post_jump_2.0s": "跳后2.0秒探针，仍在无障碍设置页，无界面文本与遮罩，仅保留应用 Settings 通知，状态未变化。",
+    "detail_1_service_detail_page": "Music Downloader 服务详情页，显示 Use Music Downloader、快捷方式 Off 与“未提供描述”，用于检查权限入口与说明缺失。",
+    "detail_2_system_warning_dialog": "系统无障碍警告弹窗，说明可查看/控制屏幕、读取全部内容及代操作；代理检查后准备点 Deny，未授权。",
+    "refusal_2.0s": "点 Deny 返回应用教程页，仍显示英文开启无障碍步骤与 OK；拒权后立即重启同一诱导对话框。",
+    "refusal_10.5s": "拒权后10.5秒仍回到同一教程页，步骤与 OK 未变；应用持续重启诱导对话框，反复索要无障碍权限。"
+  }
+}

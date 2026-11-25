@@ -1,0 +1,8 @@
+flowchart TD
+    N_e93816c3f29a["Step 1: datamediaGrenadian\nAndroid Protect"]
+    N_d881e1d564f4["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_f8e6e1d62d04["Step 2: SubSettings\nBack"]
+    N_e93816c3f29a -->|"ui_click: click([4] Button text='Scan' id="| N_d881e1d564f4
+    N_d881e1d564f4 -->|"detail_probe: click_service()"| N_f8e6e1d62d04
+    N_f8e6e1d62d04 -->|"warning_probe: click_use_service_switch"| N_f8e6e1d62d04
+    N_d881e1d564f4 -->|"refusal_probe: Back_refuse"| N_d881e1d564f4

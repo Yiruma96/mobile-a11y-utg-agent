@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用从桌面启动失败后经静态跳转进入伪装教程页，引导用户在系统无障碍中开启“Music Downloader/下载音乐”权限；用户点 Deny 返回后，应用反复重启同一诱导对话框/教程，呈现典型 GodFather 无障碍滥用与拒权后重试特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “请按下一屏步骤操作：在无障碍页找到 Download Music 并点击；启用 Download Music 开关；注意不同设备可能不同”（selffertility 教程页）",
+    "英语 -> 通知：“请授予无障碍权限以使用本应用”，标题为“Music Downloader/Settings”（无障碍列表页、系统警告弹窗）",
+    "英语 -> 系统警告：“允许 Music Downloader 完全控制你的设备？”并说明可查看/控制屏幕、读取全部屏幕内容、叠加显示及代你操作应用（系统警告弹窗）",
+    "英语 -> 服务详情：“Use Music Downloader”“未提供描述”（设备服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，显示天气与 Messages、Chrome、Search 等；代理从启动器打开 com.motivities.grubroot.truthfully，尚无应用界面。",
+    "step_02": "仍为桌面应用列表，上次目标未启动；代理再次直接打开该包尝试拉起应用，页面无通知、无遮罩。",
+    "step_03": "仍在桌面页，启动失败后触发静态引导 Activity 跳转兜底至 .truthfully，未见应用界面或授权内容。",
+    "step_04": "应用教程页，英文提示在无障碍中找 Download Music 并开启开关，点 OK 前往系统设置；含误导性名称与步骤说明。",
+    "step_05": "系统无障碍列表，DOWNLOADED APPS 下 Music Downloader 为 Off；通知横幅催授无障碍权限，采集到设置钩子/探针后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针，仍停在无障碍设置页，界面文本为空，仅见应用 Settings 通知，无遮罩或弹窗。",
+    "post_jump_2.0s": "跳后2.0秒探针，仍在无障碍设置页，无界面文本与遮罩，仅保留应用 Settings 通知，状态未变化。",
+    "detail_1_service_detail_page": "Music Downloader 服务详情页，显示 Use Music Downloader、快捷方式 Off 与“未提供描述”，用于检查权限入口与说明缺失。",
+    "detail_2_system_warning_dialog": "系统无障碍警告弹窗，说明可查看/控制屏幕、读取全部内容及代操作；代理检查后准备点 Deny，未授权。",
+    "refusal_2.0s": "点 Deny 返回应用教程页，仍显示英文开启无障碍步骤与 OK；拒权后立即重启同一诱导对话框。",
+    "refusal_10.5s": "拒权后10.5秒仍回到同一教程页，步骤与 OK 未变；应用持续重启诱导对话框，反复索要无障碍权限。"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_088__341c5b8d7f",
+  "label": "malicious",
+  "family_or_category": "Hook",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.weruzepufalo.mavimibe",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "95a3f0aff5de",
+  "hook_node_ids": [
+    "95a3f0aff5de",
+    "908d7b2a18c7"
+  ],
+  "nodes": [
+    {
+      "node_id": "95a3f0aff5de",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BBVA4",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "908d7b2a18c7",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "BBVA4",
+        "Use BBVA4",
+        "OPTIONS",
+        "BBVA4 shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "95a3f0aff5de",
+      "to": "908d7b2a18c7",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "908d7b2a18c7",
+      "to": "908d7b2a18c7",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "95a3f0aff5de",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back BBVA4 Use BBVA4 OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BBVA4",
+        "Use BBVA4",
+        "OPTIONS",
+        "BBVA4 shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Back BBVA4 Use BBVA4",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BBVA4",
+        "Use BBVA4",
+        "OPTIONS",
+        "BBVA4 shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hook__341c5b8d7f",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用以BBVA4伪装无障碍服务，引导用户进入系统无障碍列表并打开服务详情，通知横幅持续催促启用；用户拒绝授权后回落桌面，未崩溃，表现为优雅停留或降级。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 启用BBVA4（通知横幅，多处出现）",
+    "英文 -> 若无障碍权限已开启，请先关闭再开启（BBVA4服务详情页）",
+    "英文 -> 使用BBVA4（BBVA4服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "进入系统无障碍列表页，已下载应用BBVA4显示为Off，页面含字体与显示等设置；底部有备份通知。探针命中无障碍设置Hook后自动终止。",
+    "post_jump_0.8s": "仍停留在无障碍列表页，界面文本为空；BBVA4通知横幅提示“Enable BBVA4”，备份通知并存，遮罩数为0，等待0.8秒后无变化。",
+    "post_jump_2.0s": "无障碍列表页保持静止，UI文本为空；BBVA4通知继续催启用，备份通知并存，遮罩为0，等待2.0秒仍无页面跳转。",
+    "detail_1_service_detail_page": "进入BBVA4服务详情页，显示“Use BBVA4”开关及快捷键、音量键选项；底部英文提示若无障碍权限已开需关闭再开启，诱导授权。",
+    "detail_2_system_warning_dialog": "系统警告弹窗页仍显示BBVA4服务详情，无额外遮罩；探针查看警告并点Deny，BBVA4与备份通知仍在，未见取消软键异常。",
+    "refusal_2.0s": "拒权后返回桌面，显示应用列表与Messages/Chrome等图标；BBVA4通知仍提示启用，备份通知并存，无遮罩，判定优雅停留/降级。",
+    "refusal_10.5s": "拒权10.5秒后仍在桌面，页面内容与通知未变；BBVA4横幅继续提示启用，备份通知并存，无遮罩，应用未崩溃或无明显降级。"
+  }
+}

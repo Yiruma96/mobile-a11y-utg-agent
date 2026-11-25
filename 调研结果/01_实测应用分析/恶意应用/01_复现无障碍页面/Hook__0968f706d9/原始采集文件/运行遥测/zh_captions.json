@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用通过常驻通知「String (king) / String (Enable king)」将用户引向系统无障碍设置，并在「king」服务详情与完全控制授权警告中推动开启无障碍权限；用户拒绝后返回桌面，通知仍保留，表现为优雅停留或降级而非强制弹窗。",
+  "observed_lure_rhetoric_zh": [
+    "英文：String (king) / String (Enable king) -> 中文：king / 启用 king（通知横幅，贯穿无障碍列表、服务详情、授权弹窗与返回桌面）",
+    "英文：Use king -> 中文：使用 king（服务详情页）",
+    "英文：king shortcut / Hold volume keys / Shortcut settings -> 中文：king 快捷键 / 长按音量键 / 快捷键设置（服务详情页）",
+    "英文：If accessibility permission has been on, please turn off then turn on. -> 中文：若无障碍权限曾开启，请先关闭再重新开启（服务详情页）",
+    "英文：Allow king to have full control of your device? -> 中文：允许 king 完全控制您的设备？（系统警告弹窗）",
+    "英文：Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 中文：完全控制适合辅助无障碍需求的应用，但不适合多数应用（系统警告弹窗）",
+    "英文：View and control screen / It can read all content on the screen and display content over other apps. -> 中文：查看并控制屏幕 / 可读取屏幕全部内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "英文：View and perform actions / It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 中文：查看并执行操作 / 可追踪交互并代表您操作应用（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍设置列表：已下载应用「king」显示为关闭，通知横幅提示「启用 king」；采集到 Hook 与探针后终止，遮罩数为0。",
+    "post_jump_0.8s": "同一无障碍列表跳后0.8秒探针：页面文本为空，应用通知「启用 king」仍常驻，无遮罩，继续等待。",
+    "post_jump_2.0s": "跳后2.0秒再次探针：无障碍列表仍无可见控件文本，通知持续悬挂且遮罩为0，未发生授权或跳转。",
+    "detail_1_service_detail_page": "服务详情页：显示「king」「使用 king」、快捷键与音量键选项，并提示权限曾开启需关闭再开启；通知仍在，本步检查详情。",
+    "detail_2_system_warning_dialog": "系统授权警告：询问是否允许 king 完全控制设备，列明可读屏、覆盖显示及代操作，提供允许/拒绝；本步仅检查弹窗。",
+    "refusal_2.0s": "拒绝后返回桌面：显示应用列表、天气与常用图标，通知「启用 king」未消失，无遮罩，结果记为优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面：界面与通知「启用 king」保持，无弹窗或遮罩，应用未强制牵引，呈优雅降级。"
+  }
+}

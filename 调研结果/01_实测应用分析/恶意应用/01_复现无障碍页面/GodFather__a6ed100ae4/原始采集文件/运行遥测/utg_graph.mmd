@@ -1,0 +1,15 @@
+flowchart TD
+    N_1159e24777c9["Step 1: NexusLauncherActivity\nApps list"]
+    N_2fb7866c6393["Step 4: selffertility\nPlease follow the step"]
+    N_faa0668add7e["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_0fce50adffc3["Step 5: SubSettings\nBack"]
+    N_234133a38d00["Step 5: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Music Downloader"]
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(truthfully)"| N_2fb7866c6393
+    N_2fb7866c6393 -->|"ui_click: click([7] Button text='OK' id=bu"| N_faa0668add7e
+    N_faa0668add7e -->|"detail_probe: click_service()"| N_0fce50adffc3
+    N_0fce50adffc3 -->|"warning_probe: click_use_service_switch"| N_234133a38d00
+    N_faa0668add7e -->|"refusal_probe: Back_refuse"| N_2fb7866c6393
+    N_2fb7866c6393 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_2fb7866c6393
+    N_2fb7866c6393 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_2fb7866c6393
