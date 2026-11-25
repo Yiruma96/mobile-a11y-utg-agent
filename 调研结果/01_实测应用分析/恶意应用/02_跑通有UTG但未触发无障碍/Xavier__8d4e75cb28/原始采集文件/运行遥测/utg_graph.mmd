@@ -1,0 +1,12 @@
+flowchart TD
+    N_56a34ba90977["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_3806f9b568df["Step 2: ResolverActivity\nS6 Launcher"]
+    N_96447702ed18["Step 3: ResolverActivity\nUse Pixel Launcher as "]
+    N_ba735e0234e7["Step 4: Launcher\nBy continuing you acce"]
+    N_56a34ba90977 -->|"ui_click: click([27] Button text='Continue"| N_3806f9b568df
+    N_3806f9b568df -->|"ui_click: click([3] Button text='OK' id=bu"| N_96447702ed18
+    N_96447702ed18 -->|"ui_click: click([6] TextView text='S6 Laun"| N_ba735e0234e7
+    N_ba735e0234e7 -->|"ui_click: click([240, 940])"| N_ba735e0234e7
+    N_ba735e0234e7 -->|"ui_click: click([300, 940])"| N_ba735e0234e7
+    N_ba735e0234e7 -->|"static_guided_activity_jump: am_start(onActivityResult)"| N_ba735e0234e7
+    N_ba735e0234e7 -->|"static_guided_activity_jump: am_start(WallpaperCropActivity)"| N_ba735e0234e7

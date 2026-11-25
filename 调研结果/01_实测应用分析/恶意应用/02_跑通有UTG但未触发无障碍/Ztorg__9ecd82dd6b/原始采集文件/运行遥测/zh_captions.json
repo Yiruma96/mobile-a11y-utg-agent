@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用从桌面直接启动后无可见界面，多次静态跳转至 UponGuideActivity、LineUponAccessService、UponActivity，最终拉起系统权限审核页，以“EmailService”名义请求电话、文件媒体、联系人和相机权限；未测试拒绝结果。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 EmailService 访问哪些内容（第8页权限审核）",
+    "英文 Phone: make and manage phone calls -> 电话：拨打和管理电话（第8页权限审核）",
+    "英文 Files and media: access photos, media, and files on your device -> 文件与媒体：访问设备上的照片、媒体和文件（第8页权限审核）",
+    "英文 Contacts: access your contacts -> 联系人：访问您的联系人（第8页权限审核）",
+    "英文 Camera: take pictures and record video -> 相机：拍照和录像（第8页权限审核）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，可见“Apps list/应用列表”和天气，执行直接打开目标包；未见应用界面、通知或遮罩。",
+    "step_02": "仍在桌面应用列表页，点击“Apps list/应用列表”后目标应用未显现；无通知、无遮罩，启动失败疑似隐藏界面。",
+    "step_03": "桌面保持不变，探针按静态引导跳转 UponGuideActivity；未出现可见页面、通知或遮罩，疑似引导页不可见。",
+    "step_04": "桌面页，上滑意图展开应用抽屉；界面仍为“Apps list/应用列表”，无目标应用入口、通知或遮罩。",
+    "step_05": "展开应用抽屉，显示 Calendar、Camera、Chrome 等；未发现目标应用图标，执行打开探针，无通知或遮罩。",
+    "step_06": "应用抽屉仍可见，按静态引导跳转 LineUponAccessService；无可见服务界面、通知或遮罩，行为隐蔽。",
+    "step_07": "仍停留应用抽屉，按静态引导跳转 UponActivity；未呈现可见 Activity 页面、通知或遮罩，入口持续隐藏。",
+    "step_08": "系统权限审核页，要求允许“EmailService”访问电话、文件媒体、联系人和相机，提供取消/继续；无通知或遮罩。"
+  }
+}

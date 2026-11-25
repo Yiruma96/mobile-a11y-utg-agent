@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用从系统权限复核开始请求电话、文件媒体、联系人、相机、定位、通话记录等广泛权限，经旧版兼容提示和 START 捆绑同意页进入 RISKY 主面板，再由 Battery Saver 导流至“隐私风险/SCAN”安全页并静态跳转授权页面；拒绝授权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 选择允许“Security Antivirus”访问的内容（Step 1 系统权限复核页）",
+    "English -> 该应用针对旧版 Android 构建，可能无法正常工作，请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "English -> 启动应用即表示我同意隐私政策（Step 3 START 页）",
+    "English -> 我同意开启自动清理、智能锁、智能滑动、通话结束、WiFi 优化（可能含赞助内容）（Step 3 START 页）",
+    "English -> 高风险/从未扫描过（Step 4 主面板）",
+    "English -> 正在分析电量使用（Step 5 省电页）",
+    "English -> 电池已省电；抓住隐私入侵者；锁定应用防止窥探；可能存在安全风险；立即扫描以避免隐私泄露（Step 6 安全页，原文含拼写 pricacy）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，要求允许 Security Antivirus 访问电话、文件媒体、联系人、相机、定位、通话记录等；本步点 Continue 继续。",
+    "step_02": "旧版 Android 兼容性弹窗，英文提示应用或无法正常工作并建议检查更新或联系开发者；本步点 OK 关闭后继续进入应用。",
+    "step_03": "START 捆绑同意页：英文称启动即同意隐私政策，并同意开启自动清理、智能锁、智能滑动、通话结束、WiFi优化（可能含赞助内容）；本步点 START。",
+    "step_04": "主面板显示 RISKY、NEVER SCANNED BEFORE（高风险/从未扫描），列 Junk Clean、Phone Boost、Battery Saver、CPU Cooler；本步点 Battery Saver。",
+    "step_05": "电池省电页显示 100% 与 Analyzing power usage（正在分析电量使用），本步无点击仅等待，随后导向权限/授权流程。",
+    "step_06": "安全页以 BATTERY SAVED、防隐私入侵/锁应用及“可能有安全风险、立即扫描避免隐私泄露”诱导 SCAN；本步静态跳转授权页。",
+    "step_07": "重复的安全页：仍以 BATTERY SAVED、隐私防护与 SCAN 风险话术诱导；本步静态跳转 GrantPermissonsActivity$3，无可见点击。",
+    "step_08": "再次出现同一安全页，继续用 BATTERY SAVED、隐私防护与 SCAN 话术施压；本步静态跳转 GrantPermissonsActivity$4，无可见点击。"
+  }
+}

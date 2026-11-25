@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用以“Lollipop Launcher”启动器为外壳，先经系统权限复核页集中索取电话、联系人、文件媒体、短信、通话记录、定位、相机等权限，再以旧版兼容提示和启动器设置/通知工具栏引导进入设置及静态跳转页面；全程无遮罩，通知横幅短暂出现，未测试拒绝分支。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Lollipop Launcher 访问什么”（Step 1 ReviewPermissionsActivity）",
+    "英文 -> “电话/拨打和管理电话”“联系人/访问联系人”“文件与媒体/访问设备上的照片、媒体和文件”“短信/发送和查看短信”“通话记录/读写通话记录”“位置/访问本机位置”“相机”（Step 1 ReviewPermissionsActivity）",
+    "英文 -> “此应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 Launcher 兼容警告）",
+    "英文 -> “Lollipop 设置”（Step 3 启动器主屏入口）",
+    "英文 -> “通知工具栏”“设置默认启动器/未选择默认”“安全与隐私/保护隐藏应用、锁定应用”（Step 5-8 设置页）",
+    "英文 -> 占位通知“String (Notification) / String (Hello)”（Step 2-5 顶部通知横幅）"
+  ],
+  "frame_captions": {
+    "step_01": "系统英文权限复核页，集中展示电话、联系人、文件媒体、短信、通话记录、定位、相机等权限说明；点击“Continue”继续。",
+    "step_02": "旧版兼容警告页，英文提示应用为旧 Android 构建或异常；点“OK”关闭，通知横幅“String (Hello)”仍在。",
+    "step_03": "启动器主屏，含搜索、语音搜索、工具箱/加速、主题、Lollipop 设置等入口；点击“Lollipop Setting”进入设置，通知横幅仍在。",
+    "step_04": "设置总览页，含常用、桌面、抽屉、Dock、侧栏、文件夹、主题界面、未读计数、手势按键、高级；点击“Common”进入常用设置。",
+    "step_05": "常用设置页，显示未选默认启动器、通知工具栏、Android L 风格、安全与隐私；点击“Notification Toolbar”触发通知访问说明。",
+    "step_06": "仍为常用设置页，界面同上；本步通过静态引导跳转至 CommonPrefActivity，未见可见点击或新弹窗，通知横幅已消失。",
+    "step_07": "静态跳转后的 CommonPrefActivity，重复展示常用设置项；随后引导跳至 HibernateActivity，未见新界面内容或遮罩。",
+    "step_08": "仍停留 CommonPrefActivity 的设置项，最后静态引导跳向 WallpaperCropActivity 壁纸裁剪页；无可见弹窗、遮罩或通知横幅。"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用以“fast game”游戏名义启动，先请求短信、联系人、电话、文件媒体和位置等高风险权限，随后崩溃并被旧版兼容性弹窗阻断；在桌面多次拉起失败后，通过静态跳转指向广告落地页、辅助功能入口和广播接收器，呈现 Ztorg 类后台推广与规避特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许“fast game”访问的内容（Step 1 权限总览）",
+    "英文 -> 发送和查看短信（Step 1 短信权限）",
+    "英文 -> 访问你的联系人（Step 1 联系人权限）",
+    "英文 -> 拨打和管理电话（Step 1 电话权限）",
+    "英文 -> 访问设备上的照片、媒体和文件（Step 1 文件媒体权限）",
+    "英文 -> 访问本设备位置（Step 1 位置权限）",
+    "英文 -> “fast game”不断停止运行（Step 2 崩溃弹窗）",
+    "英文 -> 此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（Step 3 兼容性警告）"
+  ],
+  "frame_captions": {
+    "step_01": "权限审核页：“fast game”请求短信、联系人、电话、文件媒体与位置权限；本步点“Continue”，有“Cancel”可取消，无通知/遮罩。",
+    "step_02": "桌面崩溃弹窗称“fast game keeps stopping”（不断停止），有“App info/Close app”；本步点“Close app”，无通知/遮罩。",
+    "step_03": "桌面兼容性警告：“fast game”针对旧版 Android 构建、可能无法正常运行；本步点“OK”忽略，无通知/遮罩。",
+    "step_04": "桌面/应用列表页，显示 Messages、Chrome、搜索等，无目标应用界面；本步执行 open 重新拉起被关闭的“fast game”，无通知/遮罩。",
+    "step_05": "桌面/应用列表页仍无目标应用界面；本步再次按包名 open 拉起“fast game”，以恢复其后台服务，无通知/遮罩。",
+    "step_06": "界面仍为桌面；静态引导跳转广告落地 Activity（InnerWebLandingActivity），无可见页面、通知或遮罩。",
+    "step_07": "界面仍为桌面；静态引导跳转“辅助功能”Activity（OpenFuzhuAccess），疑似诱导无障碍授权，无可见页面、通知或遮罩。",
+    "step_08": "界面仍为桌面；静态引导跳转广播接收器（com.edcf.MyReceiver），无可见页面、通知或遮罩，疑似后台触发。"
+  }
+}

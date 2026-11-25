@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用先经系统权限复核与旧版警告，以“Battery Saver”和隐私政策同意进入，教程可跳过；主界面反复弹出存储授权框，点ALLOW后仍以静态跳转探针前往Force、Splash、Shortcut页面。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “选择允许Battery Saver访问哪些内容”（Step 1 系统权限复核页）",
+    "English -> “访问设备上的照片、媒体和文件/联系人/拨打电话”（Step 1 权限清单）",
+    "English -> “此应用为旧版Android构建，可能无法正常工作，请检查更新或联系开发者”（Step 2 旧版警告）",
+    "English -> “继续即表示同意隐私政策”（Step 3 启动页）",
+    "English -> “感谢选择Battery Saver；左右滑动查看更多提示”（Step 4 教程页）",
+    "English -> “允许应用访问设备上的照片、媒体和文件吗？”（Step 5-8 存储授权弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页：要求选择Battery Saver可访问的文件媒体、联系人、电话；有取消/继续，本步点“继续”放行权限复核。",
+    "step_02": "旧版Android警告页：提示应用为旧版构建、可能异常，建议更新或联系开发者；本步点OK关闭警告继续。",
+    "step_03": "应用启动页：显示START及“继续即同意隐私政策”，以隐私政策捆绑同意；本步点START进入主流程。",
+    "step_04": "新手提示页：称“感谢选择Battery Saver”并提示左右滑动看更多；提供Skip，本步点Skip跳过教程。",
+    "step_05": "主界面弹出存储授权框：请求照片、媒体和文件访问，提供DENY/ALLOW；有标题正文均为null的通知，本步点ALLOW。",
+    "step_06": "仍为存储授权弹窗，未做点击；保留空通知横幅，并静态探针跳转ForceActivity，授权框未消失。",
+    "step_07": "存储授权弹窗重复显示，界面无变化；空通知横幅仍在，静态探针改跳SplashActivity，授权仍未处理。",
+    "step_08": "存储授权弹窗仍停留，空通知横幅持续；静态探针跳转ShortcutActivity，显示应用反复引导授权与快捷入口。"
+  }
+}

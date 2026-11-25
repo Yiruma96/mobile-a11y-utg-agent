@@ -1,0 +1,222 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_119__d57d8523bf",
+  "label": "malicious",
+  "family_or_category": "hiddad",
+  "static_visibility": "clear",
+  "target_package": "com.antivirus.guardian.cleaner.security",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "d6c399bbf9dc",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "d6c399bbf9dc",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Guardian Antivirus to access",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Camera",
+        "take pictures and record video",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "Physical activity",
+        "access your physical activity"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "37526c8f9a94",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.guardian.cleaner.security",
+      "abilityName": ".act.StartPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Guardian Antivirus",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "005058b3fc85",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.guardian.cleaner.security",
+      "abilityName": "com.antivirus.guardian.cleaner.security.act.StartPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Guardian Antivirus",
+        "I agree to Privacy Policy by starting the app",
+        "I agree to open Realtime Protect,Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)",
+        "START",
+        "Powered by Guardian Antivirus Team"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "568da5f23f22",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.guardian.cleaner.security",
+      "abilityName": "com.antivirus.guardian.cleaner.security.act.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SCAN",
+        "Virus & Privacy",
+        "Risky",
+        "Never scanned before",
+        "Junk Clean",
+        "Phone Boost",
+        "Battery Saver"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "2696ef6fb440",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.guardian.cleaner.security",
+      "abilityName": "com.antivirus.guardian.cleaner.security.act.ResultSafetyActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "214MB released"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "1951daff35da",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.guardian.cleaner.security",
+      "abilityName": "com.antivirus.guardian.cleaner.security.act.ResultSafetyActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "Memory Use:46%",
+        "214MB released",
+        "Junk Clean",
+        "Phone Boost",
+        "Temperature Detect",
+        "Catch your privacy invaders",
+        "Lock apps to prevent snooping",
+        "PROTECT",
+        "Possible security risks",
+        "Scan now to avoid pricacy leaking",
+        "SCAN"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d6c399bbf9dc",
+      "to": "37526c8f9a94",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "37526c8f9a94",
+      "to": "005058b3fc85",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "005058b3fc85",
+      "to": "568da5f23f22",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"START\" id=guide_btn (click) center=(539,1705))"
+    },
+    {
+      "from": "568da5f23f22",
+      "to": "2696ef6fb440",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([11] LinearLayout id=ll_phone_boost (click) center=(540,1871))"
+    },
+    {
+      "from": "2696ef6fb440",
+      "to": "1951daff35da",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "1951daff35da",
+      "to": "1951daff35da",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity)"
+    },
+    {
+      "from": "1951daff35da",
+      "to": "1951daff35da",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity$4)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "hiddad__d57d8523bf",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先引导系统权限总览并继续授权，再以旧版兼容提示和启动页捆绑同意进入主界面；随后用“释放214MB/内存46%/隐私风险”等结果页催促扫描，并多次静态跳转尝试拉起授权页。整体呈现清理加速类工具外壳下的权限诱导与夸大安全风险话术。",
+  "observed_lure_rhetoric_zh": [
+    "英文“This app was built for an older version of Android and may not work properly...” -> 应用为旧版Android构建，可能无法正常工作（启动页弹窗）",
+    "英文“I agree to Privacy Policy by starting the app” -> 开始使用即视为同意隐私政策（启动页）",
+    "英文“I agree to open Realtime Protect,Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)” -> 同意开启实时保护、自动清理、智能锁、智能滑动、通话结束、WiFi优化，可能含赞助内容（启动页）",
+    "英文“Possible security risks / Scan now to avoid pricacy leaking” -> 存在可能安全风险，立即扫描以避免隐私泄露（结果安全页）",
+    "英文“Catch your privacy invaders / Lock apps to prevent snooping” -> 抓住隐私入侵者，锁定应用以防窥探（结果安全页）",
+    "英文“214MB released / Memory Use:46%” -> 已释放214MB，内存占用46%（结果安全页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限总览页，列出电话、文件媒体、联系人、相机、位置等权限；点击“Continue”继续授权，无通知与遮罩。",
+    "step_02": "旧版Android兼容性警告弹窗，提示应用为旧版本构建、可能无法正常运行；点击“OK”关闭弹窗继续，无通知与遮罩。",
+    "step_03": "启动页以隐私政策和多项功能开启构成捆绑同意，并提示可能含赞助内容；点击“START”进入，无通知与遮罩。",
+    "step_04": "主界面展示“SCAN”、病毒与隐私风险、垃圾清理、手机加速等入口；点击“Phone Boost”进入加速，无通知与遮罩。",
+    "step_05": "结果页仅显示“214MB released”，即已释放214MB，作为过渡/结果展示；本步等待加载，无通知与遮罩。",
+    "step_06": "结果安全页展示内存占用46%、已释放214MB及隐私风险扫描催促；静态跳转尝试前往授权页，无通知与遮罩。",
+    "step_07": "同一结果安全页重复展示内存46%、已释放214MB与“立即扫描”催促；再次静态跳转授权页，无通知与遮罩。",
+    "step_08": "结果安全页仍以风险提示和扫描按钮诱导继续防护；静态跳转改用startActivityForResult拉起授权，无通知与遮罩。"
+  }
+}

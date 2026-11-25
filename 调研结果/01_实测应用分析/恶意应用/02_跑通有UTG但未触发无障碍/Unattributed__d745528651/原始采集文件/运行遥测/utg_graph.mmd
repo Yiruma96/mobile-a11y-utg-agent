@@ -1,0 +1,13 @@
+flowchart TD
+    N_9f19954aefb6["Step 1: LauncherAlias\nA"]
+    N_a5ff37b88f87["Step 2: LauncherAlias\n•"]
+    N_7b315b11dac4["Step 3: LauncherAlias\n••"]
+    N_c10db832cd2f["Step 4: LauncherAlias\n•••"]
+    N_ec8207d99463["Step 5: LauncherAlias\n••••"]
+    N_9f19954aefb6 -->|"ui_click: click([5] Button text='1' (click"| N_a5ff37b88f87
+    N_a5ff37b88f87 -->|"ui_click: click([6] Button text='2' (click"| N_7b315b11dac4
+    N_7b315b11dac4 -->|"ui_click: click([7] Button text='3' (click"| N_c10db832cd2f
+    N_c10db832cd2f -->|"ui_click: click([8] Button text='4' (click"| N_ec8207d99463
+    N_ec8207d99463 -->|"ui_click: click([18] ImageButton id=ok (cl"| N_9f19954aefb6
+    N_9f19954aefb6 -->|"static_guided_activity_jump: am_start(M)"| N_9f19954aefb6
+    N_9f19954aefb6 -->|"static_guided_activity_jump: am_start(AliasSettings)"| N_9f19954aefb6

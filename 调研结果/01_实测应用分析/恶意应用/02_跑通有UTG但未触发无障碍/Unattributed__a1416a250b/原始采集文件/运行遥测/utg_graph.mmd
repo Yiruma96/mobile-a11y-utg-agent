@@ -1,0 +1,12 @@
+flowchart TD
+    N_ac9685e8ae89["Step 1: UpgradeActivity\nSetup needed"]
+    N_30332d270b3e["Step 2: UpgradeActivity\n"]
+    N_7005e786da97["Step 3: NexusLauncherActivity\nApps list"]
+    N_510b0b445530["Step 7: UpgradeActivity\nGoogle Play"]
+    N_ac9685e8ae89 -->|"ui_click: click([6] View (click) center=(5"| N_30332d270b3e
+    N_30332d270b3e -->|"ui_system_button: system_button(Back)"| N_7005e786da97
+    N_7005e786da97 -->|"ui_open: open()"| N_7005e786da97
+    N_7005e786da97 -->|"ui_click: click([1] View desc='Apps list' "| N_7005e786da97
+    N_7005e786da97 -->|"static_guided_activity_jump: am_start(UnknownSourcesPermissio"| N_7005e786da97
+    N_7005e786da97 -->|"static_guided_activity_jump: am_start(LaunchRouterActivity)"| N_510b0b445530
+    N_510b0b445530 -->|"static_guided_activity_jump: am_start(DebugInstallActivity)"| N_510b0b445530

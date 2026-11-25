@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "该应用先从系统权限复核页请求电话、文件媒体、联系人、相机、定位、通话记录等敏感权限，再用旧版兼容提示、隐私政策与功能开启同意勾选及 START 按钮引导用户进入授权流程；后续静态跳转指向 GrantPermissonsActivity 和 AccessibilityDialogActivity，呈现 Hiddad 常见的诱导授权与无障碍权限滥用链路，未见通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow Dr. Security to access -> 选择允许“Dr. Security”访问哪些权限（Step 1 系统权限复核页）",
+    "Phone / make and manage phone calls -> 电话/拨打和管理电话（Step 1 权限清单）",
+    "Files and media / access photos, media, and files on your device -> 文件与媒体/访问设备照片、媒体和文件（Step 1 权限清单）",
+    "Contacts / access your contacts -> 联系人/访问联系人（Step 1 权限清单）",
+    "Camera / take pictures and record video -> 相机/拍照和录像（Step 1 权限清单）",
+    "Location / access this device's location -> 定位/访问本机位置（Step 1 权限清单）",
+    "Call logs / read and write phone call log -> 通话记录/读写通话记录（Step 1 权限清单）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容警告）",
+    "I agree to Privacy Policy by starting the app -> 启动应用即表示同意隐私政策（Step 3-8 同意页）",
+    "I agree to open Realtime Protect,Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents) -> 同意开启实时保护、自动清理、智能锁、智能滑动、通话结束、WiFi 优化（可能含赞助内容）（Step 3-8 同意页）",
+    "START -> 开始（Step 3-8 同意页）",
+    "Powered by Dr. Security Team -> 由 Dr. Security 团队提供（Step 3-8 同意页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，列出电话、文件媒体、联系人、相机、定位、通话记录等敏感权限；点击 Continue 继续。",
+    "step_02": "应用启动页弹出旧版 Android 兼容警告，称可能无法正常运行；点击 OK 关闭弹窗继续启动。",
+    "step_03": "启动页显示 DR.SECURITY、两条同意声明及 START，称启动即同意隐私政策并开启多项功能；点击 START。",
+    "step_04": "同一同意页，用户勾选第一条隐私政策同意复选框，使 START 可用并推进授权流程。",
+    "step_05": "同一同意页，勾选第二条功能/赞助内容同意框，继续为 START 解锁并推进流程。",
+    "step_06": "界面仍为同意页；探针以静态跳转指向 GrantPermissonsActivity，未显示新页面或弹窗。",
+    "step_07": "界面仍为同意页；静态跳转指向 GrantPermissonsActivity$4，属权限请求内部回调目标。",
+    "step_08": "界面仍为同意页；静态跳转指向 AccessibilityDialogActivity，暗示将引导开启无障碍权限。"
+  }
+}

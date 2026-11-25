@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "应用入口未正常拉起，先停留在NexusLauncher桌面；随后通过静态Activity跳转进入com.vuji.luzudomi的QewohequyuAuthbc6d，长时间仅显示“Loading…”，并多次被静态引导到GatewayActivity、GoniyulujufoActivity_a12f、WasucisoqeliwubuReceiver_4c2c，未观察到实际授权/拒权或取消操作。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "桌面启动器主页，显示应用列表、搜索与系统“数据未备份”通知；执行打开目标应用但未离开桌面，仍无应用遮罩。",
+    "step_02": "仍在同一桌面/应用列表页，点击“Apps list”尝试打开抽屉寻找目标；系统备份通知仍在，未进入目标应用。",
+    "step_03": "桌面页未变，改为静态跳转到com.vuji.luzudomi的GoniyulujufoActivity_a12f；无点击、无遮罩，系统通知保留。",
+    "step_04": "进入目标应用QewohequyuAuthbc6d，仅显示“Loading…”加载中；等待渲染，背景仍有系统“数据未备份”通知，无遮罩。",
+    "step_05": "同一目标加载页仍显示“Loading…”；继续等待更久，未见引导页或权限弹窗，系统备份通知持续存在。",
+    "step_06": "仍停留在“Loading…”加载页，随后被静态引导到activities.GatewayActivity；无用户点击，系统备份通知未消失。",
+    "step_07": "页面仍为“Loading…”，再次通过静态跳转指向GoniyulujufoActivity_a12f；未出现新界面或授权/取消控件。",
+    "step_08": "仍在“Loading…”页，静态跳转至WasucisoqeliwubuReceiver_4c2c；目标应用未呈现可操作页面，系统通知贯穿。"
+  }
+}

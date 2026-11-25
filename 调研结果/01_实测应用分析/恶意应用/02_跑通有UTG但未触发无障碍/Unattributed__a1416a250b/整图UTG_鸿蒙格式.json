@@ -1,0 +1,189 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_162__a1416a250b",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "store.pandaac.task9d",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "ac9685e8ae89",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "ac9685e8ae89",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "store.pandaac.task9d",
+      "abilityName": "com.shell.template.feature.upgrade.UpgradeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Setup needed",
+        "3 steps left",
+        "Accessibility disclosure",
+        "Accessibility service",
+        "Turn it on in Accessibility settings so the button can work.",
+        "What the button opens",
+        "Choose the app or shortcut the button opens.",
+        "Unrestricted battery",
+        "Stops your phone from putting the service to sleep.",
+        "Button action",
+        "Nothing assigned to the button yet",
+        "Pick an app, or a specific action inside an app (an app shortcut), to open when you press the accessibility button.",
+        "Choose what to open",
+        "Accessibility Button Launcher",
+        "Preferences"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "30332d270b3e",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "store.pandaac.task9d",
+      "abilityName": "com.shell.template.feature.upgrade.UpgradeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "7005e786da97",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-2°C",
+        "Cloudy, -2°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "510b0b445530",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "store.pandaac.task9d",
+      "abilityName": "com.shell.template.feature.upgrade.UpgradeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play",
+        "Update Available",
+        "To use this app, download the latest version.",
+        "TikTok18+",
+        "E",
+        "Everyone",
+        "What's new",
+        "Last updated",
+        "We are always making changes and improvements to this app. To make sure you do not miss a thing, just keep your Updates turned on.\n\n• Bug fixes and performance improvements.\n• Critical security vulnerability patch.",
+        "More info",
+        "Update",
+        "Ratings and reviews",
+        "Ratings and reviews are verified and are from people who use the same type of device that you use.",
+        "4.4",
+        "5"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ac9685e8ae89",
+      "to": "30332d270b3e",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] View (click) center=(540,817))"
+    },
+    {
+      "from": "30332d270b3e",
+      "to": "7005e786da97",
+      "step": 2,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "7005e786da97",
+      "to": "7005e786da97",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "7005e786da97",
+      "to": "7005e786da97",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "7005e786da97",
+      "to": "7005e786da97",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UnknownSourcesPermissionActivity)"
+    },
+    {
+      "from": "7005e786da97",
+      "to": "510b0b445530",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(LaunchRouterActivity)"
+    },
+    {
+      "from": "510b0b445530",
+      "to": "510b0b445530",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(DebugInstallActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Unattributed__a1416a250b",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用入口以“还剩3步”的设置向导诱导开启无障碍服务与无限制电池，并配置无障碍按钮启动器；中途出现可返回关闭的伪造更新遮罩，随后切至桌面并通过静态跳转探针进入未知来源权限、启动路由、调试安装及视频流/交易模块。本次轨迹未实际完成授权或拒权，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 需要设置；还剩3步（Step 1）",
+    "英文 -> 在无障碍设置中开启它，按钮才能工作（Step 1）",
+    "英文 -> 防止手机让服务休眠（Step 1）",
+    "英文 -> 选择按下无障碍按钮时打开的应用或快捷方式（Step 1）",
+    "英文 -> 有可用更新；要使用此应用，请下载最新版本（Step 7/8）",
+    "英文 -> 关键安全漏洞补丁（Step 7/8）",
+    "英文 -> 冒充“TikTok18+”“Google Play”品牌与“更新”按钮（Step 7/8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪装设置引导页：称需设置、余3步，诱导开启无障碍与无限制电池；本步点“无障碍服务”继续；系统未备份通知常驻，无遮罩。",
+    "step_02": "页面无文本，疑为伪造“Update Available”网页遮罩；按返回键关闭并退回；系统未备份通知常驻，无取消提示。",
+    "step_03": "已切到系统桌面，显示应用列表、天气与搜索；未见本应用界面，需重新启动继续；系统未备份通知常驻。",
+    "step_04": "仍在系统桌面；本步点“应用列表”试图查找并重启目标应用；未出现授权页；系统未备份通知常驻。",
+    "step_05": "仍为系统桌面；探针静态跳转“未知来源安装权限”页但界面未变；无授权弹窗；系统未备份通知常驻。",
+    "step_06": "仍为系统桌面；探针静态跳转启动路由页但界面未变；未见诱导或授权弹窗；系统未备份通知常驻。",
+    "step_07": "伪造Google Play更新页：标“TikTok18+”“有可用更新”，称须下最新版并补安全漏洞；本步跳调试安装页；有系统未备份通知。",
+    "step_08": "仍为伪造Google Play更新页，以TikTok18+和安全补丁催促更新；本步静态跳视频流/交易模块；系统未备份通知，无遮罩。"
+  }
+}

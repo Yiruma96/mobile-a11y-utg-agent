@@ -1,0 +1,11 @@
+flowchart TD
+    N_bff2af0935bc["Step 1: HawkshawMainActivity\nIdea Security"]
+    N_9ee3804613d5["Step 3: HawkshawMainActivity\nIdea Security"]
+    N_e2640885a61c["Step 5: HawkshawMainActivity\nIdea Security"]
+    N_bff2af0935bc -->|"ui_click: click([2] EditText text='Usernam"| N_bff2af0935bc
+    N_bff2af0935bc -->|"ui_type: type()"| N_9ee3804613d5
+    N_9ee3804613d5 -->|"ui_click: click([3] EditText text='Passwor"| N_9ee3804613d5
+    N_9ee3804613d5 -->|"ui_type: type()"| N_e2640885a61c
+    N_e2640885a61c -->|"ui_click: click([5] Button text='LOGIN' id"| N_e2640885a61c
+    N_e2640885a61c -->|"static_guided_activity_jump: am_start(Accessibility)"| N_e2640885a61c
+    N_e2640885a61c -->|"static_guided_activity_jump: am_start(SecretDialPadCodeReceiv"| N_e2640885a61c

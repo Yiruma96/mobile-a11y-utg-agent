@@ -1,0 +1,9 @@
+flowchart TD
+    N_1159e24777c9["Step 1: NexusLauncherActivity\nApps list"]
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(BootReceiver)"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(ProfileInstallReceiver)"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(InitialService)"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(InitializationProvider)"| N_1159e24777c9

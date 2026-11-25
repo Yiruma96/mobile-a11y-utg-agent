@@ -1,0 +1,13 @@
+flowchart TD
+    N_3c8142e75b1b["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_780565de728c["Step 2: RequestIgnoreBatteryOptimiza\nChoose what to allow S"]
+    N_b7e1a2a7e27d["Step 4: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_9ba16b9e7f2a["Step 5: NexusLauncherActivity\nLet app always run in "]
+    N_f6a3588f0886["Step 6: NexusLauncherActivity\nApps list"]
+    N_3c8142e75b1b -->|"ui_click: click([37] Button text='Continue"| N_780565de728c
+    N_780565de728c -->|"ui_click: click([37] Button text='Continue"| N_780565de728c
+    N_780565de728c -->|"ui_click: click([895, 1390])"| N_b7e1a2a7e27d
+    N_b7e1a2a7e27d -->|"ui_click: click([4] Button text='Allow' id"| N_9ba16b9e7f2a
+    N_9ba16b9e7f2a -->|"ui_click: click([4] Button text='Allow' id"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(displayActivity)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(LeanbackLauncherActivit"| N_f6a3588f0886

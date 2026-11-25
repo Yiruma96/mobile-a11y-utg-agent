@@ -1,0 +1,12 @@
+flowchart TD
+    N_fd727b9b2cba["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_30cd5b47b1ef["Step 2: MainActivity\nAndroid Sys"]
+    N_61449851bfde["Step 3: MainActivity\nPlease enable 'Accessi"]
+    N_f6a3588f0886["Step 4: NexusLauncherActivity\nApps list"]
+    N_fd727b9b2cba -->|"ui_click: click([35] Button text='Continue"| N_30cd5b47b1ef
+    N_30cd5b47b1ef -->|"ui_click: click([3] Button text='OK' id=bu"| N_61449851bfde
+    N_61449851bfde -->|"ui_click: click([2] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(JobBootReceiver)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(fourre)"| N_f6a3588f0886

@@ -1,0 +1,12 @@
+flowchart TD
+    N_ee248212601b["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_231b6a8a55ce["Step 2: PassphraseActivity\nAppleProtect"]
+    N_f56ac7485a4c["Step 3: PassphraseActivity\nChoose passphrase"]
+    N_3cffcad95604["Step 5: PassphraseActivity\n••••••••"]
+    N_ee248212601b -->|"ui_click: click([35] Button text='Continue"| N_231b6a8a55ce
+    N_231b6a8a55ce -->|"ui_click: click([3] Button text='OK' id=bu"| N_f56ac7485a4c
+    N_f56ac7485a4c -->|"ui_click: click([1] EditText text='Choose "| N_f56ac7485a4c
+    N_f56ac7485a4c -->|"ui_type: type()"| N_3cffcad95604
+    N_3cffcad95604 -->|"ui_long_press: long_press([1] EditText text='••"| N_3cffcad95604
+    N_3cffcad95604 -->|"static_guided_activity_jump: am_start(Accessibility)"| N_3cffcad95604
+    N_3cffcad95604 -->|"static_guided_activity_jump: am_start(HawkshawMainActivity$en"| N_3cffcad95604

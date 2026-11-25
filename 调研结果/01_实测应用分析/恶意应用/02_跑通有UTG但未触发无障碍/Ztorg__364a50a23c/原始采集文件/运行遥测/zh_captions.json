@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用先通过系统权限审查索要联系人、文件媒体、相机和电话权限，关闭旧版 Android 警告后进入伪装货币转换器；在设置页停留后返回桌面/应用列表，最终由 UponGuideActivity 以“保护隐私”恐吓话术诱导开启无障碍，并指向广播接收器链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Money Converter 访问哪些内容”（系统权限审查页，列出联系人、文件媒体、相机、电话）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（旧版兼容警告）",
+    "英文 -> “请开启无障碍，保护你的信息不被泄露、不被窃取，防止他人窥探你的隐私”（UponGuideActivity，恐吓式诱导开启无障碍）",
+    "英文 -> “Currency Converter 与 GoodView Studio 均不对汇率数据错误/延迟或据此采取的行动负责”（设置页免责声明）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页：英文要求选择允许 Money Converter 访问联系人、文件媒体、相机和电话；点击 Continue 继续。",
+    "step_02": "主界面弹出旧版 Android 兼容警告，称应用可能无法正常运行；点击 OK 关闭，通知栏出现异常“String (  )”通知。",
+    "step_03": "伪装货币转换器主页，含 Currency、Wall、Setting 与 EUR 换算入口；点击右上角 Setting 齿轮进入设置页。",
+    "step_04": "设置页含 Theme 与免责声明，称 Currency Converter/GoodView Studio 不担责；随后按 Home 退到后台等待广播。",
+    "step_05": "系统桌面显示 Apps list、日期和常用图标；点击“Apps list”打开应用列表，准备重新启动目标应用。",
+    "step_06": "仍在系统桌面/应用列表，未见可点目标；探针以静态跳转回退进入 UponGuideActivity。",
+    "step_07": "UponGuideActivity 用英文恐吓话术要求开启无障碍，称可防信息泄露、窃取和隐私窥探；本步静态跳转。",
+    "step_08": "同一无障碍诱导页继续停留，话术不变；探针再次静态跳转至 OpenAccessReceiver，疑似广播触发链路。"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "timestamp": 1795585903.7548242,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{f12a6e8 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{557c35c u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #5 Window{c48d43b u0 com.antivirus.easy.cleaner}:",
+      "mOwnerUid": "mOwnerUid=10219 showForAllUsers=false package=com.antivirus.easy.cleaner appop=SYSTEM_ALERT_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=BOTTOM RIGHT CENTER sim={adjust=pan} ty=SYSTEM_ALERT fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{e9f20be u0 com.antivirus.easy.cleaner}:",
+      "mOwnerUid": "mOwnerUid=10219 showForAllUsers=false package=com.antivirus.easy.cleaner appop=SYSTEM_ALERT_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=BOTTOM LEFT CENTER sim={adjust=pan} ty=SYSTEM_ALERT fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #8 Window{a9bce16 u0 com.antivirus.easy.cleaner}:",
+      "mOwnerUid": "mOwnerUid=10219 showForAllUsers=false package=com.antivirus.easy.cleaner appop=SYSTEM_ALERT_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(1xfill) gr=TOP LEFT CENTER sim={adjust=pan} ty=PHONE fmt=RGBA_8888",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #9 Window{1eb2340 u0 com.antivirus.easy.cleaner/com.antivirus.easy.cleaner.act.ResultSafetyActivity}:",
+      "mOwnerUid": "mOwnerUid=10219 showForAllUsers=false package=com.antivirus.easy.cleaner appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #13 Window{75f2410 u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=false package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(2767x2280) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103030e",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "com.google.android.gms",
+      "title": "String (Your data isn’t backed up)",
+      "text": "String (Add a backup account now)"
+    }
+  ]
+}

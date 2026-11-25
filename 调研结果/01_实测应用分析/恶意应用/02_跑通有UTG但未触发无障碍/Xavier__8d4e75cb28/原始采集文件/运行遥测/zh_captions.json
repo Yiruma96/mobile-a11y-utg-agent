@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用以S6 Launcher为名，先诱导一次性授予电话、联系人、文件媒体、短信、通话记录和相机等权限，再经旧版Android警告与主屏幕选择进入启动器；首屏以继续即接受条款隐私政策并需点GO，后续无界面变化但静态跳转至设置/壁纸裁剪。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许S6 Launcher访问的内容”（Step1权限授权页）",
+    "英文 -> “继续即表示接受我们的服务条款和隐私政策”（Step4-8启动器首页）",
+    "英文 -> “此应用为旧版Android构建，可能无法正常运行，请检查更新或联系开发者”（Step2旧版警告页）"
+  ],
+  "frame_captions": {
+    "step_01": "英文系统权限总览页，列电话、联系人、文件媒体、短信、通话记录、相机；本步点Continue继续授权，虽有Cancel但未取消。",
+    "step_02": "旧版Android警告弹窗，称S6 Launcher可能无法正常运行，建议检查更新或联系开发者；本步点OK忽略，通知栏显示其运行中。",
+    "step_03": "主屏幕选择页，提示用Pixel Launcher作Home，列出Just once、Always、其他应用及S6 Launcher；本步点选S6 Launcher作桌面。",
+    "step_04": "启动器首页仅见“继续即接受服务条款和隐私政策”，下方GO按钮；本步点屏幕中部尝试进入，通知栏仍显示S6 Launcher运行中。",
+    "step_05": "同一启动器首页，条款隐私文案和GO按钮仍在；本步再次点击GO中心，仍未跳转，仅通知栏保留S6 Launcher运行提示。",
+    "step_06": "界面仍为启动器条款页且无可见变化；本步为静态引导跳转至LauncherSetting.onActivityResult，通知栏仍显示S6 Launcher运行中。",
+    "step_07": "界面仍是条款与GO的启动器页，无用户可见变化；本步静态跳转到WallpaperCropActivity，通知栏保留S6 Launcher运行提示。",
+    "step_08": "仍显示条款与GO的启动器首页，无可见交互结果；本步静态跳转回LauncherSetting，通知栏持续显示S6 Launcher正在运行。"
+  }
+}

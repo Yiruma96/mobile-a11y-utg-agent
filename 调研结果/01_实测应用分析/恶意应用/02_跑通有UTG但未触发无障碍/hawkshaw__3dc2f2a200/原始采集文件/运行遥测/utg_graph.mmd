@@ -1,0 +1,12 @@
+flowchart TD
+    N_9c18ebd30889["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_4c1b124a098f["Step 2: PassphraseActivity\nSecurIt"]
+    N_6a7e77d58809["Step 3: PassphraseActivity\nChoose passphrase"]
+    N_ad4bee30fae5["Step 5: PassphraseActivity\n•••••••••••••"]
+    N_9c18ebd30889 -->|"ui_click: click([35] Button text='Continue"| N_4c1b124a098f
+    N_4c1b124a098f -->|"ui_click: click([3] Button text='OK' id=bu"| N_6a7e77d58809
+    N_6a7e77d58809 -->|"ui_click: click([1] EditText text='Choose "| N_6a7e77d58809
+    N_6a7e77d58809 -->|"ui_type: type()"| N_ad4bee30fae5
+    N_ad4bee30fae5 -->|"ui_long_press: long_press([1] EditText text='••"| N_ad4bee30fae5
+    N_ad4bee30fae5 -->|"static_guided_activity_jump: am_start(HawkshawMainActivity$en"| N_ad4bee30fae5
+    N_ad4bee30fae5 -->|"static_guided_activity_jump: am_start(SecretDialPadCodeReceiv"| N_ad4bee30fae5

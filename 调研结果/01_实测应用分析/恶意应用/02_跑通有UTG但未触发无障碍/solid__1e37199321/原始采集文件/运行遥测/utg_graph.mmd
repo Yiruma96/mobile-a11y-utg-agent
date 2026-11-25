@@ -1,0 +1,14 @@
+flowchart TD
+    N_9f90191aef35["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_6b349fc08a5b["Step 2: StartPageActivity\nSmart Security"]
+    N_b35ae524a56e["Step 3: StartPageActivity\nSMART SECURITY"]
+    N_39ac1696ad3b["Step 4: MainActivity\nRISKY"]
+    N_9c5d31e87a02["Step 5: MainActivity\nMenu"]
+    N_888d7e8e567c["Step 6: GrantPermissonsActivity\nSecurity Level"]
+    N_9f90191aef35 -->|"ui_click: click([35] Button text='Continue"| N_6b349fc08a5b
+    N_6b349fc08a5b -->|"ui_click: click([3] Button text='OK' id=bu"| N_b35ae524a56e
+    N_b35ae524a56e -->|"ui_click: click([6] TextView text='START' "| N_39ac1696ad3b
+    N_39ac1696ad3b -->|"ui_click: click([3] RelativeLayout id=rl_m"| N_9c5d31e87a02
+    N_9c5d31e87a02 -->|"ui_click: click([7] ImageButton id=btn (cl"| N_888d7e8e567c
+    N_888d7e8e567c -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_888d7e8e567c
+    N_888d7e8e567c -->|"static_guided_activity_jump: am_start(AccessibilityDialogActi"| N_888d7e8e567c

@@ -1,0 +1,12 @@
+flowchart TD
+    N_1a504d7b9c39["Step 1: ReviewPermissionsActivity\nChoose what to allow f"]
+    N_e2d4729a1259["Step 2: NexusLauncherActivity\nfast game keeps stoppi"]
+    N_68fd58ec2903["Step 3: NexusLauncherActivity\nfast game"]
+    N_f6a3588f0886["Step 4: NexusLauncherActivity\nApps list"]
+    N_1a504d7b9c39 -->|"ui_click: click([23] Button text='Continue"| N_e2d4729a1259
+    N_e2d4729a1259 -->|"ui_click: click([3] Button text='Close app"| N_68fd58ec2903
+    N_68fd58ec2903 -->|"ui_click: click([3] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(InnerWebLandingActivity"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(OpenFuzhuAccess)"| N_f6a3588f0886

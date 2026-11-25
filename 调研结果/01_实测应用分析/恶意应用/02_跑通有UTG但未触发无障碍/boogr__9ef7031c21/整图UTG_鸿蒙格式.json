@@ -1,0 +1,156 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_086__9ef7031c21",
+  "label": "malicious",
+  "family_or_category": "boogr",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.system.android.sikhnet",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "673de88cc395",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "673de88cc395",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Sikh Net to access",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0229de309c54",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.system.android.sikhnet",
+      "abilityName": ".MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sikh Net",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "23143f5cbe47",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.system.android.sikhnet",
+      "abilityName": "com.system.android.sikhnet.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "673de88cc395",
+      "to": "0229de309c54",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "0229de309c54",
+      "to": "23143f5cbe47",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "23143f5cbe47",
+      "to": "23143f5cbe47",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "23143f5cbe47",
+      "to": "23143f5cbe47",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] WebView id=webview (click) center=(540,1046))"
+    },
+    {
+      "from": "23143f5cbe47",
+      "to": "23143f5cbe47",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(fourre)"
+    },
+    {
+      "from": "23143f5cbe47",
+      "to": "23143f5cbe47",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PhonecallReceiver)"
+    },
+    {
+      "from": "23143f5cbe47",
+      "to": "23143f5cbe47",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(fivere)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "boogr__9ef7031c21",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先经系统权限审查页集中索要短信、联系人、通话记录、电话、麦克风、位置与文件权限，进入后仅显示旧版兼容性警告和空白 WebView；随后通过静态引导连续跳转至 fourre、PhonecallReceiver、fivere、twenty 等隐藏组件，未做拒权验证（not_tested）。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Choose what to allow Sikh Net to access” -> “选择允许 Sikh Net 访问哪些内容”（Step 1 ReviewPermissionsActivity）",
+    "English: “send and view SMS messages” -> “发送和查看短信”（Step 1 权限审查页）",
+    "English: “access photos, media, and files on your device” -> “访问设备上的照片、媒体和文件”（Step 1 权限审查页）",
+    "English: “access your contacts” -> “访问你的联系人”（Step 1 权限审查页）",
+    "English: “read and write phone call log” -> “读取和写入通话记录”（Step 1 权限审查页）",
+    "English: “make and manage phone calls” -> “拨打和管理电话”（Step 1 权限审查页）",
+    "English: “record audio” -> “录制音频”（Step 1 权限审查页）",
+    "English: “This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.” -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 MainActivity 兼容性警告）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页，提示允许 Sikh Net 访问短信、联系人、通话记录、电话、麦克风、位置和文件；本步点击 Continue 进入。",
+    "step_02": "应用主界面弹出旧版 Android 兼容性警告，称可能无法正常运行，建议检查更新或联系开发者；本步点“OK”关闭警告。",
+    "step_03": "进入主界面后 WebView 空白，无可见文字、通知或遮罩；本步等待加载或重定向，页面仍无内容。",
+    "step_04": "仍在空白 WebView 主界面，无任何可见文案或通知；本步点击 WebView 中心探测隐藏交互或跳转，未见变化。",
+    "step_05": "主界面无可见 UI；发生静态引导跳转至组件 .four.fourre，疑似隐藏业务页，未产生通知或遮罩。",
+    "step_06": "仍无可见界面；静态引导跳转至 .seven.PhonecallReceiver，组件名指向电话状态接收器，推测后台监听来电。",
+    "step_07": "主界面空白无文案；静态引导跳转至 .five.fivere，属隐藏或后续组件，无通知横幅或覆盖层。",
+    "step_08": "仍无可见 UI；静态引导跳转至 .twenty.twenty，疑似隐藏功能页或后台组件，未出现通知或遮罩。"
+  }
+}

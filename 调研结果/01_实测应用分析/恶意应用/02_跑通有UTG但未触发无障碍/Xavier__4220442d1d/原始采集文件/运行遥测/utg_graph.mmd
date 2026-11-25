@@ -1,0 +1,15 @@
+flowchart TD
+    N_7cd4431c6eae["Step 1: ReviewPermissionsActivity\nChoose what to allow B"]
+    N_dc85659df4ad["Step 2: SplashActivity\nBattery Saver"]
+    N_85c455f297d8["Step 3: SplashActivity\nBATTERY SAVER"]
+    N_071a09ffeb96["Step 4: UserTipActivity\nThank you for choosing"]
+    N_77ab4c27a80a["Step 5: MainActivity\nBATTERY SAVER"]
+    N_fc74ca7064e6["Step 6: NewOptimizeActivity\nNavigate up"]
+    N_4d169bdc818d["Step 7: NewOptimizeActivity\nNavigate up"]
+    N_7cd4431c6eae -->|"ui_click: click([15] Button text='Continue"| N_dc85659df4ad
+    N_dc85659df4ad -->|"ui_click: click([3] Button text='OK' id=bu"| N_85c455f297d8
+    N_85c455f297d8 -->|"ui_click: click([3] Button text='START' id"| N_071a09ffeb96
+    N_071a09ffeb96 -->|"ui_click: click([4] TextView text='Skip' i"| N_77ab4c27a80a
+    N_77ab4c27a80a -->|"ui_click: click([7] Button text='OPTIMIZE'"| N_fc74ca7064e6
+    N_fc74ca7064e6 -->|"static_guided_activity_jump: am_start(SplashActivity)"| N_4d169bdc818d
+    N_4d169bdc818d -->|"static_guided_activity_jump: am_start(ForceActivity)"| N_4d169bdc818d

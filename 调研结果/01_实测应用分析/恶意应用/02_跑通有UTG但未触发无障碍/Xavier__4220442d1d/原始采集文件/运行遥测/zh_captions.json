@@ -1,0 +1,25 @@
+{
+  "app_chain_summary_zh": "应用先经系统权限页请求文件媒体、联系人、电话等宽泛权限，再以旧版兼容提示、品牌启动页和“优化/降温/五星支持”等话术连续引导点击，最终进入优化页并静态跳转至强制清理/加速流程，呈典型工具类过度授权与诱导交互特征。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow Battery Saver to access / Files and media / Contacts / Phone -> 选择允许电池助手访问文件与媒体、联系人、电话（系统权限页 step_01）",
+    "This app was built for an older version of Android and may not work properly... -> 此应用为旧版Android构建，可能无法正常运行（启动页 step_02）",
+    "Power, Just Faster -> 电力，只是更快（启动页 step_03）",
+    "By proceeding you agree with Privacy Policy -> 继续即表示同意隐私政策（启动页 step_03）",
+    "Thank you for choosing Battery Saver / Swipe left or right to see more tips. -> 感谢选择电池助手；左右滑动查看更多提示（提示页 step_04）",
+    "Charging time 100% Completed / OPTIMIZE -> 充电时间100%完成/优化（主页 step_05）",
+    "0 Running apps consuming power / Time left 26h14m -> 0个运行应用耗电/剩余26小时14分（优化页 step_06、step_07）",
+    "Rate our App / If you love our app, please take a moment to rate it on Google Play store / SUPPORT 5 STAR -> 评价应用；若喜欢请花点时间在Google Play评分；支持五星（优化页 step_07、step_08）",
+    "Adjust Brightness / Turning down the brightness to extends battery lifes. -> 调节亮度；降低亮度可延长电池寿命（优化页 step_07、step_08）",
+    "Cooler Master / High CPU temperature can affect the health of mobilephone, click to test the current temperature / Cooling now! -> 降温大师；CPU高温影响手机健康，点击测试当前温度；正在降温！（优化页 step_07、step_08）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限总览页，要求为“电池助手”勾选文件与媒体、联系人、电话权限；本步点击“继续”放行，属过度授权入口。",
+    "step_02": "旧版Android兼容警告启动页，提示应用可能无法正常运行，仅有“确定”可点；本步点确定关闭警告，通知栏有空白通知。",
+    "step_03": "品牌启动页展示“电池助手/电力更快”和“开始”，并称继续即同意隐私政策；本步点开始进入主界面，通知栏空通知仍在。",
+    "step_04": "使用提示页称“感谢选择电池助手”，提示左右滑动查看更多；本步点“跳过”绕过提示轮播，通知栏空通知仍在。",
+    "step_05": "主界面展示充电时间100%完成、温度25℃、电压5.00V及“优化”按钮；本步点优化进入加速流程，属伪电池监控面板。",
+    "step_06": "优化页显示剩余时间和0个运行耗电应用；本步静态跳回启动页，未执行真实清理，通知栏空通知。",
+    "step_07": "优化页出现五星好评、亮度调节和“正在降温”卡片，宣称高温影响健康；本步静态跳转至强制清理页，诱导互动。",
+    "step_08": "同一优化页重复展示五星支持、亮度调节与降温话术；本步再次静态跳转至强制清理活动，页面未变化。"
+  }
+}

@@ -1,0 +1,14 @@
+flowchart TD
+    N_ca40a7ea7558["Step 1: ReviewPermissionsActivity\nChoose what to allow L"]
+    N_d8f71b0c5c3a["Step 2: Launcher\nLollipop Launcher"]
+    N_cca5268393c5["Step 3: Launcher\nSearch"]
+    N_1dedf8287c6a["Step 4: LauncherSetting\nLollipop Launcher"]
+    N_388e9ef915f4["Step 5: LauncherSetting\nCommon, Navigate up"]
+    N_1f635f97a547["Step 7: CommonPrefActivity\nCommon"]
+    N_ca40a7ea7558 -->|"ui_click: click([31] Button text='Continue"| N_d8f71b0c5c3a
+    N_d8f71b0c5c3a -->|"ui_click: click([3] Button text='OK' id=bu"| N_cca5268393c5
+    N_cca5268393c5 -->|"ui_click: click([15] TextView text='Lollip"| N_1dedf8287c6a
+    N_1dedf8287c6a -->|"ui_click: click([4] TextView text='Common'"| N_388e9ef915f4
+    N_388e9ef915f4 -->|"ui_click: click([6] TextView text='Notific"| N_388e9ef915f4
+    N_388e9ef915f4 -->|"static_guided_activity_jump: am_start(CommonPrefActivity)"| N_1f635f97a547
+    N_1f635f97a547 -->|"static_guided_activity_jump: am_start(HibernateActivity)"| N_1f635f97a547

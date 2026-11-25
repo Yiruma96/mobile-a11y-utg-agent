@@ -1,0 +1,12 @@
+flowchart TD
+    N_5f9b79c9eaab["Step 1: ViewActivity\nPower Manager"]
+    N_ea384358fe12["Step 2: ViewActivity\nSuccess"]
+    N_251b2d154c03["Step 3: ViewActivity\nPower Manager"]
+    N_f6a3588f0886["Step 6: NexusLauncherActivity\nApps list"]
+    N_5f9b79c9eaab -->|"ui_click: click([6] ImageButton id=imageBu"| N_ea384358fe12
+    N_ea384358fe12 -->|"ui_click: click([3] Button text='OK' id=bu"| N_251b2d154c03
+    N_251b2d154c03 -->|"ui_click: click([6] ImageButton id=imageBu"| N_ea384358fe12
+    N_ea384358fe12 -->|"ui_click: click([3] Button text='OK' id=bu"| N_251b2d154c03
+    N_251b2d154c03 -->|"ui_system_button: system_button(Back)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(SrvAccessibility)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(ViewActivity)"| N_f6a3588f0886

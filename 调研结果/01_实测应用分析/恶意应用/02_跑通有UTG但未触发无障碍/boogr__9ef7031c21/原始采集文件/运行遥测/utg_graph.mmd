@@ -1,0 +1,11 @@
+flowchart TD
+    N_673de88cc395["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_0229de309c54["Step 2: MainActivity\nSikh Net"]
+    N_23143f5cbe47["Step 3: MainActivity\n"]
+    N_673de88cc395 -->|"ui_click: click([35] Button text='Continue"| N_0229de309c54
+    N_0229de309c54 -->|"ui_click: click([3] Button text='OK' id=bu"| N_23143f5cbe47
+    N_23143f5cbe47 -->|"ui_wait: wait()"| N_23143f5cbe47
+    N_23143f5cbe47 -->|"ui_click: click([1] WebView id=webview (cl"| N_23143f5cbe47
+    N_23143f5cbe47 -->|"static_guided_activity_jump: am_start(fourre)"| N_23143f5cbe47
+    N_23143f5cbe47 -->|"static_guided_activity_jump: am_start(PhonecallReceiver)"| N_23143f5cbe47
+    N_23143f5cbe47 -->|"static_guided_activity_jump: am_start(fivere)"| N_23143f5cbe47

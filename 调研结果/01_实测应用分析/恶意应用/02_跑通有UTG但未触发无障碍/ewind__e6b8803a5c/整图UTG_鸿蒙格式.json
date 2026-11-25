@@ -1,0 +1,223 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_089__e6b8803a5c",
+  "label": "malicious",
+  "family_or_category": "ewind",
+  "static_visibility": "clear",
+  "target_package": "com.antivirus.booster.security",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "45ad63c6295b",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "45ad63c6295b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Security Antivirus to access",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Camera",
+        "take pictures and record video",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "Physical activity",
+        "access your physical activity"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1ed6f8c99bd9",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.booster.security",
+      "abilityName": "an.sc.clean.act.smstapge",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Security Antivirus",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "b4e2e5c8cc63",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.booster.security",
+      "abilityName": "an.sc.clean.act.smstapge",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Security Antivirus",
+        "I agree to Privacy Policy by starting the app",
+        "I agree to open Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents)",
+        "START",
+        "Powered by Security Antivirus Team"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "993b826c9e0f",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.booster.security",
+      "abilityName": "an.sc.clean.act.smmain",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "RISKY",
+        "NEVER SCANNED BEFORE",
+        "Junk Clean",
+        "Phone Boost",
+        "Battery Saver",
+        "CPU Cooler"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "3130094c4ffe",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.booster.security",
+      "abilityName": "an.sc.clean.act.smbatsaver",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "100",
+        "%",
+        "Analyzing power usage"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "a0dea5e5d57d",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.antivirus.booster.security",
+      "abilityName": "an.sc.clean.act.smressafe",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Navigate up",
+        "BATTERY SAVED",
+        "Temperature Detect",
+        "Junk Clean",
+        "Battery Saver",
+        "Catch your privacy invaders",
+        "Lock apps to prevent snooping",
+        "PROTECT",
+        "Possible security risks",
+        "Scan now to avoid pricacy leaking",
+        "SCAN"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "45ad63c6295b",
+      "to": "1ed6f8c99bd9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "1ed6f8c99bd9",
+      "to": "b4e2e5c8cc63",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "b4e2e5c8cc63",
+      "to": "993b826c9e0f",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"START\" id=guide_btn (click) center=(539,1705))"
+    },
+    {
+      "from": "993b826c9e0f",
+      "to": "3130094c4ffe",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([11] LinearLayout id=ll_battery (click) center=(270,1838))"
+    },
+    {
+      "from": "3130094c4ffe",
+      "to": "a0dea5e5d57d",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "a0dea5e5d57d",
+      "to": "a0dea5e5d57d",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity)"
+    },
+    {
+      "from": "a0dea5e5d57d",
+      "to": "a0dea5e5d57d",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GrantPermissonsActivity$3)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "ewind__e6b8803a5c",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从系统权限复核开始请求电话、文件媒体、联系人、相机、定位、通话记录等广泛权限，经旧版兼容提示和 START 捆绑同意页进入 RISKY 主面板，再由 Battery Saver 导流至“隐私风险/SCAN”安全页并静态跳转授权页面；拒绝授权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 选择允许“Security Antivirus”访问的内容（Step 1 系统权限复核页）",
+    "English -> 该应用针对旧版 Android 构建，可能无法正常工作，请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "English -> 启动应用即表示我同意隐私政策（Step 3 START 页）",
+    "English -> 我同意开启自动清理、智能锁、智能滑动、通话结束、WiFi 优化（可能含赞助内容）（Step 3 START 页）",
+    "English -> 高风险/从未扫描过（Step 4 主面板）",
+    "English -> 正在分析电量使用（Step 5 省电页）",
+    "English -> 电池已省电；抓住隐私入侵者；锁定应用防止窥探；可能存在安全风险；立即扫描以避免隐私泄露（Step 6 安全页，原文含拼写 pricacy）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限复核页，要求允许 Security Antivirus 访问电话、文件媒体、联系人、相机、定位、通话记录等；本步点 Continue 继续。",
+    "step_02": "旧版 Android 兼容性弹窗，英文提示应用或无法正常工作并建议检查更新或联系开发者；本步点 OK 关闭后继续进入应用。",
+    "step_03": "START 捆绑同意页：英文称启动即同意隐私政策，并同意开启自动清理、智能锁、智能滑动、通话结束、WiFi优化（可能含赞助内容）；本步点 START。",
+    "step_04": "主面板显示 RISKY、NEVER SCANNED BEFORE（高风险/从未扫描），列 Junk Clean、Phone Boost、Battery Saver、CPU Cooler；本步点 Battery Saver。",
+    "step_05": "电池省电页显示 100% 与 Analyzing power usage（正在分析电量使用），本步无点击仅等待，随后导向权限/授权流程。",
+    "step_06": "安全页以 BATTERY SAVED、防隐私入侵/锁应用及“可能有安全风险、立即扫描避免隐私泄露”诱导 SCAN；本步静态跳转授权页。",
+    "step_07": "重复的安全页：仍以 BATTERY SAVED、隐私防护与 SCAN 风险话术诱导；本步静态跳转 GrantPermissonsActivity$3，无可见点击。",
+    "step_08": "再次出现同一安全页，继续用 BATTERY SAVED、隐私防护与 SCAN 话术施压；本步静态跳转 GrantPermissonsActivity$4，无可见点击。"
+  }
+}

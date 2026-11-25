@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "链路：系统权限复核页放行多项敏感权限→旧版Android警告→预勾选协议START→清理主界面→电池分析→结果页反复以安全风险诱导并静态跳转授权/无障碍页面，核心为制造风险恐慌推动授权。",
+  "observed_lure_rhetoric_zh": [
+    "I agree to Privacy Policy by starting the app -> 启动即视为同意隐私政策（Step 3 启动页）",
+    "I agree to open Realtime Protect,Auto Clean,Smart Lock,Smart Swipe,Call End,WiFi Optimizer(May contain sponsored contents) -> 同意开启实时保护、自动清理、智能锁、智能滑动、通话结束、WiFi优化，且可能含赞助内容（Step 3 启动页）",
+    "Catch your privacy invaders -> 抓住你的隐私入侵者（Step 6-8 结果页）",
+    "Lock apps to prevent snooping -> 锁定应用以防窥探（Step 6-8 结果页）",
+    "Possible security risks -> 可能存在安全风险（Step 6-8 结果页）",
+    "Scan now to avoid pricacy leaking -> 立即扫描以避免隐私泄露（Step 6-8 结果页，原文pricacy为拼写错误）",
+    "BATTERY SAVED -> 电池已节省（Step 6-8 结果页）",
+    "Analyzing power usage -> 正在分析电量使用（Step 5 省电页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，列出手机、文件媒体、联系人、相机、位置、通话记录等权限；点Continue放行，顶部有Google备份通知，无遮罩。",
+    "step_02": "旧版Android兼容警告弹窗，提示应用按旧版构建可能异常；点OK关闭进入启动页，顶部有Google备份通知，无遮罩。",
+    "step_03": "启动页两行协议默认勾选：启动即同意隐私政策、开启多项保护并可能含赞助内容；点START进入主界面，顶部有备份通知。",
+    "step_04": "清理主界面显示RAM 53%、存储226MB等，入口有扫描、垃圾清理、省电、CPU降温；点Battery Saver，顶部备份通知。",
+    "step_05": "省电页显示100%与“正在分析电量使用”动画；本步等待分析结束，顶部Google备份通知，无遮罩。",
+    "step_06": "结果页称电池已节省，列温度检测、垃圾清理、隐私入侵、应用锁及安全风险；静态跳授权页GrantPermissonsActivity，顶部备份通知。",
+    "step_07": "同一结果页仍以隐私入侵、锁应用防窥、安全风险和SCAN施压；静态跳无障碍弹窗AccessibilityDialogActivity，顶部备份通知。",
+    "step_08": "同一结果页重复安全风险与SCAN诱导；静态跳至GrantPermissonsActivity$2继续授权流程，顶部Google备份通知，无遮罩。"
+  }
+}

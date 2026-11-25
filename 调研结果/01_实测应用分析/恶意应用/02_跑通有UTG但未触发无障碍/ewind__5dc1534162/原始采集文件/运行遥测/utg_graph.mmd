@@ -1,0 +1,16 @@
+flowchart TD
+    N_bbc34f033397["Step 1: ReviewPermissionsActivity\nChoose what to allow E"]
+    N_d51eb6a7804c["Step 2: cmstapge\nEasy Cleaner"]
+    N_026429441973["Step 3: cmstapge\nEasy Cleaner"]
+    N_7d79900a560a["Step 4: CleanMainActivity\n45"]
+    N_7f3e0e0e063a["Step 5: cmbatsaver\n100"]
+    N_00aef42da179["Step 6: cmressafe\nNavigate up"]
+    N_4e75b4ed6313["Step 7: cmshcutani\nNavigate up"]
+    N_9470f365bbfc["Step 8: cmstapge\nEasy Cleaner isn't res"]
+    N_bbc34f033397 -->|"ui_click: click([31] Button text='Continue"| N_d51eb6a7804c
+    N_d51eb6a7804c -->|"ui_click: click([3] Button text='OK' id=bu"| N_026429441973
+    N_026429441973 -->|"ui_click: click([6] TextView text='START' "| N_7d79900a560a
+    N_7d79900a560a -->|"ui_click: click([22] RelativeLayout id=kee"| N_7f3e0e0e063a
+    N_7f3e0e0e063a -->|"ui_wait: wait()"| N_00aef42da179
+    N_00aef42da179 -->|"static_guided_activity_jump: am_start(cmshcutani)"| N_4e75b4ed6313
+    N_4e75b4ed6313 -->|"static_guided_activity_jump: am_start(cmstapge)"| N_9470f365bbfc

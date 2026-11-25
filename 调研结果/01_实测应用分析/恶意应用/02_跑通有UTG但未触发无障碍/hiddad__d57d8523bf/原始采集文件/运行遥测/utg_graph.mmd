@@ -1,0 +1,14 @@
+flowchart TD
+    N_d6c399bbf9dc["Step 1: ReviewPermissionsActivity\nChoose what to allow G"]
+    N_37526c8f9a94["Step 2: StartPageActivity\nGuardian Antivirus"]
+    N_005058b3fc85["Step 3: StartPageActivity\nGuardian Antivirus"]
+    N_568da5f23f22["Step 4: MainActivity\nSCAN"]
+    N_2696ef6fb440["Step 5: ResultSafetyActivity\n214MB released"]
+    N_1951daff35da["Step 6: ResultSafetyActivity\nNavigate up"]
+    N_d6c399bbf9dc -->|"ui_click: click([31] Button text='Continue"| N_37526c8f9a94
+    N_37526c8f9a94 -->|"ui_click: click([3] Button text='OK' id=bu"| N_005058b3fc85
+    N_005058b3fc85 -->|"ui_click: click([6] TextView text='START' "| N_568da5f23f22
+    N_568da5f23f22 -->|"ui_click: click([11] LinearLayout id=ll_ph"| N_2696ef6fb440
+    N_2696ef6fb440 -->|"ui_wait: wait()"| N_1951daff35da
+    N_1951daff35da -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_1951daff35da
+    N_1951daff35da -->|"static_guided_activity_jump: am_start(GrantPermissonsActivity"| N_1951daff35da

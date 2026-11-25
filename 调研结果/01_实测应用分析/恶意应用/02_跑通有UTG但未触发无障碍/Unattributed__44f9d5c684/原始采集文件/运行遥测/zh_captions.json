@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用入口伪装成 Google Play 的“有可用更新”页，诱导点击 Update 后依次请求 VPN 授权和“安装未知应用”权限，随后静态跳转至安装/启动路由模板。核心特征是假更新页加系统权限诱导，观测中未见拒绝分支。",
+  "observed_lure_rhetoric_zh": [
+    "English -> Google Play/有可用更新/需下载最新版本才能使用本应用（Step2 伪Google Play更新页）",
+    "English -> 以“持续改进”和“关键安全漏洞补丁”为由催促更新（Step2 伪更新页）",
+    "English -> Dixmax Tv 请求建立可监控网络流量的 VPN 连接，仅信任来源时才应接受（Step3 VPN授权弹窗）",
+    "English -> 系统警告：从未知来源安装应用会使手机和个人数据更易受攻击（Step4-8 未知来源设置页）"
+  ],
+  "frame_captions": {
+    "step_01": "UpgradeActivity无可见文案，已伪装Google Play更新入口；顶部有“数据未备份”通知，本步点击坐标继续。",
+    "step_02": "伪Google Play更新页显示“有可用更新”、Dixmax Tv及安全补丁说明；点击Update继续，通知横幅仍在。",
+    "step_03": "系统VPN连接请求弹窗称Dixmax Tv将监控网络流量；保留Cancel/OK，本步点击OK授予VPN权限。",
+    "step_04": "系统“安装未知应用”设置页，显示Dixmax Tv与IP 1.91.37.237；本步打开“允许来自此来源”开关。",
+    "step_05": "同一未知来源设置页，开关已开启；本步按返回键，准备回到应用继续安装流程。",
+    "step_06": "仍显示未知来源授权页且已允许；探针静态跳转至UnknownSourcesPermissionActivity，无用户点击。",
+    "step_07": "未知来源页维持已授权状态；探针再次静态跳转至LaunchRouterActivity，继续路由流程。",
+    "step_08": "未知来源页保持不变；探针触发LaunchRouterActivity.startActivity，进入安装/启动路由。"
+  }
+}

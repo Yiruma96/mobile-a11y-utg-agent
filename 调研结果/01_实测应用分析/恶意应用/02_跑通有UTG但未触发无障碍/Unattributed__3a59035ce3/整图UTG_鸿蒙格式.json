@@ -1,0 +1,110 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_166__3a59035ce3",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "clear",
+  "target_package": "com.fenixeye.rvl",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(BootReceiver)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ProfileInstallReceiver)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(InitialService)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(InitializationProvider)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Unattributed__3a59035ce3",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "目标应用 com.fenixeye.rvl 多次启动及静态组件跳转均未进入其界面，全程停留在 Nexus 系统桌面；仅触发应用抽屉打开及 BootReceiver、ProfileInstallReceiver、InitialService、InitializationProvider、Early 等探针，无通知、遮罩或授权/拒权界面，未见诱导话术。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "系统桌面显示“Apps list（应用列表）”“Search（搜索）”等英文入口；本步尝试启动目标应用，但界面未切换，仍停留桌面。",
+    "step_02": "仍为系统桌面，含“Apps list（应用列表）”“Voice search（语音搜索）”等英文入口；再次启动目标应用仍未进入，页面无变化。",
+    "step_03": "系统桌面未变，显示“应用列表、搜索、语音搜索”等入口；本步为静态跳转探针至.BootReceiver，无可见页面或弹窗。",
+    "step_04": "系统桌面，英文“Apps list”意译应用列表；点击该入口打开应用抽屉，但目标应用界面未出现，仍停留桌面。",
+    "step_05": "系统桌面保持原样，含“应用列表、搜索”等英文入口；静态跳转ProfileInstallReceiver，无可见界面或反馈。",
+    "step_06": "仍为系统桌面，显示“应用列表、搜索、语音搜索”等英文入口；静态跳转至.InitialService，未出现应用页面或权限弹窗。",
+    "step_07": "系统桌面无变化，英文“Apps list”即应用列表；静态跳转androidx.startup.InitializationProvider，无可见界面、通知或遮罩。",
+    "step_08": "系统桌面仍显示“应用列表、搜索”等英文入口；静态跳转至.Early，未进入目标应用，无授权/拒权界面或诱导话术。"
+  }
+}

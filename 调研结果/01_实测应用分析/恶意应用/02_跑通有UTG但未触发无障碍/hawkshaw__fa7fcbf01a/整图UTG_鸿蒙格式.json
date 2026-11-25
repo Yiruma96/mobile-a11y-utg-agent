@@ -1,0 +1,147 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_177__fa7fcbf01a",
+  "label": "malicious",
+  "family_or_category": "hawkshaw",
+  "static_visibility": "clear",
+  "target_package": "com.demo.testing",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "bff2af0935bc",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "bff2af0935bc",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.demo.testing",
+      "abilityName": "me.hawkshaw.HawkshawMainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Idea Security",
+        "Username",
+        "Password",
+        "REGISTER",
+        "LOGIN"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "9ee3804613d5",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.demo.testing",
+      "abilityName": "me.hawkshaw.HawkshawMainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Idea Security",
+        "user123",
+        "Password",
+        "REGISTER",
+        "LOGIN"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "e2640885a61c",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.demo.testing",
+      "abilityName": "me.hawkshaw.HawkshawMainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Idea Security",
+        "user123",
+        "••••••••",
+        "REGISTER",
+        "LOGIN"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "bff2af0935bc",
+      "to": "bff2af0935bc",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([2] EditText text=\"Username\" id=username (click) center=(540,409))"
+    },
+    {
+      "from": "bff2af0935bc",
+      "to": "9ee3804613d5",
+      "step": 2,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "9ee3804613d5",
+      "to": "9ee3804613d5",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] EditText text=\"Password\" id=password (click) center=(540,577))"
+    },
+    {
+      "from": "9ee3804613d5",
+      "to": "e2640885a61c",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "e2640885a61c",
+      "to": "e2640885a61c",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"LOGIN\" id=login (click) center=(825,831))"
+    },
+    {
+      "from": "e2640885a61c",
+      "to": "e2640885a61c",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Accessibility)"
+    },
+    {
+      "from": "e2640885a61c",
+      "to": "e2640885a61c",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SecretDialPadCodeReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从“Idea Security”登录页采集用户名与密码，点击 LOGIN 后未出现可见授权弹窗或通知，随后静态探针依次跳转无障碍、秘密拨号盘码接收器、设备管理接收器；本轮拒权结果未测试。核心特征是伪装安全品牌收集凭据并探测高危组件。",
+  "observed_lure_rhetoric_zh": [
+    "Idea Security（英文） -> “理念安全/创意安全”（登录页），以安全品牌名包装登录入口",
+    "REGISTER/LOGIN（英文） -> 注册/登录（登录页按钮），推动用户完成账号密码提交"
+  ],
+  "frame_captions_zh": {
+    "step_01": "登录页显示“Idea Security”、用户名/密码、注册/登录；本步点击用户名框，无通知横幅或遮罩。",
+    "step_02": "仍为登录页，用户名框已聚焦；探针在框内输入用户名，页面无新增提示，也无通知或遮罩。",
+    "step_03": "登录页用户名已填为 user123；本步点击密码框以准备输入密码，仍无通知横幅或遮罩。",
+    "step_04": "用户名保持 user123，密码框聚焦；探针输入密码，界面未弹出说明或权限提示，无遮罩。",
+    "step_05": "密码显示为八个圆点，凭据已填；本步点击 LOGIN/登录，未出现弹窗或通知，仍为登录页。",
+    "step_06": "界面仍为已填凭据的登录页；静态引导跳转探针指向 Accessibility/无障碍组件，未见授权弹窗或通知。",
+    "step_07": "登录页未变；静态探针跳转 SecretDialPadCodeReceiver/秘密拨号盘码接收器，无可见界面、通知或遮罩。",
+    "step_08": "登录页未变；静态探针跳转 MyDeviceAdminReceiver/设备管理接收器，试图触发设备管理授权路径，无可见提示。"
+  }
+}

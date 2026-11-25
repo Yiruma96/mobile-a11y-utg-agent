@@ -1,0 +1,168 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_048__b70f3007eb",
+  "label": "malicious",
+  "family_or_category": "meftadon",
+  "static_visibility": "clear",
+  "target_package": "com.puredevlab.powermanager",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "5f9b79c9eaab",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "5f9b79c9eaab",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.puredevlab.powermanager",
+      "abilityName": "com.puredevlab.powermanager.ViewActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Power Manager",
+        "100 %",
+        "25.0 °C",
+        "Time left:",
+        "51h 12m"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ea384358fe12",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.puredevlab.powermanager",
+      "abilityName": ".ViewActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Success",
+        "Your device settings are optimized!",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "251b2d154c03",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.puredevlab.powermanager",
+      "abilityName": "com.puredevlab.powermanager.ViewActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Power Manager",
+        "100 %",
+        "25.0 °C",
+        "Time left:",
+        "64h 2m"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5f9b79c9eaab",
+      "to": "ea384358fe12",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] ImageButton id=imageButton (click) center=(540,1968))"
+    },
+    {
+      "from": "ea384358fe12",
+      "to": "251b2d154c03",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "251b2d154c03",
+      "to": "ea384358fe12",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] ImageButton id=imageButton (click) center=(540,1968))"
+    },
+    {
+      "from": "ea384358fe12",
+      "to": "251b2d154c03",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "251b2d154c03",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SrvAccessibility)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ViewActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口为伪造电量、温度和剩余时间的主界面，点击图片按钮后反复弹出“Success/设备设置已优化”的虚假成功框，关闭后回到主界面；系统返回后落回桌面，静态引导尝试跳转SrvAccessibility、ViewActivity及内部类均未进入应用授权页。整体仅见伪造优化成功话术，未观察到真实系统设置变更，授权或拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "Power Manager -> 电量管理器（Step1/3/5主界面标题）",
+    "Time left: 51h 12m / 64h 2m -> 剩余时间：51小时12分 / 64小时2分（Step1/3/5主界面）",
+    "Success -> 成功（Step2/4成功弹窗标题）",
+    "Your device settings are optimized! -> 您的设备设置已优化！（Step2/4成功弹窗正文）",
+    "OK -> 确定（Step2/4仅有关闭按钮）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面显示电量100%、温度25.0°C、剩余51h12m；点击底部无文字图片按钮“优化”，无通知或遮罩。",
+    "step_02": "弹出“Success/您的设备设置已优化！”对话框，仅有“OK”按钮；点击OK关闭，未出现权限或系统设置页。",
+    "step_03": "回到主界面，电量100%、温度25.0°C、剩余时间变为64h2m；再次点击底部图片优化按钮，无遮罩。",
+    "step_04": "再次弹出相同“Success/设备设置已优化”虚假成功框，仅有OK；点击关闭，仍无权限请求或跳转。",
+    "step_05": "主界面仍显示100%、25.0°C、剩余64h2m；按系统返回键尝试回主Activity，未见隐藏菜单或权限入口。",
+    "step_06": "桌面应用列表页，显示日期及Messages/Chrome/搜索；静态引导跳转SrvAccessibility未进入应用界面。",
+    "step_07": "仍在桌面应用列表，未显示应用界面；静态引导跳转com.puredevlab.powermanager.ViewActivity失败并停留桌面。",
+    "step_08": "仍在桌面应用列表，未显示应用界面；静态引导跳转ViewActivity$2内部类失败，无授权或权限提示。"
+  }
+}

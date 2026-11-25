@@ -1,0 +1,171 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_057__4e0bcfc83f",
+  "label": "malicious",
+  "family_or_category": "hawkshaw",
+  "static_visibility": "clear",
+  "target_package": "se.spitfire.appleprotect.it",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "ee248212601b",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "ee248212601b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow AppleProtect to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Location",
+        "access this device's location",
+        "SMS",
+        "send and view SMS messages",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Microphone",
+        "record audio",
+        "Camera",
+        "take pictures and record video"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "231b6a8a55ce",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "se.spitfire.appleprotect.it",
+      "abilityName": "se.joscarsson.privify.ui.PassphraseActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "AppleProtect",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f56ac7485a4c",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "se.spitfire.appleprotect.it",
+      "abilityName": "se.joscarsson.privify.ui.PassphraseActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose passphrase",
+        "Repeat passphrase"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "3cffcad95604",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "se.spitfire.appleprotect.it",
+      "abilityName": "se.joscarsson.privify.ui.PassphraseActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "••••••••",
+        "Repeat passphrase"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ee248212601b",
+      "to": "231b6a8a55ce",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "231b6a8a55ce",
+      "to": "f56ac7485a4c",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f56ac7485a4c",
+      "to": "f56ac7485a4c",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] EditText text=\"Choose passphrase\" id=passphrase_edit_text (click) center=(540,1137))"
+    },
+    {
+      "from": "f56ac7485a4c",
+      "to": "3cffcad95604",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "3cffcad95604",
+      "to": "3cffcad95604",
+      "step": 5,
+      "edge_type": "ui_long_press",
+      "action": "long_press([1] EditText text=\"••••••••\" id=passphrase_edit_text (click) center=(540,1137))"
+    },
+    {
+      "from": "3cffcad95604",
+      "to": "3cffcad95604",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Accessibility)"
+    },
+    {
+      "from": "3cffcad95604",
+      "to": "3cffcad95604",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(HawkshawMainActivity$enableAccessibility$1)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "hawkshaw__4e0bcfc83f",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先经系统权限复核页拟批量申请文件媒体、位置、短信、联系人、通话记录、麦克风、相机等高危权限，进入AppleProtect口令设置并弹旧版兼容警告；随后在口令页静态跳转至Hawkshaw无障碍任务、启用无障碍回调及秘密拨号接收器，呈现无障碍滥用与隐藏控制链路特征，拒权分支未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许AppleProtect访问的内容”（Step 1 权限复核页）",
+    "英语 -> “访问设备上的照片、媒体和文件”“访问设备位置”“发送和查看短信”“访问联系人”“读写通话记录”“录音”（Step 1 权限清单）",
+    "英语 -> “此应用为旧版Android构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英语 -> “选择口令”“重复口令”（Step 3-5 口令设置页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限复核页，列文件媒体、位置、短信、联系人、通话记录、麦克风、相机；点击“继续”拟批量授权，无通知/遮罩。",
+    "step_02": "应用口令页弹出旧版Android兼容警告，称可能无法正常运行，建议检查更新或联系开发者；点击“OK”关闭弹窗。",
+    "step_03": "口令设置页显示“选择口令/重复口令”；本步点击首个输入框准备输入，页面无通知、无遮罩。",
+    "step_04": "仍在口令设置页，向已聚焦输入框键入口令；界面仅见“选择口令/重复口令”，无通知、无遮罩。",
+    "step_05": "口令已输入显示为八个圆点，仍要求重复口令；长按首个口令框调出选择操作，试图替换内容。",
+    "step_06": "界面仍为口令页（圆点与重复口令），无通知/遮罩；记录为静态引导跳转至Hawkshaw无障碍任务组件。",
+    "step_07": "画面仍为口令页无变化；静态跳转指向Hawkshaw主活动的“启用无障碍”回调，暴露诱导开启无障碍意图。",
+    "step_08": "画面仍是口令页；静态跳转至Hawkshaw秘密拨号盘代码接收器，提示存在隐藏拨号指令/后台控制链路。"
+  }
+}

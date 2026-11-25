@@ -1,0 +1,240 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_179__eed48f54be",
+  "label": "malicious",
+  "family_or_category": "Xavier",
+  "static_visibility": "clear",
+  "target_package": "com.minfivezz.launcher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "ca40a7ea7558",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "ca40a7ea7558",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Lollipop Launcher to access",
+        "Phone",
+        "make and manage phone calls",
+        "Contacts",
+        "access your contacts",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Call logs",
+        "read and write phone call log",
+        "Location",
+        "access this device's location",
+        "Camera",
+        "take pictures and record video"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d8f71b0c5c3a",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.minfivezz.launcher",
+      "abilityName": ".Launcher",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Lollipop Launcher",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "cca5268393c5",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.minfivezz.launcher",
+      "abilityName": "com.minfivezz.launcher.Launcher",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Search",
+        "Voice Search",
+        "Import from others",
+        "User guide",
+        "Lollipop Tool Box",
+        "Lollipop Boost",
+        "Theme",
+        "Folder: Lollipop Apps",
+        "Lollipop Apps",
+        "Lollipop Setting",
+        "App Store",
+        "Home screen 1 of 4, Setting",
+        "Phone",
+        "Contacts",
+        "Apps"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "1dedf8287c6a",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.minfivezz.launcher",
+      "abilityName": "com.minfivezz.launcher.LauncherSetting",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Lollipop Launcher",
+        "Common",
+        "Desktop",
+        "Drawer",
+        "Dock",
+        "Sidebar",
+        "Folder",
+        "Theme & UI",
+        "Unread Counts",
+        "Gestures & Buttons",
+        "Advanced"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "388e9ef915f4",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.minfivezz.launcher",
+      "abilityName": ".LauncherSetting",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Common, Navigate up",
+        "Common",
+        "Set Default Launcher",
+        "No default selected",
+        "Notification Toolbar",
+        "Launcher style",
+        "Android L style",
+        "Security & Privacy",
+        "protect hidden app, lock app"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "1f635f97a547",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.minfivezz.launcher",
+      "abilityName": "com.minfivezz.launcher.setting.pref.CommonPrefActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Common",
+        "Set Default Launcher",
+        "No default selected",
+        "Notification Toolbar",
+        "Launcher style",
+        "Android L style",
+        "Security & Privacy",
+        "protect hidden app, lock app"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ca40a7ea7558",
+      "to": "d8f71b0c5c3a",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "d8f71b0c5c3a",
+      "to": "cca5268393c5",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "cca5268393c5",
+      "to": "1dedf8287c6a",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([15] TextView text=\"Lollipop Setting\" (click) center=(408,1593))"
+    },
+    {
+      "from": "1dedf8287c6a",
+      "to": "388e9ef915f4",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"Common\" id=title center=(282,302))"
+    },
+    {
+      "from": "388e9ef915f4",
+      "to": "388e9ef915f4",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Notification Toolbar\" id=title center=(286,480))"
+    },
+    {
+      "from": "388e9ef915f4",
+      "to": "1f635f97a547",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CommonPrefActivity)"
+    },
+    {
+      "from": "1f635f97a547",
+      "to": "1f635f97a547",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(HibernateActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Xavier__eed48f54be",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以“Lollipop Launcher”启动器为外壳，先经系统权限复核页集中索取电话、联系人、文件媒体、短信、通话记录、定位、相机等权限，再以旧版兼容提示和启动器设置/通知工具栏引导进入设置及静态跳转页面；全程无遮罩，通知横幅短暂出现，未测试拒绝分支。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Lollipop Launcher 访问什么”（Step 1 ReviewPermissionsActivity）",
+    "英文 -> “电话/拨打和管理电话”“联系人/访问联系人”“文件与媒体/访问设备上的照片、媒体和文件”“短信/发送和查看短信”“通话记录/读写通话记录”“位置/访问本机位置”“相机”（Step 1 ReviewPermissionsActivity）",
+    "英文 -> “此应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 Launcher 兼容警告）",
+    "英文 -> “Lollipop 设置”（Step 3 启动器主屏入口）",
+    "英文 -> “通知工具栏”“设置默认启动器/未选择默认”“安全与隐私/保护隐藏应用、锁定应用”（Step 5-8 设置页）",
+    "英文 -> 占位通知“String (Notification) / String (Hello)”（Step 2-5 顶部通知横幅）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统英文权限复核页，集中展示电话、联系人、文件媒体、短信、通话记录、定位、相机等权限说明；点击“Continue”继续。",
+    "step_02": "旧版兼容警告页，英文提示应用为旧 Android 构建或异常；点“OK”关闭，通知横幅“String (Hello)”仍在。",
+    "step_03": "启动器主屏，含搜索、语音搜索、工具箱/加速、主题、Lollipop 设置等入口；点击“Lollipop Setting”进入设置，通知横幅仍在。",
+    "step_04": "设置总览页，含常用、桌面、抽屉、Dock、侧栏、文件夹、主题界面、未读计数、手势按键、高级；点击“Common”进入常用设置。",
+    "step_05": "常用设置页，显示未选默认启动器、通知工具栏、Android L 风格、安全与隐私；点击“Notification Toolbar”触发通知访问说明。",
+    "step_06": "仍为常用设置页，界面同上；本步通过静态引导跳转至 CommonPrefActivity，未见可见点击或新弹窗，通知横幅已消失。",
+    "step_07": "静态跳转后的 CommonPrefActivity，重复展示常用设置项；随后引导跳至 HibernateActivity，未见新界面内容或遮罩。",
+    "step_08": "仍停留 CommonPrefActivity 的设置项，最后静态引导跳向 WallpaperCropActivity 壁纸裁剪页；无可见弹窗、遮罩或通知横幅。"
+  }
+}

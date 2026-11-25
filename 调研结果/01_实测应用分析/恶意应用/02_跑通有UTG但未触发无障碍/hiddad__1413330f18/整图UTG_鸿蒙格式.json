@@ -1,0 +1,173 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_150__1413330f18",
+  "label": "malicious",
+  "family_or_category": "hiddad",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.android.boxa",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "aea28ee487ea",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "aea28ee487ea",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow backup service to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Phone",
+        "make and manage phone calls",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "fcbef7cec4b2",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.boxa",
+      "abilityName": ".MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow backup service to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Phone",
+        "make and manage phone calls",
+        "Location",
+        "access this device's location",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c40cdd6cde3f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.android.boxa",
+      "abilityName": ".MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "backup service",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "aea28ee487ea",
+      "to": "fcbef7cec4b2",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([37] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "fcbef7cec4b2",
+      "to": "c40cdd6cde3f",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([37] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "c40cdd6cde3f",
+      "to": "c40cdd6cde3f",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "c40cdd6cde3f",
+      "to": "c40cdd6cde3f",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "c40cdd6cde3f",
+      "to": "c40cdd6cde3f",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TagViewer)"
+    },
+    {
+      "from": "c40cdd6cde3f",
+      "to": "c40cdd6cde3f",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FakeTagsActivity)"
+    },
+    {
+      "from": "c40cdd6cde3f",
+      "to": "c40cdd6cde3f",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MyReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "hiddad__1413330f18",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该 Hiddad 样本入口先用系统权限审核页伪装“备份服务”，诱导连续点击 Continue 放行文件、电话、位置、短信、联系人等敏感权限；随后反复弹出旧版 Android 兼容性警告并以 OK 掩盖，后续仅以静态 Activity 探针跳转 TagViewer、FakeTagsActivity、MyReceiver、KService。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许“备份服务”访问哪些内容（Step 1/2 权限审核页）",
+    "英文 -> 文件与媒体/访问设备照片、媒体和文件（Step 1/2 权限审核页）",
+    "英文 -> 电话/拨打和管理电话（Step 1/2 权限审核页）",
+    "英文 -> 位置/访问本设备位置（Step 1/2 权限审核页）",
+    "英文 -> 通话记录/读取和写入通话记录（Step 1/2 权限审核页）",
+    "英文 -> 短信/发送和查看短信（Step 1/2 权限审核页）",
+    "英文 -> 联系人/访问联系人（Step 1/2 权限审核页）",
+    "英文 -> 麦克风（Step 1/2 权限审核页）",
+    "英文 -> 此应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（Step 3-8 兼容性弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审核页，以“备份服务”名义索要文件、电话、位置、短信、联系人等敏感权限；无遮罩，点 Continue（继续）放行。",
+    "step_02": "同一权限审核页仍在 MainActivity 呈现，继续以“备份服务”名义索权；再次点 Continue（继续），未见通知或遮罩。",
+    "step_03": "旧版 Android 兼容性弹窗称“backup service（备份服务）”可能异常，建议更新或联系开发者；点 OK 关闭，无通知/遮罩。",
+    "step_04": "同一兼容性警告持续显示，仍以“备份服务”旧版构建为由提示更新或联系开发者；再次点 OK 尝试关闭。",
+    "step_05": "兼容性警告仍在，无可见交互变化；探针静态跳转至 .TagViewer，属引导页回退而非真实点击。",
+    "step_06": "警告页持续显示，未出现新界面；探针静态跳转 .simulator.FakeTagsActivity，疑似伪造标签页。",
+    "step_07": "警告页未变，无通知或遮罩；探针静态跳转 .MyReceiver，测试广播接收组件是否可被拉起。",
+    "step_08": "警告页仍停留，无用户可见反馈；探针静态跳转 .KService，检测后台服务组件的暴露与拉起。"
+  }
+}

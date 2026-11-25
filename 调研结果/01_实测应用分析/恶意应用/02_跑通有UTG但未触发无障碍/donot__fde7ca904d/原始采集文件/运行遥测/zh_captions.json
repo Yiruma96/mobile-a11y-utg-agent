@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用首启经系统权限总览诱导继续，随后用旧版兼容提示与不可取消对话框索要无障碍权限，未见实际授权结果。之后反复跳回桌面并静态拉起 JobBootReceiver、fourre、PhonecallReceiver 等后台组件，未展示正常业务界面。",
+  "observed_lure_rhetoric_zh": [
+    "English: Choose what to allow Android Sys to access → 中文核心意译：选择允许 Android Sys 访问哪些内容（Step 1 权限总览页）",
+    "English: This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. → 中文核心意译：应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容提示）",
+    "English: Please enable 'Accessibility' for 'Android Sys' to get this working. Tap on 'Ok' to go to Accessibility Settings. → 中文核心意译：请为 Android Sys 开启无障碍才能正常工作，点 OK 前往无障碍设置（Step 3 诱导弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限总览页，列出短信、文件媒体、联系人、通话记录、电话、麦克风、位置等权限；无遮罩/通知，点击「Continue」继续。",
+    "step_02": "返回应用主界面，弹出旧版 Android 兼容提示，称可能无法正常运行；点击「OK」关闭系统对话框继续。",
+    "step_03": "应用内弹窗以需开启无障碍才能工作为由诱导点击「OK」跳转无障碍设置；无取消键、无通知/遮罩。",
+    "step_04": "已跳至桌面启动器，仅见应用列表、日期和常用图标；无目标界面，探针尝试重启 com.qooqle.droid.mrch。",
+    "step_05": "仍在桌面启动器，界面与应用列表未变；再次尝试拉起目标包 com.qooqle.droid.mrch，未出现新页面。",
+    "step_06": "桌面未变，执行静态引导跳转回退至 com.evernote.android.job.JobBootReceiver，无可见应用界面。",
+    "step_07": "桌面未变，静态引导回退拉起 com.qooqle.droid.mrch.afo.fourre 组件，界面无变化。",
+    "step_08": "桌面未变，静态引导回退拉起 com.qooqle.droid.mrch.ase.PhonecallReceiver，仍无可见业务界面。"
+  }
+}

@@ -1,0 +1,14 @@
+flowchart TD
+    N_00e059f7e08c["Step 1: ReviewPermissionsActivity\nChoose what to allow M"]
+    N_0fa8141de657["Step 2: MainActivity\nMoney Converter"]
+    N_ba8146de2678["Step 3: MainActivity\nCurrency"]
+    N_7d47d37ce94b["Step 4: SettingActivity\nSetting"]
+    N_f6a3588f0886["Step 5: NexusLauncherActivity\nApps list"]
+    N_930d5361050b["Step 7: UponGuideActivity\nPlease open the Accces"]
+    N_00e059f7e08c -->|"ui_click: click([19] Button text='Continue"| N_0fa8141de657
+    N_0fa8141de657 -->|"ui_click: click([3] Button text='OK' id=bu"| N_ba8146de2678
+    N_ba8146de2678 -->|"ui_click: click([4] TextView desc='Setting"| N_7d47d37ce94b
+    N_7d47d37ce94b -->|"ui_system_button: system_button(Home)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(UponGuideActivity)"| N_930d5361050b
+    N_930d5361050b -->|"static_guided_activity_jump: am_start(UponGuideActivity$1)"| N_930d5361050b

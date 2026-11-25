@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "该 Vultur 样本从桌面直接启动未成功进入前台，始终停留在 Nexus 启动器；多次点击/上滑打开应用抽屉及静态跳转 WebViewActivity、HelpActivity、WorkManager 组件均未呈现诱导或授权页面，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "Nexus桌面首页，含Apps list、Messages、Chrome等；直接启动目标包，但目标应用未进前台。",
+    "step_02": "仍为Nexus桌面；点击Apps list想打开抽屉查找目标文件管理器，界面未变，目标应用未出现。",
+    "step_03": "仍在Nexus桌面；静态跳转WebViewActivity未呈现，页面无业务内容、无授权提示、无通知或遮罩。",
+    "step_04": "仍为Nexus桌面；从底部上滑欲打开应用抽屉未成功，只见Apps list、Messages、Chrome等图标。",
+    "step_05": "Nexus应用抽屉部分展开，出现Calendar、Camera、Files等；再上滑仍未见目标应用com.trouba.terrasse。",
+    "step_06": "仍为Nexus应用抽屉，显示Calendar、Camera、Chrome等；静态跳转HelpActivity未呈现帮助或诱导页面。",
+    "step_07": "仍在Nexus应用抽屉；静态跳转WorkManager电池约束代理组件，无可见界面、无通知横幅或遮罩。",
+    "step_08": "仍为Nexus应用抽屉，系统应用列表无变化；再次静态跳转电池约束代理组件，仍无目标页面或遮罩。"
+  }
+}

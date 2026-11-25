@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该应用先通过系统权限聚合页索取文件/媒体、联系人与电话权限并点Continue，再经旧版兼容警告、START同意隐私政策、Skip提示轮播进入MainActivity；提示层反复残留，后以静态回退连续跳转ForceActivity、SplashActivity与ShortcutActivity。核心特征是借“电池优化”名义聚拢高敏感权限，界面仅推进不提供拒权/退出，并伴随空通知占位。",
+  "observed_lure_rhetoric_zh": [
+    "英文：“Choose what to allow Battery Saver to access” -> “选择允许 Battery Saver 访问的内容”（Step_01 系统权限页）",
+    "英文：“Files and media — access photos, media, and files on your device” -> “文件与媒体：访问设备上的照片、媒体和文件”（Step_01 权限说明）",
+    "英文：“Contacts — access your contacts” -> “联系人：访问你的联系人”（Step_01 权限说明）",
+    "英文：“Phone — make and manage phone calls” -> “电话：拨打和管理电话”（Step_01 权限说明）",
+    "英文：“This app was built for an older version of Android and may not work properly” -> “该应用为旧版Android构建，可能无法正常运行”（Step_02 兼容警告）",
+    "英文：“By proceeding you agree with Privacy Policy” -> “继续即表示你同意隐私政策”（Step_03 启动页）",
+    "英文：“Thank you for choosing Battery Saver”与“Swipe left or right to see more tips.” -> “感谢选择 Battery Saver”并引导左右滑动查看更多提示（Step_04至Step_08 提示轮播）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限聚合页，列文件媒体、联系人、电话三项访问，含Cancel与Continue；本步点Continue同意运行时权限，无遮罩通知。",
+    "step_02": "SplashActivity兼容警告页，提示该应用为旧版Android构建可能异常，仅有OK；本步点OK关闭警告，无遮罩与应用通知。",
+    "step_03": "启动页仅见START与“继续即同意隐私政策”，无拒绝或退出选项；本步点START进入主流程，未触发遮罩或通知。",
+    "step_04": "UserTipActivity提示轮播页，称感谢选择Battery Saver并可左右滑动看更多提示，含Skip；本步点Skip跳过，无遮罩通知。",
+    "step_05": "MainActivity仍残留提示轮播层，称感谢选择并可左右滑动看提示，含Skip；再点Skip尝试关闭，应用通知标题/正文均为空。",
+    "step_06": "界面仍为提示轮播层，含感谢选择、左右滑动与Skip；本步非点击，静态回退跳转至force.ForceActivity，通知为空。",
+    "step_07": "界面仍为提示轮播层，含感谢选择、左右滑动与Skip；本步静态回退跳转至.activity.SplashActivity，通知为空无遮罩。",
+    "step_08": "界面仍为提示轮播层，含感谢选择、左右滑动与Skip；静态回退跳转至ShortcutActivity，通知为空、无遮罩。"
+  }
+}

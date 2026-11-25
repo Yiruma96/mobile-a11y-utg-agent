@@ -1,0 +1,174 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_163__44f9d5c684",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "video.lotus19.ridenovel31",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "3e4772891156",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "3e4772891156",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "video.lotus19.ridenovel31",
+      "abilityName": "com.shell.template.feature.upgrade.UpgradeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1a8fd9798915",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "video.lotus19.ridenovel31",
+      "abilityName": "com.shell.template.feature.upgrade.UpgradeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play",
+        "Update Available",
+        "To use this app, download the latest version.",
+        "Dixmax Tv",
+        "E",
+        "Everyone",
+        "What's new",
+        "Last updated",
+        "We are always making changes and improvements to this app. To make sure you do not miss a thing, just keep your Updates turned on.\n\n• Bug fixes and performance improvements.\n• Critical security vulnerability patch.",
+        "More info",
+        "Update",
+        "Ratings and reviews",
+        "Ratings and reviews are verified and are from people who use the same type of device that you use.",
+        "4.4",
+        "5"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "e1db1b8a0a10",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.android.vpndialogs",
+      "abilityName": "com.android.vpndialogs.ConfirmDialog",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Connection request",
+        "D​i⁠‌‍x​m⁠⁠a‍⁠x ‌T‍‌⁠v wants to set up a VPN connection that allows it to monitor network traffic. Only accept if you trust the source. \n\n￼ appears at the top of your screen when VPN is active.",
+        "Cancel",
+        "OK"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "b98f5918cb6b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$ManageAppExternalSourcesActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Install unknown apps",
+        "Search settings",
+        "D​i⁠‌‍x​m⁠⁠a‍⁠x ‌T‍‌⁠v",
+        "1.91.37.237",
+        "Allow from this source",
+        "Your phone and personal data are more vulnerable to attack by unknown apps. By installing apps from this source, you agree that you are responsible for any damage to your phone or loss of data that may result from their use."
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3e4772891156",
+      "to": "1a8fd9798915",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([888, 1063])"
+    },
+    {
+      "from": "1a8fd9798915",
+      "to": "e1db1b8a0a10",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([13] Button text=\"Update\" id=installBtn (click) center=(797,1530))"
+    },
+    {
+      "from": "e1db1b8a0a10",
+      "to": "b98f5918cb6b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"OK\" id=button1 (click) center=(887,1418))"
+    },
+    {
+      "from": "b98f5918cb6b",
+      "to": "b98f5918cb6b",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "b98f5918cb6b",
+      "to": "b98f5918cb6b",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "b98f5918cb6b",
+      "to": "b98f5918cb6b",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UnknownSourcesPermissionActivity)"
+    },
+    {
+      "from": "b98f5918cb6b",
+      "to": "b98f5918cb6b",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(LaunchRouterActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Unattributed__44f9d5c684",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用入口伪装成 Google Play 的“有可用更新”页，诱导点击 Update 后依次请求 VPN 授权和“安装未知应用”权限，随后静态跳转至安装/启动路由模板。核心特征是假更新页加系统权限诱导，观测中未见拒绝分支。",
+  "observed_lure_rhetoric_zh": [
+    "English -> Google Play/有可用更新/需下载最新版本才能使用本应用（Step2 伪Google Play更新页）",
+    "English -> 以“持续改进”和“关键安全漏洞补丁”为由催促更新（Step2 伪更新页）",
+    "English -> Dixmax Tv 请求建立可监控网络流量的 VPN 连接，仅信任来源时才应接受（Step3 VPN授权弹窗）",
+    "English -> 系统警告：从未知来源安装应用会使手机和个人数据更易受攻击（Step4-8 未知来源设置页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "UpgradeActivity无可见文案，已伪装Google Play更新入口；顶部有“数据未备份”通知，本步点击坐标继续。",
+    "step_02": "伪Google Play更新页显示“有可用更新”、Dixmax Tv及安全补丁说明；点击Update继续，通知横幅仍在。",
+    "step_03": "系统VPN连接请求弹窗称Dixmax Tv将监控网络流量；保留Cancel/OK，本步点击OK授予VPN权限。",
+    "step_04": "系统“安装未知应用”设置页，显示Dixmax Tv与IP 1.91.37.237；本步打开“允许来自此来源”开关。",
+    "step_05": "同一未知来源设置页，开关已开启；本步按返回键，准备回到应用继续安装流程。",
+    "step_06": "仍显示未知来源授权页且已允许；探针静态跳转至UnknownSourcesPermissionActivity，无用户点击。",
+    "step_07": "未知来源页维持已授权状态；探针再次静态跳转至LaunchRouterActivity，继续路由流程。",
+    "step_08": "未知来源页保持不变；探针触发LaunchRouterActivity.startActivity，进入安装/启动路由。"
+  }
+}

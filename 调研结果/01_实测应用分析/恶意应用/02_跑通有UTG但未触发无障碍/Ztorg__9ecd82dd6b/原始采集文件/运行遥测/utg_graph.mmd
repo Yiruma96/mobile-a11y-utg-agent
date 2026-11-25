@@ -1,0 +1,11 @@
+flowchart TD
+    N_1159e24777c9["Step 1: NexusLauncherActivity\nApps list"]
+    N_6ca6daedd70f["Step 5: NexusLauncherActivity\nApps list"]
+    N_b9ab4334dea9["Step 8: ReviewPermissionsActivity\nChoose what to allow E"]
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(UponGuideActivity)"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_swipe: swipe([540, 1800])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_open: open()"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(LineUponAccessService)"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"static_guided_activity_jump: am_start(UponActivity)"| N_b9ab4334dea9

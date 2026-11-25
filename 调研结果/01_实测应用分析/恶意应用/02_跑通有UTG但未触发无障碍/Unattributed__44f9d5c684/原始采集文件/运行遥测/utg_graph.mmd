@@ -1,0 +1,12 @@
+flowchart TD
+    N_3e4772891156["Step 1: UpgradeActivity\n"]
+    N_1a8fd9798915["Step 2: UpgradeActivity\nGoogle Play"]
+    N_e1db1b8a0a10["Step 3: ConfirmDialog\nConnection request"]
+    N_b98f5918cb6b["Step 4: Settings$ManageAppExternalSo\nBack"]
+    N_3e4772891156 -->|"ui_click: click([888, 1063])"| N_1a8fd9798915
+    N_1a8fd9798915 -->|"ui_click: click([13] Button text='Update' "| N_e1db1b8a0a10
+    N_e1db1b8a0a10 -->|"ui_click: click([4] Button text='OK' id=bu"| N_b98f5918cb6b
+    N_b98f5918cb6b -->|"ui_click: click([9] Switch id=switch_widge"| N_b98f5918cb6b
+    N_b98f5918cb6b -->|"ui_system_button: system_button(Back)"| N_b98f5918cb6b
+    N_b98f5918cb6b -->|"static_guided_activity_jump: am_start(UnknownSourcesPermissio"| N_b98f5918cb6b
+    N_b98f5918cb6b -->|"static_guided_activity_jump: am_start(LaunchRouterActivity)"| N_b98f5918cb6b

@@ -1,0 +1,15 @@
+flowchart TD
+    N_6fd0a2851676["Step 1: ReviewPermissionsActivity\nChoose what to allow M"]
+    N_b4546c1153ef["Step 2: PIPCleanerMainActivity\nMaster Cleanner"]
+    N_8156da2a72f2["Step 3: PIPCleanerMainActivity\nMaster Cleanner"]
+    N_94fcab6e3478["Step 4: ProcessManagerActivity\nPhone Boost"]
+    N_1473076808ca["Step 5: JunkCleanActivity\nJunk Clean"]
+    N_1b0ea7fba74d["Step 6: JunkCleanActivity\nJunk Clean"]
+    N_e5dc1a748663["Step 7: JunkCleanActivity\nJunk Clean"]
+    N_6fd0a2851676 -->|"ui_click: click([19] Button text='Continue"| N_b4546c1153ef
+    N_b4546c1153ef -->|"ui_click: click([3] Button text='OK' id=bu"| N_8156da2a72f2
+    N_8156da2a72f2 -->|"ui_click: click([10] RelativeLayout id=rl_"| N_94fcab6e3478
+    N_94fcab6e3478 -->|"ui_click: click([21] Button text='Scanning"| N_1473076808ca
+    N_1473076808ca -->|"ui_click: click([23] Button text='Tap to C"| N_1b0ea7fba74d
+    N_1b0ea7fba74d -->|"static_guided_activity_jump: am_start(AccessTipActivity)"| N_e5dc1a748663
+    N_e5dc1a748663 -->|"static_guided_activity_jump: am_start(ProcessManagerActivity)"| N_e5dc1a748663

@@ -1,0 +1,241 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_171__e5fa297d6a",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "uplift.shadow.planet",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "9b1f33cc829a",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "p",
+        "Clear",
+        "FROM YOUR APPS",
+        "Open Phone.",
+        "Phone",
+        "Open Photos.",
+        "Photos",
+        "Open Play Movies & TV.",
+        "Play Movies & TV",
+        "Open Maps.",
+        "Maps",
+        "Open Clock.",
+        "Clock"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "e765d7b098a0",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "uplift.shadow.planet",
+      "abilityName": "uplift.shadow.planet.A1",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "p",
+        "Clear",
+        "FROM YOUR APPS",
+        "Open Phone.",
+        "Phone",
+        "Open Photos.",
+        "Photos",
+        "Open Play Movies & TV.",
+        "Play Movies & TV",
+        "Open Maps.",
+        "Maps",
+        "Open Clock.",
+        "Clock"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "d8032e1c9b29",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "uplift.shadow.planet",
+      "abilityName": "uplift.shadow.planet.bdavykqpfj",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "p",
+        "Clear",
+        "FROM YOUR APPS",
+        "Open Phone.",
+        "Phone",
+        "Open Photos.",
+        "Photos",
+        "Open Play Movies & TV.",
+        "Play Movies & TV",
+        "Open Maps.",
+        "Maps",
+        "Open Clock.",
+        "Clock"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1700])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "f3c915fd6aa2",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([19] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "9b1f33cc829a",
+      "step": 5,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "9b1f33cc829a",
+      "to": "e765d7b098a0",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(A1)"
+    },
+    {
+      "from": "e765d7b098a0",
+      "to": "d8032e1c9b29",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(A2)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Unattributed__e5fa297d6a",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "链路从NexusLauncher主屏及应用抽屉开始，多次滑动、搜索“p”均未进入目标应用；随后以静态Activity跳转进入uplift.shadow.planet的A1与bdavykqpfj，前台始终显示启动器搜索页，仅新增应用通知“<E>”，未出现授权弹窗或实质诱导界面，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 中文意译：系统通知“Your data isn’t backed up”/“Add a backup account now”=“你的数据尚未备份”/“立即添加备份账户”（step_01-08通知横幅，属系统备份提醒，非应用自有话术）",
+    "占位符 -> “<E>”：应用包通知标题与正文均为不可读占位符（step_07-08），不构成可读诱导话术"
+  ],
+  "frame_captions_zh": {
+    "step_01": "启动器主屏；点“Apps list/应用列表”未打开抽屉，顶部有“数据未备份/添加备份账户”通知，无遮罩。",
+    "step_02": "仍在启动器主屏；上滑试图打开应用抽屉但未成功，屏幕保持原样，备份提醒通知持续，无遮罩。",
+    "step_03": "启动器显示应用图标列表（日历/相机等）；再次上滑未展开抽屉，备份提醒仍在，未见应用自有界面或遮罩。",
+    "step_04": "应用抽屉已显示系统图标；点击“Search/搜索”容器，准备用启动器搜索定位目标，备份提醒仍在，无遮罩。",
+    "step_05": "启动器搜索页，显示“Search apps, web, and more…/搜索应用、网页等…”；搜索框获焦并输入，未见诱导授权弹窗。",
+    "step_06": "搜索“p”后列出“FROM YOUR APPS/来自你的应用”等建议；静态引导回退跳转至应用A1，视觉仍为启动器，无遮罩。",
+    "step_07": "应用A1无可见自有UI，屏仍为启动器搜索“p”；应用通知“<E>”出现，备份提醒并存，无遮罩、无取消键；静态跳至A2。",
+    "step_08": "应用bdavykqpfj同样无可见界面，仍显示启动器搜索“p”；“<E>”与备份通知并存，无遮罩；静态跳至HomeSIM。"
+  }
+}

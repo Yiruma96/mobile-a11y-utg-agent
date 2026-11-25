@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "该应用先经系统权限审查页集中索要短信、联系人、通话记录、电话、麦克风、位置与文件权限，进入后仅显示旧版兼容性警告和空白 WebView；随后通过静态引导连续跳转至 fourre、PhonecallReceiver、fivere、twenty 等隐藏组件，未做拒权验证（not_tested）。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Choose what to allow Sikh Net to access” -> “选择允许 Sikh Net 访问哪些内容”（Step 1 ReviewPermissionsActivity）",
+    "English: “send and view SMS messages” -> “发送和查看短信”（Step 1 权限审查页）",
+    "English: “access photos, media, and files on your device” -> “访问设备上的照片、媒体和文件”（Step 1 权限审查页）",
+    "English: “access your contacts” -> “访问你的联系人”（Step 1 权限审查页）",
+    "English: “read and write phone call log” -> “读取和写入通话记录”（Step 1 权限审查页）",
+    "English: “make and manage phone calls” -> “拨打和管理电话”（Step 1 权限审查页）",
+    "English: “record audio” -> “录制音频”（Step 1 权限审查页）",
+    "English: “This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.” -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 MainActivity 兼容性警告）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页，提示允许 Sikh Net 访问短信、联系人、通话记录、电话、麦克风、位置和文件；本步点击 Continue 进入。",
+    "step_02": "应用主界面弹出旧版 Android 兼容性警告，称可能无法正常运行，建议检查更新或联系开发者；本步点“OK”关闭警告。",
+    "step_03": "进入主界面后 WebView 空白，无可见文字、通知或遮罩；本步等待加载或重定向，页面仍无内容。",
+    "step_04": "仍在空白 WebView 主界面，无任何可见文案或通知；本步点击 WebView 中心探测隐藏交互或跳转，未见变化。",
+    "step_05": "主界面无可见 UI；发生静态引导跳转至组件 .four.fourre，疑似隐藏业务页，未产生通知或遮罩。",
+    "step_06": "仍无可见界面；静态引导跳转至 .seven.PhonecallReceiver，组件名指向电话状态接收器，推测后台监听来电。",
+    "step_07": "主界面空白无文案；静态引导跳转至 .five.fivere，属隐藏或后续组件，无通知横幅或覆盖层。",
+    "step_08": "仍无可见 UI；静态引导跳转至 .twenty.twenty，疑似隐藏功能页或后台组件，未出现通知或遮罩。"
+  }
+}

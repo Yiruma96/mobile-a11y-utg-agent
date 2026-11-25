@@ -1,0 +1,172 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_008__8d4e75cb28",
+  "label": "malicious",
+  "family_or_category": "Xavier",
+  "static_visibility": "clear",
+  "target_package": "com.helpdesk.slauncher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "56a34ba90977",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "56a34ba90977",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow S6 Launcher to access",
+        "Phone",
+        "make and manage phone calls",
+        "Contacts",
+        "access your contacts",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Call logs",
+        "read and write phone call log",
+        "Camera",
+        "take pictures and record video",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "3806f9b568df",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "android",
+      "abilityName": "com.android.internal.app.ResolverActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "S6 Launcher",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "96447702ed18",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "android",
+      "abilityName": "com.android.internal.app.ResolverActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Use Pixel Launcher as Home",
+        "Just once",
+        "Always",
+        "Use a different app",
+        "S6 Launcher"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "ba735e0234e7",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.helpdesk.slauncher",
+      "abilityName": "com.helpdesk.slauncher.Launcher",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "By continuing you accept our Terms of Service and Privacy Policy"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "56a34ba90977",
+      "to": "3806f9b568df",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([27] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "3806f9b568df",
+      "to": "96447702ed18",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "96447702ed18",
+      "to": "ba735e0234e7",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"S6 Launcher\" id=text1 center=(297,2067))"
+    },
+    {
+      "from": "ba735e0234e7",
+      "to": "ba735e0234e7",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([240, 940])"
+    },
+    {
+      "from": "ba735e0234e7",
+      "to": "ba735e0234e7",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([300, 940])"
+    },
+    {
+      "from": "ba735e0234e7",
+      "to": "ba735e0234e7",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(onActivityResult)"
+    },
+    {
+      "from": "ba735e0234e7",
+      "to": "ba735e0234e7",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(WallpaperCropActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Xavier__8d4e75cb28",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以S6 Launcher为名，先诱导一次性授予电话、联系人、文件媒体、短信、通话记录和相机等权限，再经旧版Android警告与主屏幕选择进入启动器；首屏以继续即接受条款隐私政策并需点GO，后续无界面变化但静态跳转至设置/壁纸裁剪。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许S6 Launcher访问的内容”（Step1权限授权页）",
+    "英文 -> “继续即表示接受我们的服务条款和隐私政策”（Step4-8启动器首页）",
+    "英文 -> “此应用为旧版Android构建，可能无法正常运行，请检查更新或联系开发者”（Step2旧版警告页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "英文系统权限总览页，列电话、联系人、文件媒体、短信、通话记录、相机；本步点Continue继续授权，虽有Cancel但未取消。",
+    "step_02": "旧版Android警告弹窗，称S6 Launcher可能无法正常运行，建议检查更新或联系开发者；本步点OK忽略，通知栏显示其运行中。",
+    "step_03": "主屏幕选择页，提示用Pixel Launcher作Home，列出Just once、Always、其他应用及S6 Launcher；本步点选S6 Launcher作桌面。",
+    "step_04": "启动器首页仅见“继续即接受服务条款和隐私政策”，下方GO按钮；本步点屏幕中部尝试进入，通知栏仍显示S6 Launcher运行中。",
+    "step_05": "同一启动器首页，条款隐私文案和GO按钮仍在；本步再次点击GO中心，仍未跳转，仅通知栏保留S6 Launcher运行提示。",
+    "step_06": "界面仍为启动器条款页且无可见变化；本步为静态引导跳转至LauncherSetting.onActivityResult，通知栏仍显示S6 Launcher运行中。",
+    "step_07": "界面仍是条款与GO的启动器页，无用户可见变化；本步静态跳转到WallpaperCropActivity，通知栏保留S6 Launcher运行提示。",
+    "step_08": "仍显示条款与GO的启动器首页，无可见交互结果；本步静态跳转回LauncherSetting，通知栏持续显示S6 Launcher正在运行。"
+  }
+}

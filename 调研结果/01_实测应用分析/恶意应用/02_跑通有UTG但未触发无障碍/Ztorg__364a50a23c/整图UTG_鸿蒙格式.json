@@ -1,0 +1,210 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_073__364a50a23c",
+  "label": "malicious",
+  "family_or_category": "Ztorg",
+  "static_visibility": "clear",
+  "target_package": "com.countrys.converter.currency",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "00e059f7e08c",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "00e059f7e08c",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Money Converter to access",
+        "Contacts",
+        "access your contacts",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Camera",
+        "take pictures and record video",
+        "Phone",
+        "make and manage phone calls",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0fa8141de657",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.countrys.converter.currency",
+      "abilityName": ".MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Money Converter",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "ba8146de2678",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.countrys.converter.currency",
+      "abilityName": "com.countrys.converter.currency.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Currency",
+        "Wall",
+        "Setting",
+        "1",
+        "Euro Member Countries (EUR)",
+        "Click Calculate for Result",
+        "Calculate"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "7d47d37ce94b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.countrys.converter.currency",
+      "abilityName": "com.countrys.converter.currency.SettingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Setting",
+        "Theme",
+        "Change the theme for this app",
+        "Disclaimer",
+        "Neither Currency Converter nor GoodView Studio is liable for any errors or delays in currency data, or any actions taken in reliance on such data"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "930d5361050b",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.countrys.converter.currency",
+      "abilityName": "demo.UponGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Please open the Acccessibility on, protect your information not to be leaked, not to be stolen, to prevent others from spying on your privacy."
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "00e059f7e08c",
+      "to": "0fa8141de657",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([19] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "0fa8141de657",
+      "to": "ba8146de2678",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "ba8146de2678",
+      "to": "7d47d37ce94b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView desc=\"Setting\" id=menu_setting (click) center=(1003,149))"
+    },
+    {
+      "from": "7d47d37ce94b",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Home)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "930d5361050b",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UponGuideActivity)"
+    },
+    {
+      "from": "930d5361050b",
+      "to": "930d5361050b",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UponGuideActivity$1)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Ztorg__364a50a23c",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先通过系统权限审查索要联系人、文件媒体、相机和电话权限，关闭旧版 Android 警告后进入伪装货币转换器；在设置页停留后返回桌面/应用列表，最终由 UponGuideActivity 以“保护隐私”恐吓话术诱导开启无障碍，并指向广播接收器链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Money Converter 访问哪些内容”（系统权限审查页，列出联系人、文件媒体、相机、电话）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（旧版兼容警告）",
+    "英文 -> “请开启无障碍，保护你的信息不被泄露、不被窃取，防止他人窥探你的隐私”（UponGuideActivity，恐吓式诱导开启无障碍）",
+    "英文 -> “Currency Converter 与 GoodView Studio 均不对汇率数据错误/延迟或据此采取的行动负责”（设置页免责声明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页：英文要求选择允许 Money Converter 访问联系人、文件媒体、相机和电话；点击 Continue 继续。",
+    "step_02": "主界面弹出旧版 Android 兼容警告，称应用可能无法正常运行；点击 OK 关闭，通知栏出现异常“String (  )”通知。",
+    "step_03": "伪装货币转换器主页，含 Currency、Wall、Setting 与 EUR 换算入口；点击右上角 Setting 齿轮进入设置页。",
+    "step_04": "设置页含 Theme 与免责声明，称 Currency Converter/GoodView Studio 不担责；随后按 Home 退到后台等待广播。",
+    "step_05": "系统桌面显示 Apps list、日期和常用图标；点击“Apps list”打开应用列表，准备重新启动目标应用。",
+    "step_06": "仍在系统桌面/应用列表，未见可点目标；探针以静态跳转回退进入 UponGuideActivity。",
+    "step_07": "UponGuideActivity 用英文恐吓话术要求开启无障碍，称可防信息泄露、窃取和隐私窥探；本步静态跳转。",
+    "step_08": "同一无障碍诱导页继续停留，话术不变；探针再次静态跳转至 OpenAccessReceiver，疑似广播触发链路。"
+  }
+}

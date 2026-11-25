@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用先经系统权限复核批量索取电话、文件媒体、联系人、相机、位置、通话记录和短信权限，再以旧版兼容警告及捆绑同意页进入主界面；随后用“RISKY/从未扫描”制造恐慌，并通过菜单和权限中心反复诱导开启无障碍、通知使用等高风险权限，链路止于静态跳转且未测试拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许Smart Security访问什么”的权限清单引导（Step 1 权限复核页）",
+    "英语 -> “请授予全部权限以提升安全级别”的授权施压（Step 6-8 权限中心）",
+    "英语 -> “系统优化与手机安全”“协助保护个人信息”“保护应用隐私”等授权理由（Step 6-8 权限中心）",
+    "英语 -> “本应用为旧版Android构建，可能无法正常运行”的兼容警告（Step 2 启动页）",
+    "英语 -> “开始应用即同意隐私政策”“同意开启自动清理、智能锁、智能滑动、通话结束、WiFi优化，可能含赞助内容”的捆绑同意（Step 3 启动页）",
+    "英语 -> “RISKY”“NEVER SCANNED BEFORE”的风险恐慌标签（Step 4 主界面）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，列出电话、文件媒体、联系人、相机、位置、通话记录、短信权限；点击Continue继续授权，无通知/遮罩。",
+    "step_02": "应用启动页弹出旧版Android兼容警告，称可能无法正常运行；点击OK关闭弹窗，无通知横幅或遮罩。",
+    "step_03": "启动页展示SMART SECURITY及隐私政策、自动清理等捆绑同意文案；点击START即视为同意并进入主界面，无通知/遮罩。",
+    "step_04": "主界面以RISKY、NEVER SCANNED BEFORE制造风险恐慌，列出垃圾清理、提速、省电、应用锁；点击右上菜单，无通知/遮罩。",
+    "step_05": "侧边菜单含Security Level、Scan、AppLock、入侵自拍、WiFi优化等；点击Security Level箭头进入权限中心，无通知/遮罩。",
+    "step_06": "权限中心显示Security Level为Basic，要求授予无障碍、通知使用等全部权限；静态跳转至GrantPermissonsActivity$4，无通知遮罩。",
+    "step_07": "同一权限中心继续以Basic和全部授权施压，列无障碍、通知使用等入口；静态跳转至AccessibilityDialogActivity，无通知遮罩。",
+    "step_08": "权限中心再次展示Basic与全部授权要求，称可提升安全级别；静态跳转至GrantPermissonsActivity$3，无通知遮罩。"
+  }
+}
