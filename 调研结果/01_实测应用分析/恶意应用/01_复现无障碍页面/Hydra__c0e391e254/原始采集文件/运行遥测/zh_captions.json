@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "该应用伪装为“Commerzbank Sicherheitsupdate”，先在应用内以英文引导用户开启无障碍，再跳转系统无障碍列表并持续显示同文案通知；进入服务详情和系统高风险授权弹窗后，若用户拒绝则回到桌面，表现为优雅停留或降级，未继续强弹。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “为使最新版 Commerzbank Sicherheitsupdate 正常运行，你需要启用无障碍；请按以下步骤操作。” （PermissionsActivity 权限引导页）",
+    "英文 -> “步骤1 打开设置；步骤2 打开无障碍；步骤3 打开已安装服务；步骤4 开启 Commerzbank Sicherheitsupdate。” （PermissionsActivity 权限引导页）",
+    "英文 -> “允许 Commerzbank Sicherheitsupdate 完全控制你的设备？可查看并控制屏幕、查看并执行操作。” （系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "应用内权限引导页，英文称需开启无障碍才能运行，列出四步设置指引；本步点击“GO TO SETTINGS”。",
+    "step_02": "系统无障碍列表页，下载应用显示“Commerzbank Sicherheitsupdate”且为Off；同文案通知横幅出现，探针捕获设置钩子后终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在无障碍列表，界面文本为空，通知横幅持续，遮罩数为0，未发生交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍列表无变化，仍仅有同文案通知横幅，遮罩为0，继续等待未触发新界面。",
+    "detail_1_service_detail_page": "服务详情页：显示“Commerzbank Sicherheitsupdate”开关、快捷键选项及“未提供描述”；本步仅检查详情未授权。",
+    "detail_2_system_warning_dialog": "系统高风险警告弹窗：询问是否允许完全控制设备，说明可读屏、覆盖显示及代操作；本步检查弹窗，含Allow/Deny。",
+    "refusal_2.0s": "拒权后2秒回到桌面启动器，应用未再弹窗；同文案通知仍驻留，结果标记为优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面，无新界面或遮罩；应用保持通知横幅驻留，结果仍为优雅停留或降级。"
+  }
+}

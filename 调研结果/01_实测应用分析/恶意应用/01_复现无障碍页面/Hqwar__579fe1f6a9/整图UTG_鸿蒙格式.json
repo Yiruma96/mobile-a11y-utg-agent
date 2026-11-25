@@ -1,0 +1,299 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_147__579fe1f6a9",
+  "label": "malicious",
+  "family_or_category": "Hqwar",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.xhqlob.doscby",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "4373ed3b4c9b",
+  "hook_node_ids": [
+    "4373ed3b4c9b",
+    "539e1790d799"
+  ],
+  "nodes": [
+    {
+      "node_id": "4373ed3b4c9b",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Servis Güncellemesi",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "86cb0ba92c9f",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Servis Güncellemesi",
+        "Use Servis Güncellemesi",
+        "OPTIONS",
+        "Servis Güncellemesi shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "539e1790d799",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Servis Güncellemesi to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "5bfeabff5169",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Servis Güncellemesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "4373ed3b4c9b",
+      "to": "86cb0ba92c9f",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "86cb0ba92c9f",
+      "to": "539e1790d799",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "4373ed3b4c9b",
+      "to": "5bfeabff5169",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "5bfeabff5169",
+      "to": "5bfeabff5169",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "5bfeabff5169",
+      "to": "5bfeabff5169",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Servis Güncellemesi Use Servis Güncellemesi OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Servis Güncellemesi",
+        "Use Servis Güncellemesi",
+        "OPTIONS",
+        "Servis Güncellemesi shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Servis Güncellemesi to have full contro",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Servis Güncellemesi to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Servis Güncellemesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Servis Güncellemesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Servis Güncellemesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hqwar__579fe1f6a9",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用以“Servis Güncellemesi/服务更新”命名伪装，先引导开启无障碍全权控制，遭拒后转而请求电池优化后台常驻，最终表现为优雅停留/降级，全程无通知横幅与悬浮遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语「Servis Güncellemesi」 -> 中文意译“服务更新”（无障碍列表/服务详情/授权弹窗/电池优化），以正常服务更新名义伪装应用。",
+    "英语「Use Servis Güncellemesi」 -> 中文意译“使用服务更新”（服务详情页），引导启用该无障碍服务。",
+    "英语「Allow Servis Güncellemesi to have full control of your device?」 -> 中文意译“允许服务更新完全控制你的设备？”（系统警告弹窗），索取无障碍全权控制。",
+    "英语「View and control screen / View and perform actions」 -> 中文意译“查看并控制屏幕/查看并执行操作”（系统警告弹窗），说明可读屏、悬浮覆盖和代操作。",
+    "英语「Let app always run in background?」 -> 中文意译“让应用始终在后台运行？”（电池优化弹窗），拒权后继续索取后台常驻。",
+    "英语「No description provided.」 -> 中文意译“未提供描述”（服务详情页），无障碍服务缺少用途说明，增加伪装性。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页：显示“Servis Güncellemesi（服务更新）”开关为关闭；抓取无障碍设置钩子与探针后自动终止，无通知横幅与遮罩。",
+    "post_jump_0.8s": "跳后0.8秒探针：界面仍为无障碍设置页且无可读文本；等待0.8秒，遮罩数0，无通知横幅，未见诱导浮层。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍停留在无障碍设置页，界面文本为空；等待2.0秒，遮罩数0且无通知，未出现覆盖层。",
+    "detail_1_service_detail_page": "服务详情页：显示“Servis Güncellemesi（服务更新）”启用项、快捷方式与音量键选项，并称未提供描述；本步仅查看详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：询问是否允许“服务更新”完全控制设备，说明可读屏、悬浮覆盖并代操作；提供Allow/Deny，本步检查警告准备拒绝。",
+    "refusal_2.0s": "拒权返回后2秒：转至电池优化弹窗，询问是否让“服务更新”始终后台运行；拒绝后结果为优雅停留/降级，无通知与遮罩。",
+    "refusal_10.5s": "拒权返回后10.5秒：仍停在电池优化后台常驻弹窗，含Deny/Allow；拒绝后保持优雅停留/降级，无通知横幅与遮罩。"
+  }
+}

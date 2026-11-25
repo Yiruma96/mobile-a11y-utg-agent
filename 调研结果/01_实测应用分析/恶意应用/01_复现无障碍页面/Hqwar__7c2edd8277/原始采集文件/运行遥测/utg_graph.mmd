@@ -1,0 +1,10 @@
+flowchart TD
+    N_75392440f42e["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_319955e358cb["Step 1: SubSettings\nBack"]
+    N_a9ff6cafd070["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Google Play Prot"]
+    N_1159e24777c9["Step 1: NexusLauncherActivity\nApps list"]
+    N_75392440f42e -->|"detail_probe: click_service()"| N_319955e358cb
+    N_319955e358cb -->|"warning_probe: click_use_service_switch"| N_a9ff6cafd070
+    N_75392440f42e -->|"refusal_probe: Back_refuse"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1159e24777c9

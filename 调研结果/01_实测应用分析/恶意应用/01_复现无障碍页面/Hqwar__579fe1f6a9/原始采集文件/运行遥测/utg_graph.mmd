@@ -1,0 +1,10 @@
+flowchart TD
+    N_4373ed3b4c9b["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_86cb0ba92c9f["Step 1: SubSettings\nBack"]
+    N_539e1790d799["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Servis Güncellem"]
+    N_5bfeabff5169["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_4373ed3b4c9b -->|"detail_probe: click_service()"| N_86cb0ba92c9f
+    N_86cb0ba92c9f -->|"warning_probe: click_use_service_switch"| N_539e1790d799
+    N_4373ed3b4c9b -->|"refusal_probe: Back_refuse"| N_5bfeabff5169
+    N_5bfeabff5169 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_5bfeabff5169
+    N_5bfeabff5169 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_5bfeabff5169

@@ -1,0 +1,9 @@
+flowchart TD
+    N_b6765ac7a59e["Step 1: PermissionsActivity\nActivate accessibility"]
+    N_53633a1ae774["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_632989c3d541["Step 2: SubSettings\nBack"]
+    N_70f96a12f80f["Step 2: SubSettings [HOOK_A11Y_SETTINGS]\nAllow HD Video Player "]
+    N_b6765ac7a59e -->|"ui_click: click([6] Button text='GO TO SET"| N_53633a1ae774
+    N_53633a1ae774 -->|"detail_probe: click_service()"| N_632989c3d541
+    N_632989c3d541 -->|"warning_probe: click_use_service_switch"| N_70f96a12f80f
+    N_53633a1ae774 -->|"refusal_probe: Back_refuse"| N_53633a1ae774

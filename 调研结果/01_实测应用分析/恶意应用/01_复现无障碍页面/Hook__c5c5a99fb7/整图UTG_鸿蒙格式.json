@@ -1,0 +1,290 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_091__c5c5a99fb7",
+  "label": "malicious",
+  "family_or_category": "Hook",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.sonirupiwebidoti.geyosego",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "a60c161b9e95",
+  "hook_node_ids": [
+    "a60c161b9e95",
+    "dfd6f5004dbb"
+  ],
+  "nodes": [
+    {
+      "node_id": "a60c161b9e95",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Contacts",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "dfd6f5004dbb",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Contacts",
+        "Use Contacts",
+        "OPTIONS",
+        "Contacts shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a60c161b9e95",
+      "to": "dfd6f5004dbb",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "dfd6f5004dbb",
+      "to": "dfd6f5004dbb",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "a60c161b9e95",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Contacts Use Contacts OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Contacts",
+        "Use Contacts",
+        "OPTIONS",
+        "Contacts shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Back Contacts Use Contacts",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Contacts",
+        "Use Contacts",
+        "OPTIONS",
+        "Contacts shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hook__c5c5a99fb7",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该Hook类应用先引导至系统无障碍设置并反复推送“启用联系人”通知，再进入联系人无障碍服务详情页，以“若权限曾开启请先关闭再开启”的说明施压授权；用户拒绝后未出现遮罩，应用退至桌面且通知持续，表现为平稳降级停留。",
+  "observed_lure_rhetoric_zh": [
+    "英文“String (Enable Contacts)” -> 启用联系人（无障碍列表页及后续各页通知横幅）",
+    "英文“Use Contacts” -> 使用联系人（联系人服务详情页）",
+    "英文“If accessibility permission has been on, please turn off then turn on.” -> 若无障碍权限曾开启，请先关闭再开启（联系人服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页：系统项含“联系人/关闭”等；通知横幅“启用联系人”，无遮罩，本步捕获Hook与探针后自动终止。",
+    "post_jump_0.8s": "跳后0.8秒探针仍停留无障碍设置页，界面无可见文本；应用通知横幅“启用联系人”持续，遮罩0，仅等待无操作。",
+    "post_jump_2.0s": "跳后2.0秒探针仍在无障碍设置页，界面空白；同一“启用联系人”通知出现3条，遮罩0，等待期间无交互。",
+    "detail_1_service_detail_page": "联系人服务详情页：含“使用联系人/音量键快捷方式”；英文提示“若权限曾开启请先关再开”，通知求启用联系人，无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗探针：点击Deny后仍停留联系人服务详情，界面含同样“先关再开”提示；通知求启用联系人，未见遮罩。",
+    "refusal_2.0s": "拒权2秒后回桌面：显示应用列表、日期天气与Messages/Chrome/Search；通知仍求“启用联系人”，无遮罩，平稳降级停留。",
+    "refusal_10.5s": "拒权10.5秒后仍在桌面：应用列表、日期天气与Messages/Chrome/Search可见；通知持续求“启用联系人”，无遮罩，保持降级。"
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_026__7c2edd8277",
+  "label": "malicious",
+  "family_or_category": "Hqwar",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.fqaqkdwn.uhkshvhv",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "75392440f42e",
+  "hook_node_ids": [
+    "75392440f42e",
+    "a9ff6cafd070"
+  ],
+  "nodes": [
+    {
+      "node_id": "75392440f42e",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Play Protect",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "319955e358cb",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Google Play Protect",
+        "Use Google Play Protect",
+        "OPTIONS",
+        "Google Play Protect shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "a9ff6cafd070",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Google Play Protect to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "75392440f42e",
+      "to": "319955e358cb",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "319955e358cb",
+      "to": "a9ff6cafd070",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "75392440f42e",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Google Play Protect Use Google Play Protect OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Google Play Protect",
+        "Use Google Play Protect",
+        "OPTIONS",
+        "Google Play Protect shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Google Play Protect to have full contro",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Google Play Protect to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hqwar__7c2edd8277",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用从系统无障碍设置页进入，经空界面探针转至 Google Play Protect 服务详情与“完全控制设备”高危授权弹窗；用户拒绝后回落桌面启动器并保持/降级，未崩溃或持续覆盖。",
+  "observed_lure_rhetoric_zh": [
+    "Allow Google Play Protect to have full control of your device? -> 是否允许 Google Play Protect 完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用。（系统警告弹窗）",
+    "It can read all content on the screen and display content over other apps. -> 可读取屏幕全部内容并覆盖显示在其他应用之上。（系统警告弹窗）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 可追踪交互与传感器并代表你操作其他应用。（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍设置列表页：显示已下载应用、Play Protect 关闭及屏幕阅读器等；命中无障碍设置 Hook 与探针后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，界面文本为空、无通知横幅、遮罩数为 0，仅等待观察。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍在无障碍设置页，界面文本为空、无通知与遮罩，遮罩数为 0，等待无变化。",
+    "detail_1_service_detail_page": "Google Play Protect 服务详情页：含启用开关、快捷方式与音量键选项，并提示未提供说明；本步仅查看详情/警告。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：询问是否允许 Play Protect 完全控制设备，列出查看/控制屏幕与代操作能力；本步查看后点 Deny 拒绝。",
+    "refusal_2.0s": "拒权后 2 秒回到桌面启动器：显示应用列表、日期与天气；无通知/遮罩，应用未崩溃，呈优雅停留或降级。",
+    "refusal_10.5s": "拒权后 10.5 秒仍在桌面启动器：应用列表、日期与天气可见，无通知与遮罩；确认拒绝后保持停留/降级，无进一步诱导。"
+  }
+}

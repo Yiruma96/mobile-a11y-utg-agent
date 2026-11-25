@@ -1,0 +1,26 @@
+{
+  "app_chain_summary_zh": "应用入口以“HD Video Player”名义诱导用户前往系统设置启用无障碍服务，随后进入无障碍列表、服务详情与高权限系统警告弹窗；用户拒绝返回后应用重新拉起无障碍设置，呈现反复引导与持久化诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "Activate accessibility services for the correct application work: -> 为让应用正常工作，请启用无障碍服务（Step 1 权限页）",
+    "Step 1. - Go to Settings -> 第一步：前往设置（Step 1 权限页）",
+    "Step 2. - Open \"Downloaded Services\" menu -> 第二步：打开“已下载的服务”菜单（Step 1 权限页）",
+    "Step 3. - Activate services for the HD Video Player -> 第三步：为HD Video Player启用服务（Step 1 权限页）",
+    "Enjoy your new opportunities -> 享受你的新机会/新功能（Step 1 权限页）",
+    "GO TO SETTINGS -> 前往设置（Step 1 权限页）",
+    "Allow HD Video Player to have full control of your device? -> 允许HD Video Player完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的应用，但不适合大多数应用（系统警告弹窗）",
+    "View and control screen -> 可查看并控制屏幕：读取屏幕所有内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "View and perform actions -> 可查看并执行操作：跟踪与应用的交互或硬件传感器，并代你操作应用（系统警告弹窗）",
+    "Allow -> 允许（系统警告弹窗）",
+    "Deny -> 拒绝（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "入口权限页：英文诱导为应用启用无障碍，按三步前往设置并开启“HD Video Player”；点击“GO TO SETTINGS”跳转系统设置。",
+    "step_02": "系统无障碍列表：显示“已下载应用”下HD Video Player为Off；应用跳转后在此停留并被终止抓取钩子，尚未开启服务。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍处系统无障碍列表，无可见文本、无通知横幅、遮罩数为0，未发生额外弹窗。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为系统无障碍列表，无可见文本与通知，遮罩数为0，未出现诱导覆盖层。",
+    "detail_1_service_detail_page": "服务详情页：系统显示“HD Video Player”及“Use HD Video Player”开关、快捷键与音量键选项；说明为未提供描述，属待授权入口。",
+    "detail_2_system_warning_dialog": "系统高权限警告：英文询问是否允许HD Video Player完全控制设备，列明可读屏、悬浮显示、跟踪交互并代操作；提供Allow/Deny。",
+    "refusal_2.0s": "拒权返回后2.0秒：回到无障碍列表，HD Video Player仍为Off；动作显示Back_refuse后应用重新拉起无障碍设置，呈反复引导。"
+  }
+}

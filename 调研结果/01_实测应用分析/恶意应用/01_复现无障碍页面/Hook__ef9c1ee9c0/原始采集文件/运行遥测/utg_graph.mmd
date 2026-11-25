@@ -1,0 +1,9 @@
+flowchart TD
+    N_db2aa1eccb22["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_4fd5864e8b70["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_db2aa1eccb22 -->|"detail_probe: click_service()"| N_4fd5864e8b70
+    N_4fd5864e8b70 -->|"warning_probe: click_use_service_switch"| N_4fd5864e8b70
+    N_db2aa1eccb22 -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886

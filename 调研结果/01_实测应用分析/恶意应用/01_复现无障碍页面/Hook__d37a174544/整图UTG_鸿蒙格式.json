@@ -1,0 +1,306 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_093__d37a174544",
+  "label": "malicious",
+  "family_or_category": "Hook",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.yogadisodoxatuse.fapeze",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "9582ca4aaf5e",
+  "hook_node_ids": [
+    "9582ca4aaf5e",
+    "c55a62cc77b4",
+    "cfbd0c2894f5"
+  ],
+  "nodes": [
+    {
+      "node_id": "9582ca4aaf5e",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer",
+        "Remove animations"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "c55a62cc77b4",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Use Accessibility",
+        "OPTIONS",
+        "Accessibility shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "cfbd0c2894f5",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Accessibility to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "9582ca4aaf5e",
+      "to": "c55a62cc77b4",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "c55a62cc77b4",
+      "to": "cfbd0c2894f5",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "9582ca4aaf5e",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Accessibility Use Accessibility OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Use Accessibility",
+        "OPTIONS",
+        "Accessibility shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Accessibility to have full control of y",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Accessibility to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hook__d37a174544",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用通过常驻通知“Enable Accessibility/启用无障碍”把用户引向系统无障碍设置与服务详情页，并提示关闭后再开启权限，随后弹出系统全控制警告；点击Deny后返回桌面且无崩溃、无进一步遮罩，表现为优雅停留或降级。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “启用无障碍”（应用通知横幅，在无障碍列表、服务详情、系统警告及返回桌面阶段均常驻）",
+    "English -> “若无障碍权限已开启，请关闭后再开启”（服务详情页的权限操作提示）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍设置列表页，显示“Accessibility/无障碍”“DOWNLOADED APPS/已下载应用”等；应用横幅提示“启用无障碍”，捕获HOOK后终止。",
+    "post_jump_0.8s": "同一无障碍列表页跳后0.8秒探针，界面文本为空；应用“启用无障碍”通知仍常驻，遮罩数为0，仅等待无操作。",
+    "post_jump_2.0s": "无障碍列表页跳后2秒探针，文本仍为空；应用“启用无障碍”通知常驻，遮罩数为0，未见新增弹窗或覆盖层。",
+    "detail_1_service_detail_page": "无障碍服务详情页，显示“Use Accessibility/使用无障碍”及“OPTIONS/选项”；含英文提示“若无障碍权限已开启请关闭再开启”，应用通知仍常驻。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗，英文说明无障碍可“查看控制屏幕/执行操作”，有Allow/允许与Deny/拒绝；遮罩0，本步仅检查未授予。",
+    "refusal_2.0s": "点Deny拒绝后返回桌面启动器，显示应用列表、日期及Messages/Chrome等；应用“启用无障碍”通知仍常驻，结果为优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面启动器，界面同前含Apps list/应用列表等；无障碍通知未消失，未见悬浮遮罩，判定优雅降级。"
+  }
+}

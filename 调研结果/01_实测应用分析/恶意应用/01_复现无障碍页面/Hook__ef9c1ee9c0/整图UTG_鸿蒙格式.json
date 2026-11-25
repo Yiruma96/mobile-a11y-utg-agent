@@ -1,0 +1,283 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_008__ef9c1ee9c0",
+  "label": "malicious",
+  "family_or_category": "Hook",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.gohaxacupumasa.kipo",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "db2aa1eccb22",
+  "hook_node_ids": [
+    "db2aa1eccb22",
+    "4fd5864e8b70"
+  ],
+  "nodes": [
+    {
+      "node_id": "db2aa1eccb22",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "FlexTV",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "4fd5864e8b70",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "FlexTV",
+        "Use FlexTV",
+        "OPTIONS",
+        "FlexTV shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "db2aa1eccb22",
+      "to": "4fd5864e8b70",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "4fd5864e8b70",
+      "to": "4fd5864e8b70",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "db2aa1eccb22",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back FlexTV Use FlexTV OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "FlexTV",
+        "Use FlexTV",
+        "OPTIONS",
+        "FlexTV shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Back FlexTV Use FlexTV",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "FlexTV",
+        "Use FlexTV",
+        "OPTIONS",
+        "FlexTV shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "If accessibility permission has been on, please turn off then turn on."
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hook__ef9c1ee9c0",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先通过“FlexTV/Enable FlexTV”通知引导进入系统无障碍列表，将 FlexTV 服务显示为关闭并诱导开启；进入服务详情页要求开关权限，拒权后回到桌面且通知仍在，整体呈优雅停留/降级而不崩溃。",
+  "observed_lure_rhetoric_zh": [
+    "String (FlexTV) / String (Enable FlexTV) -> “FlexTV/启用 FlexTV”（无障碍列表页及服务详情页通知横幅）",
+    "Use FlexTV -> “使用 FlexTV”（服务详情页开关）",
+    "If accessibility permission has been on, please turn off then turn on. -> “若无障碍权限已开启，请先关闭再重新开启”（服务详情页说明）",
+    "FlexTV shortcut / Hold volume keys -> “FlexTV 快捷方式/按住音量键”（服务详情页选项）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页：FlexTV 显示 Off，通知“Enable FlexTV”催促启用；采集到无障碍 Hook 与探针后自动终止。",
+    "post_jump_0.8s": "同一无障碍列表页跳后探针：界面文本未采集，FlexTV 通知仍在，遮罩 0；等待 0.8 秒无新增交互。",
+    "post_jump_2.0s": "同一无障碍列表页跳后探针：界面文本未采集，FlexTV 通知仍在，遮罩 0；继续等待 2.0 秒仍无变化。",
+    "detail_1_service_detail_page": "FlexTV 服务详情页：Use FlexTV 开关、快捷方式与音量键选项，并提示权限开启后需关闭再开启；未授权。",
+    "detail_2_system_warning_dialog": "服务详情页出现系统警告弹窗并点 Deny 拒绝；未采到弹窗正文，遮罩 0，仍显示返回、FlexTV、Use FlexTV。",
+    "refusal_2.0s": "拒权返回桌面：FlexTV 通知仍在，无遮罩；2 秒后未崩溃，呈 GRACEFUL_STAY_OR_DEGRADE。",
+    "refusal_10.5s": "拒权返回桌面 10.5 秒：FlexTV 通知仍在，无遮罩；应用持续未崩溃，维持优雅停留/降级。"
+  }
+}

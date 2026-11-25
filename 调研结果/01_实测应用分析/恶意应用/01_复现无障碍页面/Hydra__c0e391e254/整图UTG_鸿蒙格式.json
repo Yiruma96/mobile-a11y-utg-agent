@@ -1,0 +1,331 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_052__c0e391e254",
+  "label": "malicious",
+  "family_or_category": "Hydra",
+  "static_visibility": "clear",
+  "target_package": "com.grand.snail",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "2409e276217c",
+  "hook_node_ids": [
+    "d716a67f4f47",
+    "a627b4d34a90"
+  ],
+  "nodes": [
+    {
+      "node_id": "2409e276217c",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.grand.snail",
+      "abilityName": "com.grand.snail.bot.PermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "In order for the latest version of Commerzbank Sicherheitsupdate to work, you will need to enable accessibility. Please follow the steps below:",
+        "Step 1 - Go to “Settings”",
+        "Step 2 - Open “Accessibility”",
+        "Step 3 - Open “Installed Services”",
+        "Step 4 - Turn “Commerzbank Sicherheitsupdate” on",
+        "GO TO SETTINGS"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d716a67f4f47",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Commerzbank Sicherheitsupdate",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "10764616da7e",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Commerzbank Sicherheitsupdate",
+        "Use Commerzbank Sicherheitsupdate",
+        "OPTIONS",
+        "Commerzbank Sicherheitsupdate shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "a627b4d34a90",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Commerzbank Sicherheitsupdate to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2409e276217c",
+      "to": "d716a67f4f47",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"GO TO SETTINGS\" id=bt_goto_settings (click) center=(539,1893))"
+    },
+    {
+      "from": "d716a67f4f47",
+      "to": "10764616da7e",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "10764616da7e",
+      "to": "a627b4d34a90",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "d716a67f4f47",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Commerzbank Sicherheitsupdate Use Commerzbank Sicherhei",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Commerzbank Sicherheitsupdate",
+        "Use Commerzbank Sicherheitsupdate",
+        "OPTIONS",
+        "Commerzbank Sicherheitsupdate shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Commerzbank Sicherheitsupdate to have f",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Commerzbank Sicherheitsupdate to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用伪装为“Commerzbank Sicherheitsupdate”，先在应用内以英文引导用户开启无障碍，再跳转系统无障碍列表并持续显示同文案通知；进入服务详情和系统高风险授权弹窗后，若用户拒绝则回到桌面，表现为优雅停留或降级，未继续强弹。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “为使最新版 Commerzbank Sicherheitsupdate 正常运行，你需要启用无障碍；请按以下步骤操作。” （PermissionsActivity 权限引导页）",
+    "英文 -> “步骤1 打开设置；步骤2 打开无障碍；步骤3 打开已安装服务；步骤4 开启 Commerzbank Sicherheitsupdate。” （PermissionsActivity 权限引导页）",
+    "英文 -> “允许 Commerzbank Sicherheitsupdate 完全控制你的设备？可查看并控制屏幕、查看并执行操作。” （系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用内权限引导页，英文称需开启无障碍才能运行，列出四步设置指引；本步点击“GO TO SETTINGS”。",
+    "step_02": "系统无障碍列表页，下载应用显示“Commerzbank Sicherheitsupdate”且为Off；同文案通知横幅出现，探针捕获设置钩子后终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在无障碍列表，界面文本为空，通知横幅持续，遮罩数为0，未发生交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍列表无变化，仍仅有同文案通知横幅，遮罩为0，继续等待未触发新界面。",
+    "detail_1_service_detail_page": "服务详情页：显示“Commerzbank Sicherheitsupdate”开关、快捷键选项及“未提供描述”；本步仅检查详情未授权。",
+    "detail_2_system_warning_dialog": "系统高风险警告弹窗：询问是否允许完全控制设备，说明可读屏、覆盖显示及代操作；本步检查弹窗，含Allow/Deny。",
+    "refusal_2.0s": "拒权后2秒回到桌面启动器，应用未再弹窗；同文案通知仍驻留，结果标记为优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面，无新界面或遮罩；应用保持通知横幅驻留，结果仍为优雅停留或降级。"
+  }
+}

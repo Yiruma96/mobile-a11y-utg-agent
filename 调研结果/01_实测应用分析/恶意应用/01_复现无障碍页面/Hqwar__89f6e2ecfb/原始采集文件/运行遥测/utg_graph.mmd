@@ -1,0 +1,10 @@
+flowchart TD
+    N_3bda744e17c0["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_aefce7c22b88["Step 1: SubSettings\nBack"]
+    N_e92cf97dc60f["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow PayLife to have "]
+    N_d60f73fa6af4["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_3bda744e17c0 -->|"detail_probe: click_service()"| N_aefce7c22b88
+    N_aefce7c22b88 -->|"warning_probe: click_use_service_switch"| N_e92cf97dc60f
+    N_3bda744e17c0 -->|"refusal_probe: Back_refuse"| N_d60f73fa6af4
+    N_d60f73fa6af4 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_d60f73fa6af4
+    N_d60f73fa6af4 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_d60f73fa6af4
