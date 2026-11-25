@@ -1,0 +1,380 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_002__05782e267b",
+  "label": "malicious",
+  "family_or_category": "EventBot",
+  "static_visibility": "clear",
+  "target_package": "com.example.eventbot",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "3de1b204244e",
+  "hook_node_ids": [
+    "7001867aa19d",
+    "13d29e946e93"
+  ],
+  "nodes": [
+    {
+      "node_id": "3de1b204244e",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Flash Update to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "2acf3c2851bd",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "7001867aa19d",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Update",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "d3f0379915a6",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Update",
+        "Use Flash Update",
+        "OPTIONS",
+        "Flash Update shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Update in order to get full functionality of the application. Flash Update will not work correctly."
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    },
+    {
+      "node_id": "13d29e946e93",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Update to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_05_system_warning_layout.xml",
+      "screenshot": "step_05_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3de1b204244e",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "2acf3c2851bd",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "7001867aa19d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"Enable Flash Update\" id=button1 (click) center=(540,1626))"
+    },
+    {
+      "from": "7001867aa19d",
+      "to": "d3f0379915a6",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "d3f0379915a6",
+      "to": "13d29e946e93",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7001867aa19d",
+      "to": "2acf3c2851bd",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "2acf3c2851bd",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "2acf3c2851bd",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Update Use Flash Update OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Update",
+        "Use Flash Update",
+        "OPTIONS",
+        "Flash Update shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Update in order to get full functionality of the application. Flash Update will not work correctly."
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Update to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Update to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用先请求文件媒体与短信权限并常驻桌面，循环弹出假“Flash Update”故障浮层诱导开启无障碍；进入系统授权页后若拒绝，返回桌面仍反复重弹同一诱骗浮层。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “选择允许 Flash Update 访问什么”，请求文件媒体与短信权限（权限审核页）",
+    "English -> “Flash Update 将无法正常工作”，以故障恐吓促使用户开启（假浮层/服务详情页）",
+    "English -> “1. 在设置中选择 Flash Update；2. 将其开启”，给出开启无障碍的诱导步骤（假浮层/拒权后重弹页）",
+    "English -> “启用 Flash Update”，诱导点击跳转无障碍设置（假浮层/拒权后重弹页）",
+    "English -> “必须启用 Flash Update 才能获得应用完整功能”，以功能不完整施压（无障碍服务详情页）",
+    "English -> “允许 Flash Update 完全控制你的设备？”，系统高危授权警告（系统警告弹窗）",
+    "English -> “可查看并控制屏幕/查看并执行操作”，说明无障碍可读屏、覆盖显示和代操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限审核页：Flash Update 请求文件媒体与短信权限；点“继续”放行，无通知横幅或遮罩。",
+    "step_02": "桌面启动器页：等待后台约每20秒循环弹出假“Flash Update”浮层；本步仅等待，无通知、遮罩为0。",
+    "step_03": "仍在桌面等待：未出现系统通知或遮罩，预期假“Flash Update”浮层按约20秒循环再次弹出。",
+    "step_04": "假“Flash Update”浮层称将无法正常工作，列出“设置选择/开启”两步，仅“启用”键无取消，点击后跳系统无障碍。",
+    "step_05": "系统无障碍设置页：已下载应用中“Flash Update”为“关闭”；捕获无障碍钩子/探针后自动终止，无通知或遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停在无障碍设置页，无UI文本、无通知横幅，遮罩计数为0。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍停在无障碍设置，无通知或浮层，遮罩计数为0，未见新动作。",
+    "detail_1_service_detail_page": "无障碍服务详情页：开关“Use Flash Update”未启用，提示必须开启才具完整功能；含音量键快捷键，仅检查未操作。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：称允许“Flash Update”完全控制设备，可读屏并代操作；有“允许/拒绝”，本步仅检查未点。",
+    "refusal_2.0s": "点“拒绝”返回桌面后2秒，假“Flash Update”启用无障碍诱导浮层再次自动弹出；无通知横幅，遮罩为0。",
+    "refusal_10.5s": "拒权返回10.5秒后，同一假“Flash Update”启用无障碍浮层仍反复重弹，显示拒权后诱骗并未停止。"
+  }
+}

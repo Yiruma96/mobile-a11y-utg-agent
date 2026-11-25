@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用通过通知横幅“启用 Chrome 更新服务”和 HookAPPService 名称进入无障碍设置与服务详情，诱导开启或重开无障碍权限；拒绝授权后退回桌面并保持/降级驻留，通知横幅仍持续存在。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “启用 Chrome 更新服务”（通知横幅，各页面持续显示）",
+    "英文 -> “使用 HookAPPService”（服务详情页，开关选项）",
+    "英文 -> “HookAPPService 快捷方式；按住音量键”（服务详情页，快捷方式设置）",
+    "英文 -> “若无障碍权限已开启，请先关闭再重新开启”（服务详情页，诱导重开权限）"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍设置页：下载应用列表见 HookAPPService 处于 Off，顶部通知横幅显示 HookAPP/启用 Chrome 更新服务；探针命中后终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留无障碍设置页，文本未取到；通知横幅继续显示 HookAPP/启用 Chrome 更新服务，无遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍停留无障碍设置页，界面文本为空；通知横幅持续驻留，未出现悬浮遮罩。",
+    "detail_1_service_detail_page": "服务详情页：显示 Use HookAPPService、OPTIONS 与快捷键“按住音量键”；英文提示若无障碍权限曾开启，请关闭再重开。",
+    "detail_2_system_warning_dialog": "系统警告/授权确认阶段（标题称点 Deny）：仍见 HookAPPService 开关及关后重开提示，未捕获弹窗文本与遮罩。",
+    "refusal_2.0s": "拒权后返回 +2.0s：回到桌面启动器，见 Messages、Chrome 等图标；应用通知横幅仍驻留，未弹遮罩。",
+    "refusal_10.5s": "拒权后 +10.5s：桌面保持稳定，Chrome 等图标可见；恶意通知横幅仍显示 HookAPP/启用 Chrome 更新服务。"
+  }
+}

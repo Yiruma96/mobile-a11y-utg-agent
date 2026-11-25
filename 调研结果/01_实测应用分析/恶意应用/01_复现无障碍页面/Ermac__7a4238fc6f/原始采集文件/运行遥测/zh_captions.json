@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "应用先展示伪造的无障碍服务入口，以“Open Settings”引导进入真系统无障碍设置，并借通知横幅探针监测Enable tag；进入Ermac-V2 Apk服务详情与完全控制警告后，测试选择Deny，应用拒权后仍重新拉起无障碍设置。",
+  "observed_lure_rhetoric_zh": [
+    "Accessibility Service -> 无障碍服务（伪造入口页 step_01）",
+    "Open Settings -> 打开设置（伪造入口页 step_01）",
+    "String (Enable tag) -> 字符串（启用标签）（通知横幅）",
+    "Use Ermac-V2 Apk -> 使用 Ermac-V2 Apk（服务详情页）",
+    "No description provided. -> 未提供描述（服务详情页）",
+    "Allow Ermac-V2 Apk to have full control of your device? -> 允许 Ermac-V2 Apk 完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的应用，不适用于大多数应用（系统警告弹窗）",
+    "View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "It can read all content on the screen and display content over other apps. -> 它可读取屏幕全部内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "View and perform actions -> 查看并执行操作（系统警告弹窗）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 它可跟踪你与应用或硬件传感器的交互，并代表你操作其他应用（系统警告弹窗）",
+    "Allow -> 允许（系统警告弹窗）",
+    "Deny -> 拒绝（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "伪造无障碍入口页，按钮“Open Settings”意为“打开设置”；点击后跳转真系统设置，通知为占位字符串。",
+    "step_02": "真系统无障碍设置页，下载列表出现Ermac-V2 Apk且为Off；通知横幅含Enable tag探针，采集hook后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针，仍为真无障碍设置页，无可见文本；Ermac-V2 Apk为Off，Enable tag通知仍在，遮罩0。",
+    "post_jump_2.0s": "跳后2.0秒探针，页面仍为真无障碍设置，无可见文本；Ermac-V2 Apk保持Off，Enable tag通知未消失，遮罩0。",
+    "detail_1_service_detail_page": "Ermac-V2 Apk服务详情页，英文“Use Ermac-V2 Apk”意为“使用该应用”，快捷方式开关Off且无描述，疑诱导开启。",
+    "detail_2_system_warning_dialog": "系统警告弹窗，询问是否允许Ermac-V2 Apk完全控制设备，并说明可读屏、覆盖与代操作；含Allow/Deny，选拒绝。",
+    "refusal_2.0s": "点Deny拒权后返回无障碍列表，Ermac-V2 Apk仍为Off；应用随即RELAUNCHED_A11Y_SETTINGS，重新拉起无障碍设置。"
+  }
+}

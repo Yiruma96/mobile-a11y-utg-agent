@@ -1,0 +1,365 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_045__b8e8b584f5",
+  "label": "malicious",
+  "family_or_category": "Coper",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.upon.front",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "706b7f66d366",
+  "hook_node_ids": [
+    "ffe926a5d606"
+  ],
+  "nodes": [
+    {
+      "node_id": "706b7f66d366",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "e5d822d510c9",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to send and view SMS messages?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "2e29dc242b7e",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.upon.front",
+      "abilityName": "com.involve.p041j",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "ffe926a5d606",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "b7dbb9f917d2",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "706b7f66d366",
+      "to": "e5d822d510c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"Deny\" id=permission_deny_button (click) center=(540,1372))"
+    },
+    {
+      "from": "e5d822d510c9",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"Deny\" id=permission_deny_button (click) center=(540,1372))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "2e29dc242b7e",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([270, 130])"
+    },
+    {
+      "from": "2e29dc242b7e",
+      "to": "ffe926a5d606",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Open Settings\" id=t_openSettings (click) center=(540,670))"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "b7dbb9f917d2",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "b7dbb9f917d2",
+      "to": "2e29dc242b7e",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "2e29dc242b7e",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "2e29dc242b7e",
+      "to": "2e29dc242b7e",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "2e29dc242b7e",
+      "to": "706b7f66d366",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.upon.front",
+      "top_activity": "com.involve.p041j",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.upon.front",
+      "top_activity": "com.involve.p041j",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.upon.front",
+      "top_activity": "com.involve.p041j",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.permissioncontroller",
+      "top_activity": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Allow Chrome to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Coper__b8e8b584f5",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "com.upon.front 以“Chrome”名义先请求电话/短信权限，被拒后退回桌面并挂出“Servisi etkinleştirin/Chrome”通知，再用仿冒引导页诱导用户在系统无障碍设置中为 Chrome 开启无障碍服务；拒权返回后反复重弹同一引导和电话权限请求，具备 Coper 类无障碍滥用与循环诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "Servisi etkinleştirin（土耳其语） -> 启用服务（通知横幅，贯穿各页）",
+    "Chrome（英语，用作服务名） -> 以“Chrome”名义伪装无障碍服务（通知与系统设置页）",
+    "Enable Accessibility Service（英语） -> 启用无障碍服务（应用内引导页 step_04/detail_2/refusal）",
+    "Find 'Chrome'（英语） -> 找到“Chrome”（应用内引导页）",
+    "Set switch ON（英语） -> 打开开关（应用内引导页）",
+    "Open Settings（英语） -> 打开设置（应用内引导页按钮）",
+    "Erişebilirlik Servisileri Etkinleştirme（土耳其语） -> 启用无障碍服务（服务详情页 detail_1）",
+    "Use Chrome（英语） -> 使用 Chrome（Chrome 无障碍服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限控制器请求「允许 Chrome 拨打和管理电话？」，点 Deny 拒绝，未授予电话权限，应用继续。",
+    "step_02": "权限页请求「允许 Chrome 发送和查看短信？」，点 Deny 拒绝；通知栏仍挂「启用服务/Chrome」诱导横幅。",
+    "step_03": "应用退回桌面启动器，可见 Messages/Chrome 图标；通知栏仍留「启用服务/Chrome」横幅，点击坐标(270,130)。",
+    "step_04": "仿冒引导页提示「启用无障碍服务：找到 Chrome 并打开开关」，点 Open Settings 跳系统无障碍设置；无遮罩。",
+    "step_05": "系统无障碍列表显示下载应用 Chrome 为 Off；采集到设置 Hook 后自动终止，通知栏仍留「启用服务/Chrome」横幅。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留无障碍设置页，UI 未取到文本、无遮罩；通知栏持续显示「启用服务/Chrome」。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍为无障碍设置页，无遮罩、无新 UI 文本；通知栏持续显示「启用服务/Chrome」诱导横幅。",
+    "detail_1_service_detail_page": "Chrome 无障碍服务详情页，含 Use Chrome、快捷键、音量键等选项及土耳其语「启用无障碍服务」标题；仅检查未操作。",
+    "detail_2_system_warning_dialog": "实际回到应用内「启用无障碍服务」引导页，指示找到 Chrome 并打开开关；探针未见系统警告弹窗或遮罩。",
+    "refusal_2.0s": "拒权返回 2 秒后，应用重新弹出同一「启用无障碍服务/找到 Chrome 开开关」引导页，形成反复诱导。",
+    "refusal_10.5s": "拒权返回 10.5 秒后又弹回电话权限请求「允许 Chrome 拨打和管理电话？」，显示拒绝后仍循环诱导。"
+  }
+}

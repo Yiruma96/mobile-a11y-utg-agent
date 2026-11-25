@@ -1,0 +1,16 @@
+flowchart TD
+    N_706b7f66d366["Step 1: GrantPermissionsActivity\nAllow Chrome to make a"]
+    N_e5d822d510c9["Step 2: GrantPermissionsActivity\nAllow Chrome to send a"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_2e29dc242b7e["Step 4: p041j\nEnable Accessibility S"]
+    N_ffe926a5d606["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_b7dbb9f917d2["Step 5: SubSettings\nBack"]
+    N_706b7f66d366 -->|"ui_click: click([5] Button text='Deny' id="| N_e5d822d510c9
+    N_e5d822d510c9 -->|"ui_click: click([5] Button text='Deny' id="| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([270, 130])"| N_2e29dc242b7e
+    N_2e29dc242b7e -->|"ui_click: click([8] Button text='Open Sett"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_b7dbb9f917d2
+    N_b7dbb9f917d2 -->|"warning_probe: click_use_service_switch"| N_2e29dc242b7e
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_2e29dc242b7e
+    N_2e29dc242b7e -->|"refusal_probe: wait(5.5s)_after_refusal"| N_2e29dc242b7e
+    N_2e29dc242b7e -->|"refusal_probe: wait(10.5s)_after_refusal"| N_706b7f66d366

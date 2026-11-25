@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "该Ermac样本在无障碍设置中暴露HookAPPService，并用“启用Chrome更新服务”通知伪装诱导授权；查看服务详情并拒绝系统警告后回到桌面，未强制跳转，呈优雅停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “启用Chrome更新服务”（应用通知横幅正文，多页持续出现，伪装Chrome更新）",
+    "英文 -> “如果无障碍权限已开启，请先关闭再重新开启。”（HookAPPService服务详情页）",
+    "英文 -> “使用HookAPPService”/“按住音量键”/“HookAPPService快捷方式”（HookAPPService服务详情页选项与说明）"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍设置列表：下载应用区见HookAPPService为Off；应用通知伪装“启用Chrome更新服务”。检测到无障碍钩子与探针后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍在无障碍设置页，界面文本为空；应用通知持续显示“启用Chrome更新服务”，无悬浮遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍设置页仍无可见文本；通知横幅继续显示“启用Chrome更新服务”，悬浮层为0。",
+    "detail_1_service_detail_page": "HookAPPService服务详情页：有“Use HookAPPService”“按住音量键”等选项，并提示无障碍权限需关闭再开启；仅查看未授权。",
+    "detail_2_system_warning_dialog": "服务详情页系统警告检查：未见可读弹窗文本，通知横幅消失；记录为点击Deny拒绝授权，悬浮层为0。",
+    "refusal_2.0s": "拒权后2秒回到桌面：显示应用列表、Chrome与搜索；通知仍伪装“启用Chrome更新服务”，无强制跳转或遮罩。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面：应用列表和Chrome入口无变化；恶意通知横幅持续存在，无弹窗、无悬浮遮罩。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用在系统无障碍列表与详情页用 HookAPPService 和“启用 Chrome 更新服务”通知诱导开启无障碍，并提示关闭再开启权限；系统高危警告下拒绝后返回桌面，通知仍驻留但未见强退，呈优雅停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "英文通知 -> 标题“String (HookAPP)”、正文“String (Enable Chrome Update Service)”，核心意译为伪装 HookAPP 并称“启用 Chrome 更新服务”（无障碍列表/详情及拒权后持续）。",
+    "英文 -> “Use HookAPPService”，核心意译为使用 HookAPPService 无障碍服务（服务详情页）。",
+    "英文 -> “HookAPPService shortcut / Hold volume keys / Shortcut settings”，核心意译为可设 HookAPPService 快捷方式并按住音量键触发（服务详情页）。",
+    "英文 -> “If accessibility permission has been on, please turn off then turn on.”，核心意译为若无障碍权限已开启请先关闭再重新开启（服务详情页）。",
+    "英文 -> “Allow HookAPPService to have full control of your device?”，核心意译为允许 HookAPPService 完全控制你的设备（系统警告弹窗）。",
+    "英文 -> “View and control screen / View and perform actions”，核心意译为可查看并控制屏幕、可代为查看并执行操作（系统警告弹窗）。"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍列表页，已下载应用 HookAPPService 显示“关闭”；顶部应用通知称“启用 Chrome 更新服务”，遮罩0，命中探针后自动终止。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍在系统无障碍设置页，文本未采集；应用通知“HookAPP/启用 Chrome 更新服务”持续，遮罩0，执行等待。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍停留系统无障碍设置页，无可见文本；应用通知“HookAPP/启用 Chrome 更新服务”仍在，遮罩0，继续等待。",
+    "detail_1_service_detail_page": "HookAPPService 服务详情页，含“使用服务/快捷方式/按住音量键”等选项，并提示权限开启后需关闭再开启；通知仍在，遮罩0，执行检查。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗，警告 HookAPPService 将“完全控制设备”，可读屏并代操作；底部 Allow/Deny，通知仍在、遮罩0，本步检查后拒绝。",
+    "refusal_2.0s": "拒权后返回桌面：显示应用列表、日期、天气及 Messages/Chrome 图标；应用通知仍驻留，遮罩0，未见强退，呈优雅停留/降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面，应用列表、日期、天气与 Chrome 图标不变；应用通知持续，遮罩0，仍无异常或强退，维持优雅停留/降级。"
+  }
+}

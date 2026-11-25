@@ -1,0 +1,281 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_081__7a4238fc6f",
+  "label": "malicious",
+  "family_or_category": "Ermac",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "nusku.ermacv2.apk",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "380f5fd39a3f",
+  "hook_node_ids": [
+    "fa72a8749cd9",
+    "470530095c6e"
+  ],
+  "nodes": [
+    {
+      "node_id": "380f5fd39a3f",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "nusku.ermacv2.apk",
+      "abilityName": "com.cisojemopatude.yazi.catozotu.zafewo",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "..Accesname..",
+        "MH1LDiZuzhiYqAAAAAElFTkSuQmCC",
+        "Accessibility Service",
+        "DOWNLOADED SERVICES",
+        "Switch Access",
+        "OFF",
+        "TalkBack",
+        "svg%3E",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "fa72a8749cd9",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Ermac-V2 Apk",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "2e6380c894be",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Ermac-V2 Apk",
+        "Use Ermac-V2 Apk",
+        "OPTIONS",
+        "Ermac-V2 Apk shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "470530095c6e",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Ermac-V2 Apk to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "380f5fd39a3f",
+      "to": "fa72a8749cd9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([13] Button text=\"Open Settings\" (click) center=(534,1567))"
+    },
+    {
+      "from": "fa72a8749cd9",
+      "to": "2e6380c894be",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "2e6380c894be",
+      "to": "470530095c6e",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "fa72a8749cd9",
+      "to": "fa72a8749cd9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Ermac-V2 Apk Use Ermac-V2 Apk OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Ermac-V2 Apk",
+        "Use Ermac-V2 Apk",
+        "OPTIONS",
+        "Ermac-V2 Apk shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Ermac-V2 Apk to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Ermac-V2 Apk to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Ermac-V2 Apk",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "应用先展示伪造的无障碍服务入口，以“Open Settings”引导进入真系统无障碍设置，并借通知横幅探针监测Enable tag；进入Ermac-V2 Apk服务详情与完全控制警告后，测试选择Deny，应用拒权后仍重新拉起无障碍设置。",
+  "observed_lure_rhetoric_zh": [
+    "Accessibility Service -> 无障碍服务（伪造入口页 step_01）",
+    "Open Settings -> 打开设置（伪造入口页 step_01）",
+    "String (Enable tag) -> 字符串（启用标签）（通知横幅）",
+    "Use Ermac-V2 Apk -> 使用 Ermac-V2 Apk（服务详情页）",
+    "No description provided. -> 未提供描述（服务详情页）",
+    "Allow Ermac-V2 Apk to have full control of your device? -> 允许 Ermac-V2 Apk 完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的应用，不适用于大多数应用（系统警告弹窗）",
+    "View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "It can read all content on the screen and display content over other apps. -> 它可读取屏幕全部内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "View and perform actions -> 查看并执行操作（系统警告弹窗）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 它可跟踪你与应用或硬件传感器的交互，并代表你操作其他应用（系统警告弹窗）",
+    "Allow -> 允许（系统警告弹窗）",
+    "Deny -> 拒绝（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪造无障碍入口页，按钮“Open Settings”意为“打开设置”；点击后跳转真系统设置，通知为占位字符串。",
+    "step_02": "真系统无障碍设置页，下载列表出现Ermac-V2 Apk且为Off；通知横幅含Enable tag探针，采集hook后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针，仍为真无障碍设置页，无可见文本；Ermac-V2 Apk为Off，Enable tag通知仍在，遮罩0。",
+    "post_jump_2.0s": "跳后2.0秒探针，页面仍为真无障碍设置，无可见文本；Ermac-V2 Apk保持Off，Enable tag通知未消失，遮罩0。",
+    "detail_1_service_detail_page": "Ermac-V2 Apk服务详情页，英文“Use Ermac-V2 Apk”意为“使用该应用”，快捷方式开关Off且无描述，疑诱导开启。",
+    "detail_2_system_warning_dialog": "系统警告弹窗，询问是否允许Ermac-V2 Apk完全控制设备，并说明可读屏、覆盖与代操作；含Allow/Deny，选拒绝。",
+    "refusal_2.0s": "点Deny拒权后返回无障碍列表，Ermac-V2 Apk仍为Off；应用随即RELAUNCHED_A11Y_SETTINGS，重新拉起无障碍设置。"
+  }
+}
