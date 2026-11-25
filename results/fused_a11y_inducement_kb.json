@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25 15:31",
+  "generated_at": "2026-11-25 16:26",
   "coverage": {
-    "dynamic_completed": 375,
-    "dynamic_malicious_completed": 305,
-    "dynamic_malicious_hooked": 110,
+    "dynamic_completed": 418,
+    "dynamic_malicious_completed": 348,
+    "dynamic_malicious_hooked": 131,
     "dynamic_benign_completed": 70,
     "dynamic_benign_hooked": 38,
     "static_audited_total": 418,
@@ -11,20 +11,20 @@
   },
   "quantitative_contrast": {
     "mal_pre_chars_median": 79,
-    "mal_pre_chars_mean": 130.4,
+    "mal_pre_chars_mean": 131.8,
     "ben_pre_chars_median": 797,
     "ben_pre_chars_mean": 893.7,
-    "mal_step1_direct_jump": 37,
+    "mal_step1_direct_jump": 43,
     "ben_step1_direct_jump": 0,
-    "mal_zero_pre_chars": 50,
-    "mal_with_target_notif": 58,
+    "mal_zero_pre_chars": 57,
+    "mal_with_target_notif": 74,
     "ben_with_target_notif": 5
   },
   "tier_counts_dynamic": {
-    "L3_covert_cross_channel": 43,
-    "L2_impersonated_guided_flow": 24,
-    "L1_explicit_pretext_dialog": 22,
-    "L0_bare_direct_jump": 21
+    "L3_covert_cross_channel": 52,
+    "L2_impersonated_guided_flow": 29,
+    "L1_explicit_pretext_dialog": 28,
+    "L0_bare_direct_jump": 22
   },
   "tier_counts_intel": {
     "L4_out_of_band_voice_remote": 6,
@@ -32,13 +32,13 @@
     "L2_impersonated_guided_flow": 3
   },
   "unhooked_dynamic_reasons": {
-    "stealth_or_crash_to_launcher": 33,
-    "deep_feature_or_other_perm_gate": 23,
-    "install_failed": 43,
-    "login_or_form_gate": 43,
-    "offline_or_remote_c2_blocked": 9,
-    "packed_blank_or_event_gated": 20,
-    "runtime_timeout_or_error": 24
+    "stealth_or_crash_to_launcher": 40,
+    "install_failed": 49,
+    "deep_feature_or_other_perm_gate": 26,
+    "login_or_form_gate": 49,
+    "offline_or_remote_c2_blocked": 11,
+    "packed_blank_or_event_gated": 21,
+    "runtime_timeout_or_error": 21
   },
   "static_tags_all_348": {
     "ID_SYSTEM_OR_BRAND_IMPERSONATION": 295,
@@ -73,32 +73,32 @@
     "BENIGN_ALTERNATIVE_MODE_OFFERED": 1
   },
   "static_tags_recovered_for_unhooked": {
-    "ID_SYSTEM_OR_BRAND_IMPERSONATION": 193,
-    "CARRIER_SYSTEM_A11Y_DESCRIPTION": 186,
-    "COERCE_NO_SKIP_NON_CANCELABLE": 160,
-    "TRIG_COLD_START_BLOCK": 157,
-    "CARRIER_NATIVE_DIALOG_OR_ACTIVITY": 150,
-    "COERCE_REFUSAL_LOOP_RELAUNCH": 125,
-    "STATIC_PACKED_OR_ENCRYPTED_PAYLOAD": 92,
-    "CARRIER_OVERLAY_MASK_OR_GUIDE": 86,
-    "LURE_RESTRICTED_SETTINGS_COACHING": 72,
-    "DROPPER_STAGE1_INSTALL_OR_EMBEDDED": 64,
-    "TRIG_BACKGROUND_OR_NOTIF_RELAUNCH": 60,
-    "ID_WHITESPACE_NEWLINE_OR_HOMOGLYPH": 55,
-    "LURE_DISMISS_SYSTEM_WARNING": 54,
-    "COERCE_OVERLAY_STACK_ON_SETTINGS": 54,
-    "LURE_FAKE_SECURITY_ANTIFRAUD": 53,
-    "LURE_UTILITY_CLEANER_DISGUISE": 53,
-    "LURE_FAKE_UPDATE_OR_INSTALL": 51,
-    "ID_MULTI_ALIAS_CAMOUFLAGE": 51,
-    "LURE_SYSTEM_ERROR_OR_OPTIMIZE": 50,
-    "CARRIER_WEBVIEW_LOCAL_HTML": 46,
-    "TRIG_FEATURE_ON_DEMAND": 41,
+    "ID_SYSTEM_OR_BRAND_IMPERSONATION": 174,
+    "CARRIER_SYSTEM_A11Y_DESCRIPTION": 168,
+    "COERCE_NO_SKIP_NON_CANCELABLE": 140,
+    "TRIG_COLD_START_BLOCK": 139,
+    "CARRIER_NATIVE_DIALOG_OR_ACTIVITY": 133,
+    "COERCE_REFUSAL_LOOP_RELAUNCH": 110,
+    "STATIC_PACKED_OR_ENCRYPTED_PAYLOAD": 84,
+    "CARRIER_OVERLAY_MASK_OR_GUIDE": 73,
+    "LURE_RESTRICTED_SETTINGS_COACHING": 66,
+    "DROPPER_STAGE1_INSTALL_OR_EMBEDDED": 62,
+    "TRIG_BACKGROUND_OR_NOTIF_RELAUNCH": 55,
+    "LURE_DISMISS_SYSTEM_WARNING": 49,
+    "ID_WHITESPACE_NEWLINE_OR_HOMOGLYPH": 48,
+    "COERCE_OVERLAY_STACK_ON_SETTINGS": 48,
+    "LURE_UTILITY_CLEANER_DISGUISE": 48,
+    "LURE_FAKE_UPDATE_OR_INSTALL": 45,
+    "LURE_FAKE_SECURITY_ANTIFRAUD": 45,
+    "ID_MULTI_ALIAS_CAMOUFLAGE": 44,
+    "LURE_SYSTEM_ERROR_OR_OPTIMIZE": 42,
+    "CARRIER_WEBVIEW_LOCAL_HTML": 42,
+    "TRIG_FEATURE_ON_DEMAND": 39,
     "LURE_PRIVACY_GUARANTEE_CLAIM": 39,
-    "CARRIER_GIF_OR_IMAGE_GUIDE": 32,
-    "CARRIER_FAKE_SETTINGS_SCREEN": 18,
-    "ID_FAKE_IS_ACCESSIBILITY_TOOL": 16,
-    "CARRIER_WEBVIEW_REMOTE_URL": 15,
+    "CARRIER_GIF_OR_IMAGE_GUIDE": 28,
+    "CARRIER_FAKE_SETTINGS_SCREEN": 15,
+    "ID_FAKE_IS_ACCESSIBILITY_TOOL": 13,
+    "CARRIER_WEBVIEW_REMOTE_URL": 13,
     "BENIGN_EXPLICIT_CANCEL_DEGRADATION": 11,
     "BENIGN_TRANSPARENT_RATIONALE": 3,
     "BENIGN_HONEST_IDENTITY_AND_SCOPE": 2,
@@ -111,6 +111,12 @@
         "entity": "Coper (MB_002__841e432a41)",
         "tier": "L3_covert_cross_channel",
         "text": "Enable Accessibility Service"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Hook (MB_008__ef9c1ee9c0)",
+        "tier": "L3_covert_cross_channel",
+        "text": "FlexTV: Enable FlexTV"
       },
       {
         "source": "DYNAMIC_UI",
@@ -153,6 +159,36 @@
         "entity": "BRATA (MB_036__27e0ec79db)",
         "tier": "L3_covert_cross_channel",
         "text": "Android: Para continuar, habilite la opción de accesibilidad."
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Bem-vindo ao Sistema de Proteção"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Este assistente irá configurar a proteção do seu dispositivo em apenas alguns passos.\n\nVocê precisará conceder algumas permissões para que a proteção funcione c"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Etapa 1: Serviço de Proteção"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Serviço de Sistema: Otimizando consumo de energia..."
       },
       {
         "source": "DYNAMIC_UI",
@@ -222,6 +258,12 @@
       },
       {
         "source": "DYNAMIC_NOTIF",
+        "entity": "Hook (MB_087__9f17fc20c5)",
+        "tier": "L3_covert_cross_channel",
+        "text": "tiktok+18: Enable tiktok+18"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
         "entity": "Hook (MB_090__aea84ebd9c)",
         "tier": "L3_covert_cross_channel",
         "text": "Grab: Enable GrabAssistService"
@@ -287,6 +329,18 @@
         "text": "Android Protect"
       },
       {
+        "source": "DYNAMIC_UI",
+        "entity": "GodFather (MB_100__2011608356)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Please grant the permission shown above for the application to run."
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "GodFather (MB_100__2011608356)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Play Store"
+      },
+      {
         "source": "DYNAMIC_NOTIF",
         "entity": "Octo (MB_107__144cb58bad)",
         "tier": "L3_covert_cross_channel",
@@ -303,18 +357,6 @@
         "entity": "BankBot (MB_109__decf0f2e6d)",
         "tier": "L3_covert_cross_channel",
         "text": "Müzik: Müzik indirebilmek için erişebirlilik iznini veriniz."
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "BankBot (MB_111__d921e4c59b)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Please grant the permission shown above for the application to run."
-      },
-      {
-        "source": "DYNAMIC_NOTIF",
-        "entity": "BankBot (MB_111__d921e4c59b)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Play Store"
       },
       {
         "source": "DYNAMIC_UI",
@@ -357,6 +399,18 @@
         "entity": "Sova (MB_123__f3fc80a879)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Wednesday, Nov 25"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Sova (MB_127__15eae9134d)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "2Select Accessibility"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Sova (MB_127__15eae9134d)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "3Slide the switch to enable"
       },
       {
         "source": "DYNAMIC_NOTIF",
@@ -437,6 +491,12 @@
         "text": "make and manage phone calls"
       },
       {
+        "source": "DYNAMIC_UI",
+        "entity": "basbanke (MR_015__facb9c5af7)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "CleanDroid\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O CLEAN DROID\n\nAtive a permissão a seguir!.\n\nCaso você esteja com dificuldades pode procurar nosso supor"
+      },
+      {
         "source": "DYNAMIC_NOTIF",
         "entity": "RuMMS (MR_052__1596644cdc)",
         "tier": "L3_covert_cross_channel",
@@ -447,6 +507,12 @@
         "entity": "SpyNote (MR_056__56514c2590)",
         "tier": "L3_covert_cross_channel",
         "text": "Clock: com.google.android.deskclock"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Svpeng (MR_062__0c4ec6b4a8)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Choose what to allow Авито to access"
       },
       {
         "source": "DYNAMIC_UI",
@@ -504,12 +570,6 @@
       },
       {
         "source": "DYNAMIC_UI",
-        "entity": "Svpeng (MR_134__3317fae9ed)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Choose what to allow Авито to access"
-      },
-      {
-        "source": "DYNAMIC_UI",
         "entity": "SpyAgent (MR_136__0277b5385b)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Choose what to allow ‎‫كشف رقم واسم المتصل المجهول‬‎ to access"
@@ -519,6 +579,12 @@
         "entity": "SpyAgent (MR_136__0277b5385b)",
         "tier": "L3_covert_cross_channel",
         "text": "كشف رقم واسم المتصل المجهول: كشف رقم واسم المتصل المجهول"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "RuMMS (MR_153__3ba889748c)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Оcновнoй прoцeсс: Сиcтемa нe кoрректно работаeт, вaм неoбхoдимо включить доcтуп к стaтистикe для 'Оcновнoй прoцeсс'"
       },
       {
         "source": "DYNAMIC_UI",
@@ -563,19 +629,25 @@
         "text": "Основнoй процесс: Сиcтeмa нe коррeктнo рaботаeт, вaм необхoдимo включить дoступ к cтатиcтикe для 'Основнoй процесс'"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "DYNAMIC_NOTIF",
+        "entity": "RuMMS (MR_172__5e1b097728)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Ocнoвнoй прoцecc: Cиcтeмa нe кoррeктнo работаeт, вам необходимo включить дoступ к cтaтиcтикe для 'Ocнoвнoй прoцecc'"
+      },
+      {
+        "source": "STATIC_AUDIT",
         "entity": "Hydra (MB_003__f49e171359)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Step 4 - Turn “%s” on 〔中译：步骤 4 - 打开“%s”〕 [res/values/strings.xml key=instr]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Hydra (MB_003__f49e171359)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Go to settings 〔中译：前往设置〕 [res/values/strings.xml key=instr]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Hydra (MB_003__f49e171359)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Please enable Portal service under Accessibility settings 〔中译：请在无障碍设置中启用 Portal 服务〕 [res/values/strings.xml key=acc_m]"
@@ -635,7 +707,7 @@
         "text": "If accessibility permission has been on, please turn off then turn on. 〔中译：如果无障碍权限已经开启，请先关闭再重新打开。〕 [res/values/strings.xml key=text_]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Hook (MB_008__ef9c1ee9c0)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "%Enable_Accessibility_Service% 〔中译：（占位符，运行时被替换为 FlexTV，即“启用 FlexTV 的无障碍服务”）〕 [com.pavotekehigo.ruwuga.fihoto.z]"
@@ -1013,37 +1085,31 @@
         "text": "Estamos Quase Finalizando... Aguarde O Resto!!! 〔中译：我们快要完成了……请等待后续步骤！！！〕 [assets/perm_eng.bal（title=\"Activ]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_037__5be608a563)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Bem-vindo ao Sistema de Proteção 〔中译：欢迎使用『保护系统』〕 [SetupWizardActivity#L（硬编码）]"
       },
       {
-        "source": "STATIC_HIDDEN",
-        "entity": "Unattributed (MB_037__5be608a563)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Este assistente irá configurar a proteção do seu dispositivo em apenas alguns passos. Você precisará conceder algumas permissões p 〔中译：本助手只需几步即可为你的设备配置保护。为了让保护正常工作，你需要授予一些权限。点击『前进』"
-      },
-      {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_037__5be608a563)",
         "tier": "L2_impersonated_guided_flow",
         "text": "O Serviço de Proteção precisa ser ativado para: • Detectar aplicativos maliciosos • Bloquear ameaças automaticamente • Proteger se 〔中译：『保护服务』需要被启用以：检测恶意应用、自动拦截威胁、实时保护你的数据。〕 [SetupW"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_037__5be608a563)",
         "tier": "L2_impersonated_guided_flow",
         "text": "👇 Encontre 'Sistema de Proteção' e toque para ativar 〔中译：👇 找到『保护系统』并点击启用〕 [GuidedOverlayService$a#<init>（悬浮]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_037__5be608a563)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Serviço de otimização de renderização e acessibilidade de interface corporativa. 〔中译：企业界面渲染与无障碍优化服务。〕 [res/values/strings.xml accessibi]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_037__5be608a563)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Para funcionar corretamente, precisamos de: • Câmera - detectar ameaças visuais • Microfone - monitorar atividades suspeitas • SMS 〔中译：为正常运行，我们需要：相机—检测视觉威胁；麦克风—监控可疑活动；短信—检查危险信息；通讯录"
@@ -1151,7 +1217,7 @@
         "text": "Erişebilirlik Servisileri Etkinleştirme 〔中译：启用无障碍服务〕 [resources.arsc 残桩字符串池（原 res/valu]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Coper (MB_048__16219c346d)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Enable this service to protect your device. 〔中译：启用此服务以保护您的设备。〕 [res/xml/tvyradg.xml android:desc]"
@@ -1505,13 +1571,13 @@
         "text": "<html lang=\"en\"> 〔中译：HTML 语言模板头，运行时按 Locale.getDefault().getLanguage() 替换为对应语言〕 [j3.c#<clinit> 字段 d/e/f（Base64 解码]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Ermac (MB_085__fe1be05225)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "HookAPPService 〔中译：HookAPP 服务（系统无障碍列表显示名）〕 [AndroidManifest.xml service com.]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Hook (MB_087__9f17fc20c5)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "accessibility disconnected 〔中译：无障碍已断开〕 [硬编码于 com.cinuxexasuba.zidogi.ned]"
@@ -1661,19 +1727,19 @@
         "text": "Mp3 indirebilmek için Erişebilirlik iznini veriniz. 〔中译：请授予无障碍权限以下载 Mp3。〕 [同两条多语言串的 [tr] 分节（与 en/de/fr 语境冲突]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "GodFather (MB_100__2011608356)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "https://t.me/famokorapisoram 〔中译：Telegram 频道 famokorapisoram 链接〕 [classes.dex AES 密文解密（com.melting]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "GodFather (MB_100__2011608356)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "不可静态还原（pref[\"infobig\"] 云控文案） 〔中译：引导说明页正文，内容由远端下发，静态不可见〕 [SharedPreferences key infobig / ]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Octo (MB_101__3504d9f2a2)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Habilite esta opción para proteger totalmente su dispositivo móvil 〔中译：启用此选项以完全保护您的移动设备〕 [res/values/strings.xml key=gTtUE]"
@@ -1703,19 +1769,19 @@
         "text": "Lütfen daha sonra deneyiniz. 〔中译：请稍后再试。〕 [skijoring.onResume / skijoring.s]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "BankBot (MB_110__a0610f08c7)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Tözir indirme işleminin aktif olabilmesi için yukarıda gösterilen izni veriniz. 〔中译：为使 Tözir 下载功能生效，请授予上方所示的权限。〕 [硬编码密文 QzAFoPyJY/jd4/3V77jOsm0ILw]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "BankBot (MB_110__a0610f08c7)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Tözir indirme işleminin aktif olabilmesi için erişebilirlik iznini veriniz. (Müzik) 〔中译：为使 Tözir 下载功能生效，请授予无障碍权限。（Müzik）〕 [密文 QzAFoPyJY/jd4/3V77jOsm0ILwE4.]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "BankBot (MB_110__a0610f08c7)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Tözfeln daha sonra deneyiniz. 〔中译：请稍后再试。〕 [密文 ckddoEX0WrBSXX3MabJLdY1JjOknM]"
@@ -1847,49 +1913,49 @@
         "text": "Accessibility service must be enabled to protect your data! 〔中译：必须启用无障碍服务才能保护你的数据！〕 [res/values/strings.xml#L64 (str4]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Enable access for \"Aras Kargo\" 〔中译：为 “Aras Kargo” 启用访问权限〕 [res/values/strings.xml#enable_ac]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "1. Open the Accessibility settings 〔中译：1. 打开无障碍设置〕 [res/values/strings.xml#str1]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "2. Select Enable Accessibility Service 〔中译：2. 选择 Enable Accessibility Service〕 [res/values/strings.xml#str2]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "3. Slide the switch to enable 〔中译：3. 拨动开关以启用〕 [res/values/strings.xml#str3]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "4. Accessibility service must be enabled to protect your data! 〔中译：4. 必须启用无障碍服务才能保护您的数据！〕 [res/values/strings.xml#str4]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_126__6f7e57ed72)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Checking system 〔中译：正在检查系统〕 [res/values/strings.xml#managing_]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_127__15eae9134d)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Special abilities 〔中译：特殊能力〕 [assets/unique.html 第 114 行（#step]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Sova (MB_127__15eae9134d)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Get Accessibility 〔中译：获取无障碍权限〕 [assets/unique.html 第 3 行 <title>]"
@@ -2183,37 +2249,37 @@
         "text": "Active Secure Service 〔中译：活动安全服务〕 [AndroidManifest.xml service com.]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Bem-vindo ao Otimizador de Bateria 〔中译：欢迎使用电池优化器〕 [res/values/strings.xml:main_welc]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Seu dispositivo está otimizado para economizar energia 〔中译：您的设备已优化以节省电量〕 [res/values/strings.xml:main_desc]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Ativar Otimização 〔中译：启用优化〕 [res/values/strings.xml:btn_enabl]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Ao ativar este serviço, você permite que o Otimizador de Bateria monitore e gerencie apps para economizar energia. Deseja continua 〔中译：启用此服务即表示您允许“电池优化器”监控和管理应用以节省电量。是否继续？〕 [res/va"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Otimização de Bateria Avançada 〔中译：高级电池优化〕 [res/values/strings.xml:fake_syst]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Unattributed (MB_160__9ed7b9dc24)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Gerencia o consumo de energia do dispositivo 〔中译：管理设备的能耗〕 [res/values/strings.xml:fake_syst]"
@@ -2687,25 +2753,25 @@
         "text": "WebView login requires INTERNET permission 〔中译：WebView 登录需要 INTERNET 权限〕 [res/values/strings.xml（Facebook ]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "basbanke (MR_015__facb9c5af7)",
         "tier": "L2_impersonated_guided_flow",
         "text": "CleanDroid\nAtivando o recurso você tem ativação do seu recurso. \n* Em caso de duvidas procure nosso suporte \n* Aplicativo oficial  〔中译：CleanDroid／启用该功能即可激活你的功能。* 如有疑问请联系我们的支持 * 网络官"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "basbanke (MR_015__facb9c5af7)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Configurações >  Acessibilidade > 〔中译：设置 > 无障碍 >（后接服务名）〕 [coyzin.lasterm.malanko.main#_vvv]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "basbanke (MR_015__facb9c5af7)",
         "tier": "L2_impersonated_guided_flow",
         "text": "Ative o recurso [<服务名>] 〔中译：请启用该功能 [<服务名>]〕 [coyzin.lasterm.malanko.starter$R]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "basbanke (MR_015__facb9c5af7)",
         "tier": "L2_impersonated_guided_flow",
         "text": "（Msgbox 正文其余段落、按钮文案及服务名均为 anywheresoftware.b4a.BA.__b 加密常量，未解密前不可逐字引用） 〔中译：提示弹窗中的其余说明文字被 XOR 加密，静态不可读，需运行期抓取〕 [coyzin.lasterm.malanko.starter#_]"
@@ -3377,19 +3443,19 @@
         "text": "AndroidNotificationSecure 〔中译：安卓通知安全（伪装为系统通知安全组件）〕 [AndroidManifest.xml service andr]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Svpeng (MR_062__0c4ec6b4a8)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Для работы приложения требуется включенный: 〔中译：应用运行需要开启：〕 [bubbleshooter.orig.jlncg46bksq.g]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Svpeng (MR_062__0c4ec6b4a8)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "найдите его в этом меню и включите! 〔中译：请在此菜单中找到它并开启！〕 [bubbleshooter.orig.jlncg46bksq.g]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Svpeng (MR_062__0c4ec6b4a8)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Приложение проверено и является полностью безопасным! Выполнить запуск? 〔中译：应用已通过检查，完全安全！是否执行启动？〕 [bubbleshooter.orig.jlncg46bksq.z]"
@@ -4715,19 +4781,19 @@
         "text": "Your phone does not have this setting. 〔中译：您的手机没有此设置项。〕 [res/values/strings.xml（Toast 文案，]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_153__3ba889748c)",
         "tier": "L3_covert_cross_channel",
         "text": "Сиcтемa нe кoрректно работаeт, вaм неoбхoдимо включить доcтуп к стaтистикe для 'Оcновнoй прoцeсс' 〔中译：系统运行不正常，您需要为'主进程'开启统计访问权限〕 [res/values/strings.xml key=acces]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_153__3ba889748c)",
         "tier": "L3_covert_cross_channel",
         "text": "Оcновнoй прoцeсс 〔中译：主进程〕 [res/values/strings.xml key=acces]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_153__3ba889748c)",
         "tier": "L3_covert_cross_channel",
         "text": "СМC - Сообщениe 〔中译：СМС - 短信〕 [AndroidManifest.xml application ]"
@@ -4901,13 +4967,13 @@
         "text": "CMС - Сообщeние 〔中译：CMС - 消息〕 [AndroidManifest.xml application ]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Anubis (MR_168__2d8c7e26be)",
         "tier": "L3_covert_cross_channel",
         "text": "Get permission 〔中译：获取权限〕 [ivo.baxkjggmgror.itiukv.c#c(Cont]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Anubis (MR_168__2d8c7e26be)",
         "tier": "L3_covert_cross_channel",
         "text": "Получить разрешение / Система не корректно работает, вам необходимо включить доступ к статистике 'MX Player' / Включить сейчас 〔中译：获取权限 / 系统运行不正常，您必须开启对统计的访问权限 'MX Player' / 立即开启〕 "
@@ -4937,25 +5003,25 @@
         "text": "Assistance Service 〔中译：协助服务（辅助服务）〕 [res/values-en-rUS/strings.xml#L4]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_172__5e1b097728)",
         "tier": "L3_covert_cross_channel",
         "text": "Cиcтeмa нe кoррeктнo работаeт, вам необходимo включить дoступ к cтaтиcтикe для 'Ocнoвнoй прoцecc' 〔中译：系统运行不正确，您需要为『主进程』开启统计访问权限〕 [res/values/strings.xml key=acces]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_172__5e1b097728)",
         "tier": "L3_covert_cross_channel",
         "text": "Ocнoвнoй прoцecc 〔中译：主进程〕 [res/values/strings.xml key=acces]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "RuMMS (MR_172__5e1b097728)",
         "tier": "L3_covert_cross_channel",
         "text": "СМС - Соoбщeние 〔中译：短信 - 消息〕 [AndroidManifest.xml application ]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Lucy (MR_174__a422450251)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "AS A RESULT OF FULL SCANNING OF YOUR DEVICE, SOME SUSPICIOUS FILES HAVE BEEN FOUND AND YOUR ATTENDANCE OF THE FORBIDDEN PORNOGRAPH 〔中译：经对您设备的完整扫描，发现若干可疑文件，并已确认您访问过被禁止的色情网站。因此您的设备已被"
@@ -5107,6 +5173,12 @@
         "text": "Allow Chrome to send and view SMS messages?"
       },
       {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Coper (MB_048__16219c346d)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Update: Attention required"
+      },
+      {
         "source": "DYNAMIC_UI",
         "entity": "Hydra (MB_052__c0e391e254)",
         "tier": "L2_impersonated_guided_flow",
@@ -5198,7 +5270,19 @@
       },
       {
         "source": "DYNAMIC_NOTIF",
-        "entity": "Octo (MB_105__5f3ccbc143)",
+        "entity": "GodFather (MB_100__2011608356)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Chrome: Please grant accessibility permission to use the application."
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Octo (MB_101__3504d9f2a2)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Habilite el servicio: Google Chrome"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Octo (MB_104__846a04a5a0)",
         "tier": "L3_covert_cross_channel",
         "text": "Enable service: Chrome"
       },
@@ -5249,6 +5333,12 @@
         "entity": "Sova (MB_125__bbaf483c2b)",
         "tier": "L3_covert_cross_channel",
         "text": "Update app accesses: Enable access for \"Chrome\""
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Sova (MB_126__6f7e57ed72)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Update app accesses: Enable access for \"Aras Kargo\""
       },
       {
         "source": "DYNAMIC_UI",
@@ -5311,7 +5401,7 @@
         "text": "Choose what to allow Flash Player to access"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Hydra (MB_003__f49e171359)",
         "tier": "L2_impersonated_guided_flow",
         "text": "In order for the latest version of %s to work, you will need to enable accessibility. Please follow the steps below: 〔中译：为了让 %s 的最新版本正常工作，您需要开启无障碍功能。请按以下步骤操作：〕 [res/values/strings."
@@ -5527,7 +5617,7 @@
         "text": "HookAPPService 〔中译：HookAPP 服务（系统无障碍列表中显示的服务名，与应用宣称的 Chrome 更新服务不一致）〕 [AndroidManifest.xml service andr]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Ermac (MB_085__fe1be05225)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Chrome Update Service 〔中译：Chrome 更新服务〕 [com.cakohajozeza.zazi.tofa.s 中硬编]"
@@ -6169,7 +6259,7 @@
         "text": "readComponentNamesFromSettingLocked 〔中译：从设置中读取组件名（加锁）——被挂钩的系统方法名，日志输出〕 [com.system.security_update.xpose]"
       },
       {
-        "source": "STATIC_HIDDEN",
+        "source": "STATIC_AUDIT",
         "entity": "Anubis (MR_168__2d8c7e26be)",
         "tier": "L3_covert_cross_channel",
         "text": "Enable access for 'Google Play Protect' 〔中译：为 'Google Play Protect' 开启访问权限〕 [ivo.baxkjggmgror.itiukv.vpdfi#on]"
@@ -6253,737 +6343,25 @@
         "text": "Please activate for updates to be active（本数据集动态实测捕获 4 个变种统一投放此通知横幅）"
       }
     ],
-    "T4_高仿系统设置与手把手路径教学": [
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Cerberus (MB_005__4defa1f795)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Please enable accessibility permissions to use test:\nSelect Downloaded apps → test → allow"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "FluBot (MB_021__a778818cc0)",
-        "tier": "L3_covert_cross_channel",
-        "text": "To install you must turn on the accessibility service for \"Voicemail\".\n\nClick \"OK\" to go to the settings and then scroll until you find \"Voicemail\" and click to"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "SpyNote (MB_040__129ee4f3dd)",
-        "tier": "L3_covert_cross_channel",
-        "text": "To unlock premium feature,  Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1 - Go to “Settings”"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2 - Open “Accessibility”"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 3 - Open “Installed Services”"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_053__003d2fd8ef)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_053__003d2fd8ef)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2. - Open \"Downloaded Services\" menu"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Ermac (MB_081__7a4238fc6f)",
-        "tier": "L3_covert_cross_channel",
-        "text": "DOWNLOADED SERVICES"
-      },
-      {
-        "source": "DYNAMIC_NOTIF",
-        "entity": "Octo (MB_103__5ad51d4212)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Servisi etkinleştirin: Trendyol"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "TeaBot (MB_120__767c218be4)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Installed services5 services"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Coper (MB_002__841e432a41)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Erişebilirlik Hizmetini Etkinleştirin. 〔中译：启用无障碍服务。〕 [res/values/strings.xml key zQnYj]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Coper (MB_002__841e432a41)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Servisi etkinleştirin 〔中译：启用服务〕 [com.beginhigh19.p054v#case 硬编码，传]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Coper (MB_002__841e432a41)",
-        "tier": "L3_covert_cross_channel",
-        "text": "İndirilen Servisler menüsünü açın;  Lütfen %APP% ayarını etkinleştirin 〔中译：打开“已下载的服务”菜单；请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Coper (MB_002__841e432a41)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Yüklü Servisler menüsünü açın; Lütfen %APP% ayarını etkinleştirin 〔中译：打开“已安装的服务”菜单；请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Coper (MB_002__841e432a41)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Lütfen %APP% ayarını etkinleştirin 〔中译：请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_003__f49e171359)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1 - Go to “Settings” 〔中译：步骤 1 - 打开“设置”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_003__f49e171359)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2 - Open “Accessibility” 〔中译：步骤 2 - 打开“无障碍”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_003__f49e171359)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 3 - Open “Installed Services” 〔中译：步骤 3 - 打开“已安装的服务”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_003__f49e171359)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Check in 'Downloaded Services' list: %s 〔中译：请在“已下载的服务”列表中查看：%s〕 [res/values/strings.xml key=check]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "GoldDigger (MB_004__bba9bc21a3)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "6HZFPYMWV6bQ8JG7J1EHo/m+UoTDBRUHvteEOpNN8EH8tysoLzFhwDq2uvcJSdydfD7M1OQcX8DNW0XK1uqKk0lPCXVfkuInRAcNhZMvHW4=[.Lt9] 〔中译：密文，CheckPermissionActivity 第一行（辅助功能项）的标题文案，运行期解密（明文逐字不可静态还原）〕"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Cerberus (MB_005__4defa1f795)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Please enable accessibility permissions to use {APPNAME}:\nSelect Downloaded apps → {APPNAME} → allow 〔中译：请开启无障碍权限以便使用 {APPNAME}：选择\"已下载的应用\" → {APPNAME} → 允许〕 [res/values/strings.xml"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Cerberus (MB_005__4defa1f795)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "请开启辅助功能权限，以便于使用 {APPNAME} 功能: 〔中译：请开启辅助功能权限，以便于使用 {APPNAME} 功能：〕 [res/values-zh/strings.xml → stri]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Cerberus (MB_005__4defa1f795)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Bitte Aktiviere die Bedienungshilfen um {APPNAME} zu benutzen: 〔中译：请启用辅助功能以便使用 {APPNAME}：〕 [res/values-de/strings.xml → stri]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SharkBot (MB_006__71c78101f7)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Tap on top right use to Accessiblility service. \\n \\nThis will allow Super Cleaner to: \\n \\n- Deep clean hidden junk \\n- Hibernate 〔中译：点击右上角以使用无障碍服务。这将允许 Super Cleaner：深度清理隐藏垃圾；休眠耗"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Octo (MB_010__0a2f1bdec6)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "İndirilen Hizmetler menüsünü açın 〔中译：打开『已下载的服务』菜单〕 [guide.html JS openDownloadedServ]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Octo (MB_010__0a2f1bdec6)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Bu ayarı etkinleştirin 〔中译：启用该设置〕 [guide.html JS setSwitchOn]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_014__ac21ddc972)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步：进入设置〕 [assets/hint.html（step_1 变量）]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_014__ac21ddc972)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2. - Open \"Downloaded Services\" menu 〔中译：第 2 步：打开“已下载的服务”菜单（小米为“已下载应用”，三星为“已安装应用”）〕 [assets/hint.html（step_2 / step_2]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_015__5fc08b4c41)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Enable Accessibility Service to enable Shizuku integration — 1- Open 'Installed Services' 2- Find <app> 3- Set Switch ON — Open Se 〔中译：启用无障碍服务以启用 Shizuku 集成——1-打开\"已安装的服务\" 2-找到本应用 3"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyMax (MB_017__cb08024c0c)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Downloaded Services 〔中译：已下载的服务〕 [res/layout/activity_req_access.x]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "MaliBot (MB_025__3eb7efa716)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Enable accessibility to %1$s. Settings-> Accessibility-> Installed services-> %1$s-> ON 〔中译：请为 %1$s 启用无障碍：设置 → 无障碍 → 已安装的服务 → %1$s → 打开。〕 [res/values/strings.xml → enable_]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "MaliBot (MB_025__3eb7efa716)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Enable accessibility to %1$s. Installed services-> %1$s-> ON 〔中译：请为 %1$s 启用无障碍：已安装的服务 → %1$s → 打开。〕 [res/values/strings.xml → enable_]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Escobar (MB_034__a9d1561ed0)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Accessibility / DOWNLOADED SERVICES / Accessibility Service / Select to speak / Switch Access / TalkBack / SCREEN READERS / Text-t 〔中译：无障碍 / 已下载的服务 / 无障碍服务 / 随选朗读 / 开关控制 / TalkBack"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Unattributed (MB_037__5be608a563)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "SIGA EXATAMENTE ESTES PASSOS: 1. Na próxima tela, clique em 'Otimização de Bateria Avançada' 2. Quando aparecer o aviso, clique em 〔中译：严格按以下步骤操作：1. 在下一屏点击『高级电池优化』；2. 出现警告时点击『允许受限设置"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Unattributed (MB_037__5be608a563)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Para ativar o Assistente de Proteção você precisa liberar as configurações restritas do Android 14. Passos: 1. Toque em \"Abrir Con 〔中译：为启用『保护助手』，你必须放开 Android 14 的受限设置。步骤：1. 点击『打开设"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1 - Go to “Settings” 〔中译：第 1 步 - 打开“设置”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2 - Open “Accessibility” 〔中译：第 2 步 - 打开“无障碍”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_052__c0e391e254)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 3 - Open “Installed Services” 〔中译：第 3 步 - 打开“已安装的服务”〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_053__003d2fd8ef)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步 —— 进入设置〕 [res/values/strings.xml key=instr]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_054__d300e348a2)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置〕 [res/values/strings.xml → instruc]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Hydra (MB_054__d300e348a2)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Check in 'Downloaded Services' list: %s 〔中译：请到“已下载的服务”列表中勾选：%s〕 [res/values/strings.xml → enableA]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_055__c565f4b9b3)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1 - Go to “Settings”\nStep 2 - Open “Accessibility”\nStep 3 - Open “Installed Services” 〔中译：第1步 打开“设置”；第2步 打开“无障碍”；第3步 打开“已安装的服务”〕 [加密载荷 dp/a.a（预筛提取）]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_055__c565f4b9b3)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Check in 'Downloaded Services' list: %s 〔中译：在“已下载的服务”列表中查找：%s〕 [加密载荷 dp/a.a（预筛提取）]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_057__cd3ff09b50)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1 - Go to “Settings” / Step 2 - Open “Accessibility” / Step 3 - Open “Installed Services” / Step 4 - Turn “%s” on / Go to set 〔中译：第1步 打开“设置”／第2步 打开“无障碍”／第3步 打开“已安装的服务”／第4步 打开“"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hydra (MB_058__5621f9263a)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Step 1 - Go to Settings / Step 2 - Open Accessibility / Step 3 - Open Installed Services / Step 4 - Turn on %s 〔中译：第 1 步 - 打开“设置” / 第 2 步 - 打开“无障碍” / 第 3 步 - 打开“已安装的服务” / 第 4 步 - 开"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "GoldDigger (MB_061__7bf9f87f01)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "1. 给出“ssoconnect 安全系统”“辅助功能”“辅助功能模式”“启用访问” 〔中译：1. 在“ssoconnect 安全系统”中依次选择“辅助功能”→“辅助功能模式”→“启用访问”〕 [resources.arsc 字符串资源（明文）]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "GoldDigger (MB_063__1f2cd0269f)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "1. 给出“ssoconnect 安全系统“辅助功能”辅助功能模式“启用访问” 〔中译：1. 在“ssoconnect 安全系统”的“辅助功能”中进入“辅助功能模式”并“启用访问”。〕 [resources.arsc 字符串池（资源名被打散重命名，无法]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "GoldDigger (MB_065__ba43c41c76)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "1. 给出“ssoconnect 安全系统“辅助功能”辅助功能模式“启用访问” 〔中译：第 1 步：在“ssoconnect 安全系统”的“辅助功能”里把“辅助功能模式”设为“启用访问”〕 [resources.arsc 字符串池（引导步骤文案，无独立 s]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SharkBot (MB_073__d05fb8c689)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Tap on top right use to Accessiblility service. \n \nThis will allow Super Cleaner to: \n \n- Deep clean hidden junk \n- Hibernate drai 〔中译：点右上角使用无障碍服务。这将允许 Super Cleaner：深度清理隐藏垃圾、休眠耗电应"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Ermac (MB_081__7a4238fc6f)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务（照搬 Android 系统无障碍页分组名）〕 [Base64 HTML 语言包 en.downloadedser]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Hook (MB_090__aea84ebd9c)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务〕 [内嵌 HTML 语言表 objLang.en.downloade]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Sova (MB_122__376d13affc)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Installed services / AC_NAME_HERE / Turned off 〔中译：已安装的服务 / （本应用服务名） / 已关闭〕 [assets/unique.html#L152-L178（ste]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_129__04cb1225b4)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置〕 [assets/www/index.html#L60（step_1]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_129__04cb1225b4)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2. - Open \"Downloaded Services\" 〔中译：第 2 步 - 打开『已下载的服务』〕 [assets/www/index.html#L61（step_2]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_130__11af0da9a7)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Step 1. - Go to Settings / Step 2. - Open the menu \"Downloaded services\" / Step 3. - Activate services for Google Play services 〔中译：第 1 步 前往设置；第 2 步 打开\"已下载的服务\"菜单；第 3 步 为 Google Pla"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_134__2cdfb07d6c)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置。〕 [assets/www/index.html#L60 (step_]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_135__17fc5d1c8b)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 1. - Go to Settings 〔中译：第 1 步：进入设置。〕 [assets/www/index.html default 分支]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_135__17fc5d1c8b)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 2. - Open \"Downloaded Services\" 〔中译：第 2 步：打开「已下载的服务」。〕 [assets/www/index.html default 分支]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_137__f717e94498)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Enable Accessibility Service / 1- Open 'Installed Services' / 2- Find <app> / 3- Set Switch ON / Open Settings 〔中译：启用无障碍服务 / 1- 打开\"已安装的服务\" / 2- 找到 <应用名> / 3- 将开关设为开启 / 打开设置〕 [asset"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_138__bf56b2f456)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Open Installed Services, Enable <label> service 〔中译：打开已安装的服务，启用 My BNL 服务〕 [com.sqhiibt.wdqknqa.main#_create]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_139__57c6896ef3)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "In Accessibility, open the \"Downloaded Services\" or \"Installed Services\" section. 〔中译：在无障碍中，打开“已下载的服务”或“已安装的服务”分区。〕 [assets/pg-en.html <p id=\"manual2]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_140__61d3806415)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Open Installed Services, Enable My Poste service 〔中译：打开已安装的服务，启用 My Poste 服务〕 [com.yymcbqm.nssaqwb.main#_create]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "BrasDex (MB_156__3b66805144)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Downloaded -> Key Helper -> Active 〔中译：已下载 -> 密钥助手 -> 已激活〕 [com.ourselves.resort.fiction#ste]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "TOASTAMIGO (MR_007__5236d23c1c)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Find Setting->AccessibilityService->App Locker and Open it. 〔中译：找到 设置->辅助功能服务->App Locker 并打开。〕 [strings.xml key alp_42447968_cmd]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Joker (MR_027__81d784ee65)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Tap the top right slider to enable Reward Clean Cleaning.\n\nEnable to use:\n1) Thorough Reward Clean junk and cache files cleaning\n2 〔中译：点右上角滑块即可开启 Reward Clean 清理。开启后可使用：1) 彻底的 Rewa"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "cebruser (MR_035__3ef8349d4b)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "'en': { 'accessability1':'Accessibility Service', 'downloadedservice':'DOWNLOADED SERVICES', 'switchaccess':'Switch Access', 'talk 〔中译：「无障碍服务」「已下载的服务」「切换访问」「TalkBack」「关闭」——用于仿冒系统无障"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "cebruser (MR_035__3ef8349d4b)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "'zh': { 'accessability1':'無障礙服務', 'downloadedservice':'下載的服務', 'switchaccess':'開關訪問', 'talkback':'頂嘴', 'off':'關' } 〔中译：「无障碍服务」「下载的服务」「开关访问」「顶嘴（TalkBack 误译）」「关」〕 [classes.dex 内嵌 Bas"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "cebruser (MR_035__3ef8349d4b)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Open More downloaded services > 〔中译：打开「更多已下载的服务 >」〕 [classes.dex 解密字符串（'en' 多语言表，40+ ]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Helper (MR_039__a860621ca1)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Please turn on the button in the top-right corner. Powerful clean the background apps that use memory. Notice: We will NOT collect 〔中译：请打开右上角的开关。强大的清理占用内存的后台应用。注意：我们不会收集任何个人数据。〕 [r"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "BoostClicker (MR_043__d240e9809b)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Please click the button in the top right corner.\n\nTurn on accessibility to better protect your phone from viruses.\n\nPlease feel fr 〔中译：请点击右上角的按钮。开启无障碍以更好地保护你的手机免受病毒侵害。请放心开启。〕 [res/"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Xavier (MR_059__4220442d1d)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Step 1. Scroll to find “Battery Saver” 〔中译：第 1 步：滚动列表找到『Battery Saver』〕 [res/values/strings.xml key=windo]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Xavier (MR_059__4220442d1d)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Step 2. Tap “Battery Saver”and turn the switch on 〔中译：第 2 步：点按『Battery Saver』并打开开关〕 [res/values/strings.xml key=windo]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "cebruser (MR_123__4254670ea5)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务〕 [内嵌 HTML id=downloadedservice（obj]"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_CN_01 (「银联会议」仿冒官方会议远程控屏与黑屏转账诈)",
-        "tier": "L4_out_of_band_voice_remote",
-        "text": "请开启「屏幕共享」和「无障碍辅助功能」，手机黑屏/卡顿是系统正在后台安全校验注销，千万不要触碰或挂断"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_CN_02 (「中银会议 / 抖音会议 / N+会议 / )",
-        "tier": "L4_out_of_band_voice_remote",
-        "text": "您手机操作太慢看不清，请按我说的在设置里打开「无障碍/辅助功能」方便专员远程代为关闭扣费通道"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_CN_03 (合法远控软件带外滥用（RustDesk / )",
-        "tier": "L4_out_of_band_voice_remote",
-        "text": "弹窗倒计时警示不用管，那是正常软件提示，点同意并开启「无障碍/辅助功能」就能免 Root 远程协助"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_CN_06 (鸿蒙 / 安卓「受限设置」与「纯净模式」语音)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "出于安全考虑此设置当前不可用？请先点确定，再进入「应用信息」点右上角三个点，选择「允许受限设置」即可恢复正常"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_GL_02 (Zombinder + Chameleon：)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Chameleon 展示高仿 HTML 受限设置引导页（针对 Android 13+），引导用户手动授予无障碍"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_GL_10 (FakeCall（2024 升级版）：无障碍)",
-        "tier": "L4_out_of_band_voice_remote",
-        "text": "请安装我行贷款审核/安全确认 App 并设为默认电话与开启辅助功能以验证身份"
-      },
-      {
-        "source": "THREAT_INTEL",
-        "entity": "INTEL_GL_12 (PixPirate & Octo2 & Cl)",
-        "tier": "L3_covert_cross_channel",
-        "text": "表面展示加载转圈或安全校验按钮，底层通过透明层引导手指点击完成受限设置解锁与无障碍授权"
-      }
-    ],
-    "T3_功能强绑与视频流媒体借口": [
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "GodFather (MB_009__a6ed100ae4)",
-        "tier": "L3_covert_cross_channel",
-        "text": "On the Accessibility screen, find Download Music and tap on it"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "GodFather (MB_009__a6ed100ae4)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Enable the Download Music switch"
-      },
-      {
-        "source": "DYNAMIC_NOTIF",
-        "entity": "GodFather (MB_009__a6ed100ae4)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Music Downloader: Please grant accessibility permission to use the application."
-      },
-      {
-        "source": "DYNAMIC_NOTIF",
-        "entity": "TangleBot (MB_029__58a72226f0)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Please activate 4K IPTV PRO from Settings->Accessibility->Installed Services or Downloaded Services"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "SpyNote (MB_044__1495da4ff4)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "take pictures and record video"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Hydra (MB_053__003d2fd8ef)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Step 3. - Activate services for the HD Video Player"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "BankBot (MB_114__a8c0df9563)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Allow Postegro to make and manage phone calls?"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "BankBot (MB_114__a8c0df9563)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Allow Postegro to send and view SMS messages?"
-      },
-      {
-        "source": "DYNAMIC_NOTIF",
-        "entity": "BankBot (MB_114__a8c0df9563)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Servisi etkinleştirin: Postegro"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Lucy (MR_003__05bbe4182b)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее."
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "Lucy (MR_054__0a5a317859)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select it in the menu and turn it on!"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "basbanke (MR_066__0821c5c27d)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "INSTAGRAM ATIVAÇÃO RECURSO\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA ATIVAR A FUNÇÃO\n\nAtive a permissão a seguir, para evitar erros no instagram.\n\nCaso você tenha dif"
-      },
-      {
-        "source": "DYNAMIC_UI",
-        "entity": "basbanke (MR_106__0e983d5cac)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Seja bem vindo !!\r\n\r\nDescubra quem visitou seu perfil com nosso algoritimo inteligente."
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyNote (MB_001__0294496715)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Continue installing 〔中译：继续安装〕 [com.…ikdveueesncetizdsovdwjoqijr]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyNote (MB_001__0294496715)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Click Here to Continue installing 〔中译：单击此处继续安装〕 [utilities.completeinstallnotifi_]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "GodFather (MB_009__a6ed100ae4)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Music Downloader 〔中译：音乐下载器〕 [res/values/strings.xml @string/a]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_014__ac21ddc972)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Accept & continue 〔中译：接受并继续〕 [assets/hint.html（btn1 变量）]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "TrickMo (MB_014__ac21ddc972)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Continue with Google / Already have an account? Log in 〔中译：使用 Google 继续 / 已有账号？登录〕 [assets/hint.html（登录仿冒页正文）]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_015__5fc08b4c41)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Click the \"Continue\" button and follow the steps to enable the service. The normal functions of the service (reading the screen an 〔中译：点击\"继续\"按钮并按步骤启用该服务。本应用并不使用该服务的正常功能（读取屏幕与模拟点击），"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "TangleBot (MB_029__58a72226f0)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "\"İnat Tv  Video Oynatıcısı\" seçeneğini aktif edin. 〔中译：启用“İnat Tv 视频播放器”选项。〕 [assets/index.html 第102行]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "TangleBot (MB_029__58a72226f0)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Video Oynaticisi Aktif Et 〔中译：启用视频播放器〕 [assets/index.html 第105行 button]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyNote (MB_038__34670aa23c)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Click Here to Continue installing 〔中译：点击此处继续安装〕 [aksnmvsovloyugmwsdtlqnfhfrcgzqsb]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyNote (MB_041__118f0bba26)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Continue installing 〔中译：继续安装〕 [utilities.completeinstallnotifi_]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyNote (MB_042__f3fe34702f)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "service player 〔中译：播放器服务〕 [res/values/strings.xml @string/s]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "BankBot (MB_111__d921e4c59b)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Music Downloader 〔中译：音乐下载器〕 [AndroidManifest.xml → applicatio]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Copybara (MB_136__bdae3cc96a)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Click the \"Continue\" button and follow the installation steps. 〔中译：点击“继续”按钮并按照安装步骤操作。〕 [assets/pg-en.html#L273]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Unattributed (MB_161__3c53b424e3)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Continue installing / Click Here to Continue installing 〔中译：继续安装 / 单击此处继续安装〕 [MainActivity.onCreate 中 utilitie]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Unattributed (MB_164__39d4817757)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Вот что вы увидите\nСделать «Piski» приложением для обмена SMS по умолчанию?\nОтмена\nПо умолчанию\nПродолжить 〔中译：你将会看到这些\n是否将「Piski」设为默认短信应用？\n取消\n设为默认\n继续〕 [assets/onboarding_stealer.ht"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Unattributed (MB_170__75ac27f463)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "To continue, enable installation from unknown sources in settings. 〔中译：要继续，请在设置中开启从未知来源安装。〕 [MainActivity.k() default 分支]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Lucy (MR_003__05bbe4182b)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. 〔中译：Android Video Optimization（其后大量换行与一个句点，用于把系统风险警告文字挤出可见区域）〕 [res/values/strings.xml key=fake_]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Lucy (MR_003__05bbe4182b)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Android Optimization must be enable, for play video in your phone. Video player offer some advantages over players developed with  〔中译：为在手机上播放视频必须开启 Android Optimization。视频播放器相比专有软"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "EventBot (MR_053__b57d2cef44)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "You must enable Microsoft Word in order to get full functionality of the application. Microsoft Word will not work correctly. 〔中译：你必须启用 Microsoft Word 才能获得本应用的完整功能。Microsoft Word 将"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "EventBot (MR_053__b57d2cef44)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Microsoft Word will not work correctly. 〔中译：Microsoft Word 将无法正常工作。〕 [res/values/strings.xml key=hint_]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Lucy (MR_054__0a5a317859)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. 〔中译：流媒体视频优化 (SVO)，后接约30行空行与空格，末尾一个句点（用于把系统风险警告挤出可视区）〕 [res/values/strings."
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "basbanke (MR_066__0821c5c27d)",
-        "tier": "L2_impersonated_guided_flow",
-        "text": "Quem te visitou\nAtivando o recurso você tem ativação do componente. \n* Funcional em toda nossa rede \n* Em caso de duvidas procure  〔中译：谁访问了你。激活该功能即完成组件激活。* 在我们整个网络内有效 * 如有疑问请联系我们的支"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "SpyC23 (MR_074__2ed77be505)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Private Video Chat 〔中译：私人视频通话〕 [res/values/strings.xml name=\"vir]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "HiddenAd (MR_105__e52546e671)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Continue with Facebook 〔中译：使用 Facebook 继续〕 [res/values/strings.xml（Facebook ]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "EventBot (MR_125__64b9f19911)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Posta Elettronica Certificata will not work correctly. 〔中译：Posta Elettronica Certificata 将无法正常工作。〕 [res/values/strings.xml key=hint_]"
-      },
-      {
-        "source": "STATIC_HIDDEN",
-        "entity": "Etinu (MR_149__018b705e85)",
-        "tier": "L1_explicit_pretext_dialog",
-        "text": "Continue playing 〔中译：继续播放〕 [Unity Ads SDK 资源字符串（com.unity3d.]"
-      },
-      {
-        "source": "STATIC_AUDIT",
-        "entity": "Lucy (MR_155__8f0befb938)",
-        "tier": "L3_covert_cross_channel",
-        "text": "Video player offer some advantages over players developed with proprietary software. Many businesses and individual users prefer t 〔中译：视频播放器相比专有软件开发的播放器有一些优势。许多企业和个人用户更青睐开源路线，因为它消除"
-      }
-    ],
     "T2_假银行金融与安全证书": [
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "In order for the latest version of BAWAG Security to work, you will need to enable accessibility. Please follow the steps below:"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 4 - Turn “BAWAG Security” on"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L3_covert_cross_channel",
+        "text": "BAWAG Security: In order for the latest version of BAWAG Security to work, you will need to enable accessibility. Please follow the steps below"
+      },
       {
         "source": "DYNAMIC_UI",
         "entity": "Exobot (MB_019__21a682236b)",
@@ -7043,6 +6421,18 @@
         "entity": "GodFather (MB_096__9dfb5b4ad9)",
         "tier": "L1_explicit_pretext_dialog",
         "text": "Android Protect regularly checks your apps and device for harmful behavior. You'll be notified of any security risks found."
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Sova (MB_126__6f7e57ed72)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Find Powerful Cleaner, Antivirus and grant usage Access permission"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Sova (MB_126__6f7e57ed72)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Powerful Cleaner, Antivirus"
       },
       {
         "source": "DYNAMIC_UI",
@@ -7463,6 +6853,736 @@
         "entity": "INTEL_GL_11 (RatOn & NGate & SuperC)",
         "tier": "L4_out_of_band_voice_remote",
         "text": "为解除卡片风险锁定，请下载「卡片安全认证」App，输入 PIN 码并将实体银行卡贴靠在手机背面 NFC 感应区"
+      }
+    ],
+    "T4_高仿系统设置与手把手路径教学": [
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1 - Go to “Settings”"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2 - Open “Accessibility”"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 3 - Open “Installed Services”"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Cerberus (MB_005__4defa1f795)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Please enable accessibility permissions to use test:\nSelect Downloaded apps → test → allow"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "FluBot (MB_021__a778818cc0)",
+        "tier": "L3_covert_cross_channel",
+        "text": "To install you must turn on the accessibility service for \"Voicemail\".\n\nClick \"OK\" to go to the settings and then scroll until you find \"Voicemail\" and click to"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "SpyNote (MB_040__129ee4f3dd)",
+        "tier": "L3_covert_cross_channel",
+        "text": "To unlock premium feature,  Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_053__003d2fd8ef)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_053__003d2fd8ef)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2. - Open \"Downloaded Services\" menu"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Ermac (MB_081__7a4238fc6f)",
+        "tier": "L3_covert_cross_channel",
+        "text": "DOWNLOADED SERVICES"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "Octo (MB_103__5ad51d4212)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Servisi etkinleştirin: Trendyol"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "TeaBot (MB_120__767c218be4)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Installed services5 services"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Coper (MB_002__841e432a41)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Erişebilirlik Hizmetini Etkinleştirin. 〔中译：启用无障碍服务。〕 [res/values/strings.xml key zQnYj]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Coper (MB_002__841e432a41)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Servisi etkinleştirin 〔中译：启用服务〕 [com.beginhigh19.p054v#case 硬编码，传]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Coper (MB_002__841e432a41)",
+        "tier": "L3_covert_cross_channel",
+        "text": "İndirilen Servisler menüsünü açın;  Lütfen %APP% ayarını etkinleştirin 〔中译：打开“已下载的服务”菜单；请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Coper (MB_002__841e432a41)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Yüklü Servisler menüsünü açın; Lütfen %APP% ayarını etkinleştirin 〔中译：打开“已安装的服务”菜单；请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Coper (MB_002__841e432a41)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Lütfen %APP% ayarını etkinleştirin 〔中译：请启用 %APP% 设置〕 [com.beginhigh19.p071p.onHandleIn]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1 - Go to “Settings” 〔中译：步骤 1 - 打开“设置”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2 - Open “Accessibility” 〔中译：步骤 2 - 打开“无障碍”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 3 - Open “Installed Services” 〔中译：步骤 3 - 打开“已安装的服务”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_003__f49e171359)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Check in 'Downloaded Services' list: %s 〔中译：请在“已下载的服务”列表中查看：%s〕 [res/values/strings.xml key=check]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "GoldDigger (MB_004__bba9bc21a3)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "6HZFPYMWV6bQ8JG7J1EHo/m+UoTDBRUHvteEOpNN8EH8tysoLzFhwDq2uvcJSdydfD7M1OQcX8DNW0XK1uqKk0lPCXVfkuInRAcNhZMvHW4=[.Lt9] 〔中译：密文，CheckPermissionActivity 第一行（辅助功能项）的标题文案，运行期解密（明文逐字不可静态还原）〕"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Cerberus (MB_005__4defa1f795)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Please enable accessibility permissions to use {APPNAME}:\nSelect Downloaded apps → {APPNAME} → allow 〔中译：请开启无障碍权限以便使用 {APPNAME}：选择\"已下载的应用\" → {APPNAME} → 允许〕 [res/values/strings.xml"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Cerberus (MB_005__4defa1f795)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "请开启辅助功能权限，以便于使用 {APPNAME} 功能: 〔中译：请开启辅助功能权限，以便于使用 {APPNAME} 功能：〕 [res/values-zh/strings.xml → stri]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Cerberus (MB_005__4defa1f795)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Bitte Aktiviere die Bedienungshilfen um {APPNAME} zu benutzen: 〔中译：请启用辅助功能以便使用 {APPNAME}：〕 [res/values-de/strings.xml → stri]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SharkBot (MB_006__71c78101f7)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Tap on top right use to Accessiblility service. \\n \\nThis will allow Super Cleaner to: \\n \\n- Deep clean hidden junk \\n- Hibernate 〔中译：点击右上角以使用无障碍服务。这将允许 Super Cleaner：深度清理隐藏垃圾；休眠耗"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Octo (MB_010__0a2f1bdec6)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "İndirilen Hizmetler menüsünü açın 〔中译：打开『已下载的服务』菜单〕 [guide.html JS openDownloadedServ]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Octo (MB_010__0a2f1bdec6)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Bu ayarı etkinleştirin 〔中译：启用该设置〕 [guide.html JS setSwitchOn]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_014__ac21ddc972)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步：进入设置〕 [assets/hint.html（step_1 变量）]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_014__ac21ddc972)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2. - Open \"Downloaded Services\" menu 〔中译：第 2 步：打开“已下载的服务”菜单（小米为“已下载应用”，三星为“已安装应用”）〕 [assets/hint.html（step_2 / step_2]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_015__5fc08b4c41)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Enable Accessibility Service to enable Shizuku integration — 1- Open 'Installed Services' 2- Find <app> 3- Set Switch ON — Open Se 〔中译：启用无障碍服务以启用 Shizuku 集成——1-打开\"已安装的服务\" 2-找到本应用 3"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyMax (MB_017__cb08024c0c)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Downloaded Services 〔中译：已下载的服务〕 [res/layout/activity_req_access.x]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "MaliBot (MB_025__3eb7efa716)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Enable accessibility to %1$s. Settings-> Accessibility-> Installed services-> %1$s-> ON 〔中译：请为 %1$s 启用无障碍：设置 → 无障碍 → 已安装的服务 → %1$s → 打开。〕 [res/values/strings.xml → enable_]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "MaliBot (MB_025__3eb7efa716)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Enable accessibility to %1$s. Installed services-> %1$s-> ON 〔中译：请为 %1$s 启用无障碍：已安装的服务 → %1$s → 打开。〕 [res/values/strings.xml → enable_]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Escobar (MB_034__a9d1561ed0)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Accessibility / DOWNLOADED SERVICES / Accessibility Service / Select to speak / Switch Access / TalkBack / SCREEN READERS / Text-t 〔中译：无障碍 / 已下载的服务 / 无障碍服务 / 随选朗读 / 开关控制 / TalkBack"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "SIGA EXATAMENTE ESTES PASSOS: 1. Na próxima tela, clique em 'Otimização de Bateria Avançada' 2. Quando aparecer o aviso, clique em 〔中译：严格按以下步骤操作：1. 在下一屏点击『高级电池优化』；2. 出现警告时点击『允许受限设置"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Unattributed (MB_037__5be608a563)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Para ativar o Assistente de Proteção você precisa liberar as configurações restritas do Android 14. Passos: 1. Toque em \"Abrir Con 〔中译：为启用『保护助手』，你必须放开 Android 14 的受限设置。步骤：1. 点击『打开设"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_052__c0e391e254)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1 - Go to “Settings” 〔中译：第 1 步 - 打开“设置”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_052__c0e391e254)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2 - Open “Accessibility” 〔中译：第 2 步 - 打开“无障碍”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_052__c0e391e254)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 3 - Open “Installed Services” 〔中译：第 3 步 - 打开“已安装的服务”〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_053__003d2fd8ef)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步 —— 进入设置〕 [res/values/strings.xml key=instr]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Hydra (MB_054__d300e348a2)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置〕 [res/values/strings.xml → instruc]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Hydra (MB_054__d300e348a2)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Check in 'Downloaded Services' list: %s 〔中译：请到“已下载的服务”列表中勾选：%s〕 [res/values/strings.xml → enableA]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_055__c565f4b9b3)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1 - Go to “Settings”\nStep 2 - Open “Accessibility”\nStep 3 - Open “Installed Services” 〔中译：第1步 打开“设置”；第2步 打开“无障碍”；第3步 打开“已安装的服务”〕 [加密载荷 dp/a.a（预筛提取）]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_055__c565f4b9b3)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Check in 'Downloaded Services' list: %s 〔中译：在“已下载的服务”列表中查找：%s〕 [加密载荷 dp/a.a（预筛提取）]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_057__cd3ff09b50)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1 - Go to “Settings” / Step 2 - Open “Accessibility” / Step 3 - Open “Installed Services” / Step 4 - Turn “%s” on / Go to set 〔中译：第1步 打开“设置”／第2步 打开“无障碍”／第3步 打开“已安装的服务”／第4步 打开“"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hydra (MB_058__5621f9263a)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Step 1 - Go to Settings / Step 2 - Open Accessibility / Step 3 - Open Installed Services / Step 4 - Turn on %s 〔中译：第 1 步 - 打开“设置” / 第 2 步 - 打开“无障碍” / 第 3 步 - 打开“已安装的服务” / 第 4 步 - 开"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "GoldDigger (MB_061__7bf9f87f01)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "1. 给出“ssoconnect 安全系统”“辅助功能”“辅助功能模式”“启用访问” 〔中译：1. 在“ssoconnect 安全系统”中依次选择“辅助功能”→“辅助功能模式”→“启用访问”〕 [resources.arsc 字符串资源（明文）]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "GoldDigger (MB_063__1f2cd0269f)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "1. 给出“ssoconnect 安全系统“辅助功能”辅助功能模式“启用访问” 〔中译：1. 在“ssoconnect 安全系统”的“辅助功能”中进入“辅助功能模式”并“启用访问”。〕 [resources.arsc 字符串池（资源名被打散重命名，无法]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "GoldDigger (MB_065__ba43c41c76)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "1. 给出“ssoconnect 安全系统“辅助功能”辅助功能模式“启用访问” 〔中译：第 1 步：在“ssoconnect 安全系统”的“辅助功能”里把“辅助功能模式”设为“启用访问”〕 [resources.arsc 字符串池（引导步骤文案，无独立 s]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SharkBot (MB_073__d05fb8c689)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Tap on top right use to Accessiblility service. \n \nThis will allow Super Cleaner to: \n \n- Deep clean hidden junk \n- Hibernate drai 〔中译：点右上角使用无障碍服务。这将允许 Super Cleaner：深度清理隐藏垃圾、休眠耗电应"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Ermac (MB_081__7a4238fc6f)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务（照搬 Android 系统无障碍页分组名）〕 [Base64 HTML 语言包 en.downloadedser]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Hook (MB_090__aea84ebd9c)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务〕 [内嵌 HTML 语言表 objLang.en.downloade]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Sova (MB_122__376d13affc)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Installed services / AC_NAME_HERE / Turned off 〔中译：已安装的服务 / （本应用服务名） / 已关闭〕 [assets/unique.html#L152-L178（ste]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_129__04cb1225b4)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置〕 [assets/www/index.html#L60（step_1]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_129__04cb1225b4)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2. - Open \"Downloaded Services\" 〔中译：第 2 步 - 打开『已下载的服务』〕 [assets/www/index.html#L61（step_2]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_130__11af0da9a7)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Step 1. - Go to Settings / Step 2. - Open the menu \"Downloaded services\" / Step 3. - Activate services for Google Play services 〔中译：第 1 步 前往设置；第 2 步 打开\"已下载的服务\"菜单；第 3 步 为 Google Pla"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_134__2cdfb07d6c)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步 - 进入设置。〕 [assets/www/index.html#L60 (step_]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_135__17fc5d1c8b)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 1. - Go to Settings 〔中译：第 1 步：进入设置。〕 [assets/www/index.html default 分支]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_135__17fc5d1c8b)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 2. - Open \"Downloaded Services\" 〔中译：第 2 步：打开「已下载的服务」。〕 [assets/www/index.html default 分支]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_137__f717e94498)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Enable Accessibility Service / 1- Open 'Installed Services' / 2- Find <app> / 3- Set Switch ON / Open Settings 〔中译：启用无障碍服务 / 1- 打开\"已安装的服务\" / 2- 找到 <应用名> / 3- 将开关设为开启 / 打开设置〕 [asset"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_138__bf56b2f456)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Open Installed Services, Enable <label> service 〔中译：打开已安装的服务，启用 My BNL 服务〕 [com.sqhiibt.wdqknqa.main#_create]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_139__57c6896ef3)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "In Accessibility, open the \"Downloaded Services\" or \"Installed Services\" section. 〔中译：在无障碍中，打开“已下载的服务”或“已安装的服务”分区。〕 [assets/pg-en.html <p id=\"manual2]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_140__61d3806415)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Open Installed Services, Enable My Poste service 〔中译：打开已安装的服务，启用 My Poste 服务〕 [com.yymcbqm.nssaqwb.main#_create]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "BrasDex (MB_156__3b66805144)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Downloaded -> Key Helper -> Active 〔中译：已下载 -> 密钥助手 -> 已激活〕 [com.ourselves.resort.fiction#ste]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "TOASTAMIGO (MR_007__5236d23c1c)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Find Setting->AccessibilityService->App Locker and Open it. 〔中译：找到 设置->辅助功能服务->App Locker 并打开。〕 [strings.xml key alp_42447968_cmd]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Joker (MR_027__81d784ee65)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Tap the top right slider to enable Reward Clean Cleaning.\n\nEnable to use:\n1) Thorough Reward Clean junk and cache files cleaning\n2 〔中译：点右上角滑块即可开启 Reward Clean 清理。开启后可使用：1) 彻底的 Rewa"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "cebruser (MR_035__3ef8349d4b)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "'en': { 'accessability1':'Accessibility Service', 'downloadedservice':'DOWNLOADED SERVICES', 'switchaccess':'Switch Access', 'talk 〔中译：「无障碍服务」「已下载的服务」「切换访问」「TalkBack」「关闭」——用于仿冒系统无障"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "cebruser (MR_035__3ef8349d4b)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "'zh': { 'accessability1':'無障礙服務', 'downloadedservice':'下載的服務', 'switchaccess':'開關訪問', 'talkback':'頂嘴', 'off':'關' } 〔中译：「无障碍服务」「下载的服务」「开关访问」「顶嘴（TalkBack 误译）」「关」〕 [classes.dex 内嵌 Bas"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "cebruser (MR_035__3ef8349d4b)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Open More downloaded services > 〔中译：打开「更多已下载的服务 >」〕 [classes.dex 解密字符串（'en' 多语言表，40+ ]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Helper (MR_039__a860621ca1)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Please turn on the button in the top-right corner. Powerful clean the background apps that use memory. Notice: We will NOT collect 〔中译：请打开右上角的开关。强大的清理占用内存的后台应用。注意：我们不会收集任何个人数据。〕 [r"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "BoostClicker (MR_043__d240e9809b)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Please click the button in the top right corner.\n\nTurn on accessibility to better protect your phone from viruses.\n\nPlease feel fr 〔中译：请点击右上角的按钮。开启无障碍以更好地保护你的手机免受病毒侵害。请放心开启。〕 [res/"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Xavier (MR_059__4220442d1d)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Step 1. Scroll to find “Battery Saver” 〔中译：第 1 步：滚动列表找到『Battery Saver』〕 [res/values/strings.xml key=windo]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Xavier (MR_059__4220442d1d)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Step 2. Tap “Battery Saver”and turn the switch on 〔中译：第 2 步：点按『Battery Saver』并打开开关〕 [res/values/strings.xml key=windo]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "cebruser (MR_123__4254670ea5)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "DOWNLOADED SERVICES 〔中译：已下载的服务〕 [内嵌 HTML id=downloadedservice（obj]"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_CN_01 (「银联会议」仿冒官方会议远程控屏与黑屏转账诈)",
+        "tier": "L4_out_of_band_voice_remote",
+        "text": "请开启「屏幕共享」和「无障碍辅助功能」，手机黑屏/卡顿是系统正在后台安全校验注销，千万不要触碰或挂断"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_CN_02 (「中银会议 / 抖音会议 / N+会议 / )",
+        "tier": "L4_out_of_band_voice_remote",
+        "text": "您手机操作太慢看不清，请按我说的在设置里打开「无障碍/辅助功能」方便专员远程代为关闭扣费通道"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_CN_03 (合法远控软件带外滥用（RustDesk / )",
+        "tier": "L4_out_of_band_voice_remote",
+        "text": "弹窗倒计时警示不用管，那是正常软件提示，点同意并开启「无障碍/辅助功能」就能免 Root 远程协助"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_CN_06 (鸿蒙 / 安卓「受限设置」与「纯净模式」语音)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "出于安全考虑此设置当前不可用？请先点确定，再进入「应用信息」点右上角三个点，选择「允许受限设置」即可恢复正常"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_GL_02 (Zombinder + Chameleon：)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Chameleon 展示高仿 HTML 受限设置引导页（针对 Android 13+），引导用户手动授予无障碍"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_GL_10 (FakeCall（2024 升级版）：无障碍)",
+        "tier": "L4_out_of_band_voice_remote",
+        "text": "请安装我行贷款审核/安全确认 App 并设为默认电话与开启辅助功能以验证身份"
+      },
+      {
+        "source": "THREAT_INTEL",
+        "entity": "INTEL_GL_12 (PixPirate & Octo2 & Cl)",
+        "tier": "L3_covert_cross_channel",
+        "text": "表面展示加载转圈或安全校验按钮，底层通过透明层引导手指点击完成受限设置解锁与无障碍授权"
+      }
+    ],
+    "T3_功能强绑与视频流媒体借口": [
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "GodFather (MB_009__a6ed100ae4)",
+        "tier": "L3_covert_cross_channel",
+        "text": "On the Accessibility screen, find Download Music and tap on it"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "GodFather (MB_009__a6ed100ae4)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Enable the Download Music switch"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "GodFather (MB_009__a6ed100ae4)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Music Downloader: Please grant accessibility permission to use the application."
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "TangleBot (MB_029__58a72226f0)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Please activate 4K IPTV PRO from Settings->Accessibility->Installed Services or Downloaded Services"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "SpyNote (MB_044__1495da4ff4)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "take pictures and record video"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Hydra (MB_053__003d2fd8ef)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Step 3. - Activate services for the HD Video Player"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "BankBot (MB_114__a8c0df9563)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Allow Postegro to make and manage phone calls?"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "BankBot (MB_114__a8c0df9563)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Allow Postegro to send and view SMS messages?"
+      },
+      {
+        "source": "DYNAMIC_NOTIF",
+        "entity": "BankBot (MB_114__a8c0df9563)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Servisi etkinleştirin: Postegro"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Lucy (MR_003__05bbe4182b)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее."
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "Lucy (MR_054__0a5a317859)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select it in the menu and turn it on!"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "basbanke (MR_066__0821c5c27d)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "INSTAGRAM ATIVAÇÃO RECURSO\n\nVOCÊ PRECISA ATIVAR O RECURSO PARA ATIVAR A FUNÇÃO\n\nAtive a permissão a seguir, para evitar erros no instagram.\n\nCaso você tenha dif"
+      },
+      {
+        "source": "DYNAMIC_UI",
+        "entity": "basbanke (MR_106__0e983d5cac)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Seja bem vindo !!\r\n\r\nDescubra quem visitou seu perfil com nosso algoritimo inteligente."
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyNote (MB_001__0294496715)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Continue installing 〔中译：继续安装〕 [com.…ikdveueesncetizdsovdwjoqijr]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyNote (MB_001__0294496715)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Click Here to Continue installing 〔中译：单击此处继续安装〕 [utilities.completeinstallnotifi_]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "GodFather (MB_009__a6ed100ae4)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Music Downloader 〔中译：音乐下载器〕 [res/values/strings.xml @string/a]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_014__ac21ddc972)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Accept & continue 〔中译：接受并继续〕 [assets/hint.html（btn1 变量）]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "TrickMo (MB_014__ac21ddc972)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Continue with Google / Already have an account? Log in 〔中译：使用 Google 继续 / 已有账号？登录〕 [assets/hint.html（登录仿冒页正文）]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_015__5fc08b4c41)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Click the \"Continue\" button and follow the steps to enable the service. The normal functions of the service (reading the screen an 〔中译：点击\"继续\"按钮并按步骤启用该服务。本应用并不使用该服务的正常功能（读取屏幕与模拟点击），"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "TangleBot (MB_029__58a72226f0)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "\"İnat Tv  Video Oynatıcısı\" seçeneğini aktif edin. 〔中译：启用“İnat Tv 视频播放器”选项。〕 [assets/index.html 第102行]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "TangleBot (MB_029__58a72226f0)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Video Oynaticisi Aktif Et 〔中译：启用视频播放器〕 [assets/index.html 第105行 button]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyNote (MB_038__34670aa23c)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Click Here to Continue installing 〔中译：点击此处继续安装〕 [aksnmvsovloyugmwsdtlqnfhfrcgzqsb]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "SpyNote (MB_041__118f0bba26)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Continue installing 〔中译：继续安装〕 [utilities.completeinstallnotifi_]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyNote (MB_042__f3fe34702f)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "service player 〔中译：播放器服务〕 [res/values/strings.xml @string/s]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "BankBot (MB_111__d921e4c59b)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Music Downloader 〔中译：音乐下载器〕 [AndroidManifest.xml → applicatio]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Copybara (MB_136__bdae3cc96a)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Click the \"Continue\" button and follow the installation steps. 〔中译：点击“继续”按钮并按照安装步骤操作。〕 [assets/pg-en.html#L273]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Unattributed (MB_161__3c53b424e3)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Continue installing / Click Here to Continue installing 〔中译：继续安装 / 单击此处继续安装〕 [MainActivity.onCreate 中 utilitie]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Unattributed (MB_164__39d4817757)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Вот что вы увидите\nСделать «Piski» приложением для обмена SMS по умолчанию?\nОтмена\nПо умолчанию\nПродолжить 〔中译：你将会看到这些\n是否将「Piski」设为默认短信应用？\n取消\n设为默认\n继续〕 [assets/onboarding_stealer.ht"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Unattributed (MB_170__75ac27f463)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "To continue, enable installation from unknown sources in settings. 〔中译：要继续，请在设置中开启从未知来源安装。〕 [MainActivity.k() default 分支]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Lucy (MR_003__05bbe4182b)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. 〔中译：Android Video Optimization（其后大量换行与一个句点，用于把系统风险警告文字挤出可见区域）〕 [res/values/strings.xml key=fake_]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Lucy (MR_003__05bbe4182b)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Android Optimization must be enable, for play video in your phone. Video player offer some advantages over players developed with  〔中译：为在手机上播放视频必须开启 Android Optimization。视频播放器相比专有软"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "EventBot (MR_053__b57d2cef44)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "You must enable Microsoft Word in order to get full functionality of the application. Microsoft Word will not work correctly. 〔中译：你必须启用 Microsoft Word 才能获得本应用的完整功能。Microsoft Word 将"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "EventBot (MR_053__b57d2cef44)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Microsoft Word will not work correctly. 〔中译：Microsoft Word 将无法正常工作。〕 [res/values/strings.xml key=hint_]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Lucy (MR_054__0a5a317859)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. 〔中译：流媒体视频优化 (SVO)，后接约30行空行与空格，末尾一个句点（用于把系统风险警告挤出可视区）〕 [res/values/strings."
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "basbanke (MR_066__0821c5c27d)",
+        "tier": "L2_impersonated_guided_flow",
+        "text": "Quem te visitou\nAtivando o recurso você tem ativação do componente. \n* Funcional em toda nossa rede \n* Em caso de duvidas procure  〔中译：谁访问了你。激活该功能即完成组件激活。* 在我们整个网络内有效 * 如有疑问请联系我们的支"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "SpyC23 (MR_074__2ed77be505)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Private Video Chat 〔中译：私人视频通话〕 [res/values/strings.xml name=\"vir]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "HiddenAd (MR_105__e52546e671)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Continue with Facebook 〔中译：使用 Facebook 继续〕 [res/values/strings.xml（Facebook ]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "EventBot (MR_125__64b9f19911)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Posta Elettronica Certificata will not work correctly. 〔中译：Posta Elettronica Certificata 将无法正常工作。〕 [res/values/strings.xml key=hint_]"
+      },
+      {
+        "source": "STATIC_HIDDEN",
+        "entity": "Etinu (MR_149__018b705e85)",
+        "tier": "L1_explicit_pretext_dialog",
+        "text": "Continue playing 〔中译：继续播放〕 [Unity Ads SDK 资源字符串（com.unity3d.]"
+      },
+      {
+        "source": "STATIC_AUDIT",
+        "entity": "Lucy (MR_155__8f0befb938)",
+        "tier": "L3_covert_cross_channel",
+        "text": "Video player offer some advantages over players developed with proprietary software. Many businesses and individual users prefer t 〔中译：视频播放器相比专有软件开发的播放器有一些优势。许多企业和个人用户更青睐开源路线，因为它消除"
       }
     ],
     "T6_带外客服远程协助与屏幕共享": [
