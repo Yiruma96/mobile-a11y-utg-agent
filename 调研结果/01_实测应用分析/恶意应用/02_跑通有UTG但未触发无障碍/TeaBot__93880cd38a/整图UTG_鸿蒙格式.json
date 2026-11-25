@@ -1,0 +1,48 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_116__93880cd38a",
+  "label": "malicious",
+  "family_or_category": "TeaBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.obckaliva.ebnxvikzi",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "7a883561cff1",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "7a883561cff1",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.obckaliva.ebnxvikzi",
+      "abilityName": "in.makaek.galbak.util.InioawndOIADNwaiond",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "PDF Text Recognition: Add-On"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TeaBot__93880cd38a",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以“PDF文字识别：附加组件”为伪装入口，启动后直接触发并跳转系统无障碍设置，诱导授予无障碍权限，符合TeaBot滥用辅助功能的特征；本次未测试拒权，流程在跳转后终止。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “PDF文字识别：附加组件”（入口页，伪装成工具插件名称）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪装成PDF文字识别附加组件的入口页，无遮罩；启动即跳系统无障碍设置，顶部有“数据未备份”通知，探针终止。"
+  }
+}

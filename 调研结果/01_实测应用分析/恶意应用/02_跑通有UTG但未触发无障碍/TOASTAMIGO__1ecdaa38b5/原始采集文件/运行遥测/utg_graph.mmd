@@ -1,0 +1,10 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_c6a7472f77ea["Step 2: NexusLauncherActivity\nSmart AppLocker keeps "]
+    N_f6a3588f0886 -->|"ui_open: open()"| N_c6a7472f77ea
+    N_c6a7472f77ea -->|"ui_click: click([3] Button text='Close app"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(InstallRecommandActivit"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(MediaActivity)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(MyAccessibilityServiceT"| N_f6a3588f0886

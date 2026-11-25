@@ -1,0 +1,195 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_130__11af0da9a7",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "consnews.matt960.can",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "d64a66c831da",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "consnews.matt960.can",
+      "abilityName": "com.hollow.rigid.cream.arch.Gestatedisorder",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "29d23716f3e4",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "consnews.matt960.can",
+      "abilityName": ".Oa1",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1200])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "d64a66c831da",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Gestatedisorder)"
+    },
+    {
+      "from": "d64a66c831da",
+      "to": "29d23716f3e4",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Oa1)"
+    },
+    {
+      "from": "29d23716f3e4",
+      "to": "29d23716f3e4",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ZQROWdeKJeAMZp3wrhW7)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__11af0da9a7",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本从系统桌面进入应用抽屉，未找到伪装“Google服务”入口后，经静态引导连续跳转至包内 Gestatedisorder、Oa1 等 Activity；全程仍显示应用抽屉样式，未见诱导话术、通知或遮罩，授权/拒权未被实际触发。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器主屏，显示“应用列表”、日期及信息/Chrome等图标；点击“应用列表”未打开抽屉。",
+    "step_02": "仍在桌面主屏，界面文本与上步相同；向上滑动试图展开应用抽屉，但未见抽屉打开。",
+    "step_03": "应用抽屉已展开，显示日历、相机、Chrome等系统应用；再次上滑以查找伪装“Google服务”应用。",
+    "step_04": "抽屉仍列系统应用，未出现目标图标；上滑试图露出下方行，结果界面不变，仍无“Google服务”。",
+    "step_05": "静态跳转至包内Gestatedisorder活动，界面仍为应用抽屉，无通知横幅、无遮罩、无授权弹窗。",
+    "step_06": "Gestatedisorder静态跳至.Oa1，屏幕仍为系统应用列表，未见新文案或诱导话术，也无授权/取消操作。",
+    "step_07": "Oa1再次静态跳往ZQROWdeKJeAMZp3wrhW7；画面未变，仍为应用抽屉，无通知与遮罩。",
+    "step_08": "Oa1再次静态跳至.NH，界面保持应用列表与系统图标，未呈现授权请求或拒权按钮，交互结果不可见。"
+  }
+}

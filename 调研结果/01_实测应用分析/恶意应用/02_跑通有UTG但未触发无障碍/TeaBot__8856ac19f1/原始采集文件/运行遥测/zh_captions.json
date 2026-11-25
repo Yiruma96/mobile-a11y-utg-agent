@@ -1,0 +1,9 @@
+{
+  "app_chain_summary_zh": "该应用以“QR Code Scanner: Add-On”伪装为扫码插件入口，随后触发无障碍权限提示并跳转系统无障碍设置页；探针在该步终止，未观察到通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “二维码扫描器：附加组件”（Step 1 页面，伪装为扫码插件入口）"
+  ],
+  "frame_captions": {
+    "step_01": "Step 1 为伪装成“QR Code Scanner: Add-On”的扫码插件入口页；操作触发无障碍权限提示并跳转系统无障碍设置，本步终止，无通知横幅/遮罩。"
+  }
+}

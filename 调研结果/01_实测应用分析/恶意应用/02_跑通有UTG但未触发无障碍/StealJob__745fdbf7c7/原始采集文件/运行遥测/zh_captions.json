@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "应用以“Update Service”名义请求联系人、通话记录、短信、电话、位置、文件与麦克风等大量权限，随后用旧版兼容警告和“必须开启无障碍”提示诱导用户进入系统无障碍设置；抵达设置页后流程终止，未完成实际开启。",
+  "observed_lure_rhetoric_zh": [
+    "英文：“Choose what to allow Update Service to access”→选择允许“更新服务”访问哪些内容（Step1 权限总览）",
+    "英文：“access your contacts / read and write phone call log / send and view SMS messages”→访问联系人、读写通话记录、收发短信（Step1 权限列表）",
+    "英文：“make and manage phone calls / access this device's location”→拨打电话及管理通话、访问设备位置（Step1 权限列表）",
+    "英文：“access photos, media, and files on your device / Microphone”→访问照片、媒体和文件及麦克风（Step1 权限列表）",
+    "英文：“This app was built for an older version of Android and may not work properly...” →该应用为旧版安卓构建、可能无法正常工作（Step2 兼容性提示）",
+    "英文：“You must enable Accessiblity for 'Update Service' to use this application properly”→必须为“更新服务”开启无障碍才能正常使用（Step3 无障碍诱导）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限总览页，列出联系人、通话记录、短信、电话、位置、文件与麦克风等权限；本步点“继续”，无通知或遮罩。",
+    "step_02": "应用主页弹出旧版安卓兼容性警告，称“更新服务”可能无法正常运行；本步点“OK”关闭提示，无通知或遮罩。",
+    "step_03": "应用主页出现无障碍诱导框，称必须为“更新服务”开启无障碍才能正常使用；本步点“OKAY”接受，无通知或遮罩。",
+    "step_04": "跳转至系统无障碍设置页，“更新服务”显示为关闭；本步探针在到达该设置页后终止，无通知或遮罩。"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_114__7d3a00c93c",
+  "label": "malicious",
+  "family_or_category": "SpyC23",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.telegram.safe",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "5b88992aadc1",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "5b88992aadc1",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Google Play services for… to access",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Contacts",
+        "access your contacts",
+        "Location",
+        "access this device's location",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Camera",
+        "take pictures and record video"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "462a6e816135",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.telegram.safe",
+      "abilityName": "net.axel.app.activities.Telegram",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play services for…",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "a0d76ab8774a",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.telegram.safe",
+      "abilityName": "net.axel.app.activities.Telegram",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Notifications",
+        "It is a Chat App, If you don't Enable this property you won't receive chat notifications.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "b7c19c90c479",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.applications.specialaccess.deviceadmin.DeviceAdminAdd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Activate device admin app?",
+        "Google Play services for Edge",
+        "Activating this admin app will allow the app Google Play services for Edge to perform the following operations:",
+        "Activate this device admin app",
+        "Cancel",
+        "Uninstall app"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5b88992aadc1",
+      "to": "462a6e816135",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "462a6e816135",
+      "to": "a0d76ab8774a",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "a0d76ab8774a",
+      "to": "b7c19c90c479",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1276))"
+    },
+    {
+      "from": "b7c19c90c479",
+      "to": "a0d76ab8774a",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Cancel\" id=cancel_button (click) center=(540,881))"
+    },
+    {
+      "from": "a0d76ab8774a",
+      "to": "b7c19c90c479",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1276))"
+    },
+    {
+      "from": "b7c19c90c479",
+      "to": "b7c19c90c479",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(onActivityResult)"
+    },
+    {
+      "from": "b7c19c90c479",
+      "to": "b7c19c90c479",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ApplicationsDetailsActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyC23__7d3a00c93c",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以Telegram类聊天为外壳，先展示伪造的权限汇总页并诱导开启通知，随后反复弹出设备管理激活并冒充Google Play服务；审核中取消管理员授权，后续仅静态跳转至小米/华为权限管理页，未完成敏感授权。",
+  "observed_lure_rhetoric_zh": [
+    "英文「Choose what to allow Google Play services for… to access」 -> 选择允许Google Play服务访问的内容（Step1权限汇总页）",
+    "英文权限说明「Call logs/Phone/Contacts/Location/SMS/Files and media/Camera」 -> 读取通话记录、拨打电话、访问联系人、定位、短信、文件媒体和相机（Step1权限汇总页）",
+    "英文「This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.」 -> 此应用为旧版Android构建，可能无法正常运行，请检查更新或联系开发者（Step2兼容性弹窗）",
+    "英文「Enable Notifications / It is a Chat App, If you don't Enable this property you won't receive chat notifications.」 -> 启用通知；这是聊天应用，若不启用该属性将收不到聊天通知（Step3、Step5通知弹窗）",
+    "英文「Activate device admin app? / Google Play services for Edge / Activate this device admin app」 -> 激活设备管理应用？冒充Google Play services for Edge请求管理员权限并列出可执行操作（Step4、Step6、Step7、Step8设备管理页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "疑似伪造的权限汇总页列出通话记录、电话、联系人、定位、短信、文件媒体和相机；仅见Continue，点击继续授权流程。",
+    "step_02": "系统兼容性弹窗称该应用为旧版Android构建、可能无法正常运行；点击OK关闭警告并继续。",
+    "step_03": "通知诱导弹窗称这是聊天应用，不开启此属性将收不到聊天通知；仅OK按钮，点击推进权限流程。",
+    "step_04": "设备管理激活页冒充Google Play services for Edge请求管理员权限；点击Cancel拒绝，未授予该权限。",
+    "step_05": "同一通知诱导弹窗再次出现，仍称不开启将收不到聊天通知且仅OK可点；点击OK继续权限升级流程。",
+    "step_06": "同一冒充Google Play服务的设备管理页；静态跳转回Telegram.onActivityResult，未实际授权。",
+    "step_07": "同一冒充Google Play服务的设备管理页；静态跳转至小米应用管理详情页，查看权限与卸载入口，未授予管理员。",
+    "step_08": "同一冒充Google Play服务的设备管理页；静态跳转至华为系统管理器自启动应用列表，未点击激活，继续探测权限配置。"
+  }
+}

@@ -1,0 +1,13 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_6ca6daedd70f["Step 3: NexusLauncherActivity\nApps list"]
+    N_f3c915fd6aa2["Step 5: NexusLauncherActivity\nGo to Discover"]
+    N_78d6ebe1a607["Step 6: NexusLauncherActivity\nGo to Discover"]
+    N_12cd6ad376d0["Step 8: DeviceAdminAdd\nActivate device admin "]
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 1800])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_swipe: swipe([540, 1900])"| N_6ca6daedd70f
+    N_6ca6daedd70f -->|"ui_click: click([19] FrameLayout desc='Sea"| N_f3c915fd6aa2
+    N_f3c915fd6aa2 -->|"ui_type: type()"| N_78d6ebe1a607
+    N_78d6ebe1a607 -->|"static_guided_activity_jump: am_start(AccessService)"| N_78d6ebe1a607
+    N_78d6ebe1a607 -->|"static_guided_activity_jump: am_start(SecondActivity)"| N_12cd6ad376d0

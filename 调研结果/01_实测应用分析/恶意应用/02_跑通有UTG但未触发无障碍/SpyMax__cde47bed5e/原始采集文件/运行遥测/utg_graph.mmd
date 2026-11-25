@@ -1,0 +1,12 @@
+flowchart TD
+    N_b2718ff606a6["Step 1: ReviewPermissionsActivity\nChoose what to allow ["]
+    N_73f25777f29e["Step 2: NexusLauncherActivity\n[SPY_MAX_NAME_PATCH]"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_6b2f7c9fb0ed["Step 5: NexusLauncherActivity\nApps list"]
+    N_b2718ff606a6 -->|"ui_click: click([36] Button text='Continue"| N_73f25777f29e
+    N_73f25777f29e -->|"ui_click: click([3] Button text='OK' id=bu"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_swipe: swipe([540, 1800])"| N_6b2f7c9fb0ed
+    N_6b2f7c9fb0ed -->|"ui_click: click([19] TextView text='[SPY_M"| N_6b2f7c9fb0ed
+    N_6b2f7c9fb0ed -->|"static_guided_activity_jump: am_start(ClassGen9)"| N_6b2f7c9fb0ed
+    N_6b2f7c9fb0ed -->|"static_guided_activity_jump: am_start(ClassGen14)"| N_6b2f7c9fb0ed

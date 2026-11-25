@@ -1,0 +1,186 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_149__c585e17bdd",
+  "label": "malicious",
+  "family_or_category": "SpyMax",
+  "static_visibility": "clear",
+  "target_package": "package.name.suffix",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "4174818ac2c2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "4174818ac2c2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Void PubgHack to access",
+        "SMS",
+        "send and view SMS messages",
+        "Call logs",
+        "read and write phone call log",
+        "Contacts",
+        "access your contacts",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Camera",
+        "take pictures and record video",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0aace1671e4b",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Void PubgHack",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "9afa01fe3736",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "4174818ac2c2",
+      "to": "0aace1671e4b",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "0aace1671e4b",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "9afa01fe3736",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "9afa01fe3736",
+      "to": "9afa01fe3736",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([17] TextView text=\"Void PubgHack\" id=icon (click) center=(137,1369))"
+    },
+    {
+      "from": "9afa01fe3736",
+      "to": "9afa01fe3736",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(oxkoxccxyloozajerukgvqgjumuxqfhwnjiiuxghguaupxvjsfzrikdyqaukhfhsesapsbjtnczbqmtwqlelgpndgkstcwza1094)"
+    },
+    {
+      "from": "9afa01fe3736",
+      "to": "9afa01fe3736",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(xfcsmhyqynpchfebulknuveqofbxhosbp10874)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以“Void PubgHack”游戏外挂为名，先诱导用户审阅并放行短信、通话记录、联系人、文件、相机、麦克风、定位等敏感权限，再经旧版兼容性警告后从桌面启动；后续静态跳转仅在桌面/抽屉触发随机组件，未呈现目标界面。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Void PubgHack 访问哪些内容”（Step 1 权限审查页），以游戏外挂名义集中索取多项敏感权限。",
+    "英文 -> “此应用是为旧版 Android 构建，可能无法正常运行。请检查更新或联系开发者。”（Step 2 兼容性警告弹窗），用兼容性说明降低警惕。",
+    "英文 -> “Void PubgHack”（Step 5 应用抽屉图标/应用名），以“PUBG 外挂”命名诱导点击启动。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限页：Void PubgHack 请求短信、通话记录、联系人、文件、相机、麦克风、定位等权限；点击“继续”放行。",
+    "step_02": "旧版兼容性警告弹窗：称该应用为旧版 Android 构建、可能异常，点击“OK”关闭；通知栏见目标包空标题通知。",
+    "step_03": "桌面应用列表页：显示 Messages、Chrome、搜索等；点击“Apps list”打开抽屉查找目标，通知栏仍有目标包空通知。",
+    "step_04": "仍在桌面应用列表：显示 Messages、Chrome、搜索等；上滑打开应用抽屉定位目标，未见应用界面，通知栏空通知仍在。",
+    "step_05": "应用抽屉网格：列出日历、相机、Chrome、时钟、联系人等；点击“Void PubgHack”图标启动，通知栏空通知仍在。",
+    "step_06": "仍停留桌面应用抽屉，未见目标界面；执行静态 Activity 跳转至随机后缀包名组件，页面无变化，通知栏空通知仍在。",
+    "step_07": "仍为桌面应用抽屉，未见目标 UI；静态引导跳转至另一随机后缀包名组件，页面无可见变化，通知栏空通知仍在。",
+    "step_08": "仍为桌面应用抽屉，未出现目标界面；第三次静态跳转至随机包名组件探针，页面无变化，仅保留目标包空标题通知。"
+  }
+}

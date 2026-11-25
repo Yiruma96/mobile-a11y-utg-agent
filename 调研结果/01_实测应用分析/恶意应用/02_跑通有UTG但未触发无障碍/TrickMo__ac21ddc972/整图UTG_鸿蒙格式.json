@@ -1,0 +1,140 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_014__ac21ddc972",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "nvyfee.dcvxvm.zsakxl",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "cb51ecd299b5",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "cb51ecd299b5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "nvyfee.dcvxvm.zsakxl",
+      "abilityName": "com.example.tiramisudropper.e",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "17156061ff9f",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "nvyfee.dcvxvm.zsakxl",
+      "abilityName": "com.example.tiramisudropper.e",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "y"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "38ecdf976df4",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.google.android.packageinstaller",
+      "abilityName": "com.android.packageinstaller.PackageInstallerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "TikTok18",
+        "For your security, your phone is not allowed to install unknown apps from this source.",
+        "Cancel",
+        "Settings"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cb51ecd299b5",
+      "to": "17156061ff9f",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "17156061ff9f",
+      "to": "17156061ff9f",
+      "step": 2,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "17156061ff9f",
+      "to": "17156061ff9f",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([2] Image text=\"y\" center=(540,1156))"
+    },
+    {
+      "from": "17156061ff9f",
+      "to": "17156061ff9f",
+      "step": 4,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(b)"
+    },
+    {
+      "from": "17156061ff9f",
+      "to": "17156061ff9f",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "17156061ff9f",
+      "to": "38ecdf976df4",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(a)"
+    },
+    {
+      "from": "38ecdf976df4",
+      "to": "38ecdf976df4",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FileProvider)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__ac21ddc972",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口为 WebView 版 TikTok 开屏占位页，反复显示“y”并经静态引导跳转至 com.example.tiramisudropper 组件，随后拉起系统安装器尝试安装“TikTok18”但被“禁止未知来源安装”拦截，仅提供取消/设置；全程无应用内遮罩，通知栏持续出现 Google 备份提示。",
+  "observed_lure_rhetoric_zh": [
+    "英文通知 -> “你的数据未备份”/“立即添加备份账户”（全程通知栏，非应用内弹窗）",
+    "英文占位 -> “y”（TikTok 开屏 WebView，Step2-Step6）",
+    "英文应用名 -> “TikTok18”（系统安装器页，Step7-Step8）",
+    "英文提示 -> “为你的安全，你的手机不允许从此来源安装未知应用。”（系统安装器页，Step7-Step8）",
+    "英文按钮 -> “取消”/“设置”（系统安装器页，Step7-Step8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "WebView 显示 TikTok 开屏占位，暂未见文本，无遮罩；通知提示数据未备份；本步仅等待未点击。",
+    "step_02": "仍为 TikTok 开屏 WebView，仅见占位“y”，无遮罩；通知提示数据未备份；本步继续等待，未点击。",
+    "step_03": "TikTok 开屏 WebView 仍见“y”，无遮罩；通知持续提示数据未备份；本步点击图像“y”尝试推进假更新流程。",
+    "step_04": "同一开屏页仅见“y”，无遮罩；通知仍在；本步为静态引导跳转探针，目标为 tiramisudropper.b。",
+    "step_05": "仍停留 TikTok 开屏 WebView，仅见“y”，无遮罩；通知提示数据未备份；本步等待 WebView 加载，未点击。",
+    "step_06": "仍为开屏 WebView 占位“y”，无遮罩；通知持续；本步静态引导跳转探针指向 tiramisudropper.a。",
+    "step_07": "系统安装器页显示“TikTok18”，提示禁止从此来源安装未知应用，含取消/设置；无遮罩；本步静态跳转探针，未授权。",
+    "step_08": "仍为系统安装器拦截页，显示“TikTok18”和禁止未知来源安装提示，含取消/设置；无遮罩；本步静态跳转探针，未安装。"
+  }
+}

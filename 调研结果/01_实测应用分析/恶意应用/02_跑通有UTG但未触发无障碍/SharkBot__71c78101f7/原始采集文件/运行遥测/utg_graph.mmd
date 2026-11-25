@@ -1,0 +1,13 @@
+flowchart TD
+    N_edc33424e1da["Step 1: MainActivity\nHOME"]
+    N_b365d7382773["Step 3: MainActivity\nPermission Needed"]
+    N_c72996e9cb62["Step 4: GrantPermissionsActivity\nAllow Alfa Antivirus, "]
+    N_9e257e4fc246["Step 5: ResultAcitvity\n89"]
+    N_c413b47ae28b["Step 6: ResultAcitvity\nANTIVIRUS"]
+    N_edc33424e1da -->|"ui_wait: wait()"| N_edc33424e1da
+    N_edc33424e1da -->|"ui_click: click([15] LinearLayout (click) "| N_b365d7382773
+    N_b365d7382773 -->|"ui_click: click([3] TextView text='Grant N"| N_c72996e9cb62
+    N_c72996e9cb62 -->|"ui_click: click([4] Button text='Allow' id"| N_9e257e4fc246
+    N_9e257e4fc246 -->|"ui_wait: wait()"| N_c413b47ae28b
+    N_c413b47ae28b -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_c413b47ae28b
+    N_c413b47ae28b -->|"static_guided_activity_jump: am_start(ConstraintProxy$Battery"| N_c413b47ae28b

@@ -1,0 +1,12 @@
+flowchart TD
+    N_c0452d2f1ea5["Step 1: ReviewPermissionsActivity\nChoose what to allow m"]
+    N_9252d43ffe7d["Step 2: DeviceAdminAdd\nmedia player"]
+    N_5eb25651356b["Step 3: DeviceAdminAdd\nActivate device admin "]
+    N_f6a3588f0886["Step 4: NexusLauncherActivity\nApps list"]
+    N_c0452d2f1ea5 -->|"ui_click: click([35] Button text='Continue"| N_9252d43ffe7d
+    N_9252d43ffe7d -->|"ui_click: click([3] Button text='OK' id=bu"| N_5eb25651356b
+    N_5eb25651356b -->|"ui_click: click([22] Button text='Activate"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(C7)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(C3)"| N_f6a3588f0886

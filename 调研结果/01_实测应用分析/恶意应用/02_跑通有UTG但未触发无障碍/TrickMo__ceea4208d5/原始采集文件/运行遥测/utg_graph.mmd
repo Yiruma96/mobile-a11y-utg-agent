@@ -1,0 +1,14 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_306ba6dc2028["Step 3: NexusLauncherActivity\nApps list"]
+    N_f3c915fd6aa2["Step 4: NexusLauncherActivity\nGo to Discover"]
+    N_9f66dafb7bdf["Step 5: NexusLauncherActivity\nGo to Discover"]
+    N_47f40da9feda["Step 6: SearchNowActivity\nALL"]
+    N_25580a164fdd["Step 7: uzvrIrYAPIBstjG5q\n"]
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 1900])"| N_306ba6dc2028
+    N_306ba6dc2028 -->|"ui_click: click([20] FrameLayout desc='Sea"| N_f3c915fd6aa2
+    N_f3c915fd6aa2 -->|"ui_type: type()"| N_9f66dafb7bdf
+    N_9f66dafb7bdf -->|"ui_system_button: system_button(Enter)"| N_47f40da9feda
+    N_47f40da9feda -->|"static_guided_activity_jump: am_start(uzvrIrYAPIBstjG5q)"| N_25580a164fdd
+    N_25580a164fdd -->|"static_guided_activity_jump: am_start(mAdizUAaG8LEy)"| N_25580a164fdd

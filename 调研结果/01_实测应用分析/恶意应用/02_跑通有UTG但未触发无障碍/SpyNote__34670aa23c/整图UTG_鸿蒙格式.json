@@ -1,0 +1,128 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_038__34670aa23c",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "dtlaxmiguptaclasses.in.net",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "3038955a46ff",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "3038955a46ff",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "dtlaxmiguptaclasses.in.net",
+      "abilityName": "dtlaxmiguptaclasses.in.ycizuxlrfhxzgjtcizwmxswdjjxtfgynwvmhdqycjfrgnqsqwi2.aksnmvsovloyugmwsdtlqnfhfrcgzqsbzucrnjqmxbsuwfmqbc31",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "TG88",
+        "Emulator detected.\n this app does not support emulator devices",
+        "ok"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3038955a46ff",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"ok\" id=button1 (click) center=(540,1388))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "3038955a46ff",
+      "step": 4,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(aksnmvsovloyugmwsdtlqnfhfrcgzqsbzucrnjqmxbsuwfmqbc31)"
+    },
+    {
+      "from": "3038955a46ff",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"ok\" id=button1 (click) center=(540,1388))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(wvdnkupvnkirnkelhwzwgjqgkywspapbsjjnflbfbkdeglejfu14_CA)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(wvdnkupvnkirnkelhwzwgjqgkywspapbsjjnflbfbkdeglejfu14_RC)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyNote__34670aa23c",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用入口为混淆命名的TG88页面，启动即弹出“检测到模拟器”阻断框；点击ok后反复退回系统桌面，多次静态跳转也未恢复应用流程，未出现权限授权/拒绝提示，整体呈反模拟器、反分析特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 检测到模拟器。本应用不支持模拟器设备（Step 1/Step 5 入口阻断弹窗）",
+    "英文 -> 确定（Step 1/Step 5 弹窗唯一按钮，无取消选项）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "TG88入口弹出英文“检测到模拟器，本应用不支持模拟器设备”阻断框，仅ok无取消键；点确定未进入应用，无通知遮罩。",
+    "step_02": "系统桌面显示应用列表、日期、信息、Chrome、搜索与语音搜索；打开TG88失败仍停留桌面，无通知遮罩。",
+    "step_03": "仍在系统桌面，含应用列表、日期、信息、Chrome、搜索与语音搜索；点击“应用列表”欲定位TG88，未进入应用，无通知遮罩。",
+    "step_04": "系统桌面保持前台，含应用列表、日期、信息、Chrome、搜索与语音搜索；静态跳转混淆Activity失败，仍停留桌面，无通知遮罩。",
+    "step_05": "再次出现TG88英文“检测到模拟器，本应用不支持模拟器设备”阻断框，仅ok无取消；再点确定仍未进入应用，无通知遮罩。",
+    "step_06": "系统桌面仍在前台，含应用列表、日期、信息、Chrome、搜索与语音搜索；再试静态跳转混淆Activity失败，未回TG88，无通知遮罩。",
+    "step_07": "系统桌面重复出现，含应用列表、日期、信息、Chrome、搜索与语音搜索；静态跳转混淆Activity再失败，流程未恢复，无通知遮罩。",
+    "step_08": "系统桌面仍未变化，含应用列表、日期、信息、Chrome、搜索与语音搜索；末次静态跳转混淆Activity失败，未恢复TG88，无通知遮罩。"
+  }
+}

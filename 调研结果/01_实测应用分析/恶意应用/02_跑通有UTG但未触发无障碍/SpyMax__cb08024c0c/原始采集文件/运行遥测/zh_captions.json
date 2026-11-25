@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "前7步均停留在NexusLauncher桌面/应用列表，直接启动、按包名启动和多次静态Activity跳转均未进入目标界面；第8步才出现目标包启动闪屏，伪装为“NUBANK安全”，并用系统通知中的未本地化文案诱导点击“完成安装”，尚未出现授权/拒权界面，亦未见遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 -> 中文核心意译：NUBANK安全（Step 8 启动闪屏，伪装银行安全品牌）",
+    "英语 -> 中文核心意译：字符串（完成安装）（Step 8 通知标题，疑似未本地化占位文案）",
+    "英语 -> 中文核心意译：字符串（点击此处完成安装）（Step 8 通知正文，诱导点击完成安装）"
+  ],
+  "frame_captions": {
+    "step_01": "当前为NexusLauncher桌面/应用列表，显示应用列表、11月25日周三、Messages、Chrome、搜索、语音搜索；目标应用未在前台，直接打开主Activity未成功，无通知无遮罩。",
+    "step_02": "当前仍是NexusLauncher桌面/应用列表，含应用列表、日期、Messages、Chrome、搜索等；上次启动未生效后再按包名打开仍失败，无通知与遮罩。",
+    "step_03": "当前仍为NexusLauncher应用列表；静态Activity跳转回退到目标包名也未见目标界面，说明直接拉起未成功，页面无通知、无遮罩。",
+    "step_04": "当前仍在NexusLauncher应用列表；点击“Apps list/应用列表”以手动查找已安装目标应用，但页面未切换，仍无目标界面、通知或遮罩。",
+    "step_05": "当前仍为NexusLauncher应用列表；静态跳转至目标包costm组件仍未切换到应用界面，探针未成功，无通知与遮罩。",
+    "step_06": "当前仍为NexusLauncher应用列表；静态跳转至androidx FileProvider组件未进入目标界面，说明该跳转非有效入口，无通知与遮罩。",
+    "step_07": "当前仍为NexusLauncher应用列表；静态跳转至目标包MainActive组件仍停留在桌面，未出现应用界面，无通知与遮罩。",
+    "step_08": "当前页为目标应用启动页：闪屏显示葡语“SEGURANÇA NUBANK”（NUBANK安全），通知横幅以“String (Complete install)”和“String (Click Here to Complete installing)”诱导点击完成安装；无遮罩。"
+  }
+}

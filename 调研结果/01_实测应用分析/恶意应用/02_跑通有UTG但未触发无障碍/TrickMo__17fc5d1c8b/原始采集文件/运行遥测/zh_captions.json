@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "轨迹从系统启动器查找“Google services”应用失败后，经静态引导直接切入恶意包centtem.houe948.ov的多个空白Activity并连续跳转；全程未见可见诱导话术、通知或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "系统启动器应用列表页，含“应用列表、搜索、语音搜索”等；点击后打开应用抽屉，未见通知横幅或遮罩。",
+    "step_02": "仍为启动器应用列表页，显示11月25日周三、信息、Chrome等；上滑打开抽屉，未出现通知或浮层遮罩。",
+    "step_03": "启动器应用抽屉页列日历、相机、Chrome等常见应用；上滑滚动查找目标应用，未发现“Google服务”入口。",
+    "step_04": "同一应用抽屉页仍仅见常见应用图标；左滑尝试翻页未获新页，未出现通知、遮罩或诱导文本。",
+    "step_05": "页面仍为启动器抽屉；本步触发静态引导跳转，直接进入恶意包Activity .ojfY0f4MWzO，原页无通知/遮罩。",
+    "step_06": "进入恶意包centtem.houe948.ov的空白Activity ojfY0f4MWzO，无可见文本；随即静态跳转.dyjGgnh，无通知与遮罩。",
+    "step_07": "恶意包空白Activity ojfY0f4MWzO仍无文本和按钮；本步静态跳转至.dnCongKR186，通知与遮罩均为0。",
+    "step_08": "恶意包空白Activity继续静态跳向ConstraintProxy$Batter，无可见话术或取消键；通知、遮罩计数均为0。"
+  }
+}

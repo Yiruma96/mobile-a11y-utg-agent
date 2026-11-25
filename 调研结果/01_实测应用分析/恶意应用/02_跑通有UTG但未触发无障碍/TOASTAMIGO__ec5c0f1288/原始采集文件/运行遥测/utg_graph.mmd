@@ -1,0 +1,9 @@
+flowchart TD
+    N_6a3823d70131["Step 1: SetPasswordActivity\nSet password"]
+    N_6a3823d70131 -->|"ui_click: click([2] Button text='1' id=num"| N_6a3823d70131
+    N_6a3823d70131 -->|"ui_click: click([3] Button text='2' id=num"| N_6a3823d70131
+    N_6a3823d70131 -->|"static_guided_activity_jump: am_start(MyAccessibilityService)"| N_6a3823d70131
+    N_6a3823d70131 -->|"ui_click: click([4] Button text='3' id=num"| N_6a3823d70131
+    N_6a3823d70131 -->|"static_guided_activity_jump: am_start(ApplicationListActivity"| N_6a3823d70131
+    N_6a3823d70131 -->|"static_guided_activity_jump: am_start(ApplicationListActivity"| N_6a3823d70131
+    N_6a3823d70131 -->|"static_guided_activity_jump: am_start(UninstallIntentReceiver"| N_6a3823d70131

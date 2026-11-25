@@ -1,0 +1,160 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_013__1d2394e450",
+  "label": "malicious",
+  "family_or_category": "SpyAgent",
+  "static_visibility": "clear",
+  "target_package": "com.system.android.updater",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "d2eb91bc1864",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "d2eb91bc1864",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Google Play Service to access",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "214cddba66dc",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play Service",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d2eb91bc1864",
+      "to": "214cddba66dc",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([31] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "214cddba66dc",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(fourre)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PhonecallReceiver)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(fivere)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyAgent__1d2394e450",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以“Google Play Service”名义，先在系统权限页诱导一次性授予短信、通讯录、通话记录、电话、麦克风、位置等敏感权限；随后隐藏图标退居后台，并通过兼容性弹窗和多个混淆组件（含 PhonecallReceiver）静默维持或拉起，呈现典型 SpyAgent 窃取链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Google Play 服务访问的内容”（Step 1 系统权限页标题）",
+    "英文 -> “发送和查看短信”“访问通讯录”“读写通话记录”“拨打电话和管理通话”“录制音频”“定位”等权限说明（Step 1 权限列表）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常工作。请检查更新或联系开发者。”（Step 2 兼容性弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限页以“Google Play 服务”名义索取短信、通讯录、通话记录、电话、麦克风、定位等权限；点击 Continue 继续整体授权。",
+    "step_02": "桌面弹出兼容性警告，称“Google Play 服务”为旧版 Android 构建、可能异常；点击 OK 关闭弹窗，继续后续组件探针。",
+    "step_03": "回到桌面，显示应用列表、天气与常用图标；应用未主动弹出辅助功能页，仅短暂等待观察后台服务是否拉起设置，无通知/遮罩。",
+    "step_04": "仍在桌面，应用已隐藏启动图标并退居后台；探针按包名重新拉起应用以继续流程，界面无可见恶意弹窗或通知。",
+    "step_05": "桌面无变化，流程以静态引导跳转至混淆组件 .four.fourre；未见新界面、通知或遮罩，属于后台/隐藏组件探针。",
+    "step_06": "桌面保持原样，静态跳转至 .seven.PhonecallReceiver；该组件名指向通话监听，但本页未显示可见界面，也无通知横幅。",
+    "step_07": "仍停留在桌面，继续静态跳转至混淆组件 .five.fivere；无可见页面、通知或悬浮遮罩，疑似后台功能入口探针。",
+    "step_08": "桌面无可见变化，最后跳转至 .twenty.twenty 混淆组件；未出现新界面或通知，显示应用以隐藏组件维持后台行为。"
+  }
+}

@@ -1,0 +1,8 @@
+flowchart TD
+    N_4693e3c91b35["Step 1: ReviewPermissionsActivity\nChoose what to allow U"]
+    N_5cb529087b9d["Step 2: MainActivity\nUpdate Service"]
+    N_a494da2e60fa["Step 3: MainActivity\nYou must enable Access"]
+    N_b212d7f38d18["Step 4: Activity_Unknown\nBack"]
+    N_4693e3c91b35 -->|"ui_click: click([31] Button text='Continue"| N_5cb529087b9d
+    N_5cb529087b9d -->|"ui_click: click([3] Button text='OK' id=bu"| N_a494da2e60fa
+    N_a494da2e60fa -->|"ui_click: click([2] Button text='OKAY' id="| N_b212d7f38d18

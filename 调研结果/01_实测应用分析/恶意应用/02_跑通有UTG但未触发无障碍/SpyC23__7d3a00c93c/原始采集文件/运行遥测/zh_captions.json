@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "该应用以Telegram类聊天为外壳，先展示伪造的权限汇总页并诱导开启通知，随后反复弹出设备管理激活并冒充Google Play服务；审核中取消管理员授权，后续仅静态跳转至小米/华为权限管理页，未完成敏感授权。",
+  "observed_lure_rhetoric_zh": [
+    "英文「Choose what to allow Google Play services for… to access」 -> 选择允许Google Play服务访问的内容（Step1权限汇总页）",
+    "英文权限说明「Call logs/Phone/Contacts/Location/SMS/Files and media/Camera」 -> 读取通话记录、拨打电话、访问联系人、定位、短信、文件媒体和相机（Step1权限汇总页）",
+    "英文「This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.」 -> 此应用为旧版Android构建，可能无法正常运行，请检查更新或联系开发者（Step2兼容性弹窗）",
+    "英文「Enable Notifications / It is a Chat App, If you don't Enable this property you won't receive chat notifications.」 -> 启用通知；这是聊天应用，若不启用该属性将收不到聊天通知（Step3、Step5通知弹窗）",
+    "英文「Activate device admin app? / Google Play services for Edge / Activate this device admin app」 -> 激活设备管理应用？冒充Google Play services for Edge请求管理员权限并列出可执行操作（Step4、Step6、Step7、Step8设备管理页）"
+  ],
+  "frame_captions": {
+    "step_01": "疑似伪造的权限汇总页列出通话记录、电话、联系人、定位、短信、文件媒体和相机；仅见Continue，点击继续授权流程。",
+    "step_02": "系统兼容性弹窗称该应用为旧版Android构建、可能无法正常运行；点击OK关闭警告并继续。",
+    "step_03": "通知诱导弹窗称这是聊天应用，不开启此属性将收不到聊天通知；仅OK按钮，点击推进权限流程。",
+    "step_04": "设备管理激活页冒充Google Play services for Edge请求管理员权限；点击Cancel拒绝，未授予该权限。",
+    "step_05": "同一通知诱导弹窗再次出现，仍称不开启将收不到聊天通知且仅OK可点；点击OK继续权限升级流程。",
+    "step_06": "同一冒充Google Play服务的设备管理页；静态跳转回Telegram.onActivityResult，未实际授权。",
+    "step_07": "同一冒充Google Play服务的设备管理页；静态跳转至小米应用管理详情页，查看权限与卸载入口，未授予管理员。",
+    "step_08": "同一冒充Google Play服务的设备管理页；静态跳转至华为系统管理器自启动应用列表，未点击激活，继续探测权限配置。"
+  }
+}

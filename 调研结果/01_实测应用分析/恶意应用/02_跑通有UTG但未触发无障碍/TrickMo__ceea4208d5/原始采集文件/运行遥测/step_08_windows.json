@@ -1,0 +1,36 @@
+{
+  "timestamp": 1795594536.610621,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{d0599d6 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{df4e26a u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{a897c04 u0 nilheart.ptur744.lens/nilheart.ptur744.lens.uzvrIrYAPIBstjG5q}:",
+      "mOwnerUid": "mOwnerUid=10389 showForAllUsers=false package=nilheart.ptur744.lens appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #10 Window{4c7724d u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=false package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(2767x2280) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103030e",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #11 Window{6809535 u0 nilheart.ptur744.lens}:",
+      "mOwnerUid": "mOwnerUid=10389 showForAllUsers=false package=nilheart.ptur744.lens appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) gr=FILL CENTER sim={adjust=pan forwardNavigation} ty=PRESENTATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": []
+}

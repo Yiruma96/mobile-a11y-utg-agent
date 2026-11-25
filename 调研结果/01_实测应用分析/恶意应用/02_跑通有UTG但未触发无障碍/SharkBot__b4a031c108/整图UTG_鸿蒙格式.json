@@ -1,0 +1,179 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_079__b4a031c108",
+  "label": "malicious",
+  "family_or_category": "SharkBot",
+  "static_visibility": "clear",
+  "target_package": "com.abbondioendrizzi.tools.supercleaner",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "5db465b4ed20",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "5db465b4ed20",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "HOME",
+        "46",
+        "%",
+        "Memory used",
+        "7",
+        "Storage used",
+        "Junk files",
+        "CPU Cooler",
+        "Phone boost",
+        "Antivirus",
+        "Power Saving",
+        "Game Booster",
+        "Home",
+        "Toolbox",
+        "Personal"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "aebc4b4f1ae4",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission Needed",
+        "Grant App Usage Permission for a comprehensive phone scan effect",
+        "Grant Now"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "1c42dcc4ef33",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.guildPermission.GuildPermissionActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Find Atom Clean-Booster, Antivirus and grant usage Access permission",
+        "Atom Clean-Booster, Antivirus"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "5ddb8fcb4dbc",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$UsageAccessSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Usage access",
+        "Search",
+        "More options",
+        "Atom Clean-Booster, Antivirus",
+        "Not allowed",
+        "Digital Wellbeing",
+        "Allowed",
+        "Google",
+        "Google Play services"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5db465b4ed20",
+      "to": "5db465b4ed20",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "5db465b4ed20",
+      "to": "aebc4b4f1ae4",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] LinearLayout (click) center=(180,1120))"
+    },
+    {
+      "from": "aebc4b4f1ae4",
+      "to": "1c42dcc4ef33",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Grant Now\" id=tv_action_1 (click) center=(540,1576))"
+    },
+    {
+      "from": "1c42dcc4ef33",
+      "to": "5ddb8fcb4dbc",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] ImageView id=ic_close (click) center=(1008,1790))"
+    },
+    {
+      "from": "5ddb8fcb4dbc",
+      "to": "5db465b4ed20",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "5db465b4ed20",
+      "to": "5db465b4ed20",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GuildPermissionActivity)"
+    },
+    {
+      "from": "5db465b4ed20",
+      "to": "5db465b4ed20",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ConstraintProxy$BatteryNotLowProxy)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SharkBot__b4a031c108",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口为伪装手机清理/杀毒的 MainActivity，展示伪造内存、存储与垃圾数据；点击 Junk files 后以“全面扫描效果”诱导授予使用情况权限，经 GuildPermissionActivity 假引导卡跳转系统 Usage access 页，返回后继续静态探测 GuildPermission、WorkManager 代理与 WatchmenReceiver，呈现 SharkBot 类权限滥用与保活/广播探测特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 需要权限（Step 3 权限弹窗）",
+    "英语 -> 授予应用使用情况权限以获得全面的手机扫描效果（Step 3 权限弹窗）",
+    "英语 -> 立即授予（Step 3 权限弹窗按钮）",
+    "英语 -> 找到 Atom Clean-Booster, Antivirus 并授予使用情况访问权限（Step 4 GuildPermissionActivity 假引导卡）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "MainActivity 首页仪表盘，显示伪造内存46%、存储7%及清理、加速、杀毒入口；本步等待冷启动权限弹窗，无遮罩，通知横幅标题/正文为空。",
+    "step_02": "仍在首页仪表盘，伪造内存46%、存储7%与清理/加速/杀毒入口；因权限弹窗未出现，本步点击 Junk files 触发扫描入口，无遮罩，空通知横幅。",
+    "step_03": "弹出“Permission Needed”权限弹窗，称授予使用情况权限可获全面扫描效果；本步点击“Grant Now”，无取消键，通知横幅空。",
+    "step_04": "GuildPermissionActivity 假引导卡，要求找到 Atom Clean-Booster 并授予使用情况访问权限；本步点击右上关闭图标以露出底层系统设置页，无遮罩，通知横幅空。",
+    "step_05": "系统 Usage access 页，列表显示 Atom Clean-Booster, Antivirus 为“Not allowed”，Digital Wellbeing/Google 等为“Allowed”；本步按返回键回应用，通知横幅仍为空。",
+    "step_06": "回到首页，仍显示伪造内存46%、存储7%及清理/加速/杀毒入口；本步静态跳转至 GuildPermissionActivity，未出现权限弹窗，通知横幅空。",
+    "step_07": "仍为 MainActivity 首页，显示伪造内存46%、存储7%与功能入口；本步静态跳转目标为 WorkManager 的 ConstraintProxy$Battery 代理，属后台任务探测，无遮罩，通知横幅空。",
+    "step_08": "仍为 MainActivity 首页，显示伪造内存46%、存储7%及清理/加速/杀毒入口；本步静态跳转至 WatchmenReceiver 广播接收器，属保活/监听探测，无遮罩，通知横幅空。"
+  }
+}

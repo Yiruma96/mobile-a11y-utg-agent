@@ -1,0 +1,139 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_178__2366a679bf",
+  "label": "malicious",
+  "family_or_category": "TOASTAMIGO",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.agomi.applocker",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "02b12fc993ec",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MediaActivity)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "02b12fc993ec",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "02b12fc993ec",
+      "to": "02b12fc993ec",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([17] TextView text=\"Smart AppLocker\" id=icon (click) center=(137,1369))"
+    },
+    {
+      "from": "02b12fc993ec",
+      "to": "02b12fc993ec",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MyAccessibilityServiceTmp)"
+    },
+    {
+      "from": "02b12fc993ec",
+      "to": "02b12fc993ec",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ApplicationListActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TOASTAMIGO__2366a679bf",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "动态链路全程停留在 Nexus 启动器或应用抽屉：多次尝试启动“Smart AppLocker”，并通过静态引导跳转至无障碍服务、应用列表和 Stub 组件，均未成功进入真实界面；未出现通知、遮罩或授权弹窗，仅暴露伪装成安全工具的入口名称。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 智能应用锁（Step 5 应用抽屉图标，疑似以安全工具名义诱导点击）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Nexus启动器主屏，含应用列表、周三11月25日、信息、Chrome、搜索、语音搜索；按包名直接启动目标未生效，仍停留桌面。",
+    "step_02": "仍为Nexus启动器主屏，显示应用列表与常用图标；点击“Apps list（应用列表）”尝试打开抽屉未奏效，页面无变化。",
+    "step_03": "同一启动器主屏；静态跳转至MediaActivity无障碍页的探针失败，未离开桌面，无新界面、通知或遮罩。",
+    "step_04": "仍在Nexus主屏；从底部上滑尝试拉起应用抽屉，但本帧仍显示原桌面，未见目标应用界面或提示。",
+    "step_05": "应用抽屉已展开，显示日历、相机、Chrome、时钟等；点击“Smart AppLocker（智能应用锁）”图标尝试启动。",
+    "step_06": "应用抽屉仍展开；静态跳转至MyAccessibilityServiceTmp无障碍服务探针失败，仍停留启动器，无授权弹窗。",
+    "step_07": "仍为应用抽屉；再静态跳转ApplicationListActivity（应用列表页）失败，未见应用锁列表界面或遮罩。",
+    "step_08": "应用抽屉仍展开；静态跳转Stub01占位组件探针失败，全程未进入com.agomi.applocker真实页面，无通知横幅。"
+  }
+}

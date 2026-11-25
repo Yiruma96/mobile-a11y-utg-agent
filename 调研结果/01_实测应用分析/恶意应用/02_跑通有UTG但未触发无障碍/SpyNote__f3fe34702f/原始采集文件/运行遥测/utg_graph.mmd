@@ -1,0 +1,12 @@
+flowchart TD
+    N_c0452d2f1ea5["Step 1: ReviewPermissionsActivity\nChoose what to allow m"]
+    N_58547a2e6105["Step 2: NexusLauncherActivity\nmedia player"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_306ba6dc2028["Step 5: NexusLauncherActivity\nApps list"]
+    N_c0452d2f1ea5 -->|"ui_click: click([35] Button text='Continue"| N_58547a2e6105
+    N_58547a2e6105 -->|"ui_click: click([3] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 1800])"| N_306ba6dc2028
+    N_306ba6dc2028 -->|"ui_click: click([12] TextView text='media "| N_306ba6dc2028
+    N_306ba6dc2028 -->|"static_guided_activity_jump: am_start(C7)"| N_306ba6dc2028
+    N_306ba6dc2028 -->|"static_guided_activity_jump: am_start(C3)"| N_306ba6dc2028

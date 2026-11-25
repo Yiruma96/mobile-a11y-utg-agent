@@ -1,0 +1,26 @@
+{
+  "app_chain_summary_zh": "该样本伪装为“media player”，入口先进入系统权限审查并请求相机、文件媒体、通话记录、联系人、麦克风、短信、电话等敏感权限；点击Continue后因旧版Android警告退回桌面，后续多次重launch和静态跳转.C7/.C3/.C8均未出现可见业务页，未观察到拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow media player to access -> 选择允许“媒体播放器”访问哪些内容（Step 1 权限审查页）",
+    "Camera / take pictures and record video -> 相机/拍照和录像（Step 1 权限审查页）",
+    "Files and media / access photos, media, and files on your device -> 文件与媒体/访问设备上的照片、媒体和文件（Step 1 权限审查页）",
+    "Call logs / read and write phone call log -> 通话记录/读写通话记录（Step 1 权限审查页）",
+    "Contacts / access your contacts -> 联系人/访问联系人（Step 1 权限审查页）",
+    "Microphone / record audio -> 麦克风/录制音频（Step 1 权限审查页）",
+    "SMS / send and view SMS messages -> 短信/发送和查看短信（Step 1 权限审查页）",
+    "Phone -> 电话（Step 1 权限审查页）",
+    "media player -> 媒体播放器（Step 2 与 Step 5 桌面/应用抽屉，应用显示名伪装）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 此应用针对旧版Android构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容性警告）",
+    "String (Files) / String (com.google.android.documentsui) -> 字符串(文件)/字符串(com.google.android.documentsui)（Step 2-8 目标应用通知横幅，疑似调试或伪装文本）"
+  ],
+  "frame_captions": {
+    "step_01": "权限审查页以“media player”名义请求相机、文件媒体、通话记录、联系人、麦克风、短信、电话；无横幅/遮罩，点击Continue。",
+    "step_02": "桌面弹出旧版Android兼容性警告，称应用可能无法正常运行；无遮罩，点击OK关闭，目标应用通知横幅仍在。",
+    "step_03": "桌面首页含Apps list、Messages、Chrome、Search等；目标应用通知横幅仍在。点击Apps list但未打开抽屉。",
+    "step_04": "仍在桌面首页；上滑尝试打开应用抽屉，界面文本未变化，目标应用通知横幅持续显示。",
+    "step_05": "应用抽屉展开，含Calendar、Camera、Chrome等及“media player”图标；本步点击该图标重launch目标应用。",
+    "step_06": "应用抽屉界面不变，未见目标业务页；执行静态Activity跳转至.C7，目标应用通知横幅仍显示。",
+    "step_07": "应用抽屉界面维持不变；执行静态Activity跳转至.C3，仍未出现可见业务界面，通知横幅持续。",
+    "step_08": "应用抽屉界面维持原样；执行静态Activity跳转至.C8，页面无可见变化，通知横幅仍在。"
+  }
+}

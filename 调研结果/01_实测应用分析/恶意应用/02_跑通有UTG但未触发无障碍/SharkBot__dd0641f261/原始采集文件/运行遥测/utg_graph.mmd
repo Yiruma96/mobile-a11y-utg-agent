@@ -1,0 +1,13 @@
+flowchart TD
+    N_beb705da00f7["Step 1: MainActivity\nHOME"]
+    N_0d1606469991["Step 3: MainActivity\nPermission Needed"]
+    N_c51bd6ab40f5["Step 4: GrantPermissionsActivity\nAllow Antivirus, Super"]
+    N_a20f07ddc4c2["Step 5: AntivirusActivity\n89"]
+    N_23ebc54471c3["Step 6: ResultAcitvity\nANTIVIRUS"]
+    N_beb705da00f7 -->|"ui_wait: wait()"| N_beb705da00f7
+    N_beb705da00f7 -->|"ui_click: click([15] LinearLayout (click) "| N_0d1606469991
+    N_0d1606469991 -->|"ui_click: click([3] TextView text='Grant N"| N_c51bd6ab40f5
+    N_c51bd6ab40f5 -->|"ui_click: click([4] Button text='Allow' id"| N_a20f07ddc4c2
+    N_a20f07ddc4c2 -->|"ui_click: click([16] TextView text='RESOLV"| N_23ebc54471c3
+    N_23ebc54471c3 -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_23ebc54471c3
+    N_23ebc54471c3 -->|"static_guided_activity_jump: am_start(SplashActivity)"| N_23ebc54471c3

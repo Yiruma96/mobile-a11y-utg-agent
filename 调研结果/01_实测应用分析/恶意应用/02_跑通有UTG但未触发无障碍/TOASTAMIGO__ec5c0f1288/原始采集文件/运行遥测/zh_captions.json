@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用首次启动进入 SetPasswordActivity，要求设置数字密码；随后通过静态探针依次跳转至无障碍服务 MyAccessibilityService、应用锁应用列表 ApplicationListActivity、卸载广播 UninstallIntentReceiver 与安装广播 PackageInstallReceiver。该链路以“应用锁”为壳，表现出获取无障碍、应用列表及安装卸载感知能力的高风险特征，且页面未见取消或拒绝入口。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “设置密码”（SetPasswordActivity 首次启动密码设置页）"
+  ],
+  "frame_captions": {
+    "step_01": "当前为 SetPasswordActivity 数字密码设置页，英文“Set password”意为设置密码；本步点击“1”输入首位，未见通知横幅或遮罩。",
+    "step_02": "仍在 SetPasswordActivity 密码设置页，标题“Set password”即设置密码；本步点击“2”继续录入 PIN，无通知与遮罩。",
+    "step_03": "同一密码设置页，标题意为“设置密码”；本步为静态探针跳转至 MyAccessibilityService，界面未变，未见授权弹窗或通知。",
+    "step_04": "仍在 SetPasswordActivity 密码页，英文标题意为设置密码；本步点击“3”继续填入密码点，无横幅、遮罩或取消入口。",
+    "step_05": "密码设置页标题“Set password”意为设置密码；本步静态跳转探针指向 ApplicationListActivity 应用列表，界面仍停留原页。",
+    "step_06": "仍为 SetPasswordActivity 密码页，标题意为设置密码；本步再次静态跳转至应用列表 ApplicationListActivity，无通知或遮罩。",
+    "step_07": "密码设置页标题意为“设置密码”；本步静态探针跳转至 UninstallIntentReceiver 卸载广播接收器，界面未变、无授权提示。",
+    "step_08": "同一 SetPasswordActivity 密码页，标题意为设置密码；本步静态探针跳转至 PackageInstallReceiver 安装广播接收器，无通知/遮罩。"
+  }
+}

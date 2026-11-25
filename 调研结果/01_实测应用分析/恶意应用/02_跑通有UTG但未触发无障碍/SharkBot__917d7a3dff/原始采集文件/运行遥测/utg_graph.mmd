@@ -1,0 +1,11 @@
+flowchart TD
+    N_29f75eada51b["Step 1: MainActivity\nHOME"]
+    N_8d3c0389da50["Step 3: MainActivity\nTOOLBOX"]
+    N_f6a3588f0886["Step 6: NexusLauncherActivity\nApps list"]
+    N_29f75eada51b -->|"ui_wait: wait()"| N_29f75eada51b
+    N_29f75eada51b -->|"ui_click: click([23] FrameLayout desc='Too"| N_8d3c0389da50
+    N_8d3c0389da50 -->|"ui_click: click([11] FrameLayout desc='Hom"| N_29f75eada51b
+    N_29f75eada51b -->|"ui_open: open()"| N_29f75eada51b
+    N_29f75eada51b -->|"ui_system_button: system_button(Home)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(ConstraintProxy$Battery"| N_f6a3588f0886

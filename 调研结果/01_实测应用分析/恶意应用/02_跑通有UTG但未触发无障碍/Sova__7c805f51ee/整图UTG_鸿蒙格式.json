@@ -1,0 +1,64 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_128__7c805f51ee",
+  "label": "malicious",
+  "family_or_category": "Sova",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.bean.cousin",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "cab688598a78",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "cab688598a78",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.bean.cousin",
+      "abilityName": "com.devapprove.a.ru.news.ui.AccessibilityGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Chrome",
+        "1. Open the Accessibility settings",
+        "2. Select Enable Accessibility Service",
+        "3. Slide the switch to enable",
+        "OK"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cab688598a78",
+      "to": "cab688598a78",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([5] TextView text=\"OK\" id=ok_button (click) center=(540,1296))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Sova__7c805f51ee",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用入口即弹出仿Chrome的无障碍引导弹窗，并以通知横幅催促“为Chrome启用访问”，点击OK诱导跳转系统无障碍设置；流程在Chrome开关关闭时终止，未实际授权，拒权路径未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “Chrome”（第1/2步引导弹窗，冒充浏览器身份）",
+    "英文 -> “1. 打开无障碍设置；2. 选择启用无障碍服务；3. 滑动开关以启用”（第1/2步引导弹窗，分步诱导授权）",
+    "英文 -> “OK”（第1/2步引导弹窗，仅确认键，无取消键）",
+    "英文通知 -> 标题“更新应用访问权限”、正文“为‘Chrome’启用访问权限”（第1/2步通知横幅，催促开启无障碍）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用弹出仿Chrome无障碍引导，英文三步要求打开设置并启用服务；通知称“为Chrome启用访问”，点OK转向系统设置，无取消键。",
+    "step_02": "本步仍显示同一仿Chrome引导，通知继续催促为Chrome开启访问；探针在系统无障碍设置Chrome开关关闭时终止，未完成授权。"
+  }
+}

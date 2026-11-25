@@ -1,0 +1,214 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_006__71c78101f7",
+  "label": "malicious",
+  "family_or_category": "SharkBot",
+  "static_visibility": "clear",
+  "target_package": "com.pagnotto28.sellsourcecode.alpha",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "edc33424e1da",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "edc33424e1da",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.pagnotto28.sellsourcecode.alpha",
+      "abilityName": "com.pagnotto28.sellsourcecode.alpha.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "HOME",
+        "41",
+        "%",
+        "Memory used",
+        "7",
+        "Storage used",
+        "Junk files",
+        "CPU Cooler",
+        "Phone boost",
+        "Antivirus",
+        "Power Saving",
+        "Game Booster",
+        "Home",
+        "Toolbox",
+        "Personal"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b365d7382773",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.pagnotto28.sellsourcecode.alpha",
+      "abilityName": "com.pagnotto28.sellsourcecode.alpha.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission Needed",
+        "Grant access to the external storage memory in the device",
+        "Grant Now"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "c72996e9cb62",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Alfa Antivirus, Cleaner to access photos and media on your device?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "9e257e4fc246",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.pagnotto28.sellsourcecode.alpha",
+      "abilityName": "com.pagnotto28.sellsourcecode.alpha.screen.result.ResultAcitvity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "89",
+        "%",
+        "Safety Scanning",
+        "com.google.android.googlequicksearchbox",
+        "SECURITY",
+        "In Danger",
+        "virus app",
+        "The app could cause multiple issues like files and system damages or creates backdoor",
+        "CHECK",
+        "dangerous app",
+        "Check out apps that have permissions may harm your device",
+        "SKIP",
+        "RESOLVE ALL"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "c413b47ae28b",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.pagnotto28.sellsourcecode.alpha",
+      "abilityName": "com.pagnotto28.sellsourcecode.alpha.screen.result.ResultAcitvity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ANTIVIRUS",
+        "SAFE! ALL RISKS ARE RESOLVED",
+        "JUNK FILES",
+        "Delete unnecessary data, cache files, redundancy, ads",
+        "CLEAN",
+        "CPU COOLER",
+        "Reduce device temperature to save battery",
+        "COOLING",
+        "PHONE BOOST",
+        "Improve performance, free up memory",
+        "BOOST",
+        "POWER SAVING",
+        "Stop unused apps to save battery",
+        "SAVE NOW"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "edc33424e1da",
+      "to": "edc33424e1da",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "edc33424e1da",
+      "to": "b365d7382773",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([15] LinearLayout (click) center=(180,1204))"
+    },
+    {
+      "from": "b365d7382773",
+      "to": "c72996e9cb62",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Grant Now\" id=tv_action_1 (click) center=(540,1576))"
+    },
+    {
+      "from": "c72996e9cb62",
+      "to": "9e257e4fc246",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1247))"
+    },
+    {
+      "from": "9e257e4fc246",
+      "to": "c413b47ae28b",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "c413b47ae28b",
+      "to": "c413b47ae28b",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GuildPermissionActivity)"
+    },
+    {
+      "from": "c413b47ae28b",
+      "to": "c413b47ae28b",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ConstraintProxy$BatteryNotLowProxy)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SharkBot__71c78101f7",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口为仿清理/杀毒主页，先以“Antivirus”磁贴和“Grant Now”诱导外部存储权限，再跳系统照片媒体授权；随后进入ResultActivity伪造89%扫描并将Google搜索组件标为危险病毒，引导CHECK/RESOLVE ALL，最终展示“风险已解决”清理加速功能页并静态跳转内部/系统组件。整条观测链路无拒权分支。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “需要权限 / 授予访问设备外部存储 / 立即授予”（Step 3 权限诱导框）",
+    "英文 -> “允许 Alfa Antivirus, Cleaner 访问设备上的照片和媒体？”（Step 4 系统授权页）",
+    "英文 -> “安全 / 处于危险 / 病毒应用 / 该应用可能导致文件与系统损坏或创建后门”（Step 5 仿扫描结果页）",
+    "英文 -> “危险应用 / 检查可能危害设备的授权应用”（Step 5 仿扫描结果页）",
+    "英文 -> “安全！所有风险已解决”（Step 6-8 结果页）",
+    "英文 -> “删除不必要数据、缓存、冗余和广告”（Step 6-8 JUNK FILES 功能说明）",
+    "英文 -> “降低设备温度以省电 / 提升性能释放内存 / 停止未用应用以省电”（Step 6-8 功能磁贴说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "仿清理工具主页：显示内存41%、存储7%及加速/杀毒入口；等待原生权限弹窗，无遮罩，通知横幅标题为空。",
+    "step_02": "仍在清理主页，点击“Antivirus/杀毒”磁贴，意图触发受控存储权限；无遮罩，通知横幅为空。",
+    "step_03": "弹出“需要权限”诱导框，声称授予外部存储访问，点“Grant Now/立即授予”；仅见授予钮，无遮罩。",
+    "step_04": "系统授权页：询问是否允许Alfa Antivirus, Cleaner访问照片和媒体，点“Allow/允许”；通知为空，无遮罩。",
+    "step_05": "仿扫描页：89%安全检查，将Google搜索组件标“In Danger/危险病毒应用”，诱导CHECK/RESOLVE ALL；无遮罩，通知空。",
+    "step_06": "结果页转为“SAFE! ALL RISKS ARE RESOLVED/风险已解决”，列出清理、降温、加速、省电入口；静态跳转权限引导，无遮罩。",
+    "step_07": "界面仍为“风险已解决”清理功能页；探针静态跳转至WorkManager电池约束代理，无可见变化，无遮罩。",
+    "step_08": "仍停留“风险已解决”功能页；探针静态跳转至applock的WatchmenReceiver，界面无变化，无遮罩。"
+  }
+}

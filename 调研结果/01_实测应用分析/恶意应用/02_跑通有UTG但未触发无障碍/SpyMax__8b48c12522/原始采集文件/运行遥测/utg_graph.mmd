@@ -1,0 +1,13 @@
+flowchart TD
+    N_3449531f1a3a["Step 1: ReviewPermissionsActivity\nChoose what to allow c"]
+    N_b8b91bda6c6b["Step 2: NexusLauncherActivity\ncorona live 1.1"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_e062c9256f9c["Step 4: NexusLauncherActivity\nSelect text and images"]
+    N_9045cd488e7c["Step 5: NexusLauncherActivity\nApps list"]
+    N_3449531f1a3a -->|"ui_click: click([35] Button text='Continue"| N_b8b91bda6c6b
+    N_b8b91bda6c6b -->|"ui_click: click([3] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([890, 2209])"| N_e062c9256f9c
+    N_e062c9256f9c -->|"ui_click: click([2] ImageView desc='Close'"| N_9045cd488e7c
+    N_9045cd488e7c -->|"ui_click: click([540, 1860])"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(dofnwdaxsirxggzmbgcofno"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(xixwfcyemxe41914)"| N_f6a3588f0886

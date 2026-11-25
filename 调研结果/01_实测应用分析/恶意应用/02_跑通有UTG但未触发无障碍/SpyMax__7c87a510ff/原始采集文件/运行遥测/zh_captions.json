@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "该应用在系统权限审批页集中请求定位、联系人、通话记录、电话、文件媒体、短信、相机等敏感权限并点Continue，随后反复从桌面重启目标应用、进入应用信息页后停留探针；核心特征为过度权限索取与伪装成Drive的通知，未观察到明确授权或拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow AppName to access -> 选择允许 AppName 访问哪些权限（Step 1 权限审批页）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容警告）",
+    "Your data isn’t backed up / Add a backup account now -> 你的数据未备份/现在添加备份账户（系统通知，多页持续）",
+    "Drive / com.google.android.apps.docs -> 伪装成 Drive 的通知（目标应用发出，多页持续）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审批页，集中请求定位、联系人、通话记录、电话、文件媒体、短信、相机权限；无遮罩，点Continue同意。",
+    "step_02": "桌面弹出旧版Android兼容警告，称应用可能无法正常运行，建议检查更新或联系开发者；无遮罩，点OK关闭，通知栏见伪装Drive通知。",
+    "step_03": "桌面主页显示周三11月25日及Messages、Chrome、Search等；点击Apps list未打开抽屉，通知栏有未备份及伪装Drive通知。",
+    "step_04": "仍在桌面主页，Apps list等可见；上滑尝试展开应用抽屉，无遮罩，通知栏持续显示未备份与伪装Drive通知。",
+    "step_05": "应用抽屉展开，列出日历、相机、Chrome、时钟、联系人、Drive等；点击AppName图标重启目标应用，无遮罩，通知栏同上。",
+    "step_06": "系统应用信息页，显示AppName、卸载/强行停止及多项敏感权限清单；无遮罩，按返回，通知栏持续备份与伪装Drive通知。",
+    "step_07": "返回应用抽屉，AppName与日历、相机等并列；再次点击AppName图标尝试重启，通知栏未备份及伪装Drive通知仍在，无遮罩。",
+    "step_08": "再次进入AppName应用信息页，重复显示卸载/强行停止及敏感权限清单；无遮罩，操作为按包名直接拉起目标应用。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留AppName应用信息页，未见文字控件；无遮罩，通知栏持续备份提示与伪装Drive通知。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为AppName应用信息页且无可见文字；无遮罩，系统未备份通知和伪装Drive通知持续存在。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_030__47bb7f855c",
+  "label": "malicious",
+  "family_or_category": "Teabot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.nnawozvvi.pamwhbawm",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "86aa5a1c4358",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "86aa5a1c4358",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.nnawozvvi.pamwhbawm",
+      "abilityName": "com.nnawozvvi.pamwhbawm.util.InioawndOIADNwaiond",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "QR Code Scanner: Add-On"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用启动后以“QR Code Scanner: Add-On”附加组件外观进入，随即转向系统无障碍设置页索取启用无障碍权限；探针未做拒权测试，最终以终止结束。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “二维码扫描器：附加组件”（启动页，伪装为工具类附加功能）",
+    "英文 -> “You need ……”（系统无障碍设置页，截断的启用无障碍引导文案）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "启动页显示“QR Code Scanner: Add-On（二维码扫描器：附加组件）”，无通知横幅与遮罩；探针记录其跳转系统无障碍设置后终止。"
+  }
+}

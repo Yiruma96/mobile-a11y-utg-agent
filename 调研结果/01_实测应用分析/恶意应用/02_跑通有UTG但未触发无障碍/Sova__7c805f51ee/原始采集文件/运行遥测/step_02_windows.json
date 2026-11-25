@@ -1,0 +1,53 @@
+{
+  "timestamp": 1795582633.625543,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{d0599d6 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #2 Window{9ba2ce0 u0 NotificationShade}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=resize} layoutInDisplayCutoutMode=always ty=2040 fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{df4e26a u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{d069242 u0 com.bean.cousin/com.devapprove.a.ru.news.ui.AccessibilityGuideActivity}:",
+      "mOwnerUid": "mOwnerUid=10218 showForAllUsers=false package=com.bean.cousin appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION fmt=TRANSLUCENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{f57c3fc u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #10 Window{4c7724d u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "com.bean.cousin",
+      "title": "String (Update app accesses)",
+      "text": "String (Enable access for \"Chrome\")"
+    },
+    {
+      "package": "com.bean.cousin",
+      "title": "null",
+      "text": "null"
+    }
+  ]
+}

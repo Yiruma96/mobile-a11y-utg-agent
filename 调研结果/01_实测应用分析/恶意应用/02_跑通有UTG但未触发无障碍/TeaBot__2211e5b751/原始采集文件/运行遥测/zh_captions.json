@@ -1,0 +1,10 @@
+{
+  "app_chain_summary_zh": "应用通过加载器 Activity 启动后，立即跳转到系统“无障碍”设置页，并以英文提示诱导用户启用无障碍服务；本次轨迹未实际完成授权或拒权测试即终止，核心特征是伪装成 PDF AI 文字识别器并借用系统设置页骗取高权限。",
+  "observed_lure_rhetoric_zh": [
+    "PDF AI: TEXT RECOGNISER -> PDF AI：文字识别器（Step 1 无障碍设置页，应用伪装名称）",
+    "You need enable Accessibility -> 你需要启用无障碍功能（Step 1 无障碍设置页提示气泡）"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍设置页，顶部伪装名“PDF AI：文字识别器”，英文提示“需启用无障碍”；本步终止，无通知、无遮罩。"
+  }
+}

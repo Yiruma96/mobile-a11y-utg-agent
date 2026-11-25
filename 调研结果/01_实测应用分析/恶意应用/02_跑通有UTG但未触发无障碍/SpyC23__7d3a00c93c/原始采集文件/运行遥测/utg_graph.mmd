@@ -1,0 +1,12 @@
+flowchart TD
+    N_5b88992aadc1["Step 1: ReviewPermissionsActivity\nChoose what to allow G"]
+    N_462a6e816135["Step 2: Telegram\nGoogle Play services f"]
+    N_a0d76ab8774a["Step 3: Telegram\nEnable Notifications"]
+    N_b7c19c90c479["Step 4: DeviceAdminAdd\nActivate device admin "]
+    N_5b88992aadc1 -->|"ui_click: click([35] Button text='Continue"| N_462a6e816135
+    N_462a6e816135 -->|"ui_click: click([3] Button text='OK' id=bu"| N_a0d76ab8774a
+    N_a0d76ab8774a -->|"ui_click: click([3] Button text='OK' id=bu"| N_b7c19c90c479
+    N_b7c19c90c479 -->|"ui_click: click([6] Button text='Cancel' i"| N_a0d76ab8774a
+    N_a0d76ab8774a -->|"ui_click: click([3] Button text='OK' id=bu"| N_b7c19c90c479
+    N_b7c19c90c479 -->|"static_guided_activity_jump: am_start(onActivityResult)"| N_b7c19c90c479
+    N_b7c19c90c479 -->|"static_guided_activity_jump: am_start(ApplicationsDetailsActi"| N_b7c19c90c479

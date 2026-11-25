@@ -1,0 +1,218 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_131__ceea4208d5",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "nilheart.ptur744.lens",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "306ba6dc2028",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "media player",
+        "Messages",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "9f66dafb7bdf",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Google services",
+        "Clear"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "47f40da9feda",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.googlequicksearchbox",
+      "abilityName": "com.google.android.apps.gsa.searchnow.SearchNowActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "ALL",
+        "Mobile data is off",
+        "No data connection. Consider turning on mobile data or turning on Wi-Fi.",
+        "Turn on mobile data",
+        "Try again",
+        "FEEDBACK",
+        "Go to Discover",
+        "Google services",
+        "Voice Search",
+        "Discover",
+        "Updates",
+        "Search",
+        "Collections",
+        "More"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "25580a164fdd",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "nilheart.ptur744.lens",
+      "abilityName": "nilheart.ptur744.lens.uzvrIrYAPIBstjG5q",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "306ba6dc2028",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "306ba6dc2028",
+      "to": "f3c915fd6aa2",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([20] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "9f66dafb7bdf",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "9f66dafb7bdf",
+      "to": "47f40da9feda",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Enter)"
+    },
+    {
+      "from": "47f40da9feda",
+      "to": "25580a164fdd",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(uzvrIrYAPIBstjG5q)"
+    },
+    {
+      "from": "25580a164fdd",
+      "to": "25580a164fdd",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(mAdizUAaG8LEy)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__ceea4208d5",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "轨迹从 Nexus 桌面经应用抽屉搜索“Google services”进入 Google SearchNowActivity，页面提示移动数据关闭后，通过静态引导跳入恶意包 nilheart.ptur744.lens 的空 Activity。核心特征是伪装 Google 服务并借静态跳转规避正常交互，未触发授权或拒权界面。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 谷歌服务（应用抽屉/搜索页，伪装应用名）",
+    "English -> 移动数据已关闭（SearchNowActivity）",
+    "English -> 无数据连接，建议开启移动数据或 Wi-Fi（SearchNowActivity）",
+    "English -> 开启移动数据（SearchNowActivity）",
+    "English -> 重试（SearchNowActivity）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面主页，显示“Apps list/应用列表”、Messages、Chrome 等；点击“应用列表”准备进入抽屉，未出现通知横幅或遮罩。",
+    "step_02": "仍在桌面，相同“Apps list”等；执行上滑以打开应用抽屉，未出现通知横幅或遮罩，也未进入恶意应用。",
+    "step_03": "应用抽屉显示 Calendar、Camera、Chrome 等；点击顶部“Search/搜索”容器准备检索目标应用，无通知与遮罩。",
+    "step_04": "搜索页显示“Search apps, web, and more…”；输入“Google services”查伪装应用，无通知横幅或遮罩。",
+    "step_05": "搜索框已填“Google services/谷歌服务”，旁有“Clear/清除”；按 Enter 执行搜索，未出现通知横幅或遮罩。",
+    "step_06": "Google搜索页提示移动数据关闭（Mobile data is off），提供开启数据/重试；随后静态跳转恶意页，无通知遮罩。",
+    "step_07": "进入恶意包 nilheart.ptur744.lens 的空 Activity，界面无文字控件；由静态引导跳转触发，无通知遮罩。",
+    "step_08": "仍为恶意空 Activity（uzvr…），无 UI 文本；再次静态跳转至 .SwrYM7Y，未显示通知横幅、遮罩或取消键。"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "Step 1: ReviewPermissionsActivity（ReviewPermissionsActivity）：Choose what to allow AppName to access /；动作 click",
+    "step_02": "Step 2: NexusLauncherActivity（NexusLauncherActivity）：AppName / This app was built for an olde；动作 click",
+    "step_03": "Step 3: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 open",
+    "step_04": "Step 4: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 open",
+    "step_05": "Step 5: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 static_activity_jump",
+    "step_06": "Step 6: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 static_activity_jump",
+    "step_07": "Step 7: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 static_activity_jump",
+    "step_08": "Step 8: NexusLauncherActivity（NexusLauncherActivity）：Apps list / Wednesday, Nov 25 / Messages；动作 static_activity_jump"
+  }
+}

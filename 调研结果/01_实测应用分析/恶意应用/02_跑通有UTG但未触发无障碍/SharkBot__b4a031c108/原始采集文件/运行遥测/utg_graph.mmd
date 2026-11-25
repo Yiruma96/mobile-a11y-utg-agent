@@ -1,0 +1,12 @@
+flowchart TD
+    N_5db465b4ed20["Step 1: MainActivity\nHOME"]
+    N_aebc4b4f1ae4["Step 3: MainActivity\nPermission Needed"]
+    N_1c42dcc4ef33["Step 4: GuildPermissionActivity\nFind Atom Clean-Booste"]
+    N_5ddb8fcb4dbc["Step 5: Settings$UsageAccessSettings\nBack"]
+    N_5db465b4ed20 -->|"ui_wait: wait()"| N_5db465b4ed20
+    N_5db465b4ed20 -->|"ui_click: click([9] LinearLayout (click) c"| N_aebc4b4f1ae4
+    N_aebc4b4f1ae4 -->|"ui_click: click([3] TextView text='Grant N"| N_1c42dcc4ef33
+    N_1c42dcc4ef33 -->|"ui_click: click([3] ImageView id=ic_close "| N_5ddb8fcb4dbc
+    N_5ddb8fcb4dbc -->|"ui_system_button: system_button(Back)"| N_5db465b4ed20
+    N_5db465b4ed20 -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_5db465b4ed20
+    N_5db465b4ed20 -->|"static_guided_activity_jump: am_start(ConstraintProxy$Battery"| N_5db465b4ed20

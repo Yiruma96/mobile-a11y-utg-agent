@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "从桌面启动 com.goami.applocker 后应用立即崩溃，弹出“Smart AppLocker keeps stopping”，关闭弹窗后回到桌面；随后尝试打开应用抽屉，并按静态引导跳转到安装推荐页、媒体页、无障碍服务临时页及奇虎启动页，但均未渲染目标界面，未观测到授权、拒权或诱导话术。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "桌面 NexusLauncher 首页，含“Apps list”、日期、Messages/Chrome/搜索；本步按包名启动目标应用，但目标未运行，仍停留桌面。",
+    "step_02": "系统崩溃弹窗“Smart AppLocker keeps stopping”（智能应用锁已停止），含 App info/Close app；点击 Close app 关闭弹窗，回到桌面。",
+    "step_03": "桌面 NexusLauncher 首页再次出现，仍显示 Apps list 与常用图标；本步重试启动目标应用，但页面未变化，疑似崩溃后未进入应用。",
+    "step_04": "桌面 NexusLauncher 首页；点击底部“Apps list（应用列表）”视图以打开应用抽屉，尝试从图标进入目标应用，仍未显示目标界面。",
+    "step_05": "桌面 NexusLauncher 首页；静态引导跳转 InstallRecommandActivity（安装推荐页），但界面仍停在桌面，未见目标页。",
+    "step_06": "桌面 NexusLauncher 首页；静态引导跳转 MediaActivity（媒体页），实际界面未切换，仍显示应用列表与搜索入口。",
+    "step_07": "桌面 NexusLauncher 首页；静态引导跳转 MyAccessibilityServiceTmp（无障碍服务临时页），页面未渲染，仍为桌面，无授权提示。",
+    "step_08": "桌面 NexusLauncher 首页；静态引导跳转 com.qihoo.util.StartActivity（奇虎通用启动页），仍未进入目标 Activity，界面保持桌面。"
+  }
+}

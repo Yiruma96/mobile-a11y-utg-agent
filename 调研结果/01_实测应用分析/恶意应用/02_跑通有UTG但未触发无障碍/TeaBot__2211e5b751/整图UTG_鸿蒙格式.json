@@ -1,0 +1,59 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_119__2211e5b751",
+  "label": "malicious",
+  "family_or_category": "TeaBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.sdfabfnf.efpkfohw",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "fa26749e7dad",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "fa26749e7dad",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.sdfabfnf.efpkfohw",
+      "abilityName": "com.sdfabfnf.efpkfohw.util.KoRErkHpuBNWucj",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "PDF AI: TEXT RECOGNISER",
+        "Accessibility",
+        "Screen readerGet spoken audio guidance and special controls that help you navigate without needing to see the screen.",
+        "Visibility enhancementsChange size, contrast, and colour to meet your needs.",
+        "Hearing enhancementsAdjust the audio to help your hearing, or use alternatives like text.",
+        "Interaction and dexterityEnhance or replace touch interactions and other controls.",
+        "Advanced settingsManage Direct access and other advanced functions.",
+        "Installed services5 services",
+        "About Accessibility",
+        "Contact Us",
+        "Tooltip: You need enable Accessibility"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TeaBot__2211e5b751",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用通过加载器 Activity 启动后，立即跳转到系统“无障碍”设置页，并以英文提示诱导用户启用无障碍服务；本次轨迹未实际完成授权或拒权测试即终止，核心特征是伪装成 PDF AI 文字识别器并借用系统设置页骗取高权限。",
+  "observed_lure_rhetoric_zh": [
+    "PDF AI: TEXT RECOGNISER -> PDF AI：文字识别器（Step 1 无障碍设置页，应用伪装名称）",
+    "You need enable Accessibility -> 你需要启用无障碍功能（Step 1 无障碍设置页提示气泡）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统无障碍设置页，顶部伪装名“PDF AI：文字识别器”，英文提示“需启用无障碍”；本步终止，无通知、无遮罩。"
+  }
+}

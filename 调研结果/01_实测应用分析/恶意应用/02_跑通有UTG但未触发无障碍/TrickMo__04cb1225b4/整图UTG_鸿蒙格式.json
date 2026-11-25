@@ -1,0 +1,186 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_129__04cb1225b4",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "monger.discard.wheneer52",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "e9258cacfe74",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Google Play Services",
+        "Clear"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "9074076f0860",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "monger.discard.wheneer52",
+      "abilityName": "monger.discard.wheneer52.Bd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "f3c915fd6aa2",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([19] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "e9258cacfe74",
+      "step": 5,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "e9258cacfe74",
+      "to": "9074076f0860",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Bd)"
+    },
+    {
+      "from": "9074076f0860",
+      "to": "9074076f0860",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(fLTFhC)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__04cb1225b4",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面启动器打开应用抽屉并搜索伪装成“Google Play Services”的入口，点击后经多次静态Activity跳转进入恶意包空白页；全程未见授权弹窗、拒权结果或明显诱导说明，拒权场景未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 “Google Play Services” -> 中文核心意译：谷歌Play服务；被用作伪装应用名，诱导用户在搜索结果页点击进入（Step 6 搜索结果页）。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器页，显示Apps list、日期及常用图标；点击应用抽屉入口未展开，无通知横幅与悬浮遮罩。",
+    "step_02": "仍为桌面启动器，界面同前；上滑尝试打开应用抽屉未出现新页，仍无通知横幅或悬浮遮罩。",
+    "step_03": "应用抽屉展开，列日历、相机、Chrome等系统应用；再次上滑寻找伪装应用，未见目标及遮罩。",
+    "step_04": "应用抽屉页，仍列系统应用；点击顶部Search搜索框以检索伪装应用，无通知横幅或悬浮遮罩。",
+    "step_05": "启动器搜索页，提示Search apps, web, and more…并输入伪装名；系统搜索界面，无通知或遮罩。",
+    "step_06": "搜索结果仅显示Google Play Services；该名称伪装成谷歌Play服务诱导点击进入恶意包，无通知或遮罩。",
+    "step_07": "进入恶意包Bd空白页，无文本、无通知与遮罩；静态跳转探针指向fLTFhC，未展示授权或取消按钮。",
+    "step_08": "仍为恶意包Bd空白页，无可见UI、通知或遮罩；静态探针再跳h76v，未见诱导话术或授权弹窗。"
+  }
+}

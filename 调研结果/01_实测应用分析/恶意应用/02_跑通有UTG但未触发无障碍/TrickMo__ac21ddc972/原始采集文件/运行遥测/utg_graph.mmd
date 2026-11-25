@@ -1,0 +1,11 @@
+flowchart TD
+    N_cb51ecd299b5["Step 1: e\n"]
+    N_17156061ff9f["Step 2: e\ny"]
+    N_38ecdf976df4["Step 7: PackageInstallerActivity\nTikTok18"]
+    N_cb51ecd299b5 -->|"ui_wait: wait()"| N_17156061ff9f
+    N_17156061ff9f -->|"ui_wait: wait()"| N_17156061ff9f
+    N_17156061ff9f -->|"ui_click: click([2] Image text='y' center="| N_17156061ff9f
+    N_17156061ff9f -->|"static_guided_activity_jump: am_start(b)"| N_17156061ff9f
+    N_17156061ff9f -->|"ui_wait: wait()"| N_17156061ff9f
+    N_17156061ff9f -->|"static_guided_activity_jump: am_start(a)"| N_38ecdf976df4
+    N_38ecdf976df4 -->|"static_guided_activity_jump: am_start(FileProvider)"| N_38ecdf976df4

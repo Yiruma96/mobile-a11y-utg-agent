@@ -1,0 +1,194 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_042__f3fe34702f",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "cmf0.c3b5bm90zq.patch",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "c0452d2f1ea5",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "c0452d2f1ea5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow media player to access",
+        "Camera",
+        "take pictures and record video",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Call logs",
+        "read and write phone call log",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "58547a2e6105",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "media player",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "306ba6dc2028",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "media player",
+        "Messages",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "c0452d2f1ea5",
+      "to": "58547a2e6105",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "58547a2e6105",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "306ba6dc2028",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "306ba6dc2028",
+      "to": "306ba6dc2028",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([12] TextView text=\"media player\" id=icon (click) center=(137,1058))"
+    },
+    {
+      "from": "306ba6dc2028",
+      "to": "306ba6dc2028",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(C7)"
+    },
+    {
+      "from": "306ba6dc2028",
+      "to": "306ba6dc2028",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(C3)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本伪装为“media player”，入口先进入系统权限审查并请求相机、文件媒体、通话记录、联系人、麦克风、短信、电话等敏感权限；点击Continue后因旧版Android警告退回桌面，后续多次重launch和静态跳转.C7/.C3/.C8均未出现可见业务页，未观察到拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow media player to access -> 选择允许“媒体播放器”访问哪些内容（Step 1 权限审查页）",
+    "Camera / take pictures and record video -> 相机/拍照和录像（Step 1 权限审查页）",
+    "Files and media / access photos, media, and files on your device -> 文件与媒体/访问设备上的照片、媒体和文件（Step 1 权限审查页）",
+    "Call logs / read and write phone call log -> 通话记录/读写通话记录（Step 1 权限审查页）",
+    "Contacts / access your contacts -> 联系人/访问联系人（Step 1 权限审查页）",
+    "Microphone / record audio -> 麦克风/录制音频（Step 1 权限审查页）",
+    "SMS / send and view SMS messages -> 短信/发送和查看短信（Step 1 权限审查页）",
+    "Phone -> 电话（Step 1 权限审查页）",
+    "media player -> 媒体播放器（Step 2 与 Step 5 桌面/应用抽屉，应用显示名伪装）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 此应用针对旧版Android构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容性警告）",
+    "String (Files) / String (com.google.android.documentsui) -> 字符串(文件)/字符串(com.google.android.documentsui)（Step 2-8 目标应用通知横幅，疑似调试或伪装文本）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限审查页以“media player”名义请求相机、文件媒体、通话记录、联系人、麦克风、短信、电话；无横幅/遮罩，点击Continue。",
+    "step_02": "桌面弹出旧版Android兼容性警告，称应用可能无法正常运行；无遮罩，点击OK关闭，目标应用通知横幅仍在。",
+    "step_03": "桌面首页含Apps list、Messages、Chrome、Search等；目标应用通知横幅仍在。点击Apps list但未打开抽屉。",
+    "step_04": "仍在桌面首页；上滑尝试打开应用抽屉，界面文本未变化，目标应用通知横幅持续显示。",
+    "step_05": "应用抽屉展开，含Calendar、Camera、Chrome等及“media player”图标；本步点击该图标重launch目标应用。",
+    "step_06": "应用抽屉界面不变，未见目标业务页；执行静态Activity跳转至.C7，目标应用通知横幅仍显示。",
+    "step_07": "应用抽屉界面维持不变；执行静态Activity跳转至.C3，仍未出现可见业务界面，通知横幅持续。",
+    "step_08": "应用抽屉界面维持原样；执行静态Activity跳转至.C8，页面无可见变化，通知横幅仍在。"
+  }
+}

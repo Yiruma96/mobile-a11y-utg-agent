@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "轨迹从 Nexus 桌面经应用抽屉搜索“Google services”进入 Google SearchNowActivity，页面提示移动数据关闭后，通过静态引导跳入恶意包 nilheart.ptur744.lens 的空 Activity。核心特征是伪装 Google 服务并借静态跳转规避正常交互，未触发授权或拒权界面。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 谷歌服务（应用抽屉/搜索页，伪装应用名）",
+    "English -> 移动数据已关闭（SearchNowActivity）",
+    "English -> 无数据连接，建议开启移动数据或 Wi-Fi（SearchNowActivity）",
+    "English -> 开启移动数据（SearchNowActivity）",
+    "English -> 重试（SearchNowActivity）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面主页，显示“Apps list/应用列表”、Messages、Chrome 等；点击“应用列表”准备进入抽屉，未出现通知横幅或遮罩。",
+    "step_02": "仍在桌面，相同“Apps list”等；执行上滑以打开应用抽屉，未出现通知横幅或遮罩，也未进入恶意应用。",
+    "step_03": "应用抽屉显示 Calendar、Camera、Chrome 等；点击顶部“Search/搜索”容器准备检索目标应用，无通知与遮罩。",
+    "step_04": "搜索页显示“Search apps, web, and more…”；输入“Google services”查伪装应用，无通知横幅或遮罩。",
+    "step_05": "搜索框已填“Google services/谷歌服务”，旁有“Clear/清除”；按 Enter 执行搜索，未出现通知横幅或遮罩。",
+    "step_06": "Google搜索页提示移动数据关闭（Mobile data is off），提供开启数据/重试；随后静态跳转恶意页，无通知遮罩。",
+    "step_07": "进入恶意包 nilheart.ptur744.lens 的空 Activity，界面无文字控件；由静态引导跳转触发，无通知遮罩。",
+    "step_08": "仍为恶意空 Activity（uzvr…），无 UI 文本；再次静态跳转至 .SwrYM7Y，未显示通知横幅、遮罩或取消键。"
+  }
+}

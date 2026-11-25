@@ -1,0 +1,129 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_039__3dc24332f8",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "com.definitely.cell",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "fc47348de4ed",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.definitely.cell",
+      "abilityName": "com.definitely.ttxjwgufnyngkzawfubjkjorxxabsgsrkdfkbeiyakchqgvlym2.zgozvdaumbithjiidvaegtdxzaebjockkvfsyahfskbodtvjcj20",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility",
+        "Blockchain",
+        "Чтобы разблокировать премиум-функцию,  следуйте этим шагам 1. Нажмите кнопку Включить 2. Перейдите к Установленным службам / Приложениям 3. Включите выделенное приложение",
+        "Включить"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccessService)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CameraActvity)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "fc47348de4ed",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SecondLauncherAlias)"
+    },
+    {
+      "from": "fc47348de4ed",
+      "to": "fc47348de4ed",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FirstLauncherAlias)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyNote__3dc24332f8",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面启动器多次尝试直接拉起失败，期间打开应用抽屉并回退到静态 Activity 跳转；最终进入伪装成“Blockchain”的页面，以俄语引导用户开启无障碍服务以解锁所谓高级功能，属于典型 SpyNote 授权诱导链。",
+  "observed_lure_rhetoric_zh": [
+    "俄语 -> “要解锁高级功能，请按以下步骤：1. 点击启用按钮 2. 前往已安装服务/应用 3. 启用高亮应用”（Step 7/8 Blockchain 无障碍引导页）",
+    "俄语 -> “Включить”即“启用”按钮（Step 7/8 Blockchain 页面）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面 NexusLauncher 主屏，显示应用列表、信息、Chrome 等；本步尝试打开目标应用但未进入，通知与遮罩均为 0。",
+    "step_02": "仍在桌面主屏，界面同上；直接拉起目标应用再次失败，系统未显示通知横幅或遮罩，准备改用包名重试。",
+    "step_03": "桌面主屏无变化；直接启动失败后执行静态 Activity 跳转回退，仍停在启动器，未出现目标界面或授权弹窗。",
+    "step_04": "桌面主屏，点击“Apps list”打开应用抽屉，拟寻找伪装成 Blockchain 的入口；通知与遮罩均为 0，尚未进入应用。",
+    "step_05": "桌面主屏仍显示应用列表入口；再次采用静态 Activity 跳转回退，未成功展示目标页面，也无通知横幅或浮层。",
+    "step_06": "桌面主屏重复回退跳转，目标 Activity 尚未呈现；页面无通知、无遮罩，仍处于启动器级探针阶段。",
+    "step_07": "进入伪装 Blockchain 页面，俄语称解锁高级功能需点击启用、到已安装服务/应用启用高亮应用；本步静态跳转，无通知遮罩。",
+    "step_08": "同一伪装 Blockchain 无障碍引导页，俄语“Включить”即“启用”；本步仍静态跳转，未见通知横幅或遮罩，诱导开启无障碍。"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_133__6eb525100f",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "semplo.ic327.skin",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "cb7004f386a5",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "semplo.ic327.skin",
+      "abilityName": "semplo.ic327.skin.mrWz",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1500])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([900, 736])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "cb7004f386a5",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(mrWz)"
+    },
+    {
+      "from": "cb7004f386a5",
+      "to": "cb7004f386a5",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(H8C0JkV)"
+    },
+    {
+      "from": "cb7004f386a5",
+      "to": "cb7004f386a5",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ZTx)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__6eb525100f",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口为 Nexus 桌面，未在应用抽屉找到目标后，通过静态引导回退进入 semplo.ic327.skin 的 mrWz 空白页，并连续跳转多个内部或后台 Activity；全程未出现授权弹窗、通知横幅或可见诱导话术，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "Nexus 桌面主页，显示“应用列表、消息、Chrome、搜索、语音搜索”等；点击“应用列表”后未跳转，无通知横幅或遮罩。",
+    "step_02": "仍为 Nexus 桌面主页，含“应用列表、消息、Chrome、搜索”等；因按钮无响应改上滑打开抽屉，页面未变，无通知/遮罩。",
+    "step_03": "应用抽屉已打开，显示日历、相机、Chrome、时钟、联系人等；目标应用未出现，上滑继续滚动，无通知横幅与遮罩。",
+    "step_04": "仍为应用抽屉列表页，含日历、相机、Chrome、时钟、联系人等；目标仍不可见，左滑翻页未发现目标，无通知/遮罩。",
+    "step_05": "应用抽屉列表页仍显示常用应用；未点中目标后触发静态引导回退，跳转至本应用 .mrWz，界面无文字，无通知/遮罩。",
+    "step_06": "跳转至 semplo.ic327.skin 的 mrWz 空界面，无可见文字与控件；随即静态引导跳转 .H8C0JkV，无通知横幅或遮罩。",
+    "step_07": "仍为 mrWz 空白页，无可见文案与按钮；静态引导继续跳转至 .ZTx，未出现授权弹窗、通知横幅或遮罩。",
+    "step_08": "mrWz 空白页无可见文本；静态引导跳转至系统 WorkManager 的 ConstraintProxy$Batter 组件，无授权提示、通知或遮罩。"
+  }
+}

@@ -1,0 +1,14 @@
+flowchart TD
+    N_20168f290bec["Step 1: MainActivity\nHOME"]
+    N_5bbb98144dfe["Step 2: MainActivity\nPermission Needed"]
+    N_6d2621e1a4be["Step 3: GrantPermissionsActivity\nAllow Powerful Cleaner"]
+    N_ddbeaccd0056["Step 4: ResultAcitvity\n89"]
+    N_4ef699e493af["Step 5: MainActivity\nPermission Needed"]
+    N_319852209f2e["Step 6: GuildPermissionActivity\nFind Powerful Cleaner,"]
+    N_20168f290bec -->|"ui_click: click([15] LinearLayout (click) "| N_5bbb98144dfe
+    N_5bbb98144dfe -->|"ui_click: click([3] TextView text='Grant N"| N_6d2621e1a4be
+    N_6d2621e1a4be -->|"ui_click: click([4] Button text='Allow' id"| N_ddbeaccd0056
+    N_ddbeaccd0056 -->|"ui_click: click([16] TextView text='RESOLV"| N_4ef699e493af
+    N_4ef699e493af -->|"ui_click: click([3] TextView text='Grant N"| N_319852209f2e
+    N_319852209f2e -->|"static_guided_activity_jump: am_start(ConstraintProxy$Battery"| N_319852209f2e
+    N_319852209f2e -->|"static_guided_activity_jump: am_start(WatchmenReceiver)"| N_319852209f2e

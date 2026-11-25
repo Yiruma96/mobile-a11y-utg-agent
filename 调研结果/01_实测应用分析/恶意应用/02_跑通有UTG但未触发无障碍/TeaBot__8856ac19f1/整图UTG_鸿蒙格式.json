@@ -1,0 +1,48 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_115__8856ac19f1",
+  "label": "malicious",
+  "family_or_category": "TeaBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.akbjmrnec.wiuvhfydb",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "094146f07dc2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "094146f07dc2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.akbjmrnec.wiuvhfydb",
+      "abilityName": "com.akbjmrnec.wiuvhfydb.util.InioawndOIADNwaiond",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "QR Code Scanner: Add-On"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TeaBot__8856ac19f1",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以“QR Code Scanner: Add-On”伪装为扫码插件入口，随后触发无障碍权限提示并跳转系统无障碍设置页；探针在该步终止，未观察到通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “二维码扫描器：附加组件”（Step 1 页面，伪装为扫码插件入口）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Step 1 为伪装成“QR Code Scanner: Add-On”的扫码插件入口页；操作触发无障碍权限提示并跳转系统无障碍设置，本步终止，无通知横幅/遮罩。"
+  }
+}

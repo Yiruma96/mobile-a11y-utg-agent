@@ -1,0 +1,49 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_117__ddabe5999d",
+  "label": "malicious",
+  "family_or_category": "TeaBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.rmowa.wpamz",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "success",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "d38f997da44e",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "d38f997da44e",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.rmowa.wpamz",
+      "abilityName": "com.rmowa.wpamz.util.InioawndOIADNwaiond",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "QR Code Scanner: Add-on Recognizer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TeaBot__ddabe5999d",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从伪装成二维码扫描器的启动页切入，未展示实际扫码功能就直接跳转系统无障碍设置；同时通过“数据未备份”系统通知诱导用户，流程在授权前就被终止。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “二维码扫描器：附加识别器”（Step 1 启动页，伪装成工具类扫码器以降低戒心）",
+    "英文 -> “你的数据未备份”/“立即添加备份账户”（Step 1 谷歌服务通知横幅，制造数据安全焦虑）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪装二维码扫描器加载页，显示英文“加装识别器”；伴随谷歌“数据未备份”通知横幅，无遮罩，随后直接跳转系统无障碍设置并被终止。"
+  }
+}

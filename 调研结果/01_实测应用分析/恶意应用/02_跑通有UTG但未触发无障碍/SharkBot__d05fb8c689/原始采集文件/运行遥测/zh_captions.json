@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "从清理加速首页诱导点击Antivirus后，应用以“Permission Needed/Grant Now”连续索要存储、照片媒体、App Usage与Usage Access权限，并穿插伪造安全扫描“In Danger/RESOLVE ALL”制造恐慌；全程以Allow/Grant Now推进，未见拒权分支，末段停留在引导授权页并静态跳转后台组件，通知横幅为空、无悬浮遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “需要权限：授予设备外部存储访问”，以权限必要性诱导点击Grant Now（Step 2）",
+    "英语 -> “允许Powerful Cleaner、Antivirus访问设备照片和媒体？”系统授权弹窗（Step 3）",
+    "英语 -> “安全扫描89%”“google搜索应用：危险/病毒应用，可能造成文件与系统损害或创建后门”“全部解决”（Step 4）",
+    "英语 -> “检查可能危害设备的权限应用”“跳过/检查”（Step 4）",
+    "英语 -> “为获得全面手机扫描效果，授予App Usage使用情况权限”（Step 5）",
+    "英语 -> “找到Powerful Cleaner、Antivirus并授予Usage Access使用情况权限”（Step 6-8）"
+  ],
+  "frame_captions": {
+    "step_01": "首页清理仪表盘显示内存48%、存储/垃圾及Antivirus等磁贴；点击Antivirus进入诱导链，通知为空、无遮罩。",
+    "step_02": "权限弹窗谎称需授权外部存储，按钮Grant Now（立即授予）；点击继续推进权限链，通知为空、无遮罩。",
+    "step_03": "系统媒体授权页请求允许Powerful Cleaner访问照片和媒体；点击Allow放行以继续无障碍流程，页面有Deny，通知为空。",
+    "step_04": "伪造扫描页显示89%、google搜索应用“In Danger/危险”并称病毒应用；点击RESOLVE ALL触发授权弹窗，通知为空。",
+    "step_05": "权限弹窗以“全面手机扫描效果”为由索要App Usage使用情况权限，按钮Grant Now；点击继续权限链，通知为空。",
+    "step_06": "引导页要求找到Powerful Cleaner并授予Usage Access权限；静态跳转至电池约束代理，通知为空、无遮罩。",
+    "step_07": "同一引导页反复要求授予Usage Access权限；静态跳转至WatchmenReceiver安全锁接收器，通知为空、无遮罩。",
+    "step_08": "同一引导页再次要求授予Usage Access权限；静态跳转至WorkManager电池约束代理，通知为空、无遮罩。"
+  }
+}

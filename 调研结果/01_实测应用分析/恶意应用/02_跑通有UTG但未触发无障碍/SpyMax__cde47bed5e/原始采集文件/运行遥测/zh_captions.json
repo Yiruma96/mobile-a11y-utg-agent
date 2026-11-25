@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用链路起于系统权限审查页，集中展示短信、通话记录、联系人、文件媒体、相机、麦克风、位置等高风险权限并以Continue推进；随后经旧版Android警告、桌面与应用抽屉点击目标图标，最后仅发生静态Activity跳转至spymax.stub7.ClassGen9/14/1，未捕获应用自身UI，亦无通知或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Choose what to allow [SPY_MAX_NAME_PATCH] to access” -> 选择允许[SPY_MAX_NAME_PATCH]访问的内容（Step1权限审查页）",
+    "英文“send and view SMS messages” -> 发送和查看短信（Step1权限审查页）",
+    "英文“read and write phone call log” -> 读取和写入通话记录（Step1权限审查页）",
+    "英文“access your contacts” -> 访问联系人（Step1权限审查页）",
+    "英文“access photos, media, and files on your device” -> 访问设备上的照片、媒体和文件（Step1权限审查页）",
+    "英文“take pictures and record video” -> 拍照和录制视频（Step1权限审查页）",
+    "英文“record audio” -> 录制音频（Step1权限审查页）",
+    "英文“This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.” -> 此应用为旧版Android构建，可能无法正常运行；请检查更新或联系开发者（Step2旧版警告）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页，列短信、通话记录、联系人、文件媒体、相机、麦克风、位置，文案称选择允许[SPY_MAX_NAME_PATCH]访问；仅见Continue并点击。",
+    "step_02": "桌面弹出旧版Android警告，称[SPY_MAX_NAME_PATCH]可能无法正常运行，建议检查更新或联系开发者；仅OK，点击关闭。",
+    "step_03": "桌面首页含Apps list、天气与日期；点击“Apps list”打开应用列表，界面无通知横幅或遮罩。",
+    "step_04": "仍为桌面首页/应用列表入口，日期天气可见；上滑以打开应用抽屉寻找目标应用，未出现应用自身界面。",
+    "step_05": "应用抽屉列出日历、相机、Chrome等系统应用；点击目标图标[SPY_MAX_NAME_PATCH]尝试启动恶意应用。",
+    "step_06": "界面仍停留应用抽屉，静态引导跳转至spymax.stub7.ClassGen9；未见应用新页面，也无通知或遮罩。",
+    "step_07": "仍为应用抽屉画面，静态引导再跳转spymax.stub7.ClassGen14；无可见应用UI、通知横幅或遮罩。",
+    "step_08": "仍为应用抽屉画面，静态引导跳转spymax.stub7.ClassGen1；无可见应用页面，通知与遮罩均为零。"
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_010__7c87a510ff",
+  "label": "malicious",
+  "family_or_category": "SpyMax",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "yps.eton.application",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": true,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "0795a334b500",
+  "hook_node_ids": [
+    "fd4007cf1cbd"
+  ],
+  "nodes": [
+    {
+      "node_id": "0795a334b500",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow AppName to access",
+        "Location",
+        "access this device's location",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Camera",
+        "take pictures and record video"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0d87411e05ec",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "AppName",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "8f8f344bcf27",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "AppName",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "fd4007cf1cbd",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.applications.InstalledAppDetails",
+      "trigger_hooks": [
+        "HOOK_APP_DETAILS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "App info",
+        "Search settings",
+        "AppName",
+        "Uninstall",
+        "Force stop",
+        "Notifications",
+        "~1 notification per week",
+        "Permissions",
+        "Call logs, Camera, Contacts, Files and media, Location, Microphone, Phone, and SMS",
+        "Storage & cache",
+        "1.90 MB used in internal storage",
+        "Mobile data & Wi‑Fi",
+        "No data used",
+        "Advanced"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0795a334b500",
+      "to": "0d87411e05ec",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "0d87411e05ec",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "8f8f344bcf27",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "8f8f344bcf27",
+      "to": "fd4007cf1cbd",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([2] TextView text=\"AppName\" id=icon (click) center=(137,436))"
+    },
+    {
+      "from": "fd4007cf1cbd",
+      "to": "8f8f344bcf27",
+      "step": 6,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "8f8f344bcf27",
+      "to": "fd4007cf1cbd",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([2] TextView text=\"AppName\" id=icon (click) center=(137,436))"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_APP_DETAILS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.applications.InstalledAppDetails",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.applications.InstalledAppDetails",
+          "hooks": [
+            "HOOK_APP_DETAILS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.applications.InstalledAppDetails",
+          "hooks": [
+            "HOOK_APP_DETAILS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyMax__7c87a510ff",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用在系统权限审批页集中请求定位、联系人、通话记录、电话、文件媒体、短信、相机等敏感权限并点Continue，随后反复从桌面重启目标应用、进入应用信息页后停留探针；核心特征为过度权限索取与伪装成Drive的通知，未观察到明确授权或拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow AppName to access -> 选择允许 AppName 访问哪些权限（Step 1 权限审批页）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者（Step 2 兼容警告）",
+    "Your data isn’t backed up / Add a backup account now -> 你的数据未备份/现在添加备份账户（系统通知，多页持续）",
+    "Drive / com.google.android.apps.docs -> 伪装成 Drive 的通知（目标应用发出，多页持续）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审批页，集中请求定位、联系人、通话记录、电话、文件媒体、短信、相机权限；无遮罩，点Continue同意。",
+    "step_02": "桌面弹出旧版Android兼容警告，称应用可能无法正常运行，建议检查更新或联系开发者；无遮罩，点OK关闭，通知栏见伪装Drive通知。",
+    "step_03": "桌面主页显示周三11月25日及Messages、Chrome、Search等；点击Apps list未打开抽屉，通知栏有未备份及伪装Drive通知。",
+    "step_04": "仍在桌面主页，Apps list等可见；上滑尝试展开应用抽屉，无遮罩，通知栏持续显示未备份与伪装Drive通知。",
+    "step_05": "应用抽屉展开，列出日历、相机、Chrome、时钟、联系人、Drive等；点击AppName图标重启目标应用，无遮罩，通知栏同上。",
+    "step_06": "系统应用信息页，显示AppName、卸载/强行停止及多项敏感权限清单；无遮罩，按返回，通知栏持续备份与伪装Drive通知。",
+    "step_07": "返回应用抽屉，AppName与日历、相机等并列；再次点击AppName图标尝试重启，通知栏未备份及伪装Drive通知仍在，无遮罩。",
+    "step_08": "再次进入AppName应用信息页，重复显示卸载/强行停止及敏感权限清单；无遮罩，操作为按包名直接拉起目标应用。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留AppName应用信息页，未见文字控件；无遮罩，通知栏持续备份提示与伪装Drive通知。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为AppName应用信息页且无可见文字；无遮罩，系统未备份通知和伪装Drive通知持续存在。"
+  }
+}

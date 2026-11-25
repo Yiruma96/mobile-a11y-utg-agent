@@ -1,0 +1,150 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_135__17fc5d1c8b",
+  "label": "malicious",
+  "family_or_category": "TrickMo",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "centtem.houe948.ov",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "7bed003868f7",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "centtem.houe948.ov",
+      "abilityName": "centtem.houe948.ov.ojfY0f4MWzO",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([900, 900])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "7bed003868f7",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ojfY0f4MWzO)"
+    },
+    {
+      "from": "7bed003868f7",
+      "to": "7bed003868f7",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(dyjGgnh)"
+    },
+    {
+      "from": "7bed003868f7",
+      "to": "7bed003868f7",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(dnCongKR186)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "TrickMo__17fc5d1c8b",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "轨迹从系统启动器查找“Google services”应用失败后，经静态引导直接切入恶意包centtem.houe948.ov的多个空白Activity并连续跳转；全程未见可见诱导话术、通知或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "系统启动器应用列表页，含“应用列表、搜索、语音搜索”等；点击后打开应用抽屉，未见通知横幅或遮罩。",
+    "step_02": "仍为启动器应用列表页，显示11月25日周三、信息、Chrome等；上滑打开抽屉，未出现通知或浮层遮罩。",
+    "step_03": "启动器应用抽屉页列日历、相机、Chrome等常见应用；上滑滚动查找目标应用，未发现“Google服务”入口。",
+    "step_04": "同一应用抽屉页仍仅见常见应用图标；左滑尝试翻页未获新页，未出现通知、遮罩或诱导文本。",
+    "step_05": "页面仍为启动器抽屉；本步触发静态引导跳转，直接进入恶意包Activity .ojfY0f4MWzO，原页无通知/遮罩。",
+    "step_06": "进入恶意包centtem.houe948.ov的空白Activity ojfY0f4MWzO，无可见文本；随即静态跳转.dyjGgnh，无通知与遮罩。",
+    "step_07": "恶意包空白Activity ojfY0f4MWzO仍无文本和按钮；本步静态跳转至.dnCongKR186，通知与遮罩均为0。",
+    "step_08": "恶意包空白Activity继续静态跳向ConstraintProxy$Batter，无可见话术或取消键；通知、遮罩计数均为0。"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_001__0294496715",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "com.fees.claim",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "78d6ebe1a607",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Blockchain",
+        "Clear"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "12cd6ad376d0",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.applications.specialaccess.deviceadmin.DeviceAdminAdd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Activate device admin app?",
+        "Blockchain",
+        "Click on Activate button to secure your application.",
+        "Activating this admin app will allow the app Blockchain to perform the following operations:",
+        "Erase all data",
+        "Erase the phone's data without warning by performing a factory data reset.",
+        "Lock the screen",
+        "Control how and when the screen locks.",
+        "Activate this device admin app",
+        "Cancel",
+        "Uninstall app"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "6ca6daedd70f",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "f3c915fd6aa2",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([19] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "78d6ebe1a607",
+      "step": 5,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "78d6ebe1a607",
+      "to": "78d6ebe1a607",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccessService)"
+    },
+    {
+      "from": "78d6ebe1a607",
+      "to": "12cd6ad376d0",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SecondActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SpyNote__0294496715",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本以伪装名“Blockchain”引导用户在桌面搜索并打开，随后通过静态跳转进入可疑包 com.fees.ttxj... 的组件，最终拉起 Android 设备管理激活页，索要清除数据与锁屏等高危权限；页面保留取消/卸载入口，未观察到实际授权结果（not_tested）。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “点击‘激活’按钮以保护你的应用。”（Step 8 设备管理激活页）",
+    "English -> “激活此管理应用将允许 Blockchain 执行以下操作：”（Step 8 设备管理激活页）",
+    "English -> “执行恢复出厂设置，在无警告情况下清除手机数据。”（Step 8 设备管理激活页）",
+    "English -> “锁定屏幕；控制屏幕锁定的方式与时机。”（Step 8 设备管理激活页）",
+    "English -> “激活此设备管理应用”（Step 8 设备管理激活页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面主页，显示应用列表、Chrome、搜索等；顶部有“数据未备份”系统通知。点击“Apps list”未进入抽屉。",
+    "step_02": "仍在桌面主页，系统“数据未备份”通知横幅可见；点击应用列表无响应后上滑，未成功打开抽屉。",
+    "step_03": "上滑后出现应用抽屉，列出相机、Chrome、Gmail 等；系统备份通知仍在，无遮罩；继续上滑寻找目标应用。",
+    "step_04": "应用抽屉列表，含日历、相机、Chrome 等；系统备份通知可见。点击顶部搜索框，拟搜索“Blockchain”。",
+    "step_05": "应用抽屉搜索页，提示搜索应用/网页；系统备份通知仍在；输入“Blockchain”定位伪装应用。",
+    "step_06": "搜索框显示“Blockchain”及清除按钮；触发静态跳转至可疑包 com.fees...，非正常点击结果。",
+    "step_07": "同一搜索页仍显示“Blockchain”，系统备份通知在；再次静态跳转至可疑包 Security 页，非用户点击。",
+    "step_08": "设备管理激活页：伪装名“Blockchain”，称激活可保护应用；索要清除数据、锁屏权限；有取消/卸载键，无遮罩。"
+  }
+}

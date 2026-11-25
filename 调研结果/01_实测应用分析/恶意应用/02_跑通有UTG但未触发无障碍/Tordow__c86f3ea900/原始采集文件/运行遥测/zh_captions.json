@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用从桌面进入应用列表并上滑打开应用抽屉，目标应用冷启动时隐藏自身图标，仅以“Android Security Update”伪装项出现；多次静态跳转 DummyAccessibility、MyReceiver、MainActivity 均未展示实际界面，未见通知或遮罩，且未测试拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "Android Security Update -> “Android 安全更新”（应用抽屉伪装图标，疑似诱导点击入口）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面主屏，含“Apps list/应用列表”、日期及信息、Chrome等图标；本步点击“Apps list”打开应用列表。",
+    "step_02": "仍为桌面，显示应用列表入口、日期与常用图标；本步从底部上滑，尝试打开应用抽屉，未见通知或遮罩。",
+    "step_03": "应用抽屉页，含“Android Security Update/Android 安全更新”伪装项及系统应用；本步尝试按包名直接启动，界面未变。",
+    "step_04": "应用抽屉页，仍见“Android Security Update”伪装图标与系统应用列表；再次尝试按包名启动目标，界面无变化。",
+    "step_05": "应用抽屉页，显示伪装安全更新项及系统应用；本步静态跳转 DummyAccessibility 组件，仍停留抽屉，无通知或遮罩。",
+    "step_06": "应用抽屉页，仍为系统应用与“Android Security Update”伪装项；本步静态跳转 MyReceiver，界面未变化，无遮罩或通知。",
+    "step_07": "应用抽屉页，含伪装安全更新图标；本步静态跳转 MainActivity，仍未出现应用界面，无通知横幅或悬浮遮罩。",
+    "step_08": "应用抽屉页，点击“Android Security Update/Android 安全更新”伪装图标，疑似诱导入口；未展示实际应用页面，无通知或遮罩。"
+  }
+}
