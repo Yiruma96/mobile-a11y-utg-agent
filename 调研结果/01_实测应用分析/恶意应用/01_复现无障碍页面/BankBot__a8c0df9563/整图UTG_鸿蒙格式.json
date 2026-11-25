@@ -1,0 +1,380 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_114__a8c0df9563",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.themdont25",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "70453ba03ddc",
+  "hook_node_ids": [
+    "560123980a17"
+  ],
+  "nodes": [
+    {
+      "node_id": "70453ba03ddc",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Postegro to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "bb0dd3b7374e",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Postegro to send and view SMS messages?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "0f0f16418912",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.themdont25",
+      "abilityName": "com.themdont25.p012p",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "560123980a17",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Postegro",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "ce4bff9939c5",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Postegro",
+        "Use Postegro",
+        "OPTIONS",
+        "Postegro shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    },
+    {
+      "node_id": "2e5214d7c1e3",
+      "first_step": 5,
+      "role": "system_warning_dialog",
+      "bundleName": "com.themdont25",
+      "abilityName": "com.themdont25.p012p",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Postegro'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_05_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_05_system_warning_layout.xml",
+      "screenshot": "step_05_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "70453ba03ddc",
+      "to": "bb0dd3b7374e",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "bb0dd3b7374e",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "0f0f16418912",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([540, 190])"
+    },
+    {
+      "from": "0f0f16418912",
+      "to": "560123980a17",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([540, 676])"
+    },
+    {
+      "from": "560123980a17",
+      "to": "ce4bff9939c5",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "ce4bff9939c5",
+      "to": "2e5214d7c1e3",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "560123980a17",
+      "to": "2e5214d7c1e3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "2e5214d7c1e3",
+      "to": "2e5214d7c1e3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "2e5214d7c1e3",
+      "to": "2e5214d7c1e3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Postegro Use Postegro OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Postegro",
+        "Use Postegro",
+        "OPTIONS",
+        "Postegro shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.themdont25",
+      "top_activity": "com.themdont25.p012p",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Postegro'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.themdont25",
+      "top_activity": "com.themdont25.p012p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Postegro'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.themdont25",
+      "top_activity": "com.themdont25.p012p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Postegro'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.themdont25",
+      "top_activity": "com.themdont25.p012p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Postegro'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BankBot__a8c0df9563",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用先骗取电话与短信权限，再通过土耳其语通知和WebView弹窗反复诱导用户开启Postegro无障碍服务；拒权后仍重拉诱导对话框。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> 「Servisi etkinleştirin」（启用服务；通知标题，多页持续显示）",
+    "英文 -> 「Enable Accessibility Service • Find 'Postegro' Set switch ON / Open Settings」（启用无障碍服务，找到Postegro并打开开关/打开设置；WebView诱导弹窗）",
+    "土耳其语 -> 「Erişebilirlik Servisileri Etkinleştirme」（启用无障碍服务；服务详情页）",
+    "英文 -> 「Allow Postegro to make and manage phone calls?」（允许Postegro拨打和管理电话；系统权限弹窗）",
+    "英文 -> 「Allow Postegro to send and view SMS messages?」（允许Postegro发送和查看短信；系统权限弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电话权限弹窗，英文询问是否允许Postegro拨打和管理电话；点击Allow授予，为后续诱导流程放行。",
+    "step_02": "系统短信权限弹窗，英文询问是否允许Postegro发送和查看短信；点击Allow授予；顶部已出现土耳其语服务通知。",
+    "step_03": "回到桌面，可见Postegro土耳其语通知「Servisi etkinleştirin（启用服务）」；点击横幅跳转应用，未出现遮罩。",
+    "step_04": "进入Postegro空白WebView页，界面无可见文本；通知横幅仍在；点击中央区域应触发「打开设置」与无障碍诱导。",
+    "step_05": "系统无障碍设置列表，下载应用中有Postegro且开关Off；顶部保留启用服务通知；采集钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在无障碍设置列表，无文本与遮罩；Postegro启用服务通知持续显示。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面未变化，无障碍列表无遮罩；Postegro通知横幅仍驻留，未触发新弹窗。",
+    "detail_1_service_detail_page": "Postegro无障碍服务详情页，含Use Postegro开关及选项；底部出现土耳其语「启用无障碍服务」提示，通知仍在。",
+    "detail_2_system_warning_dialog": "Postegro内WebView诱导弹窗：英文要求启用无障碍服务，查找Postegro并打开开关，点Open Settings；无遮罩。",
+    "refusal_2.0s": "拒权返回2秒后，同一「启用无障碍服务」诱导弹窗被重新拉起；通知横幅仍在，未提供取消出口。",
+    "refusal_10.5s": "拒权返回10.5秒后，诱导弹窗仍反复重现；页面持续要求开启无障碍并点Open Settings，通知未消失。"
+  }
+}

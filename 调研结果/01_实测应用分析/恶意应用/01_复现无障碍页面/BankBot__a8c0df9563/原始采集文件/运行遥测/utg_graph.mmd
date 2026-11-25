@@ -1,0 +1,17 @@
+flowchart TD
+    N_70453ba03ddc["Step 1: GrantPermissionsActivity\nAllow Postegro to make"]
+    N_bb0dd3b7374e["Step 2: GrantPermissionsActivity\nAllow Postegro to send"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_0f0f16418912["Step 4: p012p\n"]
+    N_560123980a17["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ce4bff9939c5["Step 5: SubSettings\nBack"]
+    N_2e5214d7c1e3["Step 5: p012p\nEnable Accessibility S"]
+    N_70453ba03ddc -->|"ui_click: click([4] Button text='Allow' id"| N_bb0dd3b7374e
+    N_bb0dd3b7374e -->|"ui_click: click([4] Button text='Allow' id"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([540, 190])"| N_0f0f16418912
+    N_0f0f16418912 -->|"ui_click: click([540, 676])"| N_560123980a17
+    N_560123980a17 -->|"detail_probe: click_service()"| N_ce4bff9939c5
+    N_ce4bff9939c5 -->|"warning_probe: click_use_service_switch"| N_2e5214d7c1e3
+    N_560123980a17 -->|"refusal_probe: Back_refuse"| N_2e5214d7c1e3
+    N_2e5214d7c1e3 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_2e5214d7c1e3
+    N_2e5214d7c1e3 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_2e5214d7c1e3

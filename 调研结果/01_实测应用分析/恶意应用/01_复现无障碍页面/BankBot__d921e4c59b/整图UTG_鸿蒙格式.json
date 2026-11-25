@@ -1,0 +1,312 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_111__d921e4c59b",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.tumuluses.gastrocnemius",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "010c7a0dfa4a",
+  "hook_node_ids": [
+    "faa0668add7e",
+    "234133a38d00"
+  ],
+  "nodes": [
+    {
+      "node_id": "010c7a0dfa4a",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.tumuluses.gastrocnemius",
+      "abilityName": "com.tumuluses.gastrocnemius.precordial",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "faa0668add7e",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Music Downloader",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "0fce50adffc3",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Music Downloader",
+        "Use Music Downloader",
+        "OPTIONS",
+        "Music Downloader shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "234133a38d00",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Music Downloader to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "010c7a0dfa4a",
+      "to": "faa0668add7e",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"ALLOW\" id=button (click) center=(540,2024))"
+    },
+    {
+      "from": "faa0668add7e",
+      "to": "0fce50adffc3",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0fce50adffc3",
+      "to": "234133a38d00",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "faa0668add7e",
+      "to": "010c7a0dfa4a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "010c7a0dfa4a",
+      "to": "010c7a0dfa4a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "010c7a0dfa4a",
+      "to": "010c7a0dfa4a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Music Downloader Use Music Downloader OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Music Downloader",
+        "Use Music Downloader",
+        "OPTIONS",
+        "Music Downloader shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Music Downloader to have full control o",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Music Downloader to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.tumuluses.gastrocnemius",
+      "top_activity": "com.tumuluses.gastrocnemius.precordial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.tumuluses.gastrocnemius",
+      "top_activity": "com.tumuluses.gastrocnemius.precordial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.tumuluses.gastrocnemius",
+      "top_activity": "com.tumuluses.gastrocnemius.precordial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Please grant the permission shown above for the application to run.",
+        "ALLOW"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BankBot__d921e4c59b",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用冒充“音乐下载器”，先在自有页以“请授予上方权限”诱导点ALLOW，再跳系统无障碍列表/详情与完全控制警告；拒权后仍自动重弹同一诱导页（RELAUNCHED_LURE_DIALOG），持续施压获取无障碍权限。",
+  "observed_lure_rhetoric_zh": [
+    "Please grant the permission shown above for the application to run. -> “请授予上方所示权限，应用才能运行”（precordial权限诱导页，拒权后重复出现）",
+    "ALLOW -> “允许”（诱导页唯一主按钮）",
+    "Please grant accessibility permission to use the application. -> “请授予无障碍权限以使用该应用”（Music Downloader通知横幅，多次催授）",
+    "Music Downloader -> “音乐下载器”（伪装应用名，用于降低戒心）",
+    "Play Store -> “应用商店”（伪装商店通知标题，正文为空）",
+    "Use Music Downloader -> “使用音乐下载器”（无障碍服务详情页开关/入口）",
+    "No description provided. -> “未提供描述”（无障碍服务详情页，弱化风险说明）",
+    "Allow Music Downloader to have full control of your device? -> “允许音乐下载器完全控制您的设备？”（系统无障碍警告）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> “完全控制仅适合辅助无障碍需求的应用，不适用于多数应用”（系统警告说明）",
+    "View and control screen -> “查看并控制屏幕”（系统警告权限说明）",
+    "It can read all content on the screen and display content over other apps. -> “可读取屏幕全部内容并叠加显示在其他应用上”（系统警告说明）",
+    "View and perform actions -> “查看并执行操作”（系统警告权限说明）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> “可跟踪与应用的交互或硬件传感器，并代表您操作应用”（系统警告说明）",
+    "Allow -> “允许”（系统警告高危授权按钮）",
+    "Deny -> “拒绝”（系统警告拒绝按钮，被测用于观察拒权后行为）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "自有权限诱导页：英文提示“请授予上方权限”，仅有ALLOW按钮；点击后，通知栏以Music Downloader横幅催授无障碍。",
+    "step_02": "系统无障碍列表页：DOWNLOADED APPS下Music Downloader为Off；探针在此捕获无障碍设置Hook，自动终止并记录探针。",
+    "post_jump_0.8s": "跳后0.8秒探针：无障碍设置页UI为空，无遮罩；通知仍保留Music Downloader催授无障碍与Play Store空正文通知。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍无UI与遮罩；无障碍催权通知消失，仅剩Play Store空通知及系统备份提醒，未见新动作。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示Music Downloader、Use Music Downloader与快捷方式Off，并称No description provided；本步仅检查详情，未授权。",
+    "detail_2_system_warning_dialog": "系统完全控制警告弹窗：详列查看/控制屏幕、读取屏幕内容并叠加、跟踪交互代操作；有Allow与Deny，本步仅检查未点选。",
+    "refusal_2.0s": "点Deny拒权后2秒返回自有页：再次显示“请授予上方权限”和ALLOW，判定RELAUNCHED_LURE_DIALOG，并继续推送Music Downloader催权通知。",
+    "refusal_10.5s": "拒权后10.5秒仍停留自有诱导页：同一英文提示与ALLOW保留，页面被重复拉起为RELAUNCHED_LURE_DIALOG；Music Downloader通知已消失。"
+  }
+}

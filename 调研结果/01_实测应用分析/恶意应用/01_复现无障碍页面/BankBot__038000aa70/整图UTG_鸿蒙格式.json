@@ -1,0 +1,296 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_112__038000aa70",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.jiuloisetp.muvhbmbajhun",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "021cc97368a3",
+  "hook_node_ids": [
+    "021cc97368a3",
+    "84b07009b4e7"
+  ],
+  "nodes": [
+    {
+      "node_id": "021cc97368a3",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Sistem Güncelleştirmesi",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "14ca84714f22",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Sistem Güncelleştirmesi",
+        "Use Sistem Güncelleştirmesi",
+        "OPTIONS",
+        "Sistem Güncelleştirmesi shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "84b07009b4e7",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Sistem Güncelleştirmesi to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "b0ce6b257de5",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Sistem Güncelleştirmesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "021cc97368a3",
+      "to": "14ca84714f22",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "14ca84714f22",
+      "to": "84b07009b4e7",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "021cc97368a3",
+      "to": "b0ce6b257de5",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "b0ce6b257de5",
+      "to": "b0ce6b257de5",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "b0ce6b257de5",
+      "to": "b0ce6b257de5",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Sistem Güncelleştirmesi Use Sistem Güncelleştirmesi OPT",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Sistem Güncelleştirmesi",
+        "Use Sistem Güncelleştirmesi",
+        "OPTIONS",
+        "Sistem Güncelleştirmesi shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Sistem Güncelleştirmesi to have full co",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Sistem Güncelleştirmesi to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Sistem Güncelleştirmesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Sistem Güncelleştirmesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Sistem Güncelleştirmesi to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BankBot__038000aa70",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用先引导进入无障碍设置，仿冒“系统更新”服务并弹出完全控制设备的高危授权警告；拒绝后转至后台运行电池优化弹窗，未崩溃而是优雅停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “Sistem Güncelleştirmesi（系统更新）”：以正常系统更新名义伪装无障碍服务（无障碍列表/服务详情/授权弹窗）。",
+    "英语 -> “Allow Sistem Güncelleştirmesi to have full control of your device?”及读屏、覆盖显示、跟踪交互说明：诱导授予完全控制权（系统警告弹窗）。",
+    "英语 -> “Let app always run in background?”及可能降低电池寿命说明：诱导允许后台常驻（电池优化弹窗）。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页出现“Sistem Güncelleştirmesi（系统更新）”已下载项，状态Off；顶部Google备份通知，无遮罩；采集Hook后终止。",
+    "post_jump_0.8s": "跳后0.8秒仍停留无障碍设置页，文本为空；仅Google“数据未备份/添加备份账户”通知，遮罩0，等待探针无新动作。",
+    "post_jump_2.0s": "跳后2秒仍在无障碍设置页，无可见文本；Google备份通知持续，遮罩0，等待探针未发现弹窗或跳转。",
+    "detail_1_service_detail_page": "服务详情页显示“Sistem Güncelleştirmesi（系统更新）”、Use开关与快捷方式选项，说明缺失；检查详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗称“允许系统更新完全控制设备”，列明读屏、覆盖显示、跟踪交互并代操作；有Allow/Deny，本步仅检查。",
+    "refusal_2.0s": "拒权返回2秒后出现电池优化弹窗“允许应用始终后台运行？”，可后续更改；有Deny/Allow，遮罩0；结果优雅停留/降级。",
+    "refusal_10.5s": "拒权返回10.5秒仍停在电池优化弹窗“允许应用始终后台运行？”，可后续更改；有Deny/Allow，遮罩0；结果优雅停留/降级。"
+  }
+}

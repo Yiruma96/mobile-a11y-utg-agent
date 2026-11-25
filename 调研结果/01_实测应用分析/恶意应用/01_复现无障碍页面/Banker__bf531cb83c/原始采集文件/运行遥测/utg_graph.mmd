@@ -1,0 +1,10 @@
+flowchart TD
+    N_5241af0bf955["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_6cadb8e94938["Step 1: SubSettings\nBack"]
+    N_4e8c0cbba0c6["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow WhatsLocal - Ach"]
+    N_7e30735252cf["Step 1: MainActivity\nWhatsLocal - Ache Já!"]
+    N_5241af0bf955 -->|"detail_probe: click_service()"| N_6cadb8e94938
+    N_6cadb8e94938 -->|"warning_probe: click_use_service_switch"| N_4e8c0cbba0c6
+    N_5241af0bf955 -->|"refusal_probe: Back_refuse"| N_7e30735252cf
+    N_7e30735252cf -->|"refusal_probe: wait(5.5s)_after_refusal"| N_7e30735252cf
+    N_7e30735252cf -->|"refusal_probe: wait(10.5s)_after_refusal"| N_7e30735252cf

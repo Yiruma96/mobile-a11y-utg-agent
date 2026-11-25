@@ -1,0 +1,323 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_023__1faeeec490",
+  "label": "malicious",
+  "family_or_category": "BingoMod",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "p50f9cd20.pe806e63b.pe1a3069b",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "43dae9762f3c",
+  "hook_node_ids": [
+    "da90f47c3ce4",
+    "133cdcae176a"
+  ],
+  "nodes": [
+    {
+      "node_id": "43dae9762f3c",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "p50f9cd20.pe806e63b.pe1a3069b",
+      "abilityName": "p50f9cd20.pe806e63b.pe1a3069b.peb3e8c60",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7e8dec1f7cfb",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "p50f9cd20.pe806e63b.pe1a3069b",
+      "abilityName": "p50f9cd20.pe806e63b.pe1a3069b.peb3e8c60",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "da90f47c3ce4",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Sicurezza Dispositivo",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "0f597d34bffb",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Sicurezza Dispositivo",
+        "Use Sicurezza Dispositivo",
+        "OPTIONS",
+        "Sicurezza Dispositivo shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "133cdcae176a",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Sicurezza Dispositivo to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "43dae9762f3c",
+      "to": "7e8dec1f7cfb",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1697])"
+    },
+    {
+      "from": "7e8dec1f7cfb",
+      "to": "da90f47c3ce4",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Prosegui\" (click) center=(540,2018))"
+    },
+    {
+      "from": "da90f47c3ce4",
+      "to": "0f597d34bffb",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0f597d34bffb",
+      "to": "133cdcae176a",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "da90f47c3ce4",
+      "to": "7e8dec1f7cfb",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "7e8dec1f7cfb",
+      "to": "7e8dec1f7cfb",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "7e8dec1f7cfb",
+      "to": "7e8dec1f7cfb",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Sicurezza Dispositivo Use Sicurezza Dispositivo OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Sicurezza Dispositivo",
+        "Use Sicurezza Dispositivo",
+        "OPTIONS",
+        "Sicurezza Dispositivo shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Sicurezza Dispositivo to have full cont",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Sicurezza Dispositivo to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "p50f9cd20.pe806e63b.pe1a3069b",
+      "top_activity": "p50f9cd20.pe806e63b.pe1a3069b.peb3e8c60",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "p50f9cd20.pe806e63b.pe1a3069b",
+      "top_activity": "p50f9cd20.pe806e63b.pe1a3069b.peb3e8c60",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "p50f9cd20.pe806e63b.pe1a3069b",
+      "top_activity": "p50f9cd20.pe806e63b.pe1a3069b.peb3e8c60",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "入口WebView以意大利语“必须授予全部权限”诱导点击Prosegui，跳转系统无障碍设置开启“Sicurezza Dispositivo”，触发全控权限警告；拒权后仍被弹回同一诱导页，形成TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语 -> “要正确启用本应用，必须允许全部权限；请点击下方‘Prosegui’按钮继续。”（step_02及拒权返回页）",
+    "英语系统警告 -> “允许Sicurezza Dispositivo完全控制您的设备？可查看并控制屏幕、读取屏幕全部内容并叠加显示、跟踪交互并代您操作应用。”（detail_2系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "入口WebView空白页，仅见可点击区域；按坐标点按“Prosegui”继续，尚无可见文本、通知或遮罩，属于引导前置页。",
+    "step_02": "WebView诱导页显示“AnroidRAA/Image 2”，意大利语称必须允许全部权限并点下方“Prosegui”；本步点击该按钮，无通知/遮罩。",
+    "step_03": "跳转系统无障碍设置，已下载应用“Sicurezza Dispositivo”呈Off；探针捕获A11Y设置Hook后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒停留无障碍设置页，界面文本未采到；等待探针显示遮罩数为0，无通知横幅，未见额外弹窗。",
+    "post_jump_2.0s": "跳转后2.0秒仍在无障碍设置页等待，未出现新文本；遮罩计数为0，无通知或浮层，说明未发生二次覆盖诱导。",
+    "detail_1_service_detail_page": "进入“Sicurezza Dispositivo”服务详情，显示Use开关Off、Shortcut settings及“No description provided.”；本步仅查看详情，无通知/遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗询问是否允许“Sicurezza Dispositivo”完全控制设备，列明读屏、叠加与代操作；含Allow/Deny，本步仅查看，无遮罩。",
+    "refusal_2.0s": "点Deny拒权后2秒被弹回同一WebView诱导页，仍要求点“Prosegui”授予全部权限；无通知/遮罩，状态为TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒权后10.5秒仍停留在同一诱导页，反复要求“Prosegui”授权；无通知/遮罩，确认被锁在TRAPPED_ON_LURE_SCREEN。"
+  }
+}

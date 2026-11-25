@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "应用先进入系统无障碍列表，显示已安装的 WLocalize 为 Off；随后服务详情页用葡萄牙语“实时追踪任意 WhatsApp 号码、完全免费”诱导开启无障碍。系统全控权弹窗选择 Deny 后，应用退回自身 MainActivity，WebView 加载 bitsolution.info 失败并显示 net::ERR_NAME_NOT_RESOLVED，整体优雅停留或降级，无通知或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 -> “使用 WLocalize - Ache Já! 追踪任何人的 WhatsApp！实时定位任意号码；完全免费；最佳 WhatsApp 追踪器”（服务详情页）",
+    "英语 -> “允许 WLocalize - Ache Já! 完全控制你的设备吗？可查看和控制屏幕、查看并执行操作”（系统警告弹窗）",
+    "英语 -> “网页无法访问：https://bitsolution.info/?odjasijdaosi 无法加载，net::ERR_NAME_NOT_RESOLVED”（拒权返回页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍列表：已下载应用 WLocalize 显示 Off；采集无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留系统无障碍设置页，界面文本为空，通知与遮罩均为 0；仅等待观察，无点击。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍在无障碍设置页，未捕获界面文本，通知与遮罩均为 0；继续等待且无操作。",
+    "detail_1_service_detail_page": "服务详情页：提示启用 WLocalize 无障碍及音量键快捷方式；葡语宣称可实时追踪任意 WhatsApp 号码且免费，属诱导；仅检查未授权。",
+    "detail_2_system_warning_dialog": "系统全控警告：英文询问是否允许 WLocalize 完全控制设备，可查看和控制屏幕并代为操作；检查后点 Deny，无遮罩。",
+    "refusal_2.0s": "拒权返回+2.0s：退回 WLocalize 主界面，WebView 报“网页无法访问”，bitsolution.info 解析失败；呈优雅停留或降级，无通知遮罩。",
+    "refusal_10.5s": "拒权返回+10.5s：仍停留 WLocalize 主界面，WebView 继续显示同一域名解析失败错误；无新增通知或遮罩，维持降级状态。"
+  }
+}

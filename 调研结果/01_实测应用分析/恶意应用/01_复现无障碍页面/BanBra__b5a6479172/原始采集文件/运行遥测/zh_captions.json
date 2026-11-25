@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "应用以“Defensor Digital（数字卫士）”伪装安全工具，先停在“修改系统设置”授权页，再搜索无障碍设置并触发钩子；拒权返回后落入 STALE_SETTINGS_BACKSTACK，未见显式弹窗话术但存在高权限诱导路径。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 Defensor Digital -> “数字卫士/数字防御者”，安全工具式伪装名称（Step1 修改系统设置页）",
+    "英语 Modify system settings -> “修改系统设置”，高权限授权页标题（Step1-2）",
+    "英语 accessibility -> “无障碍”，用于检索无障碍授权入口（Step3-4）"
+  ],
+  "frame_captions": {
+    "step_01": "“修改系统设置”授权页：Defensor Digital 显示“不允许”，相机为“允许”；本步点搜索图标，无通知/遮罩。",
+    "step_02": "仍在“修改系统设置”页，搜索栏已展开；本步点搜索输入框准备检索，无通知横幅、无遮罩、无取消授权键。",
+    "step_03": "授权页搜索框已聚焦，本步输入关键词“accessibility（无障碍）”；无通知/遮罩，未见取消或拒绝提示。",
+    "step_04": "“无障碍列表页”搜索框显示“accessibility（无障碍）”；触发无障碍钩子探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍在设置活动页，无可见文本；等待期间无通知横幅、无遮罩（overlays=0）。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面无可见文本，仍无通知与遮罩（overlays=0）；未见新增授权弹窗或诱导提示。",
+    "refusal_2.0s": "拒权返回 2.0 秒：搜索框仍为“accessibility（无障碍）”，返回后设置回退栈陈旧，无通知/遮罩。"
+  }
+}

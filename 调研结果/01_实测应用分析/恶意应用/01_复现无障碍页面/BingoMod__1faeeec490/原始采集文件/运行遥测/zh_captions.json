@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "入口WebView以意大利语“必须授予全部权限”诱导点击Prosegui，跳转系统无障碍设置开启“Sicurezza Dispositivo”，触发全控权限警告；拒权后仍被弹回同一诱导页，形成TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语 -> “要正确启用本应用，必须允许全部权限；请点击下方‘Prosegui’按钮继续。”（step_02及拒权返回页）",
+    "英语系统警告 -> “允许Sicurezza Dispositivo完全控制您的设备？可查看并控制屏幕、读取屏幕全部内容并叠加显示、跟踪交互并代您操作应用。”（detail_2系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "入口WebView空白页，仅见可点击区域；按坐标点按“Prosegui”继续，尚无可见文本、通知或遮罩，属于引导前置页。",
+    "step_02": "WebView诱导页显示“AnroidRAA/Image 2”，意大利语称必须允许全部权限并点下方“Prosegui”；本步点击该按钮，无通知/遮罩。",
+    "step_03": "跳转系统无障碍设置，已下载应用“Sicurezza Dispositivo”呈Off；探针捕获A11Y设置Hook后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒停留无障碍设置页，界面文本未采到；等待探针显示遮罩数为0，无通知横幅，未见额外弹窗。",
+    "post_jump_2.0s": "跳转后2.0秒仍在无障碍设置页等待，未出现新文本；遮罩计数为0，无通知或浮层，说明未发生二次覆盖诱导。",
+    "detail_1_service_detail_page": "进入“Sicurezza Dispositivo”服务详情，显示Use开关Off、Shortcut settings及“No description provided.”；本步仅查看详情，无通知/遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗询问是否允许“Sicurezza Dispositivo”完全控制设备，列明读屏、叠加与代操作；含Allow/Deny，本步仅查看，无遮罩。",
+    "refusal_2.0s": "点Deny拒权后2秒被弹回同一WebView诱导页，仍要求点“Prosegui”授予全部权限；无通知/遮罩，状态为TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒权后10.5秒仍停留在同一诱导页，反复要求“Prosegui”授权；无通知/遮罩，确认被锁在TRAPPED_ON_LURE_SCREEN。"
+  }
+}

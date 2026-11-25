@@ -1,0 +1,10 @@
+flowchart TD
+    N_1ae17f5a98ca["Step 1: craniate\ne"]
+    N_5a2cb7947ab6["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_949f345a9832["Step 2: SubSettings\nBack"]
+    N_1ae17f5a98ca -->|"ui_click: click([3] FrameLayout id=button "| N_5a2cb7947ab6
+    N_5a2cb7947ab6 -->|"detail_probe: click_service()"| N_949f345a9832
+    N_949f345a9832 -->|"warning_probe: click_use_service_switch"| N_949f345a9832
+    N_5a2cb7947ab6 -->|"refusal_probe: Back_refuse"| N_1ae17f5a98ca
+    N_1ae17f5a98ca -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1ae17f5a98ca
+    N_1ae17f5a98ca -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1ae17f5a98ca

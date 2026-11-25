@@ -1,0 +1,300 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_110__4a0219032d",
+  "label": "malicious",
+  "family_or_category": "Banker",
+  "static_visibility": "clear",
+  "target_package": "service.webview.strongwebview",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "17251e27b096",
+  "hook_node_ids": [
+    "17251e27b096",
+    "1f23b7835c7d"
+  ],
+  "nodes": [
+    {
+      "node_id": "17251e27b096",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "WLocalize - Ache Já!",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "27d8f0c8bdf4",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "WLocalize - Ache Já!",
+        "Use WLocalize - Ache Já!",
+        "OPTIONS",
+        "WLocalize - Ache Já! shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Utilize o WLocalize - Ache Já! Para rastrear o whats de quem você quiser!\n\n\n * Localize qualquer número em tempo real \n\n * Totalmente Gratuito \n\n * O Melhor rastreador para o whats!"
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "1f23b7835c7d",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow WLocalize - Ache Já! to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "c7b465639651",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "service.webview.strongwebview",
+      "abilityName": "desire.fenix.service.novoapp.packages.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "WLocalize - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "17251e27b096",
+      "to": "27d8f0c8bdf4",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "27d8f0c8bdf4",
+      "to": "1f23b7835c7d",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "17251e27b096",
+      "to": "c7b465639651",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "c7b465639651",
+      "to": "c7b465639651",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "c7b465639651",
+      "to": "c7b465639651",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back WLocalize - Ache Já! Use WLocalize - Ache Já! OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "WLocalize - Ache Já!",
+        "Use WLocalize - Ache Já!",
+        "OPTIONS",
+        "WLocalize - Ache Já! shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Utilize o WLocalize - Ache Já! Para rastrear o whats de quem você quiser!\n\n\n * Localize qualquer número em tempo real \n\n * Totalmente Gratuito \n\n * O Melhor rastreador para o whats!"
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow WLocalize - Ache Já! to have full contr",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow WLocalize - Ache Já! to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "service.webview.strongwebview",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WLocalize - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "service.webview.strongwebview",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WLocalize - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "service.webview.strongwebview",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WLocalize - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Banker__4a0219032d",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先进入系统无障碍列表，显示已安装的 WLocalize 为 Off；随后服务详情页用葡萄牙语“实时追踪任意 WhatsApp 号码、完全免费”诱导开启无障碍。系统全控权弹窗选择 Deny 后，应用退回自身 MainActivity，WebView 加载 bitsolution.info 失败并显示 net::ERR_NAME_NOT_RESOLVED，整体优雅停留或降级，无通知或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 -> “使用 WLocalize - Ache Já! 追踪任何人的 WhatsApp！实时定位任意号码；完全免费；最佳 WhatsApp 追踪器”（服务详情页）",
+    "英语 -> “允许 WLocalize - Ache Já! 完全控制你的设备吗？可查看和控制屏幕、查看并执行操作”（系统警告弹窗）",
+    "英语 -> “网页无法访问：https://bitsolution.info/?odjasijdaosi 无法加载，net::ERR_NAME_NOT_RESOLVED”（拒权返回页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统无障碍列表：已下载应用 WLocalize 显示 Off；采集无障碍设置钩子后自动终止，无通知与遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留系统无障碍设置页，界面文本为空，通知与遮罩均为 0；仅等待观察，无点击。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍在无障碍设置页，未捕获界面文本，通知与遮罩均为 0；继续等待且无操作。",
+    "detail_1_service_detail_page": "服务详情页：提示启用 WLocalize 无障碍及音量键快捷方式；葡语宣称可实时追踪任意 WhatsApp 号码且免费，属诱导；仅检查未授权。",
+    "detail_2_system_warning_dialog": "系统全控警告：英文询问是否允许 WLocalize 完全控制设备，可查看和控制屏幕并代为操作；检查后点 Deny，无遮罩。",
+    "refusal_2.0s": "拒权返回+2.0s：退回 WLocalize 主界面，WebView 报“网页无法访问”，bitsolution.info 解析失败；呈优雅停留或降级，无通知遮罩。",
+    "refusal_10.5s": "拒权返回+10.5s：仍停留 WLocalize 主界面，WebView 继续显示同一域名解析失败错误；无新增通知或遮罩，维持降级状态。"
+  }
+}

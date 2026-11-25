@@ -1,0 +1,13 @@
+flowchart TD
+    N_8511eda42fdf["Step 1: p055ff792\n"]
+    N_035444827faa["Step 2: p055ff792\nAnroidRAA"]
+    N_f166ef2a4cb5["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_8755fe468cf5["Step 3: SubSettings\nBack"]
+    N_04f0274ed76e["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Scudo App to hav"]
+    N_8511eda42fdf -->|"ui_click: click([540, 1747])"| N_035444827faa
+    N_035444827faa -->|"ui_click: click([4] Button text='Prosegui'"| N_f166ef2a4cb5
+    N_f166ef2a4cb5 -->|"detail_probe: click_service()"| N_8755fe468cf5
+    N_8755fe468cf5 -->|"warning_probe: click_use_service_switch"| N_04f0274ed76e
+    N_f166ef2a4cb5 -->|"refusal_probe: Back_refuse"| N_035444827faa
+    N_035444827faa -->|"refusal_probe: wait(5.5s)_after_refusal"| N_035444827faa
+    N_035444827faa -->|"refusal_probe: wait(10.5s)_after_refusal"| N_035444827faa

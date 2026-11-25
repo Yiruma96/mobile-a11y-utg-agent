@@ -1,0 +1,199 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_090__b5a6479172",
+  "label": "malicious",
+  "family_or_category": "BanBra",
+  "static_visibility": "clear",
+  "target_package": "com.brazil.android.free",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "2d19d4427466",
+  "hook_node_ids": [
+    "c4999f3a9acc"
+  ],
+  "nodes": [
+    {
+      "node_id": "2d19d4427466",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$WriteSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Modify system settings",
+        "Search",
+        "More options",
+        "Camera",
+        "Allowed",
+        "Contacts",
+        "Defensor Digital",
+        "Not allowed",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "01a40655a1bb",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$WriteSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Collapse",
+        "Search",
+        "More options",
+        "Camera",
+        "Allowed",
+        "Contacts",
+        "Defensor Digital",
+        "Not allowed",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c4999f3a9acc",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$WriteSettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Collapse",
+        "accessibility",
+        "Clear query",
+        "More options"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2d19d4427466",
+      "to": "01a40655a1bb",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView desc=\"Search\" id=search_app_list_menu (click) center=(903,160))"
+    },
+    {
+      "from": "01a40655a1bb",
+      "to": "01a40655a1bb",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([2] EditText text=\"Search\" id=search_src_text (click) center=(583,159))"
+    },
+    {
+      "from": "01a40655a1bb",
+      "to": "c4999f3a9acc",
+      "step": 3,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "c4999f3a9acc",
+      "to": "c4999f3a9acc",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$WriteSettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$WriteSettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$WriteSettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$WriteSettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Collapse",
+        "accessibility",
+        "Clear query",
+        "More options"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BanBra__b5a6479172",
+  "refusal_outcome_refined": "STALE_SETTINGS_BACKSTACK",
+  "app_chain_summary_zh": "应用以“Defensor Digital（数字卫士）”伪装安全工具，先停在“修改系统设置”授权页，再搜索无障碍设置并触发钩子；拒权返回后落入 STALE_SETTINGS_BACKSTACK，未见显式弹窗话术但存在高权限诱导路径。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 Defensor Digital -> “数字卫士/数字防御者”，安全工具式伪装名称（Step1 修改系统设置页）",
+    "英语 Modify system settings -> “修改系统设置”，高权限授权页标题（Step1-2）",
+    "英语 accessibility -> “无障碍”，用于检索无障碍授权入口（Step3-4）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "“修改系统设置”授权页：Defensor Digital 显示“不允许”，相机为“允许”；本步点搜索图标，无通知/遮罩。",
+    "step_02": "仍在“修改系统设置”页，搜索栏已展开；本步点搜索输入框准备检索，无通知横幅、无遮罩、无取消授权键。",
+    "step_03": "授权页搜索框已聚焦，本步输入关键词“accessibility（无障碍）”；无通知/遮罩，未见取消或拒绝提示。",
+    "step_04": "“无障碍列表页”搜索框显示“accessibility（无障碍）”；触发无障碍钩子探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍在设置活动页，无可见文本；等待期间无通知横幅、无遮罩（overlays=0）。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面无可见文本，仍无通知与遮罩（overlays=0）；未见新增授权弹窗或诱导提示。",
+    "refusal_2.0s": "拒权返回 2.0 秒：搜索框仍为“accessibility（无障碍）”，返回后设置回退栈陈旧，无通知/遮罩。"
+  }
+}

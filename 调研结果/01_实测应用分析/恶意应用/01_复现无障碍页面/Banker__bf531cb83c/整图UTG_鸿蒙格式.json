@@ -1,0 +1,299 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_019__bf531cb83c",
+  "label": "malicious",
+  "family_or_category": "Banker",
+  "static_visibility": "clear",
+  "target_package": "service.webview.kiszweb",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "5241af0bf955",
+  "hook_node_ids": [
+    "5241af0bf955",
+    "4e8c0cbba0c6"
+  ],
+  "nodes": [
+    {
+      "node_id": "5241af0bf955",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "WhatsLocal - Ache Já!",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6cadb8e94938",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "WhatsLocal - Ache Já!",
+        "Use WhatsLocal - Ache Já!",
+        "OPTIONS",
+        "WhatsLocal - Ache Já! shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Utilize o WhatsLocal - Ache Já! Para rastrear o whats de quem você quiser!\n\n\n * Localize qualquer número em tempo real \n\n * Totalmente Gratuito \n\n * O Melhor rastreador para o whats!"
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "4e8c0cbba0c6",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow WhatsLocal - Ache Já! to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "7e30735252cf",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "service.webview.kiszweb",
+      "abilityName": "desire.fenix.service.novoapp.packages.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "WhatsLocal - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5241af0bf955",
+      "to": "6cadb8e94938",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "6cadb8e94938",
+      "to": "4e8c0cbba0c6",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "5241af0bf955",
+      "to": "7e30735252cf",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "7e30735252cf",
+      "to": "7e30735252cf",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "7e30735252cf",
+      "to": "7e30735252cf",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back WhatsLocal - Ache Já! Use WhatsLocal - Ache Já! OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "WhatsLocal - Ache Já!",
+        "Use WhatsLocal - Ache Já!",
+        "OPTIONS",
+        "WhatsLocal - Ache Já! shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Utilize o WhatsLocal - Ache Já! Para rastrear o whats de quem você quiser!\n\n\n * Localize qualquer número em tempo real \n\n * Totalmente Gratuito \n\n * O Melhor rastreador para o whats!"
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow WhatsLocal - Ache Já! to have full cont",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow WhatsLocal - Ache Já! to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "service.webview.kiszweb",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WhatsLocal - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "service.webview.kiszweb",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WhatsLocal - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "service.webview.kiszweb",
+      "top_activity": "desire.fenix.service.novoapp.packages.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "WhatsLocal - Ache Já!",
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://bitsolution.info/?odjasijdaosi could not be loaded because:",
+        "net::ERR_NAME_NOT_RESOLVED"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用伪装成「WhatsLocal - Ache Já!」WhatsApp 号码追踪器，引导用户进入系统无障碍设置，并试图诱骗用户授予自己「完全控制设备」的高危无障碍权限；用户拒绝后，应用主界面的 WebView 加载远程域名 bitsolution.info 失败，表现优雅降级并停留。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语 -> 「用 WhatsLocal - Ache Já! 追踪你想追踪的任何人的 WhatsApp！实时定位任意号码、完全免费、最好的 WhatsApp 追踪器」（无障碍服务详情页描述文本）",
+    "英语（系统权限弹窗）-> 「允许 WhatsLocal - Ache Já! 完全控制你的设备？」并说明该权限可查看并控制屏幕、读取屏幕上全部内容、在其他应用上叠加显示、跟踪交互并代替用户操作应用（系统警告弹窗）",
+    "英语（WebView 错误页）-> 「网页无法打开」，因 net::ERR_NAME_NOT_RESOLVED 无法加载 https://bitsolution.info/?odjasijdaosi（拒权后主界面）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "安卓系统「无障碍」设置页，下载应用列表中可见 WhatsLocal - Ache Já!，开关为关闭；探针捕获无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，界面文本尚未渲染，遮罩数为 0，无通知横幅，也未执行任何点击。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面依旧为无障碍设置页且无可读文本，遮罩数仍为 0，期间应用未弹出覆盖层或诱导浮窗。",
+    "detail_1_service_detail_page": "无障碍服务详情页，标题为 WhatsLocal - Ache Já!，含「使用该服务」「按住音量键」「快捷方式设置」；下方葡萄牙语宣称可实时追踪任意 WhatsApp 号码、完全免费，属于典型的诱导话术。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗，询问是否允许 WhatsLocal - Ache Já! 完全控制设备，并列出可查看并控制屏幕、读取全部内容、叠加显示、代替用户操作等权限；本步仅查看后点击 Deny 拒绝。",
+    "refusal_2.0s": "拒权后 2 秒返回应用主界面 MainActivity；WebView 显示「网页无法打开」，因 bitsolution.info 域名解析失败（ERR_NAME_NOT_RESOLVED），页面降级停留且未崩溃。",
+    "refusal_10.5s": "拒权后 10.5 秒界面无变化，仍为同一 WebView 错误页与失效域名，无重试弹窗、无跳转、无遮罩，表现为优雅降级后的静止停留。"
+  }
+}

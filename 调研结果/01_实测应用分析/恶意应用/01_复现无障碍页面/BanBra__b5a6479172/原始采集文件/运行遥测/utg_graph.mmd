@@ -1,0 +1,8 @@
+flowchart TD
+    N_2d19d4427466["Step 1: Settings$WriteSettingsActivi\nBack"]
+    N_01a40655a1bb["Step 2: Settings$WriteSettingsActivi\nCollapse"]
+    N_c4999f3a9acc["Step 4: Settings$WriteSettingsActivi [HOOK_A11Y_SETTINGS]\nCollapse"]
+    N_2d19d4427466 -->|"ui_click: click([3] TextView desc='Search'"| N_01a40655a1bb
+    N_01a40655a1bb -->|"ui_click: click([2] EditText text='Search'"| N_01a40655a1bb
+    N_01a40655a1bb -->|"ui_type: type()"| N_c4999f3a9acc
+    N_c4999f3a9acc -->|"refusal_probe: Back_refuse"| N_c4999f3a9acc

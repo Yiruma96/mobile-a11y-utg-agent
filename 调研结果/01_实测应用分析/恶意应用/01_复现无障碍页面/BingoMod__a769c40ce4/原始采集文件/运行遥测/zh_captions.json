@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用从全屏WebView意大利语盾牌权限诱导页起步，以“须授予全部权限”话术引导点击Prosegui，并跳转系统无障碍设置为Scudo App开启服务；在系统高风险警告点Deny返回后，应用仍反复停留在原诱导页，无取消/退出，最终TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语 -> “为正确启用应用，必须授予所有权限；点击下方‘Prosegui（继续）’按钮以继续。”（step_02 与拒权返回+2.0s/+10.5s 诱导页）",
+    "英语 -> “允许Scudo App完全控制你的设备？完全控制适合有辅助无障碍需求的App，但不适合大多数App；可查看并控制屏幕、查看并执行操作。”（系统警告弹窗，点Deny）",
+    "英语 -> “使用Scudo App”启用无障碍服务，且“未提供描述”。（Scudo App 服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "应用启动即进入全屏WebView，展示意大利语盾牌权限诱导页；本步点击(540,1747)，无文字、通知或遮罩。",
+    "step_02": "权限诱导页显示意大利语：须授予全部权限并点“Prosegui”（继续）；本步点击底部按钮中心(540,2018)。",
+    "step_03": "跳转系统无障碍设置，列表显示“Scudo App”为Off；截获HOOK_A11Y_SETTINGS后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停在无障碍设置页；无可见文字、通知或遮罩，仅等待观察页面稳定性。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为无障碍设置页；无文字、通知与遮罩，等待未触发额外页面或提示。",
+    "detail_1_service_detail_page": "进入Scudo App服务详情页，含“Use Scudo App”启用项与快捷键；描述为No description provided，未见警告。",
+    "detail_2_system_warning_dialog": "系统高风险授权弹窗：询问是否允许Scudo App完全控制设备，列明读屏、覆盖显示与代操作；本步检查后点Deny。",
+    "refusal_2.0s": "拒权返回2秒后仍被扣在意大利语权限诱导页，要求授予全部权限并点“Prosegui”；无取消/退出，形成诱骗闭环。",
+    "refusal_10.5s": "拒权返回10.5秒仍停留同一意大利语诱骗页，持续要求全部权限并点“Prosegui”；无退出路径，判定困于诱导屏。"
+  }
+}

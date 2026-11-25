@@ -1,0 +1,10 @@
+flowchart TD
+    N_17251e27b096["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_27d8f0c8bdf4["Step 1: SubSettings\nBack"]
+    N_1f23b7835c7d["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow WLocalize - Ache"]
+    N_c7b465639651["Step 1: MainActivity\nWLocalize - Ache Já!"]
+    N_17251e27b096 -->|"detail_probe: click_service()"| N_27d8f0c8bdf4
+    N_27d8f0c8bdf4 -->|"warning_probe: click_use_service_switch"| N_1f23b7835c7d
+    N_17251e27b096 -->|"refusal_probe: Back_refuse"| N_c7b465639651
+    N_c7b465639651 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_c7b465639651
+    N_c7b465639651 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_c7b465639651

@@ -1,0 +1,11 @@
+flowchart TD
+    N_010c7a0dfa4a["Step 1: precordial\ne"]
+    N_faa0668add7e["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_0fce50adffc3["Step 2: SubSettings\nBack"]
+    N_234133a38d00["Step 2: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Music Downloader"]
+    N_010c7a0dfa4a -->|"ui_click: click([3] Button text='ALLOW' id"| N_faa0668add7e
+    N_faa0668add7e -->|"detail_probe: click_service()"| N_0fce50adffc3
+    N_0fce50adffc3 -->|"warning_probe: click_use_service_switch"| N_234133a38d00
+    N_faa0668add7e -->|"refusal_probe: Back_refuse"| N_010c7a0dfa4a
+    N_010c7a0dfa4a -->|"refusal_probe: wait(5.5s)_after_refusal"| N_010c7a0dfa4a
+    N_010c7a0dfa4a -->|"refusal_probe: wait(10.5s)_after_refusal"| N_010c7a0dfa4a

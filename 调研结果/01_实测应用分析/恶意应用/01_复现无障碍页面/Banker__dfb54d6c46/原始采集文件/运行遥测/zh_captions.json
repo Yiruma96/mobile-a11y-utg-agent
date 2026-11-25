@@ -1,0 +1,26 @@
+{
+  "app_chain_summary_zh": "该 Banker 类应用从系统无障碍设置进入，展示伪装成“UYGULAMA AKTIFLESTIRME ONAYI”（应用激活批准）的服务，并诱导用户授予完全控制权；用户点 Deny 后返回桌面且无异常，表现为平稳停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语：UYGULAMA AKTIFLESTIRME ONAYI -> 应用激活批准（无障碍列表页/服务详情页/系统警告弹窗）",
+    "土耳其语：Use UYGULAMA AKTIFLESTIRME ONAYI -> 使用/启用“应用激活批准”（服务详情页）",
+    "土耳其语：UYGULAMA AKTIFLESTIRME ONAYI shortcut -> “应用激活批准”快捷方式（服务详情页）",
+    "土耳其语：Hold volume keys -> 长按音量键（服务详情页）",
+    "英语：No description provided. -> 未提供描述（服务详情页）",
+    "英语：Allow UYGULAMA AKTIFLESTIRME ONAYI to have full control of your device? -> 是否允许“应用激活批准”完全控制您的设备？（系统警告弹窗）",
+    "英语：Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的App，不适用于大多数App（系统警告弹窗）",
+    "英语：View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "英语：It can read all content on the screen and display content over other apps. -> 可读取屏幕全部内容并在其他应用上显示内容（系统警告弹窗）",
+    "英语：View and perform actions -> 查看并执行操作（系统警告弹窗）",
+    "英语：It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 可跟踪与App或硬件传感器的交互，并代您操作App（系统警告弹窗）",
+    "英语：Allow / Deny -> 允许 / 拒绝（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍设置列表页，出现土耳其语“UYGULAMA AKTIFLESTIRME ONAYI”（应用激活批准）服务项且为 Off；捕获无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒仍停留无障碍列表页，界面文本为空，无通知横幅与悬浮遮罩；仅等待探针，无点击和页面跳转。",
+    "post_jump_2.0s": "跳转后2秒仍停在无障碍列表页，界面文本为空，无通知横幅或遮罩；继续等待，未发生点击或跳转。",
+    "detail_1_service_detail_page": "无障碍服务详情页显示土语“UYGULAMA AKTIFLESTIRME ONAYI”（应用激活批准）及“Use…”启用项、音量键快捷方式；仅检查未授权。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗，询问是否允许“UYGULAMA AKTIFLESTIRME ONAYI”（应用激活批准）完全控制设备，并称可读屏、覆盖应用、代操作；未点 Allow。",
+    "refusal_2.0s": "点 Deny 后2秒返回 Google 桌面，显示应用列表、日期天气等常规内容；无错误弹窗或二次诱导，表现为拒权后平稳降级。",
+    "refusal_10.5s": "拒权后10.5秒仍停在 Google 桌面，显示应用列表、日期天气等；无通知横幅、遮罩或再次索权，保持平稳停留。"
+  }
+}

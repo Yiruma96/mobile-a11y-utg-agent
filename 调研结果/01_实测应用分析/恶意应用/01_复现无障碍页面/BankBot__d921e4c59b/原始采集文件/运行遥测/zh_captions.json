@@ -1,0 +1,30 @@
+{
+  "app_chain_summary_zh": "应用冒充“音乐下载器”，先在自有页以“请授予上方权限”诱导点ALLOW，再跳系统无障碍列表/详情与完全控制警告；拒权后仍自动重弹同一诱导页（RELAUNCHED_LURE_DIALOG），持续施压获取无障碍权限。",
+  "observed_lure_rhetoric_zh": [
+    "Please grant the permission shown above for the application to run. -> “请授予上方所示权限，应用才能运行”（precordial权限诱导页，拒权后重复出现）",
+    "ALLOW -> “允许”（诱导页唯一主按钮）",
+    "Please grant accessibility permission to use the application. -> “请授予无障碍权限以使用该应用”（Music Downloader通知横幅，多次催授）",
+    "Music Downloader -> “音乐下载器”（伪装应用名，用于降低戒心）",
+    "Play Store -> “应用商店”（伪装商店通知标题，正文为空）",
+    "Use Music Downloader -> “使用音乐下载器”（无障碍服务详情页开关/入口）",
+    "No description provided. -> “未提供描述”（无障碍服务详情页，弱化风险说明）",
+    "Allow Music Downloader to have full control of your device? -> “允许音乐下载器完全控制您的设备？”（系统无障碍警告）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> “完全控制仅适合辅助无障碍需求的应用，不适用于多数应用”（系统警告说明）",
+    "View and control screen -> “查看并控制屏幕”（系统警告权限说明）",
+    "It can read all content on the screen and display content over other apps. -> “可读取屏幕全部内容并叠加显示在其他应用上”（系统警告说明）",
+    "View and perform actions -> “查看并执行操作”（系统警告权限说明）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> “可跟踪与应用的交互或硬件传感器，并代表您操作应用”（系统警告说明）",
+    "Allow -> “允许”（系统警告高危授权按钮）",
+    "Deny -> “拒绝”（系统警告拒绝按钮，被测用于观察拒权后行为）"
+  ],
+  "frame_captions": {
+    "step_01": "自有权限诱导页：英文提示“请授予上方权限”，仅有ALLOW按钮；点击后，通知栏以Music Downloader横幅催授无障碍。",
+    "step_02": "系统无障碍列表页：DOWNLOADED APPS下Music Downloader为Off；探针在此捕获无障碍设置Hook，自动终止并记录探针。",
+    "post_jump_0.8s": "跳后0.8秒探针：无障碍设置页UI为空，无遮罩；通知仍保留Music Downloader催授无障碍与Play Store空正文通知。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍无UI与遮罩；无障碍催权通知消失，仅剩Play Store空通知及系统备份提醒，未见新动作。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示Music Downloader、Use Music Downloader与快捷方式Off，并称No description provided；本步仅检查详情，未授权。",
+    "detail_2_system_warning_dialog": "系统完全控制警告弹窗：详列查看/控制屏幕、读取屏幕内容并叠加、跟踪交互代操作；有Allow与Deny，本步仅检查未点选。",
+    "refusal_2.0s": "点Deny拒权后2秒返回自有页：再次显示“请授予上方权限”和ALLOW，判定RELAUNCHED_LURE_DIALOG，并继续推送Music Downloader催权通知。",
+    "refusal_10.5s": "拒权后10.5秒仍停留自有诱导页：同一英文提示与ALLOW保留，页面被重复拉起为RELAUNCHED_LURE_DIALOG；Music Downloader通知已消失。"
+  }
+}

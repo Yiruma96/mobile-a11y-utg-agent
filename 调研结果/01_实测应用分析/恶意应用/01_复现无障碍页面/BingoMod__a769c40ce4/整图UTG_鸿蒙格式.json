@@ -1,0 +1,325 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_157__a769c40ce4",
+  "label": "malicious",
+  "family_or_category": "BingoMod",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "p1a1fa04c.pae25061e.p658c02c8",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "8511eda42fdf",
+  "hook_node_ids": [
+    "f166ef2a4cb5",
+    "04f0274ed76e"
+  ],
+  "nodes": [
+    {
+      "node_id": "8511eda42fdf",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "p1a1fa04c.pae25061e.p658c02c8",
+      "abilityName": "p1a1fa04c.pae25061e.p658c02c8.p055ff792",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "035444827faa",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "p1a1fa04c.pae25061e.p658c02c8",
+      "abilityName": "p1a1fa04c.pae25061e.p658c02c8.p055ff792",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f166ef2a4cb5",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Scudo App",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "8755fe468cf5",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Scudo App",
+        "Use Scudo App",
+        "OPTIONS",
+        "Scudo App shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "04f0274ed76e",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Scudo App to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8511eda42fdf",
+      "to": "035444827faa",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1747])"
+    },
+    {
+      "from": "035444827faa",
+      "to": "f166ef2a4cb5",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Prosegui\" (click) center=(540,2018))"
+    },
+    {
+      "from": "f166ef2a4cb5",
+      "to": "8755fe468cf5",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "8755fe468cf5",
+      "to": "04f0274ed76e",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "f166ef2a4cb5",
+      "to": "035444827faa",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "035444827faa",
+      "to": "035444827faa",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "035444827faa",
+      "to": "035444827faa",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Scudo App Use Scudo App OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Scudo App",
+        "Use Scudo App",
+        "OPTIONS",
+        "Scudo App shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Scudo App to have full control of your ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Scudo App to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "p1a1fa04c.pae25061e.p658c02c8",
+      "top_activity": "p1a1fa04c.pae25061e.p658c02c8.p055ff792",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "p1a1fa04c.pae25061e.p658c02c8",
+      "top_activity": "p1a1fa04c.pae25061e.p658c02c8.p055ff792",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "p1a1fa04c.pae25061e.p658c02c8",
+      "top_activity": "p1a1fa04c.pae25061e.p658c02c8.p055ff792",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "AnroidRAA",
+        "Image 2",
+        "Per abilitare correttamente l'app è necessario consentire tutti i permessi. Clicca sul pulsante \"Prosegui\" in basso per continuare.",
+        "Prosegui"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BingoMod__a769c40ce4",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用从全屏WebView意大利语盾牌权限诱导页起步，以“须授予全部权限”话术引导点击Prosegui，并跳转系统无障碍设置为Scudo App开启服务；在系统高风险警告点Deny返回后，应用仍反复停留在原诱导页，无取消/退出，最终TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语 -> “为正确启用应用，必须授予所有权限；点击下方‘Prosegui（继续）’按钮以继续。”（step_02 与拒权返回+2.0s/+10.5s 诱导页）",
+    "英语 -> “允许Scudo App完全控制你的设备？完全控制适合有辅助无障碍需求的App，但不适合大多数App；可查看并控制屏幕、查看并执行操作。”（系统警告弹窗，点Deny）",
+    "英语 -> “使用Scudo App”启用无障碍服务，且“未提供描述”。（Scudo App 服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用启动即进入全屏WebView，展示意大利语盾牌权限诱导页；本步点击(540,1747)，无文字、通知或遮罩。",
+    "step_02": "权限诱导页显示意大利语：须授予全部权限并点“Prosegui”（继续）；本步点击底部按钮中心(540,2018)。",
+    "step_03": "跳转系统无障碍设置，列表显示“Scudo App”为Off；截获HOOK_A11Y_SETTINGS后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停在无障碍设置页；无可见文字、通知或遮罩，仅等待观察页面稳定性。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为无障碍设置页；无文字、通知与遮罩，等待未触发额外页面或提示。",
+    "detail_1_service_detail_page": "进入Scudo App服务详情页，含“Use Scudo App”启用项与快捷键；描述为No description provided，未见警告。",
+    "detail_2_system_warning_dialog": "系统高风险授权弹窗：询问是否允许Scudo App完全控制设备，列明读屏、覆盖显示与代操作；本步检查后点Deny。",
+    "refusal_2.0s": "拒权返回2秒后仍被扣在意大利语权限诱导页，要求授予全部权限并点“Prosegui”；无取消/退出，形成诱骗闭环。",
+    "refusal_10.5s": "拒权返回10.5秒仍停留同一意大利语诱骗页，持续要求全部权限并点“Prosegui”；无退出路径，判定困于诱导屏。"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "该应用先引导进入无障碍设置，仿冒“系统更新”服务并弹出完全控制设备的高危授权警告；拒绝后转至后台运行电池优化弹窗，未崩溃而是优雅停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “Sistem Güncelleştirmesi（系统更新）”：以正常系统更新名义伪装无障碍服务（无障碍列表/服务详情/授权弹窗）。",
+    "英语 -> “Allow Sistem Güncelleştirmesi to have full control of your device?”及读屏、覆盖显示、跟踪交互说明：诱导授予完全控制权（系统警告弹窗）。",
+    "英语 -> “Let app always run in background?”及可能降低电池寿命说明：诱导允许后台常驻（电池优化弹窗）。"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍列表页出现“Sistem Güncelleştirmesi（系统更新）”已下载项，状态Off；顶部Google备份通知，无遮罩；采集Hook后终止。",
+    "post_jump_0.8s": "跳后0.8秒仍停留无障碍设置页，文本为空；仅Google“数据未备份/添加备份账户”通知，遮罩0，等待探针无新动作。",
+    "post_jump_2.0s": "跳后2秒仍在无障碍设置页，无可见文本；Google备份通知持续，遮罩0，等待探针未发现弹窗或跳转。",
+    "detail_1_service_detail_page": "服务详情页显示“Sistem Güncelleştirmesi（系统更新）”、Use开关与快捷方式选项，说明缺失；检查详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗称“允许系统更新完全控制设备”，列明读屏、覆盖显示、跟踪交互并代操作；有Allow/Deny，本步仅检查。",
+    "refusal_2.0s": "拒权返回2秒后出现电池优化弹窗“允许应用始终后台运行？”，可后续更改；有Deny/Allow，遮罩0；结果优雅停留/降级。",
+    "refusal_10.5s": "拒权返回10.5秒仍停在电池优化弹窗“允许应用始终后台运行？”，可后续更改；有Deny/Allow，遮罩0；结果优雅停留/降级。"
+  }
+}

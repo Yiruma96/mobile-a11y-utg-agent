@@ -1,0 +1,302 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_110__a0610f08c7",
+  "label": "malicious",
+  "family_or_category": "BankBot",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.quadrigeminate.hydrocatalysis",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "d487a7215de4",
+  "hook_node_ids": [
+    "5a2cb7947ab6",
+    "77b747d06dcd"
+  ],
+  "nodes": [
+    {
+      "node_id": "d487a7215de4",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.quadrigeminate.hydrocatalysis",
+      "abilityName": "com.quadrigeminate.hydrocatalysis.directorial",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "e",
+        "Müzik indirme işleminin aktif olabilmesi için yukarıda gösterilen izni veriniz.",
+        "İzin Ver"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "5a2cb7947ab6",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "M​ü​z​i​k",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "949f345a9832",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "M​ü​z​i​k",
+        "Use M​ü​z​i​k",
+        "OPTIONS",
+        "M​ü​z​i​k shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "77b747d06dcd",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow M​ü​z​i​k to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d487a7215de4",
+      "to": "5a2cb7947ab6",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] FrameLayout id=button (click) center=(540,2024))"
+    },
+    {
+      "from": "5a2cb7947ab6",
+      "to": "949f345a9832",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "949f345a9832",
+      "to": "77b747d06dcd",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "5a2cb7947ab6",
+      "to": "d487a7215de4",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "d487a7215de4",
+      "to": "d487a7215de4",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "d487a7215de4",
+      "to": "d487a7215de4",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back M​ü​z​i​k Use M​ü​z​i​k OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "M​ü​z​i​k",
+        "Use M​ü​z​i​k",
+        "OPTIONS",
+        "M​ü​z​i​k shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow M​ü​z​i​k to have full control of your ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow M​ü​z​i​k to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.quadrigeminate.hydrocatalysis",
+      "top_activity": "com.quadrigeminate.hydrocatalysis.directorial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Müzik indirme işleminin aktif olabilmesi için yukarıda gösterilen izni veriniz.",
+        "İzin Ver"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.quadrigeminate.hydrocatalysis",
+      "top_activity": "com.quadrigeminate.hydrocatalysis.directorial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Müzik indirme işleminin aktif olabilmesi için yukarıda gösterilen izni veriniz.",
+        "İzin Ver"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.quadrigeminate.hydrocatalysis",
+      "top_activity": "com.quadrigeminate.hydrocatalysis.directorial",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "e",
+        "Müzik indirme işleminin aktif olabilmesi için yukarıda gösterilen izni veriniz.",
+        "İzin Ver"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "BankBot__a0610f08c7",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以“音乐下载需授权”为名，从土耳其语诱导页跳转系统无障碍设置，并通过通知反复催促开启“Müzik”无障碍服务；用户拒绝高风险“完全控制设备”授权后仍被退回同一诱导页，无法绕过。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “为使音乐下载功能启用，请授予上方所示权限。”（step_01/拒权返回页）",
+    "土耳其语 -> “允许/授予权限”（step_01/拒权返回页按钮）",
+    "土耳其语通知 -> “音乐：请授予无障碍权限以便下载音乐。”（step_01通知横幅）",
+    "土耳其语通知 -> “请授予无障碍权限以便下载音乐。”（post_jump_0.8s通知横幅）",
+    "英语系统警告 -> “允许 Müzik 完全控制设备吗？可查看并控制屏幕、读取屏幕内容、跟踪交互并代你操作应用。”（detail_2系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "土耳其语诱导页称音乐下载需授权，按钮意为“允许”；点击后跳转无障碍设置，通知横幅同步催促开启无障碍。",
+    "step_02": "系统无障碍设置列表，已下载应用“Müzik”显示关闭；通知横幅仍要求为下载音乐授予无障碍。探针在此捕获设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒仍停留在无障碍列表，界面无文字；音乐通知横幅继续显示“下载音乐需授予无障碍”，等待探针未见遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒无障碍列表仍无界面文字，通知已变为空；等待探针显示遮罩数为0，未出现进一步诱导弹窗。",
+    "detail_1_service_detail_page": "“Müzik”无障碍服务详情页，含“Use Müzik”、快捷键关闭及“未提供描述”；仅检查详情，未开启服务。",
+    "detail_2_system_warning_dialog": "系统高风险授权警告：询问是否允许“Müzik”完全控制设备，列明可读屏、代操作等；检查后点击“Deny”拒绝。",
+    "refusal_2.0s": "拒绝后2秒被退回同一土耳其语诱导页，仍称音乐下载需授权并提供“允许”按钮；通知横幅仍在，流程被卡在诱导页。",
+    "refusal_10.5s": "拒绝后10.5秒仍停在原诱导页，文案和“允许”按钮不变；通知已空，未见退出或替代路径，持续困在诱导屏。"
+  }
+}
