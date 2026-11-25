@@ -1,0 +1,14 @@
+flowchart TD
+    N_a1fffd677e89["Step 1: MainActivity\nClose sheet"]
+    N_0e7f94cf9f91["Step 2: MainActivity\nShizuku (Optional)"]
+    N_d14cada83732["Step 3: MainActivity\nWhat's New"]
+    N_7773ec475f5f["Step 4: MainActivity\nApp Theme"]
+    N_8a8be76f624a["Step 6: MainActivity\nQuick Access & Toggles"]
+    N_a4452101140d["Step 7: MainActivity\nQuick Access & Toggles"]
+    N_a1fffd677e89 -->|"ui_click: click([15] TextView text='Got it"| N_0e7f94cf9f91
+    N_0e7f94cf9f91 -->|"ui_click: click([32] View (click) center=("| N_d14cada83732
+    N_d14cada83732 -->|"ui_click: click([6] TextView text='Setting"| N_7773ec475f5f
+    N_7773ec475f5f -->|"ui_system_button: system_button(Back)"| N_0e7f94cf9f91
+    N_0e7f94cf9f91 -->|"ui_swipe: swipe([540, 1800])"| N_8a8be76f624a
+    N_8a8be76f624a -->|"ui_click: click([5] View (click,unchecked)"| N_a4452101140d
+    N_a4452101140d -->|"ui_wait: wait()"| N_a4452101140d

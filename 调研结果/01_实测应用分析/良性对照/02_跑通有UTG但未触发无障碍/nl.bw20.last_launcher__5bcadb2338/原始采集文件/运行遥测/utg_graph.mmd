@@ -1,0 +1,12 @@
+flowchart TD
+    N_a90fb87a9c75["Step 1: MainActivity\nSwipe up for apps
+Long"]
+    N_caab354c6f4f["Step 2: MainActivity\nBack"]
+    N_8e6d8d723a51["Step 3: MainActivity\nBack"]
+    N_a90fb87a9c75 -->|"ui_long_press: long_press([1] View desc='Swipe "| N_caab354c6f4f
+    N_caab354c6f4f -->|"ui_click: click([6] Button desc='Home' (cl"| N_8e6d8d723a51
+    N_8e6d8d723a51 -->|"ui_click: click([4] Switch desc='Double ta"| N_8e6d8d723a51
+    N_8e6d8d723a51 -->|"ui_click: click([4] Switch desc='Double ta"| N_8e6d8d723a51
+    N_8e6d8d723a51 -->|"ui_click: click([1] Button desc='Back' (cl"| N_caab354c6f4f
+    N_caab354c6f4f -->|"ui_click: click([6] Button desc='Home' (cl"| N_8e6d8d723a51
+    N_8e6d8d723a51 -->|"ui_click: click([4] Switch desc='Double ta"| N_8e6d8d723a51

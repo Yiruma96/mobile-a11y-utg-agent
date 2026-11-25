@@ -1,0 +1,15 @@
+flowchart TD
+    N_86fbea222357["Step 1: ActivityPermissions\nAutomation"]
+    N_f54b75207762["Step 2: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_c9e9da009dbd["Step 3: ActivityMainScreen\nWould you like to rece"]
+    N_614df55151a3["Step 4: ActivityMainTabLayout\nAutomation"]
+    N_14538f3f43ed["Step 6: ActivityControlCenter\nAutomation"]
+    N_b536f6b3df78["Step 7: ActivitySettings\nAutomation"]
+    N_2b98af130b6d["Step 8: ActivitySettings\nAutomation"]
+    N_86fbea222357 -->|"ui_click: click([7] Button text='continue'"| N_f54b75207762
+    N_f54b75207762 -->|"ui_click: click([4] Button text='Allow' id"| N_c9e9da009dbd
+    N_c9e9da009dbd -->|"ui_click: click([3] Button text='No' id=bu"| N_614df55151a3
+    N_614df55151a3 -->|"ui_click: click([13] ToggleButton text='OF"| N_614df55151a3
+    N_614df55151a3 -->|"ui_click: click([25] Button text='Control "| N_14538f3f43ed
+    N_14538f3f43ed -->|"ui_click: click([4] Button text='Settings'"| N_b536f6b3df78
+    N_b536f6b3df78 -->|"ui_swipe: swipe([540, 1900])"| N_2b98af130b6d

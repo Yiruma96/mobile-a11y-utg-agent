@@ -1,0 +1,258 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_030__a2df41359b",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "com.katoaapps.openminilaunch",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1ec37f18ce9c",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1ec37f18ce9c",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.katoaapps.openminilaunch",
+      "abilityName": "com.katoaapps.openminilaunch.ui.launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MinkLauncher OpenSource",
+        "Guided setup",
+        "1 / 5",
+        "Default home app",
+        "MinkLauncher OpenSource is built to replace your current Home screen.",
+        "Choose Mink Launcher when Android shows the Home app list.",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "2275afe17f05",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set MinkLauncher OpenSour… as your default home app?",
+        "MinkLauncher OpenSour…",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "1b8ab8c921b1",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set MinkLauncher OpenSour… as your default home app?",
+        "MinkLauncher OpenSour…",
+        "No permissions needed",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "ccf78aa48b4e",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.katoaapps.openminilaunch",
+      "abilityName": "com.katoaapps.openminilaunch.ui.launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MinkLauncher OpenSource",
+        "Guided setup",
+        "1 / 5",
+        "Default home app",
+        "MinkLauncher OpenSource is built to replace your current Home screen.",
+        "MinkLauncher OpenSource is your default Home app.",
+        "Granted",
+        "Manage",
+        "Next"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "0b1a7a7be788",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.katoaapps.openminilaunch",
+      "abilityName": "com.katoaapps.openminilaunch.ui.launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MinkLauncher OpenSource",
+        "Guided setup",
+        "2 / 5",
+        "Home themes",
+        "Choose a complete theme, or change its wallpaper source above.",
+        "Mink Theme",
+        "Selected",
+        "Theme 1",
+        "Theme 2",
+        "Theme 3",
+        "Theme 4",
+        "Theme 5",
+        "Theme 6",
+        "Theme 7",
+        "Theme 8"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "1ad1c7bc429b",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.katoaapps.openminilaunch",
+      "abilityName": "com.katoaapps.openminilaunch.ui.launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MinkLauncher OpenSource",
+        "Guided setup",
+        "3 / 5",
+        "Keep your people close",
+        "Reach friends, family, and colleagues without hunting through apps. Type @ to prepare a message or # to start a call.",
+        "Contacts",
+        "Shows starred contacts in Favorites and matches names for @ messages and # calls.",
+        "Allow contact access",
+        "Back",
+        "Next"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "572002b3f324",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.katoaapps.openminilaunch",
+      "abilityName": "com.katoaapps.openminilaunch.ui.launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MinkLauncher OpenSource",
+        "Guided setup",
+        "4 / 5",
+        "Message your way",
+        "Type @ and choose the app you already use. Mink prepares the message, and individual Favorites can use a different app later.",
+        "Where messages open",
+        "System Messages",
+        "Send Automatically with Mink Assistant",
+        "Enable this enhanced messaging experience to skip the draft and send System Messages directly. Other messaging apps still open a draft.",
+        "Back",
+        "Next"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1ec37f18ce9c",
+      "to": "1ec37f18ce9c",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] TextView text=\"Next\" center=(823,2038))"
+    },
+    {
+      "from": "1ec37f18ce9c",
+      "to": "2275afe17f05",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] View (click) center=(540,1152))"
+    },
+    {
+      "from": "2275afe17f05",
+      "to": "1b8ab8c921b1",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] RadioButton (unchecked) center=(898,1102))"
+    },
+    {
+      "from": "1b8ab8c921b1",
+      "to": "ccf78aa48b4e",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Set as default\" id=button1 (click) center=(822,1451))"
+    },
+    {
+      "from": "ccf78aa48b4e",
+      "to": "0b1a7a7be788",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([11] View (click) center=(864,2038))"
+    },
+    {
+      "from": "0b1a7a7be788",
+      "to": "1ad1c7bc429b",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([710, 2038])"
+    },
+    {
+      "from": "1ad1c7bc429b",
+      "to": "572002b3f324",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([12] View (click) center=(710,2038))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "com.katoaapps.openminilaunch__a2df41359b",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以五步引导设置启动，先引导将自身设为默认桌面，再进入主题、联系人、消息等设置；仅触发系统默认桌面角色授权，未出现通知横幅或悬浮遮罩，话术偏功能说明。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “MinkLauncher 旨在替换当前主屏幕”（Step1/2 默认桌面页）",
+    "英文 -> “当 Android 显示主屏幕应用列表时选择 Mink Launcher”（Step1/2 默认桌面页）",
+    "英文 -> 系统询问是否将 MinkLauncher 设为默认主屏幕应用（Step3/4 系统角色页）",
+    "英文 -> “无需权限”（Step4 系统角色页）",
+    "英文 -> “MinkLauncher 已是你的默认主屏幕应用”（Step5 默认桌面页）",
+    "英文 -> “选择完整主题，或在上方更改壁纸来源”（Step6 主题页）",
+    "英文 -> “通过@发消息、#打电话联系亲友，无需翻找应用；显示星标联系人并匹配姓名”（Step7 联系人页）",
+    "英文 -> “输入@选择常用消息应用，Mink 准备消息；启用 Mink 助理可跳过草稿自动发送”（Step8 消息页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "第1/5步默认桌面引导页，称将替换当前主屏幕；点击Next但页面未前进，无通知/遮罩。",
+    "step_02": "同一默认桌面引导页，探针改点“Default home app”区域以触发系统角色选择；仍无通知或遮罩。",
+    "step_03": "跳转系统角色请求页，询问是否将MinkLauncher设为默认主屏幕并列出Pixel Launcher；探针点选前者单选项。",
+    "step_04": "系统角色请求页出现“无需权限”说明，探针点击“Set as default”确认默认主屏幕；无通知/遮罩。",
+    "step_05": "返回应用默认桌面页1/5，显示已授权“Granted”并可管理；点击Next进入下一步，无通知/遮罩。",
+    "step_06": "进入2/5主题页，提供Mink Theme及Theme 1-7并标记已选；探针点底部继续进入下一步。",
+    "step_07": "3/5联系人页，说明@发消息、#打电话并请求联系人权限；探针跳过授权点Next继续，无通知/遮罩。",
+    "step_08": "4/5消息页，说明@选择消息应用及Mink助理自动发送增强体验；探针点Next完成本步，无通知/遮罩。"
+  }
+}

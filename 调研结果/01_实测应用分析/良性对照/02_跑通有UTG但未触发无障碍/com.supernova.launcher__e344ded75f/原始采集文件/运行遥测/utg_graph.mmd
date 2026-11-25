@@ -1,0 +1,13 @@
+flowchart TD
+    N_508262fd52fb["Step 1: ResolverActivity\nNo apps can perform th"]
+    N_2554e6782f63["Step 5: ResolverActivity\nUse Pixel Launcher as "]
+    N_0d4051b4cfbe["Step 6: OnboardingActivity\nPrevious"]
+    N_3681b02dd0a9["Step 7: LauncherActivity\nSupernova Settings"]
+    N_a66f6768028e["Step 8: SettingsLauncherAlias\nSettings"]
+    N_508262fd52fb -->|"ui_open: open()"| N_508262fd52fb
+    N_508262fd52fb -->|"ui_system_button: system_button(Back)"| N_508262fd52fb
+    N_508262fd52fb -->|"ui_system_button: system_button(Home)"| N_508262fd52fb
+    N_508262fd52fb -->|"ui_click: click([330, 804])"| N_2554e6782f63
+    N_2554e6782f63 -->|"ui_click: click([6] TextView text='Superno"| N_0d4051b4cfbe
+    N_0d4051b4cfbe -->|"ui_click: click([14] TextView text='Skip s"| N_3681b02dd0a9
+    N_3681b02dd0a9 -->|"ui_click: click([3] LinearLayout desc='Sup"| N_a66f6768028e

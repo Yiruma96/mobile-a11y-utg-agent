@@ -1,0 +1,13 @@
+flowchart TD
+    N_95302d93eb48["Step 1: OnboardingActivity\nSpeakThat!"]
+    N_0fa9350143d4["Step 2: OnboardingActivity\nSpeakThat!"]
+    N_4cc3e5ec0745["Step 3: OnboardingActivity\nSpeakThat!"]
+    N_c906eafa3cc3["Step 4: OnboardingActivity\nSpeakThat!"]
+    N_9f698d4cf52d["Step 5: Settings$NotificationAccessS\nBack"]
+    N_95302d93eb48 -->|"ui_click: click([15] ImageButton desc='Nex"| N_0fa9350143d4
+    N_0fa9350143d4 -->|"ui_click: click([11] ImageButton desc='Nex"| N_4cc3e5ec0745
+    N_4cc3e5ec0745 -->|"ui_click: click([17] ImageButton desc='Nex"| N_c906eafa3cc3
+    N_c906eafa3cc3 -->|"ui_click: click([10] Button text='Open Set"| N_9f698d4cf52d
+    N_9f698d4cf52d -->|"ui_system_button: system_button(Back)"| N_c906eafa3cc3
+    N_c906eafa3cc3 -->|"ui_click: click([14] ImageButton desc='Nex"| N_c906eafa3cc3
+    N_c906eafa3cc3 -->|"ui_swipe: swipe([900, 1000])"| N_c906eafa3cc3

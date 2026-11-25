@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "该应用从系统联系人权限弹窗点击 Allow 进入 KISS 主界面，再经菜单进入 KISS 设置与 Gestures 手势页，多次尝试开启“双击锁屏”开关但未成功。全程未出现通知横幅或遮罩，属于常规极简桌面启动器的权限申请与功能配置链路。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 允许 KISS 启动器访问你的联系人吗？（Step 1 系统权限弹窗）",
+    "English -> 开始搜索任何内容：应用、联系人、设置等（Step 2 主界面搜索引导）",
+    "English -> 始终查看历史记录以便快速访问；快速访问常用应用，KISS 会学习你的使用习惯（Step 2 主界面引导）",
+    "English -> 手势仅在极简 UI 的主屏幕空白区域生效；需在 Home screen 设置中开启 Minimalistic UI（Step 5-8 手势设置页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统联系人权限弹窗，询问是否允许 KISS 访问联系人，含 Allow/Deny；点击 Allow 授权，无通知/遮罩。",
+    "step_02": "KISS 主界面，展示搜索栏及常用应用/联系人引导；点击右下 Menu 图标进入设置，无通知/遮罩。",
+    "step_03": "主界面菜单展开，含 KISS settings/Update wallpaper/Device settings；点击 KISS settings 进设置，无通知/遮罩。",
+    "step_04": "KISS 设置主页，分区含外观、主屏、搜索、历史等；点击一项进入 Gestures 手势设置，无通知/遮罩。",
+    "step_05": "Gestures 手势设置页，说明仅极简 UI 空白区生效；点击未选中的双击锁屏开关，无通知/遮罩。",
+    "step_06": "仍为 Gestures 页，双击锁屏开关未开启；改点整行尝试切换，界面无变化，无通知/遮罩。",
+    "step_07": "仍为 Gestures 页，开关显示未选中；改点开关滑块坐标，仍未开启，无通知/遮罩。",
+    "step_08": "仍为 Gestures 页，双击锁屏开关未选中；再点标签区域，开关仍未开启，无通知/遮罩。"
+  }
+}

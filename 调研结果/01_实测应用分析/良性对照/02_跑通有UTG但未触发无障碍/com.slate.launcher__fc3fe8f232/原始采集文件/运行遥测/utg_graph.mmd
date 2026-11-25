@@ -1,0 +1,13 @@
+flowchart TD
+    N_febfb18fc68e["Step 1: OnboardingActivity\nslate"]
+    N_fe2b6633c6a0["Step 3: OnboardingActivity\nCHOOSE A THEME"]
+    N_9bbe39eb8c96["Step 4: MainActivity\nWELCOME TO SLATE"]
+    N_e7233bcdc1c8["Step 5: MainActivity\nCalendar"]
+    N_962f80ef91cc["Step 7: MainActivity\n4:26"]
+    N_febfb18fc68e -->|"ui_click: click([34] CheckBox desc='I have"| N_febfb18fc68e
+    N_febfb18fc68e -->|"ui_swipe: swipe([540, 1900])"| N_fe2b6633c6a0
+    N_fe2b6633c6a0 -->|"ui_click: click([35] TextView text='Skip f"| N_9bbe39eb8c96
+    N_9bbe39eb8c96 -->|"ui_click: click([4] TextView text='Skip' i"| N_e7233bcdc1c8
+    N_e7233bcdc1c8 -->|"ui_system_button: system_button(Back)"| N_e7233bcdc1c8
+    N_e7233bcdc1c8 -->|"ui_swipe: swipe([540, 1100])"| N_962f80ef91cc
+    N_962f80ef91cc -->|"ui_system_button: system_button(Back)"| N_e7233bcdc1c8

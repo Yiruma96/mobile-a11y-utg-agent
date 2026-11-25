@@ -1,0 +1,15 @@
+flowchart TD
+    N_8b1e74a3b607["Step 1: MainActivity\nWelcome to Tap, Tap"]
+    N_f8cabcf66aa7["Step 2: MainActivity\nTap, Tap is free and o"]
+    N_d509dd9e2f4a["Step 3: MainActivity\nAllow Internet Access?"]
+    N_8b62baf42dbc["Step 4: MainActivity\nDouble tap the back of"]
+    N_a3c465e85f5b["Step 5: MainActivity\nGesture Configuration"]
+    N_a5c76d251f36["Step 6: MainActivity\nGesture Configuration"]
+    N_9f7589e4594b["Step 7: MainActivity\nNot working? Try chang"]
+    N_8b1e74a3b607 -->|"ui_click: click([2] Button text='Get start"| N_f8cabcf66aa7
+    N_f8cabcf66aa7 -->|"ui_click: click([8] Button text='Next' id="| N_d509dd9e2f4a
+    N_d509dd9e2f4a -->|"ui_click: click([4] Button text='Allow whi"| N_8b62baf42dbc
+    N_8b62baf42dbc -->|"ui_click: click([5] ImageButton (click) ce"| N_a3c465e85f5b
+    N_a3c465e85f5b -->|"ui_swipe: swipe([540, 1900])"| N_a5c76d251f36
+    N_a5c76d251f36 -->|"ui_click: click([2] ImageButton (click) ce"| N_9f7589e4594b
+    N_9f7589e4594b -->|"ui_click: click([5] ImageButton (click) ce"| N_a3c465e85f5b

@@ -1,0 +1,16 @@
+flowchart TD
+    N_2c3a3bdc75b3["Step 1: MainActivity\nStep 1 / 5 · Welcome"]
+    N_cd0fdee32651["Step 2: MainActivity\nI'm one of you."]
+    N_404fa9f353cb["Step 3: MainActivity\nDuring the COVID-19 pa"]
+    N_13910582450f["Step 4: MainActivity\nStep 2 / 5 · How it wo"]
+    N_11b4efccbf41["Step 5: MainActivity\nSTRICT"]
+    N_aa76f5624844["Step 6: MainActivity\nStep 3 / 5 · Scope and"]
+    N_8a22c41498d1["Step 7: MainActivity\nStep 4 / 5 · Apps"]
+    N_1b95dc2a8bfd["Step 8: MainActivity\nApps and preferences"]
+    N_2c3a3bdc75b3 -->|"ui_swipe: swipe([540, 1900])"| N_cd0fdee32651
+    N_cd0fdee32651 -->|"ui_swipe: swipe([540, 2000])"| N_404fa9f353cb
+    N_404fa9f353cb -->|"ui_click: click([11] TextView text='Start "| N_13910582450f
+    N_13910582450f -->|"ui_swipe: swipe([540, 2000])"| N_11b4efccbf41
+    N_11b4efccbf41 -->|"ui_click: click([16] View (click) center=("| N_aa76f5624844
+    N_aa76f5624844 -->|"ui_click: click([15] View (click) center=("| N_8a22c41498d1
+    N_8a22c41498d1 -->|"ui_swipe: swipe([540, 2000])"| N_1b95dc2a8bfd

@@ -1,0 +1,17 @@
+{
+  "app_chain_summary_zh": "应用启动后先弹出 KeyStore 密码提示并明文展示密码，关闭后进入 Splash 启动页持续显示“Determining working mode…”，多次等待仍卡住，返回桌面重启后依旧停留在启动页；全程无通知横幅、无遮罩，未进入主界面，也未出现授权或拒权诱导。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “以下为 App Manager KeyStore 密码，请存放在安全处以便备份/恢复；此消息不会再次显示”（KeyStoreActivity 页面，属安全提示而非诱导）",
+    "English -> “正在确定工作模式…”（SplashActivity 页面，属初始化状态提示）"
+  ],
+  "frame_captions": {
+    "step_01": "KeyStoreActivity 弹出密码提示，英文说明密码用于备份/恢复且仅显示一次，并明文展示 zCSr…；本步点击 Close 关闭，无通知横幅与遮罩。",
+    "step_02": "SplashActivity 启动页显示 App Manager、版本 4.1.1 与英文“Determining working mode…（正在确定工作模式）”；本步等待加载，无通知与遮罩。",
+    "step_03": "仍停留 Splash 启动页，继续显示“正在确定工作模式…”及版本 4.1.1；本步再次等待初始化，页面无通知横幅、无遮罩。",
+    "step_04": "Splash 启动页第三次保持“正在确定工作模式…”，未出现新内容；本步继续等待，页面无通知、无遮罩，也未进入主界面。",
+    "step_05": "Splash 启动页仍卡在“正在确定工作模式”，等待无进展后本步按系统 Back 退出应用；页面无通知横幅、无遮罩，也无取消/跳过键。",
+    "step_06": "退出至系统桌面 NexusLauncher，显示 Apps list、周三 11月25日、-1°C 多云及 Messages/Chrome/Search 等；本步准备重新打开应用，无通知/遮罩。",
+    "step_07": "重新启动后仍回到 SplashActivity，显示“正在确定工作模式…”与版本 4.1.1；本步继续等待，页面无通知横幅与遮罩。",
+    "step_08": "Splash 启动页第二次仍卡在“正在确定工作模式…”，长时间等待无变化；页面无通知、无遮罩，也未进入主界面或授权流程。"
+  }
+}

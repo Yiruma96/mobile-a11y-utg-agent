@@ -1,0 +1,13 @@
+flowchart TD
+    N_6e98b69df747["Step 1: GrantPermissionsActivity\nAllow KISS launcher to"]
+    N_f68ae652fa44["Step 2: MainActivity\nStart searching for an"]
+    N_7cb12f4b85ad["Step 3: MainActivity\nKISS settings"]
+    N_a38a0ac4c71b["Step 4: SettingsActivity\nNavigate up"]
+    N_927e8a9c6530["Step 5: SettingsActivity\nNavigate up"]
+    N_6e98b69df747 -->|"ui_click: click([4] Button text='Allow' id"| N_f68ae652fa44
+    N_f68ae652fa44 -->|"ui_click: click([12] ImageView desc='Menu'"| N_7cb12f4b85ad
+    N_7cb12f4b85ad -->|"ui_click: click([1] TextView text='KISS se"| N_a38a0ac4c71b
+    N_a38a0ac4c71b -->|"ui_click: click([24] LinearLayout (click) "| N_927e8a9c6530
+    N_927e8a9c6530 -->|"ui_click: click([23] Switch id=switch_widg"| N_927e8a9c6530
+    N_927e8a9c6530 -->|"ui_click: click([21] LinearLayout (click) "| N_927e8a9c6530
+    N_927e8a9c6530 -->|"ui_click: click([972, 1638])"| N_927e8a9c6530

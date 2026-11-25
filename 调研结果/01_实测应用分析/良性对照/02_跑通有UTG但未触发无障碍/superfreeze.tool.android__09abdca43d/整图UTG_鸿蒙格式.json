@@ -1,0 +1,228 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_055__09abdca43d",
+  "label": "benign",
+  "family_or_category": "系统清理与省电冻结",
+  "static_visibility": "clear",
+  "target_package": "superfreeze.tool.android",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "d47914f37a7f",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "d47914f37a7f",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "welcome to",
+        "SuperFreezZ"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "01fb9504ef31",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Warning",
+        "Stopping/freezing apps frequently will probably drain your battery FASTER, because the \"un-freezing\" consumes power.\n\nThis is also a problem with other similar apps such as Greenify and \"battery savers\" (except that they don't warn you about this)."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f440938ce068",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Info",
+        "Examples of apps that deserve to be frozen: \n \n• Untrusted apps (that you do not want to have running in the background) \n• Apps you rarely use \n• Annoying apps"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "1cccaf58f873",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "modes",
+        "Freeze Mode: ALWAYS FREEZE",
+        "There are 3 freeze modes. You can choose one for every app. ALWAYS FREEZE will freeze an app in any case."
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "00fa6218f1e4",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "modes",
+        "Freeze Mode: INTELLIGENT",
+        "INTELLIGENT FREEZE will freeze an app only if it has not been used for some time (7 days by default). Also, apps from F-Droid will not be frozen."
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "dabe10b33fe0",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "modes",
+        "Freeze Mode: NEVER FREEZE",
+        "NEVER FREEZE will - turn off freezing and never freeze an app."
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "3083c20874d6",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "automatic freezing",
+        "Yes",
+        "For: \n• Ease of use \n• Freezing a lot of apps",
+        "No",
+        "You will have to press \"FORCE STOP\", \"OK\" and \"Back\" manually to freeze an app. \nFor: \n• Slow devices \n• Security concerns \n• No registration of SuperFreezZ as an accessibility service"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "efe579471449",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "superfreeze.tool.android",
+      "abilityName": "superfreeze.tool.android.userInterface.intro.IntroActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility Service",
+        "SuperFreezZ needs the accessibility service in order to automate freezing.\n\nPlease select SuperFreezZ, then enable access.",
+        "CANCEL",
+        "ENABLE"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d47914f37a7f",
+      "to": "01fb9504ef31",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] ImageButton id=next (click) center=(920,2060))"
+    },
+    {
+      "from": "01fb9504ef31",
+      "to": "f440938ce068",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] ImageButton id=next (click) center=(920,2060))"
+    },
+    {
+      "from": "f440938ce068",
+      "to": "1cccaf58f873",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] ImageButton id=next (click) center=(920,2060))"
+    },
+    {
+      "from": "1cccaf58f873",
+      "to": "00fa6218f1e4",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] ImageButton id=next (click) center=(920,2060))"
+    },
+    {
+      "from": "00fa6218f1e4",
+      "to": "dabe10b33fe0",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([8] ImageButton id=next (click) center=(920,2060))"
+    },
+    {
+      "from": "dabe10b33fe0",
+      "to": "3083c20874d6",
+      "step": 6,
+      "edge_type": "ui_swipe",
+      "action": "swipe([900, 1115])"
+    },
+    {
+      "from": "3083c20874d6",
+      "to": "efe579471449",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([3] LinearLayout id=accessibilityYes (click) center=(540,776))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用以欢迎页和多个介绍页解释冻结/省电逻辑，逐步引导用户选择自动冻结并启用无障碍服务；未见通知横幅或遮罩，授权说明较透明，属合规系统工具引导。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 频繁停止/冻结应用可能更快耗电，因为解冻耗电；同类应用不提示（Step 2 警告页）",
+    "英文 -> 不可信、少用、烦人的应用值得冻结（Step 3 信息页）",
+    "英文 -> 自动冻结便于使用和批量冻结；手动需按强制停止、OK、返回，适合慢设备、安全顾虑、不注册无障碍服务（Step 7 选择页）",
+    "英文 -> SuperFreezZ 需无障碍服务才能自动冻结，请选择本应用并启用访问（Step 8 授权弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "IntroActivity欢迎页显示“welcome to SuperFreezZ”，点击右下next箭头进入介绍；无通知横幅与遮罩。",
+    "step_02": "IntroActivity警告页提示频繁冻结可能更耗电，并批评同类省电应用不提示；点击next继续，无通知/遮罩。",
+    "step_03": "IntroActivity信息页列举值得冻结的应用：不可信、少用、烦人的应用；点击next继续，无通知/遮罩。",
+    "step_04": "IntroActivity冻结模式页介绍“始终冻结”，称任何情况下都冻结应用；点击next继续，无通知/遮罩。",
+    "step_05": "IntroActivity模式页介绍“智能冻结”：默认7天未用才冻结，且不冻结F-Droid应用；点击next继续，无通知/遮罩。",
+    "step_06": "IntroActivity模式页介绍“从不冻结”，即关闭冻结永不再冻结应用；点击next未推进故左滑ViewPager，无通知/遮罩。",
+    "step_07": "IntroActivity自动冻结选择页：Yes便于使用和批量冻结，No需手动强制停止/OK/返回且适合安全顾虑；点击Yes卡片。",
+    "step_08": "IntroActivity弹窗称需无障碍服务自动冻结，请选择SuperFreezZ并启用；点击ENABLE进入系统授权，无遮罩。"
+  }
+}

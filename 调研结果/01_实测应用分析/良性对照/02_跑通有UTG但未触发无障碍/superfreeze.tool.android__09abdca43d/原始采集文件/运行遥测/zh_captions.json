@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用以欢迎页和多个介绍页解释冻结/省电逻辑，逐步引导用户选择自动冻结并启用无障碍服务；未见通知横幅或遮罩，授权说明较透明，属合规系统工具引导。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 频繁停止/冻结应用可能更快耗电，因为解冻耗电；同类应用不提示（Step 2 警告页）",
+    "英文 -> 不可信、少用、烦人的应用值得冻结（Step 3 信息页）",
+    "英文 -> 自动冻结便于使用和批量冻结；手动需按强制停止、OK、返回，适合慢设备、安全顾虑、不注册无障碍服务（Step 7 选择页）",
+    "英文 -> SuperFreezZ 需无障碍服务才能自动冻结，请选择本应用并启用访问（Step 8 授权弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "IntroActivity欢迎页显示“welcome to SuperFreezZ”，点击右下next箭头进入介绍；无通知横幅与遮罩。",
+    "step_02": "IntroActivity警告页提示频繁冻结可能更耗电，并批评同类省电应用不提示；点击next继续，无通知/遮罩。",
+    "step_03": "IntroActivity信息页列举值得冻结的应用：不可信、少用、烦人的应用；点击next继续，无通知/遮罩。",
+    "step_04": "IntroActivity冻结模式页介绍“始终冻结”，称任何情况下都冻结应用；点击next继续，无通知/遮罩。",
+    "step_05": "IntroActivity模式页介绍“智能冻结”：默认7天未用才冻结，且不冻结F-Droid应用；点击next继续，无通知/遮罩。",
+    "step_06": "IntroActivity模式页介绍“从不冻结”，即关闭冻结永不再冻结应用；点击next未推进故左滑ViewPager，无通知/遮罩。",
+    "step_07": "IntroActivity自动冻结选择页：Yes便于使用和批量冻结，No需手动强制停止/OK/返回且适合安全顾虑；点击Yes卡片。",
+    "step_08": "IntroActivity弹窗称需无障碍服务自动冻结，请选择SuperFreezZ并启用；点击ENABLE进入系统授权，无遮罩。"
+  }
+}

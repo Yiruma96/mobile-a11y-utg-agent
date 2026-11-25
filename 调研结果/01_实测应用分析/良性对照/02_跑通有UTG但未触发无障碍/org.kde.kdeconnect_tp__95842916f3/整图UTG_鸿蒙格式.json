@@ -1,0 +1,187 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_051__95842916f3",
+  "label": "benign",
+  "family_or_category": "系统效率与通用辅助",
+  "static_visibility": "clear",
+  "target_package": "org.kde.kdeconnect_tp",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "606c92cb14bb",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "606c92cb14bb",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "org.kde.kdeconnect_tp",
+      "abilityName": "org.kde.kdeconnect.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Open",
+        "KDE Connect Devices",
+        "More options",
+        "Other devices running KDE Connect in your same network should appear here.",
+        "Connected devices",
+        "No devices"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "58be70f14287",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "org.kde.kdeconnect_tp",
+      "abilityName": "org.kde.kdeconnect.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Close",
+        "KDE Connect Devices",
+        "More options",
+        "Other devices running KDE Connect in your same network should appear here.",
+        "Connected devices",
+        "No devices",
+        "KDE Connect",
+        "sdk_gphone_x86_64",
+        "Devices",
+        "Pair new device",
+        "Settings",
+        "About"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "b9fff6aa1924",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "org.kde.kdeconnect_tp",
+      "abilityName": "org.kde.kdeconnect.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Open",
+        "Settings",
+        "Device name",
+        "sdk_gphone_x86_64",
+        "Choose theme",
+        "System Default",
+        "Persistent notification",
+        "Tap to enable/disable in Notification settings",
+        "Trusted networks",
+        "Restrict autodiscovery to known networks",
+        "Add devices by IP",
+        "0 devices added manually",
+        "Enable bluetooth (beta)",
+        "Export KDE Connect logs",
+        "Generate a file with execution information that can help troubleshoot issues."
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "a8a8a128b3cc",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "org.kde.kdeconnect_tp",
+      "abilityName": "org.kde.kdeconnect.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Open",
+        "KDE Connect Devices",
+        "More options",
+        "You're not connected to a Wi-Fi network, so you may not be able to see any devices. Click here to enable Wi-Fi.",
+        "Connected devices",
+        "No devices"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "606c92cb14bb",
+      "to": "58be70f14287",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Open\" (click) center=(77,171))"
+    },
+    {
+      "from": "58be70f14287",
+      "to": "58be70f14287",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Close\" (click) center=(77,171))"
+    },
+    {
+      "from": "58be70f14287",
+      "to": "606c92cb14bb",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] ImageView desc=\"More options\" (click) center=(1024,171))"
+    },
+    {
+      "from": "606c92cb14bb",
+      "to": "606c92cb14bb",
+      "step": 4,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "606c92cb14bb",
+      "to": "58be70f14287",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Open\" (click) center=(77,171))"
+    },
+    {
+      "from": "58be70f14287",
+      "to": "b9fff6aa1924",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([12] LinearLayoutCompat (click) center=(452,713))"
+    },
+    {
+      "from": "b9fff6aa1924",
+      "to": "a8a8a128b3cc",
+      "step": 7,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "org.kde.kdeconnect_tp__95842916f3",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用为 KDE Connect 系统辅助工具，当前无已连接设备；轨迹在设备列表、侧栏、更多菜单、设置与 Wi-Fi 提示间切换，未出现授权/拒权弹窗，拒权结果未测试。核心特征是依赖同一局域网发现并配对设备，仅显示持久通知“未连接任何设备”，未见诱导性遮罩或话术。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “同一网络中的其他 KDE Connect 设备应显示在此处”（步骤1/4/5/8 主设备列表，非诱导说明）",
+    "英文 -> “您未连接 Wi-Fi，可能看不到任何设备，点击此处启用 Wi-Fi”（步骤8 主列表提示，非诱导说明）",
+    "英文 -> “将自动发现限制在已知网络”“点击以在通知设置中启用/禁用”（步骤7 设置页，非诱导说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主设备列表页，提示同网设备会显示于此，已连接设备为空；通知称未连接任何设备，无遮罩。点击“Open”开侧栏。",
+    "step_02": "侧栏展开页，含设备、配对新设备、设置、关于及本机名；通知仍为未连接任何设备，无遮罩。点击“Close”收起侧栏返回列表。",
+    "step_03": "侧栏仍展开；点击右上“More options”尝试打开溢出菜单，但页面无可见弹窗，通知仍称未连接设备，无遮罩。",
+    "step_04": "等待菜单页，仍为主列表；提示同网设备显示于此，已连接为空；通知称未连接设备，无遮罩，溢出菜单未出现。",
+    "step_05": "主列表再次出现；英文提示同网设备将显示于此，已连接为空；通知未连接任何设备，无遮罩。点击“Open”再次打开侧栏以找设置。",
+    "step_06": "点击侧栏“Settings”后进入设置页，含设备名、主题、持久通知、可信网络、按IP添加设备及导出日志；通知未连接设备，无遮罩。",
+    "step_07": "仍为设置页，含可信网络、按IP添加设备、蓝牙测试与日志导出等项；通知未连接设备，无遮罩。按系统返回键回主设备列表。",
+    "step_08": "主列表提示未连 Wi-Fi 可能看不到设备，并引导点击启用；已连接为空；通知未连接设备，无遮罩。点击“Open”开侧栏。"
+  }
+}

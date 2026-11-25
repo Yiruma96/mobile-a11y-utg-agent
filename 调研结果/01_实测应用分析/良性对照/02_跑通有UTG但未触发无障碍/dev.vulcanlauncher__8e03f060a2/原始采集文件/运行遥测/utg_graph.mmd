@@ -1,0 +1,16 @@
+flowchart TD
+    N_eee704599088["Step 1: ResolverActivity\nUse Pixel Launcher as "]
+    N_5dcf8f55f961["Step 2: MainActivity\nVulcan"]
+    N_cc3479c26e54["Step 3: MainActivity\nVulcan"]
+    N_d3f79fbef4dd["Step 4: MainActivity\nVulcan"]
+    N_35b8583a49e2["Step 5: SettingsActivity\nBack"]
+    N_59e5a40bf07c["Step 6: SettingsActivity\nBack"]
+    N_99bcd749ca06["Step 7: SettingsActivity\nTwo finger swipe up"]
+    N_1c809bfcd781["Step 8: SettingsActivity\nBack"]
+    N_eee704599088 -->|"ui_click: click([6] TextView text='Vulcan'"| N_5dcf8f55f961
+    N_5dcf8f55f961 -->|"ui_click: click([18] TextView text='Get st"| N_cc3479c26e54
+    N_cc3479c26e54 -->|"ui_click: click([20] TextView text='Start "| N_d3f79fbef4dd
+    N_d3f79fbef4dd -->|"ui_click: click([1] LinearLayout desc='Vul"| N_35b8583a49e2
+    N_35b8583a49e2 -->|"ui_click: click([21] LinearLayout (click) "| N_59e5a40bf07c
+    N_59e5a40bf07c -->|"ui_click: click([18] LinearLayout (click) "| N_99bcd749ca06
+    N_99bcd749ca06 -->|"ui_click: click([9] TextView text='Recent "| N_1c809bfcd781

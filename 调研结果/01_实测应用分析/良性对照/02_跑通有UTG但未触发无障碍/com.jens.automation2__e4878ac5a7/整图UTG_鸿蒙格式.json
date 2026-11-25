@@ -1,0 +1,261 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_046__e4878ac5a7",
+  "label": "benign",
+  "family_or_category": "系统效率与通用辅助",
+  "static_visibility": "clear",
+  "target_package": "com.jens.automation2",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "86fbea222357",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "86fbea222357",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivityPermissions",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation",
+        "Required permissions",
+        "The app is current running in limited mode and has deactivated some features. To fully function it requires permissions. If you want to use all functionality you have to grant the permissions in the following rights dialogues. If you do, not certain rules can not be executed. In the following you are given an explanation for the requested permissions. Click continue, when you are ready to proceed.",
+        "These are the permissions required:",
+        "Exclude from battery optimization\nRecommended for better reliability",
+        "Cancel",
+        "continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f54b75207762",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Automation to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c9e9da009dbd",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivityMainScreen",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Would you like to receive (only important) news about this app on the main screen? Those are downloaded from the developer's website. There will be no intrusive notification, just a text on the main screen when you open the app.",
+        "Yes",
+        "No"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "614df55151a3",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivityMainTabLayout",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation",
+        "Overview",
+        "Locations",
+        "Rules",
+        "Profiles",
+        "Status",
+        "Service:",
+        "OFF",
+        "Active location:",
+        "Service is not running.",
+        "Closest location:",
+        "Last Rule:",
+        "Last profile:",
+        "Rule history (most recent first):",
+        "Lock sound changes"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "14538f3f43ed",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivityControlCenter",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation",
+        "Control center",
+        "Settings",
+        "When clicking import or export you select the directory from which files are imported or exported to. When exporting existing files might get overwritten.",
+        "Import configuration",
+        "Export configuration",
+        "Volume calibration",
+        "Default settings",
+        "If you have a problem, suggestions or question, please write something in the email. Do not just send me the files with the default mail body. I will ignore those unless we're already in a conversation.",
+        "Attach config and log files.",
+        "Send email to developer"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "b536f6b3df78",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivitySettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation",
+        "General settings",
+        "Start at system boot",
+        "On/Off",
+        "Start service after update",
+        "Start service automatically after app update if it has been running before.",
+        "Show icon",
+        "Show icon when service is running (hiding it only works below Android 7). If you're on a higher version, go to system settings, then Automation, then notifications and disable the \"Service notification\".",
+        "Log to console (logcat)",
+        "Write log file",
+        "Log level",
+        "Log level (1=minimum, 5=maximum)",
+        "Maximum log file size [Mb]",
+        "Maximum log file size in Megabyte. Will be rotated if bigger.",
+        "UI theme"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "2b98af130b6d",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.jens.automation2",
+      "abilityName": "com.jens.automation2.ActivitySettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation",
+        "Maximum log file size in Megabyte. Will be rotated if bigger.",
+        "UI theme",
+        "The theme of the graphical user interface. Application required.",
+        "Start screen",
+        "Select the screen the applications opens with at start.",
+        "Position of tab bar",
+        "Choose where the tabs bar should be placed.",
+        "Display language",
+        "Set a custom language for the application",
+        "Run rules/profiles with single click.",
+        "Check for updates",
+        "Only applies to APK version.",
+        "Display application news on main screen",
+        "Announcements about this app only, we're probably talking about 1-2 per year, not more."
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "86fbea222357",
+      "to": "f54b75207762",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"continue\" id=bRequestPermissions (click) center=(341,1284))"
+    },
+    {
+      "from": "f54b75207762",
+      "to": "c9e9da009dbd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1318))"
+    },
+    {
+      "from": "c9e9da009dbd",
+      "to": "614df55151a3",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"No\" id=button2 (click) center=(764,1359))"
+    },
+    {
+      "from": "614df55151a3",
+      "to": "614df55151a3",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([13] ToggleButton text=\"OFF\" id=tbArmMastListener (click,unchecked) center=(632,529))"
+    },
+    {
+      "from": "614df55151a3",
+      "to": "14538f3f43ed",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([25] Button text=\"Control center\" id=bControlCenter (click) center=(540,2109))"
+    },
+    {
+      "from": "14538f3f43ed",
+      "to": "b536f6b3df78",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Settings\" id=bMoreSettings (click) center=(540,416))"
+    },
+    {
+      "from": "b536f6b3df78",
+      "to": "2b98af130b6d",
+      "step": 7,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "com.jens.automation2__e4878ac5a7",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "链路自权限说明页开始，经系统电池优化豁免、新闻订阅拒绝，进入概览页尝试开启服务，再进入控制中心与通用设置查找权限/无障碍入口，最终返回。整体为系统自动化工具的正常授权引导，文案透明并给出取消/拒绝/否选项，全程未见通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “应用当前处于受限模式并停用了部分功能，如需完整功能须在后续权限对话框授予权限；准备好后点击继续。”（Step 1 权限说明页）",
+    "English -> “允许 Automation 始终在后台运行可能缩短电池续航，之后可在设置中更改。”（Step 2 系统电池优化弹窗）",
+    "English -> “是否接收有关本应用的重要资讯？内容来自开发者网站，仅主屏文字，不会 intrusive notification。”（Step 3 新闻提示弹窗）",
+    "English -> “导入或导出时需选择目录，导出可能覆盖现有文件；有问题请写邮件说明，不要只发送默认邮件和文件。”（Step 6 控制中心说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限说明页：称应用受限并列出需电池优化豁免等权限，可取消；点击 continue 进入系统授权。",
+    "step_02": "系统电池优化弹窗：询问是否允许 Automation 始终后台运行并提示耗电，提供 Deny/Allow；点击 Allow。",
+    "step_03": "主界面新闻弹窗：询问是否接收开发者网站重要资讯，称仅主屏文字、不打扰；点击 No 拒绝。",
+    "step_04": "主界面概览标签：显示 Service OFF、服务未运行、位置与规则历史；点击 OFF 开关尝试启用服务。",
+    "step_05": "主界面概览仍显示 Service OFF；点击 Control center 进入控制中心，准备查找服务与权限控制。",
+    "step_06": "控制中心：含设置、配置导入/导出、音量校准和联系开发者说明；点击 Settings 查找权限入口。",
+    "step_07": "通用设置页：含开机启动、更新后启动、显示图标和日志等开关；向下滑动查找权限/无障碍入口。",
+    "step_08": "通用设置下半部：含主题、起始页、标签栏、语言、更新和主屏新闻；按 Back 返回，未发现无障碍项。"
+  }
+}

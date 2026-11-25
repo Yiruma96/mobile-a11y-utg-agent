@@ -1,0 +1,188 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_064__3657b9fd96",
+  "label": "benign",
+  "family_or_category": "远程协助与跨设备互联",
+  "static_visibility": "clear",
+  "target_package": "dev.midnightbeam",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "e5c711139da5",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "e5c711139da5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "dev.midnightbeam",
+      "abilityName": "dev.midnightbeam.PhoneActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "23adfc3157c8",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "dev.midnightbeam",
+      "abilityName": "dev.midnightbeam.PhoneActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "MidnightBeam",
+        "Back",
+        "SET UP THIS DEVICE",
+        "For the warm filter and the dimming to work on this phone, Android needs your permission. It takes a few seconds.",
+        "1",
+        "Display over other appsRequired",
+        "Lets MidnightBeam draw the filter over the screen. In the list, find MidnightBeam and turn the switch on, then come back here.",
+        "Allow",
+        "Start using it",
+        "Allow “Display over other apps” first: without it nothing changes on the screen.",
+        "Or control a TV or projector instead",
+        "Home",
+        "Devices",
+        "Scenes",
+        "Settings"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c28235c54eee",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "MidnightBeam",
+        "Not allowed",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "3f05197e342d",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search settings",
+        "MidnightBeam",
+        "1.14.0",
+        "Allow display over other apps",
+        "Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen."
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e5c711139da5",
+      "to": "23adfc3157c8",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1580])"
+    },
+    {
+      "from": "23adfc3157c8",
+      "to": "23adfc3157c8",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "23adfc3157c8",
+      "to": "23adfc3157c8",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1300])"
+    },
+    {
+      "from": "23adfc3157c8",
+      "to": "23adfc3157c8",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1700])"
+    },
+    {
+      "from": "23adfc3157c8",
+      "to": "c28235c54eee",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([8] View desc=\"Allow\" id=su-b1 (click) center=(595,1001))"
+    },
+    {
+      "from": "c28235c54eee",
+      "to": "3f05197e342d",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([17] LinearLayout desc=\"MidnightBeam\" (click) center=(540,1137))"
+    },
+    {
+      "from": "3f05197e342d",
+      "to": "3f05197e342d",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从 PhoneActivity 的 WebView 落地页进入“本机设置”，以暖色滤镜/调光需要权限为由，先引导开启悬浮窗并跳转系统设置授权，再返回准备继续无障碍授权；整体属分步权限引导，未见明显恶意诱导话术，拒权路径未测试。",
+  "observed_lure_rhetoric_zh": [
+    "EN \"Use on this device\" -> “在此设备上使用”（Step 1 落地页，进入本机设置）",
+    "EN \"SET UP THIS DEVICE\" -> “设置此设备”（Step 2-5 设置页标题）",
+    "EN \"For the warm filter and the dimming to work on this phone, Android needs your permission. It takes a few seconds.\" -> 暖色滤镜与调光需 Android 授权，只需几秒（Step 2-5）",
+    "EN \"Display over other appsRequired\" -> “显示在其他应用上层（必需）”（Step 2-5，步骤1）",
+    "EN \"Lets MidnightBeam draw the filter over the screen. In the list, find MidnightBeam and turn the switch on, then come back here.\" -> 允许 MidnightBeam 在屏幕上绘制滤镜，去列表打开开关再返回（Step 2-5）",
+    "EN \"Allow “Display over other apps” first: without it nothing changes on the screen.\" -> 必须先允许悬浮窗，否则屏幕不会变化（Step 2-5）",
+    "EN \"Or control a TV or projector instead\" -> 或改为控制电视/投影仪（Step 2-5）",
+    "EN \"Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen.\" -> 允许覆盖其他应用；应用可看到点击位置并改变屏幕显示（Step 7-8 系统授权页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "WebView落地页；通知栏显示“String(MidnightBeam)”及滤镜0%/亮度100%/1100K；无遮罩；点击“Use on this device”进入本机设置。",
+    "step_02": "本机设置页仅见步骤1悬浮窗权限“Required”，称授权后才能绘制滤镜；下滑未露出步骤2，通知横幅仍在，无遮罩。",
+    "step_03": "继续下滑仍停留步骤1悬浮窗授权卡，要求在列表开启MidnightBeam；步骤2未出现，通知横幅持续，无遮罩。",
+    "step_04": "再次下滑页面仍在顶部，只显示步骤1悬浮窗权限与“Allow”；步骤2未展开，通知横幅显示滤镜参数，无遮罩。",
+    "step_05": "点击步骤1“Allow”跳转系统悬浮窗列表；通知横幅仍显示滤镜0%/亮度100%/1100K，页面无遮罩。",
+    "step_06": "系统悬浮窗权限列表，MidnightBeam标为“Not allowed”；点击该应用条目进入开关详情，无通知横幅与遮罩。",
+    "step_07": "系统授权详情页显示MidnightBeam 1.14.0，悬浮窗开关未开；系统提示可覆盖屏幕并感知点击；本步点击开关授权。",
+    "step_08": "悬浮窗开关已开启，系统仍提示应用可覆盖屏幕并感知点击；按返回键回应用，准备继续步骤2无障碍授权。"
+  }
+}

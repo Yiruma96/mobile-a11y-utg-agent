@@ -1,0 +1,15 @@
+flowchart TD
+    N_054ccea64de3["Step 1: MainActivity\nMinimo Launcher"]
+    N_95b80d499df6["Step 2: MainActivity\nFavorite Apps"]
+    N_5e7f2c26cf75["Step 3: MainActivity\nFavorite Apps"]
+    N_1304116ef245["Step 4: MainActivity\nDistraction free home "]
+    N_1a09d07dab82["Step 5: MainActivity\nCalendar"]
+    N_ff025300a074["Step 6: MainActivity\nFavorite Apps"]
+    N_f5fbba6d1f58["Step 7: MainActivity\nOrientation"]
+    N_054ccea64de3 -->|"ui_click: click([3] View (click) center=(5"| N_95b80d499df6
+    N_95b80d499df6 -->|"ui_click: click([7] View (click,unchecked)"| N_5e7f2c26cf75
+    N_5e7f2c26cf75 -->|"ui_click: click([36] TextView text='Contin"| N_1304116ef245
+    N_1304116ef245 -->|"ui_click: click([6] TextView text='Skip' c"| N_1a09d07dab82
+    N_1a09d07dab82 -->|"ui_long_press: long_press([540, 1700])"| N_ff025300a074
+    N_ff025300a074 -->|"ui_click: click([3] TextView text='Customi"| N_f5fbba6d1f58
+    N_f5fbba6d1f58 -->|"ui_click: click([42] View desc='Back' cent"| N_ff025300a074

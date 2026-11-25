@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "从引导页勾选隐私政策、滚动寻找入口并点“暂时跳过”，进入启动器后跳过8步使用说明；随后在应用抽屉与系统通知栏间返回切换，全程无通知横幅、无悬浮遮罩，未出现明显诱导或索权行为，属合规极简桌面。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “slate / a minimal launcher”即“Slate / 一款极简启动器”（Step 1-2 引导页）",
+    "英语 -> “CHOOSE A THEME / CHOOSE A LAYOUT”即“选择主题 / 选择布局”（Step 1-3 引导页）",
+    "英语 -> “I have read the privacy policy”即“我已阅读隐私政策”（Step 1 隐私复选框）",
+    "英语 -> “Skip for now”即“暂时跳过”（Step 3 引导页）",
+    "英语 -> “WELCOME TO SLATE / Step 1 of 8 / Slate shows your apps as plain text - no icons, no widgets. Here's a 30-second tour of how to use it.”即“欢迎使用Slate/共8步第1步/Slate以纯文本显示应用，无图标无小部件，30秒导览”（Step 4 使用引导）",
+    "英语 -> “Skip / Next”即“跳过 / 下一步”（Step 4 使用引导）"
+  ],
+  "frame_captions": {
+    "step_01": "引导页显示“极简启动器”、主题/布局选择；点击未勾选的隐私政策复选框，无通知或遮罩。",
+    "step_02": "同页隐私复选框已勾选但未见继续按钮；向上滑动寻找下一步入口，仍无通知横幅或遮罩。",
+    "step_03": "同页滚动后出现“暂时跳过”；点击后不设默认桌面直接进入启动器，无通知与遮罩。",
+    "step_04": "启动器8步引导第1步；英文说明纯文本显示应用、无图标小部件，点击“跳过”退出引导。",
+    "step_05": "主界面应用抽屉列出日历、相机、Chrome等；按返回键关闭抽屉，无通知横幅或遮罩。",
+    "step_06": "应用抽屉仍展开，显示日历、相机等应用名；下滑尝试关闭抽屉回桌面，无通知与遮罩。",
+    "step_07": "系统通知栏/快捷设置展开，含Wi‑Fi、蓝牙、勿扰、手电筒等开关；按返回关闭，无应用遮罩。",
+    "step_08": "应用抽屉再次展开，列出日历、相机、Gmail等应用；按返回键返回启动器桌面，无通知或遮罩。"
+  }
+}

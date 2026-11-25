@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用启动后进入AppIntro引导页，反复展示“Usage Access（使用情况访问）”权限说明并要求请求授权；多次点NEXT、滑动及点分页点均未推进，未触发系统授权或拒绝，链路停滞于引导页。界面无通知/遮罩，话术为功能所需权限说明，未见明显诱导或拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "英文：Usage Access -> 使用情况访问（步骤1-8 AppIntro引导页）",
+    "英文：In order to know which app is currently running, PingOff needs to have 'Usage Access'. -> 为识别当前正在运行的应用，PingOff需要“使用情况访问”权限（步骤1-8 AppIntro引导页）",
+    "英文：Please select PingOff and check 'Permit usage access' after tapping on the button below. -> 请点击下方按钮，选择PingOff并勾选“允许使用情况访问”（步骤1-8 AppIntro引导页）",
+    "英文：REQUEST PERMISSION -> 请求权限（步骤1-8 AppIntro引导页按钮）",
+    "英文：NEXT -> 下一步（步骤1-8 AppIntro引导页箭头按钮）"
+  ],
+  "frame_captions": {
+    "step_01": "使用情况访问引导页：英文说明需此权限识别当前应用；点NEXT箭头未生效，页面未跳转，无通知或遮罩。",
+    "step_02": "仍为使用情况访问引导页：英文提示授权并点按钮请求权限；本步左滑分页未推进，仍停原页，无遮罩。",
+    "step_03": "同一使用情况访问引导页：英文要求选择PingOff并勾选允许；本步再次左滑仍未换页，无通知/遮罩。",
+    "step_04": "使用情况访问引导页未变：英文提示点击下方按钮请求权限；本步左滑坐标尝试未跳转，仍停留原页。",
+    "step_05": "仍停留使用情况访问引导页：英文称需权限识别运行应用；本步全宽左滑未生效，页面未推进，无遮罩。",
+    "step_06": "同一使用情况访问引导页：英文要求授予使用情况访问；本步右到左滑动仍未翻页，无通知或浮层。",
+    "step_07": "使用情况访问引导页：英文含请求权限与下一步按钮；本步点第二个分页点未跳转，仍停留原页。",
+    "step_08": "仍为使用情况访问引导页：英文提示授权以识别当前应用；再点第二个分页点仍未推进，无遮罩/通知。"
+  }
+}

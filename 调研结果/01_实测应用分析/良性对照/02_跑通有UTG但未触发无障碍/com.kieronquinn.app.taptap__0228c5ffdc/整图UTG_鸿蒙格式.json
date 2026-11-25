@@ -1,0 +1,224 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_012__0228c5ffdc",
+  "label": "benign",
+  "family_or_category": "按键映射与手势导航",
+  "static_visibility": "clear",
+  "target_package": "com.kieronquinn.app.taptap",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "8b1e74a3b607",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "8b1e74a3b607",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome to Tap, Tap",
+        "Get started",
+        "Skip setup"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f8cabcf66aa7",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Tap, Tap is free and open source",
+        "Tap, Tap is and always will be free, building off open source components. The source code is available for anyone to view and make edits to at the GitHub repository. Official free downloads for the app are only available at XDA, the GitHub repository, and APKMirror. The official app will always automatically offer to download updates from GitHub, if you have allowed internet access.",
+        "Only install Tap, Tap from one of the official sources linked above. If you downloaded from any other source, it is highly recommended you uninstall it and reinstall from one of the links above. Tap for more info.",
+        "If you like the Tap, Tap app and wish to make a donation, the link to do so is near the bottom of the \"More\" page after setup. Regardless of whether you donate, your sharing and support and use of Tap, Tap is much appreciated, thank you!",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "d509dd9e2f4a",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Internet Access?",
+        "This will only be used to retrieve device specifications and periodically check for updates in the background.",
+        "Allow Always",
+        "Allow while Tap, Tap is open",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "8b62baf42dbc",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Double tap the back of your device to activate the gesture.\nTry to tap firmly, using the tip of your index finger.",
+        "Gesture Configuration"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "a3c465e85f5b",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Gesture Configuration",
+        "Device Size",
+        "Select the best model size for your device.\nCurrently selected: 153.9mm [6.1in] (Medium)\nIf you are struggling to get any response to the gesture, try some of the other models.",
+        "Sensitivity",
+        "Change the sensitivity of the gesture by adjusting how much force is filtered out as 'noise'. A lower sensitivity means the gesture will be harder to do on most devices, whereas a higher sensitivity is more prone to false detection.",
+        "Value, High",
+        "Double tap the back of your device to activate the gesture.\nTry to tap firmly, using the tip of your index finger."
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "a5c76d251f36",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Gesture Configuration",
+        "Device Size",
+        "Select the best model size for your device.\nCurrently selected: 153.9mm [6.1in] (Medium)\nIf you are struggling to get any response to the gesture, try some of the other models.",
+        "Sensitivity",
+        "Change the sensitivity of the gesture by adjusting how much force is filtered out as 'noise'. A lower sensitivity means the gesture will be harder to do on most devices, whereas a higher sensitivity is more prone to false detection.",
+        "Value, High",
+        "Not working? Try changing the device size and sensitivity in the Gesture Configuration panel"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "9f7589e4594b",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.kieronquinn.app.taptap",
+      "abilityName": "com.kieronquinn.app.taptap.ui.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Not working? Try changing the device size and sensitivity in the Gesture Configuration panel",
+        "Gesture Configuration"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8b1e74a3b607",
+      "to": "f8cabcf66aa7",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"Get started\" id=setup_landing_get_started (click) center=(540,1621))"
+    },
+    {
+      "from": "f8cabcf66aa7",
+      "to": "d509dd9e2f4a",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Next\" id=setup_info_next (click) center=(893,2049))"
+    },
+    {
+      "from": "d509dd9e2f4a",
+      "to": "8b62baf42dbc",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow while Tap, Tap is open\" id=dialog_internet_permission_running (click) center=(539,1410))"
+    },
+    {
+      "from": "8b62baf42dbc",
+      "to": "a3c465e85f5b",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([5] ImageButton (click) center=(77,2038))"
+    },
+    {
+      "from": "a3c465e85f5b",
+      "to": "a5c76d251f36",
+      "step": 5,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "a5c76d251f36",
+      "to": "9f7589e4594b",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([2] ImageButton (click) center=(77,160))"
+    },
+    {
+      "from": "9f7589e4594b",
+      "to": "a3c465e85f5b",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([5] ImageButton (click) center=(77,2038))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "com.kieronquinn.app.taptap__0228c5ffdc",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "从欢迎页点“开始”，经开源说明页、选择“仅打开时允许”联网，进入双击背部手势引导；随后反复展开/关闭手势配置面板仅调尺寸与灵敏度，未触发后续授权或拒权，通知栏持续显示服务运行。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “欢迎使用Tap, Tap”“开始”“跳过设置”（Step1欢迎页）",
+    "英文 -> “Tap, Tap免费且开源，源码可在GitHub查看，官方下载仅限XDA、GitHub、APKMirror”（Step2开源说明页）",
+    "英文 -> “仅从上述官方来源安装，否则建议卸载重装”（Step2开源说明页）",
+    "英文 -> “允许联网？仅用于获取设备规格并定期后台检查更新”（Step3联网弹窗）",
+    "英文 -> “双击设备背面激活手势，用食指指腹用力敲”（Step4/5/8手势引导）",
+    "英文 -> “不生效？尝试在手势配置面板调整设备尺寸和灵敏度”（Step6/7）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "欢迎页：欢迎使用Tap, Tap，提供开始与跳过设置；本步点“Get started”进入设置向导，无通知与遮罩。",
+    "step_02": "开源说明页：称应用免费开源，仅建议从XDA、GitHub、APKMirror安装；本步点“Next”继续，无通知与遮罩。",
+    "step_03": "联网授权弹窗：称仅用于读取设备规格和后台检查更新；含始终允许、仅打开时允许、拒绝，本步选“仅打开时允许”。",
+    "step_04": "手势引导页：提示双击背部触发，用食指指腹用力敲；本步点箭头展开手势配置，通知栏显示服务运行。",
+    "step_05": "手势配置面板：可调设备尺寸与灵敏度，当前153.9mm中号、灵敏度高；本步下滑以寻找触发控制，通知栏显示服务运行。",
+    "step_06": "配置面板底部：提示不生效可调尺寸和灵敏度；本步点X关闭面板回到手势设置页，通知栏仍显示服务运行。",
+    "step_07": "手势设置页：保留“不生效可调配置”提示与手势配置入口；本步再次点箭头展开面板寻找触发控制，通知栏显示服务运行。",
+    "step_08": "手势配置面板：仍为尺寸/灵敏度调节，当前中号与高灵敏度；本步点X关闭面板，未执行触发探针，通知栏显示服务运行。"
+  }
+}

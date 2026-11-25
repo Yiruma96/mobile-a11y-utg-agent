@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用从 PhoneActivity 的 WebView 落地页进入“本机设置”，以暖色滤镜/调光需要权限为由，先引导开启悬浮窗并跳转系统设置授权，再返回准备继续无障碍授权；整体属分步权限引导，未见明显恶意诱导话术，拒权路径未测试。",
+  "observed_lure_rhetoric_zh": [
+    "EN \"Use on this device\" -> “在此设备上使用”（Step 1 落地页，进入本机设置）",
+    "EN \"SET UP THIS DEVICE\" -> “设置此设备”（Step 2-5 设置页标题）",
+    "EN \"For the warm filter and the dimming to work on this phone, Android needs your permission. It takes a few seconds.\" -> 暖色滤镜与调光需 Android 授权，只需几秒（Step 2-5）",
+    "EN \"Display over other appsRequired\" -> “显示在其他应用上层（必需）”（Step 2-5，步骤1）",
+    "EN \"Lets MidnightBeam draw the filter over the screen. In the list, find MidnightBeam and turn the switch on, then come back here.\" -> 允许 MidnightBeam 在屏幕上绘制滤镜，去列表打开开关再返回（Step 2-5）",
+    "EN \"Allow “Display over other apps” first: without it nothing changes on the screen.\" -> 必须先允许悬浮窗，否则屏幕不会变化（Step 2-5）",
+    "EN \"Or control a TV or projector instead\" -> 或改为控制电视/投影仪（Step 2-5）",
+    "EN \"Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen.\" -> 允许覆盖其他应用；应用可看到点击位置并改变屏幕显示（Step 7-8 系统授权页）"
+  ],
+  "frame_captions": {
+    "step_01": "WebView落地页；通知栏显示“String(MidnightBeam)”及滤镜0%/亮度100%/1100K；无遮罩；点击“Use on this device”进入本机设置。",
+    "step_02": "本机设置页仅见步骤1悬浮窗权限“Required”，称授权后才能绘制滤镜；下滑未露出步骤2，通知横幅仍在，无遮罩。",
+    "step_03": "继续下滑仍停留步骤1悬浮窗授权卡，要求在列表开启MidnightBeam；步骤2未出现，通知横幅持续，无遮罩。",
+    "step_04": "再次下滑页面仍在顶部，只显示步骤1悬浮窗权限与“Allow”；步骤2未展开，通知横幅显示滤镜参数，无遮罩。",
+    "step_05": "点击步骤1“Allow”跳转系统悬浮窗列表；通知横幅仍显示滤镜0%/亮度100%/1100K，页面无遮罩。",
+    "step_06": "系统悬浮窗权限列表，MidnightBeam标为“Not allowed”；点击该应用条目进入开关详情，无通知横幅与遮罩。",
+    "step_07": "系统授权详情页显示MidnightBeam 1.14.0，悬浮窗开关未开；系统提示可覆盖屏幕并感知点击；本步点击开关授权。",
+    "step_08": "悬浮窗开关已开启，系统仍提示应用可覆盖屏幕并感知点击；按返回键回应用，准备继续步骤2无障碍授权。"
+  }
+}

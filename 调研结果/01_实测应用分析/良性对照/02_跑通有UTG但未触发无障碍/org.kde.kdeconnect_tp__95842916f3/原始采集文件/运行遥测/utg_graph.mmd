@@ -1,0 +1,12 @@
+flowchart TD
+    N_606c92cb14bb["Step 1: MainActivity\nOpen"]
+    N_58be70f14287["Step 2: MainActivity\nClose"]
+    N_b9fff6aa1924["Step 7: MainActivity\nOpen"]
+    N_a8a8a128b3cc["Step 8: MainActivity\nOpen"]
+    N_606c92cb14bb -->|"ui_click: click([1] ImageButton desc='Open"| N_58be70f14287
+    N_58be70f14287 -->|"ui_click: click([1] ImageButton desc='Clos"| N_58be70f14287
+    N_58be70f14287 -->|"ui_click: click([3] ImageView desc='More o"| N_606c92cb14bb
+    N_606c92cb14bb -->|"ui_wait: wait()"| N_606c92cb14bb
+    N_606c92cb14bb -->|"ui_click: click([1] ImageButton desc='Open"| N_58be70f14287
+    N_58be70f14287 -->|"ui_click: click([12] LinearLayoutCompat (c"| N_b9fff6aa1924
+    N_b9fff6aa1924 -->|"ui_system_button: system_button(Back)"| N_a8a8a128b3cc

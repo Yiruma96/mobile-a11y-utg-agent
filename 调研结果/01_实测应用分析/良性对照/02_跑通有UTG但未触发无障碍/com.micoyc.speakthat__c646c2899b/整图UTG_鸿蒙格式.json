@@ -1,0 +1,223 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_042__c646c2899b",
+  "label": "benign",
+  "family_or_category": "残障辅助与无障碍支持",
+  "static_visibility": "clear",
+  "target_package": "com.micoyc.speakthat",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "95302d93eb48",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "95302d93eb48",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.micoyc.speakthat",
+      "abilityName": "com.micoyc.speakthat.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SpeakThat!",
+        "Language icon",
+        "Language",
+        "Choose which language you would like SpeakThat to use!",
+        "Tap the box below to pick which language SpeakThat should use for its interface and speech!",
+        "English (United States)",
+        "Information icon",
+        "Is your language not complete?",
+        "Back",
+        "Mute",
+        "Skip",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0fa9350143d4",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.micoyc.speakthat",
+      "abilityName": "com.micoyc.speakthat.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SpeakThat!",
+        "SpeakThat icon",
+        "Welcome to SpeakThat!",
+        "Stay connected without staring at your screen!",
+        "How does SpeakThat work?",
+        "When you receive a notification, SpeakThat will read it out to you using a text-to-speech engine.\n\nAll processing happens entirely on your device, and you remain fully in control of what gets read.",
+        "Back",
+        "Mute",
+        "Skip",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "4cc3e5ec0745",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.micoyc.speakthat",
+      "abilityName": "com.micoyc.speakthat.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SpeakThat!",
+        "Privacy shield icon",
+        "Privacy-First",
+        "Your privacy is SpeakThat's priority. Learn how it ensures this.",
+        "Will it read sensitive notifications?",
+        "SpeakThat gives you complete control over what gets read out.\n\nYou can create filters that prevent reading:",
+        "• notifications from specific apps",
+        "• notifications containing specific words",
+        "• in certain places",
+        "• between certain times",
+        "• without a specific Bluetooth device connected",
+        "And many more!",
+        "Back",
+        "Mute",
+        "Skip"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "c906eafa3cc3",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.micoyc.speakthat",
+      "abilityName": "com.micoyc.speakthat.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SpeakThat!",
+        "Notification bell icon",
+        "Permission Required",
+        "SpeakThat requires notifications access to read aloud incoming notifications.",
+        "Grant SpeakThat access to your notifications",
+        "SpeakThat can't read your notifications if it can't see them. You will need to open your device settings and allow SpeakThat access to your notifications.",
+        "Tip: In the list, tap 'SpeakThat' to enable",
+        "Open Settings",
+        "Back",
+        "Mute",
+        "Skip",
+        "Next"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "9f698d4cf52d",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$NotificationAccessSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Notification access",
+        "Search settings",
+        "Android Auto",
+        "Not allowed",
+        "Pixel Launcher",
+        "Allowed",
+        "SpeakThat!"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "95302d93eb48",
+      "to": "0fa9350143d4",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([15] ImageButton desc=\"Next\" id=buttonNext (click) center=(970,2038))"
+    },
+    {
+      "from": "0fa9350143d4",
+      "to": "4cc3e5ec0745",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([11] ImageButton desc=\"Next\" id=buttonNext (click) center=(970,2038))"
+    },
+    {
+      "from": "4cc3e5ec0745",
+      "to": "c906eafa3cc3",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([17] ImageButton desc=\"Next\" id=buttonNext (click) center=(970,2038))"
+    },
+    {
+      "from": "c906eafa3cc3",
+      "to": "9f698d4cf52d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"Open Settings\" id=buttonOpenSettings (click) center=(540,1766))"
+    },
+    {
+      "from": "9f698d4cf52d",
+      "to": "c906eafa3cc3",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "c906eafa3cc3",
+      "to": "c906eafa3cc3",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([14] ImageButton desc=\"Next\" id=buttonNext (click) center=(970,2038))"
+    },
+    {
+      "from": "c906eafa3cc3",
+      "to": "c906eafa3cc3",
+      "step": 7,
+      "edge_type": "ui_swipe",
+      "action": "swipe([900, 1000])"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "com.micoyc.speakthat__c646c2899b",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用从语言选择、欢迎与隐私说明页进入通知访问权限引导，点击“Open Settings”跳到系统通知访问列表后返回，仍停留权限页并反复点击或滑动 Next 尝试推进。整体以功能说明、本地处理和过滤控制为主，未见通知横幅或遮罩，授权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 不必盯着屏幕也能保持连接（第2页欢迎页）",
+    "English -> 所有处理完全在设备本地完成，用户可控制朗读内容（第2页欢迎页）",
+    "English -> 可创建过滤器阻止朗读特定应用、特定词语、特定地点、特定时间或未连接指定蓝牙设备时的通知（第3页隐私页）",
+    "English -> SpeakThat 需要通知访问权限才能朗读收到的通知（第4/6/7/8页权限页）",
+    "English -> 授予 SpeakThat 通知访问权限（第4/6/7/8页权限页）",
+    "English -> 若无法查看通知就无法朗读，需要到系统设置允许访问（第4/6/7/8页权限页）",
+    "English -> 提示：在列表中点击“SpeakThat”以启用（第4/6/7/8页权限页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "语言选择引导页，显示英文（美国）及语言不完整说明；点击底部Next进入下一页。",
+    "step_02": "欢迎说明页，称无需盯屏即可朗读通知且本地处理；点击Next继续。",
+    "step_03": "隐私优先说明页，列出按应用、词语、地点、时间、蓝牙过滤朗读；点击Next继续。",
+    "step_04": "通知访问权限页，要求到系统设置允许读取通知；本步点击Open Settings跳转系统设置。",
+    "step_05": "系统“通知访问”列表，见Android Auto未允许、Pixel Launcher已允许及SpeakThat；按返回键退出。",
+    "step_06": "返回应用同一通知权限页，文案未变；再次点击Next尝试推进到无障碍权限。",
+    "step_07": "停留通知权限页，因Next未响应改为左滑翻页；界面与权限要求未变化。",
+    "step_08": "仍为通知权限页，按元素ID再次点击Next尝试推进；无遮罩或通知横幅。"
+  }
+}

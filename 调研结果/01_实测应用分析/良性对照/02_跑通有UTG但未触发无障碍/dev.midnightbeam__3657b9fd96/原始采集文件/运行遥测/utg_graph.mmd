@@ -1,0 +1,12 @@
+flowchart TD
+    N_e5c711139da5["Step 1: PhoneActivity\n"]
+    N_23adfc3157c8["Step 2: PhoneActivity\nMidnightBeam"]
+    N_c28235c54eee["Step 6: Settings$OverlaySettingsActi\nBack"]
+    N_3f05197e342d["Step 7: SubSettings\nBack"]
+    N_e5c711139da5 -->|"ui_click: click([540, 1580])"| N_23adfc3157c8
+    N_23adfc3157c8 -->|"ui_swipe: swipe([540, 1600])"| N_23adfc3157c8
+    N_23adfc3157c8 -->|"ui_swipe: swipe([540, 1300])"| N_23adfc3157c8
+    N_23adfc3157c8 -->|"ui_swipe: swipe([540, 1700])"| N_23adfc3157c8
+    N_23adfc3157c8 -->|"ui_click: click([8] View desc='Allow' id=s"| N_c28235c54eee
+    N_c28235c54eee -->|"ui_click: click([17] LinearLayout desc='Mi"| N_3f05197e342d
+    N_3f05197e342d -->|"ui_click: click([9] Switch id=switch_widge"| N_3f05197e342d

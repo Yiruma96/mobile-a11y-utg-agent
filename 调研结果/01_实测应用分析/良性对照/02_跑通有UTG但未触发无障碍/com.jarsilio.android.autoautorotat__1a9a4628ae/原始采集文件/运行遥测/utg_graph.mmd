@@ -1,0 +1,11 @@
+flowchart TD
+    N_4330c5c4088d["Step 1: AppIntro\nUsage Access"]
+    N_f765561959eb["Step 6: Settings$UsageAccessSettings\nBack"]
+    N_64313254d384["Step 7: SubSettings\nBack"]
+    N_4330c5c4088d -->|"ui_click: click([6] ImageButton desc='NEXT"| N_4330c5c4088d
+    N_4330c5c4088d -->|"ui_swipe: swipe([900, 1000])"| N_4330c5c4088d
+    N_4330c5c4088d -->|"ui_swipe: swipe([900, 1100])"| N_4330c5c4088d
+    N_4330c5c4088d -->|"ui_click: click([1017, 2132])"| N_4330c5c4088d
+    N_4330c5c4088d -->|"ui_click: click([5] Button text='REQUEST P"| N_f765561959eb
+    N_f765561959eb -->|"ui_click: click([5] LinearLayout desc='Aut"| N_64313254d384
+    N_64313254d384 -->|"ui_click: click([9] Switch id=switch_widge"| N_64313254d384

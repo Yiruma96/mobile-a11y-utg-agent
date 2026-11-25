@@ -1,0 +1,11 @@
+flowchart TD
+    N_f3509249bec8["Step 1: KeyStoreActivity\nKeyStore"]
+    N_17093fbd09c2["Step 2: SplashActivity\nApp Manager"]
+    N_1159e24777c9["Step 6: NexusLauncherActivity\nApps list"]
+    N_f3509249bec8 -->|"ui_click: click([5] Button text='Close' id"| N_17093fbd09c2
+    N_17093fbd09c2 -->|"ui_wait: wait()"| N_17093fbd09c2
+    N_17093fbd09c2 -->|"ui_wait: wait()"| N_17093fbd09c2
+    N_17093fbd09c2 -->|"ui_wait: wait()"| N_17093fbd09c2
+    N_17093fbd09c2 -->|"ui_system_button: system_button(Back)"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_17093fbd09c2
+    N_17093fbd09c2 -->|"ui_wait: wait()"| N_17093fbd09c2

@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用从首次启动进入 GitSync 引导页，跳过用户来源调查、选择同步模式并浏览文件编辑功能，随后进入付费页连续滑动查看多仓库、Git LFS、Git Filters 等高级卖点，并以 20 美元购买按钮促转化；全程属正常引导与付费墙，未出现权限索取、通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 中文核心意译（Step 1 首屏）：Effortless File Syncing / Works in the background, your work always in focus -> 轻松文件同步/后台运行，让你始终专注工作",
+    "英文 -> 中文核心意译（Step 2 来源调查）：Help us understand where our users come from -> 帮助我们了解用户来源，可多选",
+    "英文 -> 中文核心意译（Step 6-8 付费页）：BUILT BY ONE DEVELOPER, Buying Premium pays for the time that goes into it -> 独立开发者项目，购买高级版以支持开发投入",
+    "英文 -> 中文核心意译（Step 6-8 付费页）：PURCHASE NOW — $20.00 -> 立即购买，20 美元",
+    "英文 -> 中文核心意译（Step 7-8 付费页）：Exclusive Features: Store Version Only! -> 独家功能：仅商店版本提供"
+  ],
+  "frame_captions": {
+    "step_01": "首次启动引导页，宣传后台轻松同步、工作不受打扰；点击 LET'S GO 进入下一步，无通知横幅或遮罩。",
+    "step_02": "用户来源调查页，列出 Reddit、YouTube、GitHub 等渠道；点击 SKIP 跳过，未提交来源，无权限请求。",
+    "step_03": "选择使用模式页，对比客户端模式与同步模式；点选同步模式，准备启用自动后台同步，选项高亮。",
+    "step_04": "同一模式选择页，同步模式已蓝色选中；点击 NEXT 继续引导，进入文件浏览与编辑功能介绍。",
+    "step_05": "文件浏览与编辑功能页，展示文件浏览器、代码编辑器等；点击 PREMIUM FEATURES 进入付费介绍。",
+    "step_06": "高级版多仓库页，强调一个应用管理全部仓库；无前进按钮，左滑轮播，页面含 20 美元购买与恢复购买。",
+    "step_07": "高级版 Git LFS 页，宣传大文件存储与自动拉取推送；标注仅商店版独家，左滑继续，仍见购买按钮。",
+    "step_08": "高级版 Git Filters 页，列出 git-lfs、git-crypt 等过滤器；下滑查看，末尾仍是 20 美元购买与恢复购买。"
+  }
+}

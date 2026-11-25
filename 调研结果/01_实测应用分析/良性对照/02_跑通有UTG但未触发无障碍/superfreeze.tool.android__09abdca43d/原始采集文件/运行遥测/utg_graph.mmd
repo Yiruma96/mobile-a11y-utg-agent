@@ -1,0 +1,16 @@
+flowchart TD
+    N_d47914f37a7f["Step 1: IntroActivity\nwelcome to"]
+    N_01fb9504ef31["Step 2: IntroActivity\nWarning"]
+    N_f440938ce068["Step 3: IntroActivity\nInfo"]
+    N_1cccaf58f873["Step 4: IntroActivity\nmodes"]
+    N_00fa6218f1e4["Step 5: IntroActivity\nmodes"]
+    N_dabe10b33fe0["Step 6: IntroActivity\nmodes"]
+    N_3083c20874d6["Step 7: IntroActivity\nautomatic freezing"]
+    N_efe579471449["Step 8: IntroActivity\nAccessibility Service"]
+    N_d47914f37a7f -->|"ui_click: click([4] ImageButton id=next (c"| N_01fb9504ef31
+    N_01fb9504ef31 -->|"ui_click: click([4] ImageButton id=next (c"| N_f440938ce068
+    N_f440938ce068 -->|"ui_click: click([4] ImageButton id=next (c"| N_1cccaf58f873
+    N_1cccaf58f873 -->|"ui_click: click([8] ImageButton id=next (c"| N_00fa6218f1e4
+    N_00fa6218f1e4 -->|"ui_click: click([8] ImageButton id=next (c"| N_dabe10b33fe0
+    N_dabe10b33fe0 -->|"ui_swipe: swipe([900, 1115])"| N_3083c20874d6
+    N_3083c20874d6 -->|"ui_click: click([3] LinearLayout id=access"| N_efe579471449

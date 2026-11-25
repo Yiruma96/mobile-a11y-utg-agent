@@ -1,0 +1,156 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_040__5bcadb2338",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "nl.bw20.last_launcher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "a90fb87a9c75",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "a90fb87a9c75",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "nl.bw20.last_launcher",
+      "abilityName": "nl.bw20.last_launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Swipe up for apps\nLong press for settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "caab354c6f4f",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "nl.bw20.last_launcher",
+      "abilityName": "nl.bw20.last_launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Settings",
+        "Set as default home app\nOpen the system picker",
+        "Appearance\nStandard · System",
+        "Home",
+        "App drawer\nNone",
+        "Backup & restore",
+        "Support",
+        "Donate\nSupport the development of Last Launcher",
+        "Send feedback\nEmail the developer",
+        "Help\nAnswers to common questions",
+        "About",
+        "About\nVersion and licenses"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "8e6d8d723a51",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "nl.bw20.last_launcher",
+      "abilityName": "nl.bw20.last_launcher.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Home",
+        "Lock layout\nDisable pinning and long press on the home screen",
+        "Double tap to sleep\nRequires accessibility service enabled in system settings",
+        "Alignment\nLeft",
+        "Left module\nNone",
+        "Right module\nNone"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a90fb87a9c75",
+      "to": "caab354c6f4f",
+      "step": 1,
+      "edge_type": "ui_long_press",
+      "action": "long_press([1] View desc=\"Swipe up for apps\nLong press for settings\" center=(540,1074))"
+    },
+    {
+      "from": "caab354c6f4f",
+      "to": "8e6d8d723a51",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([6] Button desc=\"Home\" (click) center=(540,776))"
+    },
+    {
+      "from": "8e6d8d723a51",
+      "to": "8e6d8d723a51",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Switch desc=\"Double tap to sleep\nRequires accessibility service enabled i\" (click,checked) center=(540,633))"
+    },
+    {
+      "from": "8e6d8d723a51",
+      "to": "8e6d8d723a51",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Switch desc=\"Double tap to sleep\nRequires accessibility service enabled i\" (click,unchecked) center=(540,633))"
+    },
+    {
+      "from": "8e6d8d723a51",
+      "to": "caab354c6f4f",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([1] Button desc=\"Back\" (click) center=(77,160))"
+    },
+    {
+      "from": "caab354c6f4f",
+      "to": "8e6d8d723a51",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([6] Button desc=\"Home\" (click) center=(540,776))"
+    },
+    {
+      "from": "8e6d8d723a51",
+      "to": "8e6d8d723a51",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([4] Switch desc=\"Double tap to sleep\nRequires accessibility service enabled i\" (click,checked) center=(540,633))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "nl.bw20.last_launcher__5bcadb2338",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面长按进入设置，再进入 Home 子页反复切换“双击息屏”开关，但始终未拉起系统无障碍授权。整体为极简桌面/双击锁屏的正常配置引导，无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "Swipe up for apps / Long press for settings -> 上滑查看应用，长按进入设置（首页引导）",
+    "Set as default home app / Open the system picker -> 设为默认桌面应用，打开系统选择器（设置主菜单）",
+    "Double tap to sleep / Requires accessibility service enabled in system settings -> 双击息屏，需在系统设置中启用无障碍服务（Home 设置页）",
+    "Donate / Support the development of Last Launcher -> 捐赠以支持 Last Launcher 开发（设置主菜单支持区）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面首页，提示“上滑看应用、长按进设置”；长按提示区域进入设置，无通知横幅或遮罩。",
+    "step_02": "设置主菜单，含默认桌面、外观、应用抽屉、备份与支持等入口；点击“Home”进入主页设置，无通知或遮罩。",
+    "step_03": "主页设置页，见锁定布局、双击息屏需无障碍、对齐与左右模块；点击“双击息屏”开关后为选中，未弹系统授权。",
+    "step_04": "仍为主页设置页；再次点击“双击息屏”开关，状态变为未选中，仍无系统无障碍授权弹窗，也无通知遮罩。",
+    "step_05": "主页设置页；因开关未触发系统授权，点击左上“Back”返回设置主菜单，当前无通知横幅或悬浮遮罩。",
+    "step_06": "返回设置主菜单，含默认桌面、外观、应用抽屉、备份与支持；再次点击“Home”重试双击息屏设置，无通知或遮罩。",
+    "step_07": "再次进入主页设置，点击“双击息屏”开关使其选中；文案称需系统无障碍服务，但页面未出现系统授权弹窗或遮罩。",
+    "step_08": "主页设置页；点击“双击息屏”开关使其取消选中，仍未触发系统无障碍设置页，也无通知横幅或悬浮遮罩。"
+  }
+}
