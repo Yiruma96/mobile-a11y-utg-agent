@@ -1,0 +1,463 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_009__0d8956b479",
+  "label": "benign",
+  "family_or_category": "专注自律与防沉迷管控",
+  "static_visibility": "clear",
+  "target_package": "io.timelimit.android.aosp.direct",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "8a1984bf28f5",
+  "hook_node_ids": [
+    "83b3132229b7",
+    "dc94a6d5f190"
+  ],
+  "nodes": [
+    {
+      "node_id": "8a1984bf28f5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "io.timelimit.android.aosp.direct",
+      "abilityName": "io.timelimit.android.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome to TimeLimit",
+        "To use TimeLimit with the default server you have to accept the terms of use and privacy. You can find the current versions at https://legal.timelimit.io/en/terms/ and https://legal.timelimit.io/en/privacy/",
+        "You are using the default server",
+        "SELECT CUSTOM SERVER",
+        "TimeLimit Copyright © 2019 - 2026 Jonas Lochmann \nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation version 3 of the License. \n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. \n\nYou should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/.",
+        "ACCEPT AND CONTINUE",
+        "TimeLimit"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "5bdd87080142",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "io.timelimit.android.aosp.direct",
+      "abilityName": "io.timelimit.android.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Keep your eye open for this icon:",
+        "You can show some additional info about something when ever you see it by touching it like in the upper right of the following example",
+        "User key",
+        "There is no key for this user",
+        "ADD KEY",
+        "This feature is only available in the local mode.",
+        "Some questions are answered at https://timelimit.io/en/ and it is a good idea to take a look at https://timelimit.io/en/configsuggestions/ because the default configuration is most likely not what you need. This links are shown in the about screen, so there is no need to write them down. If all that does not help you, then you can still ask the support. Every proper support request results in a proper reply within a short time. Public reviews are not intended for asking questions; you should not expect an answer there. You should ask yourself if you want help or just complain before writing a bad review.",
+        "NEXT",
+        "Back",
+        "TimeLimit"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "83f74f7ac4d0",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "io.timelimit.android.aosp.direct",
+      "abilityName": "io.timelimit.android.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "local mode",
+        "TimeLimit limits this device. There is no connection to other devices. This provides the maximum of privacy and is completely free.",
+        "connected mode",
+        "TimeLimit limits some devices. The TimeLimit settings can be changed at the device itself and from other devices.",
+        "uninstall TimeLimit",
+        "Not a setup option. TimeLimit revokes all permissions which prevent an uninstallation (if any) and starts the deletion of itself.",
+        "You can change your opinion later, but you have to reinstall TimeLimit in this case",
+        "Back",
+        "TimeLimit"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "ca7a34d72db2",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "io.timelimit.android.aosp.direct",
+      "abilityName": "io.timelimit.android.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "TimeLimit needs some permissions to work",
+        "Usage stats access",
+        "Device admin",
+        "Notification access",
+        "Draw over other Apps",
+        "Accessibility service",
+        "Allow applying limits",
+        "needs",
+        "or",
+        "needs in the future",
+        "goal not reached",
+        "Allow blocking floating windows",
+        "eventually needs",
+        "Allow limiting background audio",
+        "Protect against manipulation"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "9170ddacfd38",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "io.timelimit.android.aosp.direct",
+      "abilityName": "io.timelimit.android.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility service",
+        "This is used to \"press\" the home button before showing the lock screen. This fixes blocking in some cases. Moreover, this is one way to allow TimeLimit at newer Android versions to open the lockscreen.",
+        "The permission was not granted",
+        "Apps can not grant permissions themself. You are redirected to a system App to change the permission. Due to that, you can not change the permissions remotely. To protect the setting, you have to block the corresponding system App.",
+        "Cancel",
+        "Modify"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "83b3132229b7",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "TimeLimit",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "adc02f7fa2b8",
+      "first_step": 7,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "TimeLimit",
+        "Use TimeLimit",
+        "OPTIONS",
+        "TimeLimit shortcut",
+        "Off",
+        "Shortcut settings",
+        "This is used to \"press\" the home button before showing the lock screen. This fixes blocking in some cases. Moreover, this is one way to allow TimeLimit at newer Android versions to open the lockscreen."
+      ],
+      "harmony_layout_json": "step_07_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_07_service_detail_layout.xml",
+      "screenshot": "step_07_service_detail_screen.png"
+    },
+    {
+      "node_id": "dc94a6d5f190",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow TimeLimit to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_07_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_07_system_warning_layout.xml",
+      "screenshot": "step_07_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8a1984bf28f5",
+      "to": "5bdd87080142",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"ACCEPT AND CONTINUE\" id=btn_accept (click) center=(752,2060))"
+    },
+    {
+      "from": "5bdd87080142",
+      "to": "83f74f7ac4d0",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Button text=\"NEXT\" id=next_button (click) center=(937,2110))"
+    },
+    {
+      "from": "83f74f7ac4d0",
+      "to": "ca7a34d72db2",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View (click) center=(540,452))"
+    },
+    {
+      "from": "ca7a34d72db2",
+      "to": "ca7a34d72db2",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([34] View (click) center=(967,2095))"
+    },
+    {
+      "from": "ca7a34d72db2",
+      "to": "9170ddacfd38",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([11] View (click) center=(694,809))"
+    },
+    {
+      "from": "9170ddacfd38",
+      "to": "83b3132229b7",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([8] View (click) center=(866,1653))"
+    },
+    {
+      "from": "83b3132229b7",
+      "to": "adc02f7fa2b8",
+      "step": 7,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "adc02f7fa2b8",
+      "to": "dc94a6d5f190",
+      "step": 7,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "83b3132229b7",
+      "to": "ca7a34d72db2",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "ca7a34d72db2",
+      "to": "ca7a34d72db2",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "ca7a34d72db2",
+      "to": "ca7a34d72db2",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 7,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_07_screen.png",
+      "raw_layout_path": "step_07_layout.xml",
+      "harmony_layout_path": "step_07_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_800ms_screen.png",
+          "harmony_layout_path": "step_07_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_07_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back TimeLimit Use TimeLimit OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "TimeLimit",
+        "Use TimeLimit",
+        "OPTIONS",
+        "TimeLimit shortcut",
+        "Off",
+        "Shortcut settings",
+        "This is used to \"press\" the home button before showing the lock screen. This fixes blocking in some cases. Moreover, this is one way to allow TimeLimit at newer Android versions to open the lockscreen."
+      ],
+      "screenshot_path": "step_07_service_detail_screen.png",
+      "harmony_layout_path": "step_07_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow TimeLimit to have full control of your ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow TimeLimit to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_07_system_warning_screen.png",
+      "harmony_layout_path": "step_07_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "io.timelimit.android.aosp.direct",
+      "top_activity": "io.timelimit.android.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "TimeLimit needs some permissions to work",
+        "Usage stats access",
+        "Device admin",
+        "Notification access",
+        "Draw over other Apps",
+        "Accessibility service",
+        "Allow applying limits",
+        "needs",
+        "or",
+        "needs in the future"
+      ],
+      "screenshot_path": "step_07_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "io.timelimit.android.aosp.direct",
+      "top_activity": "io.timelimit.android.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "TimeLimit needs some permissions to work",
+        "Usage stats access",
+        "Device admin",
+        "Notification access",
+        "Draw over other Apps",
+        "Accessibility service",
+        "Allow applying limits",
+        "needs",
+        "or",
+        "needs in the future"
+      ],
+      "screenshot_path": "step_07_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "io.timelimit.android.aosp.direct",
+      "top_activity": "io.timelimit.android.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "TimeLimit needs some permissions to work",
+        "Usage stats access",
+        "Device admin",
+        "Notification access",
+        "Draw over other Apps",
+        "Accessibility service",
+        "Allow applying limits",
+        "needs",
+        "or",
+        "needs in the future"
+      ],
+      "screenshot_path": "step_07_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "io.timelimit.android.aosp.direct__0d8956b479",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用从条款同意与新手引导进入模式选择，选择本地模式后进入权限总览，并以“需要权限”说明引导启用无障碍；跳转系统设置并出现高危“完全控制”警告，拒绝后返回仍卡在权限页。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “欢迎使用 TimeLimit；使用默认服务器须接受使用条款与隐私政策”（Step 1 条款页）",
+    "英文 -> “TimeLimit 需要一些权限才能工作”，并列使用统计、设备管理、通知、悬浮窗、无障碍等（Step 4/5 权限页）",
+    "英文 -> 无障碍服务用于锁屏前“按下”主页键并打开锁屏，授权需跳转系统应用（Step 6 无障碍说明弹窗）",
+    "英文 -> “允许 TimeLimit 完全控制你的设备？”并说明可查看/控制屏幕、代你操作（服务详情系统警告弹窗）",
+    "英文 -> 提醒默认配置很可能不适合，应先看官网，且公开差评不适合提问（Step 2 引导页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "条款同意页：英文提示默认服务器须接受使用条款与隐私政策，可选用自定义服务器；本步点击“ACCEPT AND CONTINUE”继续。",
+    "step_02": "引导说明页：英文介绍右上角图标提示、用户密钥与本地模式限制，并提醒先看官网/默认配置；本步点“NEXT”进入模式选择。",
+    "step_03": "模式选择页：英文列出本地模式（仅限本机、免费且隐私最大）、连接模式及卸载选项；本步点击“local mode”进入权限设置。",
+    "step_04": "权限总览页：英文称 TimeLimit 需要使用统计、设备管理、通知、悬浮窗和无障碍等权限；本步点底部“Next”推进授权流程。",
+    "step_05": "同一权限总览页：列有无障碍服务及“允许应用限制/阻止悬浮窗/限制后台音频”等说明；本步点“Accessibility service”图标打开说明弹窗。",
+    "step_06": "无障碍说明弹窗：英文称该服务用于锁屏前“按”主页键并打开锁屏，当前未授权且需跳系统设置；本步点“Modify”跳转。",
+    "step_07": "系统无障碍列表页：下载应用下可见 TimeLimit 处于“Off”；采集到无障碍设置钩子与探针后自动终止，未继续授权。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍设置页，页面文本为空、遮罩数为0，无弹窗或通知横幅。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在系统无障碍设置页，页面文本为空、遮罩数为0，无弹窗或通知横幅。",
+    "detail_1_service_detail_page": "TimeLimit 无障碍服务详情页：显示“Use TimeLimit”、快捷方式关闭及服务用途说明；本步仅检查详情，未点击启用。",
+    "detail_2_system_warning_dialog": "系统高危授权警告：英文问是否允许 TimeLimit 完全控制设备，并说明可读屏、显示悬浮内容及代操作；界面有 Allow/Deny。",
+    "refusal_2.0s": "拒权返回2秒后：回到 TimeLimit 权限总览页，仍列使用统计、设备管理、通知、悬浮窗、无障碍等项，流程停在诱导授权页。",
+    "refusal_10.5s": "拒权返回10.5秒后：页面未变化仍停在权限总览，未见取消/跳过出口，表现为被卡在授权引导页。"
+  }
+}

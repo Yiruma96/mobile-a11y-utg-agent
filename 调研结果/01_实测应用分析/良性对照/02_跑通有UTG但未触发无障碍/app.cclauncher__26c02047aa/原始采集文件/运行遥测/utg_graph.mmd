@@ -1,0 +1,15 @@
+flowchart TD
+    N_15c21d5ae4ee["Step 1: MainActivity\n"]
+    N_34dfa722b881["Step 2: MainActivity\nGeneral"]
+    N_0dfbedefd916["Step 3: MainActivity\nAuto Open Single Match"]
+    N_aa5e8fde2b97["Step 4: MainActivity\nTap to Open in App Dra"]
+    N_c3ffc4ac215e["Step 5: MainActivity\nSelect a custom font f"]
+    N_4703682e4400["Step 6: MainActivity\nSelect a custom font f"]
+    N_e41188ed71f7["Step 7: MainActivity\nPrivate Space"]
+    N_15c21d5ae4ee -->|"ui_long_press: long_press([540, 1000])"| N_34dfa722b881
+    N_34dfa722b881 -->|"ui_swipe: swipe([540, 1800])"| N_0dfbedefd916
+    N_0dfbedefd916 -->|"ui_swipe: swipe([540, 1800])"| N_aa5e8fde2b97
+    N_aa5e8fde2b97 -->|"ui_swipe: swipe([540, 1800])"| N_c3ffc4ac215e
+    N_c3ffc4ac215e -->|"ui_click: click([36] View desc='Search set"| N_4703682e4400
+    N_4703682e4400 -->|"ui_type: type()"| N_e41188ed71f7
+    N_e41188ed71f7 -->|"ui_system_button: system_button(Enter)"| N_e41188ed71f7

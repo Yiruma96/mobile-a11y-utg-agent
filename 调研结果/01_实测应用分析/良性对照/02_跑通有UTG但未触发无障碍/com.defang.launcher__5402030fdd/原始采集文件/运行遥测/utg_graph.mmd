@@ -1,0 +1,15 @@
+flowchart TD
+    N_322e01e05e9d["Step 1: OnboardingActivity\nSkip"]
+    N_5a6e13379538["Step 2: OnboardingActivity\nLet's set it up. Two m"]
+    N_cf8eb99fef80["Step 3: SettingsActivity\nDefault timings"]
+    N_2cad5adc7b04["Step 4: SettingsActivity\nSites you add are gate"]
+    N_9e345ad9aa24["Step 6: SettingsActivity\nRegister code"]
+    N_e4686187d5cb["Step 7: SettingsActivity\nClock and tidbit"]
+    N_7e4692f9c4e3["Step 8: SettingsActivity\nRequire a code scan to"]
+    N_322e01e05e9d -->|"ui_click: click([2] View (click) center=(9"| N_5a6e13379538
+    N_5a6e13379538 -->|"ui_click: click([3] View (click) center=(5"| N_cf8eb99fef80
+    N_cf8eb99fef80 -->|"ui_click: click([8] View (click) center=(5"| N_2cad5adc7b04
+    N_2cad5adc7b04 -->|"ui_click: click([13] View desc='Back' cent"| N_cf8eb99fef80
+    N_cf8eb99fef80 -->|"ui_swipe: swipe([540, 1800])"| N_9e345ad9aa24
+    N_9e345ad9aa24 -->|"ui_swipe: swipe([540, 2000])"| N_e4686187d5cb
+    N_e4686187d5cb -->|"ui_swipe: swipe([540, 600])"| N_7e4692f9c4e3

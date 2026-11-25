@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用入口为droidVNC-NG管理员面板，先引导启动VNC服务，再以“无障碍禁用”弹窗请求远程控制所需无障碍；进入系统全控制警告后若拒绝，返回应用又反复弹出文件访问授权诱导，呈现拒权后重启诱导弹窗特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “无障碍已禁用；为远程控制设备并支持开机启动，需为droidVNC-NG启用无障碍，是否现在启用？”（InputRequestActivity）",
+    "英语 -> “允许droidVNC-NG向Android投递输入事件，从而由VNC查看器远程控制；输入不记录、不保存、不共享。”（无障碍服务详情页）",
+    "英语 -> “允许droidVNC-NG完全控制设备？适合无障碍需求，不适合多数应用；可查看控制屏幕、读取全部内容并覆盖显示，跟踪交互并代为操作。”（系统警告弹窗）",
+    "英语 -> “文件访问已禁用；为在设备间传输文件，需启用文件访问，仅能在Download和Documents保存，是否现在启用？”（WriteStorageRequestActivity）"
+  ],
+  "frame_captions": {
+    "step_01": "应用主界面为droidVNC-NG管理员面板，含端口5900、密码、Intent密钥与开机启动；点击Input权限状态DENIED。",
+    "step_02": "仍停留管理员面板；上一步点击未生效，本步向上滑动以寻找START按钮与权限仪表盘。",
+    "step_03": "下滑后露出START与权限仪表盘，屏幕捕获、输入仍为DENIED；点击START尝试启动VNC服务。",
+    "step_04": "应用内弹窗称无障碍未启用，远程控制和开机启动需启用无障碍，询问是否现在开启；点击YES。",
+    "step_05": "跳至系统无障碍列表，droidVNC-NG显示Off；探针捕获无障碍设置入口后自动终止，无悬浮遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍处系统无障碍列表，界面无文本、无悬浮遮罩，仅见droidVNC-NG通知留存。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为系统无障碍列表，无遮罩与新增界面；应用通知持续留存。",
+    "detail_1_service_detail_page": "droidVNC-NG无障碍服务详情页，开关为Off；说明称可向Android投递输入事件实现远程控制且不记录共享输入。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗：称可查看控制屏幕、读取全部内容并覆盖显示，跟踪交互并代为操作；含Allow/Deny。",
+    "refusal_2.0s": "拒绝无障碍后约2秒回到应用，立即重启文件访问诱导弹窗，称传输文件需授权，仅限Download/Documents。",
+    "refusal_10.5s": "拒权返回约10.5秒仍重复弹出文件访问诱导，文案同上，呈现拒权后反复重启弹窗的粘性行为。"
+  }
+}

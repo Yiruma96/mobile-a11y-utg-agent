@@ -1,0 +1,19 @@
+flowchart TD
+    N_5f8498317c97["Step 1: MainActivity\nUsage notice"]
+    N_72bbc90a5e9a["Step 2: MainActivity\nAbout accessibility"]
+    N_e05a009a6503["Step 3: MainActivity\nIgnore battery optimiz"]
+    N_6b571d3985dc["Step 4: MainActivity\nAccessibility"]
+    N_9d664c1a251b["Step 5: MainActivity\nEnable GKD accessibili"]
+    N_c904d954017a["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_eef797320384["Step 6: SubSettings\nBack"]
+    N_ddeae65f8a80["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nAllow GKD to have full"]
+    N_5f8498317c97 -->|"ui_click: click([6] TextView text='Agree' "| N_72bbc90a5e9a
+    N_72bbc90a5e9a -->|"ui_click: click([6] TextView text='Agree' "| N_e05a009a6503
+    N_e05a009a6503 -->|"ui_click: click([7] View (click) center=(5"| N_6b571d3985dc
+    N_6b571d3985dc -->|"ui_click: click([8] TextView text='Enable "| N_9d664c1a251b
+    N_9d664c1a251b -->|"ui_click: click([6] TextView text='Go' cen"| N_c904d954017a
+    N_c904d954017a -->|"detail_probe: click_service()"| N_eef797320384
+    N_eef797320384 -->|"warning_probe: click_use_service_switch"| N_ddeae65f8a80
+    N_c904d954017a -->|"refusal_probe: Back_refuse"| N_6b571d3985dc
+    N_6b571d3985dc -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6b571d3985dc
+    N_6b571d3985dc -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6b571d3985dc

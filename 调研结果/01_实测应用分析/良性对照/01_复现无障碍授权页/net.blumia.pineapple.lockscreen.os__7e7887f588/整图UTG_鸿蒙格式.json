@@ -1,0 +1,325 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_015__7e7887f588",
+  "label": "benign",
+  "family_or_category": "按键映射与手势导航",
+  "static_visibility": "clear",
+  "target_package": "net.blumia.pineapple.lockscreen.oss",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "107985426c22",
+  "hook_node_ids": [
+    "4c1e37999742",
+    "76a8c448e72f",
+    "69e2b25c7883"
+  ],
+  "nodes": [
+    {
+      "node_id": "107985426c22",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "net.blumia.pineapple.lockscreen.oss",
+      "abilityName": "net.blumia.pineapple.lockscreen.MainActivityAliasGreenLock",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "This application require to enable its accessibility service in order to work.\nYou can use the following button to enable or disable the service conveniently.",
+        "Accessibility Settings",
+        "You can create a shortcut icon on your launcher to perform the lock action.",
+        "Create Shortcut Icon",
+        "This application also provide a quick settings tile to turn the screen off. You can add the tile by edit the quick settings area and drag the Lock Screen tile to where you want.",
+        "Open Quick Settings",
+        "Pineapple Lock Screen",
+        "Menu"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "4c1e37999742",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Pineapple Lock Screen - Accessibility Service",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "76a8c448e72f",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Pineapple Lock Screen - Accessibility Service",
+        "Use Pineapple Lock Screen - Accessibility Service",
+        "OPTIONS",
+        "Pineapple Lock Screen - Accessibility Service shortcut",
+        "Off",
+        "Shortcut settings",
+        "This accessibility service is used to provide the lock screen ability in the Pineapple Lock Screen application, otherwise the application won't be able to work.\n\nTo enable the accessibility service, just tap the toggle switch in the top right corner, then tap Allow on the next screen. You don't need to enable the second shortcut switch.\n\nNote:\n1. If you force stop the main application, you might need to enable this service again.\n2. If the service is enabled but the application doesn't work as intended, try disable and enable it again."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "69e2b25c7883",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Pineapple Lock Screen - Accessibility Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "107985426c22",
+      "to": "4c1e37999742",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Accessibility Settings\" center=(279,657))"
+    },
+    {
+      "from": "4c1e37999742",
+      "to": "76a8c448e72f",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "76a8c448e72f",
+      "to": "69e2b25c7883",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "4c1e37999742",
+      "to": "107985426c22",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "107985426c22",
+      "to": "107985426c22",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "107985426c22",
+      "to": "107985426c22",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Pineapple Lock Screen - Accessibility Service Use Pinea",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Pineapple Lock Screen - Accessibility Service",
+        "Use Pineapple Lock Screen - Accessibility Service",
+        "OPTIONS",
+        "Pineapple Lock Screen - Accessibility Service shortcut",
+        "Off",
+        "Shortcut settings",
+        "This accessibility service is used to provide the lock screen ability in the Pineapple Lock Screen application, otherwise the application won't be able to work.\n\nTo enable the accessibility service, just tap the toggle switch in the top right corner, then tap Allow on the next screen. You don't need to enable the second shortcut switch.\n\nNote:\n1. If you force stop the main application, you might need to enable this service again.\n2. If the service is enabled but the application doesn't work as intended, try disable and enable it again."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Pineapple Lock Screen - Accessibility S",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Pineapple Lock Screen - Accessibility Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "net.blumia.pineapple.lockscreen.oss",
+      "top_activity": "net.blumia.pineapple.lockscreen.MainActivityAliasGreenLock",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "This application require to enable its accessibility service in order to work.\nYou can use the following button to enable or disable the service conveniently.",
+        "Accessibility Settings",
+        "You can create a shortcut icon on your launcher to perform the lock action.",
+        "Create Shortcut Icon",
+        "This application also provide a quick settings tile to turn the screen off. You can add the tile by edit the quick settings area and drag the Lock Screen tile to where you want.",
+        "Open Quick Settings",
+        "Pineapple Lock Screen",
+        "Menu"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "net.blumia.pineapple.lockscreen.oss",
+      "top_activity": "net.blumia.pineapple.lockscreen.MainActivityAliasGreenLock",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "This application require to enable its accessibility service in order to work.\nYou can use the following button to enable or disable the service conveniently.",
+        "Accessibility Settings",
+        "You can create a shortcut icon on your launcher to perform the lock action.",
+        "Create Shortcut Icon",
+        "This application also provide a quick settings tile to turn the screen off. You can add the tile by edit the quick settings area and drag the Lock Screen tile to where you want.",
+        "Open Quick Settings",
+        "Pineapple Lock Screen",
+        "Menu"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "net.blumia.pineapple.lockscreen.oss",
+      "top_activity": "net.blumia.pineapple.lockscreen.MainActivityAliasGreenLock",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "This application require to enable its accessibility service in order to work.\nYou can use the following button to enable or disable the service conveniently.",
+        "Accessibility Settings",
+        "You can create a shortcut icon on your launcher to perform the lock action.",
+        "Create Shortcut Icon",
+        "This application also provide a quick settings tile to turn the screen off. You can add the tile by edit the quick settings area and drag the Lock Screen tile to where you want.",
+        "Open Quick Settings",
+        "Pineapple Lock Screen",
+        "Menu"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "net.blumia.pineapple.lockscreen.os__7e7887f588",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用入口主界面以英文强调必须启用无障碍服务，引导跳转系统无障碍列表并进入服务详情/系统警告；用户点 Deny 后应用反复回到同一主界面，形成 TRAPPED_ON_LURE_SCREEN，未见可继续使用的功能路径。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “本应用需要启用无障碍服务才能工作，可用下方按钮方便地启用或禁用该服务”（主界面 step_01/拒权返回页）",
+    "英文 -> “可创建启动器快捷图标执行锁屏动作”“提供快速设置磁贴关闭屏幕，可拖动 Lock Screen 磁贴到所需位置”（主界面）",
+    "英文 -> “该无障碍服务用于提供锁屏能力，否则应用无法工作；点右上角开关并在下一屏点 Allow；无需启用第二个快捷方式开关”（服务详情页）",
+    "英文 -> 注意事项：强制停止主应用后可能需重新启用服务；服务已启用但应用不正常时可尝试禁用再启用（服务详情页）",
+    "英文 -> 系统警告：允许 Pineapple Lock Screen - Accessibility Service 完全控制设备？可查看控制屏幕、查看并执行操作；有 Allow/Deny（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用主界面：英文称必须启用无障碍服务才能工作，本步点“Accessibility Settings”跳转系统设置；有 Google 备份通知，无遮罩。",
+    "step_02": "系统无障碍列表：显示“Pineapple Lock Screen - Accessibility Service”为 Off；探针在此截获设置 Hook 后自动终止，有 Google 备份通知，无遮罩。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停留系统无障碍列表，页面文本为空；通知新增 Gboard 更新提示，无弹窗/遮罩，未发生点击。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍在系统无障碍列表，无页面文本变化；Google 备份与 Gboard 通知并存，无遮罩，仍等待。",
+    "detail_1_service_detail_page": "服务详情页：英文称无障碍服务用于锁屏能力，否则应用无法工作；指导点右上角开关并下一屏点 Allow，无需开第二开关。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：询问是否允许该服务完全控制设备，列明可查看控制屏幕、查看并执行操作；提供 Allow/Deny，本步仅检查，无遮罩。",
+    "refusal_2.0s": "拒权后2秒回到应用主界面：仍以英文要求启用无障碍服务，停留同一诱导页，未进入功能；有 Google 备份通知，无遮罩。",
+    "refusal_10.5s": "拒权后10.5秒仍困在主界面：同一英文启用无障碍服务提示与按钮未消失，无替代使用路径；有备份通知，无遮罩。"
+  }
+}

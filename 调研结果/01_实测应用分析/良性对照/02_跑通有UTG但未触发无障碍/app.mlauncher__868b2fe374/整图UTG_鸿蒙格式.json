@@ -1,0 +1,173 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_024__868b2fe374",
+  "label": "benign",
+  "family_or_category": "极简桌面与双击锁屏",
+  "static_visibility": "clear",
+  "target_package": "app.mlauncher",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "2f8ae22b8dc5",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "2f8ae22b8dc5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "app.mlauncher",
+      "abilityName": "com.github.codeworkscreativehub.mlauncher.ui.onboarding.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Multi Launcher",
+        "Welcome to Multi Launcher",
+        "By continuing you agree to Privacy Policy",
+        "Set as Default Launcher",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "af84c5ae1519",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set Multi Launcher as your default home app?",
+        "Multi Launcher",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "23b305478daa",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set Multi Launcher as your default home app?",
+        "Multi Launcher",
+        "No permissions needed",
+        "Pixel Launcher",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "27fa6a45ff62",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AppUsageAccessSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Apps with usage access",
+        "Search settings",
+        "Multi Launcher",
+        "1.12.3 Build 0",
+        "Permit usage access",
+        "Usage access allows an app to track what other apps you’re using and how often, as well as your carrier, language settings, and other details."
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2f8ae22b8dc5",
+      "to": "2f8ae22b8dc5",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Next\" id=nextButton (click) center=(540,1490))"
+    },
+    {
+      "from": "2f8ae22b8dc5",
+      "to": "af84c5ae1519",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"Set as Default Launcher\" id=permissionButton (click) center=(540,1303))"
+    },
+    {
+      "from": "af84c5ae1519",
+      "to": "23b305478daa",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] RadioButton (unchecked) center=(898,1102))"
+    },
+    {
+      "from": "23b305478daa",
+      "to": "2f8ae22b8dc5",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Set as default\" id=button1 (click) center=(822,1451))"
+    },
+    {
+      "from": "2f8ae22b8dc5",
+      "to": "2f8ae22b8dc5",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"Next\" id=nextButton (click) center=(540,1490))"
+    },
+    {
+      "from": "2f8ae22b8dc5",
+      "to": "27fa6a45ff62",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([514, 1425])"
+    },
+    {
+      "from": "27fa6a45ff62",
+      "to": "27fa6a45ff62",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "app.mlauncher__868b2fe374",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用从欢迎引导页请求设为默认桌面，进入系统角色确认并确认后返回，再引导开启使用情况访问权限，跳转系统设置开启后返回继续引导。全程无通知横幅/遮罩，属功能引导叠加敏感权限说明，未测试拒权路径。",
+  "observed_lure_rhetoric_zh": [
+    "英文“By continuing you agree to Privacy Policy” -> 继续即表示同意隐私政策（欢迎引导页 Step1/2/5/6）",
+    "英文“Set as Default Launcher” -> 将 Multi Launcher 设为默认桌面（欢迎页按钮）",
+    "英文“Set Multi Launcher as your default home app?” -> 是否将 Multi Launcher 设为默认主屏幕应用？（系统角色确认页 Step3/4）",
+    "英文“No permissions needed” -> 无需权限（系统角色页选中 Multi Launcher 后显示）",
+    "英文“Permit usage access”及说明 -> 允许使用情况访问；可跟踪其他应用使用及频率、运营商与语言设置等（系统设置 Step7/8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "欢迎引导页：含欢迎语、继续即同意隐私政策、设为默认桌面与Next；点击Next推进，未见通知横幅或遮罩。",
+    "step_02": "同欢迎页：Next显示禁用，改点“Set as Default Launcher”触发系统默认桌面请求；无通知横幅与遮罩。",
+    "step_03": "系统角色页：询问是否设Multi Launcher为默认主屏，列Pixel Launcher、取消与确认；本步仅选中前者单选，未确认。",
+    "step_04": "系统角色页：Multi Launcher选中后显示“无需权限”，点“Set as default”确认默认主屏；无通知/遮罩。",
+    "step_05": "返回欢迎页：Next已高亮，点击继续引导；仍含继续即同意隐私政策及设为默认桌面，未见通知横幅或遮罩。",
+    "step_06": "欢迎页出现使用情况访问权限门槛，按坐标点击“Grant Permission”入口跳系统设置；无通知横幅/遮罩。",
+    "step_07": "系统使用情况访问设置页：说明可跟踪其他应用使用及频率等，点开关为Multi Launcher授权；无通知/遮罩。",
+    "step_08": "同一使用情况访问设置页：权限已开启，点左上Back返回应用继续引导；含跟踪应用使用说明，无通知/遮罩。"
+  }
+}

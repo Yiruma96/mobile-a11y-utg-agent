@@ -1,0 +1,16 @@
+flowchart TD
+    N_abdbef547a01["Step 1: MainActivity\nWhat's New"]
+    N_9382c7d86b97["Step 2: MainActivity\nThe accessibility serv"]
+    N_5602b84e20c9["Step 3: MainActivity\nAccessibility service "]
+    N_daa6064e2526["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_a3c41162c77a["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ff78ebd68e77["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Key Mapper to ha"]
+    N_1159e24777c9["Step 4: NexusLauncherActivity\nApps list"]
+    N_abdbef547a01 -->|"ui_click: click([19] TextView text='OK' ce"| N_9382c7d86b97
+    N_9382c7d86b97 -->|"ui_click: click([3] TextView text='Fix' ce"| N_5602b84e20c9
+    N_5602b84e20c9 -->|"ui_click: click([7] TextView text='Enable'"| N_daa6064e2526
+    N_daa6064e2526 -->|"detail_probe: click_service()"| N_a3c41162c77a
+    N_a3c41162c77a -->|"warning_probe: click_use_service_switch"| N_ff78ebd68e77
+    N_daa6064e2526 -->|"refusal_probe: Back_refuse"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1159e24777c9
+    N_1159e24777c9 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1159e24777c9

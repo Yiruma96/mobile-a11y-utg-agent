@@ -1,0 +1,419 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_067__4dd361f770",
+  "label": "benign",
+  "family_or_category": "锁屏与悬浮组件辅助",
+  "static_visibility": "clear",
+  "target_package": "tk.zwander.lockscreenwidgets",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "44f23adbb108",
+  "hook_node_ids": [
+    "8308208ae1d4",
+    "bfce1cceebbc",
+    "23f404ed36c8"
+  ],
+  "nodes": [
+    {
+      "node_id": "44f23adbb108",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "tk.zwander.lockscreenwidgets",
+      "abilityName": "tk.zwander.common.activities.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome!",
+        "Widgets Anywhere is an app focused on making widgets more accessible and providing extra features.",
+        "Exit",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "8ae9ad79c502",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "tk.zwander.lockscreenwidgets",
+      "abilityName": "tk.zwander.common.activities.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Basic Usage",
+        "Tap the \"plus\" page to add a widget, press and hold to reorder/resize/remove widgets in the list, and tap anywhere on the frame with two fingers to move/resize the frame or add a widget. You can also tap with three fingers to hide the widget frame until the screen is turned off and on again.",
+        "Previous",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "61b48a1c26fd",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "tk.zwander.lockscreenwidgets",
+      "abilityName": "tk.zwander.common.activities.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Privacy Policy",
+        "Widgets Anywhere doesn't collect any data beyond what's needed for crash analysis. Learn more below.",
+        "More Info",
+        "Previous",
+        "Next"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "44bb15260886",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "tk.zwander.lockscreenwidgets",
+      "abilityName": "tk.zwander.common.activities.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks.",
+        "More Info",
+        "Previous",
+        "Next"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "7c675acc1bf3",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "tk.zwander.lockscreenwidgets",
+      "abilityName": "tk.zwander.common.activities.OnboardingActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility",
+        "To be able to display on the lock screen, you'll need to activate Widgets Anywhere's Accessibility Service. This app doesn't collect any data from your screen.",
+        "Grant",
+        "Close App"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "8308208ae1d4",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Widgets Anywhere",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "bfce1cceebbc",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Widgets Anywhere",
+        "Use Widgets Anywhere",
+        "OPTIONS",
+        "Widgets Anywhere shortcut",
+        "Off",
+        "Shortcut settings",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks."
+      ],
+      "harmony_layout_json": "step_06_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_06_service_detail_layout.xml",
+      "screenshot": "step_06_service_detail_screen.png"
+    },
+    {
+      "node_id": "23f404ed36c8",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Widgets Anywhere to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_06_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_06_system_warning_layout.xml",
+      "screenshot": "step_06_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "44f23adbb108",
+      "to": "8ae9ad79c502",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] View (click) center=(970,2082))"
+    },
+    {
+      "from": "8ae9ad79c502",
+      "to": "61b48a1c26fd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([6] View (click) center=(970,2082))"
+    },
+    {
+      "from": "61b48a1c26fd",
+      "to": "44bb15260886",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([8] View (click) center=(970,2082))"
+    },
+    {
+      "from": "44bb15260886",
+      "to": "7c675acc1bf3",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] View (click) center=(540,1906))"
+    },
+    {
+      "from": "7c675acc1bf3",
+      "to": "8308208ae1d4",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] View (click) center=(833,1324))"
+    },
+    {
+      "from": "8308208ae1d4",
+      "to": "bfce1cceebbc",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "bfce1cceebbc",
+      "to": "23f404ed36c8",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "8308208ae1d4",
+      "to": "44bb15260886",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "44bb15260886",
+      "to": "44bb15260886",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "44bb15260886",
+      "to": "44bb15260886",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Widgets Anywhere Use Widgets Anywhere OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Widgets Anywhere",
+        "Use Widgets Anywhere",
+        "OPTIONS",
+        "Widgets Anywhere shortcut",
+        "Off",
+        "Shortcut settings",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Widgets Anywhere to have full control o",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Widgets Anywhere to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "tk.zwander.lockscreenwidgets",
+      "top_activity": "tk.zwander.common.activities.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks.",
+        "More Info",
+        "Previous",
+        "Next"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "tk.zwander.lockscreenwidgets",
+      "top_activity": "tk.zwander.common.activities.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks.",
+        "More Info",
+        "Previous",
+        "Next"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "tk.zwander.lockscreenwidgets",
+      "top_activity": "tk.zwander.common.activities.OnboardingActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected, and no actions will be performed on the device. This permission is optional if you are only using the home screen widget stacks.",
+        "More Info",
+        "Previous",
+        "Next"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "tk.zwander.lockscreenwidgets__4dd361f770",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先以欢迎、功能与隐私说明引导用户进入无障碍页，用“不收集数据、不执行操作”等话术降低戒心，再点 Grant 跳转系统无障碍授权；拒绝后反复回到同一诱导页，无法继续，形成 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英语「Welcome!」-> 欢迎！（欢迎页）",
+    "英语「Widgets Anywhere is an app focused on making widgets more accessible and providing extra features.」-> 本应用致力于让小组件更易访问并提供额外功能（欢迎页）",
+    "英语「Widgets Anywhere doesn't collect any data beyond what's needed for crash analysis.」-> 除崩溃分析外不收集任何数据（隐私政策页）",
+    "英语「Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected... This permission is optional...」-> 需无障碍服务在锁屏/通知中心显示小组件，不收集数据、不执行操作，仅用主屏小组件时可选用（无障碍说明页）",
+    "英语「To be able to display on the lock screen... This app doesn't collect any data from your screen.」-> 为在锁屏显示需启用无障碍，应用不采集屏幕数据（授权弹窗）",
+    "英语「Allow Widgets Anywhere to have full control of your device?」-> 允许 Widgets Anywhere 完全控制设备？（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "引导欢迎页，说明应用让小组件更易用并含额外功能，有 Exit/Next；本步点 Next 前进。",
+    "step_02": "基础用法页，介绍加号添加、长按排序缩放删除、双指移动/三指隐藏；本步点 Next 继续。",
+    "step_03": "隐私政策页，称除崩溃分析外不收集数据并提供 More Info；本步点 Next 继续。",
+    "step_04": "无障碍说明页，称仅用于锁屏/通知中心显示小组件、不收集数据且可选；本步点 More Info。",
+    "step_05": "无障碍授权弹窗，强调不采集屏幕数据，含 Grant/Close App；本步点 Grant 跳转系统设置。",
+    "step_06": "系统无障碍列表显示 Widgets Anywhere 为 Off；探针捕获无障碍设置钩子与检测后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍列表，无通知横幅、无遮罩，未发生交互。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍停留系统无障碍列表，无通知横幅、无遮罩，未发生交互。",
+    "detail_1_service_detail_page": "服务详情页显示 Use Widgets Anywhere 开关与说明，称不收集数据且可选；仅检查未授权。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗，提示可查看/控制屏幕并代执行操作，含 Allow/Deny；仅检查未选择。",
+    "refusal_2.0s": "拒权返回 2 秒后仍停在无障碍说明页，仅有 More Info/Previous/Next，无退出，形成诱导页困住。",
+    "refusal_10.5s": "拒权返回 10.5 秒后仍停同一无障碍说明页，交互未变，仍无退出，持续困在诱导页。"
+  }
+}

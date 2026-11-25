@@ -1,0 +1,16 @@
+flowchart TD
+    N_efea3713a9e4["Step 1: RequestRoleActivity\nSet Scratchpad Launche"]
+    N_6bbdcb16bc2f["Step 2: RequestRoleActivity\nSet Scratchpad Launche"]
+    N_896138b14dc2["Step 3: MainActivity\nScratchpad empty…"]
+    N_789913b1b53a["Step 4: MainActivity\nScratchpad Launcher"]
+    N_b40736a4426e["Step 5: MainActivity\nWidget"]
+    N_8b45c0057153["Step 6: MainActivity\nAppearance"]
+    N_aacf7ff0a6cd["Step 7: MainActivity\nClock & date appearanc"]
+    N_747e53dd4f13["Step 8: MainActivity\nScratchpad line height"]
+    N_efea3713a9e4 -->|"ui_click: click([5] RadioButton (unchecked"| N_6bbdcb16bc2f
+    N_6bbdcb16bc2f -->|"ui_click: click([8] Button text='Set as de"| N_896138b14dc2
+    N_896138b14dc2 -->|"ui_long_press: long_press([1] EditText text='Sc"| N_789913b1b53a
+    N_789913b1b53a -->|"ui_swipe: swipe([540, 1800])"| N_b40736a4426e
+    N_b40736a4426e -->|"ui_swipe: swipe([540, 1800])"| N_8b45c0057153
+    N_8b45c0057153 -->|"ui_swipe: swipe([540, 1800])"| N_aacf7ff0a6cd
+    N_aacf7ff0a6cd -->|"ui_swipe: swipe([540, 1800])"| N_747e53dd4f13

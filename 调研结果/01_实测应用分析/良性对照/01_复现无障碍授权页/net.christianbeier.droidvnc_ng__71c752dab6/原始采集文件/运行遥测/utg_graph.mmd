@@ -1,0 +1,17 @@
+flowchart TD
+    N_2a59a2c72033["Step 1: MainActivity\ndroidVNC-NG Admin Pane"]
+    N_1eafd7f29501["Step 3: MainActivity\ndroidVNC-NG Admin Pane"]
+    N_caf1e6a3404c["Step 4: InputRequestActivity\nAccessibility disabled"]
+    N_b1d628155513["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_709077ab5a53["Step 5: SubSettings\nBack"]
+    N_33f6e6314b7f["Step 5: SubSettings [HOOK_A11Y_SETTINGS]\nAllow droidVNC-NG to h"]
+    N_fc0676174046["Step 5: WriteStorageRequestActivity\nFile access disabled"]
+    N_2a59a2c72033 -->|"ui_click: click([43] TextView text='DENIED"| N_2a59a2c72033
+    N_2a59a2c72033 -->|"ui_swipe: swipe([540, 1900])"| N_1eafd7f29501
+    N_1eafd7f29501 -->|"ui_click: click([33] Button text='START' i"| N_caf1e6a3404c
+    N_caf1e6a3404c -->|"ui_click: click([4] Button text='YES' id=b"| N_b1d628155513
+    N_b1d628155513 -->|"detail_probe: click_service()"| N_709077ab5a53
+    N_709077ab5a53 -->|"warning_probe: click_use_service_switch"| N_33f6e6314b7f
+    N_b1d628155513 -->|"refusal_probe: Back_refuse"| N_fc0676174046
+    N_fc0676174046 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_fc0676174046
+    N_fc0676174046 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_fc0676174046

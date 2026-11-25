@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "该应用从欢迎引导页请求设为默认桌面，进入系统角色确认并确认后返回，再引导开启使用情况访问权限，跳转系统设置开启后返回继续引导。全程无通知横幅/遮罩，属功能引导叠加敏感权限说明，未测试拒权路径。",
+  "observed_lure_rhetoric_zh": [
+    "英文“By continuing you agree to Privacy Policy” -> 继续即表示同意隐私政策（欢迎引导页 Step1/2/5/6）",
+    "英文“Set as Default Launcher” -> 将 Multi Launcher 设为默认桌面（欢迎页按钮）",
+    "英文“Set Multi Launcher as your default home app?” -> 是否将 Multi Launcher 设为默认主屏幕应用？（系统角色确认页 Step3/4）",
+    "英文“No permissions needed” -> 无需权限（系统角色页选中 Multi Launcher 后显示）",
+    "英文“Permit usage access”及说明 -> 允许使用情况访问；可跟踪其他应用使用及频率、运营商与语言设置等（系统设置 Step7/8）"
+  ],
+  "frame_captions": {
+    "step_01": "欢迎引导页：含欢迎语、继续即同意隐私政策、设为默认桌面与Next；点击Next推进，未见通知横幅或遮罩。",
+    "step_02": "同欢迎页：Next显示禁用，改点“Set as Default Launcher”触发系统默认桌面请求；无通知横幅与遮罩。",
+    "step_03": "系统角色页：询问是否设Multi Launcher为默认主屏，列Pixel Launcher、取消与确认；本步仅选中前者单选，未确认。",
+    "step_04": "系统角色页：Multi Launcher选中后显示“无需权限”，点“Set as default”确认默认主屏；无通知/遮罩。",
+    "step_05": "返回欢迎页：Next已高亮，点击继续引导；仍含继续即同意隐私政策及设为默认桌面，未见通知横幅或遮罩。",
+    "step_06": "欢迎页出现使用情况访问权限门槛，按坐标点击“Grant Permission”入口跳系统设置；无通知横幅/遮罩。",
+    "step_07": "系统使用情况访问设置页：说明可跟踪其他应用使用及频率等，点开关为Multi Launcher授权；无通知/遮罩。",
+    "step_08": "同一使用情况访问设置页：权限已开启，点左上Back返回应用继续引导；含跟踪应用使用说明，无通知/遮罩。"
+  }
+}

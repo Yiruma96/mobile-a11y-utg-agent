@@ -1,0 +1,19 @@
+flowchart TD
+    N_44f23adbb108["Step 1: OnboardingActivity\nWelcome!"]
+    N_8ae9ad79c502["Step 2: OnboardingActivity\nBasic Usage"]
+    N_61b48a1c26fd["Step 3: OnboardingActivity\nPrivacy Policy"]
+    N_44bb15260886["Step 4: OnboardingActivity\nAccessibility"]
+    N_7c675acc1bf3["Step 5: OnboardingActivity\nAccessibility"]
+    N_8308208ae1d4["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_bfce1cceebbc["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_23f404ed36c8["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Widgets Anywhere"]
+    N_44f23adbb108 -->|"ui_click: click([6] View (click) center=(9"| N_8ae9ad79c502
+    N_8ae9ad79c502 -->|"ui_click: click([6] View (click) center=(9"| N_61b48a1c26fd
+    N_61b48a1c26fd -->|"ui_click: click([8] View (click) center=(9"| N_44bb15260886
+    N_44bb15260886 -->|"ui_click: click([4] View (click) center=(5"| N_7c675acc1bf3
+    N_7c675acc1bf3 -->|"ui_click: click([3] View (click) center=(8"| N_8308208ae1d4
+    N_8308208ae1d4 -->|"detail_probe: click_service()"| N_bfce1cceebbc
+    N_bfce1cceebbc -->|"warning_probe: click_use_service_switch"| N_23f404ed36c8
+    N_8308208ae1d4 -->|"refusal_probe: Back_refuse"| N_44bb15260886
+    N_44bb15260886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_44bb15260886
+    N_44bb15260886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_44bb15260886

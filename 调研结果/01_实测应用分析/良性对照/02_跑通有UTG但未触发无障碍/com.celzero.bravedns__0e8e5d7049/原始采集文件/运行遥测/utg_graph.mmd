@@ -1,0 +1,15 @@
+flowchart TD
+    N_04a9a357bb51["Step 1: WelcomeActivity\nRethink"]
+    N_ad2626814733["Step 2: HomeScreenActivity\nNOT PROTECTED"]
+    N_1062ca4cc58b["Step 3: HomeScreenActivity\nNOT PROTECTED"]
+    N_4115118b6769["Step 4: AppListActivity\nSearch apps by uid, na"]
+    N_d35ac1709ff5["Step 6: HomeScreenActivity\nRETHINK"]
+    N_856b73abd477["Step 7: FirewallActivity\nUniversal"]
+    N_cf1f088af8d9["Step 8: UniversalFirewallSettingsAct\nUniversal"]
+    N_04a9a357bb51 -->|"ui_click: click([6] Button text='Skip' id="| N_ad2626814733
+    N_ad2626814733 -->|"ui_click: click([33] TextView text='Skip T"| N_1062ca4cc58b
+    N_1062ca4cc58b -->|"ui_click: click([13] CardView id=fhs_card_"| N_4115118b6769
+    N_4115118b6769 -->|"ui_system_button: system_button(Back)"| N_1062ca4cc58b
+    N_1062ca4cc58b -->|"ui_click: click([25] FrameLayout desc='Con"| N_d35ac1709ff5
+    N_d35ac1709ff5 -->|"ui_click: click([10] CardView id=fs_firewa"| N_856b73abd477
+    N_856b73abd477 -->|"ui_click: click([3] RelativeLayout id=univ"| N_cf1f088af8d9

@@ -1,0 +1,20 @@
+flowchart TD
+    N_8a1984bf28f5["Step 1: MainActivity\nWelcome to TimeLimit"]
+    N_5bdd87080142["Step 2: MainActivity\nKeep your eye open for"]
+    N_83f74f7ac4d0["Step 3: MainActivity\nlocal mode"]
+    N_ca7a34d72db2["Step 4: MainActivity\nTimeLimit needs some p"]
+    N_9170ddacfd38["Step 6: MainActivity\nAccessibility service"]
+    N_83b3132229b7["Step 7: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_adc02f7fa2b8["Step 7: SubSettings\nBack"]
+    N_dc94a6d5f190["Step 7: SubSettings [HOOK_A11Y_SETTINGS]\nAllow TimeLimit to hav"]
+    N_8a1984bf28f5 -->|"ui_click: click([7] Button text='ACCEPT AN"| N_5bdd87080142
+    N_5bdd87080142 -->|"ui_click: click([9] Button text='NEXT' id="| N_83f74f7ac4d0
+    N_83f74f7ac4d0 -->|"ui_click: click([1] View (click) center=(5"| N_ca7a34d72db2
+    N_ca7a34d72db2 -->|"ui_click: click([34] View (click) center=("| N_ca7a34d72db2
+    N_ca7a34d72db2 -->|"ui_click: click([11] View (click) center=("| N_9170ddacfd38
+    N_9170ddacfd38 -->|"ui_click: click([8] View (click) center=(8"| N_83b3132229b7
+    N_83b3132229b7 -->|"detail_probe: click_service()"| N_adc02f7fa2b8
+    N_adc02f7fa2b8 -->|"warning_probe: click_use_service_switch"| N_dc94a6d5f190
+    N_83b3132229b7 -->|"refusal_probe: Back_refuse"| N_ca7a34d72db2
+    N_ca7a34d72db2 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_ca7a34d72db2
+    N_ca7a34d72db2 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_ca7a34d72db2

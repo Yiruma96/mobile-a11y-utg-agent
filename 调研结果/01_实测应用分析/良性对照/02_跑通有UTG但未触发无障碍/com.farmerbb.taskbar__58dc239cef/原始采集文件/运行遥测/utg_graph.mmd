@@ -1,0 +1,11 @@
+flowchart TD
+    N_8d305d6db2ba["Step 1: MainActivity\nTaskbar"]
+    N_9a5f951ce032["Step 2: MainActivity\nNavigate up"]
+    N_1b60c342e129["Step 4: NavigationBarButtonsActivity\nNavigation bar buttons"]
+    N_8d305d6db2ba -->|"ui_click: click([8] TextView text='Advance"| N_9a5f951ce032
+    N_9a5f951ce032 -->|"ui_click: click([10] CheckBox id=checkbox "| N_9a5f951ce032
+    N_9a5f951ce032 -->|"ui_click: click([16] TextView text='Naviga"| N_1b60c342e129
+    N_1b60c342e129 -->|"ui_click: click([3] CheckBox id=checkbox ("| N_1b60c342e129
+    N_1b60c342e129 -->|"ui_click: click([5] CheckBox id=checkbox ("| N_1b60c342e129
+    N_1b60c342e129 -->|"ui_system_button: system_button(Back)"| N_9a5f951ce032
+    N_9a5f951ce032 -->|"ui_click: click([10] CheckBox id=checkbox "| N_9a5f951ce032

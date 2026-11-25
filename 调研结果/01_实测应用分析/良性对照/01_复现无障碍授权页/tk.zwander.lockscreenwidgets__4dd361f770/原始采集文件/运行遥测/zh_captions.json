@@ -1,0 +1,25 @@
+{
+  "app_chain_summary_zh": "应用先以欢迎、功能与隐私说明引导用户进入无障碍页，用“不收集数据、不执行操作”等话术降低戒心，再点 Grant 跳转系统无障碍授权；拒绝后反复回到同一诱导页，无法继续，形成 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英语「Welcome!」-> 欢迎！（欢迎页）",
+    "英语「Widgets Anywhere is an app focused on making widgets more accessible and providing extra features.」-> 本应用致力于让小组件更易访问并提供额外功能（欢迎页）",
+    "英语「Widgets Anywhere doesn't collect any data beyond what's needed for crash analysis.」-> 除崩溃分析外不收集任何数据（隐私政策页）",
+    "英语「Widgets Anywhere requires an Accessibility Service to display widgets on the lock screen and in the notification center. No data is collected... This permission is optional...」-> 需无障碍服务在锁屏/通知中心显示小组件，不收集数据、不执行操作，仅用主屏小组件时可选用（无障碍说明页）",
+    "英语「To be able to display on the lock screen... This app doesn't collect any data from your screen.」-> 为在锁屏显示需启用无障碍，应用不采集屏幕数据（授权弹窗）",
+    "英语「Allow Widgets Anywhere to have full control of your device?」-> 允许 Widgets Anywhere 完全控制设备？（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "引导欢迎页，说明应用让小组件更易用并含额外功能，有 Exit/Next；本步点 Next 前进。",
+    "step_02": "基础用法页，介绍加号添加、长按排序缩放删除、双指移动/三指隐藏；本步点 Next 继续。",
+    "step_03": "隐私政策页，称除崩溃分析外不收集数据并提供 More Info；本步点 Next 继续。",
+    "step_04": "无障碍说明页，称仅用于锁屏/通知中心显示小组件、不收集数据且可选；本步点 More Info。",
+    "step_05": "无障碍授权弹窗，强调不采集屏幕数据，含 Grant/Close App；本步点 Grant 跳转系统设置。",
+    "step_06": "系统无障碍列表显示 Widgets Anywhere 为 Off；探针捕获无障碍设置钩子与检测后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍列表，无通知横幅、无遮罩，未发生交互。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍停留系统无障碍列表，无通知横幅、无遮罩，未发生交互。",
+    "detail_1_service_detail_page": "服务详情页显示 Use Widgets Anywhere 开关与说明，称不收集数据且可选；仅检查未授权。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗，提示可查看/控制屏幕并代执行操作，含 Allow/Deny；仅检查未选择。",
+    "refusal_2.0s": "拒权返回 2 秒后仍停在无障碍说明页，仅有 More Info/Previous/Next，无退出，形成诱导页困住。",
+    "refusal_10.5s": "拒权返回 10.5 秒后仍停同一无障碍说明页，交互未变，仍无退出，持续困在诱导页。"
+  }
+}

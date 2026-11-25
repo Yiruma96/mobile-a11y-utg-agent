@@ -1,0 +1,244 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_057__e941dd0e26",
+  "label": "benign",
+  "family_or_category": "自动化与跳广告",
+  "static_visibility": "clear",
+  "target_package": "com.buzbuz.smartautoclicker",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "21252d252ec3",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "21252d252ec3",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.buzbuz.smartautoclicker",
+      "abilityName": "com.buzbuz.smartautoclicker.scenarios.ScenarioActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Create your first scenario and start automatizing tasks on your phone",
+        "Create a scenario",
+        "Scenarios",
+        "Import",
+        "Export",
+        "Settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "e892545a171a",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.buzbuz.smartautoclicker",
+      "abilityName": "com.buzbuz.smartautoclicker.scenarios.ScenarioActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "New scenario",
+        "Default name",
+        "Simple",
+        "The regular auto clicker experience.\nSimply place clicks and gestures on the screen.",
+        "Smart",
+        "Use image detection to create complex use cases."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "3b7a8bc1ee00",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.buzbuz.smartautoclicker",
+      "abilityName": "com.buzbuz.smartautoclicker.scenarios.ScenarioActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Scenarios",
+        "Import",
+        "Search",
+        "Export",
+        "Settings",
+        "Name",
+        "Recent",
+        "Uses",
+        "Smart",
+        "Simple",
+        "Default name",
+        "Create a new scenario"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "6bd4e394b7e1",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.buzbuz.smartautoclicker",
+      "abilityName": "com.buzbuz.smartautoclicker.scenarios.ScenarioActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Overlay",
+        "The overlay permission is required in order to show Klick'r interface over the applications you want to automate, allowing you to configure your scenario without stopping the other application.",
+        "Request permission",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "3d63e0ba5b43",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "Klick'r",
+        "Not allowed",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "06636e46ecf6",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search settings",
+        "Klick'r",
+        "4.1.2",
+        "Allow display over other apps",
+        "Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen."
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "73bc8daa196b",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.buzbuz.smartautoclicker",
+      "abilityName": "com.buzbuz.smartautoclicker.scenarios.ScenarioActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility service",
+        "The accessibility service permission allows Klick'r to perform gestures on your device screen. This permission is required in order to execute the clicks and gestures you will create in your automations scenarios.\n\nNo data is collected by Klick'r\n\nTo grant the Accessibility service permission, click on the button bellow.",
+        "Request permission",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "21252d252ec3",
+      "to": "e892545a171a",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"Create a scenario\" id=empty_create_button (click) center=(540,2049))"
+    },
+    {
+      "from": "e892545a171a",
+      "to": "3b7a8bc1ee00",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button id=button_save (click) center=(991,1124))"
+    },
+    {
+      "from": "3b7a8bc1ee00",
+      "to": "6bd4e394b7e1",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([15] Button id=button_start (click) center=(925,710))"
+    },
+    {
+      "from": "6bd4e394b7e1",
+      "to": "3d63e0ba5b43",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"Request permission\" id=button_request_permission (click) center=(540,1311))"
+    },
+    {
+      "from": "3d63e0ba5b43",
+      "to": "06636e46ecf6",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([17] LinearLayout desc=\"Klick'r\" (click) center=(540,1137))"
+    },
+    {
+      "from": "06636e46ecf6",
+      "to": "06636e46ecf6",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "06636e46ecf6",
+      "to": "73bc8daa196b",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Back\" (click) center=(77,160))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "从空场景入口创建“Default name”场景，运行后依次引导开启系统悬浮窗与无障碍服务；权限说明明确用途并声明不收集数据，提供拒绝但拒权路径未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “创建你的第一个场景，开始让手机上的任务自动化”（Step 1 首页空态）",
+    "英文 -> “悬浮窗权限用于在其他应用上显示Klick'r界面，便于不中断地配置场景”（Step 4 悬浮窗说明）",
+    "英文系统 -> “允许此应用显示在其他应用上层，它将能查看你点击的位置或更改屏幕显示内容”（Step 6 系统权限详情）",
+    "英文 -> “无障碍权限用于在设备屏幕执行手势，Klick'r不收集数据”（Step 8 无障碍说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "场景列表空态，提示创建首个场景并在手机上自动化任务；点击“Create a scenario”进入新建，未见通知或遮罩。",
+    "step_02": "新建场景弹窗，选择Simple（普通自动点击）或Smart（图像识别）；本步点击保存创建“Default name”，无通知/遮罩。",
+    "step_03": "返回场景列表，已出现“Default name”条目及Recent/Uses；点击条目右侧开始按钮运行场景并触发权限检查。",
+    "step_04": "应用悬浮窗权限说明称需在其他应用上显示Klick'r界面以便配置；点击“Request permission”转系统设置，有Deny。",
+    "step_05": "系统“Display over other apps”列表，Klick'r标为Not allowed；点击Klick'r条目进入其悬浮窗开关页，无通知/遮罩。",
+    "step_06": "Klick'r悬浮窗权限详情，开关未勾选；系统说明可查看点击位置或更改屏幕内容，本步点击开关授权。",
+    "step_07": "同一权限详情页，悬浮窗开关已开启；点击左上角Back返回Klick'r，继续无障碍服务授权流程。",
+    "step_08": "Klick'r弹出无障碍服务说明，称用于执行屏幕手势且不收集数据；点击“Request permission”跳转系统无障碍设置，有Deny。"
+  }
+}

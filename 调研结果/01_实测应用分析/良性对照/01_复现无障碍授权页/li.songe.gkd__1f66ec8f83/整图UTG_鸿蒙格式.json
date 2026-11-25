@@ -1,0 +1,454 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_059__1f66ec8f83",
+  "label": "benign",
+  "family_or_category": "自动化与跳广告",
+  "static_visibility": "clear",
+  "target_package": "li.songe.gkd",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "5f8498317c97",
+  "hook_node_ids": [
+    "c904d954017a",
+    "ddeae65f8a80"
+  ],
+  "nodes": [
+    {
+      "node_id": "5f8498317c97",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "li.songe.gkd",
+      "abilityName": "li.gkd.app.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Usage notice",
+        "Welcome to GKD! To continue, read and accept the User agreement and Privacy policy. Please read them carefully.",
+        "Disagree",
+        "Agree"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "72bbc90a5e9a",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "li.songe.gkd",
+      "abilityName": "li.gkd.app.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "About accessibility",
+        "GKD uses the system Accessibility API to read screen information and perform automated actions based on your subscription rules.",
+        "Disagree",
+        "Agree"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "e05a009a6503",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "li.songe.gkd",
+      "abilityName": "li.gkd.app.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Ignore battery optimization",
+        "Android may freeze GKD in the background and delay rule triggers",
+        "Service status",
+        "Accessibility not authorized",
+        "Working mode",
+        "Accessibility",
+        "Persistent notification",
+        "Show service status and statistics",
+        "History",
+        "Trigger history",
+        "Find and disable rules that trigger incorrectly",
+        "Learn about GKD",
+        "User guide and FAQ · GKD.LI",
+        "GKD",
+        "Privileged service, disconnected"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "6b571d3985dc",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "li.songe.gkd",
+      "abilityName": "li.gkd.app.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility",
+        "Manual start",
+        "Grant accessibility permission once",
+        "Authorization is required again after accessibility is stopped",
+        "Enable accessibility",
+        "View help",
+        "Automatic start",
+        "Grant write secure settings permission permanently",
+        "Allow the app to turn accessibility on and off",
+        "Touch optimization",
+        "Use the privileged service for clicks and swipes",
+        "Reduce touch stutter caused by accessibility",
+        "Grant permission",
+        "Automation",
+        "Accessibility driven by automation"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "9d664c1a251b",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "li.songe.gkd",
+      "abilityName": "li.gkd.app.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable GKD accessibility",
+        "System accessibility settings will open. Follow these steps:\n\n1. Find GKD in the service list\n2. Turn it on and confirm the system prompt\n3. Return to GKD",
+        "Cancel",
+        "Go"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "c904d954017a",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "GKD",
+        "Off",
+        "GKD companion service (do not enable manually)",
+        "GKD touch optimization (do not enable manually)",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "eef797320384",
+      "first_step": 6,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "GKD",
+        "Use GKD",
+        "OPTIONS",
+        "GKD shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Custom screen clicking based on advanced selectors and subscription rules.\n\nUse custom selectors and subscription rules to click controls anywhere on screen and create custom shortcuts."
+      ],
+      "harmony_layout_json": "step_06_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_06_service_detail_layout.xml",
+      "screenshot": "step_06_service_detail_screen.png"
+    },
+    {
+      "node_id": "ddeae65f8a80",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow GKD to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_06_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_06_system_warning_layout.xml",
+      "screenshot": "step_06_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5f8498317c97",
+      "to": "72bbc90a5e9a",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Agree\" center=(829,1297))"
+    },
+    {
+      "from": "72bbc90a5e9a",
+      "to": "e05a009a6503",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Agree\" center=(829,1324))"
+    },
+    {
+      "from": "e05a009a6503",
+      "to": "6b571d3985dc",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([7] View (click) center=(540,780))"
+    },
+    {
+      "from": "6b571d3985dc",
+      "to": "9d664c1a251b",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] TextView text=\"Enable accessibility\" center=(339,750))"
+    },
+    {
+      "from": "9d664c1a251b",
+      "to": "c904d954017a",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Go\" center=(834,1407))"
+    },
+    {
+      "from": "c904d954017a",
+      "to": "eef797320384",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "eef797320384",
+      "to": "ddeae65f8a80",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "c904d954017a",
+      "to": "6b571d3985dc",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "6b571d3985dc",
+      "to": "6b571d3985dc",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "6b571d3985dc",
+      "to": "6b571d3985dc",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back GKD Use GKD OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "GKD",
+        "Use GKD",
+        "OPTIONS",
+        "GKD shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Custom screen clicking based on advanced selectors and subscription rules.\n\nUse custom selectors and subscription rules to click controls anywhere on screen and create custom shortcuts."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow GKD to have full control of your device",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow GKD to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "li.songe.gkd",
+      "top_activity": "li.gkd.app.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Manual start",
+        "Grant accessibility permission once",
+        "Authorization is required again after accessibility is stopped",
+        "Enable accessibility",
+        "View help",
+        "Automatic start",
+        "Grant write secure settings permission permanently",
+        "Allow the app to turn accessibility on and off",
+        "Touch optimization"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "li.songe.gkd",
+      "top_activity": "li.gkd.app.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Manual start",
+        "Grant accessibility permission once",
+        "Authorization is required again after accessibility is stopped",
+        "Enable accessibility",
+        "View help",
+        "Automatic start",
+        "Grant write secure settings permission permanently",
+        "Allow the app to turn accessibility on and off",
+        "Touch optimization"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "li.songe.gkd",
+      "top_activity": "li.gkd.app.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility",
+        "Manual start",
+        "Grant accessibility permission once",
+        "Authorization is required again after accessibility is stopped",
+        "Enable accessibility",
+        "View help",
+        "Automatic start",
+        "Grant write secure settings permission permanently",
+        "Allow the app to turn accessibility on and off",
+        "Touch optimization"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "li.songe.gkd__1f66ec8f83",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "GKD 启动后依次弹出「使用须知」与「无障碍说明」两个同意弹窗，再引导用户在主页开启无障碍、写入安全设置与触摸优化特权，并跳转系统无障碍列表；用户在被拒后（系统高危警告选 Deny）返回应用，仍被卡在要求授权的主页，未能进入任何正常功能，判定为 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「使用须知：欢迎使用 GKD！继续前请阅读并接受用户协议与隐私政策，请仔细阅读。」（Step1 使用须知弹窗，仅“不同意/同意”两键）",
+    "英文 -> 「关于无障碍：GKD 使用系统无障碍 API 读取屏幕信息，并依据你的订阅规则执行自动化操作。」（Step2 无障碍说明弹窗）",
+    "英文 -> 「忽略电池优化：Android 可能在后臺冻结 GKD 并延迟规则触发」——以功能失效为由施压（Step3 主页提示）",
+    "英文 -> 「自动启动：永久授予写入安全设置权限，允许应用开启和关闭无障碍」——以便利换取常驻高权限（Step4）",
+    "英文 -> 「启用 GKD 无障碍：将打开系统无障碍设置，依次为 1 在服务列表找到 GKD 2 打开并确认系统提示 3 返回 GKD」（Step5 引导弹窗）",
+    "英文 -> 「允许 GKD 完全控制你的设备？它可读取屏幕全部内容、跟踪你的交互并代替你操作应用。」（系统高危授权警告）",
+    "英文 -> 「GKD 伴生服务（请勿手动启用）」「GKD 触摸优化（请勿手动启用）」（系统无障碍列表项，暗示另有隐藏开关）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "启动后首个「使用须知」弹窗，英文要求阅读并同意用户协议与隐私政策，仅「不同意/同意」；本步点击「同意」继续。",
+    "step_02": "第二个「关于无障碍」弹窗，说明 GKD 将用系统无障碍 API 读屏并按订阅规则自动操作；本步点击「同意」进入主页。",
+    "step_03": "GKD 主页：服务状态显示「无障碍未授权」，并有忽略电池优化提示与工作模式、历史等入口；本步点击「工作模式」行。",
+    "step_04": "无障碍设置页：手动启动需单次授权，自动启动要求永久写入安全设置，触摸优化需特权服务；本步点击「启用无障碍」。",
+    "step_05": "应用内引导弹窗称即将打开系统无障碍设置，并列三步操作，只有「取消/前往」；本步点「前往」跳转系统设置。",
+    "step_06": "跳至系统无障碍列表，GKD 显示「关闭」，另有两项标注「请勿手动启用」的伴生服务；采到无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停在系统无障碍设置列表，无弹窗、无遮罩、无通知横幅，界面无任何变化。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面依旧为系统无障碍列表，未出现遮罩或通知，等待期间也未见自动开启开关的动作。",
+    "detail_1_service_detail_page": "GKD 服务详情页：「使用 GKD」总开关为关闭，选项含 GKD 快捷方式；下方英文说明称可基于高级选择器与订阅规则自定义点击屏幕。",
+    "detail_2_system_warning_dialog": "系统高危授权警告：询问是否允许 GKD 完全控制设备，列明可读取全部屏幕内容、跟踪交互并代为操作；本步查看后选择拒绝。",
+    "refusal_2.0s": "拒权返回应用 2 秒：回到无障碍设置页，「启用无障碍」入口仍醒目存在，授权状态未变，仍被判定停留在诱导页。",
+    "refusal_10.5s": "拒权后 10.5 秒：界面与 2 秒时完全一致，应用未放行也未给替代路径，持续卡在要求授权的诱导界面（TRAPPED_ON_LURE_SCREEN）。"
+  }
+}

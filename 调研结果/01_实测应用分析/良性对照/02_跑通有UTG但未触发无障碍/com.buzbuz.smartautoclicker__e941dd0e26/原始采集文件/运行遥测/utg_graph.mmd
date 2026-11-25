@@ -1,0 +1,15 @@
+flowchart TD
+    N_21252d252ec3["Step 1: ScenarioActivity\nCreate your first scen"]
+    N_e892545a171a["Step 2: ScenarioActivity\nNew scenario"]
+    N_3b7a8bc1ee00["Step 3: ScenarioActivity\nScenarios"]
+    N_6bd4e394b7e1["Step 4: ScenarioActivity\nOverlay"]
+    N_3d63e0ba5b43["Step 5: Settings$OverlaySettingsActi\nBack"]
+    N_06636e46ecf6["Step 6: SubSettings\nBack"]
+    N_73bc8daa196b["Step 8: ScenarioActivity\nAccessibility service"]
+    N_21252d252ec3 -->|"ui_click: click([3] Button text='Create a "| N_e892545a171a
+    N_e892545a171a -->|"ui_click: click([4] Button id=button_save "| N_3b7a8bc1ee00
+    N_3b7a8bc1ee00 -->|"ui_click: click([15] Button id=button_star"| N_6bd4e394b7e1
+    N_6bd4e394b7e1 -->|"ui_click: click([3] Button text='Request p"| N_3d63e0ba5b43
+    N_3d63e0ba5b43 -->|"ui_click: click([17] LinearLayout desc='Kl"| N_06636e46ecf6
+    N_06636e46ecf6 -->|"ui_click: click([9] Switch id=switch_widge"| N_06636e46ecf6
+    N_06636e46ecf6 -->|"ui_click: click([1] ImageButton desc='Back"| N_73bc8daa196b

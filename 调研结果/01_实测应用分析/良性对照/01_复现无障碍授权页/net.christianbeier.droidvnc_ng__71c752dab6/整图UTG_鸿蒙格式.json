@@ -1,0 +1,405 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_065__71c752dab6",
+  "label": "benign",
+  "family_or_category": "远程协助与跨设备互联",
+  "static_visibility": "clear",
+  "target_package": "net.christianbeier.droidvnc_ng",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "2a59a2c72033",
+  "hook_node_ids": [
+    "b1d628155513",
+    "33f6e6314b7f"
+  ],
+  "nodes": [
+    {
+      "node_id": "2a59a2c72033",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "net.christianbeier.droidvnc_ng",
+      "abilityName": "net.christianbeier.droidvnc_ng.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "droidVNC-NG Admin Panel",
+        "Settings",
+        "Interface",
+        ":",
+        "Any",
+        "Port",
+        "5900",
+        "Password",
+        "Intent API Access Key",
+        "••••••••••••••••••••••••••••••••",
+        "Start on Boot",
+        "Start Delay (s)",
+        "0",
+        "File Transfer",
+        "Scaling"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1eafd7f29501",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "net.christianbeier.droidvnc_ng",
+      "abilityName": "net.christianbeier.droidvnc_ng.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "droidVNC-NG Admin Panel",
+        "Start Delay (s)",
+        ":",
+        "0",
+        "File Transfer",
+        "Scaling",
+        "View Only",
+        "Mouse Cursors",
+        "Keyboard Shortcuts",
+        "CONFIGURE",
+        "Permissions Dashboard",
+        "Screen Capturing",
+        "DENIED",
+        "Input",
+        "File Access"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "caf1e6a3404c",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "net.christianbeier.droidvnc_ng",
+      "abilityName": "net.christianbeier.droidvnc_ng.input.InputRequestActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility disabled",
+        "To be able to remotely control your device and to enable start on boot for droidVNC-NG, you need to enable accessibility for it. Do you want to enable accessibility now?",
+        "NO",
+        "YES"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "b1d628155513",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "droidVNC-NG",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "709077ab5a53",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "droidVNC-NG",
+        "Use droidVNC-NG",
+        "OPTIONS",
+        "droidVNC-NG shortcut",
+        "Off",
+        "Shortcut settings",
+        "This allows droidVNC-NG to post input events to the Android operating system, thus allowing remote control from a connected VNC viewer. All entered input is directly posted to Android, no input is logged, saved or shared."
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    },
+    {
+      "node_id": "33f6e6314b7f",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow droidVNC-NG to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_05_system_warning_layout.xml",
+      "screenshot": "step_05_system_warning_screen.png"
+    },
+    {
+      "node_id": "fc0676174046",
+      "first_step": 5,
+      "role": "refusal_probe",
+      "bundleName": "net.christianbeier.droidvnc_ng",
+      "abilityName": "net.christianbeier.droidvnc_ng.server.WriteStorageRequestActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "File access disabled",
+        "To be able to transfer files to and from your device, you need to enable file access for droidVNC-NG. Please note that saving files will only be possible in the 'Download' and 'Documents' directories. Do you want to enable file access now?",
+        "NO",
+        "YES"
+      ],
+      "harmony_layout_json": "step_05_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_05_refusal_2000ms_layout.xml",
+      "screenshot": "step_05_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2a59a2c72033",
+      "to": "2a59a2c72033",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([43] TextView text=\"DENIED\" id=permission_status_input center=(753,2110))"
+    },
+    {
+      "from": "2a59a2c72033",
+      "to": "1eafd7f29501",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "1eafd7f29501",
+      "to": "caf1e6a3404c",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([33] Button text=\"START\" id=toggle (click) center=(540,1702))"
+    },
+    {
+      "from": "caf1e6a3404c",
+      "to": "b1d628155513",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"YES\" id=button1 (click) center=(887,1321))"
+    },
+    {
+      "from": "b1d628155513",
+      "to": "709077ab5a53",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "709077ab5a53",
+      "to": "33f6e6314b7f",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "b1d628155513",
+      "to": "fc0676174046",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "fc0676174046",
+      "to": "fc0676174046",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "fc0676174046",
+      "to": "fc0676174046",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back droidVNC-NG Use droidVNC-NG OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "droidVNC-NG",
+        "Use droidVNC-NG",
+        "OPTIONS",
+        "droidVNC-NG shortcut",
+        "Off",
+        "Shortcut settings",
+        "This allows droidVNC-NG to post input events to the Android operating system, thus allowing remote control from a connected VNC viewer. All entered input is directly posted to Android, no input is logged, saved or shared."
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow droidVNC-NG to have full control of you",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow droidVNC-NG to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "net.christianbeier.droidvnc_ng",
+      "top_activity": "net.christianbeier.droidvnc_ng.server.WriteStorageRequestActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "File access disabled",
+        "To be able to transfer files to and from your device, you need to enable file access for droidVNC-NG. Please note that saving files will only be possible in the 'Download' and 'Documents' directories. Do you want to enable file access now?",
+        "NO",
+        "YES"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "net.christianbeier.droidvnc_ng",
+      "top_activity": "net.christianbeier.droidvnc_ng.server.WriteStorageRequestActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "File access disabled",
+        "To be able to transfer files to and from your device, you need to enable file access for droidVNC-NG. Please note that saving files will only be possible in the 'Download' and 'Documents' directories. Do you want to enable file access now?",
+        "NO",
+        "YES"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "net.christianbeier.droidvnc_ng",
+      "top_activity": "net.christianbeier.droidvnc_ng.server.WriteStorageRequestActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "File access disabled",
+        "To be able to transfer files to and from your device, you need to enable file access for droidVNC-NG. Please note that saving files will only be possible in the 'Download' and 'Documents' directories. Do you want to enable file access now?",
+        "NO",
+        "YES"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "net.christianbeier.droidvnc_ng__71c752dab6",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用入口为droidVNC-NG管理员面板，先引导启动VNC服务，再以“无障碍禁用”弹窗请求远程控制所需无障碍；进入系统全控制警告后若拒绝，返回应用又反复弹出文件访问授权诱导，呈现拒权后重启诱导弹窗特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “无障碍已禁用；为远程控制设备并支持开机启动，需为droidVNC-NG启用无障碍，是否现在启用？”（InputRequestActivity）",
+    "英语 -> “允许droidVNC-NG向Android投递输入事件，从而由VNC查看器远程控制；输入不记录、不保存、不共享。”（无障碍服务详情页）",
+    "英语 -> “允许droidVNC-NG完全控制设备？适合无障碍需求，不适合多数应用；可查看控制屏幕、读取全部内容并覆盖显示，跟踪交互并代为操作。”（系统警告弹窗）",
+    "英语 -> “文件访问已禁用；为在设备间传输文件，需启用文件访问，仅能在Download和Documents保存，是否现在启用？”（WriteStorageRequestActivity）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用主界面为droidVNC-NG管理员面板，含端口5900、密码、Intent密钥与开机启动；点击Input权限状态DENIED。",
+    "step_02": "仍停留管理员面板；上一步点击未生效，本步向上滑动以寻找START按钮与权限仪表盘。",
+    "step_03": "下滑后露出START与权限仪表盘，屏幕捕获、输入仍为DENIED；点击START尝试启动VNC服务。",
+    "step_04": "应用内弹窗称无障碍未启用，远程控制和开机启动需启用无障碍，询问是否现在开启；点击YES。",
+    "step_05": "跳至系统无障碍列表，droidVNC-NG显示Off；探针捕获无障碍设置入口后自动终止，无悬浮遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍处系统无障碍列表，界面无文本、无悬浮遮罩，仅见droidVNC-NG通知留存。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为系统无障碍列表，无遮罩与新增界面；应用通知持续留存。",
+    "detail_1_service_detail_page": "droidVNC-NG无障碍服务详情页，开关为Off；说明称可向Android投递输入事件实现远程控制且不记录共享输入。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗：称可查看控制屏幕、读取全部内容并覆盖显示，跟踪交互并代为操作；含Allow/Deny。",
+    "refusal_2.0s": "拒绝无障碍后约2秒回到应用，立即重启文件访问诱导弹窗，称传输文件需授权，仅限Download/Documents。",
+    "refusal_10.5s": "拒权返回约10.5秒仍重复弹出文件访问诱导，文案同上，呈现拒权后反复重启弹窗的粘性行为。"
+  }
+}
