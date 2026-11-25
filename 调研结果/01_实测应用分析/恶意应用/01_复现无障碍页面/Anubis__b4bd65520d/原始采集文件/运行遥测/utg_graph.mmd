@@ -1,0 +1,10 @@
+flowchart TD
+    N_c52893b28d5d["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_d5961332e3d1["Step 1: SubSettings\nBack"]
+    N_e63143625a9f["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Active Secure Se"]
+    N_baefe3309aca["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_c52893b28d5d -->|"detail_probe: click_service()"| N_d5961332e3d1
+    N_d5961332e3d1 -->|"warning_probe: click_use_service_switch"| N_e63143625a9f
+    N_c52893b28d5d -->|"refusal_probe: Back_refuse"| N_baefe3309aca
+    N_baefe3309aca -->|"refusal_probe: wait(5.5s)_after_refusal"| N_baefe3309aca
+    N_baefe3309aca -->|"refusal_probe: wait(10.5s)_after_refusal"| N_baefe3309aca

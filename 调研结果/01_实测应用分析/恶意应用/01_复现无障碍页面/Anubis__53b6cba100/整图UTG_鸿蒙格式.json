@@ -1,0 +1,300 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_069__53b6cba100",
+  "label": "malicious",
+  "family_or_category": "Anubis",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "kovvkynlzyyy.dfpn.iablbixbxg",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "7de9c271927d",
+  "hook_node_ids": [
+    "7de9c271927d",
+    "107659b1a0a7"
+  ],
+  "nodes": [
+    {
+      "node_id": "7de9c271927d",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Player Service",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0e9266d60f99",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player Service",
+        "Use Flash Player Service",
+        "OPTIONS",
+        "Flash Player Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "107659b1a0a7",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Player Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "112f5363a33a",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Flash Player to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "7de9c271927d",
+      "to": "0e9266d60f99",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0e9266d60f99",
+      "to": "107659b1a0a7",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7de9c271927d",
+      "to": "112f5363a33a",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "112f5363a33a",
+      "to": "112f5363a33a",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "112f5363a33a",
+      "to": "112f5363a33a",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Player Service Use Flash Player Service OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player Service",
+        "Use Flash Player Service",
+        "OPTIONS",
+        "Flash Player Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Player Service to have full contr",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Player Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Flash Player to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Flash Player to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Flash Player to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Anubis__53b6cba100",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先打开系统无障碍设置并暴露“Flash Player Service”，进入服务详情诱导开启完全控制；拒绝后转跳到电池优化白名单弹窗继续请求后台常驻，拒绝仅优雅停留/降级，未强退。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 使用 Flash Player 服务（服务详情页）",
+    "English -> 允许 Flash Player 服务完全控制您的设备？（系统无障碍警告弹窗）",
+    "English -> 完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用（系统无障碍警告弹窗）",
+    "English -> 可读取屏幕上的所有内容并显示在其他应用之上（系统无障碍警告弹窗）",
+    "English -> 可跟踪您与应用或硬件传感器的交互，并代表您与应用交互（系统无障碍警告弹窗）",
+    "English -> 允许应用始终在后台运行？（电池优化弹窗）",
+    "English -> 允许 Flash Player 始终后台运行可能缩短电池寿命，可稍后在设置中更改（电池优化弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍设置列表页：可见“Flash Player Service”处于关闭；本步触发无障碍设置Hook与探针后自动终止，无通知横幅、遮罩0。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停在无障碍设置页，文本为空；无通知横幅、遮罩0，仅等待观察。",
+    "post_jump_2.0s": "跳后2.0秒探针：页面仍为无障碍设置且无文本变化；无通知横幅、遮罩0，继续等待。",
+    "detail_1_service_detail_page": "服务详情页：展示“Flash Player Service”，有启用开关、音量键快捷方式及“未提供描述”；本步仅查看详情，无通知、遮罩0。",
+    "detail_2_system_warning_dialog": "系统无障碍授权弹窗：询问是否允许 Flash Player 服务完全控制设备，列明读屏、悬浮显示与代操作风险；本步查看警告，遮罩0。",
+    "refusal_2.0s": "拒权后2.0秒跳至电池优化页：弹窗请求“允许应用始终后台运行”，含拒绝/允许；本步返回拒绝，结果优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒：仍停在电池优化后台运行请求弹窗，重复说明耗电影响；本步再次返回拒绝，未强退，遮罩0。"
+  }
+}

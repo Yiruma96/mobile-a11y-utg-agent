@@ -1,0 +1,299 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_036__27e0ec79db",
+  "label": "malicious",
+  "family_or_category": "BRATA",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.xd.craft.school",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "8722159f4382",
+  "hook_node_ids": [
+    "f1cda39b7cca",
+    "067bad0b0297"
+  ],
+  "nodes": [
+    {
+      "node_id": "8722159f4382",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.xd.craft.school",
+      "abilityName": "com.xd.craft.school.permission_activity_a11y",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Nuestra App requiere tu autorización operativa para mantenerla completamente segura.\n\tHaga clic en el botón \"Proceder\" a continuación para autorizar que nuestro sistema de seguridad funcione en su dispositivo.\n\n\n\tMás descargas -> Accesibilidad -> Módulo de Seguridad Bancaria",
+        "Proceder"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f1cda39b7cca",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Módulo de Seguridad Bancaria",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "561055f7a123",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Módulo de Seguridad Bancaria",
+        "Use Módulo de Seguridad Bancaria",
+        "OPTIONS",
+        "Módulo de Seguridad Bancaria shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Our app use this service for make your device safety"
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "067bad0b0297",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Módulo de Seguridad Bancaria to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8722159f4382",
+      "to": "f1cda39b7cca",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Proceder\" (click) center=(540,1672))"
+    },
+    {
+      "from": "f1cda39b7cca",
+      "to": "561055f7a123",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "561055f7a123",
+      "to": "067bad0b0297",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "f1cda39b7cca",
+      "to": "8722159f4382",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "8722159f4382",
+      "to": "8722159f4382",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "8722159f4382",
+      "to": "8722159f4382",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Módulo de Seguridad Bancaria Use Módulo de Seguridad Ba",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Módulo de Seguridad Bancaria",
+        "Use Módulo de Seguridad Bancaria",
+        "OPTIONS",
+        "Módulo de Seguridad Bancaria shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Our app use this service for make your device safety"
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Módulo de Seguridad Bancaria to have fu",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Módulo de Seguridad Bancaria to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.xd.craft.school",
+      "top_activity": "com.xd.craft.school.permission_activity_a11y",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Nuestra App requiere tu autorización operativa para mantenerla completamente segura.\n\tHaga clic en el botón \"Proceder\" a continuación para autorizar que nuestro sistema de seguridad funcione en su dispositivo.\n\n\n\tMás descargas -> Accesibilidad -> Módulo de Seguridad Bancaria",
+        "Proceder"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.xd.craft.school",
+      "top_activity": "com.xd.craft.school.permission_activity_a11y",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Nuestra App requiere tu autorización operativa para mantenerla completamente segura.\n\tHaga clic en el botón \"Proceder\" a continuación para autorizar que nuestro sistema de seguridad funcione en su dispositivo.\n\n\n\tMás descargas -> Accesibilidad -> Módulo de Seguridad Bancaria",
+        "Proceder"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.xd.craft.school",
+      "top_activity": "com.xd.craft.school.permission_activity_a11y",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Nuestra App requiere tu autorización operativa para mantenerla completamente segura.\n\tHaga clic en el botón \"Proceder\" a continuación para autorizar que nuestro sistema de seguridad funcione en su dispositivo.\n\n\n\tMás descargas -> Accesibilidad -> Módulo de Seguridad Bancaria",
+        "Proceder"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先以西班牙语“安全授权”页诱导点击Proceder，跳转安卓无障碍开启“银行安全模块”，再以全控制警告索权；拒绝后通知催促并困回诱导页，体现BRATA式无障碍滥用与拒权锁定。",
+  "observed_lure_rhetoric_zh": [
+    "西班牙语 -> “我们的应用需要你的操作授权以保持完全安全；请点击‘继续’授权安全系统运行；更多下载->无障碍->银行安全模块”（授权诱导页 step_01/refusal）",
+    "西班牙语 -> 按钮“Proceder”意为“继续/前往”（授权诱导页）",
+    "意大利语 -> 通知“Attenzione / Tu dispositivo está seguro”意为“注意/你的设备安全”（全流程通知横幅）",
+    "西班牙语/英语混合 -> 无障碍服务名“Módulo de Seguridad Bancaria”意为“银行安全模块”（无障碍列表/详情）",
+    "英语 -> “Our app use this service for make your device safety”意为“本应用使用此服务保障设备安全”（服务详情页）",
+    "西班牙语 -> 通知“Para continuar, habilite la opción de accesibilidad.”意为“要继续，请启用无障碍选项”（拒权返回后）",
+    "英语 -> 系统弹窗“Allow ... full control...”意为“允许银行安全模块完全控制设备？可读屏、覆盖应用并代为操作”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "西语授权诱导页：称需授权保安全，指引无障碍开启“银行安全模块”；点“Proceder”，通知称设备安全，无遮罩。",
+    "step_02": "安卓无障碍列表显示“银行安全模块”关闭；捕获HOOK_A11Y_SETTINGS后终止，通知仍称设备安全，无遮罩。",
+    "post_jump_0.8s": "跳后0.8秒探针仍在无障碍列表，界面文本为空；通知横幅称注意/设备安全，遮罩0，无新增交互。",
+    "post_jump_2.0s": "跳后2.0秒探针仍停留无障碍列表，无界面文本；通知横幅持续称注意/设备安全，遮罩0，无操作。",
+    "detail_1_service_detail_page": "服务详情页：显示“使用银行安全模块”、音量键快捷方式及英文说明“保障设备安全”；无遮罩，通知称设备安全。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗：提示可读屏、覆盖其他应用并代为操作；含允许/拒绝，本步仅检查，通知称设备安全。",
+    "refusal_2.0s": "点拒绝返回后仍回西语授权诱导页；新增西语通知“要继续请启用无障碍”，下方通知称设备安全，陷于诱导页。",
+    "refusal_10.5s": "10.5秒后仍困在西语授权诱导页，仅“Proceder”；西语通知催启用无障碍，另一通知称设备安全，无退出路径。"
+  }
+}

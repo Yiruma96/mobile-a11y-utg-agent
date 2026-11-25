@@ -1,0 +1,24 @@
+{
+  "app_chain_summary_zh": "该应用以“Android Security/安卓安全”冒充安全组件，诱导用户进入无障碍设置并尝试获取完全控制权限；系统警告出现后测试拒绝授权，应用退回桌面且无遮罩/通知，呈优雅停留或降级。",
+  "observed_lure_rhetoric_zh": [
+    "Android Security -> 安卓安全（无障碍列表/服务详情页）",
+    "Use Android Security -> 启用安卓安全（服务详情页）",
+    "Android Security shortcut -> 安卓安全快捷方式（服务详情页）",
+    "No description provided. -> 未提供说明（服务详情页）",
+    "Allow Android Security to have full control of your device? -> 允许安卓安全完全控制你的设备？（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于帮助无障碍需求的应用，但不适合多数应用（系统警告弹窗）",
+    "View and control screen -> 查看并控制屏幕（系统警告弹窗）",
+    "It can read all content on the screen and display content over other apps. -> 可读取屏幕全部内容并叠加显示在其他应用上（系统警告弹窗）",
+    "View and perform actions -> 查看并执行操作（系统警告弹窗）",
+    "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 可跟踪你与应用或硬件传感器的交互，并代表你操作应用（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍设置列表：见伪“Android Security/安卓安全”服务关闭；采集无障碍钩子/探针后自动终止，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停无障碍设置页，界面无文本、无通知、遮罩0，仅等待观察，未点击。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在无障碍设置页，界面无文本、无通知、遮罩0，仅等待观察，未点击。",
+    "detail_1_service_detail_page": "服务详情页：显示“Android Security/安卓安全”启用项和音量键快捷方式，无说明；仅检查详情，未授权。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：问是否允许“安卓安全”完全控制设备，列明读屏、查看并执行操作风险；本步查看后拒权。",
+    "refusal_2.0s": "拒权后2秒：回桌面应用列表，通知空、遮罩0；未强推授权，呈优雅停留/降级。",
+    "refusal_10.5s": "拒权后10.5秒：仍在桌面应用列表，通知空、遮罩0；无二次诱导，维持优雅停留/降级。"
+  }
+}

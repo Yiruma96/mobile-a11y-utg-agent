@@ -1,0 +1,279 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_035__b27e363d23",
+  "label": "malicious",
+  "family_or_category": "AbereBot",
+  "static_visibility": "clear",
+  "target_package": "com.example.autoclicker",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "ce6e5be2408e",
+  "hook_node_ids": [
+    "ce6e5be2408e",
+    "b0ff367b8182"
+  ],
+  "nodes": [
+    {
+      "node_id": "ce6e5be2408e",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Player",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "5e910ecfe377",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player",
+        "Use Flash Player",
+        "OPTIONS",
+        "Flash Player shortcut",
+        "Off",
+        "Shortcut settings",
+        "Please allow the app to make it working right."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "b0ff367b8182",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "e1cd81564059",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.example.autoclicker",
+      "abilityName": "com.example.autoclicker.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ce6e5be2408e",
+      "to": "5e910ecfe377",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "5e910ecfe377",
+      "to": "b0ff367b8182",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ce6e5be2408e",
+      "to": "e1cd81564059",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "e1cd81564059",
+      "to": "e1cd81564059",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "e1cd81564059",
+      "to": "e1cd81564059",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Player Use Flash Player OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player",
+        "Use Flash Player",
+        "OPTIONS",
+        "Flash Player shortcut",
+        "Off",
+        "Shortcut settings",
+        "Please allow the app to make it working right."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Player to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.example.autoclicker",
+      "top_activity": "com.example.autoclicker.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.example.autoclicker",
+      "top_activity": "com.example.autoclicker.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.example.autoclicker",
+      "top_activity": "com.example.autoclicker.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用伪装为“Flash Player”，引导用户在系统无障碍设置中开启完全控制权限；检测到无障碍设置Hook后终止，若用户拒绝授权则返回主界面并平稳停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Please allow the app to make it working right.” -> 请允许该应用以便其正常运行（服务详情页）",
+    "English: “Allow Flash Player to have full control of your device?” -> 允许 Flash Player 完全控制您的设备？（系统警告弹窗）",
+    "English: “Full control is appropriate for apps that help you with accessibility needs, but not for most apps.” -> 完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用（系统警告弹窗）",
+    "English: “View and control screen” -> 查看并控制屏幕（系统警告弹窗）",
+    "English: “It can read all content on the screen and display content over other apps.” -> 可读取屏幕全部内容并叠加显示在其他应用上（系统警告弹窗）",
+    "English: “View and perform actions” -> 查看并执行操作（系统警告弹窗）",
+    "English: “It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.” -> 可跟踪与应用的交互或硬件传感器，并代表您操作应用（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统无障碍列表页，已下载应用“Flash Player”显示关闭，无通知与遮罩；捕获无障碍设置Hook后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停在无障碍设置页，界面文本暂未读取，无通知横幅与遮罩，执行等待。",
+    "post_jump_2.0s": "跳转后2.0秒探针继续等待无障碍设置页，界面文本暂未读取，无通知横幅与遮罩，遮罩计数为0。",
+    "detail_1_service_detail_page": "服务详情页展示“Flash Player”开关与快捷方式设置，并提示“请允许应用以使其正常运行”，诱导开启无障碍服务。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告弹窗，称可查看控制屏幕并代操作，提供Allow/Deny；本步点“Deny”拒绝。",
+    "refusal_2.0s": "拒绝授权后返回主界面约2秒，MainActivity无文本、无通知与遮罩，应用平稳停留或降级未崩溃。",
+    "refusal_10.5s": "拒绝授权后约10.5秒仍在主界面，MainActivity无文本、无通知与遮罩，维持平稳停留或降级状态。"
+  }
+}

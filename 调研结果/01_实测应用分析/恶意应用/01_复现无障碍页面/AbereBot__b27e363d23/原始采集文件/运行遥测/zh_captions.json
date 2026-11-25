@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用伪装为“Flash Player”，引导用户在系统无障碍设置中开启完全控制权限；检测到无障碍设置Hook后终止，若用户拒绝授权则返回主界面并平稳停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "English: “Please allow the app to make it working right.” -> 请允许该应用以便其正常运行（服务详情页）",
+    "English: “Allow Flash Player to have full control of your device?” -> 允许 Flash Player 完全控制您的设备？（系统警告弹窗）",
+    "English: “Full control is appropriate for apps that help you with accessibility needs, but not for most apps.” -> 完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用（系统警告弹窗）",
+    "English: “View and control screen” -> 查看并控制屏幕（系统警告弹窗）",
+    "English: “It can read all content on the screen and display content over other apps.” -> 可读取屏幕全部内容并叠加显示在其他应用上（系统警告弹窗）",
+    "English: “View and perform actions” -> 查看并执行操作（系统警告弹窗）",
+    "English: “It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.” -> 可跟踪与应用的交互或硬件传感器，并代表您操作应用（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "系统无障碍列表页，已下载应用“Flash Player”显示关闭，无通知与遮罩；捕获无障碍设置Hook后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停在无障碍设置页，界面文本暂未读取，无通知横幅与遮罩，执行等待。",
+    "post_jump_2.0s": "跳转后2.0秒探针继续等待无障碍设置页，界面文本暂未读取，无通知横幅与遮罩，遮罩计数为0。",
+    "detail_1_service_detail_page": "服务详情页展示“Flash Player”开关与快捷方式设置，并提示“请允许应用以使其正常运行”，诱导开启无障碍服务。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告弹窗，称可查看控制屏幕并代操作，提供Allow/Deny；本步点“Deny”拒绝。",
+    "refusal_2.0s": "拒绝授权后返回主界面约2秒，MainActivity无文本、无通知与遮罩，应用平稳停留或降级未崩溃。",
+    "refusal_10.5s": "拒绝授权后约10.5秒仍在主界面，MainActivity无文本、无通知与遮罩，维持平稳停留或降级状态。"
+  }
+}

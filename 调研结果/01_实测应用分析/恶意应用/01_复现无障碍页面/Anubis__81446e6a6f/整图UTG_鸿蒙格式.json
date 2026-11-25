@@ -1,0 +1,318 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_109__81446e6a6f",
+  "label": "malicious",
+  "family_or_category": "Anubis",
+  "static_visibility": "clear",
+  "target_package": "anubis.bot.myapplication",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "6fdb232a22c3",
+  "hook_node_ids": [
+    "b8b041cb6177",
+    "fbd6599c5e8e"
+  ],
+  "nodes": [
+    {
+      "node_id": "6fdb232a22c3",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "anubis.bot.myapplication",
+      "abilityName": "anubis.bot.myapplication.Activity.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b8b041cb6177",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "TikTok",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "b5ec1de9b2ef",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "TikTok",
+        "Use TikTok",
+        "OPTIONS",
+        "TikTok shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "fbd6599c5e8e",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow TikTok to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "594203242989",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing TikTok to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "6fdb232a22c3",
+      "to": "b8b041cb6177",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 2100])"
+    },
+    {
+      "from": "b8b041cb6177",
+      "to": "b5ec1de9b2ef",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "b5ec1de9b2ef",
+      "to": "fbd6599c5e8e",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "b8b041cb6177",
+      "to": "594203242989",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "594203242989",
+      "to": "594203242989",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "594203242989",
+      "to": "594203242989",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back TikTok Use TikTok OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "TikTok",
+        "Use TikTok",
+        "OPTIONS",
+        "TikTok shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow TikTok to have full control of your dev",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow TikTok to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing TikTok to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing TikTok to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing TikTok to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Anubis__81446e6a6f",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先以伪造的 TikTok 页面诱导点击俄语“继续”，再跳转系统无障碍设置引导为 TikTok 开启服务，并出现“完全控制设备”警告；拒权后继续请求后台运行豁免，整体表现为优雅停留或降级。",
+  "observed_lure_rhetoric_zh": [
+    "俄语 -> “继续”（第1步伪造TikTok页底部蓝色按钮）",
+    "英语 -> “允许TikTok完全控制你的设备？”并说明可查看和控制屏幕、代你执行操作（系统无障碍授权警告弹窗）",
+    "英语 -> “让应用始终在后台运行？”并称可能降低续航、稍后可在设置中更改（电池优化豁免请求页）",
+    "英语 -> “你的数据未备份/立即添加备份账户”（贯穿各页的Google Play服务通知横幅）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪造TikTok主页，界面无可见文字；点击底部蓝色俄语“Продолжить（继续）”，顶部有数据未备份通知横幅，无遮罩。",
+    "step_02": "跳转系统无障碍设置，列表显示已下载应用TikTok为“关闭”；采集到无障碍设置Hook后自动终止，顶部保留备份通知。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停留在无障碍设置页，界面无新增文字、无遮罩，仅见数据未备份通知横幅。",
+    "post_jump_2.0s": "跳转后2.0秒探针仍为无障碍设置页，无新增可见文本与遮罩，备份账户通知横幅持续显示。",
+    "detail_1_service_detail_page": "进入TikTok无障碍服务详情页，显示“Use TikTok/使用TikTok”及快捷键等选项，说明为“未提供描述”；本步仅检查详情。",
+    "detail_2_system_warning_dialog": "系统弹窗警告允许TikTok完全控制设备，称可读取屏幕内容、代你操作应用；提供允许/拒绝，本步仅检查未点选。",
+    "refusal_2.0s": "拒权后返回，弹出后台运行请求：允许TikTok始终后台运行可能耗电，可选拒绝/允许；状态为优雅停留或降级。",
+    "refusal_10.5s": "拒权后10.5秒仍停在后台运行请求页，话术称可能降低续航、稍后可改；拒绝/允许按钮仍在，未进一步跳转。"
+  }
+}
