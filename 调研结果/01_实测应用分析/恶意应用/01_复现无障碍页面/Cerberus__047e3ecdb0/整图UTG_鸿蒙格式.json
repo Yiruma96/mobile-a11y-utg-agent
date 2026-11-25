@@ -1,0 +1,368 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_068__047e3ecdb0",
+  "label": "malicious",
+  "family_or_category": "Cerberus",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.cable.liar",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "059e074cfd3b",
+  "hook_node_ids": [
+    "d2643321f1d2",
+    "a7a1db152114"
+  ],
+  "nodes": [
+    {
+      "node_id": "059e074cfd3b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.cable.liar",
+      "abilityName": "com.ujirteg.qlowvkvdwx.vjziz.dsxujce",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d2643321f1d2",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Android Güncelleme",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "533f59f35d3c",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Android Güncelleme",
+        "Use Android Güncelleme",
+        "OPTIONS",
+        "Android Güncelleme shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "a7a1db152114",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Android Güncelleme to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    },
+    {
+      "node_id": "552563b32fa9",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.cable.liar",
+      "abilityName": "com.ujirteg.qlowvkvdwx.vjziz.dsxujce",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Android Güncelleme to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_02_refusal_5500ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_5500ms_layout.xml",
+      "screenshot": "step_02_refusal_5500ms_screen.png"
+    },
+    {
+      "node_id": "172f7bd60340",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Android Güncelleme to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_02_refusal_10500ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_10500ms_layout.xml",
+      "screenshot": "step_02_refusal_10500ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "059e074cfd3b",
+      "to": "d2643321f1d2",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 634])"
+    },
+    {
+      "from": "d2643321f1d2",
+      "to": "533f59f35d3c",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "533f59f35d3c",
+      "to": "a7a1db152114",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "d2643321f1d2",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "552563b32fa9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "552563b32fa9",
+      "to": "172f7bd60340",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Android Güncelleme Use Android Güncelleme OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Android Güncelleme",
+        "Use Android Güncelleme",
+        "OPTIONS",
+        "Android Güncelleme shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Android Güncelleme to have full control",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Android Güncelleme to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.cable.liar",
+      "top_activity": "com.ujirteg.qlowvkvdwx.vjziz.dsxujce",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Android Güncelleme to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Android Güncelleme to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Cerberus__047e3ecdb0",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用先以 WebView 假“Erişilebilirlik Hizmeti/无障碍服务”教程诱导开启无障碍，随后伪装成“Android Güncelleme/Android 更新”出现在无障碍列表并请求完全控制；用户拒绝后返回桌面，应用又反复弹出后台常驻与电池优化豁免诱导，呈现典型 Cerberus 式权限钓鱼链路。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语：Erişilebilirlik Hizmeti -> 中文意译：无障碍服务（Step 1 假指导页）",
+    "土耳其语：Android Güncelleme -> 中文意译：Android 更新（无障碍列表/服务详情/授权弹窗中的伪装应用名）",
+    "英语：Use Android Güncelleme -> 中文意译：使用 Android 更新（服务详情页开关/快捷方式）",
+    "英语：Allow Android Güncelleme to have full control of your device? -> 中文意译：允许 Android 更新完全控制你的设备吗？（系统无障碍授权警告）",
+    "英语：Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 中文意译：完全控制适合辅助无障碍需求的 App，但不适合大多数 App（授权警告说明）",
+    "英语：View and control screen / It can read all content on the screen and display content over other apps. -> 中文意译：查看并控制屏幕/可读取屏幕全部内容并覆盖显示在其他 App 上（授权权限说明）",
+    "英语：View and perform actions / It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 中文意译：查看并执行操作/可追踪与 App 或硬件传感器的交互并代你操作 App（授权权限说明）",
+    "英语：Let app always run in background? -> 中文意译：允许 App 始终在后台运行吗？（后台常驻诱导弹窗）",
+    "英语：Allowing Android Güncelleme to always run in the background may reduce battery life. You can change this later from Settings > Apps & notifications. -> 中文意译：允许 Android 更新始终后台运行可能缩短电池续航，可稍后在设置中更改（后台常驻说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "WebView 假“Erişilebilirlik Hizmeti（无障碍服务）”指导页，点击[540,634]继续；无通知横幅与遮罩。",
+    "step_02": "系统无障碍列表页，伪装项“Android Güncelleme（Android 更新）”显示 Off；检测到设置钩子后终止，探针无通知、无遮罩。",
+    "post_jump_0.8s": "拒权跳转后 0.8 秒探针，仍停留在系统无障碍列表；无 UI 文本、无通知横幅、遮罩数为 0，仅等待观察。",
+    "post_jump_2.0s": "拒权跳转后 2.0 秒探针，界面仍为系统无障碍列表；无 UI 文本、无通知横幅、遮罩数为 0，未发生新诱导。",
+    "detail_1_service_detail_page": "服务详情页，伪装名“Android Güncelleme（Android 更新）”，含“Use Android Güncelleme（使用 Android 更新）”，快捷方式 Off、无描述；仅检查详情。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告，问是否允许“Android Güncelleme（Android 更新）完全控制设备”，列出读屏、代操作等权限，按钮 Allow/Deny；本步仅检查弹窗。",
+    "refusal_2.0s": "点 Deny/拒绝后返回桌面启动器，显示应用列表、天气与搜索等；无通知横幅与遮罩，但记录为拒权后重新拉起诱导弹窗。",
+    "refusal_5.5s": "拒权后回到应用假页并弹后台常驻诱导：“Let app always run in background?（允许始终后台运行？）”，称可能耗电，有 Deny/Allow；无遮罩。",
+    "refusal_10.5s": "再次拒权后跳至系统电池优化豁免页，复用同一后台常驻弹窗：“Let app always run in background?”；有 Deny/Allow，无通知与遮罩。"
+  }
+}

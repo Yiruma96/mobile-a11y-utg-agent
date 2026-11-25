@@ -1,0 +1,42 @@
+{
+  "timestamp": 1795583771.6316283,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{f12a6e8 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{557c35c u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #4 Window{807abc1 u0 Toast}:",
+      "mOwnerUid": "mOwnerUid=10186 showForAllUsers=false package=scissors.boss.wide appop=TOAST_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER_VERTICAL sim={adjust=pan} ty=TOAST fmt=TRANSLUCENT wanim=0x1030004",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{e1eba5e u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #9 Window{75f2410 u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "com.google.android.gms",
+      "title": "String (Your data isn’t backed up)",
+      "text": "String (Add a backup account now)"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+flowchart TD
+    N_74306a4dbeef["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_0bb15833888b["Step 1: SubSettings\nBack"]
+    N_7836a5e6ec6c["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Aggiornamento de"]
+    N_74306a4dbeef -->|"detail_probe: click_service()"| N_0bb15833888b
+    N_0bb15833888b -->|"warning_probe: click_use_service_switch"| N_7836a5e6ec6c
+    N_74306a4dbeef -->|"refusal_probe: Back_refuse"| N_74306a4dbeef

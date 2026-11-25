@@ -1,0 +1,326 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_048__16219c346d",
+  "label": "malicious",
+  "family_or_category": "Coper",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.ublocked47tallcloud",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "3d0b8d857966",
+  "hook_node_ids": [
+    "30f01c58ad31"
+  ],
+  "nodes": [
+    {
+      "node_id": "3d0b8d857966",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Binance to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "995fd6e8867f",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.ublocked47tallcloud",
+      "abilityName": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "30f01c58ad31",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Binance",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "125fe2bc4a50",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Binance",
+        "Use Binance",
+        "OPTIONS",
+        "Binance shortcut",
+        "Off",
+        "Shortcut settings",
+        "Enable this service to protect your device."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "22f6eefc36d1",
+      "first_step": 3,
+      "role": "system_warning_dialog",
+      "bundleName": "com.ublocked47tallcloud",
+      "abilityName": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Binance'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3d0b8d857966",
+      "to": "995fd6e8867f",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1318))"
+    },
+    {
+      "from": "995fd6e8867f",
+      "to": "30f01c58ad31",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([528, 600])"
+    },
+    {
+      "from": "30f01c58ad31",
+      "to": "125fe2bc4a50",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "125fe2bc4a50",
+      "to": "22f6eefc36d1",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "30f01c58ad31",
+      "to": "22f6eefc36d1",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "22f6eefc36d1",
+      "to": "22f6eefc36d1",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "22f6eefc36d1",
+      "to": "22f6eefc36d1",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Binance Use Binance OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Binance",
+        "Use Binance",
+        "OPTIONS",
+        "Binance shortcut",
+        "Off",
+        "Shortcut settings",
+        "Enable this service to protect your device."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.ublocked47tallcloud",
+      "top_activity": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Binance'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.ublocked47tallcloud",
+      "top_activity": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Binance'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.ublocked47tallcloud",
+      "top_activity": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Binance'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.ublocked47tallcloud",
+      "top_activity": "com.ublocked47tallcloud.vtiE8xJsNyR",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Binance'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Coper__16219c346d",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用先在系统设置请求电池优化白名单，再经应用内空白页跳转无障碍设置，将服务伪装为“Binance”诱导开启；拒权后反复重拉“启用无障碍服务”弹窗，具备强诱导与重试特征。",
+  "observed_lure_rhetoric_zh": [
+    "Let app always run in background? -> 让应用始终在后台运行？（step_01）",
+    "Allowing Binance to always run in the background may reduce battery life. -> 允许“Binance”始终后台运行可能降低续航，但可稍后更改（step_01）",
+    "Enable this service to protect your device. -> 启用此服务以保护你的设备（detail_1_service_detail_page）",
+    "Enable Accessibility Service -> 启用无障碍服务（detail_2_system_warning_dialog/refusal_*）",
+    "Find 'Binance' / Set switch ON / Open Settings -> 找到“Binance”、把开关设为开启、打开设置（detail_2_system_warning_dialog/refusal_*）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电池优化授权页，应用伪装为“Binance”；通知横幅显示更新/需注意，提示允许后台运行，本步点“Allow”放行。",
+    "step_02": "应用内空白页，仅有“Update/Attention required”通知横幅；按坐标点击疑似“Open Settings”，触发无障碍设置跳转。",
+    "step_03": "系统无障碍列表页，已列出“Binance”且为关闭；页面引导开启下载应用服务，检测到无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留在无障碍列表页；无新增文案与遮罩，仅通知横幅持续显示更新/需注意占位文本。",
+    "post_jump_2.0s": "跳转后2.0秒探针，无障碍列表页无变化；遮罩为0、无新增弹窗，通知横幅仍为“Update/Attention required”占位。",
+    "detail_1_service_detail_page": "系统无障碍服务详情页：伪装“Binance”，显示“Use Binance”“Binance shortcut”与“启用此服务可保护设备”，开关仍为关闭。",
+    "detail_2_system_warning_dialog": "应用内授权诱导弹窗：要求查找“Binance”、把开关设为ON并点“Open Settings”，为关键无障碍授权引导页。",
+    "refusal_2.0s": "拒权返回2秒后仍显示同一“启用无障碍服务”诱导弹窗；返回拒绝未消失，记录为重新拉起诱导弹窗。",
+    "refusal_10.5s": "拒权返回10.5秒后诱导弹窗依旧存在；反复要求查找“Binance”、开启开关并进设置，显示强黏性重拉授权话术。"
+  }
+}

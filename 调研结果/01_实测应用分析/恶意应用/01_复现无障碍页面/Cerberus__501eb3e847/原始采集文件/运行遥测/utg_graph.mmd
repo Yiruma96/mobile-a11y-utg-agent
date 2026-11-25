@@ -1,0 +1,14 @@
+flowchart TD
+    N_d16a54f8d555["Step 1: mjpzwvrpys\n"]
+    N_8287af61b74d["Step 2: mjpzwvrpys\nAccessibility"]
+    N_6821c18f60d7["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_de43f211d707["Step 3: SubSettings\nBack"]
+    N_282055812267["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Lütfen izin veri"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_d16a54f8d555 -->|"ui_click: click([540, 1637])"| N_8287af61b74d
+    N_8287af61b74d -->|"ui_click: click([5] View id=btn (click) ce"| N_6821c18f60d7
+    N_6821c18f60d7 -->|"detail_probe: click_service()"| N_de43f211d707
+    N_de43f211d707 -->|"warning_probe: click_use_service_switch"| N_282055812267
+    N_6821c18f60d7 -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886

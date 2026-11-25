@@ -1,0 +1,12 @@
+flowchart TD
+    N_0e0fab7b071d["Step 1: p016j\n"]
+    N_dc613b4151e6["Step 2: p016j\nEnable Accessibility S"]
+    N_ffe926a5d606["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_c85c6e66ab56["Step 3: SubSettings\nBack"]
+    N_0e0fab7b071d -->|"ui_click: click([540, 873])"| N_dc613b4151e6
+    N_dc613b4151e6 -->|"ui_click: click([8] Button text='Open Sett"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_c85c6e66ab56
+    N_c85c6e66ab56 -->|"warning_probe: click_use_service_switch"| N_dc613b4151e6
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_dc613b4151e6
+    N_dc613b4151e6 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_dc613b4151e6
+    N_dc613b4151e6 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_dc613b4151e6

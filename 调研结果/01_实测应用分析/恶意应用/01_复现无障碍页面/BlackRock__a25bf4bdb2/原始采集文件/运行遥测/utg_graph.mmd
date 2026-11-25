@@ -1,0 +1,10 @@
+flowchart TD
+    N_ce6e5be2408e["Step 1: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_a32a006e9695["Step 1: SubSettings\nBack"]
+    N_b0ff367b8182["Step 1: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Flash Player to "]
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_ce6e5be2408e -->|"detail_probe: click_service()"| N_a32a006e9695
+    N_a32a006e9695 -->|"warning_probe: click_use_service_switch"| N_b0ff367b8182
+    N_ce6e5be2408e -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886

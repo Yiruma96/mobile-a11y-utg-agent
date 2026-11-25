@@ -1,0 +1,18 @@
+flowchart TD
+    N_706b7f66d366["Step 1: GrantPermissionsActivity\nAllow Chrome to make a"]
+    N_e5d822d510c9["Step 2: GrantPermissionsActivity\nAllow Chrome to send a"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_81dcc24068e4["Step 4: p041j\n"]
+    N_0da650db0bf4["Step 5: p041j\nEnable Accessibility S"]
+    N_ffe926a5d606["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_b7dbb9f917d2["Step 6: SubSettings\nBack"]
+    N_706b7f66d366 -->|"ui_click: click([4] Button text='Allow' id"| N_e5d822d510c9
+    N_e5d822d510c9 -->|"ui_click: click([4] Button text='Allow' id"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([360, 165])"| N_81dcc24068e4
+    N_81dcc24068e4 -->|"ui_click: click([720, 888])"| N_0da650db0bf4
+    N_0da650db0bf4 -->|"ui_click: click([8] Button text='Open Sett"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_b7dbb9f917d2
+    N_b7dbb9f917d2 -->|"warning_probe: click_use_service_switch"| N_0da650db0bf4
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_0da650db0bf4
+    N_0da650db0bf4 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_0da650db0bf4
+    N_0da650db0bf4 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_0da650db0bf4

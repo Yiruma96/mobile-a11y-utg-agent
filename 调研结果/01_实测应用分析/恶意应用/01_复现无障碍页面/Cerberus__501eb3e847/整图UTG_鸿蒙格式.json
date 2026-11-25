@@ -1,0 +1,355 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_070__501eb3e847",
+  "label": "malicious",
+  "family_or_category": "Cerberus",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.wood.area",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "d16a54f8d555",
+  "hook_node_ids": [
+    "6821c18f60d7",
+    "282055812267"
+  ],
+  "nodes": [
+    {
+      "node_id": "d16a54f8d555",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.wood.area",
+      "abilityName": "com.chbsjdrnv.edzi.yxwwp.mjpzwvrpys",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "8287af61b74d",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.wood.area",
+      "abilityName": "com.chbsjdrnv.edzi.yxwwp.mjpzwvrpys",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility",
+        "android-flat",
+        "Android Güncelleme",
+        "Bir sonraki ekranda erişilebilirlik izni vermeniz gerekmektedir. Yüklü servisler menüsünde veya Android Güncelleme'ye tıklayabilirsiniz. Telefonunuzu güncellemediğiniz takdirde tüm saldırılara açık hale gelecektir.",
+        "white-tick-png-8",
+        "Devam Et"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "6821c18f60d7",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Lütfen izin veriniz.",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "de43f211d707",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Lütfen izin veriniz.",
+        "Use Lütfen izin veriniz.",
+        "OPTIONS",
+        "Lütfen izin veriniz. shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "282055812267",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Lütfen izin veriniz. to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_03_refusal_2000ms_layout.xml",
+      "screenshot": "step_03_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d16a54f8d555",
+      "to": "8287af61b74d",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1637])"
+    },
+    {
+      "from": "8287af61b74d",
+      "to": "6821c18f60d7",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([5] View id=btn (click) center=(540,1503))"
+    },
+    {
+      "from": "6821c18f60d7",
+      "to": "de43f211d707",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "de43f211d707",
+      "to": "282055812267",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "6821c18f60d7",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Lütfen izin veriniz. Use Lütfen izin veriniz. OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Lütfen izin veriniz.",
+        "Use Lütfen izin veriniz.",
+        "OPTIONS",
+        "Lütfen izin veriniz. shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Lütfen izin veriniz. to have full contr",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Lütfen izin veriniz. to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Cerberus__501eb3e847",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用启动后在 WebView 中用土耳其语伪装成“Android 更新”，以“不更新手机就会暴露于所有攻击”的恐吓话术，诱导用户进入系统无障碍设置，并开启名为“Lütfen izin veriniz.（请授予权限）”的服务。用户点击 Deny 拒绝授权后，应用静默回到桌面，没有异常，也没有二次弹窗，链路以 GRACEFUL_STAY_OR_DEGRADE 结束。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> “Devam Et”（继续）（WebView 首屏与更新页按钮）：用中性按钮文案降低用户戒心，推动进入下一屏授权。",
+    "土耳其语 -> “Android Güncelleme”（Android 更新）（step_02 标题）：把恶意页面伪装成系统更新组件。",
+    "土耳其语 -> “Bir sonraki ekranda erişilebilirlik izni vermeniz gerekmektedir. Yüklü servisler menüsünde veya Android Güncelleme'ye tıklayabilirsiniz. Telefonunuzu güncellemediğiniz takdirde tüm saldırılara açık hale gelecektir.”（下一屏需要授予无障碍权限，可在已安装服务菜单中或点击 Android 更新；若不更新手机，将对所有攻击敞开）（step_02 正文）：用安全恐吓话术边制造恐慌，边直接指路授权入口。",
+    "土耳其语 -> “Lütfen izin veriniz.”（请授予权限）（无障碍列表页条目与服务详情页服务名）：把恶意无障碍服务命名为看似系统提示的名称，以骗取用户授予权限。",
+    "英语（系统高危弹窗）-> “Allow Lütfen izin veriniz. to have full control of your device?”（允许其完全控制你的设备？），并列出 “View and control screen / View and perform actions”：系统会随之明示“读取全屏内容、代替用户操作”的权限，这是该攻击真正想取得的权限。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用内 WebView 首屏，无可见文案，标题为随机串 mjpzwvrpys；点击坐标命中土耳其语“Devam Et（继续）”按钮，促使页面推进到无障碍授权环节；通知栏还一直挂着 Google 未备份提示。",
+    "step_02": "WebView 伪装“Android Güncelleme（Android 更新）”页，谎称不更新手机就会暴露于所有攻击，并要求在下一屏授予无障碍权限；点击“Devam Et”后跳转到系统设置。",
+    "step_03": "系统无障碍设置列表，已出现“Lütfen izin veriniz.（请授予权限）”条目且开关关闭；探针捕获 HOOK_A11Y_SETTINGS 后自动终止页面，没有遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒仍停在无障碍列表页，overlays=0，无新增文本或浮层：应用已把用户直接带到系统授权入口，等待用户自行点击服务项。",
+    "post_jump_2.0s": "跳转后 2.0 秒仍在无障碍列表页，overlays=0，未见任何诱导弹窗覆盖：说明诱导全部在 WebView 阶段完成，系统页只负责落点。",
+    "detail_1_service_detail_page": "无障碍服务详情页，服务名被设为土耳其语“Lütfen izin veriniz.（请授予权限）”，描述为“未提供”，开关关闭；这是用伪装名称骗取授权的典型做法。",
+    "detail_2_system_warning_dialog": "系统高危授权确认框，说明该服务可读取全屏内容并代替用户操作；本步选择“Deny（拒绝）”，未授予无障碍权限。",
+    "refusal_2.0s": "拒绝授权后 2 秒已回到系统桌面，应用未崩溃、未再次拉起授权页，呈现 GRACEFUL_STAY_OR_DEGRADE 的静默降级。",
+    "refusal_10.5s": "拒绝授权后 10.5 秒仍停在桌面，无覆盖层、无二次诱导弹窗；应用保持静默，处于降级驻留状态，等待后续触发。"
+  }
+}

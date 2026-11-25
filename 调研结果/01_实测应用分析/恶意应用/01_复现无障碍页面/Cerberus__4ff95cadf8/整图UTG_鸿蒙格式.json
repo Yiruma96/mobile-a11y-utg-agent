@@ -1,0 +1,245 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_112__4ff95cadf8",
+  "label": "malicious",
+  "family_or_category": "Cerberus",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "scissors.boss.wide",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "74306a4dbeef",
+  "hook_node_ids": [
+    "74306a4dbeef",
+    "7836a5e6ec6c"
+  ],
+  "nodes": [
+    {
+      "node_id": "74306a4dbeef",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Aggiornamento del sistema",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "0bb15833888b",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Aggiornamento del sistema",
+        "Use Aggiornamento del sistema",
+        "OPTIONS",
+        "Aggiornamento del sistema shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "7836a5e6ec6c",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Aggiornamento del sistema to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "74306a4dbeef",
+      "to": "0bb15833888b",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0bb15833888b",
+      "to": "7836a5e6ec6c",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "74306a4dbeef",
+      "to": "74306a4dbeef",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Aggiornamento del sistema Use Aggiornamento del sistema",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Aggiornamento del sistema",
+        "Use Aggiornamento del sistema",
+        "OPTIONS",
+        "Aggiornamento del sistema shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Aggiornamento del sistema to have full ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Aggiornamento del sistema to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Aggiornamento del sistema",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Cerberus__4ff95cadf8",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "应用以意大利语“Aggiornamento del sistema（系统更新）”伪装成系统组件，在无障碍列表引导开启服务，进入详情后触发“完全控制设备”的授权警告；代理点Deny拒权后出现重新拉起无障碍设置的行为，具明显诱导授权特征。",
+  "observed_lure_rhetoric_zh": [
+    "意大利语「Aggiornamento del sistema」 -> 中文意译“系统更新”（无障碍列表/服务详情页），冒充系统更新组件诱导开启无障碍服务。",
+    "英语「Use Aggiornamento del sistema」 -> 中文意译“使用系统更新”（服务详情页），以系统更新名义引导启用。",
+    "英语「Allow Aggiornamento del sistema to have full control of your device?」 -> 中文意译“允许‘系统更新’完全控制您的设备？”（系统警告弹窗），实质索取无障碍完全控制权限。",
+    "英语「Full control is appropriate for apps that help you with accessibility needs, but not for most apps.」 -> 中文意译“完全控制适用于辅助无障碍需求的应用，不适用于大多数应用。”（系统警告弹窗），提示高风险授权。",
+    "英语「View and control screen / It can read all content on the screen and display content over other apps.」 -> 中文意译“查看并控制屏幕/可读取屏幕全部内容并叠加显示。”（系统警告弹窗），说明可监控与覆盖界面。",
+    "英语「View and perform actions / It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.」 -> 中文意译“查看并执行操作/可追踪交互并代你操作应用。”（系统警告弹窗），表明可代操作。",
+    "英语「No description provided.」 -> 中文意译“未提供描述”（服务详情页），服务说明缺失。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "无障碍列表页：下载应用列出“Aggiornamento del sistema（系统更新）”且为Off；顶部备份未开启通知；无遮罩；捕获无障碍挂钩后终止。",
+    "post_jump_0.8s": "跳后0.8s：仍在无障碍设置页，暂无可见文本；无遮罩；等待0.8s探针，顶部Google备份未开启通知仍在。",
+    "post_jump_2.0s": "跳后2.0s：同一无障碍设置页仍无可捕获文本；无遮罩；等待2.0s探针，顶部备份未开启通知持续显示。",
+    "detail_1_service_detail_page": "服务详情页：显示“Aggiornamento del sistema（系统更新）”与“Use…（使用系统更新）”，含快捷键选项；顶部备份通知在，无遮罩，执行查看详情。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：询问是否允许“系统更新”完全控制设备，列明可读屏、覆盖显示与代操作；顶部备份通知在；本步点Deny。",
+    "refusal_2.0s": "拒权后2.0s：返回无障碍列表，“系统更新”仍为Off；顶部备份通知在，无遮罩；随后动作显示重新拉起无障碍设置。"
+  }
+}
