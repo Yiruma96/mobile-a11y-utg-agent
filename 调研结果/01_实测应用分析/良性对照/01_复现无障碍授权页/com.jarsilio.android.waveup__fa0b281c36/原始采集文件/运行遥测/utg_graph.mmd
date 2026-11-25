@@ -1,0 +1,24 @@
+flowchart TD
+    N_00a17f5b0586["Step 1: MainActivity\nWaveUp"]
+    N_db84f1ff149b["Step 4: MainActivity\nPhone Permission
+
+Wave"]
+    N_3e4688ef0e1b["Step 5: MainActivity\nBluetooth Permission
+
+"]
+    N_4e68337b424a["Step 7: MainActivity\nLock device: Accessibi"]
+    N_e0af7c75778a["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_aae3fcd65bcb["Step 8: SubSettings\nBack"]
+    N_ee41a549369f["Step 8: SubSettings [HOOK_A11Y_SETTINGS]\nAllow WaveUp to have f"]
+    N_00a17f5b0586 -->|"ui_click: click([24] Switch id=switchWidge"| N_00a17f5b0586
+    N_00a17f5b0586 -->|"ui_click: click([21] LinearLayout (click) "| N_00a17f5b0586
+    N_00a17f5b0586 -->|"ui_click: click([7] Switch id=switchWidget"| N_db84f1ff149b
+    N_db84f1ff149b -->|"ui_click: click([2] Button text='IGNORE' i"| N_3e4688ef0e1b
+    N_3e4688ef0e1b -->|"ui_click: click([2] Button text='IGNORE' i"| N_00a17f5b0586
+    N_00a17f5b0586 -->|"ui_click: click([24] Switch id=switchWidge"| N_4e68337b424a
+    N_4e68337b424a -->|"ui_click: click([3] Button text='OK' id=bu"| N_e0af7c75778a
+    N_e0af7c75778a -->|"detail_probe: click_service()"| N_aae3fcd65bcb
+    N_aae3fcd65bcb -->|"warning_probe: click_use_service_switch"| N_ee41a549369f
+    N_e0af7c75778a -->|"refusal_probe: Back_refuse"| N_00a17f5b0586
+    N_00a17f5b0586 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_00a17f5b0586
+    N_00a17f5b0586 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_00a17f5b0586

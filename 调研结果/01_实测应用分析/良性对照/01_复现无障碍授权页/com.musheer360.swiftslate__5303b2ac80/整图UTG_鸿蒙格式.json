@@ -1,0 +1,339 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_047__5303b2ac80",
+  "label": "benign",
+  "family_or_category": "系统效率与通用辅助",
+  "static_visibility": "clear",
+  "target_package": "com.musheer360.swiftslate",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "a9a62957c97a",
+  "hook_node_ids": [
+    "eb82bb391e0b",
+    "d776b473c907"
+  ],
+  "nodes": [
+    {
+      "node_id": "a9a62957c97a",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.musheer360.swiftslate",
+      "abilityName": "com.musheer360.swiftslate.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Dashboard",
+        "Inactive",
+        "Enable",
+        "API Keys",
+        "0 keys configured",
+        "Add an API key to get started.",
+        "0",
+        "This Month",
+        "—",
+        "Top Command",
+        "Last 7 Days",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "eb82bb391e0b",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "SwiftSlate Assistant",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "4c0b1416052a",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "SwiftSlate Assistant",
+        "Use SwiftSlate Assistant",
+        "OPTIONS",
+        "SwiftSlate Assistant shortcut",
+        "Off",
+        "Shortcut settings",
+        "Provides system-wide AI text replacements when trigger commands are typed."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "d776b473c907",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow SwiftSlate Assistant to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a9a62957c97a",
+      "to": "eb82bb391e0b",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"Enable\" center=(872,344))"
+    },
+    {
+      "from": "eb82bb391e0b",
+      "to": "4c0b1416052a",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "4c0b1416052a",
+      "to": "d776b473c907",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "eb82bb391e0b",
+      "to": "a9a62957c97a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "a9a62957c97a",
+      "to": "a9a62957c97a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "a9a62957c97a",
+      "to": "a9a62957c97a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back SwiftSlate Assistant Use SwiftSlate Assistant OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "SwiftSlate Assistant",
+        "Use SwiftSlate Assistant",
+        "OPTIONS",
+        "SwiftSlate Assistant shortcut",
+        "Off",
+        "Shortcut settings",
+        "Provides system-wide AI text replacements when trigger commands are typed."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow SwiftSlate Assistant to have full contr",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow SwiftSlate Assistant to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.musheer360.swiftslate",
+      "top_activity": "com.musheer360.swiftslate.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Dashboard",
+        "Inactive",
+        "Enable",
+        "API Keys",
+        "0 keys configured",
+        "Add an API key to get started.",
+        "0",
+        "This Month",
+        "—",
+        "Top Command"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.musheer360.swiftslate",
+      "top_activity": "com.musheer360.swiftslate.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Dashboard",
+        "Inactive",
+        "Enable",
+        "API Keys",
+        "0 keys configured",
+        "Add an API key to get started.",
+        "0",
+        "This Month",
+        "—",
+        "Top Command"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.musheer360.swiftslate",
+      "top_activity": "com.musheer360.swiftslate.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Dashboard",
+        "Inactive",
+        "Enable",
+        "API Keys",
+        "0 keys configured",
+        "Add an API key to get started.",
+        "0",
+        "This Month",
+        "—",
+        "Top Command"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用从主界面Dashboard以Inactive、Enable及“添加API密钥”提示引导开始，点击Enable跳转系统无障碍设置并展示SwiftSlate Assistant全控授权说明；在系统警告中点Deny拒权后返回应用仍停留同一Enable诱导页，表现为无权限即无法继续的卡点链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Inactive / Enable” -> “未启用 / 启用”（主界面Dashboard服务状态与按钮，点击Enable跳往无障碍设置）",
+    "英文“0 keys configured / Add an API key to get started.” -> “已配置0个密钥 / 添加API密钥以开始使用”（主界面Dashboard空状态提示）",
+    "英文“Use SwiftSlate Assistant” -> “使用SwiftSlate助手”（无障碍服务详情页开关）",
+    "英文“Provides system-wide AI text replacements when trigger commands are typed.” -> “在输入触发命令时提供系统级AI文本替换”（服务详情页说明）",
+    "英文“Allow SwiftSlate Assistant to have full control of your device?” -> “允许SwiftSlate助手完全控制您的设备？”（系统警告弹窗）",
+    "英文“Full control is appropriate for apps that help you with accessibility needs, but not for most apps.” -> “完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用”（系统警告弹窗）",
+    "英文“View and control screen / View and perform actions” -> “查看并控制屏幕 / 查看并执行操作”（系统警告弹窗风险项）",
+    "英文“It can read all content on the screen and display content over other apps.” -> “可读取屏幕全部内容并覆盖显示在其他应用上”（系统警告弹窗）",
+    "英文“It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.” -> “可跟踪您与应用或硬件传感器的交互，并代表您与应用交互”（系统警告弹窗）",
+    "英文“Allow / Deny” -> “允许 / 拒绝”（系统警告弹窗授权选择）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面仪表盘显示Inactive、Enable按钮及0个API密钥；点击Enable跳往无障碍设置页，无通知与遮罩。",
+    "step_02": "无障碍设置列表显示SwiftSlate Assistant为Off；捕获HOOK_A11Y_SETTINGS后自动停止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停在无障碍设置页，界面无文本、无通知、无遮罩，未出现叠加层。",
+    "post_jump_2.0s": "跳转后2.0秒再次探针，仍在无障碍设置页，无文本、通知及遮罩，未见额外诱导弹窗。",
+    "detail_1_service_detail_page": "服务详情页展示Use SwiftSlate Assistant及选项；说明称输入触发命令可系统级AI替换文本，无通知/遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗询问是否允许完全控制设备，列出读屏、覆盖显示、查看执行动作等风险；含Allow/Deny，无遮罩。",
+    "refusal_2.0s": "点Deny拒权后2秒回到主界面，仍显示Inactive、Enable及0密钥；无通知/遮罩，停留诱导页。",
+    "refusal_10.5s": "拒权后10.5秒仍在主界面，Inactive与Enable反复提示、0密钥；无通知/遮罩，未离开诱导页。"
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_061__2580449196",
+  "label": "benign",
+  "family_or_category": "远程协助与跨设备互联",
+  "static_visibility": "clear",
+  "target_package": "com.castle.sefirah",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": true,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "a0499a1410c8",
+  "hook_node_ids": [
+    "d8f45683e65d",
+    "ebf1339b1754",
+    "7ff12bf6fb4b"
+  ],
+  "nodes": [
+    {
+      "node_id": "a0499a1410c8",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.castle.sefirah",
+      "abilityName": "com.castle.sefirah.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome",
+        "Let's get you started. First, install the companion app on your PC and make sure your devices are connected over the same network.",
+        "Windows",
+        "Linux",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "9494f3595a36",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.castle.sefirah",
+      "abilityName": "com.castle.sefirah.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose Storage Location",
+        "Select a folder where the app will store received files. Downloads will be used as default.",
+        "Selected folder: /storage/emulated/0/Downloads",
+        "Select a folder",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "9afdfbcd382b",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.castle.sefirah",
+      "abilityName": "com.castle.sefirah.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permissions",
+        "Background Battery Usage",
+        "Allow the app to maintain stable connections by disabling battery optimizations",
+        "Grant",
+        "Optional",
+        "Notification Access",
+        "To read, dismiss, and trigger actions from notifications, and toggle DND",
+        "Contacts permission",
+        "To sync and lookup contacts",
+        "Messages permission",
+        "To send and read messages",
+        "Phone permission",
+        "To get phone number and notify about incoming calls",
+        "Call logs permission",
+        "To sync recent call history"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "41b121d9f59c",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.castle.sefirah",
+      "abilityName": "com.castle.sefirah.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Contacts permission",
+        "To sync and lookup contacts",
+        "Grant",
+        "Messages permission",
+        "To send and read messages",
+        "Phone permission",
+        "To get phone number and notify about incoming calls",
+        "Call logs permission",
+        "To sync recent call history",
+        "Storage Access",
+        "To access Android storage from remote device",
+        "Display over other apps",
+        "Used for background permission prompts",
+        "Shizuku",
+        "Used for clipboard auto-sync on Android 10+"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "534b2dd87a8e",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.castle.sefirah",
+      "abilityName": "com.castle.sefirah.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Restricted settings",
+        "Due to security restrictions, you'll need to: \n 1. Try to enable the 'Accessibility Service' \n 2. Tap 'ok' on the warning and come back \n 3. Go to App Info \n 4. Open the overflow menu (3 dots) \n 5. Tap 'allow restricted settings' \n 6. Go back and try again to enable the 'Accessibility Service'",
+        "App info",
+        "Accessibility Service",
+        "Cancel"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "d8f45683e65d",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.applications.InstalledAppDetails",
+      "trigger_hooks": [
+        "HOOK_APP_DETAILS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "App info",
+        "Search settings",
+        "Sefirah",
+        "Open",
+        "Uninstall",
+        "Force stop",
+        "Notifications",
+        "~1 notification per week",
+        "Permissions",
+        "No permissions granted",
+        "Storage & cache",
+        "30.84 MB used in internal storage",
+        "Mobile data & Wi‑Fi",
+        "No data used"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "ebf1339b1754",
+      "first_step": 8,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Sefirah",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    },
+    {
+      "node_id": "859cef3dc60c",
+      "first_step": 8,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Sefirah",
+        "Use Sefirah",
+        "OPTIONS",
+        "Sefirah shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_08_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_08_service_detail_layout.xml",
+      "screenshot": "step_08_service_detail_screen.png"
+    },
+    {
+      "node_id": "7ff12bf6fb4b",
+      "first_step": 8,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Sefirah to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_08_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_08_system_warning_layout.xml",
+      "screenshot": "step_08_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "a0499a1410c8",
+      "to": "9494f3595a36",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([9] TextView text=\"Next\" center=(917,2082))"
+    },
+    {
+      "from": "9494f3595a36",
+      "to": "9afdfbcd382b",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([7] View (click) center=(917,2082))"
+    },
+    {
+      "from": "9afdfbcd382b",
+      "to": "41b121d9f59c",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "41b121d9f59c",
+      "to": "534b2dd87a8e",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([34] View (click) center=(911,1829))"
+    },
+    {
+      "from": "534b2dd87a8e",
+      "to": "d8f45683e65d",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] View (click) center=(299,1368))"
+    },
+    {
+      "from": "d8f45683e65d",
+      "to": "534b2dd87a8e",
+      "step": 6,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "534b2dd87a8e",
+      "to": "ebf1339b1754",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Accessibility Service\" center=(673,1368))"
+    },
+    {
+      "from": "ebf1339b1754",
+      "to": "859cef3dc60c",
+      "step": 8,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "859cef3dc60c",
+      "to": "7ff12bf6fb4b",
+      "step": 8,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ebf1339b1754",
+      "to": "41b121d9f59c",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "41b121d9f59c",
+      "to": "41b121d9f59c",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "41b121d9f59c",
+      "to": "41b121d9f59c",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_APP_DETAILS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.applications.InstalledAppDetails",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.applications.InstalledAppDetails",
+          "hooks": [
+            "HOOK_APP_DETAILS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.applications.InstalledAppDetails",
+          "hooks": [
+            "HOOK_APP_DETAILS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_08_screen.png",
+      "raw_layout_path": "step_08_layout.xml",
+      "harmony_layout_path": "step_08_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_08_probe_800ms_screen.png",
+          "harmony_layout_path": "step_08_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_08_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_08_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Sefirah Use Sefirah OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Sefirah",
+        "Use Sefirah",
+        "OPTIONS",
+        "Sefirah shortcut",
+        "Off",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_08_service_detail_screen.png",
+      "harmony_layout_path": "step_08_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Sefirah to have full control of your de",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Sefirah to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_08_system_warning_screen.png",
+      "harmony_layout_path": "step_08_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.castle.sefirah",
+      "top_activity": "com.castle.sefirah.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Contacts permission",
+        "To sync and lookup contacts",
+        "Grant",
+        "Messages permission",
+        "To send and read messages",
+        "Phone permission",
+        "To get phone number and notify about incoming calls",
+        "Call logs permission",
+        "To sync recent call history",
+        "Storage Access"
+      ],
+      "screenshot_path": "step_08_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.castle.sefirah",
+      "top_activity": "com.castle.sefirah.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Contacts permission",
+        "To sync and lookup contacts",
+        "Grant",
+        "Messages permission",
+        "To send and read messages",
+        "Phone permission",
+        "To get phone number and notify about incoming calls",
+        "Call logs permission",
+        "To sync recent call history",
+        "Storage Access"
+      ],
+      "screenshot_path": "step_08_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.castle.sefirah",
+      "top_activity": "com.castle.sefirah.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Contacts permission",
+        "To sync and lookup contacts",
+        "Grant",
+        "Messages permission",
+        "To send and read messages",
+        "Phone permission",
+        "To get phone number and notify about incoming calls",
+        "Call logs permission",
+        "To sync recent call history",
+        "Storage Access"
+      ],
+      "screenshot_path": "step_08_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.castle.sefirah__2580449196",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "Step 1: MainActivity（MainActivity）：Welcome / Let's get you started. First, ；动作 click",
+    "step_02": "Step 2: MainActivity（MainActivity）：Choose Storage Location / Select a folde；动作 click",
+    "step_03": "Step 3: MainActivity（MainActivity）：Permissions / Background Battery Usage /；动作 swipe",
+    "step_04": "Step 4: MainActivity（MainActivity）：Contacts permission / To sync and lookup；动作 click",
+    "step_05": "Step 5: MainActivity（MainActivity）：Restricted settings / Due to security re；动作 click",
+    "step_06": "Step 6: [无障碍列表页]（InstalledAppDetails）：Back / App info / Search settings；动作 system_button",
+    "step_07": "Step 7: MainActivity（MainActivity）：Restricted settings / Due to security re；动作 click",
+    "step_08": "Step 8: [无障碍列表页]（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 terminate",
+    "post_jump_0.8s": "跳后探针 +0.8s（InstalledAppDetails）：无文本；动作 wait(0.8s)",
+    "post_jump_2.0s": "跳后探针 +2.0s（InstalledAppDetails）：无文本；动作 wait(2.0s)",
+    "detail_1_service_detail_page": "服务详情页（SubSettings）：Back / Sefirah / Use Sefirah；动作 inspect_detail_or_warning",
+    "detail_2_system_warning_dialog": "系统警告弹窗(点Deny)（SubSettings）：Allow Sefirah to have full control of yo；动作 inspect_detail_or_warning",
+    "refusal_2.0s": "拒权返回 +2.0s（MainActivity）：Contacts permission / To sync and lookup；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN",
+    "refusal_10.5s": "拒权返回 +10.5s（MainActivity）：Contacts permission / To sync and lookup；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN"
+  }
+}

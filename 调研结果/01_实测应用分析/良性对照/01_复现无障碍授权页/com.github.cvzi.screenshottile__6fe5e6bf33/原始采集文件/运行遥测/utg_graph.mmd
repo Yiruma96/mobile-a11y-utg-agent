@@ -1,0 +1,14 @@
+flowchart TD
+    N_489d20d34d44["Step 1: MainActivity\nScreenshot Tile"]
+    N_056aeb6ec0c3["Step 2: MainActivity\nGoogle Play Prominent "]
+    N_e5c89de26471["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_e963f978b4d5["Step 3: SubSettings\nBack"]
+    N_ce3672f9d9cf["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Screenshot Tile "]
+    N_8c1c153ee24f["Step 3: MainActivity\nScreenshot Tile"]
+    N_489d20d34d44 -->|"ui_click: click([9] Switch text='Native Me"| N_056aeb6ec0c3
+    N_056aeb6ec0c3 -->|"ui_click: click([4] Button text='I AGREE' "| N_e5c89de26471
+    N_e5c89de26471 -->|"detail_probe: click_service()"| N_e963f978b4d5
+    N_e963f978b4d5 -->|"warning_probe: click_use_service_switch"| N_ce3672f9d9cf
+    N_e5c89de26471 -->|"refusal_probe: Back_refuse"| N_8c1c153ee24f
+    N_8c1c153ee24f -->|"refusal_probe: wait(5.5s)_after_refusal"| N_8c1c153ee24f
+    N_8c1c153ee24f -->|"refusal_probe: wait(10.5s)_after_refusal"| N_8c1c153ee24f

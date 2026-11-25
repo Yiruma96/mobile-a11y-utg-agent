@@ -1,0 +1,372 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_017__6fe5e6bf33",
+  "label": "benign",
+  "family_or_category": "显示调节、截屏与分屏效率",
+  "static_visibility": "clear",
+  "target_package": "com.github.cvzi.screenshottile",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "489d20d34d44",
+  "hook_node_ids": [
+    "e5c89de26471",
+    "ce3672f9d9cf"
+  ],
+  "nodes": [
+    {
+      "node_id": "489d20d34d44",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.github.cvzi.screenshottile",
+      "abilityName": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Screenshot Tile",
+        "More Settings",
+        "Before you can use this app, you need to add the tile/button to the quick settings. If you don't know how to do this, take a look at the Tutorial.\n\nThis app supports two different methods to take screenshots:",
+        "Legacy Method",
+        "The legacy method to take screenshots uses the screen recording features of Android.\nWhen you take a screenshot, no sound is played. A silent notification is shown to open, share or edit the screenshot. The notification can be disabled in the app settings.\nBefore you can take a screenshot you need to add the tile to the quick settings, accept the permission to record the screen and the permission to access the internal storage to save the image file.\nSee the tutorial on how to do it.\n\nOn some phones this method does not work, especially on newer Androids (9.0+) it is unstable and it may ask for permission on every single screenshot. If that happens you should use the native method below.",
+        "Tutorial",
+        "Native Method",
+        "The native method to take screenshots simulates a press of Home+Power button and uses the screenshot method of your device.\nYou can change in the app settings (under Use system defaults) whether you want the default system behaviour of your phone (notifications, screenshot editor, standard folder for pictures) or if you want to use the app's settings (a custom storage folder and notifications by this app).\n\nBefore you can take a screenshot you need to enable the accessibility service in the phone settings. Press the button below to open the accessibility settings."
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "056aeb6ec0c3",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.github.cvzi.screenshottile",
+      "abilityName": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play Prominent Disclosure & Consent Requirement",
+        "Google Play requires prominent disclosure of the Accessibility Services API’s use for an app that is not an accessibility tool. This app - “Screenshot Tile [No root]“ - is not an accessibility tool. Since users may not reasonably expect that their personal and sensitive user data will be required to provide or improve the policy compliant features or functionality within this app, a prominent disclosure of the usage of the Accessibility Services API by this app and a declaration of the data collection and data sharing within this app is required:\nThis app requires access to Accessibility Services API in order to take a screenshot when the app is not in use. Access to Accessibility Services API will allow this app to record the screen. Screen recordings will be used to create screenshot images. Data is neither collected nor shared by this app using the accessibility capabilities.\n\nDo you agree to authorize this app to gain access to the Accessibility Services API and to use the accessibility capabilities to record the screen?",
+        "I REFUSE",
+        "I AGREE"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "e5c89de26471",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Screenshot Tile",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "e963f978b4d5",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Screenshot Tile",
+        "Use Screenshot Tile",
+        "OPTIONS",
+        "Screenshot Tile shortcut",
+        "Off",
+        "Shortcut settings",
+        "If this service is enabled, the app can simulate a power+home button press to take screenshots.\nOn some devices enabling this method may be more stable or faster than the default method.\n\nIf you enable the service here, you also need to enable the native method in the app settings."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "ce3672f9d9cf",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Screenshot Tile to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    },
+    {
+      "node_id": "8c1c153ee24f",
+      "first_step": 3,
+      "role": "refusal_probe",
+      "bundleName": "com.github.cvzi.screenshottile",
+      "abilityName": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Screenshot Tile",
+        "More Settings",
+        "Before you can use this app, you need to add the tile/button to the quick settings. If you don't know how to do this, take a look at the Tutorial.\n\nThis app supports two different methods to take screenshots:",
+        "Legacy Method",
+        "The legacy method to take screenshots uses the screen recording features of Android.\nWhen you take a screenshot, no sound is played. A silent notification is shown to open, share or edit the screenshot. The notification can be disabled in the app settings.\nBefore you can take a screenshot you need to add the tile to the quick settings, accept the permission to record the screen and the permission to access the internal storage to save the image file.\nSee the tutorial on how to do it.\n\nOn some phones this method does not work, especially on newer Androids (9.0+) it is unstable and it may ask for permission on every single screenshot. If that happens you should use the native method below.",
+        "Tutorial",
+        "Native Method",
+        "⚠️ Accessibility service is disabled"
+      ],
+      "harmony_layout_json": "step_03_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_03_refusal_2000ms_layout.xml",
+      "screenshot": "step_03_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "489d20d34d44",
+      "to": "056aeb6ec0c3",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch text=\"Native Method\" id=switchNative (click,unchecked) center=(255,1922))"
+    },
+    {
+      "from": "056aeb6ec0c3",
+      "to": "e5c89de26471",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"I AGREE\" id=button1 (click) center=(870,1971))"
+    },
+    {
+      "from": "e5c89de26471",
+      "to": "e963f978b4d5",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "e963f978b4d5",
+      "to": "ce3672f9d9cf",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "e5c89de26471",
+      "to": "8c1c153ee24f",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "8c1c153ee24f",
+      "to": "8c1c153ee24f",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "8c1c153ee24f",
+      "to": "8c1c153ee24f",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Screenshot Tile Use Screenshot Tile OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Screenshot Tile",
+        "Use Screenshot Tile",
+        "OPTIONS",
+        "Screenshot Tile shortcut",
+        "Off",
+        "Shortcut settings",
+        "If this service is enabled, the app can simulate a power+home button press to take screenshots.\nOn some devices enabling this method may be more stable or faster than the default method.\n\nIf you enable the service here, you also need to enable the native method in the app settings."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Screenshot Tile to have full control of",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Screenshot Tile to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.github.cvzi.screenshottile",
+      "top_activity": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Screenshot Tile",
+        "More Settings",
+        "Before you can use this app, you need to add the tile/button to the quick settings. If you don't know how to do this, take a look at the Tutorial.\n\nThis app supports two different methods to take screenshots:",
+        "Legacy Method",
+        "The legacy method to take screenshots uses the screen recording features of Android.\nWhen you take a screenshot, no sound is played. A silent notification is shown to open, share or edit the screenshot. The notification can be disabled in the app settings.\nBefore you can take a screenshot you need to add the tile to the quick settings, accept the permission to record the screen and the permission to access the internal storage to save the image file.\nSee the tutorial on how to do it.\n\nOn some phones this method does not work, especially on newer Androids (9.0+) it is unstable and it may ask for permission on every single screenshot. If that happens you should use the native method below.",
+        "Tutorial",
+        "Native Method",
+        "⚠️ Accessibility service is disabled"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.github.cvzi.screenshottile",
+      "top_activity": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Screenshot Tile",
+        "More Settings",
+        "Before you can use this app, you need to add the tile/button to the quick settings. If you don't know how to do this, take a look at the Tutorial.\n\nThis app supports two different methods to take screenshots:",
+        "Legacy Method",
+        "The legacy method to take screenshots uses the screen recording features of Android.\nWhen you take a screenshot, no sound is played. A silent notification is shown to open, share or edit the screenshot. The notification can be disabled in the app settings.\nBefore you can take a screenshot you need to add the tile to the quick settings, accept the permission to record the screen and the permission to access the internal storage to save the image file.\nSee the tutorial on how to do it.\n\nOn some phones this method does not work, especially on newer Androids (9.0+) it is unstable and it may ask for permission on every single screenshot. If that happens you should use the native method below.",
+        "Tutorial",
+        "Native Method",
+        "⚠️ Accessibility service is disabled"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.github.cvzi.screenshottile",
+      "top_activity": "com.github.cvzi.screenshottile.activities.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Screenshot Tile",
+        "More Settings",
+        "Before you can use this app, you need to add the tile/button to the quick settings. If you don't know how to do this, take a look at the Tutorial.\n\nThis app supports two different methods to take screenshots:",
+        "Legacy Method",
+        "The legacy method to take screenshots uses the screen recording features of Android.\nWhen you take a screenshot, no sound is played. A silent notification is shown to open, share or edit the screenshot. The notification can be disabled in the app settings.\nBefore you can take a screenshot you need to add the tile to the quick settings, accept the permission to record the screen and the permission to access the internal storage to save the image file.\nSee the tutorial on how to do it.\n\nOn some phones this method does not work, especially on newer Androids (9.0+) it is unstable and it may ask for permission on every single screenshot. If that happens you should use the native method below.",
+        "Tutorial",
+        "Native Method",
+        "⚠️ Accessibility service is disabled"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "com.github.cvzi.screenshottile__6fe5e6bf33",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用主界面把截图功能包装成「传统(录屏)／原生(无障碍模拟电源+Home键)」两种选择，用户开启原生方式后立刻弹出 Google Play 醒目披露弹窗，以「仅用于截图、不收集不共享」话术索取无障碍 API；同意后被引导到系统无障碍设置与服务详情页，再触发「完全控制设备」系统警告，拒绝则回到主界面并永久挂着「无障碍服务已禁用」提示，被困在诱饵页。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「使用前需先把磁贴/按钮加入快捷设置，不会操作请看教程」（主界面 step_01）",
+    "英文 -> 「原生方式模拟按下 Home+电源键，调用设备自带截图；需先在系统设置中启用无障碍服务，点击下方按钮打开」（主界面 step_01）",
+    "英文 -> 「本应用非无障碍工具，但需访问无障碍服务 API，才能在应用未使用时截图；录屏仅用于生成截图，数据既不收集也不共享」（醒目披露弹窗 step_02）",
+    "英文 -> 按钮「I REFUSE 我拒绝」「I AGREE 我同意」，把同意设为唯一前进路径（step_02）",
+    "英文 -> 「启用此服务后，应用可模拟电源+Home 键截图，某些设备上比默认方式更稳更快；在系统里启用后还需在应用设置中打开原生方式」（服务详情页）",
+    "英文 -> 「允许 Screenshot Tile 完全控制你的设备？完全控制只适合辅助无障碍需求的应用，大多数应用不适用」，并列出可读取屏幕全部内容、可在其他应用上显示内容、可代替你操作应用（系统警告弹窗）",
+    "英文 -> 主界面常驻警告「⚠️ Accessibility service is disabled 无障碍服务已被禁用」，作为拒权后仍留在此页的提示（refusal_2.0s/10.5s）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面：列出「传统」(录屏静音截图)与「原生」(模拟电源+Home键)两种方式。本步打开原生开关，触发披露流程。",
+    "step_02": "Google Play 醒目披露弹窗：称需无障碍 API 才能离屏截图、数据不收集不共享，问是否授权。本步点「I AGREE」。",
+    "step_03": "系统无障碍设置列表：下载应用区显示 Screenshot Tile 状态为 Off 关闭。采集到无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停在无障碍设置页，界面文本为空，无通知横幅、无遮罩，页面状态平稳。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：无障碍设置页无变化，未见浮层或通知，应用也未再弹出补充说明话术。",
+    "detail_1_service_detail_page": "服务详情页：「Use Screenshot Tile」开关默认关，说明启用后可模拟电源+Home键截图，但还须在应用内开启原生方式。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗：称授予后可完全控制设备、读取屏幕内容并代你操作，提供「Allow 允许」与「Deny 拒绝」。",
+    "refusal_2.0s": "点 Deny 返回主界面 2 秒：页面内容基本未变，仅底部新增「⚠️ 无障碍服务已禁用」提示，无其他出口。",
+    "refusal_10.5s": "拒权后 10.5 秒：仍停在主界面诱饵页，无障碍禁用警告不变，无跳转或绕过路径，判定被困。"
+  }
+}

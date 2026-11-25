@@ -1,0 +1,22 @@
+flowchart TD
+    N_a0499a1410c8["Step 1: MainActivity\nWelcome"]
+    N_9494f3595a36["Step 2: MainActivity\nChoose Storage Locatio"]
+    N_9afdfbcd382b["Step 3: MainActivity\nPermissions"]
+    N_41b121d9f59c["Step 4: MainActivity\nContacts permission"]
+    N_534b2dd87a8e["Step 5: MainActivity\nRestricted settings"]
+    N_d8f45683e65d["Step 6: InstalledAppDetails [HOOK_APP_DETAILS]\nBack"]
+    N_ebf1339b1754["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_859cef3dc60c["Step 8: SubSettings\nBack"]
+    N_7ff12bf6fb4b["Step 8: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Sefirah to have "]
+    N_a0499a1410c8 -->|"ui_click: click([9] TextView text='Next' c"| N_9494f3595a36
+    N_9494f3595a36 -->|"ui_click: click([7] View (click) center=(9"| N_9afdfbcd382b
+    N_9afdfbcd382b -->|"ui_swipe: swipe([540, 1800])"| N_41b121d9f59c
+    N_41b121d9f59c -->|"ui_click: click([34] View (click) center=("| N_534b2dd87a8e
+    N_534b2dd87a8e -->|"ui_click: click([3] View (click) center=(2"| N_d8f45683e65d
+    N_d8f45683e65d -->|"ui_system_button: system_button(Back)"| N_534b2dd87a8e
+    N_534b2dd87a8e -->|"ui_click: click([6] TextView text='Accessi"| N_ebf1339b1754
+    N_ebf1339b1754 -->|"detail_probe: click_service()"| N_859cef3dc60c
+    N_859cef3dc60c -->|"warning_probe: click_use_service_switch"| N_7ff12bf6fb4b
+    N_ebf1339b1754 -->|"refusal_probe: Back_refuse"| N_41b121d9f59c
+    N_41b121d9f59c -->|"refusal_probe: wait(5.5s)_after_refusal"| N_41b121d9f59c
+    N_41b121d9f59c -->|"refusal_probe: wait(10.5s)_after_refusal"| N_41b121d9f59c

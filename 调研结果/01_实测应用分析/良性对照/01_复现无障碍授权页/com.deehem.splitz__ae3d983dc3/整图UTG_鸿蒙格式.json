@@ -1,0 +1,334 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_016__ae3d983dc3",
+  "label": "benign",
+  "family_or_category": "显示调节、截屏与分屏效率",
+  "static_visibility": "clear",
+  "target_package": "com.deehem.splitz",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "928adf75b4a9",
+  "hook_node_ids": [
+    "c597d7f1377e",
+    "13d0daf6339f",
+    "23a4728883cb"
+  ],
+  "nodes": [
+    {
+      "node_id": "928adf75b4a9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.deehem.splitz",
+      "abilityName": "com.deehem.splitz.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Automation Service Disabled",
+        "Requires offline Accessibility permission to automate split screens.",
+        "Enable",
+        "Prevent Background Kills",
+        "Exempt Splitz from battery optimization to keep automation instant.",
+        "Later",
+        "Exempt",
+        "Create Your First Split-Screen Shortcut",
+        "Tap the + icon below to pair two apps, assign a folder, and pin them directly to your home screen.",
+        "Splitz",
+        "Add Shortcut"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "c597d7f1377e",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Splitz",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "13d0daf6339f",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Splitz",
+        "Use Splitz",
+        "OPTIONS",
+        "Splitz shortcut",
+        "Off",
+        "Shortcut settings",
+        "Splitz uses this Accessibility Service exclusively to automate placing your selected app pairs into split screen. The service is required for automatic split-screen placement; without it, apps will only open sequentially. Splitz operates 100% offline, without internet access, and does not read, collect, or transmit screen contents, keystrokes, or personal data."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "23a4728883cb",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Splitz to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "928adf75b4a9",
+      "to": "c597d7f1377e",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"Enable\" center=(917,400))"
+    },
+    {
+      "from": "c597d7f1377e",
+      "to": "13d0daf6339f",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "13d0daf6339f",
+      "to": "23a4728883cb",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "c597d7f1377e",
+      "to": "928adf75b4a9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "928adf75b4a9",
+      "to": "928adf75b4a9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "928adf75b4a9",
+      "to": "928adf75b4a9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Splitz Use Splitz OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Splitz",
+        "Use Splitz",
+        "OPTIONS",
+        "Splitz shortcut",
+        "Off",
+        "Shortcut settings",
+        "Splitz uses this Accessibility Service exclusively to automate placing your selected app pairs into split screen. The service is required for automatic split-screen placement; without it, apps will only open sequentially. Splitz operates 100% offline, without internet access, and does not read, collect, or transmit screen contents, keystrokes, or personal data."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Splitz to have full control of your dev",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Splitz to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.deehem.splitz",
+      "top_activity": "com.deehem.splitz.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Automation Service Disabled",
+        "Requires offline Accessibility permission to automate split screens.",
+        "Enable",
+        "Prevent Background Kills",
+        "Exempt Splitz from battery optimization to keep automation instant.",
+        "Later",
+        "Exempt",
+        "Create Your First Split-Screen Shortcut",
+        "Tap the + icon below to pair two apps, assign a folder, and pin them directly to your home screen.",
+        "Splitz"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.deehem.splitz",
+      "top_activity": "com.deehem.splitz.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Automation Service Disabled",
+        "Requires offline Accessibility permission to automate split screens.",
+        "Enable",
+        "Prevent Background Kills",
+        "Exempt Splitz from battery optimization to keep automation instant.",
+        "Later",
+        "Exempt",
+        "Create Your First Split-Screen Shortcut",
+        "Tap the + icon below to pair two apps, assign a folder, and pin them directly to your home screen.",
+        "Splitz"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.deehem.splitz",
+      "top_activity": "com.deehem.splitz.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Automation Service Disabled",
+        "Requires offline Accessibility permission to automate split screens.",
+        "Enable",
+        "Prevent Background Kills",
+        "Exempt Splitz from battery optimization to keep automation instant.",
+        "Later",
+        "Exempt",
+        "Create Your First Split-Screen Shortcut",
+        "Tap the + icon below to pair two apps, assign a folder, and pin them directly to your home screen.",
+        "Splitz"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用入口 MainActivity 以「自动化服务未启用」卡片引导开启离线无障碍与电池优化豁免，跳转系统无障碍列表及 Splitz 服务详情，触发系统全控制警告；拒绝后无崩溃或强制循环，静默返回主页并降级为普通分屏快捷方式，整体属合规工具型引导。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 需开启离线无障碍权限以实现自动分屏（MainActivity）",
+    "英文 -> 将 Splitz 排除电池优化以保持自动化即时生效（MainActivity）",
+    "英文 -> 声称无障碍服务仅用于自动将所选应用对放入分屏（服务详情页）",
+    "英文 -> 强调完全离线、不读取/收集/传输屏幕内容、按键或个人数据（服务详情页）",
+    "英文 -> 系统警告称允许 Splitz 完全控制设备，多数应用不适用（系统警告弹窗）",
+    "英文 -> 引导点击 + 图标配对两个应用、分配文件夹并固定到主屏（MainActivity）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面：自动化服务禁用卡片引导点 Enable 开无障碍，提示电池优化豁免并引导新建分屏快捷方式；本步点击 Enable，无通知/遮罩。",
+    "step_02": "系统无障碍列表：DOWNLOADED APPS 下 Splitz 显示 Off，含屏幕阅读器与显示项；采集到无障碍设置 Hook/探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后 +0.8s 探针：仍处系统无障碍设置页，无可见文案与操作，遮罩计数 0、无通知横幅，等待观察无弹窗。",
+    "post_jump_2.0s": "跳转后 +2.0s 探针：仍停留系统无障碍设置页，无新增文案或弹窗，遮罩计数 0、无通知，未发生强制跳转。",
+    "detail_1_service_detail_page": "Splitz 无障碍服务详情：Use Splitz 与 Splitz shortcut 均关闭；说明称仅用于自动分屏、完全离线且不采集数据；本步仅检查详情。",
+    "detail_2_system_warning_dialog": "系统全控制警告：称允许 Splitz 完全控制设备，多数应用不适用；列明可查看/控制屏幕与代操作；本步检查警告并点 Deny，遮罩 0。",
+    "refusal_2.0s": "拒绝授权后 +2.0s：已回 MainActivity，仍显示自动化禁用卡片与 Enable/Later/Exempt，未崩溃或循环；状态为优雅停留/降级。",
+    "refusal_10.5s": "拒绝后 +10.5s：主界面保持稳定，未反复弹窗或强制跳转；仅保留启用引导，属优雅降级，无通知与遮罩。"
+  }
+}

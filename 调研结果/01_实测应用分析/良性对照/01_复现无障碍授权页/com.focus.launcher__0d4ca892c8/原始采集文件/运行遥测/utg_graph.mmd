@@ -1,0 +1,13 @@
+flowchart TD
+    N_2d644543e226["Step 1: SettingsActivity\nFocus"]
+    N_b1d981cefa96["Step 2: SettingsActivity\n←"]
+    N_eec06514ee58["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_914dd8f4bd2e["Step 3: SubSettings\nBack"]
+    N_522e71584f37["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Focus app timers"]
+    N_2d644543e226 -->|"ui_click: click([11] View (click) center=("| N_b1d981cefa96
+    N_b1d981cefa96 -->|"ui_click: click([17] TextView text='Turn o"| N_eec06514ee58
+    N_eec06514ee58 -->|"detail_probe: click_service()"| N_914dd8f4bd2e
+    N_914dd8f4bd2e -->|"warning_probe: click_use_service_switch"| N_522e71584f37
+    N_eec06514ee58 -->|"refusal_probe: Back_refuse"| N_b1d981cefa96
+    N_b1d981cefa96 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_b1d981cefa96
+    N_b1d981cefa96 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_b1d981cefa96

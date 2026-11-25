@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "Step 1: MainActivity（MainActivity）：Welcome / Let's get you started. First, ；动作 click",
+    "step_02": "Step 2: MainActivity（MainActivity）：Choose Storage Location / Select a folde；动作 click",
+    "step_03": "Step 3: MainActivity（MainActivity）：Permissions / Background Battery Usage /；动作 swipe",
+    "step_04": "Step 4: MainActivity（MainActivity）：Contacts permission / To sync and lookup；动作 click",
+    "step_05": "Step 5: MainActivity（MainActivity）：Restricted settings / Due to security re；动作 click",
+    "step_06": "Step 6: [无障碍列表页]（InstalledAppDetails）：Back / App info / Search settings；动作 system_button",
+    "step_07": "Step 7: MainActivity（MainActivity）：Restricted settings / Due to security re；动作 click",
+    "step_08": "Step 8: [无障碍列表页]（Settings$AccessibilitySettingsActivity）：Back / Accessibility / Search settings；动作 terminate",
+    "post_jump_0.8s": "跳后探针 +0.8s（InstalledAppDetails）：无文本；动作 wait(0.8s)",
+    "post_jump_2.0s": "跳后探针 +2.0s（InstalledAppDetails）：无文本；动作 wait(2.0s)",
+    "detail_1_service_detail_page": "服务详情页（SubSettings）：Back / Sefirah / Use Sefirah；动作 inspect_detail_or_warning",
+    "detail_2_system_warning_dialog": "系统警告弹窗(点Deny)（SubSettings）：Allow Sefirah to have full control of yo；动作 inspect_detail_or_warning",
+    "refusal_2.0s": "拒权返回 +2.0s（MainActivity）：Contacts permission / To sync and lookup；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN",
+    "refusal_10.5s": "拒权返回 +10.5s（MainActivity）：Contacts permission / To sync and lookup；动作 Back_refuse -> TRAPPED_ON_LURE_SCREEN"
+  }
+}

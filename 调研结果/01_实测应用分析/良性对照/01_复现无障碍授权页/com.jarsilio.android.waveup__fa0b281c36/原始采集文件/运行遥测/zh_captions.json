@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "应用从主界面引导开启服务与锁屏，依次弹出可忽略的手机/蓝牙权限说明，再以无障碍说明引导进入系统无障碍设置；系统警告页拒绝授权后回到主界面并停留在引导页，运行通知常驻，形成拒权陷阱态。整体话术较透明且允许拒绝，但拒权后的停留/回退路径是主要风险点。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 「Turn on screen when you wave over the proximity sensor.」中文意译：挥手经过距离传感器时点亮屏幕。（主界面 Wave mode 说明）",
+    "English -> 「Turn off and lock screen when the proximity sensor is covered.」中文意译：遮挡距离传感器时关闭并锁定屏幕。（主界面 Lock screen 说明）",
+    "English -> 手机权限弹窗称仅用于判断是否正在通话以便通话时停用，不查询/存储通话信息，也不会拨打电话。（手机权限弹窗）",
+    "English -> 蓝牙权限弹窗称仅用于判断通话时是否连接蓝牙耳机，不作他用。（蓝牙权限弹窗）",
+    "English -> 无障碍说明称锁屏需将 WaveUp 设为无障碍服务，并提醒该权限可监视用户，但声称使用锁屏全局动作且开源可查。（无障碍说明弹窗）",
+    "English -> 「Allow WaveUp to have full control of your device?」中文意译：允许 WaveUp 完全控制你的设备？并说明可查看/控制屏幕与代操作应用。（系统无障碍警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "主界面 WaveUp：显示服务、挥手唤醒、口袋模式及锁屏开关；本步点击未勾选的 Lock screen 开关，试图触发无障碍说明。",
+    "step_02": "仍在主界面；因开关点击未生效，改点 Lock screen 整行容器，想弹出无障碍授权说明；通知栏尚无常驻通知。",
+    "step_03": "主界面同页：锁屏行呈灰色不可用，改为先点顶部服务区未勾选的 Enable 开关，以启用 WaveUp 主服务。",
+    "step_04": "手机权限说明弹窗：称仅用于识别通话状态并在通话时暂停，不查询/存储通话信息；本步点 IGNORE 忽略，未授权。",
+    "step_05": "蓝牙权限说明弹窗：称仅判断通话时是否连接耳机，不作他用；本步点 IGNORE 忽略该可选权限。",
+    "step_06": "返回主界面，服务已启用并出现 WaveUp is running 常驻通知；本步再次点未勾选的 Lock screen 开关，准备触发无障碍说明。",
+    "step_07": "无障碍说明弹窗：标题意为锁屏需无障碍服务，正文提醒该权限可监视用户；本步点 OK 继续，进入系统设置。",
+    "step_08": "系统无障碍列表页：下载应用下 WaveUp 显示 Off；抓取到无障碍设置钩子后自动终止，未点开应用，常驻通知仍在。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍列表，未捕获任何 UI 文本；遮罩数为0，WaveUp 运行通知常驻。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为系统无障碍列表且无文本内容；无遮罩，WaveUp 运行通知保持常驻。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示 WaveUp、Use WaveUp、选项及 WaveUp shortcut 为 Off；说明为 No description provided，本步仅查看详情。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：询问是否允许 WaveUp 完全控制设备，列明可查看/控制屏幕与代操作；本页拒绝 Deny，未授权。",
+    "refusal_2.0s": "拒权后2秒回到 WaveUp 主界面，仅露出服务/挥手/口袋等上半屏；系统判定停在诱导页，运行通知仍在，未恢复原流程。",
+    "refusal_10.5s": "拒权后10.5秒仍停在 WaveUp 主界面同区域，未出现下一步或退出引导；判定为困在诱导页，WaveUp 运行通知持续常驻。"
+  }
+}
