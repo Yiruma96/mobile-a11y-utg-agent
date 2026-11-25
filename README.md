@@ -180,7 +180,8 @@ python tests/test_xml_to_harmony_converter.py
 | [`docs/诱导用户开启无障碍行为模式清单.md`](./docs/诱导用户开启无障碍行为模式清单.md) | 面向纯 UTG 检测机制设计的 **25 条恶意行为模式清单**、**5 类黄金捕获页优先级矩阵**、**3 大良性误报雷区**与 **82 家族速查表** |
 | [`docs/Android无障碍权限诱骗样本分析与正邪对照报告.md`](./docs/Android无障碍权限诱骗样本分析与正邪对照报告.md) | 跨十年（2014–2026）正邪对照完整实证分析报告 |
 | [`results/dataset_provenance_1769.csv`](./results/dataset_provenance_1769.csv) | 1,769 个核验无障碍 APK 的公开来源与 SHA-256 溯源台账（MalRadar + MalwareBazaar + F-Droid / IzzyOnDroid / GitHub） |
-| [`results/per_app_reports/INDEX.md`](./results/per_app_reports/INDEX.md) | **418 份「一应用一文件」代码逆向行为分析报告**（348 恶意覆盖 82/82 全家族 + 70 良性覆盖 11/11 全品类） |
+| [`results/per_app_reports/INDEX.md`](./results/per_app_reports/INDEX.md) | **418 份「一应用一文件」代码逆向行为分析报告**（348 恶意覆盖 82/82 全家族 + 70 良性覆盖 11/11 全品类），及一一对应总表 [`REPORT_APK_UTG_MANIFEST.csv`](./results/per_app_reports/REPORT_APK_UTG_MANIFEST.csv) |
+| [`samples/`](./samples/README.md) | 本地 418 款对应 APK 样本存放目录（按与报告一一对应命名；`.gitignore` 已严格屏蔽 `*.apk`，**绝不提交样本二进制至公开仓库**） |
 | [`results/dynamic_utg_showcase/SHOWCASE_INDEX.md`](./results/dynamic_utg_showcase/SHOWCASE_INDEX.md) | 12 组全链路动态 UTG 精选实证集（含中文连环画 PNG、每步原始截屏、Android XML、鸿蒙 JSON 与 Mermaid UTG 流程图） |
 
 ---
