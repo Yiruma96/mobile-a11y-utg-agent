@@ -1,0 +1,292 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_174__a422450251",
+  "label": "malicious",
+  "family_or_category": "Lucy",
+  "static_visibility": "clear",
+  "target_package": "co1m.andr53oid.gohpat",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [
+    "53c3f199e93c"
+  ],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "02b96e030160",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "co1m.andr53oid.gohpat",
+      "abilityName": "co1m.andr53oid.gohpat.Admin53Activity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Attention!",
+        "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on!",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "53c3f199e93c",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "78978e4d4acf",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Streaming Video Optimization (SVO)                                          .",
+        "Use Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "b285dcd3d8c9",
+      "first_step": 3,
+      "role": "system_warning_dialog",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. to have full control of your device?"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "02b96e030160",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "02b96e030160",
+      "to": "53c3f199e93c",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "53c3f199e93c",
+      "to": "78978e4d4acf",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "78978e4d4acf",
+      "to": "b285dcd3d8c9",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "53c3f199e93c",
+      "to": "02b96e030160",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "02b96e030160",
+      "to": "02b96e030160",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "02b96e030160",
+      "to": "02b96e030160",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Streaming Video Optimization (SVO)                     ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Streaming Video Optimization (SVO)                                          .",
+        "Use Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Streaming Video Optimization (SVO)\n\n\n\n\n",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Streaming Video Optimization (SVO)\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. to have full control of your device?"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "co1m.andr53oid.gohpat",
+      "top_activity": "co1m.andr53oid.gohpat.Admin53Activity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention!",
+        "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on!",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "co1m.andr53oid.gohpat",
+      "top_activity": "co1m.andr53oid.gohpat.Admin53Activity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention!",
+        "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on!",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "co1m.andr53oid.gohpat",
+      "top_activity": "co1m.andr53oid.gohpat.Admin53Activity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention!",
+        "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on!",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Lucy__a422450251",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用从桌面抽屉进入，先由Admin53Activity以“启用SVO才能继续看视频”诱导点击OK，再跳转无障碍设置并展示SVO服务及“完全控制设备”授权警告；用户拒绝后仍反复重拉同一诱导弹窗，呈现典型无障碍滥用与拒权重诱链路。",
+  "observed_lure_rhetoric_zh": [
+    "English: Attention! To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on! -> “注意！要在手机上继续观看视频，必须启用流媒体视频优化（SVO），在菜单中选择线路并开启！”（Admin53Activity诱导弹窗）",
+    "English: Use Streaming Video Optimization (SVO) -> “使用流媒体视频优化（SVO）”（无障碍服务详情开关）",
+    "English: Allow Streaming Video Optimization (SVO) ... to have full control of your device? -> “允许流媒体视频优化（SVO）……完全控制您的设备？”（系统授权警告弹窗）",
+    "English: Streaming Video Optimization (SVO) -> “流媒体视频优化（SVO）”（无障碍服务列表与详情中的伪装名称）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面应用抽屉页，显示“Apps list/应用列表”和常用图标；点击进入应用列表寻找目标入口，无通知横幅与遮罩。",
+    "step_02": "恶意Admin53Activity弹出“Attention!”诱导框，意译需启用SVO才能继续看视频；点击OK跳系统设置，无通知与遮罩。",
+    "step_03": "系统无障碍设置页，“DOWNLOADED APPS”列出SVO服务；触发HOOK_A11Y_SETTINGS后自动终止，无通知横幅与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停在无障碍设置页，UI文本为空、遮罩为0；未见通知横幅，等待观察无变化。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为无障碍设置页且无可见文本，遮罩为0；未见通知横幅，页面保持静止。",
+    "detail_1_service_detail_page": "进入SVO服务详情子页，显示“Use Streaming Video Optimization”开关；仅检查详情/警告，遮罩0、无通知，为授权铺垫。",
+    "detail_2_system_warning_dialog": "弹出系统授权警告，询问是否允许SVO“完全控制设备”；仅检查未授权，遮罩0、无通知横幅，属高风险无障碍授权。",
+    "refusal_2.0s": "拒权返回后2秒，恶意应用重新弹出同一“Attention!”SVO诱导框；拒权未阻止重拉，无通知与遮罩。",
+    "refusal_10.5s": "拒权返回后10.5秒，Admin53Activity再次显示同一SVO诱导框并保留OK按钮；诱导弹窗反复重拉，无通知与遮罩。"
+  }
+}

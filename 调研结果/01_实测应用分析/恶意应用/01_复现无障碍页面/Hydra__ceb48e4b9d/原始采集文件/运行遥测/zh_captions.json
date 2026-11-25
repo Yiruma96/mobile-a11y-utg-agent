@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "该应用以仿冒的“Commerzbank Sicherheitszertifikat”为名，先用引导页诱导用户开启无障碍，再跳转到系统设置定位服务，并触发“完全控制设备”警告；用户拒绝后返回桌面，通知横幅持续驻留，无遮罩也无崩溃，表现为优雅停留或降级。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “为使最新版 Commerzbank Sicherheitszertifikat 正常工作，您需要启用无障碍功能。请按以下步骤操作：”（PermissionsActivity 权限引导页）",
+    "英语 -> “第1步-进入设置；第2步-打开无障碍；第3步-打开已安装服务；第4步-开启 Commerzbank Sicherheitszertifikat”（PermissionsActivity 权限引导页）",
+    "英语/德语品牌名 -> “Commerzbank Sicherheitszertifikat（德国商业银行安全证书）”（系统无障碍列表、服务详情页与通知横幅，仿冒银行安全证书名称）",
+    "英语 -> “允许 Commerzbank Sicherheitszertifikat 完全控制您的设备？完全控制适合辅助无障碍需求的应用，但不适合大多数应用。查看并控制屏幕 / 查看并执行操作 / 允许 / 拒绝”（系统全控警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "权限引导页：英文称需为仿冒银行证书启用无障碍并按四步设置，点击“GO TO SETTINGS”跳系统设置。",
+    "step_02": "无障碍列表页：见仿冒“Commerzbank Sicherheitszertifikat”状态为Off；通知横幅重复诱导语，采集设置钩子后终止。",
+    "post_jump_0.8s": "跳转后0.8秒仍为无障碍列表，文本为空、无遮罩；应用通知横幅持续显示诱导语，仅等待未操作。",
+    "post_jump_2.0s": "跳转后2.0秒仍停在无障碍列表空文本页，无遮罩；通知横幅持续驻留复述诱导，仅等待。",
+    "detail_1_service_detail_page": "服务详情页：显示启用项“Use Commerzbank Sicherheitszertifikat”、快捷键及“未提供描述”；本步仅检查，通知仍在。",
+    "detail_2_system_warning_dialog": "系统全控警告弹窗：英文称可查看并控制屏幕、代操作应用，含Allow/Deny；本步仅检查，随后拒绝。",
+    "refusal_2.0s": "拒绝后2秒回到桌面，无应用遮罩；通知横幅仍驻留，状态为优雅停留/降级，未见崩溃或进一步诱导页。",
+    "refusal_10.5s": "拒绝后10.5秒仍在桌面，无遮罩弹窗；仿冒证书通知持续驻留，应用保持优雅降级，未再请求无障碍。"
+  }
+}

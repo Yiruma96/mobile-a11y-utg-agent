@@ -1,0 +1,13 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_afbf7cd90f30["Step 2: xqbbbwdsrq\nВнимание"]
+    N_344973c5760f["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_4918699f9c28["Step 3: SubSettings\nBack"]
+    N_c34c82467013["Step 3: SubSettings\nAllow Android Video Op"]
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_afbf7cd90f30
+    N_afbf7cd90f30 -->|"ui_click: click([3] Button text='OK' id=bu"| N_344973c5760f
+    N_344973c5760f -->|"detail_probe: click_service()"| N_4918699f9c28
+    N_4918699f9c28 -->|"warning_probe: click_use_service_switch"| N_c34c82467013
+    N_344973c5760f -->|"refusal_probe: Back_refuse"| N_afbf7cd90f30
+    N_afbf7cd90f30 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_afbf7cd90f30
+    N_afbf7cd90f30 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_afbf7cd90f30

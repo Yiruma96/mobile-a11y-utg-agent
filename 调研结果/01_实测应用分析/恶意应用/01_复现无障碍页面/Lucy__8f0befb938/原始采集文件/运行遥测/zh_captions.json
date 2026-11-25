@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用从桌面启动后弹出“Attention!”谎称需开启 Streaming Video Optimization(SVO) 才能继续看视频，点击 OK 跳转无障碍设置；用户拒绝授权后返回，应用反复重弹同一诱导弹窗，形成拒权再诱导循环。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “注意！要在手机上继续观看视频，您必须启用流媒体视频优化（SVO），在菜单中选择该行并打开它！”（step_02 / refusal_2.0s / refusal_10.5s 诱导弹窗）",
+    "英语 -> “使用流媒体视频优化（SVO）”（服务详情页开关说明，伪装无障碍服务名称）",
+    "英语 -> “允许流媒体视频优化（SVO）完全控制您的设备吗？”（系统警告弹窗，披露高权限风险）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页；可见 Messages、Chrome、Search 等图标，无诱导文案；点击“Apps list”进入抽屉以寻找并启动目标应用。",
+    "step_02": "应用首屏弹“Attention!”：英语称须开启流媒体视频优化(SVO)才能继续看视频；点击 OK 后应跳转无障碍设置。",
+    "step_03": "系统无障碍设置页，下载应用列表出现“Streaming Video Optimization (SVO)”条目；探针捕获设置钩子后自动终止，未继续点击。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，无可见文本、无通知横幅、遮罩为 0；仅等待观察，无交互动作。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面仍为无障碍设置页，无文本与通知，遮罩为 0；未发生额外弹窗或自动点击。",
+    "detail_1_service_detail_page": "进入 SVO 服务详情页，显示“Use Streaming Video Optimization (SVO)”开关；以优化名义伪装无障碍服务，本步仅检查详情/警告未授权。",
+    "detail_2_system_warning_dialog": "系统高权限警告弹窗，英语询问是否允许 SVO 完全控制设备；遮罩为 0，本步检查警告并准备点 Deny 拒绝。",
+    "refusal_2.0s": "拒绝授权返回应用 2 秒后，同一“Attention!”诱导弹窗被重新拉起；仍要求开启 SVO 才能看视频，形成拒权循环。",
+    "refusal_10.5s": "拒权返回 10.5 秒后仍反复重弹相同诱导弹窗，文案与 OK 按钮不变；无通知/遮罩，显示强粘性再诱导。"
+  }
+}

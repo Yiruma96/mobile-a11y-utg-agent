@@ -1,0 +1,342 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_055__c565f4b9b3",
+  "label": "malicious",
+  "family_or_category": "Hydra",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.grand.thinpad",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "898d5670f8af",
+  "hook_node_ids": [
+    "ffe926a5d606",
+    "513f72149242"
+  ],
+  "nodes": [
+    {
+      "node_id": "898d5670f8af",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.grand.thinpad",
+      "abilityName": "com.grand.snail.bot.PermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "In order for the latest version of Chrome to work, you will need to enable accessibility. Please follow the steps below:",
+        "Step 1 - Go to “Settings”",
+        "Step 2 - Open “Accessibility”",
+        "Step 3 - Open “Installed Services”",
+        "Step 4 - Turn “Chrome” on",
+        "GO TO SETTINGS"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ffe926a5d606",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1c7ab72f7b20",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "513f72149242",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Chrome to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "898d5670f8af",
+      "to": "ffe926a5d606",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] Button text=\"GO TO SETTINGS\" id=bt_goto_settings (click) center=(539,1835))"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "1c7ab72f7b20",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "1c7ab72f7b20",
+      "to": "513f72149242",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Chrome to have full control of your dev",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Chrome to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Hydra__c565f4b9b3",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用伪装成 Chrome 无障碍授权引导：先展示启用辅助功能步骤并跳转系统设置，利用“Chrome”通知横幅持续诱导；进入服务详情和系统全控制警告后，若用户拒绝则退回桌面并保持静默降级，无崩溃或悬浮遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “为了让最新版 Chrome 正常工作，你需要启用无障碍功能，请按以下步骤操作”（PermissionsActivity 引导页）",
+    "英文 -> “步骤1：进入设置；步骤2：打开无障碍；步骤3：打开已安装服务；步骤4：开启 Chrome”（PermissionsActivity 引导页）",
+    "英文 -> 通知横幅标题为“Chrome”，正文重复“启用无障碍以让 Chrome 工作”的话术（系统无障碍列表页及后续页面）",
+    "英文 -> “使用 Chrome”；“未提供描述。”（无障碍服务详情页，冒充 Chrome 服务）",
+    "英文 -> “允许 Chrome 完全控制你的设备？”并说明可查看/控制屏幕、读取屏幕内容、悬浮显示、跟踪交互并代操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "PermissionsActivity 伪装 Chrome 引导页，英文称需启用无障碍并按四步操作，点击“GO TO SETTINGS”跳系统设置。",
+    "step_02": "系统无障碍列表显示 Chrome 为关闭状态，顶部有该应用冒名 Chrome 的通知横幅；采集到无障碍钩子与探针后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒仍停留无障碍列表，界面文本为空，仅见冒名 Chrome 的启用无障碍通知横幅，无悬浮遮罩。",
+    "post_jump_2.0s": "跳转后 2.0 秒仍为无障碍列表，无新增界面文本；冒名 Chrome 通知横幅持续存在，探针显示遮罩数为 0。",
+    "detail_1_service_detail_page": "进入 Chrome 无障碍服务详情页，显示“Use Chrome”“Chrome shortcut”等选项及“未提供描述”，通知横幅仍在。",
+    "detail_2_system_warning_dialog": "系统警告弹窗要求允许 Chrome 完全控制设备，列明可读屏、悬浮显示和代操作；保留允许/拒绝按钮。",
+    "refusal_2.0s": "拒绝授权后 2 秒回到桌面，应用未崩溃或弹窗，仅保留冒名 Chrome 通知横幅；结果为静默停留或降级。",
+    "refusal_10.5s": "拒绝授权后 10.5 秒仍在桌面，界面无变化，冒名 Chrome 通知横幅持续；证实拒权后静默降级不骚扰。"
+  }
+}

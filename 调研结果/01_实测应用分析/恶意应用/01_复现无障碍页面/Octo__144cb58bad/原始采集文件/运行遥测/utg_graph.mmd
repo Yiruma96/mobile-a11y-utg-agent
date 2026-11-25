@@ -1,0 +1,14 @@
+flowchart TD
+    N_35b66bf8bf89["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_6120a6fb1324["Step 3: p069f\n"]
+    N_97b8e356ca3c["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_44e9d54981b3["Step 4: SubSettings\nBack"]
+    N_112989f8c2c8["Step 4: p069f\nEnable Accessibility S"]
+    N_35b66bf8bf89 -->|"ui_click: click([3] Button text='Deny' id="| N_35b66bf8bf89
+    N_35b66bf8bf89 -->|"ui_click: click([4] Button text='Allow' id"| N_6120a6fb1324
+    N_6120a6fb1324 -->|"ui_click: click([628, 692])"| N_97b8e356ca3c
+    N_97b8e356ca3c -->|"detail_probe: click_service()"| N_44e9d54981b3
+    N_44e9d54981b3 -->|"warning_probe: click_use_service_switch"| N_112989f8c2c8
+    N_97b8e356ca3c -->|"refusal_probe: Back_refuse"| N_112989f8c2c8
+    N_112989f8c2c8 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_112989f8c2c8
+    N_112989f8c2c8 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_112989f8c2c8

@@ -1,0 +1,291 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_126__dac40ca71d",
+  "label": "malicious",
+  "family_or_category": "Lucy",
+  "static_visibility": "clear",
+  "target_package": "dtlrquunob.ntrbhppvnr.dbawnbxoxz",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [
+    "344973c5760f"
+  ],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "21323a4d9ada",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "dtlrquunob.ntrbhppvnr.dbawnbxoxz",
+      "abilityName": "dtlrquunob.ntrbhppvnr.dbawnbxoxz.uhqpnqvpnt",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "344973c5760f",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "4918699f9c28",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Android Video Optimization                                      .",
+        "Use Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "c34c82467013",
+      "first_step": 3,
+      "role": "system_warning_dialog",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. to have full control of your device?"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "21323a4d9ada",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "21323a4d9ada",
+      "to": "344973c5760f",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1321))"
+    },
+    {
+      "from": "344973c5760f",
+      "to": "4918699f9c28",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "4918699f9c28",
+      "to": "c34c82467013",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "344973c5760f",
+      "to": "21323a4d9ada",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "21323a4d9ada",
+      "to": "21323a4d9ada",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "21323a4d9ada",
+      "to": "21323a4d9ada",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Android Video Optimization                             ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Android Video Optimization                                      .",
+        "Use Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n. to have full control of your device?"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "dtlrquunob.ntrbhppvnr.dbawnbxoxz",
+      "top_activity": "dtlrquunob.ntrbhppvnr.dbawnbxoxz.uhqpnqvpnt",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "dtlrquunob.ntrbhppvnr.dbawnbxoxz",
+      "top_activity": "dtlrquunob.ntrbhppvnr.dbawnbxoxz.uhqpnqvpnt",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "dtlrquunob.ntrbhppvnr.dbawnbxoxz",
+      "top_activity": "dtlrquunob.ntrbhppvnr.dbawnbxoxz.uhqpnqvpnt",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Lucy__dac40ca71d",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用从桌面启动后显示俄语“视频优化”诱导弹窗，引导进入系统无障碍列表并打开伪装服务详情；用户拒绝系统高危授权后返回应用，诱饵弹窗被重新拉起，形成反复诱导。",
+  "observed_lure_rhetoric_zh": [
+    "俄语 -> “注意：要继续观看视频文件，需开启 Android Video Optimization（视频流优化），请启用它。”（step_02 及拒权后弹窗）",
+    "英文 -> “允许 Android Video Optimization 完全控制您的设备？”（detail_2 系统授权警告）",
+    "英文 -> “使用 Android Video Optimization”（detail_1 无障碍服务详情开关）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面应用列表页，显示 Apps list、Chrome 等；点击“Apps list”打开抽屉，以便定位并启动目标应用。",
+    "step_02": "恶意引导弹窗：俄语“注意”称看视频需开启 Android Video Optimization，仅有 OK；点击后跳转无障碍设置。",
+    "step_03": "系统无障碍列表页，下载应用中出现伪装的 Android Video Optimization；探针捕获无障碍设置钩子后终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，未读到界面文本，遮罩数为 0，继续等待观察。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：无障碍设置页无文本变化、无遮罩与通知横幅，等待后未见额外诱导层。",
+    "detail_1_service_detail_page": "无障碍服务详情页，显示 Android Video Optimization 及“使用…”开关说明；本步检查详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统高危授权警告弹窗，英文询问是否允许该服务完全控制设备；界面标注应点 Deny 拒绝。",
+    "refusal_2.0s": "拒权返回 2 秒后，应用重新弹出同一俄语“注意”诱饵，仍只有 OK，显示权限被拒即重启诱导。",
+    "refusal_10.5s": "拒权返回 10.5 秒后，同一俄语诱饵弹窗仍在，仅 OK 可点，持续循环索要无障碍授权。"
+  }
+}

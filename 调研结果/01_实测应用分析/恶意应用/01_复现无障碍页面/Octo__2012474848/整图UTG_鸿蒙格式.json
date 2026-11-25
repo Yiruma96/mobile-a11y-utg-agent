@@ -1,0 +1,328 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_106__2012474848",
+  "label": "malicious",
+  "family_or_category": "Octo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.freeroad11",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "96136c2cb688",
+  "hook_node_ids": [
+    "ffe926a5d606"
+  ],
+  "nodes": [
+    {
+      "node_id": "96136c2cb688",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Chrome to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "4979bb47193a",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.freeroad11",
+      "abilityName": "com.freeroad11.p031x",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "ffe926a5d606",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "a316287ba9a2",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Enable this service to protect your device"
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_03_refusal_2000ms_layout.xml",
+      "screenshot": "step_03_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "96136c2cb688",
+      "to": "4979bb47193a",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1276))"
+    },
+    {
+      "from": "4979bb47193a",
+      "to": "ffe926a5d606",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([551, 690])"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "a316287ba9a2",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "a316287ba9a2",
+      "to": "a316287ba9a2",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Enable this service to protect your device"
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Back Chrome Use Chrome",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Enable this service to protect your device"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Octo__2012474848",
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先申请忽略电池优化以保后台，再通过应用内空白WebView跳转系统无障碍列表，借伪造Chrome服务条目和“保护设备”话术诱导开启无障碍；审核拒权后应用未崩溃，退回桌面并降级停留，常驻伪Chrome通知。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “让应用始终在后台运行？”（系统电池优化请求页）",
+    "英文 -> “允许Chrome始终在后台运行可能缩短电池续航；稍后可在设置>应用和通知中更改。”（系统电池优化请求页）",
+    "英文 -> “启用此服务以保护你的设备”（无障碍服务详情页，伪装Chrome）",
+    "英文 -> “使用Chrome”/“Chrome快捷方式”/“按住音量键”（无障碍服务详情页选项，用于强化Chrome伪装）",
+    "英文占位 -> “String (Enable service)”/“String (Chrome)”（常驻通知横幅，伪装Chrome启用服务）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电池优化弹窗，英文诱导“让应用始终后台运行”，假借Chrome说明耗电；点Allow放行，顶部伪Chrome通知，无遮罩。",
+    "step_02": "应用内空白WebView页p031x，无文案，顶部伪Chrome通知；按坐标点预设“Open Settings”区域跳转无障碍设置，无遮罩。",
+    "step_03": "系统无障碍列表页，DOWNLOADED APPS下Chrome为Off；借伪造Chrome条目诱导开启服务，顶部伪通知驻留，采集Hook后终止。",
+    "post_jump_0.8s": "跳转无障碍列表后0.8秒探针：界面同前，无新增文案与遮罩；伪Chrome通知仍驻留，等待中未见授权。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍列表保持原状，无新增文案与遮罩；伪Chrome通知仍在，等待中未发生授权。",
+    "detail_1_service_detail_page": "无障碍服务详情页，英文显示Chrome/Use Chrome及“启用此服务以保护设备”诱导；顶部伪Chrome通知驻留，本步仅检查详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗场景，详情页仍含“启用此服务以保护设备”诱导；顶部伪Chrome通知驻留、无遮罩，本步检查后按Deny/返回。",
+    "refusal_2.0s": "拒权返回2.0秒：回桌面启动器，见Apps list/Chrome；拒权后应用未崩溃而降级停留，伪Chrome通知仍驻留，无遮罩。",
+    "refusal_10.5s": "拒权返回10.5秒：仍在桌面启动器，可见Apps list/Chrome；应用保持降级停留无进一步弹窗，伪Chrome通知持续驻留，无遮罩。"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用从桌面启动后显示俄语“视频优化”诱导弹窗，引导进入系统无障碍列表并打开伪装服务详情；用户拒绝系统高危授权后返回应用，诱饵弹窗被重新拉起，形成反复诱导。",
+  "observed_lure_rhetoric_zh": [
+    "俄语 -> “注意：要继续观看视频文件，需开启 Android Video Optimization（视频流优化），请启用它。”（step_02 及拒权后弹窗）",
+    "英文 -> “允许 Android Video Optimization 完全控制您的设备？”（detail_2 系统授权警告）",
+    "英文 -> “使用 Android Video Optimization”（detail_1 无障碍服务详情开关）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，显示 Apps list、Chrome 等；点击“Apps list”打开抽屉，以便定位并启动目标应用。",
+    "step_02": "恶意引导弹窗：俄语“注意”称看视频需开启 Android Video Optimization，仅有 OK；点击后跳转无障碍设置。",
+    "step_03": "系统无障碍列表页，下载应用中出现伪装的 Android Video Optimization；探针捕获无障碍设置钩子后终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，未读到界面文本，遮罩数为 0，继续等待观察。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：无障碍设置页无文本变化、无遮罩与通知横幅，等待后未见额外诱导层。",
+    "detail_1_service_detail_page": "无障碍服务详情页，显示 Android Video Optimization 及“使用…”开关说明；本步检查详情，无遮罩。",
+    "detail_2_system_warning_dialog": "系统高危授权警告弹窗，英文询问是否允许该服务完全控制设备；界面标注应点 Deny 拒绝。",
+    "refusal_2.0s": "拒权返回 2 秒后，应用重新弹出同一俄语“注意”诱饵，仍只有 OK，显示权限被拒即重启诱导。",
+    "refusal_10.5s": "拒权返回 10.5 秒后，同一俄语诱饵弹窗仍在，仅 OK 可点，持续循环索要无障碍授权。"
+  }
+}

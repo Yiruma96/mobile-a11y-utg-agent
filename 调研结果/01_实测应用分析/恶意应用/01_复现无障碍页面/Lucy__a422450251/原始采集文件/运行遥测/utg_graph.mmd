@@ -1,0 +1,13 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_02b96e030160["Step 2: Admin53Activity\nAttention!"]
+    N_53c3f199e93c["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_78978e4d4acf["Step 3: SubSettings\nBack"]
+    N_b285dcd3d8c9["Step 3: SubSettings\nAllow Streaming Video "]
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_02b96e030160
+    N_02b96e030160 -->|"ui_click: click([3] Button text='OK' id=bu"| N_53c3f199e93c
+    N_53c3f199e93c -->|"detail_probe: click_service()"| N_78978e4d4acf
+    N_78978e4d4acf -->|"warning_probe: click_use_service_switch"| N_b285dcd3d8c9
+    N_53c3f199e93c -->|"refusal_probe: Back_refuse"| N_02b96e030160
+    N_02b96e030160 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_02b96e030160
+    N_02b96e030160 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_02b96e030160

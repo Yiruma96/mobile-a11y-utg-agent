@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用从桌面应用抽屉启动后，以俄语弹窗谎称需开启“Android Video Optimization”才能继续看视频，点击 OK 跳转系统无障碍设置并诱导授予完全控制权限；用户拒绝返回后，恶意应用立即重放同一诱导弹窗，形成反复施压。",
+  "observed_lure_rhetoric_zh": [
+    "俄语 -> “注意：要继续观看视频文件，需开启 Android Video Optimization（视频流优化），请启用。”（Admin53Activity 诱导弹窗）",
+    "英语 -> “使用 Android Video Optimization”（无障碍服务详情页开关）",
+    "英语 -> “允许 Android Video Optimization 完全控制您的设备？”（系统无障碍授权警告）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用抽屉页，显示 Apps list、搜索及常用图标；无通知/遮罩，点击 Apps list 以查找并启动恶意应用。",
+    "step_02": "Admin53Activity 俄语弹窗称需开启 Android Video Optimization 才能看视频；无通知/遮罩，点唯一 OK 转向无障碍授权。",
+    "step_03": "系统无障碍设置页，DOWNLOADED APPS 下列出 Android Video Optimization；无通知/遮罩，命中 A11Y_SETTINGS 钩子后自动终止。",
+    "post_jump_0.8s": "仍停留在系统无障碍设置页，UI 文本未捕获；等待 0.8 秒，overlays=0，无通知横幅或遮罩出现。",
+    "post_jump_2.0s": "仍停留在系统无障碍设置页，UI 文本未捕获；等待 2.0 秒，overlays=0，无通知横幅或遮罩出现。",
+    "detail_1_service_detail_page": "无障碍服务详情页，含 Android Video Optimization 及启用开关；无通知/遮罩，执行查看详情/警告。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗，英文询问是否允许 Android Video Optimization 完全控制设备；无通知/遮罩，选择 Deny 拒绝。",
+    "refusal_2.0s": "拒权返回 2.0 秒，Admin53Activity 重放俄语诱导弹窗，仍称需开启视频优化；无遮罩，触发 RELAUNCHED_LURE_DIALOG。",
+    "refusal_10.5s": "拒权返回 10.5 秒，Admin53Activity 仍反复重放同一俄语诱导弹窗；无遮罩，再次触发 RELAUNCHED_LURE_DIALOG。"
+  }
+}

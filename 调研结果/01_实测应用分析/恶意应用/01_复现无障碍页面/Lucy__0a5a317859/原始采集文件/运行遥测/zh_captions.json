@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用从桌面应用抽屉进入伪装视频播放器，弹窗以“继续看视频须开启SVO”为由诱导跳转无障碍设置并申请完全控制设备的无障碍权限；用户拒绝后应用反复重弹同一诱导对话框（RELAUNCHED_LURE_DIALOG），呈现Lucy家族无障碍滥用与循环施压特征。",
+  "observed_lure_rhetoric_zh": [
+    "Attention -> 注意（step_02诱导弹窗、refusal_2.0s/refusal_10.5s重弹页）",
+    "To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select it in the menu and turn it on! -> 要在手机上继续观看视频，你必须启用“流媒体视频优化(SVO)”，在菜单中选中并开启它！（step_02、refusal_2.0s、refusal_10.5s）",
+    "Streaming Video Optimization (SVO) -> 流媒体视频优化(SVO)（step_03无障碍列表、detail_1服务详情、detail_2系统警告；伪装服务名）",
+    "Use Streaming Video Optimization (SVO) -> 使用流媒体视频优化(SVO)（detail_1服务详情页开关项）",
+    "Allow Streaming Video Optimization (SVO) ... to have full control of your device? -> 是否允许流媒体视频优化(SVO)完全控制你的设备？（detail_2系统警告弹窗）",
+    "OK -> 确定（step_02诱导页按钮）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面/应用抽屉入口页，显示“应用列表”、日期天气及Messages、Chrome等图标；点击“Apps list”进入应用抽屉以寻找视频播放器。",
+    "step_02": "恶意应用弹出“Attention”诱导页，谎称须启用SVO才能继续看视频；点击“OK”跳转无障碍设置，为申请无障碍权限铺路。",
+    "step_03": "系统无障碍设置页，列出“已下载应用”中的SVO服务；探针捕获无障碍设置HOOK后自动终止，说明诱导点击指向无障碍授权入口。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留在无障碍设置页，界面无新增文本、无悬浮遮罩；等待期间未出现额外弹窗，准备继续观察授权状态。",
+    "post_jump_2.0s": "跳转后2.0秒探针，页面仍为无障碍设置，无新文本和悬浮遮罩；说明普通弹窗未覆盖系统页，攻击链依赖用户手动开启服务。",
+    "detail_1_service_detail_page": "SVO服务详情页，显示“使用流媒体视频优化(SVO)”开关项；检查详情以确认该无障碍服务伪装为视频优化、实为高权限控制工具。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗，询问是否允许SVO“完全控制设备”；标题标注点Deny，说明审核侧拒绝该无障碍授权并记录警告内容。",
+    "refusal_2.0s": "拒绝授权返回后2.0秒，恶意应用重新弹出同一“Attention/SVO”诱导对话框；呈现拒权即循环重试的RELAUNCHED_LURE_DIALOG行为。",
+    "refusal_10.5s": "拒权返回后10.5秒，仍反复展示相同SVO诱导页，没有取消或跳过入口；确认应用通过循环弹窗持续施压用户开启无障碍。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用从桌面抽屉进入，先由Admin53Activity以“启用SVO才能继续看视频”诱导点击OK，再跳转无障碍设置并展示SVO服务及“完全控制设备”授权警告；用户拒绝后仍反复重拉同一诱导弹窗，呈现典型无障碍滥用与拒权重诱链路。",
+  "observed_lure_rhetoric_zh": [
+    "English: Attention! To continue watching the video on your phone, you must enable Streaming Video Optimization (SVO), select line in the menu and turn it on! -> “注意！要在手机上继续观看视频，必须启用流媒体视频优化（SVO），在菜单中选择线路并开启！”（Admin53Activity诱导弹窗）",
+    "English: Use Streaming Video Optimization (SVO) -> “使用流媒体视频优化（SVO）”（无障碍服务详情开关）",
+    "English: Allow Streaming Video Optimization (SVO) ... to have full control of your device? -> “允许流媒体视频优化（SVO）……完全控制您的设备？”（系统授权警告弹窗）",
+    "English: Streaming Video Optimization (SVO) -> “流媒体视频优化（SVO）”（无障碍服务列表与详情中的伪装名称）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用抽屉页，显示“Apps list/应用列表”和常用图标；点击进入应用列表寻找目标入口，无通知横幅与遮罩。",
+    "step_02": "恶意Admin53Activity弹出“Attention!”诱导框，意译需启用SVO才能继续看视频；点击OK跳系统设置，无通知与遮罩。",
+    "step_03": "系统无障碍设置页，“DOWNLOADED APPS”列出SVO服务；触发HOOK_A11Y_SETTINGS后自动终止，无通知横幅与遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停在无障碍设置页，UI文本为空、遮罩为0；未见通知横幅，等待观察无变化。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍为无障碍设置页且无可见文本，遮罩为0；未见通知横幅，页面保持静止。",
+    "detail_1_service_detail_page": "进入SVO服务详情子页，显示“Use Streaming Video Optimization”开关；仅检查详情/警告，遮罩0、无通知，为授权铺垫。",
+    "detail_2_system_warning_dialog": "弹出系统授权警告，询问是否允许SVO“完全控制设备”；仅检查未授权，遮罩0、无通知横幅，属高风险无障碍授权。",
+    "refusal_2.0s": "拒权返回后2秒，恶意应用重新弹出同一“Attention!”SVO诱导框；拒权未阻止重拉，无通知与遮罩。",
+    "refusal_10.5s": "拒权返回后10.5秒，Admin53Activity再次显示同一SVO诱导框并保留OK按钮；诱导弹窗反复重拉，无通知与遮罩。"
+  }
+}

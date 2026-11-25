@@ -1,0 +1,12 @@
+flowchart TD
+    N_9e394ea3af91["Step 1: PermissionsActivity\nIn order for the lates"]
+    N_5240eb2eeeee["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_26cd5f0d5252["Step 2: SubSettings\nBack"]
+    N_1f43b5e38f6e["Step 2: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Commerzbank Sich"]
+    N_f6a3588f0886["Step 2: NexusLauncherActivity\nApps list"]
+    N_9e394ea3af91 -->|"ui_click: click([6] Button text='GO TO SET"| N_5240eb2eeeee
+    N_5240eb2eeeee -->|"detail_probe: click_service()"| N_26cd5f0d5252
+    N_26cd5f0d5252 -->|"warning_probe: click_use_service_switch"| N_1f43b5e38f6e
+    N_5240eb2eeeee -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886

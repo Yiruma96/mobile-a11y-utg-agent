@@ -1,0 +1,53 @@
+{
+  "timestamp": 1795584473.8544152,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{f12a6e8 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #2 Window{4323fc4 u0 NotificationShade}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=resize} layoutInDisplayCutoutMode=always ty=2040 fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{557c35c u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #5 Window{6329c0e u0 com.android.settings/com.android.settings.SubSettings}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER sim={adjust=resize forwardNavigation} ty=APPLICATION fmt=TRANSLUCENT wanim=0x7f13000f surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{1452976 u0 com.android.settings/com.android.settings.SubSettings}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #10 Window{75f2410 u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "com.camp.make",
+      "title": "String (Commerzbank Security)",
+      "text": "String (In order for the latest version of Commerzbank Security to work, you will need to enable accessibility. Please follow the steps below:)"
+    },
+    {
+      "package": "com.google.android.gms",
+      "title": "String (Your data isn’t backed up)",
+      "text": "String (Add a backup account now)"
+    }
+  ]
+}

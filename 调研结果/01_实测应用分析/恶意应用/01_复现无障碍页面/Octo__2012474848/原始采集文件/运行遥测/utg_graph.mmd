@@ -1,0 +1,13 @@
+flowchart TD
+    N_96136c2cb688["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_4979bb47193a["Step 2: p031x\n"]
+    N_ffe926a5d606["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_a316287ba9a2["Step 3: SubSettings\nBack"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_96136c2cb688 -->|"ui_click: click([4] Button text='Allow' id"| N_4979bb47193a
+    N_4979bb47193a -->|"ui_click: click([551, 690])"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_a316287ba9a2
+    N_a316287ba9a2 -->|"warning_probe: click_use_service_switch"| N_a316287ba9a2
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886
