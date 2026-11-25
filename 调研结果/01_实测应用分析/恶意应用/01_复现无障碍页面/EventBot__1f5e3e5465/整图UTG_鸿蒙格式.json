@@ -1,0 +1,442 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_173__1f5e3e5465",
+  "label": "malicious",
+  "family_or_category": "EventBot",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "e6b51f8d8bcf",
+  "hook_node_ids": [
+    "ce6e5be2408e",
+    "b0ff367b8182"
+  ],
+  "nodes": [
+    {
+      "node_id": "e6b51f8d8bcf",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Flash Player to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "a73e17b2e7dc",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Player",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "04d72dfc1f09",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "abilityName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "47382e0e5f24",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "abilityName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Open Flash Player"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "ce6e5be2408e",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Player",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "7f2020a997c6",
+      "first_step": 6,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player",
+        "Use Flash Player",
+        "OPTIONS",
+        "Flash Player shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Player in order to get full functionality of the application. Flash Player will not work correctly."
+      ],
+      "harmony_layout_json": "step_06_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_06_service_detail_layout.xml",
+      "screenshot": "step_06_service_detail_screen.png"
+    },
+    {
+      "node_id": "b0ff367b8182",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_06_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_06_system_warning_layout.xml",
+      "screenshot": "step_06_system_warning_screen.png"
+    },
+    {
+      "node_id": "fdcfd4fb0431",
+      "first_step": 6,
+      "role": "refusal_probe",
+      "bundleName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "abilityName": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Select Flash Player in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Open Flash Player"
+      ],
+      "harmony_layout_json": "step_06_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_06_refusal_2000ms_layout.xml",
+      "screenshot": "step_06_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e6b51f8d8bcf",
+      "to": "a73e17b2e7dc",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "a73e17b2e7dc",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "04d72dfc1f09",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "04d72dfc1f09",
+      "to": "47382e0e5f24",
+      "step": 4,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "47382e0e5f24",
+      "to": "ce6e5be2408e",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"Open Flash Player\" id=button1 (click) center=(540,1508))"
+    },
+    {
+      "from": "ce6e5be2408e",
+      "to": "7f2020a997c6",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "7f2020a997c6",
+      "to": "b0ff367b8182",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ce6e5be2408e",
+      "to": "fdcfd4fb0431",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "fdcfd4fb0431",
+      "to": "fdcfd4fb0431",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "fdcfd4fb0431",
+      "to": "fdcfd4fb0431",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Player Use Flash Player OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Player",
+        "Use Flash Player",
+        "OPTIONS",
+        "Flash Player shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Player in order to get full functionality of the application. Flash Player will not work correctly."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Player to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "top_activity": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Select Flash Player in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Open Flash Player"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "top_activity": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Select Flash Player in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Open Flash Player"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d",
+      "top_activity": "com.bf4eba1fcde137.dc20a2a5.bcc9909d03e33ddf0b3d.tvpeqghuln",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Select Flash Player in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Open Flash Player"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "EventBot__1f5e3e5465",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "EventBot样本伪装成Flash Player：启动后请求文件/媒体与短信权限，再引导至无障碍设置开启服务；拒权后反复回到“Select Flash Player in Settings”诱导页，形成无法退出的闭环。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 选择允许Flash Player访问哪些内容（Step 1 权限审核页）",
+    "English -> 此应用为旧版Android构建，可能无法正常运行；请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "English -> 打开Flash Player（Step 5 诱导按钮/拒权后诱导页）",
+    "English -> 必须启用Flash Player才能获得应用完整功能，否则Flash Player将无法正常工作（服务详情页）",
+    "English -> 允许Flash Player完全控制你的设备？（系统警告弹窗标题）",
+    "English -> 可查看并控制屏幕，读取屏幕全部内容并悬浮显示于其他应用之上（系统警告弹窗）",
+    "English -> 可跟踪你与应用的交互或硬件传感器，并代表你操作应用（系统警告弹窗）",
+    "English -> 在设置中选择Flash Player / 打开它（拒权后诱导页步骤）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审核页，要求允许Flash Player访问文件媒体并收发短信；点击Continue继续，无通知横幅或遮罩。",
+    "step_02": "桌面兼容性弹窗，称Flash Player为旧版Android构建、可能异常，建议更新或联系开发者；点击OK关闭，无遮罩。",
+    "step_03": "回到桌面应用列表，见天气、Messages、Chrome、Search等，无应用专属界面；本步重新打开目标应用，无通知或遮罩。",
+    "step_04": "目标包tvpeqghuln已启动但仍显示桌面应用列表；等待全屏Activity/WebView加载，无通知横幅或遮罩。",
+    "step_05": "应用内诱导页仅显示Open Flash Player按钮；点击后预期进入无障碍授权引导，无通知横幅或遮罩。",
+    "step_06": "进入系统无障碍设置，DOWNLOADED APPS下Flash Player为Off；捕获A11Y设置钩子与探针后终止，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留在无障碍设置页且文本为空；等待0.8秒，overlays=0，无通知横幅或遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍在无障碍设置页且文本为空；等待2.0秒，overlays=0，无通知横幅或遮罩。",
+    "detail_1_service_detail_page": "Flash Player服务详情页，有Use Flash Player开关与快捷键项；警告必须启用才可完整使用，否则无法正常工作。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗称可读屏、显示悬浮层并代操作，提供Allow/Deny；本步检查未授权，overlays=0。",
+    "refusal_2.0s": "拒权返回2.0秒仍被困诱导页：提示在设置中选择Flash Player、第2步打开它，并保留Open Flash Player按钮。",
+    "refusal_10.5s": "拒权返回10.5秒仍停留在同一诱导页，反复要求设置中选择并开启Flash Player，未提供取消或退出路径。"
+  }
+}

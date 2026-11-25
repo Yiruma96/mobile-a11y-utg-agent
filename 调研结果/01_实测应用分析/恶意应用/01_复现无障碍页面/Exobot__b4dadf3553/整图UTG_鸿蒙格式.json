@@ -1,0 +1,301 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_153__b4dadf3553",
+  "label": "malicious",
+  "family_or_category": "Exobot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.gotbutcv",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "940190b1bd03",
+  "hook_node_ids": [
+    "1f63dfbdf0dd"
+  ],
+  "nodes": [
+    {
+      "node_id": "940190b1bd03",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing BAWAG PSK Security to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "4cd1e6d5ac43",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.gotbutcv",
+      "abilityName": "com.gotbutcv.p037p",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1f63dfbdf0dd",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BAWAG PSK Security",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "00d6411621fd",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "BAWAG PSK Security",
+        "Use BAWAG PSK Security",
+        "OPTIONS",
+        "BAWAG PSK Security shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Service must be enabled."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "940190b1bd03",
+      "to": "4cd1e6d5ac43",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1344))"
+    },
+    {
+      "from": "4cd1e6d5ac43",
+      "to": "1f63dfbdf0dd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"Continue\" id=button1 (click) center=(540,1295))"
+    },
+    {
+      "from": "1f63dfbdf0dd",
+      "to": "00d6411621fd",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "00d6411621fd",
+      "to": "4cd1e6d5ac43",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "1f63dfbdf0dd",
+      "to": "4cd1e6d5ac43",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "4cd1e6d5ac43",
+      "to": "4cd1e6d5ac43",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "4cd1e6d5ac43",
+      "to": "4cd1e6d5ac43",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back BAWAG PSK Security Use BAWAG PSK Security OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BAWAG PSK Security",
+        "Use BAWAG PSK Security",
+        "OPTIONS",
+        "BAWAG PSK Security shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Service must be enabled."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Permission required Enable permission for BAW",
+      "top_package": "com.gotbutcv",
+      "top_activity": "com.gotbutcv.p037p",
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.gotbutcv",
+      "top_activity": "com.gotbutcv.p037p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.gotbutcv",
+      "top_activity": "com.gotbutcv.p037p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.gotbutcv",
+      "top_activity": "com.gotbutcv.p037p",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Exobot__b4dadf3553",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用伪装为 BAWAG PSK Security，先诱导允许后台常驻并请求权限，再跳转安卓无障碍设置以开启服务；拒权或返回后会反复拉起同一权限诱导弹窗，呈现 Exobot 典型无障碍滥用与循环诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 是否允许应用始终在后台运行？（电池优化授权页）",
+    "英文 -> 允许 BAWAG PSK Security 始终后台运行可能降低续航，可稍后在设置中更改（电池优化授权页）",
+    "英文 -> 需要权限（应用内权限弹窗）",
+    "英文 -> 请为 BAWAG PSK Security 启用权限以继续（应用内权限弹窗）",
+    "英文 -> 继续（应用内权限弹窗按钮）",
+    "英文 -> 使用 BAWAG PSK Security（无障碍服务详情页）",
+    "英文 -> 必须启用服务（无障碍服务详情页）",
+    "英文 -> 字符串（启用服务）/ 字符串（BAWAG PSK Security）（应用通知横幅，疑似占位或本地化缺失）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "安卓电池优化授权页，以 BAWAG PSK Security 名义请求后台常驻，称允许可能耗电；本步点击 Allow。无通知/遮罩。",
+    "step_02": "应用内权限诱导页：英文称需要权限，要求为 BAWAG PSK Security 启用权限后继续；本步点击 Continue，推进至无障碍授权。",
+    "step_03": "安卓无障碍设置列表，下载应用中 BAWAG PSK Security 显示 Off；采集到无障碍设置 Hook 与探针后自动终止，未继续点开。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，无可见文本、无活动通知、遮罩数为 0，未见额外诱导。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：无障碍设置页无新增文本与通知，遮罩仍为 0，页面保持静止等待。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示 Use BAWAG PSK Security 与 Service must be enabled，并有应用通知横幅提示启用服务；本步仅检查详情/警告。",
+    "detail_2_system_warning_dialog": "系统警告/权限弹窗检查页：实际回到应用 p037p 的 Permission required/Continue 诱导弹窗，要求启用权限继续；遮罩为 0。",
+    "refusal_2.0s": "拒权/返回后 2 秒：应用再次拉起同一需要权限诱导弹窗（RELAUNCHED_LURE_DIALOG），仅见 Continue，继续要求启用权限。",
+    "refusal_10.5s": "拒权/返回后 10.5 秒：仍反复拉起同一权限诱导弹窗，仅见 Continue，无取消/拒绝入口，体现循环骚扰。"
+  }
+}

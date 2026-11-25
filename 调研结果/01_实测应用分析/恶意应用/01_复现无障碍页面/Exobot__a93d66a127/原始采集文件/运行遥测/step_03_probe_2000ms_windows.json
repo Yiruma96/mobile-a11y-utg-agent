@@ -1,0 +1,48 @@
+{
+  "timestamp": 1795583824.58219,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{d0599d6 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #2 Window{9ba2ce0 u0 NotificationShade}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) gr=TOP CENTER_VERTICAL sim={adjust=resize} layoutInDisplayCutoutMode=always ty=2040 fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{df4e26a u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #4 Window{cd6960b u0 Toast}:",
+      "mOwnerUid": "mOwnerUid=10238 showForAllUsers=false package=com.bypressfo appop=TOAST_WINDOW",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER_VERTICAL sim={adjust=pan} ty=TOAST fmt=TRANSLUCENT wanim=0x1030004",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{30a79fe u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #10 Window{4c7724d u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "com.bypressfo",
+      "title": "String (Enable service)",
+      "text": "String (BAWAG PSK Security)"
+    }
+  ]
+}

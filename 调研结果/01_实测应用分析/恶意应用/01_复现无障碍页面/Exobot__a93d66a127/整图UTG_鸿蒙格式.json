@@ -1,0 +1,302 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_152__a93d66a127",
+  "label": "malicious",
+  "family_or_category": "Exobot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.bypressfo",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "940190b1bd03",
+  "hook_node_ids": [
+    "1f63dfbdf0dd"
+  ],
+  "nodes": [
+    {
+      "node_id": "940190b1bd03",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing BAWAG PSK Security to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d2aae7fb0258",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.bypressfo",
+      "abilityName": "com.bypressfo.p050e",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1f63dfbdf0dd",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "BAWAG PSK Security",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "00d6411621fd",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "BAWAG PSK Security",
+        "Use BAWAG PSK Security",
+        "OPTIONS",
+        "BAWAG PSK Security shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Service must be enabled."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "940190b1bd03",
+      "to": "d2aae7fb0258",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1344))"
+    },
+    {
+      "from": "d2aae7fb0258",
+      "to": "1f63dfbdf0dd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"Continue\" id=button1 (click) center=(540,1295))"
+    },
+    {
+      "from": "1f63dfbdf0dd",
+      "to": "00d6411621fd",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "00d6411621fd",
+      "to": "d2aae7fb0258",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "1f63dfbdf0dd",
+      "to": "d2aae7fb0258",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "d2aae7fb0258",
+      "to": "d2aae7fb0258",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "d2aae7fb0258",
+      "to": "d2aae7fb0258",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back BAWAG PSK Security Use BAWAG PSK Security OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "BAWAG PSK Security",
+        "Use BAWAG PSK Security",
+        "OPTIONS",
+        "BAWAG PSK Security shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Service must be enabled."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Permission required Enable permission for BAW",
+      "top_package": "com.bypressfo",
+      "top_activity": "com.bypressfo.p050e",
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.bypressfo",
+      "top_activity": "com.bypressfo.p050e",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.bypressfo",
+      "top_activity": "com.bypressfo.p050e",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.bypressfo",
+      "top_activity": "com.bypressfo.p050e",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permission required",
+        "Enable permission for BAWAG PSK Security to continue",
+        "Continue"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Exobot__a93d66a127",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用伪装成 BAWAG PSK Security，先诱导允许后台常驻，再以应用内“需要权限”弹窗和通知反复引导开启无障碍服务；进入系统无障碍设置后探针捕获钩子，用户拒绝时仍重拉同一权限诱导框形成循环。",
+  "observed_lure_rhetoric_zh": [
+    "Let app always run in background? -> 让应用始终在后台运行？（Step 1 系统电池优化弹窗）",
+    "Allowing BAWAG PSK Security to always run in the background may reduce battery life. You can change this later from Settings > Apps & notifications. -> 允许 BAWAG PSK Security 始终后台运行可能缩短续航，可稍后在设置中更改（Step 1 系统电池优化弹窗）",
+    "Permission required -> 需要权限（Step 2、拒权弹窗）",
+    "Enable permission for BAWAG PSK Security to continue -> 请为 BAWAG PSK Security 启用权限以继续（Step 2、拒权弹窗）",
+    "Continue -> 继续（Step 2、拒权弹窗）",
+    "Use BAWAG PSK Security -> 使用 BAWAG PSK Security（服务详情页）",
+    "Service must be enabled. -> 必须启用服务（服务详情页）",
+    "String (Enable service) -> 启用服务（通知标题）",
+    "String (BAWAG PSK Security) -> BAWAG PSK Security（通知正文）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电池优化弹窗：提示允许 BAWAG PSK Security 后台常驻可能耗电，仍诱导点 Allow；无遮罩。",
+    "step_02": "应用内伪造“需要权限”弹窗，称须为 BAWAG PSK Security 启用权限才能继续；本步点 Continue，顶部有启用服务通知横幅。",
+    "step_03": "系统无障碍列表页，BAWAG PSK Security 显示为 Off；启用服务通知仍在，探针捕获无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留系统无障碍设置页；未见遮罩，通知横幅继续显示启用服务诱导。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，页面仍为系统无障碍设置且无遮罩；启用服务通知持续展示，强化授权诱导。",
+    "detail_1_service_detail_page": "无障碍服务详情页，开关为 Use BAWAG PSK Security，并提示 Service must be enabled；通知仍在，本步仅查看。",
+    "detail_2_system_warning_dialog": "应用内“需要权限”弹窗再次出现，仍以须启用权限才能继续诱导；本步仅检查，无遮罩且无通知，只有 Continue。",
+    "refusal_2.0s": "拒绝返回 2 秒后，应用重新拉起同一“需要权限”弹窗并要求 Continue，形成拒权后循环诱导。",
+    "refusal_10.5s": "拒绝返回 10.5 秒后，仍再次弹出“需要权限”诱导框，Continue 文案不变，说明拒权后持续重试拉起。"
+  }
+}

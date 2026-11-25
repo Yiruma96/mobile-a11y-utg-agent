@@ -1,0 +1,24 @@
+{
+  "app_chain_summary_zh": "该应用伪装为 BAWAG PSK Security，先诱导允许后台常驻并请求权限，再跳转安卓无障碍设置以开启服务；拒权或返回后会反复拉起同一权限诱导弹窗，呈现 Exobot 典型无障碍滥用与循环诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 是否允许应用始终在后台运行？（电池优化授权页）",
+    "英文 -> 允许 BAWAG PSK Security 始终后台运行可能降低续航，可稍后在设置中更改（电池优化授权页）",
+    "英文 -> 需要权限（应用内权限弹窗）",
+    "英文 -> 请为 BAWAG PSK Security 启用权限以继续（应用内权限弹窗）",
+    "英文 -> 继续（应用内权限弹窗按钮）",
+    "英文 -> 使用 BAWAG PSK Security（无障碍服务详情页）",
+    "英文 -> 必须启用服务（无障碍服务详情页）",
+    "英文 -> 字符串（启用服务）/ 字符串（BAWAG PSK Security）（应用通知横幅，疑似占位或本地化缺失）"
+  ],
+  "frame_captions": {
+    "step_01": "安卓电池优化授权页，以 BAWAG PSK Security 名义请求后台常驻，称允许可能耗电；本步点击 Allow。无通知/遮罩。",
+    "step_02": "应用内权限诱导页：英文称需要权限，要求为 BAWAG PSK Security 启用权限后继续；本步点击 Continue，推进至无障碍授权。",
+    "step_03": "安卓无障碍设置列表，下载应用中 BAWAG PSK Security 显示 Off；采集到无障碍设置 Hook 与探针后自动终止，未继续点开。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，无可见文本、无活动通知、遮罩数为 0，未见额外诱导。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：无障碍设置页无新增文本与通知，遮罩仍为 0，页面保持静止等待。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示 Use BAWAG PSK Security 与 Service must be enabled，并有应用通知横幅提示启用服务；本步仅检查详情/警告。",
+    "detail_2_system_warning_dialog": "系统警告/权限弹窗检查页：实际回到应用 p037p 的 Permission required/Continue 诱导弹窗，要求启用权限继续；遮罩为 0。",
+    "refusal_2.0s": "拒权/返回后 2 秒：应用再次拉起同一需要权限诱导弹窗（RELAUNCHED_LURE_DIALOG），仅见 Continue，继续要求启用权限。",
+    "refusal_10.5s": "拒权/返回后 10.5 秒：仍反复拉起同一权限诱导弹窗，仅见 Continue，无取消/拒绝入口，体现循环骚扰。"
+  }
+}

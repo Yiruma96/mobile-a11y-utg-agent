@@ -1,0 +1,305 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_155__a959108ec8",
+  "label": "malicious",
+  "family_or_category": "FluBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.iqiyi.i18n",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "4c71449ba0fb",
+  "hook_node_ids": [
+    "4c71449ba0fb",
+    "3cd7e680259f"
+  ],
+  "nodes": [
+    {
+      "node_id": "4c71449ba0fb",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "DHL",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b6356988cb8f",
+      "first_step": 1,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "DHL",
+        "Use DHL",
+        "OPTIONS",
+        "DHL shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "/ DHL /"
+      ],
+      "harmony_layout_json": "step_01_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_01_service_detail_layout.xml",
+      "screenshot": "step_01_service_detail_screen.png"
+    },
+    {
+      "node_id": "3cd7e680259f",
+      "first_step": 1,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow DHL to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_01_system_warning_layout.xml",
+      "screenshot": "step_01_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_01_refusal_2000ms_layout.xml",
+      "screenshot": "step_01_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "4c71449ba0fb",
+      "to": "b6356988cb8f",
+      "step": 1,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "b6356988cb8f",
+      "to": "3cd7e680259f",
+      "step": 1,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "4c71449ba0fb",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 1,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_800ms_screen.png",
+          "harmony_layout_path": "step_01_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_01_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_01_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back DHL Use DHL OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "DHL",
+        "Use DHL",
+        "OPTIONS",
+        "DHL shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "/ DHL /"
+      ],
+      "screenshot_path": "step_01_service_detail_screen.png",
+      "harmony_layout_path": "step_01_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow DHL to have full control of your device",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow DHL to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_01_system_warning_screen.png",
+      "harmony_layout_path": "step_01_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_01_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用先以常驻通知“请点击此处激活DHL”把用户引至系统无障碍设置，列表中的DHL处于Off；用户进入DHL服务详情触发“完全控制设备”高危授权弹窗。代理点Deny回到桌面后，应用未继续强制弹窗，表现为优雅停留/降级。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> String (Please click here to activate DHL) 的核心意译为“请点击此处激活DHL”（通知横幅，多页持续显示）",
+    "英文 -> “允许DHL完全控制您的设备？”（系统警告弹窗）",
+    "英文 -> “完全控制适用于帮助无障碍需求的应用程序，但不适用于大多数应用。”（系统警告弹窗）",
+    "英文 -> “查看并控制屏幕：它可以读取屏幕上的所有内容，并在其他应用上显示内容。”（系统警告弹窗）",
+    "英文 -> “查看并执行操作：它可以跟踪您与应用或硬件传感器的交互，并代表您与应用交互。”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统无障碍设置页：已下载应用列表出现DHL且状态Off；通知栏显示英文“请点击此处激活DHL”诱导，本步采集设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留无障碍设置页，页面文本暂空；DHL激活通知横幅仍在，遮罩为0，未见新界面。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍设置页仍无文本变化；DHL激活通知持续，遮罩为0，未弹覆盖层或新诱导页。",
+    "detail_1_service_detail_page": "DHL服务详情页：有“Use DHL”开关及“DHL shortcut/按住音量键/快捷设置”选项；通知横幅仍在，本步检查未授权。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：询问是否允许DHL完全控制设备，说明可读屏、覆盖显示并代操作；有Allow/Deny，本步点Deny。",
+    "refusal_2.0s": "拒权返回2.0秒：回到NexusLauncher桌面，DHL激活通知仍驻留；无遮罩与新弹窗，结果为优雅停留或降级。",
+    "refusal_10.5s": "拒权返回10.5秒：仍停在桌面，DHL激活通知持续存在；无覆盖层和新诱导，应用保持静默降级，未反复弹窗。"
+  }
+}

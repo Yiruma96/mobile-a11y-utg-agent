@@ -1,0 +1,27 @@
+{
+  "app_chain_summary_zh": "EventBot样本伪装成Flash Player：启动后请求文件/媒体与短信权限，再引导至无障碍设置开启服务；拒权后反复回到“Select Flash Player in Settings”诱导页，形成无法退出的闭环。",
+  "observed_lure_rhetoric_zh": [
+    "English -> 选择允许Flash Player访问哪些内容（Step 1 权限审核页）",
+    "English -> 此应用为旧版Android构建，可能无法正常运行；请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "English -> 打开Flash Player（Step 5 诱导按钮/拒权后诱导页）",
+    "English -> 必须启用Flash Player才能获得应用完整功能，否则Flash Player将无法正常工作（服务详情页）",
+    "English -> 允许Flash Player完全控制你的设备？（系统警告弹窗标题）",
+    "English -> 可查看并控制屏幕，读取屏幕全部内容并悬浮显示于其他应用之上（系统警告弹窗）",
+    "English -> 可跟踪你与应用的交互或硬件传感器，并代表你操作应用（系统警告弹窗）",
+    "English -> 在设置中选择Flash Player / 打开它（拒权后诱导页步骤）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审核页，要求允许Flash Player访问文件媒体并收发短信；点击Continue继续，无通知横幅或遮罩。",
+    "step_02": "桌面兼容性弹窗，称Flash Player为旧版Android构建、可能异常，建议更新或联系开发者；点击OK关闭，无遮罩。",
+    "step_03": "回到桌面应用列表，见天气、Messages、Chrome、Search等，无应用专属界面；本步重新打开目标应用，无通知或遮罩。",
+    "step_04": "目标包tvpeqghuln已启动但仍显示桌面应用列表；等待全屏Activity/WebView加载，无通知横幅或遮罩。",
+    "step_05": "应用内诱导页仅显示Open Flash Player按钮；点击后预期进入无障碍授权引导，无通知横幅或遮罩。",
+    "step_06": "进入系统无障碍设置，DOWNLOADED APPS下Flash Player为Off；捕获A11Y设置钩子与探针后终止，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留在无障碍设置页且文本为空；等待0.8秒，overlays=0，无通知横幅或遮罩。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍在无障碍设置页且文本为空；等待2.0秒，overlays=0，无通知横幅或遮罩。",
+    "detail_1_service_detail_page": "Flash Player服务详情页，有Use Flash Player开关与快捷键项；警告必须启用才可完整使用，否则无法正常工作。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗称可读屏、显示悬浮层并代操作，提供Allow/Deny；本步检查未授权，overlays=0。",
+    "refusal_2.0s": "拒权返回2.0秒仍被困诱导页：提示在设置中选择Flash Player、第2步打开它，并保留Open Flash Player按钮。",
+    "refusal_10.5s": "拒权返回10.5秒仍停留在同一诱导页，反复要求设置中选择并开启Flash Player，未提供取消或退出路径。"
+  }
+}

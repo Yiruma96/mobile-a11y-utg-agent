@@ -1,0 +1,17 @@
+flowchart TD
+    N_561b977ee41b["Step 1: ReviewPermissionsActivity\nChoose what to allow F"]
+    N_ce0c9e7c45fb["Step 2: MainActivity\nFlash light alerts"]
+    N_a144b490e5f3["Step 3: MainActivity\nFlash Alerts on Call a"]
+    N_fc928849a24c["Step 4: MainActivity\nNotification Alert"]
+    N_0273131e4ee0["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_96864c874802["Step 5: SubSettings\nBack"]
+    N_c44cd0a59ae7["Step 5: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Flash light aler"]
+    N_561b977ee41b -->|"ui_click: click([15] Button text='Continue"| N_ce0c9e7c45fb
+    N_ce0c9e7c45fb -->|"ui_click: click([3] Button text='OK' id=bu"| N_a144b490e5f3
+    N_a144b490e5f3 -->|"ui_click: click([9] ToggleButton id=tglNot"| N_fc928849a24c
+    N_fc928849a24c -->|"ui_click: click([3] Button text='Yes' id=Y"| N_0273131e4ee0
+    N_0273131e4ee0 -->|"detail_probe: click_service()"| N_96864c874802
+    N_96864c874802 -->|"warning_probe: click_use_service_switch"| N_c44cd0a59ae7
+    N_0273131e4ee0 -->|"refusal_probe: Back_refuse"| N_a144b490e5f3
+    N_a144b490e5f3 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_a144b490e5f3
+    N_a144b490e5f3 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_a144b490e5f3

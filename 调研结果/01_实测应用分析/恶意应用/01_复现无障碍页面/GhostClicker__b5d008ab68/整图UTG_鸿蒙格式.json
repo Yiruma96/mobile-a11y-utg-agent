@@ -1,0 +1,391 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_083__b5d008ab68",
+  "label": "malicious",
+  "family_or_category": "GhostClicker",
+  "static_visibility": "clear",
+  "target_package": "com.fashlightalerts.vnm",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "561b977ee41b",
+  "hook_node_ids": [
+    "0273131e4ee0",
+    "c44cd0a59ae7"
+  ],
+  "nodes": [
+    {
+      "node_id": "561b977ee41b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Flash light alerts to access",
+        "Camera",
+        "take pictures and record video",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ce0c9e7c45fb",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.fashlightalerts.vnm",
+      "abilityName": "com.dhama.international.flashalert.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash light alerts",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "a144b490e5f3",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.fashlightalerts.vnm",
+      "abilityName": "com.dhama.international.flashalert.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Alerts on Call and SMS",
+        "Incoming Call",
+        "Sms Service",
+        "Notification"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "fc928849a24c",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.fashlightalerts.vnm",
+      "abilityName": "com.dhama.international.flashalert.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Notification Alert",
+        "Notification requires accessibility service to be on.\ndo you want to enable notification feature?",
+        "Yes",
+        "No"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "0273131e4ee0",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash light alerts",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "96864c874802",
+      "first_step": 5,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash light alerts",
+        "Use Flash light alerts",
+        "OPTIONS",
+        "Flash light alerts shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_05_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_05_service_detail_layout.xml",
+      "screenshot": "step_05_service_detail_screen.png"
+    },
+    {
+      "node_id": "c44cd0a59ae7",
+      "first_step": 5,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash light alerts to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_05_system_warning_layout.xml",
+      "screenshot": "step_05_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "561b977ee41b",
+      "to": "ce0c9e7c45fb",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "ce0c9e7c45fb",
+      "to": "a144b490e5f3",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "a144b490e5f3",
+      "to": "fc928849a24c",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([9] ToggleButton id=tglNotification (click,unchecked) center=(928,949))"
+    },
+    {
+      "from": "fc928849a24c",
+      "to": "0273131e4ee0",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"Yes\" id=Yes (click) center=(340,1290))"
+    },
+    {
+      "from": "0273131e4ee0",
+      "to": "96864c874802",
+      "step": 5,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "96864c874802",
+      "to": "c44cd0a59ae7",
+      "step": 5,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "0273131e4ee0",
+      "to": "a144b490e5f3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "a144b490e5f3",
+      "to": "a144b490e5f3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "a144b490e5f3",
+      "to": "a144b490e5f3",
+      "step": 5,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 5,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_800ms_screen.png",
+          "harmony_layout_path": "step_05_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_05_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_05_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash light alerts Use Flash light alerts OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash light alerts",
+        "Use Flash light alerts",
+        "OPTIONS",
+        "Flash light alerts shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_05_service_detail_screen.png",
+      "harmony_layout_path": "step_05_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash light alerts to have full control",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash light alerts to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_05_system_warning_screen.png",
+      "harmony_layout_path": "step_05_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.fashlightalerts.vnm",
+      "top_activity": "com.dhama.international.flashalert.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts on Call and SMS",
+        "Incoming Call",
+        "Sms Service",
+        "Notification"
+      ],
+      "screenshot_path": "step_05_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.fashlightalerts.vnm",
+      "top_activity": "com.dhama.international.flashalert.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts on Call and SMS",
+        "Incoming Call",
+        "Sms Service",
+        "Notification"
+      ],
+      "screenshot_path": "step_05_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.fashlightalerts.vnm",
+      "top_activity": "com.dhama.international.flashalert.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts on Call and SMS",
+        "Incoming Call",
+        "Sms Service",
+        "Notification"
+      ],
+      "screenshot_path": "step_05_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_05_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "GhostClicker__b5d008ab68",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先请求相机、短信与电话权限，再以通知功能为由诱导开启无障碍服务；进入系统完全控制警告后若拒绝，仍反复回到主界面并停留，形成被困于诱导页的链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许手电筒提醒访问哪些内容”（权限审查页）",
+    "英文 -> “此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（主界面旧版警告）",
+    "英文 -> “通知提醒需要开启无障碍服务，是否启用通知功能？”（通知授权弹窗）",
+    "英文 -> “是否允许手电筒提醒完全控制你的设备？”（系统警告弹窗）",
+    "英文 -> “完全控制适用于有无障碍需求的辅助应用，但不适合大多数应用”（系统警告弹窗）",
+    "英文 -> “可查看并控制屏幕，读取屏幕全部内容并覆盖显示在其他应用上”（系统警告弹窗）",
+    "英文 -> “可查看并执行操作，追踪与应用的交互或硬件传感器，并代表你操作应用”（系统警告弹窗）",
+    "英文 -> “未提供描述”（服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限审查页，要求选择允许“手电筒提醒”访问相机、短信与电话；点 Continue 同意后进入应用主界面。",
+    "step_02": "主界面弹出旧版 Android 兼容警告，称应用可能无法正常运行；点 OK 关闭弹窗并返回主界面，尚无通知或遮罩。",
+    "step_03": "主界面显示来电、短信与通知开关；点按未勾选的通知开关，触发无障碍授权说明弹窗，尚无通知或遮罩。",
+    "step_04": "通知授权说明弹窗，称通知提醒需开启无障碍服务并询问是否启用；点 Yes 将跳转系统无障碍设置页。",
+    "step_05": "系统无障碍列表页，下载应用区显示“手电筒提醒”为关闭状态；探针在此捕获无障碍设置钩子并自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留在系统无障碍列表页；页面文本为空，未见通知横幅或悬浮遮罩。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍为系统无障碍列表页且无新文本；未出现通知横幅或悬浮遮罩。",
+    "detail_1_service_detail_page": "服务详情页，显示“手电筒提醒”的使用开关、快捷方式与音量键选项；说明为未提供描述，未见遮罩。",
+    "detail_2_system_warning_dialog": "系统完全控制警告弹窗，称可查看并控制屏幕、代执行操作；本步检查后点 Deny 拒绝，弹窗无额外遮罩。",
+    "refusal_2.0s": "拒绝无障碍后 2.0 秒回到应用主界面，仍显示来电、短信、通知开关；无通知或遮罩，流程被困于诱导主屏。",
+    "refusal_10.5s": "拒绝后 10.5 秒仍停在应用主界面，无进一步跳转或弹窗；未出现通知横幅或遮罩，确认被困于诱导页。"
+  }
+}

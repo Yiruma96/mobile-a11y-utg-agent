@@ -1,0 +1,427 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_122__cde36fe7b8",
+  "label": "malicious",
+  "family_or_category": "GhostClicker",
+  "static_visibility": "clear",
+  "target_package": "com.flashalertsoncalltt.vnm",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "33ba6cb1aad0",
+  "hook_node_ids": [
+    "9992589d1bc3",
+    "c43426227f98"
+  ],
+  "nodes": [
+    {
+      "node_id": "33ba6cb1aad0",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Flash Alerts on Call and… to access",
+        "Camera",
+        "take pictures and record video",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "e9b509d9cb14",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.flashalertsoncalltt.vnm",
+      "abilityName": "com.avlon.flashalerts.SplashScreenActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Alerts on Call and…",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "4489f32debb3",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.flashalertsoncalltt.vnm",
+      "abilityName": "com.avlon.flashalerts.SplashScreenActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Alerts/Notification",
+        "START",
+        "GET MORE",
+        "RATE US"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "e3b27cf8e335",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.flashalertsoncalltt.vnm",
+      "abilityName": "com.avlon.flashalerts.ToggleFlashSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Alerts/Notification",
+        "Flash Alerts - Notification",
+        "FLASH ON CALL",
+        "FLASH ON SMS",
+        "FLASH ON NOTIFICATION",
+        "RATE US",
+        "GET MORE"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "10a503e9a344",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.flashalertsoncalltt.vnm",
+      "abilityName": "com.avlon.flashalerts.ToggleFlashSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "notification alert",
+        "notification requires accessibility service to be on.\ndo you want to enable notification feature?",
+        "yes",
+        "no"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "9992589d1bc3",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Alerts on Call and SMS",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "fbe555ce6a1d",
+      "first_step": 6,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Alerts on Call and SMS",
+        "Use Flash Alerts on Call and SMS",
+        "OPTIONS",
+        "Flash Alerts on Call and SMS shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_06_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_06_service_detail_layout.xml",
+      "screenshot": "step_06_service_detail_screen.png"
+    },
+    {
+      "node_id": "c43426227f98",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Alerts on Call and SMS to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_06_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_06_system_warning_layout.xml",
+      "screenshot": "step_06_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "33ba6cb1aad0",
+      "to": "e9b509d9cb14",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "e9b509d9cb14",
+      "to": "4489f32debb3",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "4489f32debb3",
+      "to": "e3b27cf8e335",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([5] Button text=\"START\" id=btnStart (click) center=(875,855))"
+    },
+    {
+      "from": "e3b27cf8e335",
+      "to": "10a503e9a344",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([8] ToggleButton id=tgNotification (click,unchecked) center=(808,994))"
+    },
+    {
+      "from": "10a503e9a344",
+      "to": "9992589d1bc3",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"yes\" id=btnYes (click) center=(340,1331))"
+    },
+    {
+      "from": "9992589d1bc3",
+      "to": "fbe555ce6a1d",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "fbe555ce6a1d",
+      "to": "c43426227f98",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "9992589d1bc3",
+      "to": "e3b27cf8e335",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "e3b27cf8e335",
+      "to": "e3b27cf8e335",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "e3b27cf8e335",
+      "to": "e3b27cf8e335",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Alerts on Call and SMS Use Flash Alerts on Call a",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Alerts on Call and SMS",
+        "Use Flash Alerts on Call and SMS",
+        "OPTIONS",
+        "Flash Alerts on Call and SMS shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Alerts on Call and SMS to have fu",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Alerts on Call and SMS to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.flashalertsoncalltt.vnm",
+      "top_activity": "com.avlon.flashalerts.ToggleFlashSettings",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts/Notification",
+        "Flash Alerts - Notification",
+        "FLASH ON CALL",
+        "FLASH ON SMS",
+        "FLASH ON NOTIFICATION",
+        "RATE US",
+        "GET MORE"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.flashalertsoncalltt.vnm",
+      "top_activity": "com.avlon.flashalerts.ToggleFlashSettings",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts/Notification",
+        "Flash Alerts - Notification",
+        "FLASH ON CALL",
+        "FLASH ON SMS",
+        "FLASH ON NOTIFICATION",
+        "RATE US",
+        "GET MORE"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.flashalertsoncalltt.vnm",
+      "top_activity": "com.avlon.flashalerts.ToggleFlashSettings",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Alerts/Notification",
+        "Flash Alerts - Notification",
+        "FLASH ON CALL",
+        "FLASH ON SMS",
+        "FLASH ON NOTIFICATION",
+        "RATE US",
+        "GET MORE"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "GhostClicker__cde36fe7b8",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先引导授予相机、短信、电话运行时权限，再以旧版兼容警告和“通知需无障碍”的误导弹窗，把用户引至系统无障碍设置；一旦拒绝授权即返回并停留在闪光开关页，形成诱导授权陷阱。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow Flash Alerts on Call and… to access -> 选择允许“来电闪光提醒”访问哪些权限（权限总览页）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 应用为旧版Android构建、可能无法正常工作，请检查更新或联系开发者（启动页系统警告）",
+    "notification requires accessibility service to be on. do you want to enable notification feature? -> 通知功能需要开启无障碍服务，是否启用通知功能（应用内误导弹窗）",
+    "Allow Flash Alerts on Call and SMS to have full control of your device? -> 允许“来电短信闪光提醒”完全控制你的设备吗（系统高风险授权警告）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助无障碍需求的app，但不适用于大多数app（系统警告说明）",
+    "No description provided. -> 未提供描述（无障碍服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限总览页，列出相机、短信、电话权限及说明；点击“继续”准备一次性授予运行时权限。",
+    "step_02": "应用启动页弹出旧版Android兼容警告，称应用可能无法正常工作；点击“OK”关闭警告继续进入。",
+    "step_03": "应用主页/启动页，显示“闪光提醒/通知”“START”“GET MORE”“RATE US”；点击START进入闪光设置。",
+    "step_04": "闪光设置页，含来电/短信/通知闪光开关及评分、更多；点击“通知闪光”开关触发无障碍引导。",
+    "step_05": "应用内弹窗称“通知需开启无障碍服务”，并问是否启用通知功能；点击“yes”继续走向系统无障碍授权。",
+    "step_06": "系统无障碍设置列表，已列出该应用开关为关闭；探针捕获无障碍设置钩子后自动终止，未继续授权。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停系统无障碍设置页，界面文本为空、遮罩0；未发现弹窗或跳转。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍在系统无障碍设置页，界面文本为空、遮罩0；等待期间无新弹窗。",
+    "detail_1_service_detail_page": "无障碍服务详情页，显示应用名、启用项、快捷键与“未提供描述”；仅检查详情未授权。",
+    "detail_2_system_warning_dialog": "系统高风险授权警告：允许后应用可查看/控制屏幕并代操作；本步检查弹窗，未点允许。",
+    "refusal_2.0s": "拒绝无障碍授权返回应用开关页，界面仍为来电/短信/通知闪光开关；流程被卡在诱导页。",
+    "refusal_10.5s": "拒权返回10.5秒后仍停在应用闪光开关页，无取消/退出引导；持续被困于诱导授权页。"
+  }
+}

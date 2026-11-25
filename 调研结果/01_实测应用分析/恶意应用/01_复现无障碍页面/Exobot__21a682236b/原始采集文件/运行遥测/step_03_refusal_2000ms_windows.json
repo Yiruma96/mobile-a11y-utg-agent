@@ -1,0 +1,42 @@
+{
+  "timestamp": 1795574696.7351484,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{8f9e9c u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{b2559cd u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #5 Window{3d85fda u0 com.darklittler/com.darklittler.p089t}:",
+      "mOwnerUid": "mOwnerUid=10208 showForAllUsers=false package=com.darklittler appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER sim={adjust=pan forwardNavigation} ty=APPLICATION fmt=TRANSPARENT wanim=0x10302f9",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{6713d15 u0 com.darklittler/com.darklittler.p089t}:",
+      "mOwnerUid": "mOwnerUid=10208 showForAllUsers=false package=com.darklittler appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x10302f8",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #8 Window{126979f u0 com.android.settings/com.android.settings.SubSettings}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #11 Window{91b6c7c u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=1000 showForAllUsers=false package=com.android.settings appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=resize forwardNavigation} ty=BASE_APPLICATION wanim=0x10302f2",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": []
+}

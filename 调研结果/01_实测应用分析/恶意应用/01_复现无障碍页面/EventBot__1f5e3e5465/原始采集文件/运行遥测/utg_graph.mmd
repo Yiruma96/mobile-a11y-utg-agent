@@ -1,0 +1,20 @@
+flowchart TD
+    N_e6b51f8d8bcf["Step 1: ReviewPermissionsActivity\nChoose what to allow F"]
+    N_a73e17b2e7dc["Step 2: NexusLauncherActivity\nFlash Player"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_04d72dfc1f09["Step 4: tvpeqghuln\nApps list"]
+    N_47382e0e5f24["Step 5: tvpeqghuln\nOpen Flash Player"]
+    N_ce6e5be2408e["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_7f2020a997c6["Step 6: SubSettings\nBack"]
+    N_b0ff367b8182["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Flash Player to "]
+    N_fdcfd4fb0431["Step 6: tvpeqghuln\nSelect Flash Player in"]
+    N_e6b51f8d8bcf -->|"ui_click: click([11] Button text='Continue"| N_a73e17b2e7dc
+    N_a73e17b2e7dc -->|"ui_click: click([3] Button text='OK' id=bu"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_04d72dfc1f09
+    N_04d72dfc1f09 -->|"ui_wait: wait()"| N_47382e0e5f24
+    N_47382e0e5f24 -->|"ui_click: click([2] Button text='Open Flas"| N_ce6e5be2408e
+    N_ce6e5be2408e -->|"detail_probe: click_service()"| N_7f2020a997c6
+    N_7f2020a997c6 -->|"warning_probe: click_use_service_switch"| N_b0ff367b8182
+    N_ce6e5be2408e -->|"refusal_probe: Back_refuse"| N_fdcfd4fb0431
+    N_fdcfd4fb0431 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_fdcfd4fb0431
+    N_fdcfd4fb0431 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_fdcfd4fb0431
