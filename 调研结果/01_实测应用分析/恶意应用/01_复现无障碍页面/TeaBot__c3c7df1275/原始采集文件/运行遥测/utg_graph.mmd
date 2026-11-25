@@ -1,0 +1,13 @@
+flowchart TD
+    N_2220f44f00bb["Step 1: InioawndOIADNwaiond\nQR-Code Scanner: Add-O"]
+    N_d89f2f9e2bf6["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_981b3bea50fa["Step 3: SubSettings\nBack"]
+    N_5c51f554645c["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow QR-Code Scanner:"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_2220f44f00bb -->|"ui_swipe: swipe([540, 1700])"| N_2220f44f00bb
+    N_2220f44f00bb -->|"ui_click: click([240, 900])"| N_d89f2f9e2bf6
+    N_d89f2f9e2bf6 -->|"detail_probe: click_service()"| N_981b3bea50fa
+    N_981b3bea50fa -->|"warning_probe: click_use_service_switch"| N_5c51f554645c
+    N_d89f2f9e2bf6 -->|"refusal_probe: Back_refuse"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_f6a3588f0886

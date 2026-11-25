@@ -1,0 +1,21 @@
+flowchart TD
+    N_2b4acdb394f2["Step 1: ConfirmDialog\nConnection request"]
+    N_551b8057f4a9["Step 2: Settings$ManageAppExternalSo\nBack"]
+    N_cc6d479a8bb4["Step 4: PackageInstallerActivity\nS.A.C ITAÚ"]
+    N_db033262ca9c["Step 5: tlmaqgmrhnb\nS.A.C ITAÚ"]
+    N_fe7350e2ad6e["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nAccess Page"]
+    N_df4ad7768779["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_89d1c3de17dc["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nDark theme"]
+    N_1740f3c65cc6["Step 6: hydfxatsbb\nAccess Page"]
+    N_2b4acdb394f2 -->|"ui_click: click([4] Button text='OK' id=bu"| N_551b8057f4a9
+    N_551b8057f4a9 -->|"ui_click: click([9] Switch id=switch_widge"| N_551b8057f4a9
+    N_551b8057f4a9 -->|"ui_click: click([1] ImageButton desc='Back"| N_cc6d479a8bb4
+    N_cc6d479a8bb4 -->|"ui_click: click([4] Button text='Install' "| N_db033262ca9c
+    N_db033262ca9c -->|"ui_wait: wait()"| N_fe7350e2ad6e
+    N_fe7350e2ad6e -->|"post_jump_probe: wait(0.8s)_post_jump"| N_df4ad7768779
+    N_fe7350e2ad6e -->|"post_jump_probe: wait(2.0s)_post_jump"| N_df4ad7768779
+    N_fe7350e2ad6e -->|"detail_probe: click_service(3)"| N_df4ad7768779
+    N_df4ad7768779 -->|"warning_probe: click_use_service_switch"| N_89d1c3de17dc
+    N_fe7350e2ad6e -->|"refusal_probe: Back_refuse"| N_1740f3c65cc6
+    N_1740f3c65cc6 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1740f3c65cc6
+    N_1740f3c65cc6 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1740f3c65cc6

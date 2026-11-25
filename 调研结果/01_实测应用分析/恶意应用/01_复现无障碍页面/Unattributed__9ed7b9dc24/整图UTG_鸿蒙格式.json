@@ -1,0 +1,387 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_160__9ed7b9dc24",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "clear",
+  "target_package": "com.estrongs.android.pop",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "51814fc1e003",
+  "hook_node_ids": [
+    "57196c0411b6",
+    "810d3775f385"
+  ],
+  "nodes": [
+    {
+      "node_id": "51814fc1e003",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Privacy to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6b5fad636bef",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.estrongs.android.pop",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "0 de 5",
+        "Bem-vindo ao Sistema de Proteção",
+        "Este assistente irá configurar a proteção do seu dispositivo em apenas alguns passos.\n\nVocê precisará conceder algumas permissões para que a proteção funcione corretamente.\n\nToque em AVANÇAR para continuar.",
+        "AVANÇAR"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "001502c87d9b",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.estrongs.android.pop",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "57196c0411b6",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Privacy",
+        "Off / Serviço de otimização de renderização e acessibilidade de interface corporativa.",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Off"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "1fea3eef81a4",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Privacy",
+        "Use Privacy",
+        "OPTIONS",
+        "Privacy shortcut",
+        "Off",
+        "Shortcut settings",
+        "Serviço de otimização de renderização e acessibilidade de interface corporativa."
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "810d3775f385",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Privacy to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    },
+    {
+      "node_id": "c0bdc673312e",
+      "first_step": 4,
+      "role": "refusal_probe",
+      "bundleName": "com.estrongs.android.pop",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "harmony_layout_json": "step_04_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_04_refusal_2000ms_layout.xml",
+      "screenshot": "step_04_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "51814fc1e003",
+      "to": "6b5fad636bef",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1318))"
+    },
+    {
+      "from": "6b5fad636bef",
+      "to": "001502c87d9b",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"AVANÇAR\" id=btnNext (click) center=(540,1466))"
+    },
+    {
+      "from": "001502c87d9b",
+      "to": "57196c0411b6",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"ATIVAR SERVIÇO\" id=btnNext (click) center=(540,1389))"
+    },
+    {
+      "from": "57196c0411b6",
+      "to": "1fea3eef81a4",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "1fea3eef81a4",
+      "to": "810d3775f385",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "57196c0411b6",
+      "to": "c0bdc673312e",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "c0bdc673312e",
+      "to": "c0bdc673312e",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "c0bdc673312e",
+      "to": "c0bdc673312e",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Privacy Use Privacy OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Privacy",
+        "Use Privacy",
+        "OPTIONS",
+        "Privacy shortcut",
+        "Off",
+        "Shortcut settings",
+        "Serviço de otimização de renderização e acessibilidade de interface corporativa."
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Privacy to have full control of your de",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Privacy to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.estrongs.android.pop",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.estrongs.android.pop",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.estrongs.android.pop",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Unattributed__9ed7b9dc24",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用先请求电池优化白名单并以伪系统通知常驻，随后用葡语“保护系统”五步向导诱导启用无障碍服务“Privacy”；进入系统无障碍详情与高风险完全控制警告，拒绝授权后仍卡在“正在配置保护服务”的诱导页，形成 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 允许应用始终在后台运行？（电池优化弹窗）",
+    "英文 -> 允许 Privacy 始终后台运行可能缩短续航，可稍后在设置中更改（电池优化弹窗）",
+    "葡萄牙语 -> 欢迎来到保护系统；本向导将用几步配置设备保护，需要授予权限，点击 AVANÇAR 继续（设置向导第0/5页）",
+    "葡萄牙语 -> 保护服务需激活以检测恶意应用、自动拦截威胁并实时保护数据，点击 ATIVAR SERVIÇO（设置向导第1/5页）",
+    "葡萄牙语 -> 企业界面渲染优化与无障碍服务（系统无障碍列表/详情描述）",
+    "英文 -> 允许 Privacy 完全控制设备？完全控制适合无障碍需求应用，不适用于多数应用；可查看控制屏幕、读取所有屏幕内容并叠加显示、跟踪交互并代为操作（系统警告弹窗）",
+    "葡萄牙语 -> 正在配置保护服务……请稍候（拒权返回向导页）",
+    "葡萄牙语/英文 -> “系统服务”/“正在优化能耗……”（常驻通知，伪装系统优化）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电池优化弹窗，英文诱导允许Privacy始终后台运行并称可能耗电；点Allow授权，通知栏伪装系统优化。",
+    "step_02": "设置向导第0/5页，葡语欢迎来到保护系统，称需授予权限配置防护；点AVANÇAR进入下一步，通知栏仍有伪装。",
+    "step_03": "向导第1/5页，葡语称保护服务需激活以检测恶意应用、拦截威胁并实时护数据；点ATIVAR SERVIÇO跳转无障碍。",
+    "step_04": "跳至系统无障碍列表，已下载应用Privacy显示关闭，描述为企业界面渲染优化与无障碍服务；采集钩子后终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍在无障碍列表且无可见文本；遮罩数为0，仅见伪装系统优化通知，等待观察。",
+    "post_jump_2.0s": "跳转后2.0秒探针，无障碍列表无新增文本、无遮罩；伪装系统服务通知持续，页面未自动跳转。",
+    "detail_1_service_detail_page": "Privacy服务详情页，显示Use Privacy开关关闭及Privacy shortcut选项；描述仍为企业渲染优化与无障碍，供检查。",
+    "detail_2_system_warning_dialog": "系统高风险警告：允许Privacy完全控制设备？称可读取屏幕、叠加显示并代操作；含Allow/Deny，本步检查未点。",
+    "refusal_2.0s": "点Deny/返回后2秒回到向导第1/5页，仍显示激活服务与“正在配置，请稍候”；无法退出，判定困在诱导页。",
+    "refusal_10.5s": "拒权后10.5秒仍停在向导第1/5页，激活按钮与“正在配置保护服务，请稍候”不变；持续困在诱导页。"
+  }
+}

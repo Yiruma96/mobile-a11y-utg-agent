@@ -1,0 +1,339 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_121__c3c7df1275",
+  "label": "malicious",
+  "family_or_category": "TeaBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.bracket.original",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "2220f44f00bb",
+  "hook_node_ids": [
+    "d89f2f9e2bf6",
+    "5c51f554645c"
+  ],
+  "nodes": [
+    {
+      "node_id": "2220f44f00bb",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.bracket.original",
+      "abilityName": "in.makaek.tezbak.util.InioawndOIADNwaiond",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "QR-Code Scanner: Add-On"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d89f2f9e2bf6",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "QR-Code Scanner: Add-On",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "981b3bea50fa",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "QR-Code Scanner: Add-On",
+        "Use QR-Code Scanner: Add-On",
+        "OPTIONS",
+        "QR-Code Scanner: Add-On shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "5c51f554645c",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow QR-Code Scanner: Add-On to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 3,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_03_refusal_2000ms_layout.xml",
+      "screenshot": "step_03_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2220f44f00bb",
+      "to": "2220f44f00bb",
+      "step": 1,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1700])"
+    },
+    {
+      "from": "2220f44f00bb",
+      "to": "d89f2f9e2bf6",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([240, 900])"
+    },
+    {
+      "from": "d89f2f9e2bf6",
+      "to": "981b3bea50fa",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "981b3bea50fa",
+      "to": "5c51f554645c",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "d89f2f9e2bf6",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back QR-Code Scanner: Add-On Use QR-Code Scanner: Add-On OPT",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "QR-Code Scanner: Add-On",
+        "Use QR-Code Scanner: Add-On",
+        "OPTIONS",
+        "QR-Code Scanner: Add-On shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow QR-Code Scanner: Add-On to have full co",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow QR-Code Scanner: Add-On to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "该应用以「QR-Code Scanner: Add-On」二维码扫描插件的名义伪装身份，先在应用内伪造无障碍开启引导页诱导点击，再跳转系统无障碍设置与「完全控制设备」高危授权弹窗索取屏幕读取与代操作权限；用户点「拒绝」后应用未做挽留或重复索权，安静回落到桌面，呈优雅保持或降级。",
+  "observed_lure_rhetoric_zh": [
+    "en -> 「QR-Code Scanner: Add-On」（二维码扫描器：附加组件）——假借插件名义掩盖真实身份（Step 1/Step 2 应用内伪造引导页）",
+    "en -> 「You need enable Acce…」（你需要开启无障碍…）——以功能性提示诱导用户前往系统开启无障碍服务（Step 1 应用内提示气泡）",
+    "en -> 「Use QR-Code Scanner: Add-On」（使用 / 启用该服务）——引导开关操作（系统无障碍服务详情页）",
+    "en -> 「No description provided.」（未提供任何说明）——缺失用途描述，刻意隐瞒行为（系统无障碍服务详情页）",
+    "en -> 「Allow QR-Code Scanner: Add-On to have full control of your device?」（允许该应用完全控制你的设备吗？）——系统高危授权确认（系统警告弹窗）",
+    "en -> 「Full control is appropriate for apps that help you with accessibility needs, but not for most apps.」（完全控制只适合辅助无障碍的应用，而不适合大多数应用）——系统风险提示（系统警告弹窗）",
+    "en -> 「View and control screen / It can read all content on the screen and display content over other apps.」（查看并控制屏幕 / 可读取屏幕全部内容并叠加显示在其他应用之上）——直白说明可窥屏与覆盖（系统警告弹窗）",
+    "en -> 「View and perform actions / It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.」（查看并执行操作 / 可追踪交互并代替你操作其他应用）——说明可代操作，具备资金类盗刷能力（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用内伪造的无障碍引导页，仅显示标题「QR-Code Scanner：附加组件」，提示需开启无障碍；本步上滑未触发任何系统权限框。",
+    "step_02": "仍是同一伪造引导页，含「已安装服务」行与浮动箭头暗示继续操作；本步点击坐标[240,900]，为跳系统设置铺垫。",
+    "step_03": "已跳入系统无障碍设置，「已下载的应用」下该应用状态为关闭；探针命中无障碍设置钩子后轨迹自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留系统无障碍列表页，无文本更新、无通知横幅、无遮罩叠加。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面维持无障碍设置不变，遮罩计数为 0，应用未自行弹出引导或覆盖层。",
+    "detail_1_service_detail_page": "无障碍服务详情子页，显示启用该应用的开关与「长按音量键」快捷方式选项，描述为空、无任何用途说明。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗：询问是否允许其完全控制设备，列明可读屏并代操作；提供允许与拒绝两键，本步仅检查未点选。",
+    "refusal_2.0s": "点拒绝后 2 秒直接回落桌面，无弹窗、无挽留页；桌面仅见应用列表、Chrome、信息等，属优雅降级。",
+    "refusal_10.5s": "拒权后 10.5 秒仍安静停留桌面，无重复索权、无遮罩与通知骚扰，判定为优雅保持或降级。"
+  }
+}

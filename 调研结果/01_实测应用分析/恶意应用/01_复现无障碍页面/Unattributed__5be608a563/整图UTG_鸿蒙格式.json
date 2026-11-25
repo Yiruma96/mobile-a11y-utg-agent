@@ -1,0 +1,385 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_037__5be608a563",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "clear",
+  "target_package": "com.arlosoft.macrodroid",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "ecacce66eba7",
+  "hook_node_ids": [
+    "a72b8448de5b",
+    "15e40724efaf"
+  ],
+  "nodes": [
+    {
+      "node_id": "ecacce66eba7",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.fuelgauge.RequestIgnoreBatteryOptimizations",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Let app always run in background?",
+        "Allowing Rei dos Canais to always run in the background may reduce battery life. \n\nYou can change this later from Settings > Apps & notifications.",
+        "Deny",
+        "Allow"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "446295ed5fd4",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.arlosoft.macrodroid",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "0 de 5",
+        "Bem-vindo ao Sistema de Proteção",
+        "Este assistente irá configurar a proteção do seu dispositivo em apenas alguns passos.\n\nVocê precisará conceder algumas permissões para que a proteção funcione corretamente.\n\nToque em AVANÇAR para continuar.",
+        "AVANÇAR"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "fc43c9f7619c",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.arlosoft.macrodroid",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "a72b8448de5b",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "media player",
+        "Off",
+        "Rei dos Canais",
+        "Off / Serviço de otimização de renderização e acessibilidade de interface corporativa.",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "f0d0439d7694",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "media player",
+        "Use media player",
+        "OPTIONS",
+        "media player shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "15e40724efaf",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow media player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    },
+    {
+      "node_id": "7c74df69ae87",
+      "first_step": 4,
+      "role": "refusal_probe",
+      "bundleName": "com.arlosoft.macrodroid",
+      "abilityName": "com.seguranca.protecao.SetupWizardActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "harmony_layout_json": "step_04_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_04_refusal_2000ms_layout.xml",
+      "screenshot": "step_04_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ecacce66eba7",
+      "to": "446295ed5fd4",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=button1 (click) center=(887,1318))"
+    },
+    {
+      "from": "446295ed5fd4",
+      "to": "fc43c9f7619c",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"AVANÇAR\" id=btnNext (click) center=(540,1466))"
+    },
+    {
+      "from": "fc43c9f7619c",
+      "to": "a72b8448de5b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"ATIVAR SERVIÇO\" id=btnNext (click) center=(540,1389))"
+    },
+    {
+      "from": "a72b8448de5b",
+      "to": "f0d0439d7694",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "f0d0439d7694",
+      "to": "15e40724efaf",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "a72b8448de5b",
+      "to": "7c74df69ae87",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "7c74df69ae87",
+      "to": "7c74df69ae87",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "7c74df69ae87",
+      "to": "7c74df69ae87",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back media player Use media player OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "media player",
+        "Use media player",
+        "OPTIONS",
+        "media player shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow media player to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow media player to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.arlosoft.macrodroid",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.arlosoft.macrodroid",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.arlosoft.macrodroid",
+      "top_activity": "com.seguranca.protecao.SetupWizardActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "1 de 5",
+        "Etapa 1: Serviço de Proteção",
+        "O Serviço de Proteção precisa ser ativado para:\n\n• Detectar aplicativos maliciosos\n• Bloquear ameaças automaticamente\n• Proteger seus dados em tempo real\n\nToque em ATIVAR para habilitar o serviço.",
+        "ATIVAR SERVIÇO",
+        "Configurando serviço de proteção...",
+        "Por favor, aguarde"
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Unattributed__5be608a563",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以“Rei dos Canais/保护系统”为名，先请求忽略电池优化，再用葡语五步防毒向导诱导开启无障碍“服务”，拒权后卡在“正在配置”诱饵页无法返回。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 允许应用始终后台运行？可能增加耗电（Step 1 电池优化请求）",
+    "葡萄牙语 -> 欢迎使用保护系统，需授予若干权限才能正常防护（Step 2 欢迎页）",
+    "葡萄牙语 -> 第1步保护服务可检测恶意应用、自动拦截威胁、实时保护数据（Step 3/拒权页）",
+    "葡萄牙语 -> 企业界面渲染与无障碍优化服务（Step 4 无障碍列表）",
+    "英语 -> 允许媒体播放器完全控制设备，可查看控制屏幕并代你操作（系统警告弹窗）",
+    "葡萄牙语 -> 正在配置保护服务，请稍候（拒权返回页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统电池优化请求页：英文问是否允许Rei dos Canais始终后台运行并提示耗电；点击Allow，通知横幅仍为系统服务优化中。",
+    "step_02": "应用五步向导欢迎页（0/5）：葡语称保护系统仅需几步完成，需授予权限；点击AVANÇAR继续，通知横幅持续。",
+    "step_03": "向导第1/5步：葡语称保护服务可检测恶意应用、自动拦截威胁、实时护数据；点击ATIVAR SERVIÇO进入授权，通知横幅仍在。",
+    "step_04": "Android无障碍列表：Rei dos Canais显示Off，描述为“企业界面渲染与无障碍优化服务”；采集到无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在无障碍设置页，UI文本为空、无遮罩；应用系统服务优化通知横幅仍在。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面仍为无障碍设置页，未出现弹窗或遮罩；通知横幅继续显示“系统服务/优化能耗”。",
+    "detail_1_service_detail_page": "无障碍服务详情页：展示“media player”及“Use media player”、音量键快捷方式等选项，说明为“未提供描述”；无遮罩。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：英文称允许media player完全控制设备，可查看/控制屏幕并代操作；提供Allow/Deny，本步点Deny。",
+    "refusal_2.0s": "拒权返回向导+2秒：仍停第1/5步保护服务页，下方“正在配置保护服务，请稍候”；无法离开，判定困在诱饵页。",
+    "refusal_10.5s": "拒权返回+10.5秒：页面与2秒时相同，第1/5步保护服务及“正在配置…请稍候”持续；仍困在诱饵页。"
+  }
+}

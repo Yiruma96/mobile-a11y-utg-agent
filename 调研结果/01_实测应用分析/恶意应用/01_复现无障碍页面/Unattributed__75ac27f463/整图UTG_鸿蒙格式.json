@@ -1,0 +1,455 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_170__75ac27f463",
+  "label": "malicious",
+  "family_or_category": "Unattributed",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.android.system.qspas10",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "2b4acdb394f2",
+  "hook_node_ids": [
+    "fe7350e2ad6e",
+    "df4ad7768779",
+    "89d1c3de17dc"
+  ],
+  "nodes": [
+    {
+      "node_id": "2b4acdb394f2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.vpndialogs",
+      "abilityName": "com.android.vpndialogs.ConfirmDialog",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Connection request",
+        "S.A.C ITAÚ wants to set up a VPN connection that allows it to monitor network traffic. Only accept if you trust the source. \n\n￼ appears at the top of your screen when VPN is active.",
+        "Cancel",
+        "OK"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "551b8057f4a9",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$ManageAppExternalSourcesActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Install unknown apps",
+        "Search settings",
+        "S.A.C ITAÚ",
+        "1.0",
+        "Allow from this source",
+        "Your phone and personal data are more vulnerable to attack by unknown apps. By installing apps from this source, you agree that you are responsible for any damage to your phone or loss of data that may result from their use."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "cc6d479a8bb4",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.packageinstaller",
+      "abilityName": "com.android.packageinstaller.PackageInstallerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "S.A.C ITAÚ",
+        "Do you want to install this application?",
+        "Cancel",
+        "Install"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "db033262ca9c",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "hesy.poexdt.lmqsoqy",
+      "abilityName": ".tlmaqgmrhnb",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "S.A.C ITAÚ",
+        "Aguarde o procedimento...",
+        "Otimizando sistema",
+        "Installing...",
+        "✓ Google Play Protect verificado"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "fe7350e2ad6e",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Access Page",
+        "S.A.C ITAÚ",
+        "Este aplicativo requer permissão de acesso para funcionar. Por favor, permita para continuar.",
+        "1",
+        "Click on continue",
+        "2",
+        "Find downloaded apps",
+        "3",
+        "Enable S.A.C ITAÚ",
+        "CONTINUAR",
+        "All Rights Reserved © 2026 S.A.C ITAÚ"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "df4ad7768779",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "S.A.C ITAÚ",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_06_probe_800ms_layout_harmony.json",
+      "android_layout_xml": "step_06_probe_800ms_layout.xml",
+      "screenshot": "step_06_probe_800ms_screen.png"
+    },
+    {
+      "node_id": "89d1c3de17dc",
+      "first_step": 6,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Dark theme",
+        "Supported apps will also switch to dark theme",
+        "Got it"
+      ],
+      "harmony_layout_json": "step_06_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_06_system_warning_layout.xml",
+      "screenshot": "step_06_system_warning_screen.png"
+    },
+    {
+      "node_id": "1740f3c65cc6",
+      "first_step": 6,
+      "role": "refusal_probe",
+      "bundleName": "hesy.poexdt.lmqsoqy",
+      "abilityName": "hesy.poexdt.lmqsoqy.hydfxatsbb",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Access Page",
+        "S.A.C ITAÚ",
+        "Este aplicativo requer permissão de acesso para funcionar. Por favor, permita para continuar.",
+        "1",
+        "Click on continue",
+        "2",
+        "Find downloaded apps",
+        "3",
+        "Enable S.A.C ITAÚ",
+        "CONTINUAR"
+      ],
+      "harmony_layout_json": "step_06_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_06_refusal_2000ms_layout.xml",
+      "screenshot": "step_06_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2b4acdb394f2",
+      "to": "551b8057f4a9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"OK\" id=button1 (click) center=(887,1376))"
+    },
+    {
+      "from": "551b8057f4a9",
+      "to": "551b8057f4a9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "551b8057f4a9",
+      "to": "cc6d479a8bb4",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Back\" (click) center=(77,160))"
+    },
+    {
+      "from": "cc6d479a8bb4",
+      "to": "db033262ca9c",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Install\" id=button1 (click) center=(887,1235))"
+    },
+    {
+      "from": "db033262ca9c",
+      "to": "fe7350e2ad6e",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "fe7350e2ad6e",
+      "to": "df4ad7768779",
+      "step": 6,
+      "edge_type": "post_jump_probe",
+      "action": "wait(0.8s)_post_jump"
+    },
+    {
+      "from": "fe7350e2ad6e",
+      "to": "df4ad7768779",
+      "step": 6,
+      "edge_type": "post_jump_probe",
+      "action": "wait(2.0s)_post_jump"
+    },
+    {
+      "from": "fe7350e2ad6e",
+      "to": "df4ad7768779",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service(3)"
+    },
+    {
+      "from": "df4ad7768779",
+      "to": "89d1c3de17dc",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "fe7350e2ad6e",
+      "to": "1740f3c65cc6",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1740f3c65cc6",
+      "to": "1740f3c65cc6",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1740f3c65cc6",
+      "to": "1740f3c65cc6",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Accessibility Search settings DOWNLOADED APPS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "S.A.C ITAÚ",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Dark theme Supported apps will also switch to",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "overlays": [],
+      "sample_texts": [
+        "Dark theme",
+        "Supported apps will also switch to dark theme",
+        "Got it"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "hesy.poexdt.lmqsoqy",
+      "top_activity": "hesy.poexdt.lmqsoqy.hydfxatsbb",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Access Page",
+        "S.A.C ITAÚ",
+        "Este aplicativo requer permissão de acesso para funcionar. Por favor, permita para continuar.",
+        "1",
+        "Click on continue",
+        "2",
+        "Find downloaded apps",
+        "3",
+        "Enable S.A.C ITAÚ",
+        "CONTINUAR"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "hesy.poexdt.lmqsoqy",
+      "top_activity": "hesy.poexdt.lmqsoqy.hydfxatsbb",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Access Page",
+        "S.A.C ITAÚ",
+        "Este aplicativo requer permissão de acesso para funcionar. Por favor, permita para continuar.",
+        "1",
+        "Click on continue",
+        "2",
+        "Find downloaded apps",
+        "3",
+        "Enable S.A.C ITAÚ",
+        "CONTINUAR"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "hesy.poexdt.lmqsoqy",
+      "top_activity": "hesy.poexdt.lmqsoqy.hydfxatsbb",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Access Page",
+        "S.A.C ITAÚ",
+        "Este aplicativo requer permissão de acesso para funcionar. Por favor, permita para continuar.",
+        "1",
+        "Click on continue",
+        "2",
+        "Find downloaded apps",
+        "3",
+        "Enable S.A.C ITAÚ",
+        "CONTINUAR"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Unattributed__75ac27f463",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用先骗取VPN和未知来源安装权限，安装伪装成S.A.C ITAÚ的恶意包，再用“安装中/已验证”和三步教程诱导开启无障碍；拒权后反复重拉同一诱导页。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “S.A.C ITAÚ 希望建立 VPN 连接以监控网络流量，仅信任来源时接受”（step_01 VPN授权弹窗）",
+    "英语 -> “允许来自此来源”及未知应用风险警告（step_02/03 未知来源设置页）",
+    "葡萄牙语/英语 -> “请稍候…/正在优化系统”“正在安装…”“✓ Google Play Protect 已验证”（step_05 恶意安装页）",
+    "葡萄牙语 -> “此应用需要访问权限才能运行，请允许以继续”（step_06/refusal 无障碍引导页）",
+    "英语/葡语 -> “点击继续 / 查找已下载应用 / 启用 S.A.C ITAÚ”及“CONTINUAR”（step_06/refusal 无障碍引导页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "VPN授权弹窗：英文称S.A.C ITAÚ请求监控网络流量，仅信任时接受；点击OK授予VPN，顶部有Google备份通知。",
+    "step_02": "未知来源设置页：显示S.A.C ITAÚ 1.0，英文警告未知应用风险；勾选“允许来自此来源”开关以放行安装，顶部备份通知。",
+    "step_03": "同一未知来源页：开关已开启，英文风险提示仍在；点击左上返回恶意应用继续诱导，全程无遮罩，通知横幅保留。",
+    "step_04": "系统安装确认页：英文“是否安装此应用？”，显示S.A.C ITAÚ；点击Install继续安装恶意载荷，通知横幅仍在。",
+    "step_05": "恶意安装页：葡文“请稍候/优化系统”、英文“安装中”及“Play Protect已验证”伪装可信；等待后触发广播。",
+    "step_06": "无障碍引导页：葡文称需访问权限，英文三步“继续/找应用/启用S.A.C ITAÚ”；点CONTINUAR后捕获钩子即终止。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停在无障碍设置页，界面文本为空、遮罩0；S.A.C与Google备份通知仍在，无用户操作。",
+    "post_jump_2.0s": "跳后2秒探针：无障碍设置页持续空白、无遮罩；恶意应用S.A.C与Google备份通知仍挂起，未见新弹窗。",
+    "detail_1_service_detail_page": "无障碍设置详情页：显示DOWNLOADED APPS下S.A.C ITAÚ为Off，另有屏幕阅读/显示项；仅巡检未授权，通知仍在。",
+    "detail_2_system_warning_dialog": "巡检时出现系统“深色主题”说明弹窗，含Got it；无权限授权动作，遮罩0，S.A.C与备份通知仍在。",
+    "refusal_2.0s": "拒权后2秒：恶意应用重拉葡语“访问页”，称需访问权限才能继续，含三步教程与CONTINUAR；记录为重启诱导弹窗。",
+    "refusal_10.5s": "拒权后10.5秒：同一葡语“访问页”与三步教程仍在，未见权限关闭/取消，动作仍记为重启诱导弹窗，通知横幅保留。"
+  }
+}

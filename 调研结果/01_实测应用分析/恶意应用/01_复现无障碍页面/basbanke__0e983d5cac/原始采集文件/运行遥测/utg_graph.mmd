@@ -1,0 +1,15 @@
+flowchart TD
+    N_01cbec65d027["Step 1: main\nQUEM TE VISITOU"]
+    N_6c68bfd5c9ca["Step 2: main\nFACEBOOK ATIVAÇÃO
+
+VOC"]
+    N_dd94f0c51196["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_bd045a456211["Step 3: SubSettings\nBack"]
+    N_7178446b9ff7["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Quem viu teu per"]
+    N_01cbec65d027 -->|"ui_click: click([3] ImageView (click) cent"| N_6c68bfd5c9ca
+    N_6c68bfd5c9ca -->|"ui_click: click([2] Button text='OK' id=bu"| N_dd94f0c51196
+    N_dd94f0c51196 -->|"detail_probe: click_service()"| N_bd045a456211
+    N_bd045a456211 -->|"warning_probe: click_use_service_switch"| N_7178446b9ff7
+    N_dd94f0c51196 -->|"refusal_probe: Back_refuse"| N_6c68bfd5c9ca
+    N_6c68bfd5c9ca -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6c68bfd5c9ca
+    N_6c68bfd5c9ca -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6c68bfd5c9ca

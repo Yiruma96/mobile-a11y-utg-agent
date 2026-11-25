@@ -1,0 +1,16 @@
+flowchart TD
+    N_51814fc1e003["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_6b5fad636bef["Step 2: SetupWizardActivity\n0 de 5"]
+    N_001502c87d9b["Step 3: SetupWizardActivity\n1 de 5"]
+    N_57196c0411b6["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_1fea3eef81a4["Step 4: SubSettings\nBack"]
+    N_810d3775f385["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Privacy to have "]
+    N_c0bdc673312e["Step 4: SetupWizardActivity\n1 de 5"]
+    N_51814fc1e003 -->|"ui_click: click([4] Button text='Allow' id"| N_6b5fad636bef
+    N_6b5fad636bef -->|"ui_click: click([4] Button text='AVANÇAR' "| N_001502c87d9b
+    N_001502c87d9b -->|"ui_click: click([4] Button text='ATIVAR SE"| N_57196c0411b6
+    N_57196c0411b6 -->|"detail_probe: click_service()"| N_1fea3eef81a4
+    N_1fea3eef81a4 -->|"warning_probe: click_use_service_switch"| N_810d3775f385
+    N_57196c0411b6 -->|"refusal_probe: Back_refuse"| N_c0bdc673312e
+    N_c0bdc673312e -->|"refusal_probe: wait(5.5s)_after_refusal"| N_c0bdc673312e
+    N_c0bdc673312e -->|"refusal_probe: wait(10.5s)_after_refusal"| N_c0bdc673312e

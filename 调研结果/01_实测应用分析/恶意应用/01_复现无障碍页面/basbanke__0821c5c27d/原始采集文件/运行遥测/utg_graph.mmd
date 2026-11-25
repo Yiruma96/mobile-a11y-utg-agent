@@ -1,0 +1,13 @@
+flowchart TD
+    N_21433366b983["Step 1: main\nATIVAR RECURSO"]
+    N_1bef4b9f437e["Step 2: main\nINSTAGRAM ATIVAÇÃO REC"]
+    N_9642cc472dca["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_3b356b188475["Step 3: SubSettings\nBack"]
+    N_f149e4b71ca5["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Quem te visitou "]
+    N_21433366b983 -->|"ui_click: click([1] TextView text='ATIVAR "| N_1bef4b9f437e
+    N_1bef4b9f437e -->|"ui_click: click([2] Button text='OK' id=bu"| N_9642cc472dca
+    N_9642cc472dca -->|"detail_probe: click_service()"| N_3b356b188475
+    N_3b356b188475 -->|"warning_probe: click_use_service_switch"| N_f149e4b71ca5
+    N_9642cc472dca -->|"refusal_probe: Back_refuse"| N_1bef4b9f437e
+    N_1bef4b9f437e -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1bef4b9f437e
+    N_1bef4b9f437e -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1bef4b9f437e

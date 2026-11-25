@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用以“Férias Decolar”插件入口点击 ATIVAR 启动流程，用葡萄牙语弹窗反复引导用户前往系统无障碍设置开启完全控制权限；详情页借 Outback 票券福利强化授权动机，用户点 Deny 拒权后应用仍重弹同一诱导弹窗。",
+  "observed_lure_rhetoric_zh": [
+    "ATIVAR（葡萄牙语）-> 激活（主界面入口按钮）",
+    "VOCÊ PRECISA ATIVAR O RECURSO PARA UTILIZAR O PLUGIN / Ative a permissão a seguir! / Configurações > Acessibilidade > Férias Decolar（葡萄牙语）-> 您需要激活该资源才能使用插件；请激活以下权限！设置>无障碍>Férias Decolar（授权说明弹窗）",
+    "Use Férias Decolar（葡萄牙语/产品名）-> 使用 Férias Decolar（无障碍服务详情页开关说明）",
+    "Ticket Outback: Ativando o recurso você tem ativação do seu ticket / Varios ticket por semana / Descontos de 20R$ até 190R$ / Precisamos da permissão para evitar que seu ticket seja usado por outros clientes（葡萄牙语）-> 激活资源即可激活票券；每周多张票券；20至190雷亚尔折扣；需要权限防止票券被他人使用（服务详情页）",
+    "Allow Férias Decolar to have full control of your device? / View and control screen / View and perform actions / Allow / Deny（英语）-> 允许 Férias Decolar 完全控制您的设备吗？可查看并控制屏幕、查看并执行操作/代为交互；允许/拒绝（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "主界面仅见葡萄牙语按钮“ATIVAR”；点击后启动诱导流程，无通知横幅、无遮罩，下一步将弹出授权说明弹窗。",
+    "step_02": "主界面弹出说明弹窗，标题“Férias Decolar”，称必须激活资源/权限，并指引前往设置>无障碍>Férias Decolar；点击 OK 关闭继续。",
+    "step_03": "系统无障碍列表页，DOWNLOADED APPS 下可见“Férias Decolar”开关为 Off；应用在此触发无障碍设置钩子后自动终止，未授权。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍设置页，界面文本为空，overlays=0，无通知横幅或悬浮遮罩，等待未见变化。",
+    "post_jump_2.0s": "跳转后2.0秒探针：系统无障碍设置页保持无文本、无通知、无遮罩（overlays=0），未出现二次跳转或弹窗。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示“Use Férias Decolar”及选项；下方用“Ticket Outback”票券福利和防他人使用话术，诱使开启完全控制权限。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗：英文询问是否允许“Férias Decolar”完全控制设备，列明可读屏、覆盖显示、代操作等风险，含 Allow/Deny；本步点 Deny。",
+    "refusal_2.0s": "拒绝授权返回后2秒，应用再次弹出同一葡萄牙语诱导弹窗，坚称必须激活权限并给设置路径，仅 OK 按钮，形成反复施压。",
+    "refusal_10.5s": "拒绝后10.5秒仍停留在同一诱导弹窗，未进入功能页；说明应用在拒权后持续重弹，逼迫用户前往无障碍设置授权。"
+  }
+}

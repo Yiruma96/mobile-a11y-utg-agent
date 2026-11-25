@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用以“谁访问了你”为诱饵，先展示欢迎页并引导点击仿Facebook入口，再弹出“Facebook激活”要求到系统无障碍中开启“Quem viu teu perfil”；拒权后仍反复重弹同一诱导弹窗。",
+  "observed_lure_rhetoric_zh": [
+    "葡萄牙语「QUEM TE VISITOU / Seja bem vindo !! Descubra quem visitou seu perfil com nosso algoritimo inteligente.」 -> 欢迎，用智能算法发现谁访问了你的主页（Step1主页面）",
+    "葡萄牙语「FACEBOOK ATIVAÇÃO / VOCÊ PRECISA ATIVAR O RECURSO PARA VER VISITANTES NO SEU PERFIL / Ative a permissão a seguir...」 -> Facebook激活：必须开启该功能才能查看访客，请开启以下权限（Step2及拒权后弹窗）",
+    "葡萄牙语「Caso você tenha dificuldades, basta procurar o nome do aplicativo na proxima janela / Configurações > Acessibilidade > Quem viu teu perfil」 -> 若找不到，就在下个窗口搜索应用名并进入设置>无障碍>Quem viu teu perfil（Step2假Facebook弹窗）",
+    "葡萄牙语「Ativando o recurso você tem ativação do componente. * Veja quem visitou seu perfil * Aplicativo oficial da rede * Precisamos da permissão para localizar os visitantes」 -> 开启即可查看访客、关注新访客、自称官方应用，并称需要权限定位访客（服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "主页面以“谁访问了你”为诱饵，称用智能算法发现访客；点击底部图片按钮，疑似进入仿Facebook登录入口。",
+    "step_02": "仿Facebook激活弹窗称必须开启权限才能查看访客，并引导到设置无障碍中搜索本应用；点击OK继续。",
+    "step_03": "跳到系统无障碍列表，已见本应用“Quem viu teu perfil”处于Off；探针捕获无障碍设置Hook后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍设置页，界面文本为空，无通知横幅、无遮罩覆盖。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在无障碍设置页，overlays=0，无通知或弹窗，说明页面保持等待用户开启。",
+    "detail_1_service_detail_page": "无障碍服务详情页，展示“使用Quem viu teu perfil”开关及快捷方式选项；说明文字以查看访客、官方应用、需权限为由诱导开启。",
+    "detail_2_system_warning_dialog": "Android高危授权弹窗，询问是否允许该应用完全控制设备，列明可读屏、可代操作；提供Allow与Deny，审核步点Deny。",
+    "refusal_2.0s": "从系统授权页返回并拒绝后2秒，应用立即重弹同一仿Facebook激活弹窗，继续要求开启无障碍权限。",
+    "refusal_10.5s": "拒绝后10.5秒，仿Facebook激活弹窗仍再次出现，形成反复施压；无通知、无遮罩，仅OK按钮引导继续。"
+  }
+}

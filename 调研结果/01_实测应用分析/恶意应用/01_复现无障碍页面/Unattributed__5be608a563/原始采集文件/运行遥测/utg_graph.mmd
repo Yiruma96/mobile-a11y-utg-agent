@@ -1,0 +1,16 @@
+flowchart TD
+    N_ecacce66eba7["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_446295ed5fd4["Step 2: SetupWizardActivity\n0 de 5"]
+    N_fc43c9f7619c["Step 3: SetupWizardActivity\n1 de 5"]
+    N_a72b8448de5b["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_f0d0439d7694["Step 4: SubSettings\nBack"]
+    N_15e40724efaf["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow media player to "]
+    N_7c74df69ae87["Step 4: SetupWizardActivity\n1 de 5"]
+    N_ecacce66eba7 -->|"ui_click: click([4] Button text='Allow' id"| N_446295ed5fd4
+    N_446295ed5fd4 -->|"ui_click: click([4] Button text='AVANÇAR' "| N_fc43c9f7619c
+    N_fc43c9f7619c -->|"ui_click: click([4] Button text='ATIVAR SE"| N_a72b8448de5b
+    N_a72b8448de5b -->|"detail_probe: click_service()"| N_f0d0439d7694
+    N_f0d0439d7694 -->|"warning_probe: click_use_service_switch"| N_15e40724efaf
+    N_a72b8448de5b -->|"refusal_probe: Back_refuse"| N_7c74df69ae87
+    N_7c74df69ae87 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_7c74df69ae87
+    N_7c74df69ae87 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_7c74df69ae87

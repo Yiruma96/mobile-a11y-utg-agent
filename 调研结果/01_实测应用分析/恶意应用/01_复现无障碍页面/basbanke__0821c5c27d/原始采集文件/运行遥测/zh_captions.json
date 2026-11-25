@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "该应用以葡萄牙语伪称激活 Instagram“谁访问了你”功能，先弹说明再跳转系统无障碍设置，诱导开启“Quem te visitou”服务；用户拒绝后仍反复重弹同一诱导弹窗（RELAUNCHED_LURE_DIALOG）。",
+  "observed_lure_rhetoric_zh": [
+    "ATIVAR RECURSO -> 激活功能（step_01 主启动页）",
+    "INSTAGRAM ATIVAÇÃO RECURSO... Configurações > Acessibilidade > Quem te visitou -> Instagram 功能激活：必须激活该功能，开启以下权限以避免 Instagram 错误，困难可找官方支持，路径为设置>无障碍>谁访问了你（step_02 主界面弹窗）",
+    "Ativando o recurso você tem ativação do componente... -> 启用功能即激活组件，全网络可用，有疑问联系支持，系官方应用，需权限以运行算法（服务详情页）",
+    "Allow Quem te visitou to have full control of your device? -> 允许“谁访问了你”完全控制你的设备？可查看控制屏幕、读取全部屏幕内容并悬浮显示、跟踪交互并代你操作（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "主启动页仅显示“ATIVAR RECURSO/激活功能”按钮，代理点击进入权限引导；无通知横幅、无遮罩。",
+    "step_02": "主界面弹出葡萄牙语“Instagram 功能激活”说明，要求去无障碍开启“Quem te visitou”，点击 OK 继续；无遮罩/通知。",
+    "step_03": "系统无障碍列表显示已下载应用“Quem te visitou/谁访问了你”且关闭；探针命中后自动终止，无遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针仍停留在无障碍设置页，界面文本为空、遮罩数为 0，未见弹窗或通知横幅。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针仍在无障碍设置页，未捕获界面文本、遮罩为 0，未出现新弹窗或通知。",
+    "detail_1_service_detail_page": "进入“Quem te visitou”服务详情，葡萄牙语称启用组件、全网络可用、官方应用并需权限运行算法；诱导开启无障碍服务。",
+    "detail_2_system_warning_dialog": "系统警告询问是否允许“Quem te visitou”完全控制设备，列明读屏、悬浮、跟踪并代操作，提供 Allow/Deny；本步仅检查。",
+    "refusal_2.0s": "点拒绝返回应用后 2 秒，主页再次弹出同一“激活 Instagram 功能”诱导弹窗，出现 RELAUNCHED_LURE_DIALOG，未降级为普通页。",
+    "refusal_10.5s": "拒权后 10.5 秒应用仍反复重弹同一葡萄牙语激活/无障碍引导弹窗，标记 RELAUNCHED_LURE_DIALOG，持续施压用户授权。"
+  }
+}

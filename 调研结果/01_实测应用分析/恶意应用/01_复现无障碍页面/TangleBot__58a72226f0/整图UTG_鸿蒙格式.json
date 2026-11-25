@@ -1,0 +1,327 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_029__58a72226f0",
+  "label": "malicious",
+  "family_or_category": "TangleBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.jsfzhkdwok.iaitibsyurmnq",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "07f29c638507",
+  "hook_node_ids": [
+    "31d10647c498",
+    "0bd206ec8378",
+    "8923f1719d54"
+  ],
+  "nodes": [
+    {
+      "node_id": "07f29c638507",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.jsfzhkdwok.iaitibsyurmnq",
+      "abilityName": "com.jsfzhkdwok.iaitibsyurmnq.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "31d10647c498",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "4K IPTV PRO",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "0bd206ec8378",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "4K IPTV PRO",
+        "Use 4K IPTV PRO",
+        "OPTIONS",
+        "4K IPTV PRO shortcut",
+        "Off",
+        "Shortcut settings",
+        "4K IPTV PRO Accessibility Service"
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "8923f1719d54",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow 4K IPTV PRO to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "07f29c638507",
+      "to": "31d10647c498",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1638])"
+    },
+    {
+      "from": "31d10647c498",
+      "to": "0bd206ec8378",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0bd206ec8378",
+      "to": "8923f1719d54",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "31d10647c498",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back 4K IPTV PRO Use 4K IPTV PRO OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "4K IPTV PRO",
+        "Use 4K IPTV PRO",
+        "OPTIONS",
+        "4K IPTV PRO shortcut",
+        "Off",
+        "Shortcut settings",
+        "4K IPTV PRO Accessibility Service"
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow 4K IPTV PRO to have full control of you",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow 4K IPTV PRO to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "入口 MainActivity 的 WebView 点击“Continuare（继续）”后跳转系统无障碍列表，并以持续通知诱导启用伪装的“4K IPTV PRO”无障碍服务，再进入详情与“完全控制设备”系统警告；拒绝/返回后回到桌面，通知仍驻留、无遮罩，呈 GRACEFUL_STAY_OR_DEGRADE 的优雅降级。",
+  "observed_lure_rhetoric_zh": [
+    "罗马尼亚语/意大利语 -> “继续”（主界面 WebView 的 Continuare 按钮）",
+    "英语 -> 以“4K IPTV PRO”伪装成 IPTV 应用（无障碍列表、服务详情页及通知横幅）",
+    "英语 -> 请在设置→无障碍→已安装服务或已下载服务中启用“4K IPTV PRO”（无障碍列表页及后续页持续通知）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面为 WebView，仅见“Continuare（继续）”按钮；本步点击坐标[540,1638]触发跳转，页面未显示其他说明或遮罩。",
+    "step_02": "跳至系统无障碍列表，已下载应用区显示“4K IPTV PRO”为关闭；应用通知要求到设置中启用该服务，探针捕获无障碍钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒仍在无障碍列表页，前台无界面文字；应用通知横幅持续提示启用“4K IPTV PRO”，无遮罩，探针仅等待。",
+    "post_jump_2.0s": "跳转后2.0秒同一无障碍列表页，无界面文字；同一条启用“4K IPTV PRO”的通知出现两条，仍无遮罩，探针等待结束。",
+    "detail_1_service_detail_page": "进入“4K IPTV PRO”无障碍服务详情页，含“Use 4K IPTV PRO（使用）”开关为关、快捷方式关闭；通知仍催启用，本步仅检查详情/警告。",
+    "detail_2_system_warning_dialog": "系统警告弹窗：是否允许“4K IPTV PRO”完全控制设备，称可读屏、覆盖应用并代操作；含“Allow/Deny”，本步查看后点拒绝。",
+    "refusal_2.0s": "拒绝授权并返回桌面启动器，见应用列表与日期；应用通知仍提示启用“4K IPTV PRO”，无遮罩，结果为优雅停留/降级。",
+    "refusal_10.5s": "拒权后10.5秒仍在桌面启动器，界面无变化；启用“4K IPTV PRO”的通知继续驻留，无遮罩，应用未崩溃而降级停留。"
+  }
+}
