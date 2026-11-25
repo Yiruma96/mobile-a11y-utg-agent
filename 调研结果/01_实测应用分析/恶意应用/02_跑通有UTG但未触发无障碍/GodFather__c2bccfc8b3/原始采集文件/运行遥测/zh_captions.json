@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该GodFather样本以土耳其语“音乐下载”为伪装，先诱导授权并开启未知来源安装权限，再反复以“必须安装插件”弹窗拉起系统安装器，最终点Install安装内嵌载荷；未见拒绝路径测试。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 Müzik İndir -> “下载音乐”（Step1/4 Tatarian首屏应用名，伪装下载器）",
+    "土耳其语 Uygulamanın tüm özelliklerini kullanmak için izin vermeniz gerekiyor. -> “使用全部功能需授予权限”（Step1/4授权提示）",
+    "土耳其语 Bilgi -> “信息/提示”（Step5/7 Okawville弹窗标题）",
+    "土耳其语 Uygulamamızı kullanabilmek için eklentiyi yüklemelisiniz. -> “要使用应用必须安装插件”（Step5/7弹窗）",
+    "土耳其语 YÜKLE -> “安装”（Step5/7按钮，诱导安装插件）",
+    "英语 Allow from this source -> “允许来自此来源”（Step2系统设置，用于放行未知来源安装）",
+    "英语 Do you want to install this application? -> “是否安装此应用？”（Step6/8系统安装确认）"
+  ],
+  "frame_captions": {
+    "step_01": "“下载音乐”首屏弹出土耳其语授权提示，称需授权才能用全部功能；本步点OK进入未知来源设置，无通知遮罩。",
+    "step_02": "系统“安装未知应用”页显示Müzik İndir 1.0及英文风险警告；本步打开允许来源开关，为装载荷铺路，无通知遮罩。",
+    "step_03": "同一未知来源设置页，允许来源开关已开启；本步点Back返回应用继续流程，无通知遮罩。",
+    "step_04": "回到“下载音乐”首屏，仍弹土耳其语授权提示并需点OK；本步再次点OK推进后续插件安装诱导，无通知遮罩。",
+    "step_05": "进入Okawville“信息”弹窗，土耳其语称必须安装插件才能用应用；本步点“安装”按钮拉起系统安装器，无通知遮罩。",
+    "step_06": "系统安装确认页，英文询问是否安装此应用，有取消/安装；本步静态跳转回Tatarian，未实际确认安装。",
+    "step_07": "再次回到Okawville“信息”插件弹窗，仍称必须安装插件；本步再点“安装”重启安装会话，无通知遮罩。",
+    "step_08": "系统安装确认页再现，英文询问是否安装，有取消/安装；本步点击Install确认安装内嵌载荷，无通知遮罩。"
+  }
+}

@@ -1,0 +1,11 @@
+flowchart TD
+    N_4fa8edcebb37["Step 1: UnityPlayerActivity\nGame view"]
+    N_32307c1870f4["Step 2: UnityPlayerActivity\nGame view"]
+    N_2d310c02c606["Step 8: CustomTabActivity\nProps Rescue"]
+    N_4fa8edcebb37 -->|"ui_wait: wait()"| N_32307c1870f4
+    N_32307c1870f4 -->|"ui_click: click([1] View desc='Game view' "| N_32307c1870f4
+    N_32307c1870f4 -->|"ui_swipe: swipe([210, 893])"| N_32307c1870f4
+    N_32307c1870f4 -->|"static_guided_activity_jump: am_start(CurrentAccessTokenExpir"| N_32307c1870f4
+    N_32307c1870f4 -->|"ui_swipe: swipe([190, 1024])"| N_32307c1870f4
+    N_32307c1870f4 -->|"static_guided_activity_jump: am_start(AActivity)"| N_32307c1870f4
+    N_32307c1870f4 -->|"static_guided_activity_jump: am_start(CustomTabActivity)"| N_2d310c02c606

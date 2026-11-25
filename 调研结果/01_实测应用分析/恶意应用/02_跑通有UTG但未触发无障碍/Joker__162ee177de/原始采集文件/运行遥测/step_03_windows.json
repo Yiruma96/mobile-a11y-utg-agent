@@ -1,0 +1,42 @@
+{
+  "timestamp": 1795586829.9086049,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{d0599d6 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{df4e26a u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{f4937f8 u0 com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity}:",
+      "mOwnerUid": "mOwnerUid=10166 showForAllUsers=false package=com.google.android.permissioncontroller appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) sim={adjust=pan} ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #7 Window{50adedc u0 com.anti.mysecurity/org.greenrobot.eventbus.util.FindActivity}:",
+      "mOwnerUid": "mOwnerUid=10283 showForAllUsers=false package=com.anti.mysecurity appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x1030000",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #8 Window{835bcb9 u0 com.anti.mysecurity/com.bs.antivirus.ui.main.activity.MainActivity}:",
+      "mOwnerUid": "mOwnerUid=10283 showForAllUsers=false package=com.anti.mysecurity appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #11 Window{4c7724d u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10166 showForAllUsers=false package=com.google.android.permissioncontroller appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) sim={adjust=pan} ty=BASE_APPLICATION fmt=TRANSPARENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": []
+}

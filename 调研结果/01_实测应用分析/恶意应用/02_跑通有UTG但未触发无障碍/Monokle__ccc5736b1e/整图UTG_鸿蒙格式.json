@@ -1,0 +1,166 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_100__ccc5736b1e",
+  "label": "malicious",
+  "family_or_category": "Monokle",
+  "static_visibility": "clear",
+  "target_package": "com.flashlight.ultra.gps.logger",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "fde7b933b1ff",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "fde7b933b1ff",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Ultra GPS Logger to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Location",
+        "access this device's location",
+        "Contacts",
+        "access your contacts",
+        "Phone",
+        "make and manage phone calls",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages",
+        "Calendar",
+        "access your calendar"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "df9f61f463f4",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Ultra GPS Logger",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "fde7b933b1ff",
+      "to": "df9f61f463f4",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([37] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "df9f61f463f4",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AuthActivity)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GPS)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CaptureActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Monokle__ccc5736b1e",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口先弹出系统权限审查，要求 Ultra GPS Logger 一次性允许文件媒体、位置、联系人、电话、通话记录、短信、日历等敏感权限；随后仅出现旧版兼容性警告，点 OK 后应用退回桌面，多次静态跳转 Dropbox 登录、GPS、录屏及错误页均未展示实际页面。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「选择允许 Ultra GPS Logger 访问哪些内容」（Step 1 权限审查页）",
+    "英文 -> 「访问设备上的照片、媒体和文件」（Step 1 权限审查页）",
+    "英文 -> 「访问此设备的位置」（Step 1 权限审查页）",
+    "英文 -> 「访问您的联系人」（Step 1 权限审查页）",
+    "英文 -> 「拨打和管理电话」（Step 1 权限审查页）",
+    "英文 -> 「读取和写入通话记录」（Step 1 权限审查页）",
+    "英文 -> 「发送和查看短信」（Step 1 权限审查页）",
+    "英文 -> 「日历」（Step 1 权限审查页）",
+    "英文 -> 「此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者」（Step 2 兼容性警告）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页：Ultra GPS Logger 请求文件媒体、位置、联系人、电话、通话记录、短信、日历等权限；点击 Continue 继续。",
+    "step_02": "桌面兼容性警告弹窗：提示 Ultra GPS Logger 为旧版 Android 构建、可能无法正常运行；点击 OK 关闭后应用未继续，退回桌面。",
+    "step_03": "桌面主页（应用已退回）：显示应用列表、日期、天气及 Messages/Chrome 等；无应用页面，探针打开动作未能恢复目标应用。",
+    "step_04": "仍为桌面应用列表：日期、天气、Messages、Chrome、Search 等；点击「Apps list」打开抽屉以重新定位目标应用，未见应用界面。",
+    "step_05": "桌面应用列表：无应用界面；静态引导跳转至 com.dropbox.core.android.AuthActivity 失败，仍停留在桌面，无通知或遮罩。",
+    "step_06": "桌面应用列表：静态引导尝试跳转 .GPS 未生效，仍显示应用抽屉、日期与天气，无目标页面、通知横幅或遮罩。",
+    "step_07": "桌面应用列表：静态引导尝试跳转 com.system.security_update.control.screen.CaptureActivity 未生效，仍停留桌面，无权限或录屏界面。",
+    "step_08": "桌面应用列表：静态引导尝试跳转 ErrorActivity 未生效，仍显示应用抽屉、日期与天气；未出现错误页、通知横幅或遮罩。"
+  }
+}

@@ -1,0 +1,13 @@
+flowchart TD
+    N_790efd359328["Step 1: Settings$OverlaySettingsActi\nBack"]
+    N_8a3fc059b9bb["Step 2: SubSettings\nBack"]
+    N_cbc61d777818["Step 4: Settings$OverlaySettingsActi\nBack"]
+    N_407d278fdd2f["Step 5: GrantPermissionsActivity\nAllow Assistive Touch "]
+    N_72bdff4aa0ed["Step 6: MainActivity\nStart"]
+    N_790efd359328 -->|"ui_click: click([8] LinearLayout desc='Ass"| N_8a3fc059b9bb
+    N_8a3fc059b9bb -->|"ui_click: click([9] Switch id=switch_widge"| N_8a3fc059b9bb
+    N_8a3fc059b9bb -->|"ui_system_button: system_button(Back)"| N_cbc61d777818
+    N_cbc61d777818 -->|"ui_system_button: system_button(Back)"| N_407d278fdd2f
+    N_407d278fdd2f -->|"ui_click: click([4] Button text='While usi"| N_72bdff4aa0ed
+    N_72bdff4aa0ed -->|"static_guided_activity_jump: am_start(SettingsActivity)"| N_72bdff4aa0ed
+    N_72bdff4aa0ed -->|"static_guided_activity_jump: am_start(b)"| N_72bdff4aa0ed

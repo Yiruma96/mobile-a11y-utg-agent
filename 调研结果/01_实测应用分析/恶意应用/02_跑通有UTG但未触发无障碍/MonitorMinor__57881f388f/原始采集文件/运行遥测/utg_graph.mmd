@@ -1,0 +1,14 @@
+flowchart TD
+    N_9daeb10585dd["Step 1: xAnOvZoepF\nGoogle Service"]
+    N_eded919bbde8["Step 2: cECkPSKOZf\nLicense Agreement"]
+    N_3e47b1d86e89["Step 3: GrantPermissionsActivity\nAllow Google Service t"]
+    N_a175ba32a9d8["Step 4: GrantPermissionsActivity\nAllow Google Service t"]
+    N_118e3e65fdc9["Step 5: GrantPermissionsActivity\nAllow Google Service t"]
+    N_332ffa4a37fc["Step 6: GrantPermissionsActivity\nAllow Google Service t"]
+    N_9daeb10585dd -->|"ui_click: click([3] Button text='Continue'"| N_eded919bbde8
+    N_eded919bbde8 -->|"ui_click: click([4] Button text='Accept' i"| N_3e47b1d86e89
+    N_3e47b1d86e89 -->|"ui_click: click([4] Button text='While usi"| N_a175ba32a9d8
+    N_a175ba32a9d8 -->|"ui_click: click([5] Button text='While usi"| N_118e3e65fdc9
+    N_118e3e65fdc9 -->|"ui_click: click([4] Button text='While usi"| N_332ffa4a37fc
+    N_332ffa4a37fc -->|"static_guided_activity_jump: am_start(AllowPermissionActivity"| N_332ffa4a37fc
+    N_332ffa4a37fc -->|"static_guided_activity_jump: am_start(onActivityResult)"| N_332ffa4a37fc

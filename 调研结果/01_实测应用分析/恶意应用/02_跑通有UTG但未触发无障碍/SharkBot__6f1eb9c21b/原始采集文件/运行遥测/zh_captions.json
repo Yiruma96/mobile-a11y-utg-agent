@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该SharkBot样本伪装成清理加速/App Lock工具，从首页经Personal进入设置未发现“高级保护”，随后多次静态跳转App Lock权限引导与启动页均未成功；全程零遮罩、无系统授权/拒权弹窗，拒权结果未测试，仅见谷歌备份系统通知。",
+  "observed_lure_rhetoric_zh": [
+    "EN: “Phone AID, Cleaner, Booster has protected your phone 1 day(s)” -> “手机助手、清理器、加速器已保护您的手机1天”（Personal页）",
+    "EN: “App Lock / Protect the privacy data and the property” -> “应用锁/保护隐私数据与财产”（首页）",
+    "EN: “Antivirus / Phone boost / CPU Cooler / Power Saving / Game Booster” -> “杀毒/手机加速/CPU降温/省电/游戏加速”（首页功能承诺）",
+    "EN: “Application protected” -> “应用已受保护”（设置页状态提示）",
+    "EN: “Delete the APK file after app installed” -> “安装后删除APK文件”（设置页安装选项）",
+    "EN: “Upgrade” -> “升级”（个人页推广入口）",
+    "EN: “Your data isn’t backed up / Add a backup account now” -> “你的数据未备份/立即添加备份账户”（谷歌系统通知，非应用文案）"
+  ],
+  "frame_captions": {
+    "step_01": "首页清理加速仪表盘，显示内存/存储/垃圾/杀毒/省电/游戏加速与AD；点击Personal进入个人页，无遮罩，仅谷歌备份通知。",
+    "step_02": "个人页称已保护手机1天，列设置、反馈、升级、分享及Facebook点赞；点击Settings进入设置，无遮罩，通知同前。",
+    "step_03": "设置页含通知开关、快捷方式、应用保护、免打扰22:00-08:00及垃圾/加速/降温提醒；下滑寻高级保护未果，无遮罩。",
+    "step_04": "设置页下部含免打扰、通知与垃圾/加速/降温/省电提醒及安装后删APK；未见高级保护，点返回，无遮罩。",
+    "step_05": "返回个人页仍为设置/反馈/升级/分享等入口；点击底部Home回首页，通知横幅未变，无遮罩。",
+    "step_06": "首页新增App Lock，称保护隐私数据与财产；静态探针跳转applock权限引导页失败，仍留首页，无授权弹窗。",
+    "step_07": "首页仍显示App Lock隐私财产保护话术；再次静态跳转自身权限引导Activity未生效，界面未变，无授权弹窗。",
+    "step_08": "首页不变；静态探针尝试跳转SplashActivity仍停留原页，未见权限/拒权流程，仅谷歌备份通知常驻。"
+  }
+}

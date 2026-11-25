@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用启动后先由BrowserAppActivity加载带botid、page=accessibility等参数的远程页面，因断网显示WebView错误页；随后经系统主页选择器、内置启动器和多次静态跳转指向AccessibilityRequest、AccessibilityService与StartActivity，呈现MaliBot借无障碍授权话术引导用户开启服务的链路特征，但本次未完成授权/拒权测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “网页不可用”：内嵌WebView加载失败的系统提示（步骤1/6/7/8）",
+    "英文URL参数 -> page=accessibility、botkey=mfe、botid=…：以“无障碍”页面为引导并按机器人标识回传（步骤1/6/7/8）",
+    "英文 -> “网页在…无法加载，因为 net::ERR_INTERNET_DISCONNECTED”：网络断开错误提示（步骤1/6/7/8）"
+  ],
+  "frame_captions": {
+    "step_01": "内嵌WebView报错页：英文提示“网页不可用”，含page=accessibility的远程地址因断网加载失败；按返回键，无通知/遮罩。",
+    "step_02": "系统主页选择器：英文含“仅一次/始终/使用其他应用/Amazon App”；点击Amazon App，未设默认桌面。",
+    "step_03": "应用内置启动器桌面，显示Gmail、相机等图标；点击“应用列表”入口，未见明显响应。",
+    "step_04": "仍为内置启动器桌面，显示应用列表与常用图标；上滑尝试打开应用抽屉寻找Amazon App入口。",
+    "step_05": "应用抽屉展开，英文“搜索应用”，列出Amazon App等图标；点击Amazon App图标尝试重新拉起目标应用。",
+    "step_06": "再次显示WebView“网页不可用”断网页；随后静态跳转至AccessibilityRequest，试图进入无障碍授权引导。",
+    "step_07": "仍为WebView“网页不可用”断网页，URL含page=accessibility；静态跳转至AccessibilityService无障碍服务组件。",
+    "step_08": "仍为“网页不可用”断网页；静态跳转至StartActivity，形成远程无障碍话术页到本地启动组件的引导链。"
+  }
+}

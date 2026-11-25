@@ -1,0 +1,12 @@
+flowchart TD
+    N_c1e246b3e5cd["Step 1: BrowserAppActivity\nWebpage not available"]
+    N_d0e5420e4928["Step 2: ResolverActivity\nUse Pixel Launcher as "]
+    N_03d32cdfa78b["Step 3: PixelLauncher\nApps list"]
+    N_552c9afe8f8c["Step 5: PixelLauncher\nApps list"]
+    N_c1e246b3e5cd -->|"ui_system_button: system_button(Back)"| N_d0e5420e4928
+    N_d0e5420e4928 -->|"ui_click: click([6] TextView text='Amazon "| N_03d32cdfa78b
+    N_03d32cdfa78b -->|"ui_click: click([1] View desc='Apps list' "| N_03d32cdfa78b
+    N_03d32cdfa78b -->|"ui_swipe: swipe([540, 1900])"| N_552c9afe8f8c
+    N_552c9afe8f8c -->|"ui_click: click([3] TextView text='Amazon "| N_c1e246b3e5cd
+    N_c1e246b3e5cd -->|"static_guided_activity_jump: am_start(AccessibilityRequestAct"| N_c1e246b3e5cd
+    N_c1e246b3e5cd -->|"static_guided_activity_jump: am_start(AccessibilityService)"| N_c1e246b3e5cd

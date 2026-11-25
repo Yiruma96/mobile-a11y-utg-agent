@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "入口先借系统权限审查页诱导授予电话/短信权限，再以仿冒 Leboncoin 的 WebView 与旧版 Android 警告降低戒心；联网失败后停留在支付中心登录错误页，并多次静态跳转至注入/Compose 页面，全程未出现可见拒权流程。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Leboncoin 访问的内容”（Step 1 权限审查页）",
+    "英文 -> “电话：拨打和管理电话”（Step 1 权限审查页）",
+    "英文 -> “短信：发送和查看短信”（Step 1 权限审查页）",
+    "英文 -> “Leboncoin”（Step 2 仿冒品牌页）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英文 -> “该网页因网络断开无法加载：http://185.212.128.152/paymentcenter/login.php?id=...”（Step 4-7 WebView 错误页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页，英文要求允许仿冒“Leboncoin”访问电话与短信；点继续，无通知/遮罩，保留取消键。",
+    "step_02": "仿冒 Leboncoin 的 WebView 页，英文弹出旧版 Android 兼容警告；点 OK 关闭，无通知横幅与遮罩。",
+    "step_03": "同一 WebView 空白等待页，无可见文本、通知或遮罩；未联网致加载失败，后台服务据称待触发。",
+    "step_04": "WebView 错误页，英文称支付中心 login.php 链接因网络断开无法加载；本步仅等待，无通知/遮罩。",
+    "step_05": "仍为同一断网错误页；本步按系统返回键尝试退出 WebView，无通知横幅与遮罩。",
+    "step_06": "断网错误页未变；静态探针跳转至 injs.g.GActivity，界面无新增文本、通知或遮罩。",
+    "step_07": "断网错误页未变；静态探针再跳 .wb.WbActivity，页面无新增可见文本、通知横幅或遮罩。",
+    "step_08": "同一错误页文本清空；静态探针进入 .checkui.ComposeSActivity，无通知/遮罩，未显示新界面。"
+  }
+}

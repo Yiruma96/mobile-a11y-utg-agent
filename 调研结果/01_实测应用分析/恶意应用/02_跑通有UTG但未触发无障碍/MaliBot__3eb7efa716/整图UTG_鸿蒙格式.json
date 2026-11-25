@@ -1,0 +1,178 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_025__3eb7efa716",
+  "label": "malicious",
+  "family_or_category": "MaliBot",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.slhytrowb.wfxaicaiw",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "c1e246b3e5cd",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "c1e246b3e5cd",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.slhytrowb.wfxaicaiw",
+      "abilityName": "com.slhytrowb.wfxaicaiw.cryptor.ui.activities.BrowserAppActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at https://socrersutagans.site/?botid=53bde5863d22b0ea&page=accessibility&botkey=mfe&android=11&model=Google%20sdk_gphone_x86_64&battery=100%20%&botid=53bde5863d22b0ea could not be loaded because:",
+        "net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d0e5420e4928",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "android",
+      "abilityName": "com.android.internal.app.ResolverActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Use Pixel Launcher as Home",
+        "Just once",
+        "Always",
+        "Use a different app",
+        "Amazon App"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "03d32cdfa78b",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.slhytrowb.wfxaicaiw",
+      "abilityName": "com.slhytrowb.wfxaicaiw.PixelLauncher",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Gmail",
+        "Photos",
+        "Phone",
+        "Messages",
+        "Chrome",
+        "Camera"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "552c9afe8f8c",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.slhytrowb.wfxaicaiw",
+      "abilityName": "com.slhytrowb.wfxaicaiw.PixelLauncher",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Search apps",
+        "Amazon App",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "c1e246b3e5cd",
+      "to": "d0e5420e4928",
+      "step": 1,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "d0e5420e4928",
+      "to": "03d32cdfa78b",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Amazon App\" id=text1 center=(302,2067))"
+    },
+    {
+      "from": "03d32cdfa78b",
+      "to": "03d32cdfa78b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1786))"
+    },
+    {
+      "from": "03d32cdfa78b",
+      "to": "552c9afe8f8c",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "552c9afe8f8c",
+      "to": "c1e246b3e5cd",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Amazon App\" id=icon (click) center=(133,418))"
+    },
+    {
+      "from": "c1e246b3e5cd",
+      "to": "c1e246b3e5cd",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccessibilityRequestActivity)"
+    },
+    {
+      "from": "c1e246b3e5cd",
+      "to": "c1e246b3e5cd",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccessibilityService)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用启动后先由BrowserAppActivity加载带botid、page=accessibility等参数的远程页面，因断网显示WebView错误页；随后经系统主页选择器、内置启动器和多次静态跳转指向AccessibilityRequest、AccessibilityService与StartActivity，呈现MaliBot借无障碍授权话术引导用户开启服务的链路特征，但本次未完成授权/拒权测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “网页不可用”：内嵌WebView加载失败的系统提示（步骤1/6/7/8）",
+    "英文URL参数 -> page=accessibility、botkey=mfe、botid=…：以“无障碍”页面为引导并按机器人标识回传（步骤1/6/7/8）",
+    "英文 -> “网页在…无法加载，因为 net::ERR_INTERNET_DISCONNECTED”：网络断开错误提示（步骤1/6/7/8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "内嵌WebView报错页：英文提示“网页不可用”，含page=accessibility的远程地址因断网加载失败；按返回键，无通知/遮罩。",
+    "step_02": "系统主页选择器：英文含“仅一次/始终/使用其他应用/Amazon App”；点击Amazon App，未设默认桌面。",
+    "step_03": "应用内置启动器桌面，显示Gmail、相机等图标；点击“应用列表”入口，未见明显响应。",
+    "step_04": "仍为内置启动器桌面，显示应用列表与常用图标；上滑尝试打开应用抽屉寻找Amazon App入口。",
+    "step_05": "应用抽屉展开，英文“搜索应用”，列出Amazon App等图标；点击Amazon App图标尝试重新拉起目标应用。",
+    "step_06": "再次显示WebView“网页不可用”断网页；随后静态跳转至AccessibilityRequest，试图进入无障碍授权引导。",
+    "step_07": "仍为WebView“网页不可用”断网页，URL含page=accessibility；静态跳转至AccessibilityService无障碍服务组件。",
+    "step_08": "仍为“网页不可用”断网页；静态跳转至StartActivity，形成远程无障碍话术页到本地启动组件的引导链。"
+  }
+}

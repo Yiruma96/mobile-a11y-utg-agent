@@ -1,0 +1,127 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_105__e52546e671",
+  "label": "malicious",
+  "family_or_category": "HiddenAd",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.fire.the.desert.in",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "17ea98182b4f",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "17ea98182b4f",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.fire.the.desert.in",
+      "abilityName": "com.unity3d.player.UnityPlayerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Game view"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "17ea98182b4f",
+      "to": "17ea98182b4f",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "17ea98182b4f",
+      "to": "17ea98182b4f",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Game view\" center=(540,1074))"
+    },
+    {
+      "from": "17ea98182b4f",
+      "to": "17ea98182b4f",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(StartActivity)"
+    },
+    {
+      "from": "17ea98182b4f",
+      "to": "17ea98182b4f",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([540, 1755])"
+    },
+    {
+      "from": "17ea98182b4f",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(VRPurchaseActivity)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "17ea98182b4f",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UnityPlayerActivity)"
+    },
+    {
+      "from": "17ea98182b4f",
+      "to": "17ea98182b4f",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TenjinReferrerReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "HiddenAd__e52546e671",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用入口为 UnityPlayerActivity，先显示黑屏“Game view”并引导点击或“TAP TO PLAY”，随后多次静态跳转至 StartActivity、Unity 内购页、系统桌面、Tenjin 与 GMS 安装来源接收器；全程未见通知横幅、悬浮遮罩或授权/拒权弹窗，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “点击开始”（UnityPlayerActivity 第4步 Unity 菜单按钮）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "UnityPlayerActivity 显示“Game view（游戏视图）”，为黑色加载画面；本步仅等待，未发现通知横幅或悬浮遮罩。",
+    "step_02": "仍为 Unity 游戏视图黑色画面；点击屏幕中心“Game view（游戏视图）”试图跳过启动页继续流程，无通知或遮罩。",
+    "step_03": "同一 Unity 游戏视图无新增可见文案；未点击，通过静态引导跳转到 com.firedesert.StartActivity，无通知与遮罩。",
+    "step_04": "Unity 菜单画面，层级未暴露“TAP TO PLAY（点击开始）”按钮；按坐标点击该按钮继续，无通知横幅或悬浮遮罩。",
+    "step_05": "Unity 游戏视图；未点击，静态跳转至 VRPurchaseActivity（Unity 内购相关页），无通知横幅或悬浮遮罩。",
+    "step_06": "系统桌面应用列表，显示日期、-1°C 天气及 Messages、Chrome 等；无诱导话术，无通知横幅或遮罩。",
+    "step_07": "Unity 游戏视图无新增可见文案；未点击，静态跳转至 TenjinReferrerReceiver（归因接收器），无通知横幅或悬浮遮罩。",
+    "step_08": "Unity 游戏视图；未点击，静态跳转至 AppMeasurementInstallReferrer（安装来源测量接收器），无通知横幅或悬浮遮罩。"
+  }
+}

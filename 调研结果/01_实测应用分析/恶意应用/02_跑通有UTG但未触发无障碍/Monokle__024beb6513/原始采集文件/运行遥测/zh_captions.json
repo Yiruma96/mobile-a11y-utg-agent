@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "Monokle家族仿冒Skype，先以登录落地页收集账号，再以密码页收集密码，随后静态跳转至SpiceActivity及微软账户选择/添加账户组件；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 登录（Step1-8）",
+    "英语 -> Skype用户名、邮箱或手机号（Step1-8）",
+    "英语 -> 输入你的邮箱、电话号码或Skype名称（Step1-3）",
+    "英语 -> 下一步按钮（Step1-8）",
+    "英语 -> 创建账户（Step1）",
+    "英语 -> 密码，请在此输入密码（Step4-8）",
+    "英语 -> 登录遇到问题？（Step4-8）"
+  ],
+  "frame_captions": {
+    "step_01": "仿Skype登录落地页，含“Sign in/登录”“Skype名、邮箱或手机号”“创建账户”；本步点击账号输入框，无通知横幅与遮罩。",
+    "step_02": "同一仿Skype登录页，账号框提示输入邮箱、电话或Skype名；本步向已聚焦输入框键入测试账号，页面无通知与遮罩。",
+    "step_03": "仿Skype登录页中账号框已填testuser123；本步点击“Next button/下一步”按钮，推进至密码页，未见通知与遮罩。",
+    "step_04": "仿Skype密码页，显示“Skype Name testuser123”“Password/密码”“Problems signing in?/登录遇到问题”；本步点击密码框，无通知与遮罩。",
+    "step_05": "仿Skype密码页保持提示“请输入密码”；本步向已聚焦密码框键入测试密码，为后续提交作准备，无通知与遮罩。",
+    "step_06": "仿Skype密码页密码已显示为12个圆点；本步发生静态活动跳转至SpiceActivity，无可见通知与遮罩。",
+    "step_07": "仿Skype密码页仍停留，密码以12个圆点显示；本步静态跳转至微软账户选择AccountPickerActivity，无通知与遮罩。",
+    "step_08": "仿Skype密码页保持12点掩码；本步静态跳转至微软添加账户AddAccountActivity，未见通知横幅与遮罩。"
+  }
+}

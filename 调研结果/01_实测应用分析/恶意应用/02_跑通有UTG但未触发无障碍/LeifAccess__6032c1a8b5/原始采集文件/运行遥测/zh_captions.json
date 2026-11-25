@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用从桌面启动器入口进入，先弹出伪装为“SystemSecurityServices”的系统权限复核，请求文件媒体、电话和联系人权限；点击“继续”后进入目标应用，出现旧版 Android 兼容性提示，关闭后停留在空白页并多次静态跳转至其他组件。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “系统安全服务”（权限复核页、应用页）：以系统安全组件名义冒充可信应用。",
+    "English -> “选择允许系统安全服务访问的内容”（权限复核页）：诱导用户为伪装组件批量授权。",
+    "English -> “文件和媒体：访问设备上的照片、媒体和文件”（权限复核页）：请求读取媒体与文件。",
+    "English -> “电话：拨打和管理电话”（权限复核页）：请求电话相关权限。",
+    "English -> “联系人：访问联系人”（权限复核页）：请求读取联系人。",
+    "English -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者。”（应用弹窗）：以兼容性警告促使点击“确定”继续。",
+    "English -> “确定”（应用弹窗）：关闭旧版兼容性提示，推动流程继续。"
+  ],
+  "frame_captions": {
+    "step_01": "桌面启动器界面，含“应用列表”“信息”“Chrome”“搜索”“语音搜索”；本步仅启动目标包，未点击。",
+    "step_02": "仍为桌面启动器；点击“应用列表”试图手动查找目标应用，界面未发生变化。",
+    "step_03": "桌面启动器画面不变，探针以静态引导跳转回退到 com.axl.mngp.dibd，未显示应用界面。",
+    "step_04": "系统权限复核页，伪装名“SystemSecurityServices”请求文件媒体、电话、联系人权限；点击“继续”放行。",
+    "step_05": "应用内弹窗称“SystemSecurityServices”为旧版 Android 构建，可能无法正常运行；点击“确定”关闭。",
+    "step_06": "仅显示“SystemSecurityServices”标题的空白页；探针以静态引导跳转回退到 com.axl.mngp.lwwny。",
+    "step_07": "仍是仅含“SystemSecurityServices”标题的空白页；探针再次静态引导跳转至 com.services.AccService。",
+    "step_08": "同一空白“SystemSecurityServices”页停留等待加载，未出现通知横幅或遮罩，也无可见授权按钮。"
+  }
+}

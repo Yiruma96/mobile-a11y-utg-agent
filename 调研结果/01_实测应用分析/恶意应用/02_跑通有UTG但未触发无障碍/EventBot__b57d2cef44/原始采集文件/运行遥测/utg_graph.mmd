@@ -1,0 +1,11 @@
+flowchart TD
+    N_2511abb32a7c["Step 1: ReviewPermissionsActivity\nChoose what to allow M"]
+    N_1159e24777c9["Step 2: NexusLauncherActivity\nApps list"]
+    N_f6a3588f0886["Step 6: NexusLauncherActivity\nApps list"]
+    N_2511abb32a7c -->|"ui_click: click([10] Button text='Cancel' "| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_wait: wait()"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_2511abb32a7c
+    N_2511abb32a7c -->|"ui_click: click([10] Button text='Cancel' "| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_wait: wait()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(doActivity)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(sendShortMsg)"| N_2511abb32a7c

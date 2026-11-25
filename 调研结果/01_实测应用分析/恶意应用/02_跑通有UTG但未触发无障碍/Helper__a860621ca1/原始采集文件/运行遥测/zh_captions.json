@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "目标应用com.mufc.fireymn两次直接启动均失败，轨迹始终停留在NexusLauncher桌面；随后通过静态回退连续触发com.superman.moduleshell下Boost、Shk、Hearing、Flight、Nhk等后台接收器。全程未见授权/拒权弹窗、通知横幅或遮罩，也无诱导话术，仅有一次点击“Apps list（应用列表）”。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "NexusLauncher桌面，显示“应用列表、信息、Chrome、搜索、语音搜索”等英文入口；尝试启动目标应用未成功，仍停留桌面，无通知或遮罩。",
+    "step_02": "仍为NexusLauncher桌面，英文元素同前（应用列表、信息、搜索等）；第二次尝试打开目标包仍未启动，无任何授权或诱导界面。",
+    "step_03": "桌面未变化，英文仍为应用列表与搜索等；探针改为静态跳到BoostEventReceiver，属后台接收器，无可见页面、通知或遮罩。",
+    "step_04": "仍为启动器桌面，点击“Apps list（应用列表）”试图进抽屉找目标应用；界面未变，未见目标图标或授权弹窗。",
+    "step_05": "桌面保持原样，英文为应用列表/信息/搜索等；静态跳到ShkReceiver后台组件，未展示页面，也无通知横幅或遮罩。",
+    "step_06": "仍停留NexusLauncher桌面，应用列表/搜索等英文不变；静态触发HearingTaskReceiver，属隐藏后台接收器，无可见交互或授权提示。",
+    "step_07": "桌面界面未变，仍见应用列表、信息、Chrome、搜索等英文；静态跳到FlightTaskReceiver后台组件，无页面跳转、通知或遮罩。",
+    "step_08": "仍为NexusLauncher桌面，英文入口同前；静态触发NhkTaskReceiver后台接收器，未见任何前台界面、授权弹窗或通知横幅。"
+  }
+}

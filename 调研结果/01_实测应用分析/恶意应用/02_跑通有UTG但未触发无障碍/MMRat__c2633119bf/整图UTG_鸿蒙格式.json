@@ -1,0 +1,168 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_032__c2633119bf",
+  "label": "malicious",
+  "family_or_category": "MMRat",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "org.djp.user",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "b38e8ac8a173",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "b38e8ac8a173",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "org.djp.user",
+      "abilityName": "com.djp.user.ui.activity.LoginActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Selamat datang di M-pajak",
+        "Setelah Anda sudah memiliki akun, login akan terus menjalankan akun online DJP yang telah diaktifkan",
+        "Daftar masuk",
+        "Silakan masukkan nomor ponsel Anda",
+        "Silakan masukkan sandi anda"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "f1c8db49fc0f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "org.djp.user",
+      "abilityName": "com.djp.user.ui.activity.LoginActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Selamat datang di M-pajak",
+        "Setelah Anda sudah memiliki akun, login akan terus menjalankan akun online DJP yang telah diaktifkan",
+        "Daftar masuk",
+        "81234567890",
+        "Silakan masukkan sandi anda"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "74a997c181f9",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "org.djp.user",
+      "abilityName": "com.djp.user.ui.activity.LoginActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Selamat datang di M-pajak",
+        "Setelah Anda sudah memiliki akun, login akan terus menjalankan akun online DJP yang telah diaktifkan",
+        "Daftar masuk",
+        "81234567890",
+        "•••••••••••"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "bec1d23bca94",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "org.djp.user",
+      "abilityName": "com.djp.user.ui.activity.WebViewActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Klik untuk membuka dan memverifikasi status akun anda",
+        "Klik untuk mengkonfirmasi akun anda"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "b38e8ac8a173",
+      "to": "b38e8ac8a173",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] EditText text=\"Silakan masukkan nomor ponsel Anda\" (click) center=(545,1041))"
+    },
+    {
+      "from": "b38e8ac8a173",
+      "to": "f1c8db49fc0f",
+      "step": 2,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "f1c8db49fc0f",
+      "to": "f1c8db49fc0f",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([5] EditText text=\"Silakan masukkan sandi anda\" (click) center=(545,1295))"
+    },
+    {
+      "from": "f1c8db49fc0f",
+      "to": "74a997c181f9",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "74a997c181f9",
+      "to": "74a997c181f9",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([545, 1339])"
+    },
+    {
+      "from": "74a997c181f9",
+      "to": "bec1d23bca94",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(WebViewActivity)"
+    },
+    {
+      "from": "bec1d23bca94",
+      "to": "bec1d23bca94",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(RequestPermissionActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该MMRat样本伪装印尼税务M-pajak登录页收集手机号和密码，提交后静态跳转WebView以“验证/确认账户”继续诱导，并串联权限请求与无障碍服务；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "印尼语 -> “欢迎使用M-pajak”（Step 1-6 LoginActivity）",
+    "印尼语 -> “在您已有账户后，登录将继续运行已激活的DJP在线账户”（Step 1-6 LoginActivity）",
+    "印尼语 -> “登录/注册进入”（Daftar masuk，登录按钮，Step 1-6 LoginActivity）",
+    "印尼语 -> “请输入您的手机号码”（Step 1-4/6 LoginActivity）",
+    "印尼语 -> “请输入您的密码”（Step 1-5/6 LoginActivity）",
+    "印尼语 -> “点击打开并验证您的账户状态”（Step 7-8 WebViewActivity）",
+    "印尼语 -> “点击确认您的账户”（Step 7-8 WebViewActivity）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "仿M-pajak税务登录页，显示“欢迎使用M-pajak”并索要手机号、密码；本步点击手机号框，无通知/遮罩。",
+    "step_02": "仍为M-pajak登录页，索要手机号与密码；本步在已聚焦手机号框输入样例号码，无通知横幅与遮罩。",
+    "step_03": "M-pajak登录页手机号已填81234567890，提示输入密码；本步点击密码框，无通知横幅与遮罩。",
+    "step_04": "M-pajak登录页已见样例手机号，密码框聚焦；本步输入样例密码，页面仍索要凭证，无通知/遮罩。",
+    "step_05": "M-pajak登录页手机号和掩码密码已填，按钮“Daftar masuk”意为登录；本步点击提交，无通知/遮罩。",
+    "step_06": "登录页提交后静态跳转至WebViewActivity；仍见“欢迎使用M-pajak”登录要素，无通知/遮罩。",
+    "step_07": "WebView页显示“点击打开并验证账户状态”“点击确认账户”；本步静态跳转至权限请求页，无通知/遮罩。",
+    "step_08": "同一WebView诱饵页，文案仍为验证/确认账户；本步静态跳转至无障碍服务，无通知横幅与遮罩。"
+  }
+}

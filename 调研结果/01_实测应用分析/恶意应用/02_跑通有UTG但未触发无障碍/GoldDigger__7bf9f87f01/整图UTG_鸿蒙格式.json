@@ -1,0 +1,141 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_061__7bf9f87f01",
+  "label": "malicious",
+  "family_or_category": "GoldDigger",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.yqpmd.duxkj.kezuz.pxq",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "16661ccebb5d",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Identitas Kependudukan Digital",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "16661ccebb5d",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "16661ccebb5d",
+      "to": "16661ccebb5d",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([11] TextView text=\"Identitas Kependudukan Digital\" id=icon (click) center=(942,747))"
+    },
+    {
+      "from": "16661ccebb5d",
+      "to": "16661ccebb5d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([11] TextView text=\"Identitas Kependudukan Digital\" id=icon (click) center=(942,747))"
+    },
+    {
+      "from": "16661ccebb5d",
+      "to": "16661ccebb5d",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CheckPermissionActivity)"
+    },
+    {
+      "from": "16661ccebb5d",
+      "to": "16661ccebb5d",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TransplentPermissionActivity)"
+    },
+    {
+      "from": "16661ccebb5d",
+      "to": "16661ccebb5d",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SplashActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "GoldDigger__7bf9f87f01",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本在启动器中把图标伪装成印尼政府「数字人口身份（电子身份证）」应用，诱导用户点击；但全程未渲染任何自身界面，仅通过静态跳转依次尝试 CheckPermissionActivity、TransplentPermissionActivity、SplashActivity 及混淆包名下的 ActivationActivity，未出现权限弹窗或话术，因此并未实际触发系统授权或拒权。",
+  "observed_lure_rhetoric_zh": [
+    "印尼语 ->「数字人口身份（印尼电子身份证）」：伪装为印尼官方电子身份证应用的图标名称（应用抽屉，Step 3–8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面首页，显示周三11月25日、-1°C多云，含消息、Chrome等图标；点击「应用列表」未展开抽屉，仍停留桌面。",
+    "step_02": "上滑后仍为桌面，应用抽屉未出现，页面文本不变；无通知、无遮罩。",
+    "step_03": "应用抽屉打开，出现日历、相机等图标及伪装成印尼电子身份证的「Identitas Kependudukan Digital」；点击该图标。",
+    "step_04": "抽屉仍在，目标图标可见，疑似上次点击未生效，再次点击同一图标；应用界面始终未出现。",
+    "step_05": "静态跳转至 ui.CheckPermissionActivity，但屏幕仍是应用抽屉，无权限弹窗、无遮罩、无通知。",
+    "step_06": "静态跳转至 ui.TransplentPermissionActivity（疑似“透明”权限页），屏幕仍为抽屉，界面无任何可见变化。",
+    "step_07": "静态跳转至 ui.SplashActivity，屏幕仍停留在应用抽屉，启动页未渲染，无任何诱导话术出现。",
+    "step_08": "静态跳转至混淆包名 c903d816… 下的 ActivationActivity（激活页），屏幕仍为抽屉，未见激活界面与权限请求。"
+  }
+}

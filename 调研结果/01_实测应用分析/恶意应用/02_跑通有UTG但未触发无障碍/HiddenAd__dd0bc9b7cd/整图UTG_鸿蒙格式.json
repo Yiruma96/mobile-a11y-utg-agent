@@ -1,0 +1,105 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_137__dd0bc9b7cd",
+  "label": "malicious",
+  "family_or_category": "HiddenAd",
+  "static_visibility": "clear",
+  "target_package": "com.iron.clothes.smooth.perfect",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "0311fb3ca5cc",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "0311fb3ca5cc",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.iron.clothes.smooth.perfect",
+      "abilityName": "com.unity3d.player.UnityPlayerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Game view"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 1,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([200, 700])"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(StartActivity)"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([300, 1300])"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(InstallReferrerReceiver)"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(MultipleInstallBroadcastReceiver)"
+    },
+    {
+      "from": "0311fb3ca5cc",
+      "to": "0311fb3ca5cc",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GooglePlayInstallReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "HiddenAd__dd0bc9b7cd",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以 Unity 游戏外壳为入口，8 步前台始终停留在 UnityPlayerActivity，界面只呈现英文「Game view」，全程未出现任何可见的授权弹窗、通知横幅或悬浮遮罩，也没有拒绝授权的路径。探针以静态引导跳转的方式，串起 ironit 自定义 Activity、Tapjoy、AppsFlyer、字节海外 SDK 安装回执与独立进程下载器，呈现出隐藏广告注入，以及广告归因和下载分发链路。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「游戏画面」（Step 1-8 同一 Unity 渲染视图），界面实际无可交互控件，仅作为伪装成正常游戏的空壳入口"
+  ],
+  "frame_captions_zh": {
+    "step_01": "启动即进入 Unity 渲染视图，仅显示英文「Game view」（游戏画面）；本步静置等待加载，无通知横幅、无悬浮遮罩，也未弹出任何授权或诱导按钮。",
+    "step_02": "仍是同一 Unity 游戏壳，仅有「Game view」文字；在坐标 [200,700] 上滑尝试唤醒游戏或隐藏面板，界面毫无变化，无点击响应、无弹窗。",
+    "step_03": "前台依旧为游戏画面「Game view」；本步静态引导跳转探针指向 com.ironit.StartActivity，界面未切换，说明该 Activity 未真正暴露为可交互页面。",
+    "step_04": "界面仍只有「Game view」，属无 UI 元素的游戏渲染层；在 [300,1300] 上滑后无任何变化，未触发广告展示，也无通知条与遮罩层。",
+    "step_05": "仍停留在 Unity 游戏壳「Game view」；静态跳转探针指向 Tapjoy 归因接收器 com.tapjoy.InstallReferrerReceiver，系统未展示对应界面，无可见提示。",
+    "step_06": "前台未变，仅显示「Game view」；探针尝试拉起 AppsFlyer 安装广播接收器 com.appsflyer.MultipleInstallBroadcastReceiver，无界面呈现，也没有授权或拒绝入口。",
+    "step_07": "仍为 Unity 游戏画面；静态引导跳向字节海外 SDK 的 GooglePlayInstallReceiver（安装回执接收器），界面无变化、无弹窗、无通知。",
+    "step_08": "页面仍只有「Game view」渲染视图；探针指向字节系 Downloader 独立进程组件，未弹出下载确认、安装引导或任何权限请求。"
+  }
+}

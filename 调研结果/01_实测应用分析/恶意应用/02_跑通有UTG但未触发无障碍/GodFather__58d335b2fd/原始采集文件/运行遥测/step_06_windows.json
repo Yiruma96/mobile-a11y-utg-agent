@@ -1,0 +1,42 @@
+{
+  "timestamp": 1795591688.5802596,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{d0599d6 u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{df4e26a u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #5 Window{9a6c6d9 u0 com.google.android.packageinstaller/com.android.packageinstaller.PackageInstallerActivity}:",
+      "mOwnerUid": "mOwnerUid=10090 showForAllUsers=false package=com.google.android.packageinstaller appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION fmt=TRANSLUCENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{fbbccbb u0 Bilgi}:",
+      "mOwnerUid": "mOwnerUid=10351 showForAllUsers=false package=com.sulphatase.wordman appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) gr=CENTER sim={adjust=pan forwardNavigation} ty=APPLICATION fmt=TRANSLUCENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #8 Window{340f73d u0 com.sulphatase.wordman/com.sulphatase.wordman.facecentered}:",
+      "mOwnerUid": "mOwnerUid=10351 showForAllUsers=false package=com.sulphatase.wordman appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #12 Window{4c7724d u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10090 showForAllUsers=false package=com.google.android.packageinstaller appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(wrapxwrap) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION fmt=TRANSLUCENT wanim=0x10302ff surfaceInsets=Rect(88, 88 - 88, 88)",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": []
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_039__a860621ca1",
+  "label": "malicious",
+  "family_or_category": "Helper",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.mufc.fireymn",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(BoostEventReceiver)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ShkReceiver)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(HearingTaskReceiver)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FlightTaskReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "目标应用com.mufc.fireymn两次直接启动均失败，轨迹始终停留在NexusLauncher桌面；随后通过静态回退连续触发com.superman.moduleshell下Boost、Shk、Hearing、Flight、Nhk等后台接收器。全程未见授权/拒权弹窗、通知横幅或遮罩，也无诱导话术，仅有一次点击“Apps list（应用列表）”。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "NexusLauncher桌面，显示“应用列表、信息、Chrome、搜索、语音搜索”等英文入口；尝试启动目标应用未成功，仍停留桌面，无通知或遮罩。",
+    "step_02": "仍为NexusLauncher桌面，英文元素同前（应用列表、信息、搜索等）；第二次尝试打开目标包仍未启动，无任何授权或诱导界面。",
+    "step_03": "桌面未变化，英文仍为应用列表与搜索等；探针改为静态跳到BoostEventReceiver，属后台接收器，无可见页面、通知或遮罩。",
+    "step_04": "仍为启动器桌面，点击“Apps list（应用列表）”试图进抽屉找目标应用；界面未变，未见目标图标或授权弹窗。",
+    "step_05": "桌面保持原样，英文为应用列表/信息/搜索等；静态跳到ShkReceiver后台组件，未展示页面，也无通知横幅或遮罩。",
+    "step_06": "仍停留NexusLauncher桌面，应用列表/搜索等英文不变；静态触发HearingTaskReceiver，属隐藏后台接收器，无可见交互或授权提示。",
+    "step_07": "桌面界面未变，仍见应用列表、信息、Chrome、搜索等英文；静态跳到FlightTaskReceiver后台组件，无页面跳转、通知或遮罩。",
+    "step_08": "仍为NexusLauncher桌面，英文入口同前；静态触发NhkTaskReceiver后台接收器，未见任何前台界面、授权弹窗或通知横幅。"
+  }
+}

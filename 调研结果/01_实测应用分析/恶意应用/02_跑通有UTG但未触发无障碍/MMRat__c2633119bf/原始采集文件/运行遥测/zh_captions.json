@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该MMRat样本伪装印尼税务M-pajak登录页收集手机号和密码，提交后静态跳转WebView以“验证/确认账户”继续诱导，并串联权限请求与无障碍服务；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "印尼语 -> “欢迎使用M-pajak”（Step 1-6 LoginActivity）",
+    "印尼语 -> “在您已有账户后，登录将继续运行已激活的DJP在线账户”（Step 1-6 LoginActivity）",
+    "印尼语 -> “登录/注册进入”（Daftar masuk，登录按钮，Step 1-6 LoginActivity）",
+    "印尼语 -> “请输入您的手机号码”（Step 1-4/6 LoginActivity）",
+    "印尼语 -> “请输入您的密码”（Step 1-5/6 LoginActivity）",
+    "印尼语 -> “点击打开并验证您的账户状态”（Step 7-8 WebViewActivity）",
+    "印尼语 -> “点击确认您的账户”（Step 7-8 WebViewActivity）"
+  ],
+  "frame_captions": {
+    "step_01": "仿M-pajak税务登录页，显示“欢迎使用M-pajak”并索要手机号、密码；本步点击手机号框，无通知/遮罩。",
+    "step_02": "仍为M-pajak登录页，索要手机号与密码；本步在已聚焦手机号框输入样例号码，无通知横幅与遮罩。",
+    "step_03": "M-pajak登录页手机号已填81234567890，提示输入密码；本步点击密码框，无通知横幅与遮罩。",
+    "step_04": "M-pajak登录页已见样例手机号，密码框聚焦；本步输入样例密码，页面仍索要凭证，无通知/遮罩。",
+    "step_05": "M-pajak登录页手机号和掩码密码已填，按钮“Daftar masuk”意为登录；本步点击提交，无通知/遮罩。",
+    "step_06": "登录页提交后静态跳转至WebViewActivity；仍见“欢迎使用M-pajak”登录要素，无通知/遮罩。",
+    "step_07": "WebView页显示“点击打开并验证账户状态”“点击确认账户”；本步静态跳转至权限请求页，无通知/遮罩。",
+    "step_08": "同一WebView诱饵页，文案仍为验证/确认账户；本步静态跳转至无障碍服务，无通知横幅与遮罩。"
+  }
+}

@@ -1,0 +1,14 @@
+flowchart TD
+    N_090a640fa4be["Step 1: MainActivity\nHOME"]
+    N_a72299f61858["Step 2: MainActivity\nPhone AID, Cleaner, Bo"]
+    N_2db5b96e2ff4["Step 3: SettingActivity\nSETTINGS"]
+    N_db2ad5a7070c["Step 4: SettingActivity\nSETTINGS"]
+    N_717751f8c418["Step 5: MainActivity\nPhone AID, Cleaner, Bo"]
+    N_d9c3cdf9f3ac["Step 6: MainActivity\nHOME"]
+    N_090a640fa4be -->|"ui_click: click([26] FrameLayout desc='Per"| N_a72299f61858
+    N_a72299f61858 -->|"ui_click: click([5] LinearLayout id=ll_set"| N_2db5b96e2ff4
+    N_2db5b96e2ff4 -->|"ui_swipe: swipe([540, 1900])"| N_db2ad5a7070c
+    N_db2ad5a7070c -->|"ui_click: click([1] ImageView id=im_back_t"| N_717751f8c418
+    N_717751f8c418 -->|"ui_click: click([15] FrameLayout desc='Hom"| N_d9c3cdf9f3ac
+    N_d9c3cdf9f3ac -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_d9c3cdf9f3ac
+    N_d9c3cdf9f3ac -->|"static_guided_activity_jump: am_start(GuildPermissionActivity"| N_d9c3cdf9f3ac

@@ -1,0 +1,14 @@
+flowchart TD
+    N_b4eee77678d9["Step 1: GrantPermissionsActivity\nAllow Google Chrome to"]
+    N_378eef60b92c["Step 2: GrantPermissionsActivity\nAllow Google Chrome to"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_259d80b65761["Step 4: NexusLauncherActivity\n5:39"]
+    N_eb4a61f89f35["Step 5: p013g\n"]
+    N_c6a888815a41["Step 6: p013g\nEnable Accessibility S"]
+    N_b4eee77678d9 -->|"ui_click: click([4] Button text='Allow' id"| N_378eef60b92c
+    N_378eef60b92c -->|"ui_click: click([4] Button text='Allow' id"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 100])"| N_259d80b65761
+    N_259d80b65761 -->|"ui_click: click([10] FrameLayout (click) c"| N_eb4a61f89f35
+    N_eb4a61f89f35 -->|"ui_click: click([300, 370])"| N_c6a888815a41
+    N_c6a888815a41 -->|"static_guided_activity_jump: am_start(p075y)"| N_c6a888815a41
+    N_c6a888815a41 -->|"static_guided_activity_jump: am_start(p054s)"| N_c6a888815a41

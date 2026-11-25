@@ -1,0 +1,13 @@
+flowchart TD
+    N_d00b65234657["Step 1: UnifiedLandingPageActivity\nSign in"]
+    N_68c057ec9478["Step 2: UnifiedLandingPageActivity\nSign in"]
+    N_be39b6aa9158["Step 3: UnifiedLandingPageActivity\nSign in"]
+    N_634f7d2f10b8["Step 4: SignInActivity\nSign in"]
+    N_24855bb8f8a4["Step 6: SignInActivity\nSign in"]
+    N_d00b65234657 -->|"ui_click: click([3] EditText text='Enter y"| N_68c057ec9478
+    N_68c057ec9478 -->|"ui_type: type()"| N_be39b6aa9158
+    N_be39b6aa9158 -->|"ui_click: click([4] TextView text='' desc"| N_634f7d2f10b8
+    N_634f7d2f10b8 -->|"ui_click: click([4] EditText text='Passwor"| N_634f7d2f10b8
+    N_634f7d2f10b8 -->|"ui_type: type()"| N_24855bb8f8a4
+    N_24855bb8f8a4 -->|"static_guided_activity_jump: am_start(SpiceActivity)"| N_24855bb8f8a4
+    N_24855bb8f8a4 -->|"static_guided_activity_jump: am_start(AccountPickerActivity)"| N_24855bb8f8a4

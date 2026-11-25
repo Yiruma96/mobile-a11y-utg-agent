@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "该样本从桌面启动器打开应用抽屉，点击伪装为“PEA SMART PRO”的图标，多次启动未生效后改由静态探针依次跳转 CheckPermissionActivity、TransplentPermissionActivity、混淆 Activity 与 SplashActivity；全程未渲染应用内页面，未见通知横幅、遮罩或权限弹窗，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "桌面启动器页，显示应用列表入口及 Messages、Chrome 等图标；本步点击“Apps list”，尚未进入目标应用。",
+    "step_02": "仍在桌面启动器，显示应用列表入口、Messages/Chrome 等；本步上滑试图打开抽屉但未成功，未见目标应用界面。",
+    "step_03": "应用抽屉已展开，可见“PEA SMART PRO”等图标；本步点击该图标尝试启动目标应用。",
+    "step_04": "应用抽屉仍停留原页，图标列表未变化；本步再次点击“PEA SMART PRO”，说明上一步启动未生效。",
+    "step_05": "画面仍为应用抽屉；静态探针跳转 CheckPermissionActivity，疑似权限申请入口，未见权限弹窗。",
+    "step_06": "画面仍为应用抽屉；静态探针跳转 TransplentPermissionActivity，疑似透明/悬浮权限页，未渲染界面。",
+    "step_07": "画面仍为应用抽屉；静态探针跳转混淆名 Activity（c56ddef9…），疑似规避识别的权限/加载组件，未渲染界面。",
+    "step_08": "画面仍为应用抽屉；静态探针跳转 SplashActivity，疑似启动闪屏入口，仍未渲染任何应用内诱导内容。"
+  }
+}

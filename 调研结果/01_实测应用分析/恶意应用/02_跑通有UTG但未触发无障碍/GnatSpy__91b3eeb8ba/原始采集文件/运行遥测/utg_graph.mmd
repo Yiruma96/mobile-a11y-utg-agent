@@ -1,0 +1,14 @@
+flowchart TD
+    N_87978471c780["Step 1: GrantPermissionsActivity\nAllow Facebook Update "]
+    N_cd8535dc5091["Step 2: GrantPermissionsActivity\nAllow Facebook Update "]
+    N_c976abb4e0c1["Step 3: GrantPermissionsActivity\nAllow Facebook Update "]
+    N_f66be22c0b5e["Step 4: GrantPermissionsActivity\nAllow Facebook Update "]
+    N_84bc34da25eb["Step 5: GrantPermissionsActivity\nAllow Facebook Update "]
+    N_4356a3545dd9["Step 6: FacebookUpdate\nFacebook"]
+    N_87978471c780 -->|"ui_click: click([4] Button text='While usi"| N_cd8535dc5091
+    N_cd8535dc5091 -->|"ui_click: click([4] Button text='Allow' id"| N_c976abb4e0c1
+    N_c976abb4e0c1 -->|"ui_click: click([4] Button text='Allow' id"| N_f66be22c0b5e
+    N_f66be22c0b5e -->|"ui_click: click([4] Button text='Allow' id"| N_84bc34da25eb
+    N_84bc34da25eb -->|"ui_click: click([4] Button text='Allow' id"| N_4356a3545dd9
+    N_4356a3545dd9 -->|"static_guided_activity_jump: am_start(ServiceSettingsActivity"| N_4356a3545dd9
+    N_4356a3545dd9 -->|"static_guided_activity_jump: am_start(FacebookUpdate)"| N_4356a3545dd9

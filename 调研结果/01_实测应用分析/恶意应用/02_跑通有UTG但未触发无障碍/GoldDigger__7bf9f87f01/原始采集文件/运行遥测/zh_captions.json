@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "该样本在启动器中把图标伪装成印尼政府「数字人口身份（电子身份证）」应用，诱导用户点击；但全程未渲染任何自身界面，仅通过静态跳转依次尝试 CheckPermissionActivity、TransplentPermissionActivity、SplashActivity 及混淆包名下的 ActivationActivity，未出现权限弹窗或话术，因此并未实际触发系统授权或拒权。",
+  "observed_lure_rhetoric_zh": [
+    "印尼语 ->「数字人口身份（印尼电子身份证）」：伪装为印尼官方电子身份证应用的图标名称（应用抽屉，Step 3–8）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面首页，显示周三11月25日、-1°C多云，含消息、Chrome等图标；点击「应用列表」未展开抽屉，仍停留桌面。",
+    "step_02": "上滑后仍为桌面，应用抽屉未出现，页面文本不变；无通知、无遮罩。",
+    "step_03": "应用抽屉打开，出现日历、相机等图标及伪装成印尼电子身份证的「Identitas Kependudukan Digital」；点击该图标。",
+    "step_04": "抽屉仍在，目标图标可见，疑似上次点击未生效，再次点击同一图标；应用界面始终未出现。",
+    "step_05": "静态跳转至 ui.CheckPermissionActivity，但屏幕仍是应用抽屉，无权限弹窗、无遮罩、无通知。",
+    "step_06": "静态跳转至 ui.TransplentPermissionActivity（疑似“透明”权限页），屏幕仍为抽屉，界面无任何可见变化。",
+    "step_07": "静态跳转至 ui.SplashActivity，屏幕仍停留在应用抽屉，启动页未渲染，无任何诱导话术出现。",
+    "step_08": "静态跳转至混淆包名 c903d816… 下的 ActivationActivity（激活页），屏幕仍为抽屉，未见激活界面与权限请求。"
+  }
+}

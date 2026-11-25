@@ -1,0 +1,10 @@
+flowchart TD
+    N_17ea98182b4f["Step 1: UnityPlayerActivity\nGame view"]
+    N_1159e24777c9["Step 6: NexusLauncherActivity\nApps list"]
+    N_17ea98182b4f -->|"ui_wait: wait()"| N_17ea98182b4f
+    N_17ea98182b4f -->|"ui_click: click([1] View desc='Game view' "| N_17ea98182b4f
+    N_17ea98182b4f -->|"static_guided_activity_jump: am_start(StartActivity)"| N_17ea98182b4f
+    N_17ea98182b4f -->|"ui_click: click([540, 1755])"| N_17ea98182b4f
+    N_17ea98182b4f -->|"static_guided_activity_jump: am_start(VRPurchaseActivity)"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(UnityPlayerActivity)"| N_17ea98182b4f
+    N_17ea98182b4f -->|"static_guided_activity_jump: am_start(TenjinReferrerReceiver)"| N_17ea98182b4f

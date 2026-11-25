@@ -1,0 +1,188 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_148__162ee177de",
+  "label": "malicious",
+  "family_or_category": "Joker",
+  "static_visibility": "clear",
+  "target_package": "com.anti.mysecurity",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "7d2e9ab9648d",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "7d2e9ab9648d",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.anti.mysecurity",
+      "abilityName": "com.bs.antivirus.ui.welcome.WelcomeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Antivirus Security",
+        "Protect your phone",
+        "By clicking START,you agree to our  Terms of Service  and  Privacy Policy  We may use some device information and applications usage behavior to provide a better service You could manage of delete such data at any time in Settings.",
+        "START",
+        "Privacy Policy",
+        "Terms of Service"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "5285713ea434",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Antivirus Security to access your contacts?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "dfbc6cbd20bd",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Antivirus Security to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "e01856f6030b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.anti.mysecurity",
+      "abilityName": "org.greenrobot.eventbus.util.FindActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Warn",
+        "Please open this necessary access.",
+        "GO SET"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "07b38f5b5670",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$NotificationAccessSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Notification access",
+        "Search settings",
+        "Android Auto",
+        "Not allowed",
+        "Antivirus Security",
+        "Pixel Launcher",
+        "Allowed"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "7d2e9ab9648d",
+      "to": "5285713ea434",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"START\" id=start_btn (click) center=(540,1834))"
+    },
+    {
+      "from": "5285713ea434",
+      "to": "dfbc6cbd20bd",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "dfbc6cbd20bd",
+      "to": "e01856f6030b",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "e01856f6030b",
+      "to": "07b38f5b5670",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"GO SET\" id=button1 (click) center=(874,1254))"
+    },
+    {
+      "from": "07b38f5b5670",
+      "to": "e01856f6030b",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([1] ImageButton desc=\"Back\" (click) center=(77,160))"
+    },
+    {
+      "from": "e01856f6030b",
+      "to": "e01856f6030b",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PermissionGuideActivity)"
+    },
+    {
+      "from": "e01856f6030b",
+      "to": "e01856f6030b",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(WelcomeActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Joker__162ee177de",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先以“杀毒安全、保护手机”的欢迎页建立信任，点击START后连续索取联系人和电话权限，再用“必要访问”警告页反复引导用户去设置；探针还静态跳转到权限引导、欢迎页和垃圾清理页，全程未见通知横幅或遮罩，具有典型Joker诱导授权特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Antivirus Security / Protect your phone” -> “杀毒安全/保护你的手机”（Step1 欢迎页），以安全名义建立可信度。",
+    "英文“By clicking START,you agree to our Terms of Service and Privacy Policy... device information and applications usage behavior...” -> “点击START即同意条款与隐私政策，并可能使用设备信息与应用使用行为以提供更好服务”（Step1 欢迎页），用合规长文弱化授权。",
+    "英文“START” -> “开始”（Step1 欢迎页），诱导继续进入授权流程。",
+    "英文“Allow Antivirus Security to access your contacts?” -> “允许杀毒安全访问联系人？”（Step2 系统权限弹窗），索取通讯录权限。",
+    "英文“Allow Antivirus Security to make and manage phone calls?” -> “允许杀毒安全拨打和管理电话？”（Step3 系统权限弹窗），索取电话权限。",
+    "英文“Warn / Please open this necessary access. / GO SET” -> “警告/请开启此必要访问/去设置”（Step4、Step6-Step8 警告页），以“必要访问”施压并引导设置。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "欢迎页：英文自称“杀毒安全、保护手机”并以条款铺垫；点击START继续，未发现通知横幅或遮罩。",
+    "step_02": "系统联系人授权弹窗：英文询问是否允许访问联系人；本步点击Allow放行，界面无通知横幅或遮罩。",
+    "step_03": "系统电话授权弹窗：英文询问是否允许拨打和管理电话；点击Allow放行，继续预授权流程，无遮罩。",
+    "step_04": "应用内警告页：英文提示“警告/请开启必要访问”，GO SET意为“去设置”；点击后跳转设置页，无遮罩。",
+    "step_05": "系统通知使用权页：显示Antivirus Security等应用及允许状态；英文Back意为返回；本步点击返回，未完成该授权。",
+    "step_06": "仍为应用内警告页“警告/请开启必要访问/去设置”；探针静态跳转至PermissionGuideActivity，无通知或遮罩。",
+    "step_07": "仍为应用内警告页，英文要求开启“必要访问”并点GO SET；探针静态跳转至WelcomeActivity，界面未变、无遮罩。",
+    "step_08": "仍为应用内警告页，英文称“必要访问”并引导GO SET；探针静态跳转至JunkCleanActivity，界面未变、无遮罩。"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_036__5de5b948ae",
+  "label": "malicious",
+  "family_or_category": "GnatSpy",
+  "static_visibility": "clear",
+  "target_package": "com.fakebook",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "24f22adb015e",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "24f22adb015e",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow App System Installer to access",
+        "Contacts",
+        "access your contacts",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Microphone",
+        "record audio",
+        "Phone",
+        "make and manage phone calls",
+        "Call logs",
+        "read and write phone call log",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "b2af977c1f94",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.fakebook",
+      "abilityName": ".activities.Fb_Home",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "App System Installer",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "ed5d505fdd00",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.fakebook",
+      "abilityName": "com.fakebook.activities.Fb_Home",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enter Email or Phone",
+        "Enter Password",
+        "LOG IN",
+        "FORGOT PASSWORD?",
+        "CREATE NEW FACEBOOK ACCOUNT"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "dbd1d6020cbe",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.fakebook",
+      "abilityName": "com.fakebook.activities.Fb_Home",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "test@example.com",
+        "Enter Password",
+        "LOG IN",
+        "FORGOT PASSWORD?",
+        "CREATE NEW FACEBOOK ACCOUNT"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "24f22adb015e",
+      "to": "b2af977c1f94",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([27] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "b2af977c1f94",
+      "to": "ed5d505fdd00",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "ed5d505fdd00",
+      "to": "ed5d505fdd00",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([1] EditText text=\"Enter Email or Phone\" id=FB_EMAIL (click) center=(539,993))"
+    },
+    {
+      "from": "ed5d505fdd00",
+      "to": "dbd1d6020cbe",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "dbd1d6020cbe",
+      "to": "dbd1d6020cbe",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([2] EditText text=\"Enter Password\" id=FB_PASSWORD (click) center=(539,1124))"
+    },
+    {
+      "from": "dbd1d6020cbe",
+      "to": "dbd1d6020cbe",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Fb_Home)"
+    },
+    {
+      "from": "dbd1d6020cbe",
+      "to": "dbd1d6020cbe",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CallRecorderReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "GnatSpy__5de5b948ae",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先经系统权限审查页，以“应用系统安装器”名义请求通讯录、短信、文件媒体、麦克风、电话和通话记录，再以旧版兼容提示过渡到仿 Facebook 登录页收集邮箱/密码；本轨迹未测试拒绝授权，后续静态跳转暴露 CallRecorderReceiver 与 NetworkReceiver 等录音/网络组件。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许‘应用系统安装器’访问哪些权限”（Step 1 系统权限审查页）",
+    "英语 -> “联系人：访问你的联系人；短信：发送和查看短信；文件与媒体：访问照片、媒体和文件；麦克风：录音；电话：拨打和管理电话；通话记录：读写通话记录”（Step 1 权限审查页）",
+    "英语 -> “此应用为旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英语 -> “输入邮箱或手机号”“输入密码”“登录”“忘记密码？”“创建新的 Facebook 账户”（Step 3-5 仿 Facebook 登录页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页，以“应用系统安装器”名义请求通讯录、短信、文件、麦克风、电话、通话记录；点“继续”放行，无遮罩。",
+    "step_02": "进入仿 Facebook 应用后弹出旧版 Android 兼容性警告，称应用可能无法正常运行；本步点“OK”关闭，无遮罩。",
+    "step_03": "仿 Facebook 登录页，含邮箱/手机号、密码、登录、忘记密码、创建账户；本步点邮箱输入框，无遮罩。",
+    "step_04": "仍为仿 Facebook 登录页；探针在邮箱框输入测试邮箱 test@example.com，页面未显示输入值，无通知/遮罩。",
+    "step_05": "同一仿 Facebook 登录页，邮箱框已显示 test@example.com；本步点密码框，继续收集伪造登录凭据，无遮罩。",
+    "step_06": "仍停留在仿 Facebook 登录页，界面文字未变；探针静态跳转回 .activities.Fb_Home，无通知/遮罩。",
+    "step_07": "仍为仿 Facebook 登录页，界面文字未变；探针静态跳转 .receivers.CallRecorderReceiver，暴露隐藏通话录音接收器。",
+    "step_08": "仍为仿 Facebook 登录页，界面文字未变；探针静态跳转 .receivers.NetworkReceiver，暴露网络监听/回传组件。"
+  }
+}

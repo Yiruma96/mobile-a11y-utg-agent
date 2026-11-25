@@ -1,0 +1,199 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_085__91b3eeb8ba",
+  "label": "malicious",
+  "family_or_category": "GnatSpy",
+  "static_visibility": "clear",
+  "target_package": "com.facebookupdate",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "87978471c780",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "87978471c780",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Facebook Update to record audio?",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "cd8535dc5091",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Facebook Update to access your contacts?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "c976abb4e0c1",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Facebook Update to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f66be22c0b5e",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Facebook Update to access photos, media, and files on your device?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "84bc34da25eb",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Facebook Update to send and view SMS messages?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "4356a3545dd9",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.facebookupdate",
+      "abilityName": "com.facebookupdate.activities.FacebookUpdate",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Facebook",
+        "© 2017–2018 Facebook Inc.",
+        "All rights reserved",
+        "Updating …"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "87978471c780",
+      "to": "cd8535dc5091",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1136))"
+    },
+    {
+      "from": "cd8535dc5091",
+      "to": "c976abb4e0c1",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "c976abb4e0c1",
+      "to": "f66be22c0b5e",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "f66be22c0b5e",
+      "to": "84bc34da25eb",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1247))"
+    },
+    {
+      "from": "84bc34da25eb",
+      "to": "4356a3545dd9",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "4356a3545dd9",
+      "to": "4356a3545dd9",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ServiceSettingsActivity)"
+    },
+    {
+      "from": "4356a3545dd9",
+      "to": "4356a3545dd9",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FacebookUpdate)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该 GnatSpy 样本以“Facebook Update”为伪装名，连续索取麦克风、联系人、电话、存储媒体和短信权限，随后展示仿冒 Facebook 的“Updating …”页面，并静态跳转至无障碍服务设置及录音/接收器组件，呈现强制授权与品牌仿冒链路。本轮观测未见通知横幅或悬浮遮罩，拒权分支未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “允许 Facebook Update 录制音频？”（Step 1 麦克风授权页）",
+    "英语 -> “仅在使用应用时”（Step 1 授权选项）",
+    "英语 -> “允许 Facebook Update 访问联系人？”（Step 2 联系人授权页）",
+    "英语 -> “允许 Facebook Update 拨打和管理电话？”（Step 3 电话授权页）",
+    "英语 -> “允许 Facebook Update 访问照片、媒体和文件？”（Step 4 存储媒体授权页）",
+    "英语 -> “允许 Facebook Update 发送和查看短信？”（Step 5 短信授权页）",
+    "英语 -> “Facebook / © 2017–2018 Facebook Inc. / 版权所有 / 正在更新…”（Step 6–8 仿冒 Facebook 更新页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统麦克风授权弹窗，询问是否允许“Facebook Update”录音；点击“仅在使用时”，授予前台麦克风权限，无通知横幅/遮罩。",
+    "step_02": "系统联系人授权弹窗，英文询问是否允许“Facebook Update”访问联系人；点击“允许”，授予联系人权限，无通知横幅/遮罩。",
+    "step_03": "系统电话授权弹窗，询问是否允许“Facebook Update”拨打和管理电话；点击“允许”，授予电话权限，无通知横幅/遮罩。",
+    "step_04": "系统存储/媒体授权弹窗，询问是否允许访问照片、媒体和文件；点击“允许”，授予存储媒体权限，无通知横幅/遮罩。",
+    "step_05": "系统短信授权弹窗，询问是否允许“Facebook Update”发送和查看短信；点击“允许”，授予短信权限，无通知横幅/遮罩。",
+    "step_06": "仿冒 Facebook 的启动/更新页，显示“正在更新…”及 2017–2018 版权；探针静态跳转至无障碍服务设置 Activity，无通知/遮罩。",
+    "step_07": "仍为仿冒 Facebook 更新页，保留“正在更新…”与版权字样；探针静态跳转至应用内 .activities.FacebookUpdate，无通知/遮罩。",
+    "step_08": "重复仿冒 Facebook 更新页，显示“正在更新…”和版权；探针静态跳转至 .Receivers.CallRecorderReceiver（通话录音接收器），无通知/遮罩。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用先请求电话权限并点 Continue 继续，进入 RAM Cleaner 主界面后显示异常负值内存；随后关闭旧版 Android 兼容性警告、等待/冷启动，并多次按静态引导跳转至 GMS/Firebase 接收器及桌面小部件，全程无通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 Ram Cleaner 访问的内容（Step 1 权限页）",
+    "英文 -> 电话：拨打和管理电话（Step 1 权限页）",
+    "英文 -> 此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "英文 -> RAM 清理器 / 已用内存 -2920MB / 总内存 -1110MB / 空闲内存 1810MB / 运行任务 1（Step 3-8 主界面）",
+    "英文 -> 加速内存 BOOST RAM（Step 3-8 主界面按钮）"
+  ],
+  "frame_captions": {
+    "step_01": "Step 1 系统权限页要求允许 Ram Cleaner 使用电话/拨打和管理电话；点 Continue 继续，有 Cancel，无通知遮罩。",
+    "step_02": "Step 2 主界面弹出旧版 Android 兼容性警告，称可能无法正常运行；点 OK 关闭，无通知或遮罩。",
+    "step_03": "Step 3 为 Ram Cleaner 主界面，显示内存使用/总量为异常负值、空闲 1810MB、运行任务 1；本步仅等待，未现预期弹窗。",
+    "step_04": "Step 4 仍为 RAM 清理主界面，异常负值不变；未等到预期 AlertDialog 后执行冷启动/open，页面无可见变化。",
+    "step_05": "Step 5 仍停留 RAM 清理主界面；探针按静态引导跳转至 GMS AppMeasurementReceiver，界面无变化、无通知遮罩。",
+    "step_06": "Step 6 继续停留主界面；探针按静态引导跳转至 GMS logs.b，异常内存数值与 BOOST RAM 按钮仍在，无通知遮罩。",
+    "step_07": "Step 7 主界面未变；探针按静态引导跳转至 FirebaseInstanceIdReceiver，仍显示负值内存与 BOOST RAM，无通知横幅。",
+    "step_08": "Step 8 主界面保持原样；探针按静态引导跳转至 com.ram.cleanmaster.RamCleanerWidget，未触发可见交互或遮罩。"
+  }
+}

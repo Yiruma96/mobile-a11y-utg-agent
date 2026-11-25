@@ -1,0 +1,170 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_050__6032c1a8b5",
+  "label": "malicious",
+  "family_or_category": "LeifAccess",
+  "static_visibility": "clear",
+  "target_package": "com.services.ibgpe.hflbsqqjrmlfej",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6d86138fd23e",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow SystemSecurityServices to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Phone",
+        "make and manage phone calls",
+        "Contacts",
+        "access your contacts",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "a56918a412be",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.services.ibgpe.hflbsqqjrmlfej",
+      "abilityName": "com.axl.mngp.dibd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SystemSecurityServices",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "5c42670a0df8",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.services.ibgpe.hflbsqqjrmlfej",
+      "abilityName": "com.axl.mngp.dibd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "SystemSecurityServices"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "6d86138fd23e",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(dibd)"
+    },
+    {
+      "from": "6d86138fd23e",
+      "to": "a56918a412be",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "a56918a412be",
+      "to": "5c42670a0df8",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "5c42670a0df8",
+      "to": "5c42670a0df8",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(lwwny)"
+    },
+    {
+      "from": "5c42670a0df8",
+      "to": "5c42670a0df8",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccService)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用从桌面启动器入口进入，先弹出伪装为“SystemSecurityServices”的系统权限复核，请求文件媒体、电话和联系人权限；点击“继续”后进入目标应用，出现旧版 Android 兼容性提示，关闭后停留在空白页并多次静态跳转至其他组件。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “系统安全服务”（权限复核页、应用页）：以系统安全组件名义冒充可信应用。",
+    "English -> “选择允许系统安全服务访问的内容”（权限复核页）：诱导用户为伪装组件批量授权。",
+    "English -> “文件和媒体：访问设备上的照片、媒体和文件”（权限复核页）：请求读取媒体与文件。",
+    "English -> “电话：拨打和管理电话”（权限复核页）：请求电话相关权限。",
+    "English -> “联系人：访问联系人”（权限复核页）：请求读取联系人。",
+    "English -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者。”（应用弹窗）：以兼容性警告促使点击“确定”继续。",
+    "English -> “确定”（应用弹窗）：关闭旧版兼容性提示，推动流程继续。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器界面，含“应用列表”“信息”“Chrome”“搜索”“语音搜索”；本步仅启动目标包，未点击。",
+    "step_02": "仍为桌面启动器；点击“应用列表”试图手动查找目标应用，界面未发生变化。",
+    "step_03": "桌面启动器画面不变，探针以静态引导跳转回退到 com.axl.mngp.dibd，未显示应用界面。",
+    "step_04": "系统权限复核页，伪装名“SystemSecurityServices”请求文件媒体、电话、联系人权限；点击“继续”放行。",
+    "step_05": "应用内弹窗称“SystemSecurityServices”为旧版 Android 构建，可能无法正常运行；点击“确定”关闭。",
+    "step_06": "仅显示“SystemSecurityServices”标题的空白页；探针以静态引导跳转回退到 com.axl.mngp.lwwny。",
+    "step_07": "仍是仅含“SystemSecurityServices”标题的空白页；探针再次静态引导跳转至 com.services.AccService。",
+    "step_08": "同一空白“SystemSecurityServices”页停留等待加载，未出现通知横幅或遮罩，也无可见授权按钮。"
+  }
+}

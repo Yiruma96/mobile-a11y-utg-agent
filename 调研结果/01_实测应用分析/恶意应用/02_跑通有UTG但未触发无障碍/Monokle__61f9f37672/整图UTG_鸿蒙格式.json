@@ -1,0 +1,223 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_060__61f9f37672",
+  "label": "malicious",
+  "family_or_category": "Monokle",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "org.thoughtcrime.securesms",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "29b67ab09fb2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "29b67ab09fb2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": "org.thoughtcrime.securesms.registration.WelcomeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Take privacy with you.\nBe yourself in every message.",
+        "Terms & Privacy Policy",
+        "CONTINUE"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "55f87ad45a31",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": "org.thoughtcrime.securesms.registration.WelcomeActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "+",
+        "Signal needs access to your contacts and media in order to connect with friends, exchange messages, and make secure calls",
+        "NOT NOW",
+        "CONTINUE"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "a4c3afe371ea",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Signal to access your contacts?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "da9b650c9b92",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Signal to make and manage phone calls?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "b13f2b0c66bc",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Signal to access photos, media, and files on your device?",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "5267efe9a78a",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": "org.thoughtcrime.securesms.RegistrationActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enter your phone number to get started",
+        "You will receive a verification code. Carrier rates may apply.",
+        "United States",
+        "1",
+        "Phone Number",
+        "(555) 521-5556",
+        "NEXT"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "29b67ab09fb2",
+      "to": "55f87ad45a31",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"CONTINUE\" id=welcome_continue_button (click) center=(540,1930))"
+    },
+    {
+      "from": "55f87ad45a31",
+      "to": "a4c3afe371ea",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"CONTINUE\" id=button1 (click) center=(784,1530))"
+    },
+    {
+      "from": "a4c3afe371ea",
+      "to": "da9b650c9b92",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "da9b650c9b92",
+      "to": "b13f2b0c66bc",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "b13f2b0c66bc",
+      "to": "5267efe9a78a",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Allow\" id=permission_allow_button (click) center=(540,1215))"
+    },
+    {
+      "from": "5267efe9a78a",
+      "to": "5267efe9a78a",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(VoiceCallShare)"
+    },
+    {
+      "from": "5267efe9a78a",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SmsSendtoActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Monokle__61f9f37672",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以仿Signal欢迎页和隐私口号开场，先用权限说明诱导连续授予联系人、电话、媒体权限，再进入手机号注册；随后静态引导跳转到VoiceCallShare、SmsSendtoActivity及桌面/分享Activity，未测试拒权且未见通知或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “随身携带隐私。在每条消息中做自己。”（Step 1 欢迎页）",
+    "英文 -> “Signal需要访问你的联系人和媒体，以便连接朋友、交换消息并进行安全通话”（Step 2 权限引导页）",
+    "英文 -> “输入你的手机号以开始使用”（Step 6/7 注册页）",
+    "英文 -> “你将收到验证码。可能产生运营商费用。”（Step 6/7 注册页）",
+    "英文 -> “允许Signal访问你的联系人？”（Step 3 系统通讯录授权页）",
+    "英文 -> “允许Signal拨打和管理电话？”（Step 4 系统电话授权页）",
+    "英文 -> “允许Signal访问你设备上的照片、媒体和文件？”（Step 5 系统媒体授权页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "欢迎页：以“随身携带隐私、每条消息做自己”口号及条款链接包装；点击CONTINUE进入下一步，无通知/遮罩。",
+    "step_02": "权限引导页：称Signal需访问联系人和媒体以连接好友、收发消息及安全通话；点CONTINUE继续，无通知/遮罩。",
+    "step_03": "系统通讯录授权页：询问“允许Signal访问联系人？”；本步点击Allow同意，未测试Deny，无通知/遮罩。",
+    "step_04": "系统电话授权页：询问“允许Signal拨打和管理电话？”；本步点Allow同意，未测试拒权，无通知/遮罩。",
+    "step_05": "系统媒体授权页：询问“允许Signal访问照片、媒体和文件？”；本步点Allow同意，未测试拒权，无通知/遮罩。",
+    "step_06": "注册页：要求输入手机号，称将收验证码且可能计费；探针静态跳转至.webrtc.VoiceCallShare，无通知/遮罩。",
+    "step_07": "注册页重复：仍要求手机号并提示验证码/运营商计费；静态跳转至.SmsSendtoActivity，无通知/遮罩。",
+    "step_08": "系统桌面/应用列表页：显示周三11月25日、Messages、Chrome等；探针静态跳转至.ShareActivity，无通知/遮罩。"
+  }
+}

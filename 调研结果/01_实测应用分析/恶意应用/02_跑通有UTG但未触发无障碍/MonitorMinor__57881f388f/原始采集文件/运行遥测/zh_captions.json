@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "入口以「Google Service」伪装展示 SpyKontrol 家长监控/数字监控说明，诱导点击 Continue 并接受 License Agreement；随后连续弹出相机、定位、麦克风、联系人系统权限请求，诱导以 While using the app/Allow 授权，联系人页重复出现并跳转至应用内授权活动，全程无通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 中文意译（Step 1 启动页）：SpyKontrol 是家长监控与数字监视软件，可通过浏览器查看短信、通话记录、录音、位置、音频、摄像头等；注册后经 http://spykontrol.com 仪表盘访问；免费试用1天；使用前阅读条款。",
+    "英文 -> 中文意译（Step 1-2 按钮/协议）：Continue=继续；License Agreement=许可协议；Don't Accept=不接受；Accept=接受。",
+    "英文 -> 中文意译（Step 3-5 系统权限）：Allow Google Service to take pictures and record video?=允许 Google Service 拍照和录像？；access this device’s location=访问本设备位置？；record audio=录音？；While using the app=使用应用时允许；Only this time=仅此一次；Deny=拒绝。",
+    "英文 -> 中文意译（Step 6-8 联系人权限）：Allow Google Service to access your contacts?=允许 Google Service 访问联系人？；Allow=允许；Deny=拒绝。"
+  ],
+  "frame_captions": {
+    "step_01": "启动页伪装Google Service，展示SpyKontrol家长监控与免费试用说明；点击Continue，无通知横幅或遮罩。",
+    "step_02": "许可协议弹窗，仅有Don't Accept与Accept；本步点击Accept，未见通知横幅或遮罩。",
+    "step_03": "系统相机权限弹窗，应用名显示Google Service；点击While using the app授予使用中拍照录像权限。",
+    "step_04": "系统定位权限弹窗，提示可能持续获取位置；点击While using the app授予使用中定位，未升至始终允许。",
+    "step_05": "系统麦克风权限弹窗，应用名Google Service；点击While using the app授予使用中录音权限。",
+    "step_06": "联系人权限弹窗重复出现；本步未实际点击，静态跳转至应用内AllowPermissionActivity授权页。",
+    "step_07": "联系人权限弹窗仍停留，Allow与Deny可选；静态跳转探针进入wcBSKjPZDV.onActivityResult回调。",
+    "step_08": "联系人权限弹窗再次显示；静态跳转回入口xAnOvZoepF，权限诱导链未出现通知横幅或遮罩。"
+  }
+}

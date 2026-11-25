@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "本次轨迹始终停留在NexusLauncher桌面、应用抽屉与全局搜索，未捕获目标应用实际界面；搜索“sso”无结果后清空，随后三次静态跳转尝试进入CheckPermissionActivity、TransplentPermissionActivity与SplashActivity，但画面仍为桌面，未出现权限弹窗或诱导话术，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "NexusLauncher桌面主页，显示“Apps list”应用列表与天气-1°C；点击应用列表但未见抽屉打开，无通知与遮罩。",
+    "step_02": "仍为桌面主页，外文“Apps list/Cloudy”意为应用列表/多云；从底部上滑以打开应用抽屉，仍无通知或遮罩。",
+    "step_03": "应用抽屉已展开，可见Calendar、eGOVph等图标；点击顶部Search搜索框，尚未进入目标应用，无通知/遮罩。",
+    "step_04": "全局搜索页，“Search apps, web, and more…”意为搜索应用与网页；搜索框获得焦点并输入关键词，无结果页尚未出现。",
+    "step_05": "搜索页输入“sso”，未匹配到应用；点击Clear清空搜索框，页面仍为桌面搜索，无目标应用界面、通知或遮罩。",
+    "step_06": "桌面搜索页；静态跳转尝试打开CheckPermissionActivity（检查权限页），但截图仍停在搜索页，未出现权限弹窗或遮罩。",
+    "step_07": "桌面搜索页；静态跳转尝试进入TransplentPermissionActivity（透明权限页），画面未变化，仍无权限弹窗、通知或遮罩。",
+    "step_08": "桌面搜索页；静态跳转尝试进入SplashActivity（启动闪屏页），仍停留在搜索界面，未捕获目标应用内容或授权提示。"
+  }
+}

@@ -1,0 +1,11 @@
+flowchart TD
+    N_cf668ef692bf["Step 1: ReviewPermissionsActivity\nChoose what to allow R"]
+    N_3437e8d0eae3["Step 2: MainActivity\nRam Cleaner"]
+    N_7d199b9d2988["Step 3: MainActivity\nRAM Cleaner"]
+    N_cf668ef692bf -->|"ui_click: click([7] Button text='Continue'"| N_3437e8d0eae3
+    N_3437e8d0eae3 -->|"ui_click: click([3] Button text='OK' id=bu"| N_7d199b9d2988
+    N_7d199b9d2988 -->|"ui_wait: wait()"| N_7d199b9d2988
+    N_7d199b9d2988 -->|"ui_open: open()"| N_7d199b9d2988
+    N_7d199b9d2988 -->|"static_guided_activity_jump: am_start(AppMeasurementReceiver)"| N_7d199b9d2988
+    N_7d199b9d2988 -->|"static_guided_activity_jump: am_start(b)"| N_7d199b9d2988
+    N_7d199b9d2988 -->|"static_guided_activity_jump: am_start(FirebaseInstanceIdRecei"| N_7d199b9d2988

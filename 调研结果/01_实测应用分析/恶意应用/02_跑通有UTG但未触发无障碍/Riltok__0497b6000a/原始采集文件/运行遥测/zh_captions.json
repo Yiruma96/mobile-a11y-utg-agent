@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "入口先经系统权限复核并点击继续，再关闭旧版 Android 兼容警告；随后 WebView 加载 185.212.128.192 的落地页因断网失败，多次返回/静态跳转进入 Wb、ComposeS、PushSmsReceiver、RestartService，呈现后台短信/RCS 持久化特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Aviasales 访问的项目”（Step 1 系统权限复核页）",
+    "英文 -> “该应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英文 -> “网页不可用：http://185.212.128.192/1324273/bee/avia/index1.php?ID=... 因网络断开无法加载”（Step 3-5 WebView 断网页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限复核页，列出电话与短信权限；英文提示“选择允许 Aviasales 访问的项目”，本步点“Continue”继续，无通知/遮罩。",
+    "step_02": "应用兼容性警告页，英文称该应用为旧版 Android 构建、可能异常，本步点“OK”关闭弹窗以继续后台计时流程。",
+    "step_03": "内置 WebView 加载恶意 IP 的 avia/index1.php 失败，显示网页不可用与 ERR_INTERNET_DISCONNECTED；本步等待，无通知/遮罩。",
+    "step_04": "同一 WebView 断网页仍停留，URL 指向 185.212.128.192 的落地页；本步按返回键退出，试图回到后台计时触发。",
+    "step_05": "WebView 断网页无变化，静态引导回退到 .wb.WbActivity；本步为探针跳转，无可见交互、通知或遮罩。",
+    "step_06": "WbActivity 无可见内容，静态回退跳至 .checkui.ComposeSActivity；本步无交互，疑似进入短信编辑/伪装界面模块。",
+    "step_07": "ComposeSActivity 无可见界面，静态跳转至 .mess.service.receiver.PushSmsReceiver；本步无交互，指向短信推送接收器。",
+    "step_08": "仍为 ComposeSActivity 空界面，静态跳转至 .rcs.RestartService；本步无可见内容，指向 RCS 服务重启组件。"
+  }
+}

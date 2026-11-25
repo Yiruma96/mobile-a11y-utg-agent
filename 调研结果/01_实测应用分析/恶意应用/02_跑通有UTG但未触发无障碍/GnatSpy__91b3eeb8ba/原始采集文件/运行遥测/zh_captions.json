@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "该 GnatSpy 样本以“Facebook Update”为伪装名，连续索取麦克风、联系人、电话、存储媒体和短信权限，随后展示仿冒 Facebook 的“Updating …”页面，并静态跳转至无障碍服务设置及录音/接收器组件，呈现强制授权与品牌仿冒链路。本轮观测未见通知横幅或悬浮遮罩，拒权分支未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “允许 Facebook Update 录制音频？”（Step 1 麦克风授权页）",
+    "英语 -> “仅在使用应用时”（Step 1 授权选项）",
+    "英语 -> “允许 Facebook Update 访问联系人？”（Step 2 联系人授权页）",
+    "英语 -> “允许 Facebook Update 拨打和管理电话？”（Step 3 电话授权页）",
+    "英语 -> “允许 Facebook Update 访问照片、媒体和文件？”（Step 4 存储媒体授权页）",
+    "英语 -> “允许 Facebook Update 发送和查看短信？”（Step 5 短信授权页）",
+    "英语 -> “Facebook / © 2017–2018 Facebook Inc. / 版权所有 / 正在更新…”（Step 6–8 仿冒 Facebook 更新页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统麦克风授权弹窗，询问是否允许“Facebook Update”录音；点击“仅在使用时”，授予前台麦克风权限，无通知横幅/遮罩。",
+    "step_02": "系统联系人授权弹窗，英文询问是否允许“Facebook Update”访问联系人；点击“允许”，授予联系人权限，无通知横幅/遮罩。",
+    "step_03": "系统电话授权弹窗，询问是否允许“Facebook Update”拨打和管理电话；点击“允许”，授予电话权限，无通知横幅/遮罩。",
+    "step_04": "系统存储/媒体授权弹窗，询问是否允许访问照片、媒体和文件；点击“允许”，授予存储媒体权限，无通知横幅/遮罩。",
+    "step_05": "系统短信授权弹窗，询问是否允许“Facebook Update”发送和查看短信；点击“允许”，授予短信权限，无通知横幅/遮罩。",
+    "step_06": "仿冒 Facebook 的启动/更新页，显示“正在更新…”及 2017–2018 版权；探针静态跳转至无障碍服务设置 Activity，无通知/遮罩。",
+    "step_07": "仍为仿冒 Facebook 更新页，保留“正在更新…”与版权字样；探针静态跳转至应用内 .activities.FacebookUpdate，无通知/遮罩。",
+    "step_08": "重复仿冒 Facebook 更新页，显示“正在更新…”和版权；探针静态跳转至 .Receivers.CallRecorderReceiver（通话录音接收器），无通知/遮罩。"
+  }
+}

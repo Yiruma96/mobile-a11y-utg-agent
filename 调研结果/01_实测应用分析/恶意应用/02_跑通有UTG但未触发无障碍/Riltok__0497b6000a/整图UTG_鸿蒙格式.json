@@ -1,0 +1,174 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_016__0497b6000a",
+  "label": "malicious",
+  "family_or_category": "Riltok",
+  "static_visibility": "clear",
+  "target_package": "com.aviasalea",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "54b1822cb4e2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "54b1822cb4e2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Aviasales to access",
+        "Phone",
+        "make and manage phone calls",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "863b769ded55",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.aviasalea",
+      "abilityName": ".wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Aviasales",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "65c2a798ebf9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.aviasalea",
+      "abilityName": "com.aviasalea.wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at http://185.212.128.192/1324273/bee/avia/index1.php?ID=c8fb42ac63dbc690357 could not be loaded because:",
+        "net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "7ca20b021c0c",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.aviasalea",
+      "abilityName": "com.aviasalea.wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "ab0602b02925",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "com.aviasalea",
+      "abilityName": "com.aviasalea.checkui.ComposeSActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "54b1822cb4e2",
+      "to": "863b769ded55",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "863b769ded55",
+      "to": "65c2a798ebf9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "65c2a798ebf9",
+      "to": "65c2a798ebf9",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "65c2a798ebf9",
+      "to": "65c2a798ebf9",
+      "step": 4,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "65c2a798ebf9",
+      "to": "7ca20b021c0c",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(WbActivity)"
+    },
+    {
+      "from": "7ca20b021c0c",
+      "to": "ab0602b02925",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ComposeSActivity)"
+    },
+    {
+      "from": "ab0602b02925",
+      "to": "ab0602b02925",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PushSmsReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Riltok__0497b6000a",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口先经系统权限复核并点击继续，再关闭旧版 Android 兼容警告；随后 WebView 加载 185.212.128.192 的落地页因断网失败，多次返回/静态跳转进入 Wb、ComposeS、PushSmsReceiver、RestartService，呈现后台短信/RCS 持久化特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Aviasales 访问的项目”（Step 1 系统权限复核页）",
+    "英文 -> “该应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英文 -> “网页不可用：http://185.212.128.192/1324273/bee/avia/index1.php?ID=... 因网络断开无法加载”（Step 3-5 WebView 断网页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限复核页，列出电话与短信权限；英文提示“选择允许 Aviasales 访问的项目”，本步点“Continue”继续，无通知/遮罩。",
+    "step_02": "应用兼容性警告页，英文称该应用为旧版 Android 构建、可能异常，本步点“OK”关闭弹窗以继续后台计时流程。",
+    "step_03": "内置 WebView 加载恶意 IP 的 avia/index1.php 失败，显示网页不可用与 ERR_INTERNET_DISCONNECTED；本步等待，无通知/遮罩。",
+    "step_04": "同一 WebView 断网页仍停留，URL 指向 185.212.128.192 的落地页；本步按返回键退出，试图回到后台计时触发。",
+    "step_05": "WebView 断网页无变化，静态引导回退到 .wb.WbActivity；本步为探针跳转，无可见交互、通知或遮罩。",
+    "step_06": "WbActivity 无可见内容，静态回退跳至 .checkui.ComposeSActivity；本步无交互，疑似进入短信编辑/伪装界面模块。",
+    "step_07": "ComposeSActivity 无可见界面，静态跳转至 .mess.service.receiver.PushSmsReceiver；本步无交互，指向短信推送接收器。",
+    "step_08": "仍为 ComposeSActivity 空界面，静态跳转至 .rcs.RestartService；本步无可见内容，指向 RCS 服务重启组件。"
+  }
+}

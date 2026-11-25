@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "该应用从桌面多次尝试启动目标包但未展示主界面，随后静态跳转拉起权限代理页，并借系统权限复核页诱导点击“继续”放行定位、电话、相机、文件和身体活动等敏感权限；之后仅以旧版Android兼容提示过渡，点击“OK”后连续静态跳转至UsageProxyActivity、BoostEventReceiver、ShkReceiver等隐藏组件，呈现HiddenAd规避审核特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许 Clean Master 访问的内容”（Step 4 系统权限复核页）",
+    "英语 -> “此应用针对旧版 Android 构建，可能无法正常工作；请尝试检查更新或联系开发者”（Step 5 兼容性警告弹窗）",
+    "英语 -> 应用名“Clean Master”借用知名清理工具品牌，易让用户误认为是正规清理软件（Step 4/5等页面）"
+  ],
+  "frame_captions": {
+    "step_01": "桌面应用列表页，显示Apps list、Messages、Chrome、搜索等；无通知/遮罩，本步尝试打开目标应用但仍停留桌面。",
+    "step_02": "仍为桌面应用列表页，Apps list、Chrome、搜索等可见；无通知与遮罩，再次按包名启动目标应用仍未进入应用界面。",
+    "step_03": "桌面应用列表页无目标应用界面，无通知/遮罩；探针执行静态跳转，指令指向PermissionProxyActivity权限代理页。",
+    "step_04": "系统权限复核页，提示选择允许Clean Master访问定位、电话、相机、文件媒体、身体活动；有取消/继续，无遮罩，点击“继续”。",
+    "step_05": "应用内兼容性警告弹窗，提示此应用针对旧版Android构建、可能工作异常并建议检查更新；仅“OK”按钮，无通知/遮罩，点击关闭。",
+    "step_06": "PermissionProxyActivity空白页，无可见文字、通知横幅或遮罩；探针执行静态跳转至UsageProxyActivity使用情况代理页。",
+    "step_07": "PermissionProxyActivity仍为空白页，无文字、通知与遮罩；探针继续静态跳转至BoostEventReceiver，疑为加速/广告事件接收组件。",
+    "step_08": "PermissionProxyActivity空白页，无可见内容、通知或遮罩；探针静态跳转至ShkReceiver，链路进入隐藏接收器，未见用户可操作界面。"
+  }
+}

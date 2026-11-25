@@ -1,0 +1,12 @@
+flowchart TD
+    N_76943fb6af0f["Step 1: ReviewPermissionsActivity\nChoose what to allow L"]
+    N_61558e28e029["Step 2: WbActivity\nLeboncoin"]
+    N_4ccf95a10b50["Step 3: WbActivity\n"]
+    N_0365316bb8a6["Step 4: WbActivity\nWebpage not available"]
+    N_76943fb6af0f -->|"ui_click: click([11] Button text='Continue"| N_61558e28e029
+    N_61558e28e029 -->|"ui_click: click([3] Button text='OK' id=bu"| N_4ccf95a10b50
+    N_4ccf95a10b50 -->|"ui_wait: wait()"| N_0365316bb8a6
+    N_0365316bb8a6 -->|"ui_wait: wait()"| N_0365316bb8a6
+    N_0365316bb8a6 -->|"ui_system_button: system_button(Back)"| N_0365316bb8a6
+    N_0365316bb8a6 -->|"static_guided_activity_jump: am_start(GActivity)"| N_0365316bb8a6
+    N_0365316bb8a6 -->|"static_guided_activity_jump: am_start(WbActivity)"| N_4ccf95a10b50

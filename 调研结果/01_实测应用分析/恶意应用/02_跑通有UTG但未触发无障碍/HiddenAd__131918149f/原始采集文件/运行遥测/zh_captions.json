@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "应用以Unity游戏“Props Rescue”为入口，前台仅显示游戏视图，未出现可见广告或授权弹窗；随后由静态引导连续跳转Facebook接收器、CustomTab及com.rescue.machine.UnityPlayerActivity，呈现隐藏广告链特征，授权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions": {
+    "step_01": "Unity游戏启动页，显示“Game view/Props Rescue”（游戏视图/道具救援）；等待加载，未见通知横幅、遮罩或广告弹窗。",
+    "step_02": "仍在Unity游戏视图，仅有“Game view”（游戏视图）；点击屏幕中心尝试交互，未触发广告、通知或权限弹窗。",
+    "step_03": "Unity游戏视图无新文案；执行向上滑动，界面仍无广告层、通知横幅或遮罩，静态分析指向后台广告注入。",
+    "step_04": "界面仍为Unity游戏视图，无新增提示；静态探针跳转至Facebook令牌过期广播接收器，未见可见页面或广告弹窗。",
+    "step_05": "Unity游戏视图无新文案；再次滑动尝试拖动黄球入洞，但未出现广告、通知或遮罩，交互仍停留在游戏画面。",
+    "step_06": "仍停留在Unity游戏视图，无新增外文提示；静态探针跳转至com.fully.AActivity，界面未显示广告或授权弹窗。",
+    "step_07": "Unity游戏画面无变化，仅有“Game view”（游戏视图）；静态探针跳转至Facebook CustomTabActivity，仍未出现可见广告。",
+    "step_08": "进入Facebook CustomTab容器，仅见“Props Rescue”（道具救援）游戏名；静态跳转指向com.rescue.machine.UnityPlayerActivity，无通知/遮罩。"
+  }
+}

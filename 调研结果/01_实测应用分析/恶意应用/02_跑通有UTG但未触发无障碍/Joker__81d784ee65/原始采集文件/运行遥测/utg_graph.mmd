@@ -1,0 +1,11 @@
+flowchart TD
+    N_d2fb8a7a8393["Step 1: FiActivity\nWarn"]
+    N_2a298d2ead21["Step 2: Settings$NotificationAccessS\nBack"]
+    N_b3041dc1ffe0["Step 7: ConfirmDialog\nConnection request"]
+    N_d2fb8a7a8393 -->|"ui_click: click([3] Button text='GO SET' i"| N_2a298d2ead21
+    N_2a298d2ead21 -->|"ui_click: click([1] ImageButton desc='Back"| N_d2fb8a7a8393
+    N_d2fb8a7a8393 -->|"ui_click: click([3] Button text='GO SET' i"| N_2a298d2ead21
+    N_2a298d2ead21 -->|"ui_click: click([1] ImageButton desc='Back"| N_d2fb8a7a8393
+    N_d2fb8a7a8393 -->|"ui_system_button: system_button(Back)"| N_d2fb8a7a8393
+    N_d2fb8a7a8393 -->|"static_guided_activity_jump: am_start(GrantPermissionsActivit"| N_b3041dc1ffe0
+    N_b3041dc1ffe0 -->|"static_guided_activity_jump: am_start(ConfirmDialog)"| N_b3041dc1ffe0

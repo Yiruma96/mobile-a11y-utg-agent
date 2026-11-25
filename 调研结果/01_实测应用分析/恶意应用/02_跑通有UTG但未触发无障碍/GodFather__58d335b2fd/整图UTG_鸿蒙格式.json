@@ -1,0 +1,165 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_098__58d335b2fd",
+  "label": "malicious",
+  "family_or_category": "GodFather",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.sulphatase.wordman",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "5e776a7faf96",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "5e776a7faf96",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.sulphatase.wordman",
+      "abilityName": "com.sulphatase.wordman.goldcrest",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Müzik İndir",
+        "Uygulamanın tüm özelliklerini kullanmak için izin vermeniz gerekiyor.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "2d954162623a",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$ManageAppExternalSourcesActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Install unknown apps",
+        "Search settings",
+        "Müzik İndir",
+        "1.0",
+        "Allow from this source",
+        "Your phone and personal data are more vulnerable to attack by unknown apps. By installing apps from this source, you agree that you are responsible for any damage to your phone or loss of data that may result from their use."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "19c2d43902f6",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.sulphatase.wordman",
+      "abilityName": ".facecentered",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Bilgi",
+        "Uygulamamızı kullanabilmek için eklentiyi yüklemelisiniz.",
+        "YÜKLE"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "46405b2a1924",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.packageinstaller",
+      "abilityName": "com.android.packageinstaller.PackageInstallerActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Do you want to install this application?",
+        "Cancel",
+        "Install"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5e776a7faf96",
+      "to": "2d954162623a",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button (click) center=(539,1941))"
+    },
+    {
+      "from": "2d954162623a",
+      "to": "2d954162623a",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "2d954162623a",
+      "to": "5e776a7faf96",
+      "step": 3,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "5e776a7faf96",
+      "to": "19c2d43902f6",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button (click) center=(539,1941))"
+    },
+    {
+      "from": "19c2d43902f6",
+      "to": "46405b2a1924",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"YÜKLE\" id=button1 (click) center=(884,1254))"
+    },
+    {
+      "from": "46405b2a1924",
+      "to": "19c2d43902f6",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(goldcrest)"
+    },
+    {
+      "from": "19c2d43902f6",
+      "to": "46405b2a1924",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"YÜKLE\" id=button1 (click) center=(884,1254))"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "GodFather__58d335b2fd",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用以“Müzik İndir（下载音乐）”为名，先诱导用户开启“安装未知应用”，再以“必须安装插件”弹窗反复拉起系统安装器安装二阶段APK；整体为GodFather类社会工程侧载链路，本次未测试拒权结果。",
+  "observed_lure_rhetoric_zh": [
+    "土耳其语 -> 使用应用全部功能需授予权限（Step 1/4启动页）",
+    "英语 -> 安装未知来源应用会使手机和个人数据更易受攻击，您需自行承担风险（Step 2/3设置页）",
+    "土耳其语 -> 要使用我们的应用必须安装插件（Step 5/7提示弹窗）",
+    "英语 -> 是否安装此应用（Step 6/8系统安装确认页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用启动页，标题“Müzik İndir（下载音乐）”；土耳其语称需授权才能使用全部功能，仅OK键可点，进入授权引导。",
+    "step_02": "系统“安装未知应用”设置页，显示Müzik İndir与英文风险警告；本步点击未勾选的“Allow from this source”开关。",
+    "step_03": "同一系统授权页，开关已勾选放行未知来源安装；点击返回键离开设置，返回应用继续诱导。",
+    "step_04": "返回应用启动页，仍显示“Müzik İndir（下载音乐）”和需授权使用全部功能的土耳其语提示；再次点击OK推进。",
+    "step_05": "应用内“Bilgi（信息）”弹窗，土耳其语称使用应用必须安装插件；仅“YÜKLE（安装）”键，点击拉起二阶段APK安装。",
+    "step_06": "系统安装确认页，英文询问是否安装此应用并提供取消/安装；本步未点击，仅静态跳转回goldcrest入口。",
+    "step_07": "再次出现“Bilgi（信息）”插件安装弹窗，土耳其语要求安装插件才能使用；点击“YÜKLE（安装）”再次触发安装会话。",
+    "step_08": "系统安装确认页，英文询问是否安装此应用；点击“Install（安装）”确认安装二阶段APK，完成侧载关键一步。"
+  }
+}

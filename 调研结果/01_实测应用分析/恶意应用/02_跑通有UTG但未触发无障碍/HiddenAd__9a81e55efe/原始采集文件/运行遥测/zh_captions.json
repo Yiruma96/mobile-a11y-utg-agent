@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用以 UnityPlayerActivity 的 Game view 黑屏游戏视图为入口，穿插 GDPR 同意弹窗点击与多次静态引导跳转，依次经过 Facebook 接收器、com.helicopt.ga、系统桌面及可疑短组件 b，最终指向 com.saypromo.SPAdActivity 广告页。核心特征是游戏界面掩护下的授权诱导与隐藏广告跳转。",
+  "observed_lure_rhetoric_zh": [
+    "英文 I Accept -> 中文“我接受”（Step 4：Unity 游戏视图内 GDPR 同意弹窗，选项已勾选，诱导用户直接同意）"
+  ],
+  "frame_captions": {
+    "step_01": "UnityPlayerActivity 游戏视图，仅显示英文 Game view（游戏视图），无通知与遮罩；代理先等待观察，界面仍停留在黑屏启动状态。",
+    "step_02": "仍为 Unity 游戏视图 Game view（游戏视图），无通知、无遮罩；代理点击屏幕中心（540,1074）试图推进，仍未见可交互内容。",
+    "step_03": "仍为 Unity 游戏视图 Game view（游戏视图），无通知与遮罩；本步为静态引导跳转探针，目标指向 Facebook 令牌过期广播接收器。",
+    "step_04": "仍显示 Game view（游戏视图），代理记录出现 GDPR 同意弹窗且 I Accept（我接受）已勾选；本步点击坐标推进，无通知与遮罩。",
+    "step_05": "Unity 游戏视图 Game view（游戏视图），无通知与遮罩；静态引导探针再次跳转，目标为可疑短包名 com.helicopt.ga 组件。",
+    "step_06": "跳至系统 NexusLauncherActivity 桌面，显示 Apps list（应用列表）、Messages（信息）、Chrome、Search（搜索）等；无通知与遮罩。",
+    "step_07": "回到 Unity 游戏视图 Game view（游戏视图），无通知与遮罩；静态引导探针跳向同包可疑短组件 com.helicopt.b。",
+    "step_08": "进入同包 activity b，界面仍为 Game view（游戏视图），无通知与遮罩；静态引导探针继续跳向 com.saypromo.SPAdActivity 广告页。"
+  }
+}

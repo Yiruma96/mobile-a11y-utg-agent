@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "应用先以“超级清理/杀毒/加速”主界面展示内存、存储、垃圾文件等指标，再用“Permission Needed”弹窗逐步索要使用情况访问与外部存储权限，并引导至系统设置；后续静态跳转探针指向权限引导页和后台接收器，整体呈现 SharkBot 类诱导授权链特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “Permission Needed / Grant App Usage Permission for a comprehensive phone scan effect / Grant Now”意为需授予使用情况访问权限才能全面扫描手机，并催促立即授予（Step 2 主界面弹窗）",
+    "英文 -> “Find Atom Clean-Booster, Antivirus and grant usage Access permission”意为引导在系统设置为指定应用开启使用情况访问权限（Step 3 授权引导页）",
+    "英文 -> “Permission Needed / Grant access to the external storage memory in the device / Grant Now”意为需授予设备外部存储访问权限，并催促立即授予（Step 6-8 主界面弹窗）",
+    "英文 -> “Phone boost / Antivirus / Junk files / CPU Cooler”等标签以手机加速、杀毒、垃圾清理、CPU降温营造风险与优化需求（Step 1/5 主界面）"
+  ],
+  "frame_captions": {
+    "step_01": "主界面展示内存47%、存储7%、垃圾文件及加速/杀毒入口；无遮罩，点击“Phone boost”触发授权流程。",
+    "step_02": "弹出“Permission Needed”权限提示，声称授予应用使用情况权限可实现全面扫描；本步点击“Grant Now”。",
+    "step_03": "授权引导页提示在系统设置中为“Atom Clean-Booster, Antivirus”开启使用情况访问；本步点关闭图标返回。",
+    "step_04": "跳转系统“Usage access”列表，目标应用显示“Not allowed”，其他应用已允许；本步按返回键回应用。",
+    "step_05": "回到主界面，仍显示内存47%、存储7%等指标；无遮罩，本步改点“Antivirus”再次触发授权引导。",
+    "step_06": "再次弹出存储权限提示，称需授予外部存储访问；本步为静态跳转探针，指向 GuildPermission 引导页。",
+    "step_07": "存储权限提示保持不变；静态跳转探针落到 WorkManager 的电池约束代理组件，未见新界面。",
+    "step_08": "存储权限提示仍停留；静态跳转探针指向 WatchmenReceiver 后台接收器，未见新界面或遮罩。"
+  }
+}

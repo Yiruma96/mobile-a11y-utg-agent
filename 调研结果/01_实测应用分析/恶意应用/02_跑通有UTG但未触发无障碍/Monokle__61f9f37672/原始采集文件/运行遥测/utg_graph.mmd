@@ -1,0 +1,15 @@
+flowchart TD
+    N_29b67ab09fb2["Step 1: WelcomeActivity\nTake privacy with you."]
+    N_55f87ad45a31["Step 2: WelcomeActivity\n+"]
+    N_a4c3afe371ea["Step 3: GrantPermissionsActivity\nAllow Signal to access"]
+    N_da9b650c9b92["Step 4: GrantPermissionsActivity\nAllow Signal to make a"]
+    N_b13f2b0c66bc["Step 5: GrantPermissionsActivity\nAllow Signal to access"]
+    N_5267efe9a78a["Step 6: RegistrationActivity\nEnter your phone numbe"]
+    N_f6a3588f0886["Step 8: NexusLauncherActivity\nApps list"]
+    N_29b67ab09fb2 -->|"ui_click: click([3] Button text='CONTINUE'"| N_55f87ad45a31
+    N_55f87ad45a31 -->|"ui_click: click([4] Button text='CONTINUE'"| N_a4c3afe371ea
+    N_a4c3afe371ea -->|"ui_click: click([4] Button text='Allow' id"| N_da9b650c9b92
+    N_da9b650c9b92 -->|"ui_click: click([4] Button text='Allow' id"| N_b13f2b0c66bc
+    N_b13f2b0c66bc -->|"ui_click: click([4] Button text='Allow' id"| N_5267efe9a78a
+    N_5267efe9a78a -->|"static_guided_activity_jump: am_start(VoiceCallShare)"| N_5267efe9a78a
+    N_5267efe9a78a -->|"static_guided_activity_jump: am_start(SmsSendtoActivity)"| N_f6a3588f0886

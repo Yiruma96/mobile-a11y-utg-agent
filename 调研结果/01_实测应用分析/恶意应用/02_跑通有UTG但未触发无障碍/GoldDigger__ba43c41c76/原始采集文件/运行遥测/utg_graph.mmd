@@ -1,0 +1,10 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_37fe92c1e308["Step 5: NexusLauncherActivity\nApps list"]
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_click: click([1] View desc='Apps list' "| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(CheckPermissionActivity"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_swipe: swipe([540, 1800])"| N_37fe92c1e308
+    N_37fe92c1e308 -->|"ui_click: click([17] TextView text='SKY Ai"| N_37fe92c1e308
+    N_37fe92c1e308 -->|"static_guided_activity_jump: am_start(CheckPermissionActivity"| N_37fe92c1e308
+    N_37fe92c1e308 -->|"static_guided_activity_jump: am_start(TransplentPermissionAct"| N_37fe92c1e308

@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "该应用先以“杀毒安全、保护手机”的欢迎页建立信任，点击START后连续索取联系人和电话权限，再用“必要访问”警告页反复引导用户去设置；探针还静态跳转到权限引导、欢迎页和垃圾清理页，全程未见通知横幅或遮罩，具有典型Joker诱导授权特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Antivirus Security / Protect your phone” -> “杀毒安全/保护你的手机”（Step1 欢迎页），以安全名义建立可信度。",
+    "英文“By clicking START,you agree to our Terms of Service and Privacy Policy... device information and applications usage behavior...” -> “点击START即同意条款与隐私政策，并可能使用设备信息与应用使用行为以提供更好服务”（Step1 欢迎页），用合规长文弱化授权。",
+    "英文“START” -> “开始”（Step1 欢迎页），诱导继续进入授权流程。",
+    "英文“Allow Antivirus Security to access your contacts?” -> “允许杀毒安全访问联系人？”（Step2 系统权限弹窗），索取通讯录权限。",
+    "英文“Allow Antivirus Security to make and manage phone calls?” -> “允许杀毒安全拨打和管理电话？”（Step3 系统权限弹窗），索取电话权限。",
+    "英文“Warn / Please open this necessary access. / GO SET” -> “警告/请开启此必要访问/去设置”（Step4、Step6-Step8 警告页），以“必要访问”施压并引导设置。"
+  ],
+  "frame_captions": {
+    "step_01": "欢迎页：英文自称“杀毒安全、保护手机”并以条款铺垫；点击START继续，未发现通知横幅或遮罩。",
+    "step_02": "系统联系人授权弹窗：英文询问是否允许访问联系人；本步点击Allow放行，界面无通知横幅或遮罩。",
+    "step_03": "系统电话授权弹窗：英文询问是否允许拨打和管理电话；点击Allow放行，继续预授权流程，无遮罩。",
+    "step_04": "应用内警告页：英文提示“警告/请开启必要访问”，GO SET意为“去设置”；点击后跳转设置页，无遮罩。",
+    "step_05": "系统通知使用权页：显示Antivirus Security等应用及允许状态；英文Back意为返回；本步点击返回，未完成该授权。",
+    "step_06": "仍为应用内警告页“警告/请开启必要访问/去设置”；探针静态跳转至PermissionGuideActivity，无通知或遮罩。",
+    "step_07": "仍为应用内警告页，英文要求开启“必要访问”并点GO SET；探针静态跳转至WelcomeActivity，界面未变、无遮罩。",
+    "step_08": "仍为应用内警告页，英文称“必要访问”并引导GO SET；探针静态跳转至JunkCleanActivity，界面未变、无遮罩。"
+  }
+}

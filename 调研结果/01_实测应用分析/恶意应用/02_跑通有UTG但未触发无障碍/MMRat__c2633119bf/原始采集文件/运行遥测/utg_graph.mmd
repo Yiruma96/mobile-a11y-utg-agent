@@ -1,0 +1,12 @@
+flowchart TD
+    N_b38e8ac8a173["Step 1: LoginActivity\nSelamat datang di M-pa"]
+    N_f1c8db49fc0f["Step 3: LoginActivity\nSelamat datang di M-pa"]
+    N_74a997c181f9["Step 5: LoginActivity\nSelamat datang di M-pa"]
+    N_bec1d23bca94["Step 7: WebViewActivity\nKlik untuk membuka dan"]
+    N_b38e8ac8a173 -->|"ui_click: click([4] EditText text='Silakan"| N_b38e8ac8a173
+    N_b38e8ac8a173 -->|"ui_type: type()"| N_f1c8db49fc0f
+    N_f1c8db49fc0f -->|"ui_click: click([5] EditText text='Silakan"| N_f1c8db49fc0f
+    N_f1c8db49fc0f -->|"ui_type: type()"| N_74a997c181f9
+    N_74a997c181f9 -->|"ui_click: click([545, 1339])"| N_74a997c181f9
+    N_74a997c181f9 -->|"static_guided_activity_jump: am_start(WebViewActivity)"| N_bec1d23bca94
+    N_bec1d23bca94 -->|"static_guided_activity_jump: am_start(RequestPermissionActivi"| N_bec1d23bca94

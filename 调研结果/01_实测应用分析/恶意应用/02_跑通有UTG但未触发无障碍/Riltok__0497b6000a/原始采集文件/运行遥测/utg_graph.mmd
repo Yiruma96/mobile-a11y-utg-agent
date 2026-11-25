@@ -1,0 +1,13 @@
+flowchart TD
+    N_54b1822cb4e2["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_863b769ded55["Step 2: WbActivity\nAviasales"]
+    N_65c2a798ebf9["Step 3: WbActivity\nWebpage not available"]
+    N_7ca20b021c0c["Step 6: WbActivity\n"]
+    N_ab0602b02925["Step 7: ComposeSActivity\n"]
+    N_54b1822cb4e2 -->|"ui_click: click([11] Button text='Continue"| N_863b769ded55
+    N_863b769ded55 -->|"ui_click: click([3] Button text='OK' id=bu"| N_65c2a798ebf9
+    N_65c2a798ebf9 -->|"ui_wait: wait()"| N_65c2a798ebf9
+    N_65c2a798ebf9 -->|"ui_system_button: system_button(Back)"| N_65c2a798ebf9
+    N_65c2a798ebf9 -->|"static_guided_activity_jump: am_start(WbActivity)"| N_7ca20b021c0c
+    N_7ca20b021c0c -->|"static_guided_activity_jump: am_start(ComposeSActivity)"| N_ab0602b02925
+    N_ab0602b02925 -->|"static_guided_activity_jump: am_start(PushSmsReceiver)"| N_ab0602b02925

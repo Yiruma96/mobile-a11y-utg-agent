@@ -1,0 +1,12 @@
+flowchart TD
+    N_24f22adb015e["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_b2af977c1f94["Step 2: Fb_Home\nApp System Installer"]
+    N_ed5d505fdd00["Step 3: Fb_Home\nEnter Email or Phone"]
+    N_dbd1d6020cbe["Step 5: Fb_Home\ntest@example.com"]
+    N_24f22adb015e -->|"ui_click: click([27] Button text='Continue"| N_b2af977c1f94
+    N_b2af977c1f94 -->|"ui_click: click([3] Button text='OK' id=bu"| N_ed5d505fdd00
+    N_ed5d505fdd00 -->|"ui_click: click([1] EditText text='Enter E"| N_ed5d505fdd00
+    N_ed5d505fdd00 -->|"ui_type: type()"| N_dbd1d6020cbe
+    N_dbd1d6020cbe -->|"ui_click: click([2] EditText text='Enter P"| N_dbd1d6020cbe
+    N_dbd1d6020cbe -->|"static_guided_activity_jump: am_start(Fb_Home)"| N_dbd1d6020cbe
+    N_dbd1d6020cbe -->|"static_guided_activity_jump: am_start(CallRecorderReceiver)"| N_dbd1d6020cbe

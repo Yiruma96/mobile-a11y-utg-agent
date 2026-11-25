@@ -1,0 +1,156 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_053__b57d2cef44",
+  "label": "malicious",
+  "family_or_category": "EventBot",
+  "static_visibility": "clear",
+  "target_package": "com.example.eventbot",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "2511abb32a7c",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "2511abb32a7c",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Microsoft Word to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2511abb32a7c",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"Cancel\" id=cancel_button (click) center=(766,2073))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "2511abb32a7c",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "2511abb32a7c",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"Cancel\" id=cancel_button (click) center=(766,2073))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(doActivity)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "2511abb32a7c",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(sendShortMsg)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "EventBot__b57d2cef44",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先以 Microsoft Word 名义弹出文件/媒体与短信权限页，反复点“取消”后回到桌面，再通过静态活动跳转尝试触发 doActivity、sendShortMsg、recvPushMsg 等后台/SMS 相关动作，呈现伪装授权与规避式诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Microsoft Word 访问的内容”（Step 1/4/8 权限页）",
+    "英文 -> “文件与媒体：访问设备上的照片、媒体和文件”（Step 1/4/8 权限页）",
+    "英文 -> “短信：发送和查看短信”（Step 1/4/8 权限页）",
+    "英文 -> “取消 / 继续”按钮（Step 1/4/8 权限页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限控制器显示“允许 Microsoft Word 访问”页，含文件媒体与短信两项；点“取消”关闭授权，未出现通知或遮罩。",
+    "step_02": "回到桌面启动器，显示应用列表、日期、天气及 Messages/Chrome/搜索；本步仅等待，无通知横幅或遮罩。",
+    "step_03": "仍在桌面启动器，界面同上；本步按包名重新打开 EventBot，试图重启后台权限线程，无通知与遮罩。",
+    "step_04": "再次弹出“允许 Microsoft Word 访问”权限页，索要文件媒体与短信；点“取消”拒绝，通知与遮罩均为零。",
+    "step_05": "桌面启动器等待页，保留应用列表、日期、Messages/Chrome/搜索；等待后台权限线程浮层，未观察到通知或遮罩。",
+    "step_06": "桌面启动器上执行静态活动跳转，界面仍为应用列表等；探针拟跳转 func.doActivity，无通知、无遮罩。",
+    "step_07": "仍在桌面启动器，显示应用列表、日期、Messages/Chrome/搜索；静态跳转指向 .sendShortMsg，无通知横幅与遮罩。",
+    "step_08": "静态跳转触发权限控制器“允许 Microsoft Word 访问”页，索要文件媒体与短信；指向 .recvPushMsg，无通知/遮罩。"
+  }
+}

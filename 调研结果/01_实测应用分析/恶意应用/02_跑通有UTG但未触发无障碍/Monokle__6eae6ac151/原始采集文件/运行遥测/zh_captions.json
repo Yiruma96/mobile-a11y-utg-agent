@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "该应用以 UzbekChat“全球最快、免费安全”的聊天入口诱导用户开始使用，收集美国 +1 手机号并请求短信/通话权限；系统授权弹窗后进入 Telegram 加载页，并静态跳转至 OneAudience 检查器及伪装系统更新的接收器。本次未实际测试拒绝授权结果。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “全球最快的消息应用，免费且安全”（IntroActivity 入口页）",
+    "英文 -> “开始聊天”（IntroActivity 按钮）",
+    "英文 -> “请确认国家代码并输入手机号”（LaunchActivity 手机号页）",
+    "英文 -> “请允许 UzbekChat 接收电话和短信，以便自动为你填入验证码”（LaunchActivity 权限说明页）",
+    "英文 -> “允许 UzbekChat 拨打和管理电话？”（系统权限弹窗）",
+    "英文 -> “加载中…”（LaunchActivity 加载页）"
+  ],
+  "frame_captions": {
+    "step_01": "入口介绍页，宣称“全球最快、免费安全”，点击 START MESSAGING 开始，无通知/遮罩。",
+    "step_02": "手机号登录页，显示 USA +1 并提示确认国家代码、输入手机号；点击输入框，无通知/遮罩。",
+    "step_03": "同一手机号页，向已聚焦输入框键入测试号码；页面无通知横幅或遮罩，继续等待提交。",
+    "step_04": "手机号已显示 555 123 4567，点击右上角勾选提交；无通知/遮罩，进入权限说明。",
+    "step_05": "短信/通话权限说明页，称允许后可自动代填验证码，点击 OK；无通知/遮罩，继续流程。",
+    "step_06": "系统电话权限弹窗，询问是否允许拨打电话和管理通话，含允许/拒绝；探针静态跳转至 Telegram LaunchActivity。",
+    "step_07": "加载页仅显示 Loading...；探针直接静态跳转 OneAudienceReceiverChecker，无通知/遮罩。",
+    "step_08": "仍为加载页 Loading...；探针静态跳转伪装为系统更新的 MediaReceiver，无通知/遮罩。"
+  }
+}

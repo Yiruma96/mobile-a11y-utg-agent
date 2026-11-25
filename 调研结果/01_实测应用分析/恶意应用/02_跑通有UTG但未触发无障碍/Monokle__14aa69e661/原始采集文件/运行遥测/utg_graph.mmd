@@ -1,0 +1,13 @@
+flowchart TD
+    N_78d88c6b6623["Step 1: GrantPermissionsActivity\nAllow BBM to access th"]
+    N_854010ba6485["Step 2: GrantPermissionsActivity\nAllow BBM to make and "]
+    N_71d258ab8655["Step 3: StartupActivity\nTo continue, connect t"]
+    N_4c2b4d759807["Step 4: GrantPermissionsActivity\nAllow BBM to send and "]
+    N_30e577b4fd0b["Step 5: BbidErrorActivity\nYour connection to the"]
+    N_78d88c6b6623 -->|"ui_click: click([5] Button text='While usi"| N_854010ba6485
+    N_854010ba6485 -->|"ui_click: click([4] Button text='Allow' id"| N_71d258ab8655
+    N_71d258ab8655 -->|"ui_click: click([3] Button text='OK' id=bu"| N_4c2b4d759807
+    N_4c2b4d759807 -->|"ui_click: click([4] Button text='Allow' id"| N_30e577b4fd0b
+    N_30e577b4fd0b -->|"ui_open: open()"| N_30e577b4fd0b
+    N_30e577b4fd0b -->|"static_guided_activity_jump: am_start(SingleEntryShareActivit"| N_30e577b4fd0b
+    N_30e577b4fd0b -->|"static_guided_activity_jump: am_start(GroupChat)"| N_30e577b4fd0b

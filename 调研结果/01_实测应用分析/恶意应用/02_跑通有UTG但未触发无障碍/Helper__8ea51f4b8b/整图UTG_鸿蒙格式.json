@@ -1,0 +1,173 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_088__8ea51f4b8b",
+  "label": "malicious",
+  "family_or_category": "Helper",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "loaddex.hb.com.loaddex.psx",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "1159e24777c9",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "6ca6daedd70f",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "Messages",
+        "Phone",
+        "Photos",
+        "Play Movies & TV"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f3c915fd6aa2",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "Search apps, web, and more…",
+        "Voice Search"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "d16489742a10",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Go to Discover",
+        "loaddex",
+        "Clear"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "6ca6daedd70f",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "6ca6daedd70f",
+      "to": "f3c915fd6aa2",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([19] FrameLayout desc=\"Search\" id=search_container_all_apps (click) center=(540,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "d16489742a10",
+      "step": 4,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "d16489742a10",
+      "to": "f3c915fd6aa2",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([5] ImageView desc=\"Clear\" id=clear_or_voice_button (click) center=(981,188))"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "f3c915fd6aa2",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Accessibilitypsx)"
+    },
+    {
+      "from": "f3c915fd6aa2",
+      "to": "f3c915fd6aa2",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(Receiverpsx)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Helper__8ea51f4b8b",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用未在桌面、应用抽屉或搜索中暴露入口，代理只能通过静态 Activity 跳转依次探针 Accessibilitypsx、Receiverpsx、Notificationpsx；界面始终停留在原生桌面搜索页，未出现授权/拒权交互、通知横幅或遮罩，故未见具体诱导话术。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "原生桌面首页，显示“Apps list/应用列表”、日期与天气；点击“应用列表”试图打开抽屉，但未见目标应用。",
+    "step_02": "仍为桌面首页，内容同前；从屏幕底部上滑以展开应用抽屉，未出现目标应用界面或任何提示。",
+    "step_03": "应用抽屉已展开，列出日历、相机、Chrome等；点击顶部“Search/搜索”容器，仍未发现loaddex图标。",
+    "step_04": "桌面全局搜索页，显示“搜索应用、网页等”输入框；聚焦后准备输入包名片段，尚无目标应用结果。",
+    "step_05": "搜索框内输入“loaddex”，无匹配应用；点击右侧“Clear/清除”按钮清空关键词，未触发目标组件。",
+    "step_06": "仍停留在桌面搜索页；静态引导跳转尝试进入.Accessibilitypsx，界面未变化，无授权弹窗或说明话术。",
+    "step_07": "仍为桌面搜索页；静态跳转尝试进入.Receiverpsx，页面无可见变化，未出现接收器相关界面或系统提示。",
+    "step_08": "仍为桌面搜索页；静态跳转尝试进入.Notificationpsx，未显示通知监听授权页，也无通知横幅或遮罩。"
+  }
+}

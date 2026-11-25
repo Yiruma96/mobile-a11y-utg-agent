@@ -1,0 +1,11 @@
+flowchart TD
+    N_6d1a046b1528["Step 1: UnityPlayerActivity\nGame view"]
+    N_f6a3588f0886["Step 6: NexusLauncherActivity\nApps list"]
+    N_b311d0848cc7["Step 8: b\nGame view"]
+    N_6d1a046b1528 -->|"ui_wait: wait()"| N_6d1a046b1528
+    N_6d1a046b1528 -->|"ui_click: click([1] View desc='Game view' "| N_6d1a046b1528
+    N_6d1a046b1528 -->|"static_guided_activity_jump: am_start(CurrentAccessTokenExpir"| N_6d1a046b1528
+    N_6d1a046b1528 -->|"ui_click: click([540, 937])"| N_6d1a046b1528
+    N_6d1a046b1528 -->|"static_guided_activity_jump: am_start(ga)"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(UnityPlayerActivity)"| N_6d1a046b1528
+    N_6d1a046b1528 -->|"static_guided_activity_jump: am_start(b)"| N_b311d0848cc7

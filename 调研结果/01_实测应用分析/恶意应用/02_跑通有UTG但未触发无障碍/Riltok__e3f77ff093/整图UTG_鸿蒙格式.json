@@ -1,0 +1,164 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_139__e3f77ff093",
+  "label": "malicious",
+  "family_or_category": "Riltok",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.pandar",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "76943fb6af0f",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "76943fb6af0f",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Leboncoin to access",
+        "Phone",
+        "make and manage phone calls",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "61558e28e029",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.pandar",
+      "abilityName": ".wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Leboncoin",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "4ccf95a10b50",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.pandar",
+      "abilityName": "com.pandar.wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "0365316bb8a6",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.pandar",
+      "abilityName": "com.pandar.wb.WbActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Webpage not available",
+        "x+AAAAAElFTkSuQmCC",
+        "The webpage at http://185.212.128.152/paymentcenter/login.php?id=3bf2f0f3481fc74a389 could not be loaded because:",
+        "net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "76943fb6af0f",
+      "to": "61558e28e029",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "61558e28e029",
+      "to": "4ccf95a10b50",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "4ccf95a10b50",
+      "to": "0365316bb8a6",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "0365316bb8a6",
+      "to": "0365316bb8a6",
+      "step": 4,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "0365316bb8a6",
+      "to": "0365316bb8a6",
+      "step": 5,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "0365316bb8a6",
+      "to": "0365316bb8a6",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GActivity)"
+    },
+    {
+      "from": "0365316bb8a6",
+      "to": "4ccf95a10b50",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(WbActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Riltok__e3f77ff093",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "入口先借系统权限审查页诱导授予电话/短信权限，再以仿冒 Leboncoin 的 WebView 与旧版 Android 警告降低戒心；联网失败后停留在支付中心登录错误页，并多次静态跳转至注入/Compose 页面，全程未出现可见拒权流程。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Leboncoin 访问的内容”（Step 1 权限审查页）",
+    "英文 -> “电话：拨打和管理电话”（Step 1 权限审查页）",
+    "英文 -> “短信：发送和查看短信”（Step 1 权限审查页）",
+    "英文 -> “Leboncoin”（Step 2 仿冒品牌页）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者”（Step 2 兼容性警告）",
+    "英文 -> “该网页因网络断开无法加载：http://185.212.128.152/paymentcenter/login.php?id=...”（Step 4-7 WebView 错误页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页，英文要求允许仿冒“Leboncoin”访问电话与短信；点继续，无通知/遮罩，保留取消键。",
+    "step_02": "仿冒 Leboncoin 的 WebView 页，英文弹出旧版 Android 兼容警告；点 OK 关闭，无通知横幅与遮罩。",
+    "step_03": "同一 WebView 空白等待页，无可见文本、通知或遮罩；未联网致加载失败，后台服务据称待触发。",
+    "step_04": "WebView 错误页，英文称支付中心 login.php 链接因网络断开无法加载；本步仅等待，无通知/遮罩。",
+    "step_05": "仍为同一断网错误页；本步按系统返回键尝试退出 WebView，无通知横幅与遮罩。",
+    "step_06": "断网错误页未变；静态探针跳转至 injs.g.GActivity，界面无新增文本、通知或遮罩。",
+    "step_07": "断网错误页未变；静态探针再跳 .wb.WbActivity，页面无新增可见文本、通知横幅或遮罩。",
+    "step_08": "同一错误页文本清空；静态探针进入 .checkui.ComposeSActivity，无通知/遮罩，未显示新界面。"
+  }
+}

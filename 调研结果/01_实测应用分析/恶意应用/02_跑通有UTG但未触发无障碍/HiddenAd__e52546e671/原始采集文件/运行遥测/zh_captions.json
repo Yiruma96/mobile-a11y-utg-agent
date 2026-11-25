@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用入口为 UnityPlayerActivity，先显示黑屏“Game view”并引导点击或“TAP TO PLAY”，随后多次静态跳转至 StartActivity、Unity 内购页、系统桌面、Tenjin 与 GMS 安装来源接收器；全程未见通知横幅、悬浮遮罩或授权/拒权弹窗，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “点击开始”（UnityPlayerActivity 第4步 Unity 菜单按钮）"
+  ],
+  "frame_captions": {
+    "step_01": "UnityPlayerActivity 显示“Game view（游戏视图）”，为黑色加载画面；本步仅等待，未发现通知横幅或悬浮遮罩。",
+    "step_02": "仍为 Unity 游戏视图黑色画面；点击屏幕中心“Game view（游戏视图）”试图跳过启动页继续流程，无通知或遮罩。",
+    "step_03": "同一 Unity 游戏视图无新增可见文案；未点击，通过静态引导跳转到 com.firedesert.StartActivity，无通知与遮罩。",
+    "step_04": "Unity 菜单画面，层级未暴露“TAP TO PLAY（点击开始）”按钮；按坐标点击该按钮继续，无通知横幅或悬浮遮罩。",
+    "step_05": "Unity 游戏视图；未点击，静态跳转至 VRPurchaseActivity（Unity 内购相关页），无通知横幅或悬浮遮罩。",
+    "step_06": "系统桌面应用列表，显示日期、-1°C 天气及 Messages、Chrome 等；无诱导话术，无通知横幅或遮罩。",
+    "step_07": "Unity 游戏视图无新增可见文案；未点击，静态跳转至 TenjinReferrerReceiver（归因接收器），无通知横幅或悬浮遮罩。",
+    "step_08": "Unity 游戏视图；未点击，静态跳转至 AppMeasurementInstallReferrer（安装来源测量接收器），无通知横幅或悬浮遮罩。"
+  }
+}

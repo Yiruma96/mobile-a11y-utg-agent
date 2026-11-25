@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "该应用先以 Microsoft Word 名义弹出文件/媒体与短信权限页，反复点“取消”后回到桌面，再通过静态活动跳转尝试触发 doActivity、sendShortMsg、recvPushMsg 等后台/SMS 相关动作，呈现伪装授权与规避式诱导特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 Microsoft Word 访问的内容”（Step 1/4/8 权限页）",
+    "英文 -> “文件与媒体：访问设备上的照片、媒体和文件”（Step 1/4/8 权限页）",
+    "英文 -> “短信：发送和查看短信”（Step 1/4/8 权限页）",
+    "英文 -> “取消 / 继续”按钮（Step 1/4/8 权限页）"
+  ],
+  "frame_captions": {
+    "step_01": "权限控制器显示“允许 Microsoft Word 访问”页，含文件媒体与短信两项；点“取消”关闭授权，未出现通知或遮罩。",
+    "step_02": "回到桌面启动器，显示应用列表、日期、天气及 Messages/Chrome/搜索；本步仅等待，无通知横幅或遮罩。",
+    "step_03": "仍在桌面启动器，界面同上；本步按包名重新打开 EventBot，试图重启后台权限线程，无通知与遮罩。",
+    "step_04": "再次弹出“允许 Microsoft Word 访问”权限页，索要文件媒体与短信；点“取消”拒绝，通知与遮罩均为零。",
+    "step_05": "桌面启动器等待页，保留应用列表、日期、Messages/Chrome/搜索；等待后台权限线程浮层，未观察到通知或遮罩。",
+    "step_06": "桌面启动器上执行静态活动跳转，界面仍为应用列表等；探针拟跳转 func.doActivity，无通知、无遮罩。",
+    "step_07": "仍在桌面启动器，显示应用列表、日期、Messages/Chrome/搜索；静态跳转指向 .sendShortMsg，无通知横幅与遮罩。",
+    "step_08": "静态跳转触发权限控制器“允许 Microsoft Word 访问”页，索要文件媒体与短信；指向 .recvPushMsg，无通知/遮罩。"
+  }
+}

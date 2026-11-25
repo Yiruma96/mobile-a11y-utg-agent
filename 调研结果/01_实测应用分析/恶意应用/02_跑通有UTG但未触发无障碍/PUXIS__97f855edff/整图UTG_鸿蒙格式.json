@@ -1,0 +1,217 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_028__97f855edff",
+  "label": "malicious",
+  "family_or_category": "PUXIS",
+  "static_visibility": "clear",
+  "target_package": "org.thoughtcrime.securesms",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "2c60a9719660",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "2c60a9719660",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Raiffeisen SmsSecurity to access",
+        "Contacts",
+        "access your contacts",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Call logs",
+        "read and write phone call log",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "17a333225c91",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": ".FirstActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Raiffeisen SmsSecurity",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "672ed79b11d0",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": "org.thoughtcrime.securesms.xpack.ActDefault",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Raiffeisen SmsSecurity",
+        "For the correct working of the application you wish to use it by default. Press \"Yes\" in the next window.",
+        "Set as default SMS app"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "9a8a15ade639",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set Raiffeisen SmsSecurity as your default SMS app?",
+        "Messages",
+        "Current default",
+        "Raiffeisen SmsSecurity",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "364702510dcf",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.role.ui.RequestRoleActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Set Raiffeisen SmsSecurity as your default SMS app?",
+        "Messages",
+        "Current default",
+        "Raiffeisen SmsSecurity",
+        "Gets access to contacts, SMS, phone",
+        "Cancel",
+        "Set as default"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "7bfaf2daabc6",
+      "first_step": 8,
+      "role": "intermediate",
+      "bundleName": "org.thoughtcrime.securesms",
+      "abilityName": "org.thoughtcrime.securesms.FirstActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Raiffeisen SmsSecurity",
+        "SmsSecure - Quick Start Guide\n\nIt will be offered a free mobile application that was developed by our IT professionals and combines all modern development in the field of safety \n\nSmsSecure is a mobile application for generation one-time password for access to your account. At the same time, you can encrypt with SmsSecure incoming sms and store in the crypto container and secure. This guarantees the highest safety level. \n\nFollow the instructions in the SmsSecure Wizard. In the program you will find a menu item, where you can generate a unique password. At the same time SmsSecure is to use it as a standard program to work with sms.\n\nThanks for the great selection.",
+        "I have read the Quick Start Guide. Continue.",
+        "© Raiffeisen"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "2c60a9719660",
+      "to": "17a333225c91",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([23] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "17a333225c91",
+      "to": "672ed79b11d0",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "672ed79b11d0",
+      "to": "9a8a15ade639",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"Set as default SMS app\" id=button1 (click) center=(540,1349))"
+    },
+    {
+      "from": "9a8a15ade639",
+      "to": "364702510dcf",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([6] RadioButton (unchecked) center=(898,1278))"
+    },
+    {
+      "from": "364702510dcf",
+      "to": "672ed79b11d0",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([9] Button text=\"Set as default\" id=button1 (click) center=(822,1451))"
+    },
+    {
+      "from": "672ed79b11d0",
+      "to": "672ed79b11d0",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UssdAlertActivity)"
+    },
+    {
+      "from": "672ed79b11d0",
+      "to": "7bfaf2daabc6",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(RoutingActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用仿冒莱夫艾森银行的 Raiffeisen SmsSecurity，先诱导授予通讯录、短信、电话、文件媒体和通话记录等宽泛权限，再要求设为默认短信应用，并用“安全快速指南”话术推动继续；链路中多次静态跳转到 USSD 弹窗与路由页，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Choose what to allow Raiffeisen SmsSecurity to access” -> 中文：选择允许 Raiffeisen SmsSecurity 访问哪些内容（Step 1 权限审核页）",
+    "英文“send and view SMS messages”“make and manage phone calls”“access your contacts”“read and write phone call log” -> 中文：发送/查看短信、拨打和管理电话、访问通讯录、读写通话记录（Step 1）",
+    "英文“For the correct working of the application you wish to use it by default. Press Yes in the next window.” -> 中文：为使应用正常工作，希望您将其设为默认，并在下一窗口点“是”（Step 3/6/7 ActDefault）",
+    "英文“Set Raiffeisen SmsSecurity as your default SMS app?” -> 中文：将 Raiffeisen SmsSecurity 设为默认短信应用？（Step 4/5 系统角色请求页）",
+    "英文“Gets access to contacts, SMS, phone” -> 中文：可获得通讯录、短信、电话访问权（Step 5）",
+    "英文“It will be offered a free mobile application that was developed by our IT professionals and combines all modern development in the field of safety” -> 中文：将提供由 IT 专业人员开发、集成安全领域现代成果的免费手机应用（Step 8 快速指南）",
+    "英文“SmsSecure is a mobile application for generation one-time password for access to your account...” -> 中文：SmsSecure 可生成用于访问账户的一次性密码，并加密收到的短信、存入加密容器（Step 8）",
+    "英文“Follow the instructions in the SmsSecure Wizard... generate a unique password... use it as a standard program to work with sms.” -> 中文：按 SmsSecure 向导操作、生成唯一密码，并将其作为标准短信程序使用（Step 8）",
+    "英文“I have read the Quick Start Guide. Continue.” -> 中文：我已阅读快速指南，继续（Step 8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审核页，列出通讯录、短信、电话、文件媒体和通话记录等敏感权限，并以 Continue 继续；本步点击继续进入应用。",
+    "step_02": "应用首屏弹出旧版 Android 兼容警告，仅可点 OK 关闭；无其他功能说明，本步点击 OK 绕过警告继续引导。",
+    "step_03": "应用内默认短信引导页，英文称需设为默认并让下窗口点 Yes，按钮为 Set as default SMS app；本步点击进入系统角色请求。",
+    "step_04": "系统默认短信角色请求页，询问是否将 Raiffeisen SmsSecurity 设为默认短信应用，提供取消与设为默认；本步选中该应用选项。",
+    "step_05": "同一系统角色页补充“可获得通讯录、短信、电话访问权”，仍以设为默认确认；本步点击 Set as default，等于同意让渡短信权限。",
+    "step_06": "界面仍停在默认短信引导页，重复“正确运行需设为默认并点 Yes”话术；本步无点击，探针静态跳转至 USSD 弹窗活动，风险可疑。",
+    "step_07": "仍为默认短信引导页，继续以“设为默认才能正常工作”施压；本步无点击，静态跳转至应用 RoutingActivity，疑似进入后续诱导流程。",
+    "step_08": "应用内英文快速指南，自称银行 IT 团队免费安全应用，可生成一次性密码并加密短信；要求阅读后继续，本步静态跳转路由页。"
+  }
+}

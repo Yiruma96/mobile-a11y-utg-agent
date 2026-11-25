@@ -1,0 +1,14 @@
+flowchart TD
+    N_2c60a9719660["Step 1: ReviewPermissionsActivity\nChoose what to allow R"]
+    N_17a333225c91["Step 2: FirstActivity\nRaiffeisen SmsSecurity"]
+    N_672ed79b11d0["Step 3: ActDefault\nRaiffeisen SmsSecurity"]
+    N_9a8a15ade639["Step 4: RequestRoleActivity\nSet Raiffeisen SmsSecu"]
+    N_364702510dcf["Step 5: RequestRoleActivity\nSet Raiffeisen SmsSecu"]
+    N_7bfaf2daabc6["Step 8: FirstActivity\nRaiffeisen SmsSecurity"]
+    N_2c60a9719660 -->|"ui_click: click([23] Button text='Continue"| N_17a333225c91
+    N_17a333225c91 -->|"ui_click: click([3] Button text='OK' id=bu"| N_672ed79b11d0
+    N_672ed79b11d0 -->|"ui_click: click([4] Button text='Set as de"| N_9a8a15ade639
+    N_9a8a15ade639 -->|"ui_click: click([6] RadioButton (unchecked"| N_364702510dcf
+    N_364702510dcf -->|"ui_click: click([9] Button text='Set as de"| N_672ed79b11d0
+    N_672ed79b11d0 -->|"static_guided_activity_jump: am_start(UssdAlertActivity)"| N_672ed79b11d0
+    N_672ed79b11d0 -->|"static_guided_activity_jump: am_start(RoutingActivity)"| N_7bfaf2daabc6

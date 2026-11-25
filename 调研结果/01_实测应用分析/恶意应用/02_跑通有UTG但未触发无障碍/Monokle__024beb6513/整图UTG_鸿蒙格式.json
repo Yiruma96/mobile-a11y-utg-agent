@@ -1,0 +1,198 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_132__024beb6513",
+  "label": "malicious",
+  "family_or_category": "Monokle",
+  "static_visibility": "clear",
+  "target_package": "com.skype.raider",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "d00b65234657",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "d00b65234657",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.skype.raider",
+      "abilityName": "com.skype.android.app.signin.unified.UnifiedLandingPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sign in",
+        "Skype name, email or phone",
+        "Enter your email, phone number or Skype name",
+        "",
+        "Next button",
+        "Create account"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "68c057ec9478",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.skype.raider",
+      "abilityName": "com.skype.android.app.signin.unified.UnifiedLandingPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sign in",
+        "Skype name, email or phone",
+        "Enter your email, phone number or Skype name",
+        "",
+        "Next button"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "be39b6aa9158",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.skype.raider",
+      "abilityName": "com.skype.android.app.signin.unified.UnifiedLandingPageActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sign in",
+        "Skype name, email or phone",
+        "testuser123",
+        "",
+        "Next button"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "634f7d2f10b8",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.skype.raider",
+      "abilityName": "com.skype.android.app.signin.SignInActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sign in",
+        "Skype name, email or phone",
+        "Skype Name testuser123",
+        "Password",
+        "Password, enter your password here",
+        "",
+        "Next button",
+        "Problems signing in?"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "24855bb8f8a4",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.skype.raider",
+      "abilityName": "com.skype.android.app.signin.SignInActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Sign in",
+        "Skype name, email or phone",
+        "Skype Name testuser123",
+        "••••••••••••",
+        "Password, 12 dots",
+        "",
+        "Next button",
+        "Problems signing in?"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d00b65234657",
+      "to": "68c057ec9478",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([3] EditText text=\"Enter your email, phone number or Skype name\" id=sign_in_userid (click) center=(540,724))"
+    },
+    {
+      "from": "68c057ec9478",
+      "to": "be39b6aa9158",
+      "step": 2,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "be39b6aa9158",
+      "to": "634f7d2f10b8",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"\" desc=\"Next button\" id=sign_in_next_btn (click) center=(539,810))"
+    },
+    {
+      "from": "634f7d2f10b8",
+      "to": "634f7d2f10b8",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([4] EditText text=\"Password\" desc=\"Password, enter your password here\" id=signin_password (click) center=(540,612))"
+    },
+    {
+      "from": "634f7d2f10b8",
+      "to": "24855bb8f8a4",
+      "step": 5,
+      "edge_type": "ui_type",
+      "action": "type()"
+    },
+    {
+      "from": "24855bb8f8a4",
+      "to": "24855bb8f8a4",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SpiceActivity)"
+    },
+    {
+      "from": "24855bb8f8a4",
+      "to": "24855bb8f8a4",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AccountPickerActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "Monokle__024beb6513",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "Monokle家族仿冒Skype，先以登录落地页收集账号，再以密码页收集密码，随后静态跳转至SpiceActivity及微软账户选择/添加账户组件；全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 登录（Step1-8）",
+    "英语 -> Skype用户名、邮箱或手机号（Step1-8）",
+    "英语 -> 输入你的邮箱、电话号码或Skype名称（Step1-3）",
+    "英语 -> 下一步按钮（Step1-8）",
+    "英语 -> 创建账户（Step1）",
+    "英语 -> 密码，请在此输入密码（Step4-8）",
+    "英语 -> 登录遇到问题？（Step4-8）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "仿Skype登录落地页，含“Sign in/登录”“Skype名、邮箱或手机号”“创建账户”；本步点击账号输入框，无通知横幅与遮罩。",
+    "step_02": "同一仿Skype登录页，账号框提示输入邮箱、电话或Skype名；本步向已聚焦输入框键入测试账号，页面无通知与遮罩。",
+    "step_03": "仿Skype登录页中账号框已填testuser123；本步点击“Next button/下一步”按钮，推进至密码页，未见通知与遮罩。",
+    "step_04": "仿Skype密码页，显示“Skype Name testuser123”“Password/密码”“Problems signing in?/登录遇到问题”；本步点击密码框，无通知与遮罩。",
+    "step_05": "仿Skype密码页保持提示“请输入密码”；本步向已聚焦密码框键入测试密码，为后续提交作准备，无通知与遮罩。",
+    "step_06": "仿Skype密码页密码已显示为12个圆点；本步发生静态活动跳转至SpiceActivity，无可见通知与遮罩。",
+    "step_07": "仿Skype密码页仍停留，密码以12个圆点显示；本步静态跳转至微软账户选择AccountPickerActivity，无通知与遮罩。",
+    "step_08": "仿Skype密码页保持12点掩码；本步静态跳转至微软添加账户AddAccountActivity，未见通知横幅与遮罩。"
+  }
+}

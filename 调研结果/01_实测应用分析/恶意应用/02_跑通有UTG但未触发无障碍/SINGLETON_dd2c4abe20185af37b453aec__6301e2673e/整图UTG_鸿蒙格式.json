@@ -1,0 +1,156 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_046__6301e2673e",
+  "label": "malicious",
+  "family_or_category": "SINGLETON:dd2c4abe20185af37b453aec5a99c165",
+  "static_visibility": "clear",
+  "target_package": "com.update.system.important",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "3c8142e75b1b",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow System Update to access",
+        "Contacts",
+        "access your contacts",
+        "Camera",
+        "take pictures and record video",
+        "Location",
+        "access this device's location",
+        "Microphone",
+        "record audio",
+        "Phone",
+        "make and manage phone calls",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "c541e160275a",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "System Update",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "3c8142e75b1b",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(LeanbackLauncherActivity)"
+    },
+    {
+      "from": "3c8142e75b1b",
+      "to": "c541e160275a",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([37] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "c541e160275a",
+      "to": "f6a3588f0886",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PackageBroadcast)"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ConstraintProxy$BatteryNotLowProxy)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用从桌面启动失败后，借静态引导跳转进入权限审查页，以“System Update（系统更新）”名义一次性索取联系人、相机、位置、麦克风、电话、通话记录和短信等广泛权限，并用旧版 Android 兼容警告诱导点击 OK；随后跳转包广播与电池/约束后台组件，全程无通知横幅或遮罩，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许系统更新访问哪些内容”（Step 4 权限审查页）",
+    "英语 -> “此应用针对旧版 Android 构建，可能无法正常运行。请检查更新或联系开发者”（Step 5 兼容性警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器页，显示应用列表、日期及 Messages/Chrome/搜索入口；按包名直接启动目标应用，无通知或遮罩。",
+    "step_02": "仍为桌面启动器页，应用列表与常用图标可见；因目标未启动而打开应用列表寻找入口，无通知与遮罩。",
+    "step_03": "桌面启动器页保持显示，UI 未变；执行静态引导跳转探针到 .LeanbackLauncherActivity，无可见反馈、通知或遮罩。",
+    "step_04": "权限审查页，要求为“系统更新”勾选联系人、相机、位置、麦克风、电话、通话记录、短信等权限；点击 Continue 继续，无通知或遮罩。",
+    "step_05": "桌面启动器上的兼容性警告弹窗，提示“System Update”为旧版 Android 构建、可能无法正常运行；点击 OK 关闭，无通知或遮罩。",
+    "step_06": "返回桌面启动器页，应用列表与日期可见；执行静态引导跳转到 .reciever.PackageBroadcast 广播组件，无界面反馈、通知或遮罩。",
+    "step_07": "桌面启动器页无变化，仍显示应用列表与常用图标；静态跳转至 WorkManager 的 ConstraintProxy$Batter... 组件，无通知或遮罩。",
+    "step_08": "桌面启动器页无变化，显示应用列表、日期与搜索入口；静态跳转至 .reciever.BatteryChargingBroadcast 广播组件，无通知或遮罩。"
+  }
+}

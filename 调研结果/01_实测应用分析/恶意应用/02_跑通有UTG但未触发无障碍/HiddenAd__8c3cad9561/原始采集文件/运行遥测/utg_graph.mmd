@@ -1,0 +1,12 @@
+flowchart TD
+    N_f6a3588f0886["Step 1: NexusLauncherActivity\nApps list"]
+    N_09058f23b62d["Step 4: ReviewPermissionsActivity\nChoose what to allow C"]
+    N_e98e80a950be["Step 5: PermissionProxyActivity\nClean Master"]
+    N_cbf0a1d1f0c3["Step 6: PermissionProxyActivity\n"]
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(PermissionProxyActivity"| N_09058f23b62d
+    N_09058f23b62d -->|"ui_click: click([23] Button text='Continue"| N_e98e80a950be
+    N_e98e80a950be -->|"ui_click: click([3] Button text='OK' id=bu"| N_cbf0a1d1f0c3
+    N_cbf0a1d1f0c3 -->|"static_guided_activity_jump: am_start(UsageProxyActivity)"| N_cbf0a1d1f0c3
+    N_cbf0a1d1f0c3 -->|"static_guided_activity_jump: am_start(BoostEventReceiver)"| N_cbf0a1d1f0c3

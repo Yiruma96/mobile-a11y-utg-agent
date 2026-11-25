@@ -1,0 +1,12 @@
+flowchart TD
+    N_4949754f2159["Step 1: Tatarian\nMüzik İndir"]
+    N_2d954162623a["Step 2: Settings$ManageAppExternalSo\nBack"]
+    N_e0d73bd2bd81["Step 5: Okawville\nBilgi"]
+    N_46405b2a1924["Step 6: PackageInstallerActivity\nDo you want to install"]
+    N_4949754f2159 -->|"ui_click: click([3] Button text='OK' id=bu"| N_2d954162623a
+    N_2d954162623a -->|"ui_click: click([9] Switch id=switch_widge"| N_2d954162623a
+    N_2d954162623a -->|"ui_click: click([1] ImageButton desc='Back"| N_4949754f2159
+    N_4949754f2159 -->|"ui_click: click([3] Button text='OK' id=bu"| N_e0d73bd2bd81
+    N_e0d73bd2bd81 -->|"ui_click: click([3] Button text='YÜKLE' id"| N_46405b2a1924
+    N_46405b2a1924 -->|"static_guided_activity_jump: am_start(Tatarian)"| N_e0d73bd2bd81
+    N_e0d73bd2bd81 -->|"ui_click: click([3] Button text='YÜKLE' id"| N_46405b2a1924

@@ -1,0 +1,196 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_076__20e8688726",
+  "label": "malicious",
+  "family_or_category": "SharkBot",
+  "static_visibility": "clear",
+  "target_package": "com.abbondioendrizzi.tools.supercleaner",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "dc8c2d7407f2",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "dc8c2d7407f2",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "HOME",
+        "47",
+        "%",
+        "Memory used",
+        "7",
+        "Storage used",
+        "Junk files",
+        "CPU Cooler",
+        "Phone boost",
+        "Antivirus",
+        "Power Saving",
+        "Game Booster",
+        "Home",
+        "Toolbox",
+        "Personal"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "aebc4b4f1ae4",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission Needed",
+        "Grant App Usage Permission for a comprehensive phone scan effect",
+        "Grant Now"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1c42dcc4ef33",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.guildPermission.GuildPermissionActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Find Atom Clean-Booster, Antivirus and grant usage Access permission",
+        "Atom Clean-Booster, Antivirus"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "5ddb8fcb4dbc",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$UsageAccessSettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Usage access",
+        "Search",
+        "More options",
+        "Atom Clean-Booster, Antivirus",
+        "Not allowed",
+        "Digital Wellbeing",
+        "Allowed",
+        "Google",
+        "Google Play services"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "23ce67eca75e",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.abbondioendrizzi.tools.supercleaner",
+      "abilityName": "com.abbondioendrizzi.tools.supercleaner.screen.main.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permission Needed",
+        "Grant access to the external storage memory in the device",
+        "Grant Now"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "dc8c2d7407f2",
+      "to": "aebc4b4f1ae4",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([13] LinearLayout (click) center=(900,951))"
+    },
+    {
+      "from": "aebc4b4f1ae4",
+      "to": "1c42dcc4ef33",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] TextView text=\"Grant Now\" id=tv_action_1 (click) center=(540,1576))"
+    },
+    {
+      "from": "1c42dcc4ef33",
+      "to": "5ddb8fcb4dbc",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([3] ImageView id=ic_close (click) center=(1008,1790))"
+    },
+    {
+      "from": "5ddb8fcb4dbc",
+      "to": "dc8c2d7407f2",
+      "step": 4,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "dc8c2d7407f2",
+      "to": "23ce67eca75e",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([15] LinearLayout (click) center=(180,1204))"
+    },
+    {
+      "from": "23ce67eca75e",
+      "to": "23ce67eca75e",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(GuildPermissionActivity)"
+    },
+    {
+      "from": "23ce67eca75e",
+      "to": "23ce67eca75e",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ConstraintProxy$BatteryNotLowProxy)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "SharkBot__20e8688726",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先以“超级清理/杀毒/加速”主界面展示内存、存储、垃圾文件等指标，再用“Permission Needed”弹窗逐步索要使用情况访问与外部存储权限，并引导至系统设置；后续静态跳转探针指向权限引导页和后台接收器，整体呈现 SharkBot 类诱导授权链特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “Permission Needed / Grant App Usage Permission for a comprehensive phone scan effect / Grant Now”意为需授予使用情况访问权限才能全面扫描手机，并催促立即授予（Step 2 主界面弹窗）",
+    "英文 -> “Find Atom Clean-Booster, Antivirus and grant usage Access permission”意为引导在系统设置为指定应用开启使用情况访问权限（Step 3 授权引导页）",
+    "英文 -> “Permission Needed / Grant access to the external storage memory in the device / Grant Now”意为需授予设备外部存储访问权限，并催促立即授予（Step 6-8 主界面弹窗）",
+    "英文 -> “Phone boost / Antivirus / Junk files / CPU Cooler”等标签以手机加速、杀毒、垃圾清理、CPU降温营造风险与优化需求（Step 1/5 主界面）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面展示内存47%、存储7%、垃圾文件及加速/杀毒入口；无遮罩，点击“Phone boost”触发授权流程。",
+    "step_02": "弹出“Permission Needed”权限提示，声称授予应用使用情况权限可实现全面扫描；本步点击“Grant Now”。",
+    "step_03": "授权引导页提示在系统设置中为“Atom Clean-Booster, Antivirus”开启使用情况访问；本步点关闭图标返回。",
+    "step_04": "跳转系统“Usage access”列表，目标应用显示“Not allowed”，其他应用已允许；本步按返回键回应用。",
+    "step_05": "回到主界面，仍显示内存47%、存储7%等指标；无遮罩，本步改点“Antivirus”再次触发授权引导。",
+    "step_06": "再次弹出存储权限提示，称需授予外部存储访问；本步为静态跳转探针，指向 GuildPermission 引导页。",
+    "step_07": "存储权限提示保持不变；静态跳转探针落到 WorkManager 的电池约束代理组件，未见新界面。",
+    "step_08": "存储权限提示仍停留；静态跳转探针指向 WatchmenReceiver 后台接收器，未见新界面或遮罩。"
+  }
+}

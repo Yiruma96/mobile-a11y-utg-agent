@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "该应用先借助Chrome的名义骗取电话与短信运行时权限，再通过土耳其语通知和WebView页面引导用户启用无障碍服务，并伪装成Google Chrome，核心特征是权限滥用与无障碍诱导授权。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “允许Google Chrome拨打和管理电话？”（Step 1 权限授权页）",
+    "英文 -> “允许Google Chrome发送和查看短信？”（Step 2 权限授权页）",
+    "土耳其语 -> “启用服务”，副文案为“Google Chrome”（Step 3/4/8 通知横幅）",
+    "英文 -> “启用无障碍服务”“找到‘Google Chrome’”“打开开关”“打开设置”（Step 6-8 WebView引导页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限弹窗，请求允许Chrome拨打和管理电话；点击“Allow”授予电话权限，顶部有系统备份提醒。",
+    "step_02": "系统权限弹窗，请求允许Chrome发送和查看短信；点击“Allow”授予短信权限，继续推进后续诱导。",
+    "step_03": "回到桌面，出现土耳其语通知“Servisi etkinleştirin/Google Chrome”催促启用服务；执行上滑未进入应用页。",
+    "step_04": "下拉快捷设置显示通知栏，应用通知仍催促“启用服务—Google Chrome”；点击该通知准备打开提示页。",
+    "step_05": "应用内空白WebView页，无可见文字；按坐标点击疑似“打开设置”按钮，触发跳转无障碍设置意图。",
+    "step_06": "WebView引导页，英文指示“启用无障碍服务、找到Google Chrome、打开开关”；本步静态跳转到下一活动。",
+    "step_07": "同一无障碍诱导页，反复展示“Find ‘Google Chrome’/Set switch ON/Open Settings”；静态跳转继续推进。",
+    "step_08": "仍为无障碍诱导页，通知横幅“Servisi etkinleştirin—Google Chrome”再次催促；静态跳转至下一活动。"
+  }
+}

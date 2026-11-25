@@ -1,0 +1,19 @@
+{
+  "app_chain_summary_zh": "该应用先引导开启悬浮窗权限并授予相机权限，随后进入含 Start/Settings 等功能的主菜单；主菜单还会静态跳转到内部设置页、GMS 日志隐藏组件及 AdminReceiver 设备管理接收器，呈现 GhostClicker 式权限滥用与隐藏组件特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「允许此应用显示在其他应用上层；它将能看到你的点击位置或改变屏幕显示内容」（Step 2/3 悬浮窗授权说明页）",
+    "英文 -> 「允许 Assistive Touch 拍照和录像吗？」（Step 5 相机权限弹窗）",
+    "英文 -> 「仅在使用该应用时允许」（Step 5 相机权限按钮）",
+    "英文 -> 「已允许 / 不允许」（Step 1/4 悬浮窗权限列表状态）"
+  ],
+  "frame_captions": {
+    "step_01": "系统「显示在其他应用上层」列表，Assistive Touch 显示 Not allowed/不允许；点击该条目进入授权详情。",
+    "step_02": "悬浮窗授权详情页，开关未勾选；说明称可覆盖其他应用并读取点击、改变屏幕内容；点击开关允许。",
+    "step_03": "同一悬浮窗详情页，权限已开启；执行系统返回键退回列表，准备回到应用继续流程。",
+    "step_04": "返回悬浮窗列表，Assistive Touch 已变为 Allowed/已允许；再次返回应用主界面。",
+    "step_05": "系统相机权限弹窗，询问是否允许 Assistive Touch 拍照录像；点击 While using the app/仅使用期间允许。",
+    "step_06": "应用主菜单含 Start、Settings、Rate、More App、Uninstall；静态跳转至内部 SettingsActivity，未显示额外诱导文案。",
+    "step_07": "仍为主菜单；静态跳转目标为 com.google.android.gms.logs.b 隐藏组件，界面无变化，属可疑后台组件探测。",
+    "step_08": "主菜单未变；静态跳转至 AdminReceiver 设备管理接收器，疑似申请或触发设备管理员能力，风险高。"
+  }
+}

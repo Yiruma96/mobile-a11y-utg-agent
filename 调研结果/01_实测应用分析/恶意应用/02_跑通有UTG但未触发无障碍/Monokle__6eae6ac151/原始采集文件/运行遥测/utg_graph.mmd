@@ -1,0 +1,14 @@
+flowchart TD
+    N_c555f810d463["Step 1: IntroActivity\nUzbekChat"]
+    N_e0ab0f434843["Step 2: LaunchActivity\nUSA"]
+    N_89c66b706ebe["Step 4: LaunchActivity\nUSA"]
+    N_8aace0c02296["Step 5: LaunchActivity\nUzbekChat"]
+    N_94c6cddbf770["Step 6: GrantPermissionsActivity\nAllow UzbekChat to mak"]
+    N_101adce9e3dd["Step 7: LaunchActivity\nLoading..."]
+    N_c555f810d463 -->|"ui_click: click([4] TextView text='START M"| N_e0ab0f434843
+    N_e0ab0f434843 -->|"ui_click: click([5] EditText (click) cente"| N_e0ab0f434843
+    N_e0ab0f434843 -->|"ui_type: type()"| N_89c66b706ebe
+    N_89c66b706ebe -->|"ui_click: click([1] FrameLayout (click) ce"| N_8aace0c02296
+    N_8aace0c02296 -->|"ui_click: click([3] Button text='OK' id=bu"| N_94c6cddbf770
+    N_94c6cddbf770 -->|"static_guided_activity_jump: am_start(LaunchActivity)"| N_101adce9e3dd
+    N_101adce9e3dd -->|"static_guided_activity_jump: am_start(OneAudienceReceiverChec"| N_101adce9e3dd

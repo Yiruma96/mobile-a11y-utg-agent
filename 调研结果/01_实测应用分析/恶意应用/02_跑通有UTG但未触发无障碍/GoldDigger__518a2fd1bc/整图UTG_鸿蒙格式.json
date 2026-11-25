@@ -1,0 +1,137 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_062__518a2fd1bc",
+  "label": "malicious",
+  "family_or_category": "GoldDigger",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.lavju.pigfcb.lrymx.lhl",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d5e2e358783d",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Calendar",
+        "Camera",
+        "Chrome",
+        "Clock",
+        "Contacts",
+        "Drive",
+        "Files",
+        "Gmail",
+        "Google",
+        "Maps",
+        "media player",
+        "Messages",
+        "PEA SMART PRO",
+        "Phone"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "d5e2e358783d",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1600])"
+    },
+    {
+      "from": "d5e2e358783d",
+      "to": "d5e2e358783d",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([14] TextView text=\"PEA SMART PRO\" id=icon (click) center=(539,1058))"
+    },
+    {
+      "from": "d5e2e358783d",
+      "to": "d5e2e358783d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([14] TextView text=\"PEA SMART PRO\" id=icon (click) center=(539,1058))"
+    },
+    {
+      "from": "d5e2e358783d",
+      "to": "d5e2e358783d",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(CheckPermissionActivity)"
+    },
+    {
+      "from": "d5e2e358783d",
+      "to": "d5e2e358783d",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(TransplentPermissionActivity)"
+    },
+    {
+      "from": "d5e2e358783d",
+      "to": "d5e2e358783d",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SplashActivity)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "GoldDigger__518a2fd1bc",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该样本从桌面启动器打开应用抽屉，点击伪装为“PEA SMART PRO”的图标，多次启动未生效后改由静态探针依次跳转 CheckPermissionActivity、TransplentPermissionActivity、混淆 Activity 与 SplashActivity；全程未渲染应用内页面，未见通知横幅、遮罩或权限弹窗，拒权结果未测试。",
+  "observed_lure_rhetoric_zh": [],
+  "frame_captions_zh": {
+    "step_01": "桌面启动器页，显示应用列表入口及 Messages、Chrome 等图标；本步点击“Apps list”，尚未进入目标应用。",
+    "step_02": "仍在桌面启动器，显示应用列表入口、Messages/Chrome 等；本步上滑试图打开抽屉但未成功，未见目标应用界面。",
+    "step_03": "应用抽屉已展开，可见“PEA SMART PRO”等图标；本步点击该图标尝试启动目标应用。",
+    "step_04": "应用抽屉仍停留原页，图标列表未变化；本步再次点击“PEA SMART PRO”，说明上一步启动未生效。",
+    "step_05": "画面仍为应用抽屉；静态探针跳转 CheckPermissionActivity，疑似权限申请入口，未见权限弹窗。",
+    "step_06": "画面仍为应用抽屉；静态探针跳转 TransplentPermissionActivity，疑似透明/悬浮权限页，未渲染界面。",
+    "step_07": "画面仍为应用抽屉；静态探针跳转混淆名 Activity（c56ddef9…），疑似规避识别的权限/加载组件，未渲染界面。",
+    "step_08": "画面仍为应用抽屉；静态探针跳转 SplashActivity，疑似启动闪屏入口，仍未渲染任何应用内诱导内容。"
+  }
+}

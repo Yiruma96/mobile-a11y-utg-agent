@@ -1,0 +1,168 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_165__8c3cad9561",
+  "label": "malicious",
+  "family_or_category": "HiddenAd",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.sstfsk.cleanmaster",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "f6a3588f0886",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "f6a3588f0886",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "09058f23b62d",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Clean Master to access",
+        "Location",
+        "access this device's location",
+        "Phone",
+        "make and manage phone calls",
+        "Camera",
+        "take pictures and record video",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Physical activity",
+        "access your physical activity",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "e98e80a950be",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.sstfsk.cleanmaster",
+      "abilityName": "com.superman.moduleshell.cleanmaster.PermissionProxyActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Clean Master",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "cbf0a1d1f0c3",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "com.sstfsk.cleanmaster",
+      "abilityName": "com.superman.moduleshell.cleanmaster.PermissionProxyActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 1,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "09058f23b62d",
+      "step": 3,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(PermissionProxyActivity)"
+    },
+    {
+      "from": "09058f23b62d",
+      "to": "e98e80a950be",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([23] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "e98e80a950be",
+      "to": "cbf0a1d1f0c3",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1254))"
+    },
+    {
+      "from": "cbf0a1d1f0c3",
+      "to": "cbf0a1d1f0c3",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UsageProxyActivity)"
+    },
+    {
+      "from": "cbf0a1d1f0c3",
+      "to": "cbf0a1d1f0c3",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(BoostEventReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用从桌面多次尝试启动目标包但未展示主界面，随后静态跳转拉起权限代理页，并借系统权限复核页诱导点击“继续”放行定位、电话、相机、文件和身体活动等敏感权限；之后仅以旧版Android兼容提示过渡，点击“OK”后连续静态跳转至UsageProxyActivity、BoostEventReceiver、ShkReceiver等隐藏组件，呈现HiddenAd规避审核特征。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “选择允许 Clean Master 访问的内容”（Step 4 系统权限复核页）",
+    "英语 -> “此应用针对旧版 Android 构建，可能无法正常工作；请尝试检查更新或联系开发者”（Step 5 兼容性警告弹窗）",
+    "英语 -> 应用名“Clean Master”借用知名清理工具品牌，易让用户误认为是正规清理软件（Step 4/5等页面）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "桌面应用列表页，显示Apps list、Messages、Chrome、搜索等；无通知/遮罩，本步尝试打开目标应用但仍停留桌面。",
+    "step_02": "仍为桌面应用列表页，Apps list、Chrome、搜索等可见；无通知与遮罩，再次按包名启动目标应用仍未进入应用界面。",
+    "step_03": "桌面应用列表页无目标应用界面，无通知/遮罩；探针执行静态跳转，指令指向PermissionProxyActivity权限代理页。",
+    "step_04": "系统权限复核页，提示选择允许Clean Master访问定位、电话、相机、文件媒体、身体活动；有取消/继续，无遮罩，点击“继续”。",
+    "step_05": "应用内兼容性警告弹窗，提示此应用针对旧版Android构建、可能工作异常并建议检查更新；仅“OK”按钮，无通知/遮罩，点击关闭。",
+    "step_06": "PermissionProxyActivity空白页，无可见文字、通知横幅或遮罩；探针执行静态跳转至UsageProxyActivity使用情况代理页。",
+    "step_07": "PermissionProxyActivity仍为空白页，无文字、通知与遮罩；探针继续静态跳转至BoostEventReceiver，疑为加速/广告事件接收组件。",
+    "step_08": "PermissionProxyActivity空白页，无可见内容、通知或遮罩；探针静态跳转至ShkReceiver，链路进入隐藏接收器，未见用户可操作界面。"
+  }
+}

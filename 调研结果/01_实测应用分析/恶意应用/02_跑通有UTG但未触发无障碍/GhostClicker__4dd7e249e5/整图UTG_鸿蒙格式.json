@@ -1,0 +1,208 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_152__4dd7e249e5",
+  "label": "malicious",
+  "family_or_category": "GhostClicker",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "dto.assistivetouch.touch",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "790efd359328",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "790efd359328",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "Assistive Touch",
+        "Not allowed",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "8a3fc059b9bb",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search settings",
+        "Assistive Touch",
+        "1.004",
+        "Allow display over other apps",
+        "Allow this app to display on top of other apps you’re using. This app will be able to see where you tap or change what’s displayed on the screen."
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "cbc61d777818",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$OverlaySettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Display over other apps",
+        "Search",
+        "More options",
+        "Android Auto",
+        "Allowed",
+        "Assistive Touch",
+        "Digital Wellbeing",
+        "Google",
+        "Google Play services",
+        "Phone",
+        "Photos",
+        "YouTube",
+        "YouTube Music"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "407d278fdd2f",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.GrantPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Assistive Touch to take pictures and record video?",
+        "While using the app",
+        "Only this time",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "72bdff4aa0ed",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "dto.assistivetouch.touch",
+      "abilityName": "zxc.studio.assistivetouch.ui.activity.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Start",
+        "Settings",
+        "Rate",
+        "More App",
+        "Uninstall"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "790efd359328",
+      "to": "8a3fc059b9bb",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([8] LinearLayout desc=\"Assistive Touch\" (click) center=(540,537))"
+    },
+    {
+      "from": "8a3fc059b9bb",
+      "to": "8a3fc059b9bb",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Switch id=switch_widget (unchecked) center=(972,707))"
+    },
+    {
+      "from": "8a3fc059b9bb",
+      "to": "cbc61d777818",
+      "step": 3,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "cbc61d777818",
+      "to": "407d278fdd2f",
+      "step": 4,
+      "edge_type": "ui_system_button",
+      "action": "system_button(Back)"
+    },
+    {
+      "from": "407d278fdd2f",
+      "to": "72bdff4aa0ed",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([4] Button text=\"While using the app\" id=permission_allow_foreground_only_button (click) center=(540,1136))"
+    },
+    {
+      "from": "72bdff4aa0ed",
+      "to": "72bdff4aa0ed",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(SettingsActivity)"
+    },
+    {
+      "from": "72bdff4aa0ed",
+      "to": "72bdff4aa0ed",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(b)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "report_stem": "GhostClicker__4dd7e249e5",
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "该应用先引导开启悬浮窗权限并授予相机权限，随后进入含 Start/Settings 等功能的主菜单；主菜单还会静态跳转到内部设置页、GMS 日志隐藏组件及 AdminReceiver 设备管理接收器，呈现 GhostClicker 式权限滥用与隐藏组件特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「允许此应用显示在其他应用上层；它将能看到你的点击位置或改变屏幕显示内容」（Step 2/3 悬浮窗授权说明页）",
+    "英文 -> 「允许 Assistive Touch 拍照和录像吗？」（Step 5 相机权限弹窗）",
+    "英文 -> 「仅在使用该应用时允许」（Step 5 相机权限按钮）",
+    "英文 -> 「已允许 / 不允许」（Step 1/4 悬浮窗权限列表状态）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统「显示在其他应用上层」列表，Assistive Touch 显示 Not allowed/不允许；点击该条目进入授权详情。",
+    "step_02": "悬浮窗授权详情页，开关未勾选；说明称可覆盖其他应用并读取点击、改变屏幕内容；点击开关允许。",
+    "step_03": "同一悬浮窗详情页，权限已开启；执行系统返回键退回列表，准备回到应用继续流程。",
+    "step_04": "返回悬浮窗列表，Assistive Touch 已变为 Allowed/已允许；再次返回应用主界面。",
+    "step_05": "系统相机权限弹窗，询问是否允许 Assistive Touch 拍照录像；点击 While using the app/仅使用期间允许。",
+    "step_06": "应用主菜单含 Start、Settings、Rate、More App、Uninstall；静态跳转至内部 SettingsActivity，未显示额外诱导文案。",
+    "step_07": "仍为主菜单；静态跳转目标为 com.google.android.gms.logs.b 隐藏组件，界面无变化，属可疑后台组件探测。",
+    "step_08": "主菜单未变；静态跳转至 AdminReceiver 设备管理接收器，疑似申请或触发设备管理员能力，风险高。"
+  }
+}

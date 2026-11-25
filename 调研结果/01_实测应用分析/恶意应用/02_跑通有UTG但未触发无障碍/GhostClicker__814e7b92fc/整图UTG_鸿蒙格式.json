@@ -1,0 +1,153 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_034__814e7b92fc",
+  "label": "malicious",
+  "family_or_category": "GhostClicker",
+  "static_visibility": "clear",
+  "target_package": "dt.ram.cleaner.speed.booster",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "max_steps_reached",
+  "reached_a11y_hook": false,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "not_tested",
+  "entry_node_id": "cf668ef692bf",
+  "hook_node_ids": [],
+  "nodes": [
+    {
+      "node_id": "cf668ef692bf",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Ram Cleaner to access",
+        "Phone",
+        "make and manage phone calls",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "3437e8d0eae3",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "dt.ram.cleaner.speed.booster",
+      "abilityName": "com.ram.cleanmaster.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Ram Cleaner",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "7d199b9d2988",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "dt.ram.cleaner.speed.booster",
+      "abilityName": "com.ram.cleanmaster.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "RAM Cleaner",
+        "USED RAM :",
+        "-2920 MB",
+        "TOTAL RAM :",
+        "-1110 MB",
+        "FREE RAM :",
+        "1810 MB",
+        "Running Task : 1",
+        "Pixel Launcher",
+        "BOOST RAM"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cf668ef692bf",
+      "to": "3437e8d0eae3",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "3437e8d0eae3",
+      "to": "7d199b9d2988",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "7d199b9d2988",
+      "to": "7d199b9d2988",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "7d199b9d2988",
+      "to": "7d199b9d2988",
+      "step": 4,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "7d199b9d2988",
+      "to": "7d199b9d2988",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(AppMeasurementReceiver)"
+    },
+    {
+      "from": "7d199b9d2988",
+      "to": "7d199b9d2988",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(b)"
+    },
+    {
+      "from": "7d199b9d2988",
+      "to": "7d199b9d2988",
+      "step": 7,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(FirebaseInstanceIdReceiver)"
+    }
+  ],
+  "trigger_events": [],
+  "detail_probes": [],
+  "refusal_probes": [],
+  "refusal_outcome_refined": "not_tested",
+  "app_chain_summary_zh": "应用先请求电话权限并点 Continue 继续，进入 RAM Cleaner 主界面后显示异常负值内存；随后关闭旧版 Android 兼容性警告、等待/冷启动，并多次按静态引导跳转至 GMS/Firebase 接收器及桌面小部件，全程无通知横幅或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许 Ram Cleaner 访问的内容（Step 1 权限页）",
+    "英文 -> 电话：拨打和管理电话（Step 1 权限页）",
+    "英文 -> 此应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（Step 2 兼容性弹窗）",
+    "英文 -> RAM 清理器 / 已用内存 -2920MB / 总内存 -1110MB / 空闲内存 1810MB / 运行任务 1（Step 3-8 主界面）",
+    "英文 -> 加速内存 BOOST RAM（Step 3-8 主界面按钮）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Step 1 系统权限页要求允许 Ram Cleaner 使用电话/拨打和管理电话；点 Continue 继续，有 Cancel，无通知遮罩。",
+    "step_02": "Step 2 主界面弹出旧版 Android 兼容性警告，称可能无法正常运行；点 OK 关闭，无通知或遮罩。",
+    "step_03": "Step 3 为 Ram Cleaner 主界面，显示内存使用/总量为异常负值、空闲 1810MB、运行任务 1；本步仅等待，未现预期弹窗。",
+    "step_04": "Step 4 仍为 RAM 清理主界面，异常负值不变；未等到预期 AlertDialog 后执行冷启动/open，页面无可见变化。",
+    "step_05": "Step 5 仍停留 RAM 清理主界面；探针按静态引导跳转至 GMS AppMeasurementReceiver，界面无变化、无通知遮罩。",
+    "step_06": "Step 6 继续停留主界面；探针按静态引导跳转至 GMS logs.b，异常内存数值与 BOOST RAM 按钮仍在，无通知遮罩。",
+    "step_07": "Step 7 主界面未变；探针按静态引导跳转至 FirebaseInstanceIdReceiver，仍显示负值内存与 BOOST RAM，无通知横幅。",
+    "step_08": "Step 8 主界面保持原样；探针按静态引导跳转至 com.ram.cleanmaster.RamCleanerWidget，未触发可见交互或遮罩。"
+  }
+}

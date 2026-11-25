@@ -1,0 +1,13 @@
+flowchart TD
+    N_7d2e9ab9648d["Step 1: WelcomeActivity\nAntivirus Security"]
+    N_5285713ea434["Step 2: GrantPermissionsActivity\nAllow Antivirus Securi"]
+    N_dfbc6cbd20bd["Step 3: GrantPermissionsActivity\nAllow Antivirus Securi"]
+    N_e01856f6030b["Step 4: FindActivity\nWarn"]
+    N_07b38f5b5670["Step 5: Settings$NotificationAccessS\nBack"]
+    N_7d2e9ab9648d -->|"ui_click: click([4] Button text='START' id"| N_5285713ea434
+    N_5285713ea434 -->|"ui_click: click([4] Button text='Allow' id"| N_dfbc6cbd20bd
+    N_dfbc6cbd20bd -->|"ui_click: click([4] Button text='Allow' id"| N_e01856f6030b
+    N_e01856f6030b -->|"ui_click: click([3] Button text='GO SET' i"| N_07b38f5b5670
+    N_07b38f5b5670 -->|"ui_click: click([1] ImageButton desc='Back"| N_e01856f6030b
+    N_e01856f6030b -->|"static_guided_activity_jump: am_start(PermissionGuideActivity"| N_e01856f6030b
+    N_e01856f6030b -->|"static_guided_activity_jump: am_start(WelcomeActivity)"| N_e01856f6030b
