@@ -1,0 +1,520 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_070__25a7c475de",
+  "label": "benign",
+  "family_or_category": "隐私指示与安全防护工具",
+  "static_visibility": "clear",
+  "target_package": "io.github.dorumrr.privacyflip",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "1a4ee2476e38",
+  "hook_node_ids": [
+    "a5b3271dcea9",
+    "4d308387ca28"
+  ],
+  "nodes": [
+    {
+      "node_id": "1a4ee2476e38",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "System Requirements",
+        "Required for privacy control functionality",
+        "Privileged Access",
+        "Root Available",
+        "Privacy Flip could not confirm root access. Open Magisk, allow Privacy Flip, then tap 'Check Again'.",
+        "CHECK AGAIN",
+        "Battery Optimization",
+        "Optimization enabled",
+        "Disable battery optimization for reliable background operation",
+        "OPEN BATTERY SETTINGS",
+        "Privacy Flip v2.4.1",
+        "Protection Inactive",
+        "Screen Lock/Unlock Actions",
+        "Configure privacy features for lock/unlock",
+        "Keep off while locked"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "1acc71eca339",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Wi-Fi",
+        "Disable on lock",
+        "Only if not connected",
+        "Enable on unlock",
+        "Only if not already enabled",
+        "Bluetooth",
+        "Mobile Data",
+        "Only if no media is playing",
+        "Location (experimental)",
+        "Only if not in use",
+        "NFC",
+        "NFC Auto-Retry",
+        "If NFC turns itself back on right after this app turns it off (a payment or wallet app can do that), retry disabling it up to 3 times"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "2a282031823b",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable on unlock",
+        "NFC Auto-Retry",
+        "If NFC turns itself back on right after this app turns it off (a payment or wallet app can do that), retry disabling it up to 3 times",
+        "Camera",
+        "Disable on lock",
+        "Needs Android 12 or newer. Your Android version has no way to switch the camera or microphone.",
+        "Microphone",
+        "Only if not in use",
+        "Extras",
+        "Additional protection",
+        "Airplane Mode (experimental)",
+        "Enable on lock",
+        "Disable on unlock",
+        "Battery Saver",
+        "⚙️ Manage App Exemptions"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "79b3fca0d21e",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Disable on unlock",
+        "Battery Saver",
+        "Enable on lock",
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs",
+        "Log privacy actions to file",
+        "Lock Screen Detection (Experimental)"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "8cdc8147bc53",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs",
+        "Log privacy actions to file",
+        "Lock Screen Detection (Experimental)",
+        "Enable Accessibility Service as an extra lock and unlock signal",
+        "Enable Lock Screen Detection",
+        "Notices the lock screen appearing and going away, as an extra signal next to the screen on/off events, and cancels lock actions an unlock made unnecessary. Does not read screen content."
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "a9f7a62b1629",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "io.github.dorumrr.privacyflip",
+      "abilityName": "io.github.dorumrr.privacyflip.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs",
+        "Log privacy actions to file",
+        "Lock Screen Detection (Experimental)",
+        "Enable Accessibility Service as an extra lock and unlock signal",
+        "Enable Lock Screen Detection",
+        "⚠️ Please enable in Accessibility Settings"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "a5b3271dcea9",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Privacy Flip - Lock Screen Detection",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "eb2c23131b24",
+      "first_step": 7,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Privacy Flip - Lock Screen Detection",
+        "Use Privacy Flip - Lock Screen Detection",
+        "OPTIONS",
+        "Privacy Flip - Lock Screen Detection shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Lets Privacy Flip notice the lock screen appearing and going away, as an extra signal next to the screen on/off events, and cancel lock actions an unlock made unnecessary. This service does not read screen content or passwords."
+      ],
+      "harmony_layout_json": "step_07_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_07_service_detail_layout.xml",
+      "screenshot": "step_07_service_detail_screen.png"
+    },
+    {
+      "node_id": "4d308387ca28",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Privacy Flip - Lock Screen Detection to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_07_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_07_system_warning_layout.xml",
+      "screenshot": "step_07_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1a4ee2476e38",
+      "to": "1acc71eca339",
+      "step": 1,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "1acc71eca339",
+      "to": "2a282031823b",
+      "step": 2,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "2a282031823b",
+      "to": "79b3fca0d21e",
+      "step": 3,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "79b3fca0d21e",
+      "to": "8cdc8147bc53",
+      "step": 4,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1900])"
+    },
+    {
+      "from": "8cdc8147bc53",
+      "to": "a9f7a62b1629",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([18] Switch id=accessibilityServiceSwitch (click,unchecked) center=(928,1648))"
+    },
+    {
+      "from": "a9f7a62b1629",
+      "to": "a5b3271dcea9",
+      "step": 6,
+      "edge_type": "ui_click",
+      "action": "click([20] Button text=\"OPEN ACCESSIBILITY SETTINGS\" id=openAccessibilitySettingsButton (click) center=(540,1850))"
+    },
+    {
+      "from": "a5b3271dcea9",
+      "to": "eb2c23131b24",
+      "step": 7,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "eb2c23131b24",
+      "to": "4d308387ca28",
+      "step": 7,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "a5b3271dcea9",
+      "to": "a9f7a62b1629",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "a9f7a62b1629",
+      "to": "a9f7a62b1629",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "a9f7a62b1629",
+      "to": "a9f7a62b1629",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 7,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_07_screen.png",
+      "raw_layout_path": "step_07_layout.xml",
+      "harmony_layout_path": "step_07_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_800ms_screen.png",
+          "harmony_layout_path": "step_07_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_07_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Privacy Flip - Lock Screen Detection Use Privacy Flip -",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Privacy Flip - Lock Screen Detection",
+        "Use Privacy Flip - Lock Screen Detection",
+        "OPTIONS",
+        "Privacy Flip - Lock Screen Detection shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Lets Privacy Flip notice the lock screen appearing and going away, as an extra signal next to the screen on/off events, and cancel lock actions an unlock made unnecessary. This service does not read screen content or passwords."
+      ],
+      "screenshot_path": "step_07_service_detail_screen.png",
+      "harmony_layout_path": "step_07_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Privacy Flip - Lock Screen Detection to",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Privacy Flip - Lock Screen Detection to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_07_system_warning_screen.png",
+      "harmony_layout_path": "step_07_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "io.github.dorumrr.privacyflip",
+      "top_activity": "io.github.dorumrr.privacyflip.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs"
+      ],
+      "screenshot_path": "step_07_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "io.github.dorumrr.privacyflip",
+      "top_activity": "io.github.dorumrr.privacyflip.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs"
+      ],
+      "screenshot_path": "step_07_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "io.github.dorumrr.privacyflip",
+      "top_activity": "io.github.dorumrr.privacyflip.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "⚙️ Manage App Exemptions",
+        "Delays",
+        "Configure timing for privacy actions",
+        "Delay after Lock (sec)",
+        "10s",
+        "Delay after Unlock (sec)",
+        "1s",
+        "Debug Notifications",
+        "Show notifications for privacy actions",
+        "Debug Logs"
+      ],
+      "screenshot_path": "step_07_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用入口为主界面，先以系统要求、Root授权和电池优化提示铺垫，再滚动展示锁屏/解锁隐私开关，最终用“锁屏检测（实验）”引导开启无障碍服务并弹出系统“完全控制”警告；选择拒绝后返回主界面且无退出或降级路径，轨迹判定为困在诱导页。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “系统要求：隐私控制功能所需；特权访问；Root可用”，但提示无法确认Root，需打开Magisk允许后点“再次检查”（Step 1主界面）",
+    "英文 -> “Privacy Flip无法执行：Root已配置但未获授权，锁屏/解锁动作被跳过，打开应用授权”（Step 1-6通知横幅）",
+    "英文 -> “禁用电池优化以保证后台可靠运行”（Step 1主界面）",
+    "英文 -> “锁屏检测（实验）：启用无障碍服务作为额外锁屏/解锁信号”（Step 5-6主界面卡片）",
+    "英文 -> “本服务不读取屏幕内容或密码”，仅感知锁屏出现/消失（服务详情页）",
+    "英文 -> “允许Privacy Flip获得完全控制？可查看并控制屏幕、读取所有内容、覆盖其他应用、跟踪交互并代操作”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面系统要求页：提示Root可用但未授权，需打开Magisk后重查；电池优化已开启；顶部两条无法执行通知常驻，本次下滑寻找锁屏检测。",
+    "step_02": "主界面隐私开关页：列出Wi-Fi、蓝牙、移动数据、定位、NFC及锁屏关闭/解锁开启选项；两条无法执行通知仍在，继续下滑。",
+    "step_03": "主界面继续下滑：显示相机/麦克风及飞行模式、省电等扩展锁屏开关；提示Android版本不支持摄像头/麦克风切换，通知仍常驻。",
+    "step_04": "主界面延时与调试页：显示应用豁免、锁屏后10秒/解锁后1秒延时、调试通知与日志开关；两条无法执行通知仍在，下滑露出无障碍状态。",
+    "step_05": "主界面锁屏检测（实验）卡片：说明用无障碍服务作额外锁屏/解锁信号；点击未勾选开关以触发无障碍流程，通知仍常驻。",
+    "step_06": "同一卡片：开关已开启，状态提示需在系统无障碍设置中启用；点击“打开无障碍设置”跳转系统页，两条无法执行通知仍常驻。",
+    "step_07": "系统无障碍列表页：显示“Privacy Flip - Lock Screen Detection”为关闭；采集到无障碍设置钩子与探针后自动终止，应用通知仍在。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍列表页，无弹窗或遮罩，应用两条无法执行通知继续显示。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面未变化，无遮罩或新弹窗，通知栏仍挂两条Privacy Flip无法执行提示。",
+    "detail_1_service_detail_page": "服务详情页：说明无障碍仅感知锁屏出现/消失作额外信号，不读取屏幕内容或密码；服务当前关闭，需点“使用”进入系统授权。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗：称该服务将获得完全控制，可查看屏幕内容、覆盖其他应用并代操作；底部允许/拒绝，本步选择拒绝。",
+    "refusal_2.0s": "拒权后2秒返回主界面：仍停在延时/调试区域，无退出或降级路径；两条无法执行通知仍常驻，轨迹标记为困在诱导页。",
+    "refusal_10.5s": "拒权后10.5秒：主界面未变化，仍显示延时/调试项且通知常驻；无取消或关闭诱导卡片路径，继续处于困在诱导页状态。"
+  }
+}

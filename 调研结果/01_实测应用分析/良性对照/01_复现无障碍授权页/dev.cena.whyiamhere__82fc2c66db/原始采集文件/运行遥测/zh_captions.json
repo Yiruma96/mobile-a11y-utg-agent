@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用入口设置页以“带着目的打开应用”引导开启无障碍服务，跳转系统无障碍列表/服务详情并触发全控制警告；用户点拒绝后仍返回原设置页反复停留，无取消或退出路径（TRAPPED_ON_LURE_SCREEN），探针期间无通知与遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文：Open apps with a purpose. Make time for what matters. -> 带着目的打开应用，把时间留给重要的事（入口设置页/拒权返回页）",
+    "英文：Disabled — the goal form and widget are not active -> 无障碍服务已禁用，目标表单和小组件不生效（入口设置页/拒权返回页）",
+    "英文：The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read. -> 服务检测当前打开应用、显示目标并在时间结束时回桌面；数据留在本机，不读取其他应用内文字（入口设置页/服务详情页）",
+    "英文：Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone. -> Android 13+若开关不可用，去应用信息→⋮→允许受限设置，名称可能因手机而异（入口设置页）",
+    "英文：If the service stops working, allow autostart and remove battery restrictions in your phone settings. -> 若服务停止工作，请在手机设置中允许自启动并移除电池限制（入口设置页）",
+    "英文：Asks for a goal when you open selected apps, reminds you of the time, and returns to the home screen when the session ends. Uses the package name of the active window. Screen text, passwords, and messages are not stored or transmitted. -> 打开选定应用时询问目标、提醒时长并在会话结束时回桌面；仅使用当前窗口包名，不存储或传输屏幕文字、密码和消息（服务详情页）",
+    "英文：Allow Why am I here? to have full control of your device? Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 允许 Why am I here? 完全控制设备？完全控制适用于辅助无障碍需求的应用，不适用于多数应用（系统警告弹窗）",
+    "英文：View and control screen / View and perform actions -> 可查看并控制屏幕 / 可查看并执行操作（系统警告弹窗）"
+  ],
+  "frame_captions": {
+    "step_01": "入口设置页，标题‘Why am I here?’，以‘带着目的打开应用’引导；显示无障碍服务禁用，本步点‘Open service settings’跳系统无障碍设置，无通知/遮罩。",
+    "step_02": "系统无障碍列表页，DOWNLOADED APPS 下可见‘Why am I here?’状态为 Off；本步采集无障碍设置 Hook/探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "系统无障碍列表页跳后0.8秒探针：仍在 Settings$AccessibilitySettingsActivity，无可见文本变化，遮罩数为0，仅等待未交互。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍停留系统无障碍列表页，无新增文本、通知或遮罩，仅等待，未触发授权开关或页面跳转。",
+    "detail_1_service_detail_page": "服务详情页：显示‘Use Why am I here?’与选项，‘Why am I here? shortcut’为 Off；说明会询问目标、提醒时长并回桌面，仅用包名不存屏幕文字，本步查看详情/警告。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗：询问是否允许 Why am I here? 完全控制设备，列明可查看控制屏幕、查看并执行操作；本步查看后点 Deny 拒绝，遮罩0。",
+    "refusal_2.0s": "点 Deny 后2秒返回应用设置页，服务仍 Disabled，继续显示开启服务与 Android 13+ 受限设置指引；无取消/退出，标记 TRAPPED_ON_LURE_SCREEN，无通知/遮罩。",
+    "refusal_10.5s": "拒权后10.5秒仍困在应用设置页，重复‘Open service settings’与自启动/电池限制提示，服务保持禁用；无取消/退出，持续 TRAPPED_ON_LURE_SCREEN，无通知/遮罩。"
+  }
+}

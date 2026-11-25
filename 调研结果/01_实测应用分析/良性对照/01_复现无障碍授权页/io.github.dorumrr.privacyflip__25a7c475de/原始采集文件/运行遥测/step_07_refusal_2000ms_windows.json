@@ -1,0 +1,41 @@
+{
+  "timestamp": 1795577380.672999,
+  "visible_windows": [
+    {
+      "header": "Window #1 Window{8f9e9c u0 NavigationBar0}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan} ty=NAVIGATION_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #3 Window{b2559cd u0 StatusBar}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=true package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillx83) gr=TOP CENTER_VERTICAL sim={adjust=pan} layoutInDisplayCutoutMode=always ty=STATUS_BAR fmt=TRANSLUCENT",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #6 Window{a638b7e u0 io.github.dorumrr.privacyflip/io.github.dorumrr.privacyflip.MainActivity}:",
+      "mOwnerUid": "mOwnerUid=10246 showForAllUsers=false package=io.github.dorumrr.privacyflip appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(fillxfill) sim={adjust=pan forwardNavigation} ty=BASE_APPLICATION wanim=0x10302fe",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=true mWindowRemovalAllowed=false"
+    },
+    {
+      "header": "Window #9 Window{91b6c7c u0 com.android.systemui.ImageWallpaper}:",
+      "mOwnerUid": "mOwnerUid=10157 showForAllUsers=false package=com.android.systemui appop=NONE",
+      "mAttrs": "mAttrs={(0,0)(2767x2280) gr=TOP START CENTER layoutInDisplayCutoutMode=always ty=WALLPAPER fmt=RGBX_8888 wanim=0x103030e",
+      "mHasSurface": "mHasSurface=true isReadyForDisplay()=false mWindowRemovalAllowed=false"
+    }
+  ],
+  "active_notifications": [
+    {
+      "package": "io.github.dorumrr.privacyflip",
+      "title": "String (Privacy Flip cannot act)",
+      "text": "String (Root (Magisk/SuperSU) is set up, but Privacy Flip does not have its permission, so lock and unlock actions are skipped. Open Privacy Flip and grant it.)"
+    },
+    {
+      "package": "io.github.dorumrr.privacyflip",
+      "title": "String (Privacy Flip cannot act)",
+      "text": "String (No privileged access - open Privacy Flip to fix it)"
+    }
+  ]
+}

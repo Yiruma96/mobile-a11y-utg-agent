@@ -1,0 +1,372 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_049__fac07f716e",
+  "label": "benign",
+  "family_or_category": "系统效率与通用辅助",
+  "static_visibility": "clear",
+  "target_package": "dev.tagmacro",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "e7a48d8adfa1",
+  "hook_node_ids": [
+    "daeab71f0c73",
+    "d31cd65de178"
+  ],
+  "nodes": [
+    {
+      "node_id": "e7a48d8adfa1",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "dev.tagmacro",
+      "abilityName": "dev.tagmacro.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Macros",
+        "No macros yet",
+        "A macro is a list of actions that runs when you tap a tag.",
+        "1",
+        "Tap New macro and pick a template, or start blank.",
+        "2",
+        "Fill in anything marked \"Needs setup\", then Save.",
+        "3",
+        "Tap \"Write trigger to a tag\" and hold a sticker to the back of the phone.",
+        "4",
+        "Close TagMacro, lift the sticker away, and tap it to run the macro.",
+        "Create your first macro",
+        "New macro",
+        "Tags",
+        "Log"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "78c5eb01a67e",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "dev.tagmacro",
+      "abilityName": "dev.tagmacro.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Settings",
+        "Permissions",
+        "Each one is optional, and only needed for the actions listed. TagMacro has no internet permission.",
+        "Accessibility service",
+        "Not allowed",
+        "For Signal, WhatsApp and Lock the screen. It only receives events from Signal and WhatsApp, and only reads the screen while a macro is sending.",
+        "Open accessibility settings",
+        "If the switch is greyed out as a restricted setting: open App info, tap the ⋮ menu, choose \"Allow restricted settings\", then try again.",
+        "Open App info",
+        "Do Not Disturb access",
+        "For Do Not Disturb, switching the ringer to or from Silent, and turning ringtone or notification volume to 0.",
+        "Open Do Not Disturb access",
+        "Modify system settings",
+        "For brightness, screen timeout and auto-rotate.",
+        "Open \"Modify system settings\""
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "daeab71f0c73",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "TagMacro messaging",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "d33d91dde2e8",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "TagMacro messaging",
+        "Use TagMacro messaging",
+        "OPTIONS",
+        "TagMacro messaging shortcut",
+        "Off",
+        "Shortcut settings",
+        "Lets TagMacro send Signal and WhatsApp messages, share WhatsApp live location, and lock the screen when one of your macros asks it to. It only receives events from Signal and WhatsApp and does nothing unless a macro is running one of those actions. TagMacro has no internet access."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "d31cd65de178",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow TagMacro messaging to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e7a48d8adfa1",
+      "to": "78c5eb01a67e",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([21] LinearLayout desc=\"Settings\" (click) center=(936,2049))"
+    },
+    {
+      "from": "78c5eb01a67e",
+      "to": "daeab71f0c73",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Open accessibility settings\" (click) center=(540,865))"
+    },
+    {
+      "from": "daeab71f0c73",
+      "to": "d33d91dde2e8",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "d33d91dde2e8",
+      "to": "d31cd65de178",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "daeab71f0c73",
+      "to": "78c5eb01a67e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "78c5eb01a67e",
+      "to": "78c5eb01a67e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "78c5eb01a67e",
+      "to": "78c5eb01a67e",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back TagMacro messaging Use TagMacro messaging OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "TagMacro messaging",
+        "Use TagMacro messaging",
+        "OPTIONS",
+        "TagMacro messaging shortcut",
+        "Off",
+        "Shortcut settings",
+        "Lets TagMacro send Signal and WhatsApp messages, share WhatsApp live location, and lock the screen when one of your macros asks it to. It only receives events from Signal and WhatsApp and does nothing unless a macro is running one of those actions. TagMacro has no internet access."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow TagMacro messaging to have full control",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow TagMacro messaging to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "dev.tagmacro",
+      "top_activity": "dev.tagmacro.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings",
+        "Permissions",
+        "Each one is optional, and only needed for the actions listed. TagMacro has no internet permission.",
+        "Accessibility service",
+        "Not allowed",
+        "For Signal, WhatsApp and Lock the screen. It only receives events from Signal and WhatsApp, and only reads the screen while a macro is sending.",
+        "Open accessibility settings",
+        "If the switch is greyed out as a restricted setting: open App info, tap the ⋮ menu, choose \"Allow restricted settings\", then try again.",
+        "Open App info",
+        "Do Not Disturb access"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "dev.tagmacro",
+      "top_activity": "dev.tagmacro.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings",
+        "Permissions",
+        "Each one is optional, and only needed for the actions listed. TagMacro has no internet permission.",
+        "Accessibility service",
+        "Not allowed",
+        "For Signal, WhatsApp and Lock the screen. It only receives events from Signal and WhatsApp, and only reads the screen while a macro is sending.",
+        "Open accessibility settings",
+        "If the switch is greyed out as a restricted setting: open App info, tap the ⋮ menu, choose \"Allow restricted settings\", then try again.",
+        "Open App info",
+        "Do Not Disturb access"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "dev.tagmacro",
+      "top_activity": "dev.tagmacro.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Settings",
+        "Permissions",
+        "Each one is optional, and only needed for the actions listed. TagMacro has no internet permission.",
+        "Accessibility service",
+        "Not allowed",
+        "For Signal, WhatsApp and Lock the screen. It only receives events from Signal and WhatsApp, and only reads the screen while a macro is sending.",
+        "Open accessibility settings",
+        "If the switch is greyed out as a restricted setting: open App info, tap the ⋮ menu, choose \"Allow restricted settings\", then try again.",
+        "Open App info",
+        "Do Not Disturb access"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用从宏列表引导进入权限设置，以“权限可选、无联网、仅服务消息/锁屏”等话术推动开启无障碍，并指导绕过受限设置；跳转系统无障碍详情与高风险授权弹窗后，审核拒绝即返回应用并反复停留在仍未授权的权限页（TRAPPED_ON_LURE_SCREEN）。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Each one is optional, and only needed for the actions listed. TagMacro has no internet permission.” -> “每项权限可选，仅用于所列动作；无联网权限”（Step 2 权限页）",
+    "英文“For Signal, WhatsApp and Lock the screen...” -> “无障碍仅接收 Signal/WhatsApp 事件，且只在宏发送时读屏”（Step 2 权限页）",
+    "英文“If the switch is greyed out as a restricted setting...” -> “如开关因受限设置变灰，去应用信息菜单选‘允许受限设置’再试”（Step 2 权限页）",
+    "英文“Lets TagMacro send Signal and WhatsApp messages, share WhatsApp live location, and lock the screen...” -> “称可按宏发消息、共享 WhatsApp 实时位置并锁屏，且无联网”（服务详情页）",
+    "英文“Allow TagMacro messaging to have full control of your device?” -> “询问是否允许完整控制设备，并称适合无障碍需求而非多数应用”（系统警告弹窗）",
+    "英文“View and control screen / View and perform actions” -> “可读取屏幕全部内容并悬浮显示，可跟踪交互并代为操作”（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "主界面为宏列表空状态，展示创建宏四步引导与“New macro/Tags”；本步点击设置标签进入权限页，无通知或遮罩。",
+    "step_02": "权限页称权限可选且无联网，解释无障碍仅服务消息与锁屏，并教绕过受限设置；本步点“Open accessibility settings”。",
+    "step_03": "系统无障碍列表显示“TagMacro messaging”为 Off；探针捕获无障碍设置钩子后自动终止，无通知、无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停留系统无障碍列表；页面未取到文本，无通知、无遮罩，仅执行等待。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍在系统无障碍列表；未出现通知横幅或遮罩，保持等待，无进一步点击。",
+    "detail_1_service_detail_page": "服务详情页显示“Use TagMacro messaging”开关，快捷方式为 Off；说明称仅按宏发消息、共享位置或锁屏且无联网。",
+    "detail_2_system_warning_dialog": "系统警告弹窗询问是否允许“完整控制设备”，列明读屏与代操作能力，并含 Allow/Deny；审核选择拒绝。",
+    "refusal_2.0s": "拒绝后2秒返回应用权限页，无障碍仍为“Not allowed”；页面重复打开设置及绕过受限设置引导，已困在诱导页。",
+    "refusal_10.5s": "拒权后10.5秒仍停留同一权限页，未跳转也未解除提示；无障碍保持“Not allowed”，判定困在诱导屏幕。"
+  }
+}

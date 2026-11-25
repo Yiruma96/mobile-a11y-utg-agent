@@ -1,0 +1,339 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_008__82fc2c66db",
+  "label": "benign",
+  "family_or_category": "专注自律与防沉迷管控",
+  "static_visibility": "clear",
+  "target_package": "dev.cena.whyiamhere",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "b6a6135c3af5",
+  "hook_node_ids": [
+    "7941d2eb08d1",
+    "1283a5b2e74d"
+  ],
+  "nodes": [
+    {
+      "node_id": "b6a6135c3af5",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "dev.cena.whyiamhere",
+      "abilityName": "dev.cena.whyiamhere.SettingsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Why am I here?",
+        "Open apps with a purpose. Make time for what matters.",
+        "Accessibility service",
+        "Disabled — the goal form and widget are not active",
+        "The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read.",
+        "Open service settings",
+        "Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone.",
+        "If the service stops working, allow autostart and remove battery restrictions in your phone settings.",
+        "Warning before the session ends",
+        "60",
+        "Seconds",
+        "Save",
+        "0 disables the warning. In silent mode, only the widget shows a warning.",
+        "Clear goal history",
+        "Selected apps: 0"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7941d2eb08d1",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Why am I here?",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "3145171bee89",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Why am I here?",
+        "Use Why am I here?",
+        "OPTIONS",
+        "Why am I here? shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Asks for a goal when you open selected apps, reminds you of the time, and returns to the home screen when the session ends. Uses the package name of the active window. Screen text, passwords, and messages are not stored or transmitted."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "1283a5b2e74d",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Why am I here? to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "b6a6135c3af5",
+      "to": "7941d2eb08d1",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([8] TextView text=\"Open service settings\" center=(352,1086))"
+    },
+    {
+      "from": "7941d2eb08d1",
+      "to": "3145171bee89",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "3145171bee89",
+      "to": "1283a5b2e74d",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7941d2eb08d1",
+      "to": "b6a6135c3af5",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "b6a6135c3af5",
+      "to": "b6a6135c3af5",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "b6a6135c3af5",
+      "to": "b6a6135c3af5",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Why am I here? Use Why am I here? OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Why am I here?",
+        "Use Why am I here?",
+        "OPTIONS",
+        "Why am I here? shortcut",
+        "Off",
+        "Shortcut settings",
+        "Settings",
+        "Asks for a goal when you open selected apps, reminds you of the time, and returns to the home screen when the session ends. Uses the package name of the active window. Screen text, passwords, and messages are not stored or transmitted."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Why am I here? to have full control of ",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Why am I here? to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "dev.cena.whyiamhere",
+      "top_activity": "dev.cena.whyiamhere.SettingsActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Why am I here?",
+        "Open apps with a purpose. Make time for what matters.",
+        "Accessibility service",
+        "Disabled — the goal form and widget are not active",
+        "The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read.",
+        "Open service settings",
+        "Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone.",
+        "If the service stops working, allow autostart and remove battery restrictions in your phone settings.",
+        "Warning before the session ends",
+        "60"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "dev.cena.whyiamhere",
+      "top_activity": "dev.cena.whyiamhere.SettingsActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Why am I here?",
+        "Open apps with a purpose. Make time for what matters.",
+        "Accessibility service",
+        "Disabled — the goal form and widget are not active",
+        "The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read.",
+        "Open service settings",
+        "Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone.",
+        "If the service stops working, allow autostart and remove battery restrictions in your phone settings.",
+        "Warning before the session ends",
+        "60"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "dev.cena.whyiamhere",
+      "top_activity": "dev.cena.whyiamhere.SettingsActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Why am I here?",
+        "Open apps with a purpose. Make time for what matters.",
+        "Accessibility service",
+        "Disabled — the goal form and widget are not active",
+        "The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read.",
+        "Open service settings",
+        "Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone.",
+        "If the service stops working, allow autostart and remove battery restrictions in your phone settings.",
+        "Warning before the session ends",
+        "60"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用入口设置页以“带着目的打开应用”引导开启无障碍服务，跳转系统无障碍列表/服务详情并触发全控制警告；用户点拒绝后仍返回原设置页反复停留，无取消或退出路径（TRAPPED_ON_LURE_SCREEN），探针期间无通知与遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "英文：Open apps with a purpose. Make time for what matters. -> 带着目的打开应用，把时间留给重要的事（入口设置页/拒权返回页）",
+    "英文：Disabled — the goal form and widget are not active -> 无障碍服务已禁用，目标表单和小组件不生效（入口设置页/拒权返回页）",
+    "英文：The service detects the open app, shows your goal, and returns home when time runs out. Your data stays on your phone. Text inside other apps is not read. -> 服务检测当前打开应用、显示目标并在时间结束时回桌面；数据留在本机，不读取其他应用内文字（入口设置页/服务详情页）",
+    "英文：Android 13+: if the switch is unavailable, open App info → ⋮ → Allow restricted settings. Names may differ on your phone. -> Android 13+若开关不可用，去应用信息→⋮→允许受限设置，名称可能因手机而异（入口设置页）",
+    "英文：If the service stops working, allow autostart and remove battery restrictions in your phone settings. -> 若服务停止工作，请在手机设置中允许自启动并移除电池限制（入口设置页）",
+    "英文：Asks for a goal when you open selected apps, reminds you of the time, and returns to the home screen when the session ends. Uses the package name of the active window. Screen text, passwords, and messages are not stored or transmitted. -> 打开选定应用时询问目标、提醒时长并在会话结束时回桌面；仅使用当前窗口包名，不存储或传输屏幕文字、密码和消息（服务详情页）",
+    "英文：Allow Why am I here? to have full control of your device? Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 允许 Why am I here? 完全控制设备？完全控制适用于辅助无障碍需求的应用，不适用于多数应用（系统警告弹窗）",
+    "英文：View and control screen / View and perform actions -> 可查看并控制屏幕 / 可查看并执行操作（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "入口设置页，标题‘Why am I here?’，以‘带着目的打开应用’引导；显示无障碍服务禁用，本步点‘Open service settings’跳系统无障碍设置，无通知/遮罩。",
+    "step_02": "系统无障碍列表页，DOWNLOADED APPS 下可见‘Why am I here?’状态为 Off；本步采集无障碍设置 Hook/探针后自动终止，无通知/遮罩。",
+    "post_jump_0.8s": "系统无障碍列表页跳后0.8秒探针：仍在 Settings$AccessibilitySettingsActivity，无可见文本变化，遮罩数为0，仅等待未交互。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍停留系统无障碍列表页，无新增文本、通知或遮罩，仅等待，未触发授权开关或页面跳转。",
+    "detail_1_service_detail_page": "服务详情页：显示‘Use Why am I here?’与选项，‘Why am I here? shortcut’为 Off；说明会询问目标、提醒时长并回桌面，仅用包名不存屏幕文字，本步查看详情/警告。",
+    "detail_2_system_warning_dialog": "系统全控制警告弹窗：询问是否允许 Why am I here? 完全控制设备，列明可查看控制屏幕、查看并执行操作；本步查看后点 Deny 拒绝，遮罩0。",
+    "refusal_2.0s": "点 Deny 后2秒返回应用设置页，服务仍 Disabled，继续显示开启服务与 Android 13+ 受限设置指引；无取消/退出，标记 TRAPPED_ON_LURE_SCREEN，无通知/遮罩。",
+    "refusal_10.5s": "拒权后10.5秒仍困在应用设置页，重复‘Open service settings’与自启动/电池限制提示，服务保持禁用；无取消/退出，持续 TRAPPED_ON_LURE_SCREEN，无通知/遮罩。"
+  }
+}

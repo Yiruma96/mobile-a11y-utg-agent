@@ -1,0 +1,13 @@
+flowchart TD
+    N_e7a48d8adfa1["Step 1: MainActivity\nMacros"]
+    N_78c5eb01a67e["Step 2: MainActivity\nSettings"]
+    N_daeab71f0c73["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_d33d91dde2e8["Step 3: SubSettings\nBack"]
+    N_d31cd65de178["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow TagMacro messagi"]
+    N_e7a48d8adfa1 -->|"ui_click: click([21] LinearLayout desc='Se"| N_78c5eb01a67e
+    N_78c5eb01a67e -->|"ui_click: click([8] Button text='Open acce"| N_daeab71f0c73
+    N_daeab71f0c73 -->|"detail_probe: click_service()"| N_d33d91dde2e8
+    N_d33d91dde2e8 -->|"warning_probe: click_use_service_switch"| N_d31cd65de178
+    N_daeab71f0c73 -->|"refusal_probe: Back_refuse"| N_78c5eb01a67e
+    N_78c5eb01a67e -->|"refusal_probe: wait(5.5s)_after_refusal"| N_78c5eb01a67e
+    N_78c5eb01a67e -->|"refusal_probe: wait(10.5s)_after_refusal"| N_78c5eb01a67e

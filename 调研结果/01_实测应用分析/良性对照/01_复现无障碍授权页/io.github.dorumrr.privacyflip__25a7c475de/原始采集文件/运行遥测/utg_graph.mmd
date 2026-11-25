@@ -1,0 +1,21 @@
+flowchart TD
+    N_1a4ee2476e38["Step 1: MainActivity\nSystem Requirements"]
+    N_1acc71eca339["Step 2: MainActivity\nWi-Fi"]
+    N_2a282031823b["Step 3: MainActivity\nEnable on unlock"]
+    N_79b3fca0d21e["Step 4: MainActivity\nDisable on unlock"]
+    N_8cdc8147bc53["Step 5: MainActivity\n⚙️ Manage App Exemptio"]
+    N_a9f7a62b1629["Step 6: MainActivity\n⚙️ Manage App Exemptio"]
+    N_a5b3271dcea9["Step 7: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_eb2c23131b24["Step 7: SubSettings\nBack"]
+    N_4d308387ca28["Step 7: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Privacy Flip - L"]
+    N_1a4ee2476e38 -->|"ui_swipe: swipe([540, 1800])"| N_1acc71eca339
+    N_1acc71eca339 -->|"ui_swipe: swipe([540, 1900])"| N_2a282031823b
+    N_2a282031823b -->|"ui_swipe: swipe([540, 1900])"| N_79b3fca0d21e
+    N_79b3fca0d21e -->|"ui_swipe: swipe([540, 1900])"| N_8cdc8147bc53
+    N_8cdc8147bc53 -->|"ui_click: click([18] Switch id=accessibili"| N_a9f7a62b1629
+    N_a9f7a62b1629 -->|"ui_click: click([20] Button text='OPEN ACC"| N_a5b3271dcea9
+    N_a5b3271dcea9 -->|"detail_probe: click_service()"| N_eb2c23131b24
+    N_eb2c23131b24 -->|"warning_probe: click_use_service_switch"| N_4d308387ca28
+    N_a5b3271dcea9 -->|"refusal_probe: Back_refuse"| N_a9f7a62b1629
+    N_a9f7a62b1629 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_a9f7a62b1629
+    N_a9f7a62b1629 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_a9f7a62b1629

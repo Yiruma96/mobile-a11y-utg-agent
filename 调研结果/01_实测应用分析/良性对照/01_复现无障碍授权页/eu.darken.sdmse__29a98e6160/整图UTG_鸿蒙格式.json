@@ -1,0 +1,567 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_050__29a98e6160",
+  "label": "benign",
+  "family_or_category": "系统效率与通用辅助",
+  "static_visibility": "clear",
+  "target_package": "eu.darken.sdmse",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "ad8b816fcee1",
+  "hook_node_ids": [
+    "b5ea4608ec31",
+    "3fd9baa587d7",
+    "a7fc56cd9f07"
+  ],
+  "nodes": [
+    {
+      "node_id": "ad8b816fcee1",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Welcome",
+        "SD Maid SE manages files, apps and storage.",
+        "Gain storage space by cleaning up behind other apps. Delete expendable files and remove leftover data.",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "46e0bb99fce5",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Privacy",
+        "SD Maid has no ads and does not sell user data.",
+        "Privacy policy",
+        "Update check",
+        "Allow SD Maid to check for updates to let you know if a newer version is available.",
+        "Important messages",
+        "Allow SD Maid to check for important messages from the developer.",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "833377d48715",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Setup",
+        "SD Maid will search all accessible data areas.",
+        "What is accessible depends on your device, Android version and granted permissions.",
+        "SD Maid's defaults are configured to be safe and thorough, offering a good balance for most users.",
+        "For more thorough results, visit each tool's settings and adjust them to your liking.",
+        "Start using SD Maid by setting up access.",
+        "Show guided tours",
+        "A quick guided tour of each feature as you open it.",
+        "Set up access"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "c77b6ddc7d93",
+      "first_step": 4,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Manage storage",
+        "Allow SD Maid to manage your storage.",
+        "Public storage",
+        "/storage/emulated/0",
+        "Grant access",
+        "Help",
+        "Default public app assets",
+        "/storage/emulated/0/Android/obb",
+        "In most cases the window will open with the correct path preselected. Entries turn green when access is granted.",
+        "ADB access",
+        "Allow SD Maid to use ADB access where possible to improve results and enable features.",
+        "Close",
+        "Setup",
+        "Options",
+        "Each card on this screen is a permission SD Maid can use. All are optional, but more permissions mean more features and more thorough scans. Without any, most tools will find little to clean."
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "10c63ca1ff9d",
+      "first_step": 5,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Manage storage",
+        "Allow SD Maid to manage your storage.",
+        "Public storage",
+        "/storage/emulated/0",
+        "Grant access",
+        "Basic access to public storage, e.g. \"Download/\" and \"DCIM/\", but not always \"Android/data\".",
+        "Help",
+        "Storage access framework",
+        "Improve results by granting SD Maid access to additional areas.",
+        "Default public app data",
+        "/storage/emulated/0/Android/data",
+        "Default public app assets",
+        "/storage/emulated/0/Android/obb",
+        "In most cases the window will open with the correct path preselected. Entries turn green when access is granted.",
+        "ADB access"
+      ],
+      "harmony_layout_json": "step_05_layout_harmony.json",
+      "android_layout_xml": "step_05_layout.xml",
+      "screenshot": "step_05_screen.png"
+    },
+    {
+      "node_id": "8e493eb8e0e0",
+      "first_step": 6,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "In most cases the window will open with the correct path preselected. Entries turn green when access is granted.",
+        "ADB access",
+        "Allow SD Maid to use ADB access where possible to improve results and enable features.",
+        "Try to use ADB access",
+        "Don't use ADB access",
+        "This setting has no effect unless Porter or Shizuku is set up on your device.",
+        "Help",
+        "Root access",
+        "Should SD Maid use root access if it is available? Root access can be used to check additional system folders and private application data.",
+        "Try to use root access",
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access"
+      ],
+      "harmony_layout_json": "step_06_layout_harmony.json",
+      "android_layout_xml": "step_06_layout.xml",
+      "screenshot": "step_06_screen.png"
+    },
+    {
+      "node_id": "a7ff833a6c29",
+      "first_step": 7,
+      "role": "intermediate",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access",
+        "Required for accessibility service based cache deletion.",
+        "Help",
+        "Accessibility service",
+        "The accessibility service allows SD Maid to interact with your screen and automate tedious actions, e.g. tapping \"Clear cache\" on multiple screens.",
+        "SD Maid will not use the accessibility service without your consent, will always display a prominent (cancelable) indicator while active and will not use it to collect information.",
+        "Enable service and grant access",
+        "Don't use accessibility service",
+        "If you change your mind, you can alter this option again by going into settings and restarting the setup.",
+        "Close",
+        "Setup"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "b5ea4608ec31",
+      "first_step": 8,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "SD Maid SE",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_08_layout_harmony.json",
+      "android_layout_xml": "step_08_layout.xml",
+      "screenshot": "step_08_screen.png"
+    },
+    {
+      "node_id": "3fd9baa587d7",
+      "first_step": 8,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "SD Maid SE",
+        "Use SD Maid SE",
+        "OPTIONS",
+        "SD Maid SE shortcut",
+        "Off",
+        "Shortcut settings",
+        "Users with special accessibility needs can enable this service to allow SD Maid to automate tasks that would otherwise require tedious manual user interaction (e.g. cache deletion).\n\nExample: If you instruct SD Maid to stop multiple apps then SD Maid can use this service to open each apps settings screen, find the 'Force Stop' button and tap it.\n\nSD Maid will always prominently show when using this service and provide an easy way for the user to cancel any interaction immediately.\n\nNo actions will be performed without prior user approval. This service can be disabled again at any time without adverse effects."
+      ],
+      "harmony_layout_json": "step_08_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_08_service_detail_layout.xml",
+      "screenshot": "step_08_service_detail_screen.png"
+    },
+    {
+      "node_id": "a7fc56cd9f07",
+      "first_step": 8,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow SD Maid SE to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_08_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_08_system_warning_layout.xml",
+      "screenshot": "step_08_system_warning_screen.png"
+    },
+    {
+      "node_id": "6ec8a03b7b91",
+      "first_step": 8,
+      "role": "refusal_probe",
+      "bundleName": "eu.darken.sdmse",
+      "abilityName": "eu.darken.sdmse.main.ui.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access",
+        "Required for accessibility service based cache deletion.",
+        "Help",
+        "Accessibility service",
+        "The accessibility service allows SD Maid to interact with your screen and automate tedious actions, e.g. tapping \"Clear cache\" on multiple screens.",
+        "SD Maid will not use the accessibility service without your consent, will always display a prominent (cancelable) indicator while active and will not use it to collect information.",
+        "Accessibility service is disabled",
+        "Enable service",
+        "Don't use accessibility service",
+        "If you change your mind, you can alter this option again by going into settings and restarting the setup.",
+        "Close"
+      ],
+      "harmony_layout_json": "step_08_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_08_refusal_2000ms_layout.xml",
+      "screenshot": "step_08_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ad8b816fcee1",
+      "to": "46e0bb99fce5",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] View (click) center=(540,2038))"
+    },
+    {
+      "from": "46e0bb99fce5",
+      "to": "833377d48715",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([11] View (click) center=(540,2038))"
+    },
+    {
+      "from": "833377d48715",
+      "to": "c77b6ddc7d93",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([10] View (click) center=(540,2038))"
+    },
+    {
+      "from": "c77b6ddc7d93",
+      "to": "10c63ca1ff9d",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([31] View (click) center=(912,1369))"
+    },
+    {
+      "from": "10c63ca1ff9d",
+      "to": "8e493eb8e0e0",
+      "step": 5,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "8e493eb8e0e0",
+      "to": "a7ff833a6c29",
+      "step": 6,
+      "edge_type": "ui_swipe",
+      "action": "swipe([540, 1800])"
+    },
+    {
+      "from": "a7ff833a6c29",
+      "to": "b5ea4608ec31",
+      "step": 7,
+      "edge_type": "ui_click",
+      "action": "click([16] TextView text=\"Enable service and grant access\" center=(540,1752))"
+    },
+    {
+      "from": "b5ea4608ec31",
+      "to": "3fd9baa587d7",
+      "step": 8,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "3fd9baa587d7",
+      "to": "a7fc56cd9f07",
+      "step": 8,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "b5ea4608ec31",
+      "to": "6ec8a03b7b91",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "6ec8a03b7b91",
+      "to": "6ec8a03b7b91",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "6ec8a03b7b91",
+      "to": "6ec8a03b7b91",
+      "step": 8,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 8,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_08_screen.png",
+      "raw_layout_path": "step_08_layout.xml",
+      "harmony_layout_path": "step_08_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_08_probe_800ms_screen.png",
+          "harmony_layout_path": "step_08_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_08_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_08_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back SD Maid SE Use SD Maid SE OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "SD Maid SE",
+        "Use SD Maid SE",
+        "OPTIONS",
+        "SD Maid SE shortcut",
+        "Off",
+        "Shortcut settings",
+        "Users with special accessibility needs can enable this service to allow SD Maid to automate tasks that would otherwise require tedious manual user interaction (e.g. cache deletion).\n\nExample: If you instruct SD Maid to stop multiple apps then SD Maid can use this service to open each apps settings screen, find the 'Force Stop' button and tap it.\n\nSD Maid will always prominently show when using this service and provide an easy way for the user to cancel any interaction immediately.\n\nNo actions will be performed without prior user approval. This service can be disabled again at any time without adverse effects."
+      ],
+      "screenshot_path": "step_08_service_detail_screen.png",
+      "harmony_layout_path": "step_08_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow SD Maid SE to have full control of your",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow SD Maid SE to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_08_system_warning_screen.png",
+      "harmony_layout_path": "step_08_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "eu.darken.sdmse",
+      "top_activity": "eu.darken.sdmse.main.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access",
+        "Required for accessibility service based cache deletion.",
+        "Help",
+        "Accessibility service",
+        "The accessibility service allows SD Maid to interact with your screen and automate tedious actions, e.g. tapping \"Clear cache\" on multiple screens.",
+        "SD Maid will not use the accessibility service without your consent, will always display a prominent (cancelable) indicator while active and will not use it to collect information."
+      ],
+      "screenshot_path": "step_08_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "eu.darken.sdmse",
+      "top_activity": "eu.darken.sdmse.main.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access",
+        "Required for accessibility service based cache deletion.",
+        "Help",
+        "Accessibility service",
+        "The accessibility service allows SD Maid to interact with your screen and automate tedious actions, e.g. tapping \"Clear cache\" on multiple screens.",
+        "SD Maid will not use the accessibility service without your consent, will always display a prominent (cancelable) indicator while active and will not use it to collect information."
+      ],
+      "screenshot_path": "step_08_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "eu.darken.sdmse",
+      "top_activity": "eu.darken.sdmse.main.ui.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "I didn't root my device",
+        "Only available on rooted devices. If you didn't make this modification, then your device is not rooted and this setting has no effect.",
+        "Usage statistics",
+        "The usage statistics permission grants access to more app details. SD Maid uses it to determine additional cache sizes.",
+        "Grant access",
+        "Required for accessibility service based cache deletion.",
+        "Help",
+        "Accessibility service",
+        "The accessibility service allows SD Maid to interact with your screen and automate tedious actions, e.g. tapping \"Clear cache\" on multiple screens.",
+        "SD Maid will not use the accessibility service without your consent, will always display a prominent (cancelable) indicator while active and will not use it to collect information."
+      ],
+      "screenshot_path": "step_08_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_08_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "GRACEFUL_STAY_OR_DEGRADE",
+  "app_chain_summary_zh": "应用以向导依次介绍清理、隐私、存储、ADB/Root、用量统计与无障碍服务；最终跳转系统无障碍页并触发高危授权警告，拒权后回到应用原页保持可用并优雅降级。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “SD Maid 会搜索所有可访问数据区域；可访问范围取决于设备、Android 版本和已授权限”（Setup 页）",
+    "英文 -> “默认配置安全且彻底，兼顾大多数用户；可进各工具设置调整”（Setup 页）",
+    "英文 -> “无障碍服务用于与屏幕交互并自动化繁琐操作，例如多屏点‘清除缓存’”（无障碍服务卡片）",
+    "英文 -> “未经同意不会使用无障碍服务，活跃时始终显示醒目可取消提示，且不用于收集信息”（无障碍服务卡片）",
+    "英文 -> “使用统计权限授予更多应用详情，用于判断额外缓存大小”（用量统计卡片）",
+    "英文 -> “ADB/Root 可提高结果并启用功能；未配置 Porter/Shizuku 或未 Root 则无效”（ADB/Root 卡片）",
+    "英文 -> “用户有特殊无障碍需求时可启用该服务，自动完成原本繁琐的手动交互，如缓存删除”（服务详情页）",
+    "英文 -> “系统警告：允许 SD Maid SE 完全控制设备？可查看/控制屏幕并代你操作”（系统授权弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "欢迎页；英文介绍文件/应用/存储管理与清理释放空间；点击Continue进入隐私页，无通知/遮罩。",
+    "step_02": "隐私页；英文声明无广告、不卖数据，含隐私政策/更新检查/重要消息开关；点击Continue，无遮罩。",
+    "step_03": "设置说明页；英文称将搜索可访问区域、默认安全彻底；点击Set up access进入访问配置，无通知。",
+    "step_04": "存储管理弹层；英文列公共存储/obb/ADB授权并提示路径预选、变绿即成功；点勾选关闭说明，无遮罩。",
+    "step_05": "存储管理卡片；英文说明基础公共存储与SAF可扩大访问，含Android/data与obb路径；下滑继续，无通知/遮罩。",
+    "step_06": "ADB/Root/用量统计卡片；英文称ADB需Porter或Shizuku、Root仅限已Root、统计助算缓存；下滑继续。",
+    "step_07": "无障碍服务卡片；英文称用于屏幕自动化清缓存，承诺需同意、醒目可取消、不收集信息；点击启用并授权。",
+    "step_08": "系统无障碍列表；SD Maid SE显示Off；探针捕获无障碍设置钩子后自动终止，无通知横幅/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针；仍停留系统无障碍列表，无文本、无通知、无遮罩，未发生授权动作。",
+    "post_jump_2.0s": "跳转后2.0秒探针；页面保持系统无障碍列表，无文本、无通知、无遮罩，授权状态未变。",
+    "detail_1_service_detail_page": "服务详情页；Use SD Maid SE开关与快捷方式Off；长文称仅自动化、显眼提示、可随时禁用；仅检查未开启。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗；英文问是否允许完全控制设备，列查看屏幕/代操作，含Allow/Deny；检查时点Deny。",
+    "refusal_2.0s": "拒权返回2秒；回到应用无障碍服务卡片，权限未授予但页面正常，无通知/遮罩，呈优雅保持/降级。",
+    "refusal_10.5s": "拒权返回10.5秒；仍停留无障碍服务卡片，界面稳定无崩溃，无通知/遮罩，继续可手动配置或跳过。"
+  }
+}

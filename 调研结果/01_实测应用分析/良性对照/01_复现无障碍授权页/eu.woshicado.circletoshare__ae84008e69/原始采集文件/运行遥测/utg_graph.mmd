@@ -1,0 +1,13 @@
+flowchart TD
+    N_1e69cdfaa040["Step 1: MainActivity\nCircle to Share"]
+    N_ef1b901fa26b["Step 2: DisclosureActivity\nBefore you turn on the"]
+    N_6ce2cd778917["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_f954f86b44f9["Step 3: SubSettings\nBack"]
+    N_c59706af3568["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Circle to Share "]
+    N_1e69cdfaa040 -->|"ui_click: click([15] Button text='Open acc"| N_ef1b901fa26b
+    N_ef1b901fa26b -->|"ui_click: click([9] Button text='Agree' id"| N_6ce2cd778917
+    N_6ce2cd778917 -->|"detail_probe: click_service()"| N_f954f86b44f9
+    N_f954f86b44f9 -->|"warning_probe: click_use_service_switch"| N_c59706af3568
+    N_6ce2cd778917 -->|"refusal_probe: Back_refuse"| N_1e69cdfaa040
+    N_1e69cdfaa040 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_1e69cdfaa040
+    N_1e69cdfaa040 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_1e69cdfaa040

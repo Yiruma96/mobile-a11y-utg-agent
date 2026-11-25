@@ -1,0 +1,13 @@
+flowchart TD
+    N_1949bf03bceb["Step 1: MainActivity\nMeet Quick Ball"]
+    N_4c9c44e683ec["Step 2: MainActivity\nPermissions"]
+    N_ce2942572e80["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_d90bec372ab3["Step 3: SubSettings\nBack"]
+    N_c384a05515c5["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Quick Ball to ha"]
+    N_1949bf03bceb -->|"ui_click: click([7] View (click) center=(5"| N_4c9c44e683ec
+    N_4c9c44e683ec -->|"ui_click: click([5] View (click) center=(8"| N_ce2942572e80
+    N_ce2942572e80 -->|"detail_probe: click_service()"| N_d90bec372ab3
+    N_d90bec372ab3 -->|"warning_probe: click_use_service_switch"| N_c384a05515c5
+    N_ce2942572e80 -->|"refusal_probe: Back_refuse"| N_4c9c44e683ec
+    N_4c9c44e683ec -->|"refusal_probe: wait(5.5s)_after_refusal"| N_4c9c44e683ec
+    N_4c9c44e683ec -->|"refusal_probe: wait(10.5s)_after_refusal"| N_4c9c44e683ec

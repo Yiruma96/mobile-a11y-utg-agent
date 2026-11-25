@@ -1,0 +1,15 @@
+flowchart TD
+    N_07a663d3f759["Step 1: MainActivity\nNudge"]
+    N_aafa1c0d7443["Step 2: MainActivity\nPermissions"]
+    N_27f2b269a017["Step 3: MainActivity\nHow Nudge Works"]
+    N_fc9404b41f18["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_f2e28f8dc98b["Step 4: SubSettings\nBack"]
+    N_a91942ab3aed["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Nudge - App Bloc"]
+    N_07a663d3f759 -->|"ui_click: click([6] TextView text='Next' c"| N_aafa1c0d7443
+    N_aafa1c0d7443 -->|"ui_click: click([8] TextView text='Grant P"| N_27f2b269a017
+    N_27f2b269a017 -->|"ui_click: click([9] TextView text='I Under"| N_fc9404b41f18
+    N_fc9404b41f18 -->|"detail_probe: click_service()"| N_f2e28f8dc98b
+    N_f2e28f8dc98b -->|"warning_probe: click_use_service_switch"| N_a91942ab3aed
+    N_fc9404b41f18 -->|"refusal_probe: Back_refuse"| N_aafa1c0d7443
+    N_aafa1c0d7443 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_aafa1c0d7443
+    N_aafa1c0d7443 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_aafa1c0d7443

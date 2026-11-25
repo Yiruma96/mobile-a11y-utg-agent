@@ -1,0 +1,366 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_021__ae84008e69",
+  "label": "benign",
+  "family_or_category": "显示调节、截屏与分屏效率",
+  "static_visibility": "clear",
+  "target_package": "eu.woshicado.circletoshare",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "1e69cdfaa040",
+  "hook_node_ids": [
+    "6ce2cd778917",
+    "c59706af3568"
+  ],
+  "nodes": [
+    {
+      "node_id": "1e69cdfaa040",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "eu.woshicado.circletoshare",
+      "abilityName": "eu.woshicado.circletoshare.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Circle to Share",
+        "Grab the screen from anywhere, crop it, and share it. Nothing is saved to your device → nothing to clean up.",
+        "Setup",
+        "✗ Assistant · ✗ Fallback",
+        "1. Set as your assistant (optional)",
+        "Choose Circle to Share as the digital assistant app (Default digital assistant app > Circle to Share). This makes the assistant gesture open the crop overlay (e.g., press and hold the power button, or swipe up from a bottom corner). If a \"Use screen data\" toggle is shown there, enable it.",
+        "✗ Not set as assistant yet",
+        "Open assistant settings",
+        "Show how: Set as your assistant",
+        "2. Enable the capture fallback (recommended)",
+        "If your device doesn't hand screenshots to third-party assistants, the accessibility service captures the screen instead. Under Accessibility > Circle to Share, turn on the main \"Use\" toggle. (This also powers the Quick Settings tile and the floating button, both under \"How to open it\".)",
+        "✗ Fallback disabled",
+        "Open accessibility settings",
+        "Show how: Enable the capture fallback",
+        "3. Try it"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ef1b901fa26b",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "eu.woshicado.circletoshare",
+      "abilityName": "eu.woshicado.circletoshare.DisclosureActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Before you turn on the accessibility service",
+        "Circle to Share uses Android's Accessibility API (AccessibilityService) to capture your screen when you ask it to: from the Quick Settings tile, the floating button, or as a fallback for the assistant gesture. It is not an accessibility tool. Nothing it accesses is collected by, sent to, or shared with the developer or anyone else.",
+        "What it accesses",
+        "• A screenshot of your screen at the moment you trigger a capture.\n\n• The positions and sizes of the elements on screen (not their text or content) at that same moment, and only while \"Snap to screen content\" is switched on.\n\n• Notices from the system that a window has opened or changed, with the window's title and the app it belongs to, and the positions of system windows to recognize the lock screen, the power menu and the notification shade, so the floating button and the crop tool get out of their way.",
+        "How it is used",
+        "• Everything is processed on this device, in memory, to show you the crop tool.\n\n• The part you share or copy is written to the app's private cache so the receiving app can read it. Files older than an hour are deleted the next time you capture.\n\n• An image leaves Circle to Share only when you tap Share or Copy, and only to the app you choose, or when you tap Save, which puts it in your gallery (below Screenshots). The app has no internet permission.\n\n• The service never taps, types or changes settings for you. Its only two actions are (1) closing the notification shade when you use the Quick Settings tile; (2) simulating a swipe gesture when using the (experimental) scrollshot feature. For per-app settings, the app requests the installed app list when that submenu is opened.",
+        "No thanks",
+        "Agree"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "6ce2cd778917",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Circle to Share",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "f954f86b44f9",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Circle to Share",
+        "Use Circle to Share",
+        "OPTIONS",
+        "Circle to Share shortcut",
+        "Off",
+        "Shortcut settings",
+        "Lets Circle to Share capture the screen when you trigger it with the assistant gesture, the Quick Settings tile, or the app's floating button. You can then crop and share it. Screen content (element positions) is read only at the moment of capture, and only to align the crop box with what's on screen; if enabled in the app. Nothing is captured until you trigger it, nothing is saved to your device unless you tap Save, and nothing ever leaves it."
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    },
+    {
+      "node_id": "c59706af3568",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Circle to Share to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_03_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_03_system_warning_layout.xml",
+      "screenshot": "step_03_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "1e69cdfaa040",
+      "to": "ef1b901fa26b",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Open accessibility settings\" id=btn_accessibility_settings (click) center=(370,1925))"
+    },
+    {
+      "from": "ef1b901fa26b",
+      "to": "6ce2cd778917",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([9] Button text=\"Agree\" id=btn_disclosure_agree (click) center=(788,2049))"
+    },
+    {
+      "from": "6ce2cd778917",
+      "to": "f954f86b44f9",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "f954f86b44f9",
+      "to": "c59706af3568",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "6ce2cd778917",
+      "to": "1e69cdfaa040",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "1e69cdfaa040",
+      "to": "1e69cdfaa040",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "1e69cdfaa040",
+      "to": "1e69cdfaa040",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Circle to Share Use Circle to Share OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Circle to Share",
+        "Use Circle to Share",
+        "OPTIONS",
+        "Circle to Share shortcut",
+        "Off",
+        "Shortcut settings",
+        "Lets Circle to Share capture the screen when you trigger it with the assistant gesture, the Quick Settings tile, or the app's floating button. You can then crop and share it. Screen content (element positions) is read only at the moment of capture, and only to align the crop box with what's on screen; if enabled in the app. Nothing is captured until you trigger it, nothing is saved to your device unless you tap Save, and nothing ever leaves it."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Circle to Share to have full control of",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Circle to Share to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "eu.woshicado.circletoshare",
+      "top_activity": "eu.woshicado.circletoshare.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Circle to Share",
+        "Grab the screen from anywhere, crop it, and share it. Nothing is saved to your device → nothing to clean up.",
+        "Setup",
+        "✗ Assistant · ✗ Fallback",
+        "1. Set as your assistant (optional)",
+        "Choose Circle to Share as the digital assistant app (Default digital assistant app > Circle to Share). This makes the assistant gesture open the crop overlay (e.g., press and hold the power button, or swipe up from a bottom corner). If a \"Use screen data\" toggle is shown there, enable it.",
+        "✗ Not set as assistant yet",
+        "Open assistant settings",
+        "Show how: Set as your assistant",
+        "2. Enable the capture fallback (recommended)"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "eu.woshicado.circletoshare",
+      "top_activity": "eu.woshicado.circletoshare.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Circle to Share",
+        "Grab the screen from anywhere, crop it, and share it. Nothing is saved to your device → nothing to clean up.",
+        "Setup",
+        "✗ Assistant · ✗ Fallback",
+        "1. Set as your assistant (optional)",
+        "Choose Circle to Share as the digital assistant app (Default digital assistant app > Circle to Share). This makes the assistant gesture open the crop overlay (e.g., press and hold the power button, or swipe up from a bottom corner). If a \"Use screen data\" toggle is shown there, enable it.",
+        "✗ Not set as assistant yet",
+        "Open assistant settings",
+        "Show how: Set as your assistant",
+        "2. Enable the capture fallback (recommended)"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "eu.woshicado.circletoshare",
+      "top_activity": "eu.woshicado.circletoshare.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Circle to Share",
+        "Grab the screen from anywhere, crop it, and share it. Nothing is saved to your device → nothing to clean up.",
+        "Setup",
+        "✗ Assistant · ✗ Fallback",
+        "1. Set as your assistant (optional)",
+        "Choose Circle to Share as the digital assistant app (Default digital assistant app > Circle to Share). This makes the assistant gesture open the crop overlay (e.g., press and hold the power button, or swipe up from a bottom corner). If a \"Use screen data\" toggle is shown there, enable it.",
+        "✗ Not set as assistant yet",
+        "Open assistant settings",
+        "Show how: Set as your assistant",
+        "2. Enable the capture fallback (recommended)"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "eu.woshicado.circletoshare__ae84008e69",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "该应用从主界面“Setup”引导页出发，先点击“Open accessibility settings”，再在自研披露页点击“Agree”，随后进入系统无障碍列表、服务详情页，并弹出“完全控制设备”的系统警告。用户点 Deny 后，应用被弹回主界面的 Setup 页，并反复停留在此（TRAPPED_ON_LURE_SCREEN），形成循环诱导，不断索要无障碍截屏权限。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “从任意界面抓取屏幕，裁剪后分享；不保存到设备，因此无需清理”（Step 1 主界面，弱化隐私风险）",
+    "英文 -> “设为你的数字助理（可选）……若出现‘使用屏幕数据’开关请打开”（Step 1，鼓励开启屏幕数据共享）",
+    "英文 -> “启用截屏后备方案（推荐）……在无障碍 > Circle to Share 打开主‘使用’开关”（Step 1，以‘推荐’话术引导开启无障碍）",
+    "英文 -> “它不是无障碍工具……所访问的内容不会被开发者收集、发送或共享”“服务从不会替你点击、输入或更改设置”（Step 2 披露页，用免责声明降低戒备并促使同意）",
+    "英文 -> 系统页“允许 Circle to Share 完全控制你的设备？”“可查看和控制屏幕”“可查看并执行操作”（系统警告弹窗，真实高危风险提示）",
+    "英文 -> 服务详情页称“只有你触发时才截取、只有点保存才存盘、内容永不外传”（服务详情页，安抚式说明促使启用）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用主界面“Setup”清单页，两项均标✗未启用；说明文字称可从任意界面截屏并裁剪分享、不存本地。本步点击“Open accessibility settings”，被引向无障碍设置。",
+    "step_02": "应用自研披露页：先声明“不是无障碍工具”，再列所访问的截屏、元素位置与窗口事件及本地处理方式，底部“No thanks”与“Agree”。本步点击“Agree”。",
+    "step_03": "跳转至系统无障碍设置列表，已下载应用区可见“Circle to Share”且状态为 Off；本步被自动终止，已捕获无障碍设置挂点与探针，未做点击。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留在系统无障碍设置列表页，界面元素为空，无通知横幅、无悬浮遮罩（overlays=0），无进一步交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针：页面未变化，仍为系统无障碍设置列表，overlays=0，无通知、无弹窗，也未出现任何取消或退出提示。",
+    "detail_1_service_detail_page": "系统无障碍服务详情页：显示“Use Circle to Share”开关与仅关的快捷方式选项，正文称只在触发时截屏、不全网外传，用于安抚用户启用。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗：“允许 Circle to Share 完全控制你的设备？”，列明可查看控制屏幕、可代为操作，含“Allow/Deny”两键，本步仅检视未授权。",
+    "refusal_2.0s": "点 Deny 后2秒被退回应用主界面 Setup 页，两项仍为✗未启用状态，无失败说明或退出入口，判定为被卡在诱导页。",
+    "refusal_10.5s": "拒权后10.5秒仍停留在同一 Setup 引导页，文案与✗状态不变、无通知无遮罩，反复提示去开无障碍，持续诱导授权。"
+  }
+}

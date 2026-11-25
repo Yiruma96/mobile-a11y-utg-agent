@@ -1,0 +1,24 @@
+flowchart TD
+    N_ad8b816fcee1["Step 1: MainActivity\nWelcome"]
+    N_46e0bb99fce5["Step 2: MainActivity\nPrivacy"]
+    N_833377d48715["Step 3: MainActivity\nSetup"]
+    N_c77b6ddc7d93["Step 4: MainActivity\nManage storage"]
+    N_10c63ca1ff9d["Step 5: MainActivity\nManage storage"]
+    N_8e493eb8e0e0["Step 6: MainActivity\nIn most cases the wind"]
+    N_a7ff833a6c29["Step 7: MainActivity\nI didn't root my devic"]
+    N_b5ea4608ec31["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_3fd9baa587d7["Step 8: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_a7fc56cd9f07["Step 8: SubSettings [HOOK_A11Y_SETTINGS]\nAllow SD Maid SE to ha"]
+    N_6ec8a03b7b91["Step 8: MainActivity\nI didn't root my devic"]
+    N_ad8b816fcee1 -->|"ui_click: click([4] View (click) center=(5"| N_46e0bb99fce5
+    N_46e0bb99fce5 -->|"ui_click: click([11] View (click) center=("| N_833377d48715
+    N_833377d48715 -->|"ui_click: click([10] View (click) center=("| N_c77b6ddc7d93
+    N_c77b6ddc7d93 -->|"ui_click: click([31] View (click) center=("| N_10c63ca1ff9d
+    N_10c63ca1ff9d -->|"ui_swipe: swipe([540, 1800])"| N_8e493eb8e0e0
+    N_8e493eb8e0e0 -->|"ui_swipe: swipe([540, 1800])"| N_a7ff833a6c29
+    N_a7ff833a6c29 -->|"ui_click: click([16] TextView text='Enable"| N_b5ea4608ec31
+    N_b5ea4608ec31 -->|"detail_probe: click_service()"| N_3fd9baa587d7
+    N_3fd9baa587d7 -->|"warning_probe: click_use_service_switch"| N_a7fc56cd9f07
+    N_b5ea4608ec31 -->|"refusal_probe: Back_refuse"| N_6ec8a03b7b91
+    N_6ec8a03b7b91 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_6ec8a03b7b91
+    N_6ec8a03b7b91 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_6ec8a03b7b91

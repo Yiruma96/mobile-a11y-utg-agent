@@ -1,0 +1,385 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "BN_007__1556bd82dd",
+  "label": "benign",
+  "family_or_category": "专注自律与防沉迷管控",
+  "static_visibility": "clear",
+  "target_package": "dev.astraedus.nudge",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": false,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "07a663d3f759",
+  "hook_node_ids": [
+    "fc9404b41f18",
+    "a91942ab3aed"
+  ],
+  "nodes": [
+    {
+      "node_id": "07a663d3f759",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "dev.astraedus.nudge",
+      "abilityName": "com.astraedus.nudge.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Nudge",
+        "Mindful app usage through gentle friction",
+        "Take back control of your screen time with breathing exercises, delays, and daily limits.",
+        "Next"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "aafa1c0d7443",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "dev.astraedus.nudge",
+      "abilityName": "com.astraedus.nudge.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Permissions",
+        "Nudge needs these permissions to work. No data is ever sent anywhere — the app has no internet permission.",
+        "Accessibility Service",
+        "Detects which app is in the foreground so Nudge can trigger your block rules. Also identifies in-app screens (like YouTube Shorts or Instagram Reels) by checking navigation elements. Does not read your messages, keystrokes, or screen content.",
+        "Grant Permission",
+        "Display Over Other Apps",
+        "Shows the delay countdown or breathing exercise overlay on top of blocked apps — this is how Nudge presents the pause before opening. Granting it also helps Nudge restart its own protection if Android stops it in the background. Either way, opening Nudge yourself always brings blocking back if it's stopped.",
+        "Usage Stats Access",
+        "Next"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "27f2b269a017",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "dev.astraedus.nudge",
+      "abilityName": "com.astraedus.nudge.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "How Nudge Works",
+        "Nudge uses Android's Accessibility Service to detect which app is currently open on your screen.",
+        "This lets Nudge show breathing exercises, delays, or blocks when you open apps you've chosen to limit.",
+        "Nudge only reads the name of the app in the foreground. It does not read your messages, keystrokes, passwords, or screen content.",
+        "All data stays on your device. Nudge has no internet permission and cannot send data anywhere.",
+        "Not Now",
+        "I Understand"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "fc9404b41f18",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Nudge - App Blocker",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "f2e28f8dc98b",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Nudge - App Blocker",
+        "Use Nudge - App Blocker",
+        "OPTIONS",
+        "Nudge - App Blocker shortcut",
+        "Off",
+        "Shortcut settings",
+        "Nudge monitors which app is in the foreground to apply your blocking rules. No data leaves your device."
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "a91942ab3aed",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Nudge - App Blocker to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "07a663d3f759",
+      "to": "aafa1c0d7443",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([6] TextView text=\"Next\" center=(540,2016))"
+    },
+    {
+      "from": "aafa1c0d7443",
+      "to": "27f2b269a017",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] TextView text=\"Grant Permission\" center=(540,935))"
+    },
+    {
+      "from": "27f2b269a017",
+      "to": "fc9404b41f18",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([9] TextView text=\"I Understand\" center=(770,1621))"
+    },
+    {
+      "from": "fc9404b41f18",
+      "to": "f2e28f8dc98b",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "f2e28f8dc98b",
+      "to": "a91942ab3aed",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "fc9404b41f18",
+      "to": "aafa1c0d7443",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "aafa1c0d7443",
+      "to": "aafa1c0d7443",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "aafa1c0d7443",
+      "to": "aafa1c0d7443",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Nudge - App Blocker Use Nudge - App Blocker OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Nudge - App Blocker",
+        "Use Nudge - App Blocker",
+        "OPTIONS",
+        "Nudge - App Blocker shortcut",
+        "Off",
+        "Shortcut settings",
+        "Nudge monitors which app is in the foreground to apply your blocking rules. No data leaves your device."
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Nudge - App Blocker to have full contro",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Nudge - App Blocker to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "dev.astraedus.nudge",
+      "top_activity": "com.astraedus.nudge.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permissions",
+        "Nudge needs these permissions to work. No data is ever sent anywhere — the app has no internet permission.",
+        "Accessibility Service",
+        "Detects which app is in the foreground so Nudge can trigger your block rules. Also identifies in-app screens (like YouTube Shorts or Instagram Reels) by checking navigation elements. Does not read your messages, keystrokes, or screen content.",
+        "Grant Permission",
+        "Display Over Other Apps",
+        "Shows the delay countdown or breathing exercise overlay on top of blocked apps — this is how Nudge presents the pause before opening. Granting it also helps Nudge restart its own protection if Android stops it in the background. Either way, opening Nudge yourself always brings blocking back if it's stopped.",
+        "Usage Stats Access",
+        "Next"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "dev.astraedus.nudge",
+      "top_activity": "com.astraedus.nudge.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permissions",
+        "Nudge needs these permissions to work. No data is ever sent anywhere — the app has no internet permission.",
+        "Accessibility Service",
+        "Detects which app is in the foreground so Nudge can trigger your block rules. Also identifies in-app screens (like YouTube Shorts or Instagram Reels) by checking navigation elements. Does not read your messages, keystrokes, or screen content.",
+        "Grant Permission",
+        "Display Over Other Apps",
+        "Shows the delay countdown or breathing exercise overlay on top of blocked apps — this is how Nudge presents the pause before opening. Granting it also helps Nudge restart its own protection if Android stops it in the background. Either way, opening Nudge yourself always brings blocking back if it's stopped.",
+        "Usage Stats Access",
+        "Next"
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "dev.astraedus.nudge",
+      "top_activity": "com.astraedus.nudge.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Permissions",
+        "Nudge needs these permissions to work. No data is ever sent anywhere — the app has no internet permission.",
+        "Accessibility Service",
+        "Detects which app is in the foreground so Nudge can trigger your block rules. Also identifies in-app screens (like YouTube Shorts or Instagram Reels) by checking navigation elements. Does not read your messages, keystrokes, or screen content.",
+        "Grant Permission",
+        "Display Over Other Apps",
+        "Shows the delay countdown or breathing exercise overlay on top of blocked apps — this is how Nudge presents the pause before opening. Granting it also helps Nudge restart its own protection if Android stops it in the background. Either way, opening Nudge yourself always brings blocking back if it's stopped.",
+        "Usage Stats Access",
+        "Next"
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "dev.astraedus.nudge__1556bd82dd",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以“温和摩擦、夺回屏幕时间”引导进入三步式权限说明，反复强调无障碍仅识别前台应用且无联网，从而推动授予无障碍、悬浮窗与用量权限；在系统无障碍警告页拒绝后返回权限页并停留于劝授权界面（TRAPPED_ON_LURE_SCREEN）。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 以“温和摩擦”实现正念应用使用（Step1主页）",
+    "英文 -> 通过呼吸练习、延迟和每日限额夺回屏幕时间（Step1主页）",
+    "英文 -> 声称所需权限必要且数据永不外发、应用无联网权限（Step2权限页）",
+    "英文 -> 声称不读取消息、按键或屏幕内容（Step2权限页）",
+    "英文 -> 以帮助后台自启恢复保护为由劝说授予悬浮窗（Step2权限页）",
+    "英文 -> 仅读取前台应用名、数据留在本机且无联网（Step3说明弹窗）",
+    "英文 -> 系统警告称授予后将完全控制设备，仅适合无障碍需求应用（系统警告弹窗）",
+    "英文 -> 无障碍服务详情页再次解释仅监控前台应用、数据不出设备（服务详情页）",
+    "英文 -> 通知横幅称无障碍关闭、应用未被拦截，点按可重新开启（各页通知）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Nudge引导首页，称以呼吸、延迟和每日限额实现温和防沉迷；点“Next”进入权限说明。通知横幅提示无障碍已关闭、拦截失效。",
+    "step_02": "权限说明页，逐项解释无障碍、悬浮窗、用量权限，称无联网且数据不外发；本步点无障碍卡片“Grant Permission”。通知仍提示拦截失效。",
+    "step_03": "应用内说明弹窗，称无障碍仅识别前台应用名、不读内容且数据留本机；点“I Understand”确认并跳系统无障碍设置。通知横幅持续提示权限关闭。",
+    "step_04": "[无障碍列表页]系统设置中“Nudge - App Blocker”显示Off；探针捕获设置钩子后自动终止。通知横幅仍称Nudge已停止拦截，引导点按重开。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停在系统无障碍列表页，无可见控件文本与悬浮遮罩；通知横幅继续提示Nudge未拦截、权限关闭。",
+    "post_jump_2.0s": "跳转后2.0秒探针：界面与通知保持不变，仍为系统无障碍列表，无悬浮遮罩；应用未自动恢复授权流程。",
+    "detail_1_service_detail_page": "Nudge无障碍服务详情页，开关Off，说明称仅监控前台应用且数据不出设备；含“Use Nudge - App Blocker”入口，通知仍提示未拦截。",
+    "detail_2_system_warning_dialog": "系统无障碍警告弹窗：称授予后可查看/控制屏幕、执行操作并完全控制设备，仅适合无障碍需求；本步检查后出现Allow/Deny，未点允许。",
+    "refusal_2.0s": "拒权后2秒回到权限页，仍显示Grant Permission与Next，无取消/退出；仅剩一条通知称无障碍关闭，陷入劝授权停留屏。",
+    "refusal_10.5s": "拒权后10.5秒界面无变化，仍停留在权限说明页要求Grant Permission；无取消路径且通知持续称无障碍关闭，符合TRAPPED_ON_LURE_SCREEN。"
+  }
+}

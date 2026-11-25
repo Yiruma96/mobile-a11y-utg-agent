@@ -1,0 +1,13 @@
+flowchart TD
+    N_89240d01eaec["Step 1: MainActivity\nOverview"]
+    N_f78c5f3a4c2c["Step 2: AccessibilityConsentActivity\nEnable accessibility a"]
+    N_3fcb99c4d684["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_015165f7ec8a["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_5ce333e4926a["Step 3: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Extend to have f"]
+    N_89240d01eaec -->|"ui_click: click([9] Button text='Enable' i"| N_f78c5f3a4c2c
+    N_f78c5f3a4c2c -->|"ui_click: click([4] Button text='Enable' i"| N_3fcb99c4d684
+    N_3fcb99c4d684 -->|"detail_probe: click_service()"| N_015165f7ec8a
+    N_015165f7ec8a -->|"warning_probe: click_use_service_switch"| N_5ce333e4926a
+    N_3fcb99c4d684 -->|"refusal_probe: Back_refuse"| N_89240d01eaec
+    N_89240d01eaec -->|"refusal_probe: wait(5.5s)_after_refusal"| N_89240d01eaec
+    N_89240d01eaec -->|"refusal_probe: wait(10.5s)_after_refusal"| N_89240d01eaec

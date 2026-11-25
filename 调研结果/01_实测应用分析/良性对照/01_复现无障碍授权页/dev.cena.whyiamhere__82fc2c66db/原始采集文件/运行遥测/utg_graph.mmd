@@ -1,0 +1,11 @@
+flowchart TD
+    N_b6a6135c3af5["Step 1: SettingsActivity\nWhy am I here?"]
+    N_7941d2eb08d1["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_3145171bee89["Step 2: SubSettings\nBack"]
+    N_1283a5b2e74d["Step 2: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Why am I here? t"]
+    N_b6a6135c3af5 -->|"ui_click: click([8] TextView text='Open se"| N_7941d2eb08d1
+    N_7941d2eb08d1 -->|"detail_probe: click_service()"| N_3145171bee89
+    N_3145171bee89 -->|"warning_probe: click_use_service_switch"| N_1283a5b2e74d
+    N_7941d2eb08d1 -->|"refusal_probe: Back_refuse"| N_b6a6135c3af5
+    N_b6a6135c3af5 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_b6a6135c3af5
+    N_b6a6135c3af5 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_b6a6135c3af5
