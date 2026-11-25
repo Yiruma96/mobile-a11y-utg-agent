@@ -175,12 +175,13 @@ python tests/test_xml_to_harmony_converter.py
 
 | 路径 | 内容说明 |
 |---|---|
+| [`FINAL_CORPUS_INDEX.md`](./FINAL_CORPUS_INDEX.md) | **三源统一融合总目录导航**：一键串联 418 静态报告 + 418 同名动态 UTG + 18 份一案一档公开情报 + 本地样本映射 + 一键刷新流水线 |
 | [`a11y_utg_agent/`](./a11y_utg_agent/) | 全部可复用 Python 源码（`gui_agent.py`、`device_bridge.py`、`android_xml_to_harmony_json.py`、`storyboard.py`、`batch_runner.py`、`llm_client.py`） |
 | [`docs/移动端无障碍权限诱骗机理与UTG检测方案研究.pptx`](./docs/移动端无障碍权限诱骗机理与UTG检测方案研究.pptx) | **27 页学术研究汇报 PPT**（涵盖三源 1,769 APK 语料溯源、7 篇顶会文献对比与一页一篇精读附录、25 条诱导模式、70 款良性工具避坑对照、双锚点五类黄金 UTG 捕获页与 99.6%/0% 回测边界） |
 | [`docs/无障碍权限诱骗三源融合话术与手法全景库.md`](./docs/无障碍权限诱骗三源融合话术与手法全景库.md) | **三源融合话术与手法全景库**：打通动态实测 + 418 份静态审计 + 国内外真实涉诈情报（L0–L4 五级隐蔽度分层、8 语种 6 大主题话术库、动态伪装服务名与通知横幅实录），附机器可读 [`results/fused_a11y_inducement_kb.json`](./results/fused_a11y_inducement_kb.json) |
 | [`docs/鸿蒙端侧纯UTG轻量级裁剪方案与消融分析.md`](./docs/鸿蒙端侧纯UTG轻量级裁剪方案与消融分析.md) | **鸿蒙端侧纯 UTG 轻量级裁剪消融实验（P0 → P4）**：实测 625 KB → 2.66 KB（-99.6% 压缩 / 779 Tokens）与 `<300 B` 跨通道微包保真度对比，附 [`results/utg_pruning_ablation_results.json`](./results/utg_pruning_ablation_results.json) |
-| [`threat_intel_cases/`](./threat_intel_cases/国内外公开威胁情报与涉诈实战案例集.md) | **国内外公开威胁情报与涉诈实战案例集**（结构化 [`threat_intel_cases.json`](./threat_intel_cases/threat_intel_cases.json) + 中文研判报告）：专门补齐国内「银联会议/中银会议/抖音会议/合法远控滥用」带外语音诱骗、鸿蒙/安卓「受限设置」绕过与 2024–2025 `SecuriDropper`/`Vultur`/`Brokewell`/`Crocodilus`/`ToxicPanda`/`PlayPraetor`/`Anatsa` 实战案例 |
-| [`docs/诱导用户开启无障碍行为模式清单.md`](./docs/诱导用户开启无障碍行为模式清单.md) | 面向纯 UTG 检测机制设计的 **25 条恶意行为模式清单**、**5 类黄金捕获页优先级矩阵**、**3 大良性误报雷区**与 **82 家族速查表** |
+| [`threat_intel_cases/`](./threat_intel_cases/国内外公开威胁情报与涉诈实战案例集.md) | **18 份「一案一档」国内外公开威胁情报与涉诈实战案例集**（[`cases/INTEL_*.md`](./threat_intel_cases/cases/) + [`threat_intel_cases.json`](./threat_intel_cases/threat_intel_cases.json)）：覆盖国内「银联会议/中银会议/抖音会议/N+会议/国密会议/RustDesk与向日葵滥用/深夜数币盗刷/假国家反诈/受限解锁」与全球 2024–2026 `SecuriDropper`/`BugDrop`/`Zombinder`/`Chameleon`/`Vultur`/`Brokewell`/`Crocodilus`/`ToxicPanda`/`PlayPraetor`/`Anatsa`/`GodFather虚拟化`/`Snowblind`/`FakeCall`/`RatOn+NGate+SuperCardX`/`PixPirate` |
+| [`docs/诱导用户开启无障碍行为模式清单.md`](./docs/诱导用户开启无障碍行为模式清单.md) | **三源融合全谱系 34 条行为模式清单**（25 静态 + 9 动态/情报补盲）、**6 大诱导原型**（含原型 6 带外通话+伪会议/NFC）、**首启不暴露三源补全矩阵**与 82 家族速查表 |
 | [`docs/Android无障碍权限诱骗样本分析与正邪对照报告.md`](./docs/Android无障碍权限诱骗样本分析与正邪对照报告.md) | 跨十年（2014–2026）正邪对照完整实证分析报告 |
 | [`results/dataset_provenance_1769.csv`](./results/dataset_provenance_1769.csv) | 1,769 个核验无障碍 APK 的公开来源与 SHA-256 溯源台账（MalRadar + MalwareBazaar + F-Droid / IzzyOnDroid / GitHub） |
 | [`results/per_app_reports/INDEX.md`](./results/per_app_reports/INDEX.md) | **418 份「一应用一文件」代码逆向行为分析报告**（348 恶意覆盖 82/82 全家族 + 70 良性覆盖 11/11 全品类），及一一对应总表 [`REPORT_APK_UTG_MANIFEST.csv`](./results/per_app_reports/REPORT_APK_UTG_MANIFEST.csv) |

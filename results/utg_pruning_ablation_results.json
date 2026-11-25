@@ -1,70 +1,70 @@
 {
-  "generated_at": "2026-11-25 14:32",
-  "evaluated_apps": 257,
+  "generated_at": "2026-11-25 15:31",
+  "evaluated_apps": 302,
   "levels": [
     {
       "level": "P0",
       "desc": "无损全量基线（全部页面 + 30 项完整鸿蒙属性 + 全部容器节点）",
       "avg_pages": 8.5,
-      "avg_kb": 625.41,
+      "avg_kb": 616.38,
       "byte_reduction_pct": 0.0,
-      "avg_nodes": 308.1,
+      "avg_nodes": 304.3,
       "node_reduction_pct": 0.0,
-      "avg_est_tokens": 182976.0
+      "avg_est_tokens": 180336.0
     },
     {
       "level": "P1",
       "desc": "页面级锚点窗口裁剪（仅保留 5 类黄金锚点页：跳前/列表/跳后+2s/详情/拒权）",
       "avg_pages": 3.3,
-      "avg_kb": 293.6,
-      "byte_reduction_pct": 53.1,
-      "avg_nodes": 140.6,
-      "node_reduction_pct": 54.4,
-      "avg_est_tokens": 85900.0
+      "avg_kb": 291.19,
+      "byte_reduction_pct": 52.8,
+      "avg_nodes": 139.6,
+      "node_reduction_pct": 54.1,
+      "avg_est_tokens": 85194.0
     },
     {
       "level": "P2",
       "desc": "P1 + 节点级裁剪（剪除无文本无交互布局壳与系统设置样板行）",
       "avg_pages": 3.3,
-      "avg_kb": 30.65,
+      "avg_kb": 30.3,
       "byte_reduction_pct": 95.1,
-      "avg_nodes": 49.4,
-      "node_reduction_pct": 84.0,
-      "avg_est_tokens": 8967.0
+      "avg_nodes": 48.9,
+      "node_reduction_pct": 83.9,
+      "avg_est_tokens": 8864.0
     },
     {
       "level": "P3",
       "desc": "P2 + 属性级裁剪（30 项属性压至 8 项核心属性 + 窗口元信息）",
       "avg_pages": 3.3,
-      "avg_kb": 5.44,
+      "avg_kb": 5.37,
       "byte_reduction_pct": 99.1,
-      "avg_nodes": 49.4,
-      "node_reduction_pct": 84.0,
-      "avg_est_tokens": 1592.0
+      "avg_nodes": 48.9,
+      "node_reduction_pct": 83.9,
+      "avg_est_tokens": 1572.0
     },
     {
       "level": "P4",
       "desc": "P3 + 紧凑元组序列化 + 跨通道微包（<300 B 通知横幅/悬浮窗/步长/拒权头）",
       "avg_pages": 3.3,
-      "avg_kb": 2.66,
+      "avg_kb": 2.63,
       "byte_reduction_pct": 99.6,
-      "avg_nodes": 46.0,
-      "node_reduction_pct": 85.1,
-      "avg_est_tokens": 779.0
+      "avg_nodes": 45.5,
+      "node_reduction_pct": 85.0,
+      "avg_est_tokens": 769.0
     }
   ],
   "signal_checks": {
-    "hooked_total": 126,
-    "hooked_mal": 88,
+    "hooked_total": 148,
+    "hooked_mal": 110,
     "hooked_ben": 38,
-    "pre_lure_text_retained_P3": 87,
-    "pre_lure_text_present_P0": 87,
-    "service_detail_retained_P3": 118,
-    "service_detail_present_P0": 118,
-    "notif_signal_total": 51,
-    "notif_retained_P3_layout_only": 6,
-    "notif_retained_P4_cross_channel": 51,
-    "mal_zero_pre_or_step1": 28,
+    "pre_lure_text_retained_P3": 99,
+    "pre_lure_text_present_P0": 99,
+    "service_detail_retained_P3": 139,
+    "service_detail_present_P0": 139,
+    "notif_signal_total": 63,
+    "notif_retained_P3_layout_only": 7,
+    "notif_retained_P4_cross_channel": 63,
+    "mal_zero_pre_or_step1": 37,
     "ben_zero_pre_or_step1": 0
   }
 }
