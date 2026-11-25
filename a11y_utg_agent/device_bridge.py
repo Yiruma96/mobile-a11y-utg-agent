@@ -552,10 +552,11 @@ class AndroidLayoutController:
     def install_apk(self, apk_path: Path) -> tuple[bool, str]:
         """Install an APK safely even when Windows host path contains CJK characters."""
         # Stream APK directly via `adb exec-in` / temp ASCII staging to bypass Windows ANSI fopen bug in adb.exe
-        import shutil, tempfile
+        import os, shutil, tempfile
         tmp_dir = Path(tempfile.gettempdir()) / "gui_owl_apk_stage"
         tmp_dir.mkdir(parents=True, exist_ok=True)
-        staged = tmp_dir / "stage_app.apk"
+        safe_dev = re.sub(r"[^A-Za-z0-9_.-]+", "_", self.device or "default")
+        staged = tmp_dir / f"stage_{safe_dev}_{os.getpid()}.apk"
         shutil.copy2(apk_path, staged)
         try:
             r = self.run_adb(["install", "-r", str(staged)], timeout=90)
