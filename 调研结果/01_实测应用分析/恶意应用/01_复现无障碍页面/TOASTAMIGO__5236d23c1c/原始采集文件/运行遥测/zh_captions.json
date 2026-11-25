@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用启动即在应用列表页弹出英文Attention对话框，以Android版本为由引导前往无障碍服务开启App Locker；进入系统无障碍设置与服务详情后触发全控权限警告，拒绝授权后返回并自动重弹同一诱导框，形成循环施压。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「Attention」（启动页/拒权后的诱导弹窗标题）",
+    "英文 -> 「本设备版本高于Android 4.0.3，请前往设置→无障碍服务→App Locker并开启」（启动页/拒权后的ApplicationListActivity）",
+    "英文 -> 「允许Smart AppLocker完全控制您的设备？」（系统无障碍授权警告页）",
+    "英文 -> 「完全控制适合有辅助需求的应用，但不适合大多数应用」（系统警告说明）",
+    "英文 -> 「查看并控制屏幕：可读取屏幕上所有内容并叠加显示在其他应用上」（系统警告权限说明）",
+    "英文 -> 「查看并执行操作：可跟踪与应用的交互或硬件传感器，并代表您操作应用」（系统警告权限说明）",
+    "英文 -> 「该服务用于Android 4.0.3及以上轻松锁定应用」（服务详情页说明）",
+    "英文占位 -> 「AppLocker / 服务正在运行」（全局通知横幅，贯穿各页）"
+  ],
+  "frame_captions": {
+    "step_01": "启动页Attention框诱导去无障碍开启App Locker；点Confirm后通知栏常驻服务运行中。",
+    "step_02": "跳至系统无障碍设置，Smart AppLocker显示Off；捕获设置钩子后终止，通知栏仍显示服务运行中。",
+    "post_jump_0.8s": "跳后0.8秒探针仍在无障碍设置页，无可读文本、遮罩为0；仅见AppLocker服务运行中通知。",
+    "post_jump_2.0s": "跳后2.0秒探针仍停留无障碍设置页，无新增文本与遮罩；通知栏持续显示AppLocker服务运行中。",
+    "detail_1_service_detail_page": "Smart AppLocker服务详情含Use开关、快捷键/音量键选项，英文说明称用于Android 4.0.3以上轻松锁应用。",
+    "detail_2_system_warning_dialog": "系统警告询问是否允许Smart AppLocker完全控制设备，列明可读屏、叠加显示并代为操作；本步检查未点允许/拒绝。",
+    "refusal_2.0s": "拒权后2秒返回应用列表页，原Attention诱导框自动重弹，仍要求去无障碍开启App Locker；通知栏服务运行中。",
+    "refusal_10.5s": "拒权后10.5秒仍返回并重弹Attention诱导框，要求去无障碍开启App Locker；通知栏服务运行中，呈循环施压。"
+  }
+}

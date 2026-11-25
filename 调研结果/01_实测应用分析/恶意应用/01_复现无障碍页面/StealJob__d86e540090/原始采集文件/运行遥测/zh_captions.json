@@ -1,0 +1,25 @@
+{
+  "app_chain_summary_zh": "该应用伪装成 Google 更新服务，先借系统权限审查索取短信、文件媒体、联系人、通话记录、电话、麦克风与定位，再以兼容性提示和“须开启无障碍才能工作”的弹窗诱导进入系统无障碍设置并申请完全控制设备；拒绝授权后主界面空白滞留，形成 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "English: Choose what to allow Google Update Service to access -> 选择允许“Google Update Service”访问哪些内容（系统权限审查页）",
+    "English: send and view SMS messages; access photos, media, and files on your device; access your contacts; read and write phone call log; make and manage phone calls; record audio; Location -> 发送和查看短信；访问照片、媒体和文件；访问联系人；读写通话记录；拨打和管理电话；录音；定位（权限审查页权限说明）",
+    "English: This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 该应用为旧版 Android 构建，可能无法正常工作，请检查更新或联系开发者（兼容性警告）",
+    "English: Please enable 'Accessibility' for 'Google Update Service' to get this working. Tap on 'Ok' to go to Accessibility Settings. -> 请为“Google Update Service”开启“无障碍”才能正常工作，点击“确定”前往无障碍设置（主界面诱导弹窗）",
+    "English: Allow Google Update Service to have full control of your device? -> 允许“Google Update Service”完全控制您的设备？（系统无障碍警告）",
+    "English: Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于帮助无障碍需求的应用，不适用于大多数应用（系统无障碍警告）",
+    "English: View and control screen; It can read all content on the screen and display content over other apps. -> 查看并控制屏幕；可读取屏幕所有内容并悬浮显示于其他应用之上（系统无障碍警告）",
+    "English: View and perform actions; It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 查看并执行操作；可跟踪与应用或硬件传感器的交互，并代表您与应用交互（系统无障碍警告）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审查页，以“Google Update Service”名义请求短信、文件媒体、联系人、通话记录、电话、麦克风、定位；本步点 Continue 继续。",
+    "step_02": "应用主界面弹出 Android 兼容性警告，称该应用为旧版构建、可能无法正常工作；点 OK 关闭后进入原生流程。",
+    "step_03": "应用原生弹窗仅见 OK，称须为“Google Update Service”开启无障碍才能工作，点击后跳系统无障碍设置。",
+    "step_04": "系统无障碍列表页，DOWNLOADED APPS 下“Google Update Service”显示 Off；采集到设置钩子与探针后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在系统无障碍设置页，无新增文本、无通知横幅、无遮罩。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面文本为空、仍为无障碍设置页，overlays=0，未见应用悬浮层。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示“Use Google Update Service”、快捷键与音量键选项；尚未授权，仅巡检详情。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告：询问是否允许“Google Update Service”完全控制设备，列明读屏、悬浮、跟踪交互并代操作；随后走 Deny 拒绝。",
+    "refusal_2.0s": "拒绝授权后 2 秒返回应用 MainActivity，界面无文本/无控件，仍被困在诱导页，标记 TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒绝后 10.5 秒仍困于 MainActivity 空白诱导页，无文本、无通知、无遮罩，未放行到正常功能。"
+  }
+}

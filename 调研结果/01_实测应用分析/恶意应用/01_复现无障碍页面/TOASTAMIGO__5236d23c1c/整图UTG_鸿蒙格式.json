@@ -1,0 +1,309 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_007__5236d23c1c",
+  "label": "malicious",
+  "family_or_category": "TOASTAMIGO",
+  "static_visibility": "clear",
+  "target_package": "com.agomi.applocker",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "d198561d9a49",
+  "hook_node_ids": [
+    "d74db3356b26",
+    "010628c277e3"
+  ],
+  "nodes": [
+    {
+      "node_id": "d198561d9a49",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.agomi.applocker",
+      "abilityName": "com.goami.applocker.AppLocker.ApplicationListActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Attention",
+        "This device version is above Android 4.0.3 .Please Go Setting->AccessibilityService->App Locker and Open it.",
+        "Cancel",
+        "Confirm"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d74db3356b26",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Smart AppLocker",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "32d7e6b072e6",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Smart AppLocker",
+        "Use Smart AppLocker",
+        "OPTIONS",
+        "Smart AppLocker shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "The service for the purpose of Android 4.0.3 and above to lock apps easily."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "010628c277e3",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Smart AppLocker to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "d198561d9a49",
+      "to": "d74db3356b26",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([4] TextView text=\"Confirm\" id=btn_ok (click) center=(808,1334))"
+    },
+    {
+      "from": "d74db3356b26",
+      "to": "32d7e6b072e6",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "32d7e6b072e6",
+      "to": "010628c277e3",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "d74db3356b26",
+      "to": "d198561d9a49",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "d198561d9a49",
+      "to": "d198561d9a49",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "d198561d9a49",
+      "to": "d198561d9a49",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Smart AppLocker Use Smart AppLocker OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Smart AppLocker",
+        "Use Smart AppLocker",
+        "OPTIONS",
+        "Smart AppLocker shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "The service for the purpose of Android 4.0.3 and above to lock apps easily."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Smart AppLocker to have full control of",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Smart AppLocker to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.agomi.applocker",
+      "top_activity": "com.goami.applocker.AppLocker.ApplicationListActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention",
+        "This device version is above Android 4.0.3 .Please Go Setting->AccessibilityService->App Locker and Open it.",
+        "Cancel",
+        "Confirm"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.agomi.applocker",
+      "top_activity": "com.goami.applocker.AppLocker.ApplicationListActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention",
+        "This device version is above Android 4.0.3 .Please Go Setting->AccessibilityService->App Locker and Open it.",
+        "Cancel",
+        "Confirm"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.agomi.applocker",
+      "top_activity": "com.goami.applocker.AppLocker.ApplicationListActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Attention",
+        "This device version is above Android 4.0.3 .Please Go Setting->AccessibilityService->App Locker and Open it.",
+        "Cancel",
+        "Confirm"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "TOASTAMIGO__5236d23c1c",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用启动即在应用列表页弹出英文Attention对话框，以Android版本为由引导前往无障碍服务开启App Locker；进入系统无障碍设置与服务详情后触发全控权限警告，拒绝授权后返回并自动重弹同一诱导框，形成循环施压。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 「Attention」（启动页/拒权后的诱导弹窗标题）",
+    "英文 -> 「本设备版本高于Android 4.0.3，请前往设置→无障碍服务→App Locker并开启」（启动页/拒权后的ApplicationListActivity）",
+    "英文 -> 「允许Smart AppLocker完全控制您的设备？」（系统无障碍授权警告页）",
+    "英文 -> 「完全控制适合有辅助需求的应用，但不适合大多数应用」（系统警告说明）",
+    "英文 -> 「查看并控制屏幕：可读取屏幕上所有内容并叠加显示在其他应用上」（系统警告权限说明）",
+    "英文 -> 「查看并执行操作：可跟踪与应用的交互或硬件传感器，并代表您操作应用」（系统警告权限说明）",
+    "英文 -> 「该服务用于Android 4.0.3及以上轻松锁定应用」（服务详情页说明）",
+    "英文占位 -> 「AppLocker / 服务正在运行」（全局通知横幅，贯穿各页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "启动页Attention框诱导去无障碍开启App Locker；点Confirm后通知栏常驻服务运行中。",
+    "step_02": "跳至系统无障碍设置，Smart AppLocker显示Off；捕获设置钩子后终止，通知栏仍显示服务运行中。",
+    "post_jump_0.8s": "跳后0.8秒探针仍在无障碍设置页，无可读文本、遮罩为0；仅见AppLocker服务运行中通知。",
+    "post_jump_2.0s": "跳后2.0秒探针仍停留无障碍设置页，无新增文本与遮罩；通知栏持续显示AppLocker服务运行中。",
+    "detail_1_service_detail_page": "Smart AppLocker服务详情含Use开关、快捷键/音量键选项，英文说明称用于Android 4.0.3以上轻松锁应用。",
+    "detail_2_system_warning_dialog": "系统警告询问是否允许Smart AppLocker完全控制设备，列明可读屏、叠加显示并代为操作；本步检查未点允许/拒绝。",
+    "refusal_2.0s": "拒权后2秒返回应用列表页，原Attention诱导框自动重弹，仍要求去无障碍开启App Locker；通知栏服务运行中。",
+    "refusal_10.5s": "拒权后10.5秒仍返回并重弹Attention诱导框，要求去无障碍开启App Locker；通知栏服务运行中，呈循环施压。"
+  }
+}

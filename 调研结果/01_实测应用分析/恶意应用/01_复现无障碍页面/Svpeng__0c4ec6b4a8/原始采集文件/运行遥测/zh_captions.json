@@ -1,0 +1,28 @@
+{
+  "app_chain_summary_zh": "应用伪装成俄语二手平台 Авито，先诱导一次性授予短信、联系人和电话权限，再多次尝试拉起主包；失败后以静态跳转进入无障碍设置，借“Google Play”名义请求完全控制设备，点 Deny 后仍重新拉起无障碍设置页。",
+  "observed_lure_rhetoric_zh": [
+    "英语+俄语品牌名 -> 选择允许 Авито（Avito）访问哪些权限（权限审核页）",
+    "send and view SMS messages -> 发送和查看短信（权限审核页）",
+    "access your contacts -> 访问你的联系人（权限审核页）",
+    "make and manage phone calls -> 拨打和管理电话（权限审核页）",
+    "This app was built for an older version of Android and may not work properly. -> 此应用为旧版 Android 构建，可能无法正常运行（桌面兼容性弹窗）",
+    "Allow Google Play to have full control of your device? -> 允许 Google Play 完全控制你的设备吗？（无障碍系统警告）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于辅助功能类应用，并不适合大多数应用（无障碍警告）",
+    "View and control screen -> 查看并控制屏幕：可读取屏幕全部内容并悬浮显示（无障碍警告）",
+    "View and perform actions -> 查看并执行操作：可跟踪交互并代表你操作应用（无障碍警告）",
+    "Use Google Play / Google Play shortcut / Hold volume keys / No description provided. -> 使用 Google Play / Google Play 快捷方式 / 长按音量键 / 未提供说明（服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审核页伪装成 Авито，列出短信、联系人、电话三项敏感权限；本步点击 Continue（继续），无取消以外的拒绝引导。",
+    "step_02": "桌面弹出旧版 Android 兼容性提示，称 Авито 可能无法正常运行；本步点击 OK 关闭系统提示，未进入主界面。",
+    "step_03": "回到桌面应用列表，显示 Messages、Chrome 等图标；本步尝试重新打开目标包，未出现新界面，继续等待权限向导。",
+    "step_04": "仍在桌面应用列表，无新弹窗；本步再次按包名拉起目标应用，仍未出现可见界面，属重复拉起尝试。",
+    "step_05": "桌面静态跳转兜底，目标指向 bubbleshooter.orig.jlncg46bksq；本步无可见业务页，直接切往后续无障碍相关界面。",
+    "step_06": "进入系统无障碍设置列表，可见 Google Play 显示 Off；本步命中无障碍设置钩子并自动终止，未点开开关。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在无障碍设置页，无可见文本、无通知横幅、无遮罩，未发生二次跳转。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面与遮罩仍无变化，无通知弹出，说明应用在无障碍页潜伏等待后续操作。",
+    "detail_1_service_detail_page": "进入 Google Play 服务详情页，显示 Use Google Play、快捷方式、长按音量键及“未提供说明”；本步仅查看详情与警告。",
+    "detail_2_system_warning_dialog": "系统警告弹窗称允许 Google Play 完全控制设备，并解释可读屏、悬浮、跟踪与代操作；本步查看后选择 Deny（拒绝）。",
+    "refusal_2.0s": "点 Deny 后返回无障碍列表，Google Play 仍为 Off；但应用随即重新拉起无障碍设置页，呈现拒权后复发行为。"
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_102__4b48e4268b",
+  "label": "malicious",
+  "family_or_category": "Svpeng",
+  "static_visibility": "clear",
+  "target_package": "com.ufotosoft.justshot",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "8b480000a4ad",
+  "hook_node_ids": [
+    "97b8e356ca3c",
+    "a4a4ce6136f3"
+  ],
+  "nodes": [
+    {
+      "node_id": "8b480000a4ad",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Avito to access",
+        "SMS",
+        "send and view SMS messages",
+        "Contacts",
+        "access your contacts",
+        "Phone",
+        "make and manage phone calls",
+        "Cancel",
+        "Continue"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "8c34e3652d5c",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Avito",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1159e24777c9",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.google.android.apps.nexuslauncher",
+      "abilityName": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-1°C",
+        "Cloudy, -1°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "97b8e356ca3c",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Play",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_07_layout_harmony.json",
+      "android_layout_xml": "step_07_layout.xml",
+      "screenshot": "step_07_screen.png"
+    },
+    {
+      "node_id": "0183604640f1",
+      "first_step": 7,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Google Play",
+        "Use Google Play",
+        "OPTIONS",
+        "Google Play shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "harmony_layout_json": "step_07_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_07_service_detail_layout.xml",
+      "screenshot": "step_07_service_detail_screen.png"
+    },
+    {
+      "node_id": "a4a4ce6136f3",
+      "first_step": 7,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Google Play to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_07_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_07_system_warning_layout.xml",
+      "screenshot": "step_07_system_warning_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8b480000a4ad",
+      "to": "8c34e3652d5c",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([15] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "8c34e3652d5c",
+      "to": "1159e24777c9",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 3,
+      "edge_type": "ui_open",
+      "action": "open()"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 4,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "1159e24777c9",
+      "step": 5,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(UninstallerActivity)"
+    },
+    {
+      "from": "1159e24777c9",
+      "to": "97b8e356ca3c",
+      "step": 6,
+      "edge_type": "static_guided_activity_jump",
+      "action": "am_start(ium5n2zk7lq)"
+    },
+    {
+      "from": "97b8e356ca3c",
+      "to": "0183604640f1",
+      "step": 7,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "0183604640f1",
+      "to": "a4a4ce6136f3",
+      "step": 7,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "97b8e356ca3c",
+      "to": "97b8e356ca3c",
+      "step": 7,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 7,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_07_screen.png",
+      "raw_layout_path": "step_07_layout.xml",
+      "harmony_layout_path": "step_07_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_800ms_screen.png",
+          "harmony_layout_path": "step_07_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_07_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_07_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Google Play Use Google Play OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Google Play",
+        "Use Google Play",
+        "OPTIONS",
+        "Google Play shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "No description provided."
+      ],
+      "screenshot_path": "step_07_service_detail_screen.png",
+      "harmony_layout_path": "step_07_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Google Play to have full control of you",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Google Play to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_07_system_warning_screen.png",
+      "harmony_layout_path": "step_07_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Play",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_07_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_07_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Svpeng__4b48e4268b",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "应用先以 Avito 名义请求短信、联系人和电话权限，再经兼容警告与桌面静态跳转探测卸载器及其他应用包，最终进入无障碍设置并拉起 Google Play 全控制授权警告；拒绝后仍重新拉起无障碍设置。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 选择允许Avito访问哪些内容（Step1 权限复核页）",
+    "英语 -> 发送和查看短信（Step1 权限复核页）",
+    "英语 -> 访问你的联系人（Step1 权限复核页）",
+    "英语 -> 拨打和管理电话（Step1 权限复核页）",
+    "英语 -> 此应用针对旧版Android构建，可能无法正常运行（Step2 兼容警告）",
+    "英语 -> 允许Google Play完全控制你的设备？（系统警告弹窗）",
+    "英语 -> 完全控制适合辅助无障碍需求的应用，但不适合大多数应用（系统警告弹窗）",
+    "英语 -> 查看并控制屏幕（系统警告弹窗）",
+    "英语 -> 可读取屏幕所有内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "英语 -> 查看并执行操作（系统警告弹窗）",
+    "英语 -> 可追踪你与应用或硬件传感器的交互，并代表你与应用交互（系统警告弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限复核页显示“允许Avito访问”，列短信、联系人、电话权限，含取消/继续；本步点击“继续”放行。",
+    "step_02": "桌面弹出旧版Android兼容警告，称应用可能无法正常运行；本步点击“确定”关闭警告，无通知横幅或遮罩。",
+    "step_03": "回到桌面或应用列表页，显示时间天气及Messages、Chrome等图标；本步尝试打开目标应用，未见目标页面与遮罩。",
+    "step_04": "仍在桌面应用列表页，界面同前；本步点击“应用列表”入口以查找并启动目标应用，无通知与遮罩。",
+    "step_05": "桌面应用列表页无变化；静态引导跳转至系统卸载器界面，未展示实际内容，无通知与遮罩。",
+    "step_06": "仍在桌面应用列表页；再次静态跳转至另一应用包，未见页面内容，探针无通知、遮罩为0。",
+    "step_07": "进入系统无障碍设置列表，显示Google Play为关闭及屏幕阅读器等项；捕获无障碍钩子与探针后自动终止，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍处无障碍设置页，UI文本为空、无通知横幅、遮罩数为0，未发生交互。",
+    "post_jump_2.0s": "跳转后2.0秒探针，仍处无障碍设置页，界面未变化、无通知横幅、遮罩数为0，未发生交互。",
+    "detail_1_service_detail_page": "打开Google Play无障碍服务详情，显示“使用Google Play”、快捷键与“未提供说明”；本步仅检查详情，无通知与遮罩。",
+    "detail_2_system_warning_dialog": "系统高危授权弹窗，称允许Google Play完全控制设备，可查看控制屏幕、执行操作；本步检查该警告，随后拒绝授权，遮罩为0。",
+    "refusal_2.0s": "拒绝后2秒返回无障碍列表，Google Play仍为关闭；因拒绝触发重新拉起无障碍设置，无通知与遮罩。"
+  }
+}

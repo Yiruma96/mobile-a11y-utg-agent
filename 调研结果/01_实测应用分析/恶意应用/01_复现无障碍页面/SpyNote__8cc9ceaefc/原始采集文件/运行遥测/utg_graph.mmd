@@ -1,0 +1,6 @@
+flowchart TD
+    N_9244e590353a["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_d40b1a5d3d45["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nSystem Android"]
+    N_30998a570483["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_9244e590353a -->|"ui_click: click([35] Button text='Continue"| N_d40b1a5d3d45
+    N_d40b1a5d3d45 -->|"refusal_probe: Back_refuse"| N_30998a570483

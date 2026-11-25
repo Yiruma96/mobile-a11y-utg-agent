@@ -1,0 +1,6 @@
+flowchart TD
+    N_2bd16631a908["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_95c17f2f95e0["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nAdobe Flash Player"]
+    N_875d8ca4002d["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_2bd16631a908 -->|"ui_click: click([23] Button text='Continue"| N_95c17f2f95e0
+    N_95c17f2f95e0 -->|"refusal_probe: Back_refuse"| N_875d8ca4002d

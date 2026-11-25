@@ -1,0 +1,6 @@
+flowchart TD
+    N_7ead28c45e5e["Step 1: ReviewPermissionsActivity\nChoose what to allow S"]
+    N_57153e0924c6["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nSecurity Checker"]
+    N_8aeececb6928["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_7ead28c45e5e -->|"ui_click: click([35] Button text='Continue"| N_57153e0924c6
+    N_57153e0924c6 -->|"refusal_probe: Back_refuse"| N_8aeececb6928

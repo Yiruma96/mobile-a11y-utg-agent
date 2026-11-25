@@ -1,0 +1,196 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_157__468ad8a78f",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "com.android.tester",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "3b8ba5cecb26",
+  "hook_node_ids": [
+    "8172761efa1b",
+    "82deef6540dd"
+  ],
+  "nodes": [
+    {
+      "node_id": "3b8ba5cecb26",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow OfficeSuite to access",
+        "Camera",
+        "take pictures and record video",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Call logs",
+        "read and write phone call log",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "8172761efa1b",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": ".Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "OfficeSuite",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "82deef6540dd",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "OfficeSuite",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3b8ba5cecb26",
+      "to": "8172761efa1b",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "8172761efa1b",
+      "to": "82deef6540dd",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": ".Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "OfficeSuite",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "SpyNote__468ad8a78f",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "该应用以 OfficeSuite 名义先弹出 Android 运行时权限审查页，诱导继续授权相机、文件、通话记录、联系人、麦克风、短信与电话；随后跳转无障碍设置页并触发 Hook，拒权返回后仍反复拉起无障碍设置。核心特征为借用系统权限/无障碍界面伪装与持续重定向。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 OfficeSuite 访问哪些内容”（Step 1 权限审查页标题）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常工作；请检查更新或联系开发者”（Step 2 无障碍设置页旧版兼容提示）",
+    "英文 -> “你的数据未备份 / 立即添加备份账户”（权限页及后续页的 GMS 通知横幅）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "Android 权限审查页：以 OfficeSuite 名义请求相机、文件、通话记录、联系人、麦克风、短信与电话，点击 Continue 继续；有未备份通知，无遮罩。",
+    "step_02": "无障碍设置页：列表出现 OfficeSuite，并弹旧版 Android 可能无法正常工作的提示与 OK；已捕获无障碍设置 Hook/探针后自动终止，通知含 tester/Chrome。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停在无障碍设置页，界面文本为空、遮罩为 0；仅保留 GMS 未备份与 tester/Chrome 通知，无新增交互。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍为无障碍设置页，界面文本为空、遮罩为 0；通知栏延续 GMS 未备份及 tester/Chrome 通知，无新增动作。",
+    "refusal_2.0s": "拒权返回 2 秒：无障碍设置页显示 OfficeSuite 为 Off，仍列屏幕阅读器/显示项；执行返回拒绝后触发 RELAUNCHED_A11Y_SETTINGS，通知不变、无遮罩。"
+  }
+}

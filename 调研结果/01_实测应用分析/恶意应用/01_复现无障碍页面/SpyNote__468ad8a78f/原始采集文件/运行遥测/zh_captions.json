@@ -1,0 +1,15 @@
+{
+  "app_chain_summary_zh": "该应用以 OfficeSuite 名义先弹出 Android 运行时权限审查页，诱导继续授权相机、文件、通话记录、联系人、麦克风、短信与电话；随后跳转无障碍设置页并触发 Hook，拒权返回后仍反复拉起无障碍设置。核心特征为借用系统权限/无障碍界面伪装与持续重定向。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “选择允许 OfficeSuite 访问哪些内容”（Step 1 权限审查页标题）",
+    "英文 -> “此应用针对旧版 Android 构建，可能无法正常工作；请检查更新或联系开发者”（Step 2 无障碍设置页旧版兼容提示）",
+    "英文 -> “你的数据未备份 / 立即添加备份账户”（权限页及后续页的 GMS 通知横幅）"
+  ],
+  "frame_captions": {
+    "step_01": "Android 权限审查页：以 OfficeSuite 名义请求相机、文件、通话记录、联系人、麦克风、短信与电话，点击 Continue 继续；有未备份通知，无遮罩。",
+    "step_02": "无障碍设置页：列表出现 OfficeSuite，并弹旧版 Android 可能无法正常工作的提示与 OK；已捕获无障碍设置 Hook/探针后自动终止，通知含 tester/Chrome。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停在无障碍设置页，界面文本为空、遮罩为 0；仅保留 GMS 未备份与 tester/Chrome 通知，无新增交互。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：仍为无障碍设置页，界面文本为空、遮罩为 0；通知栏延续 GMS 未备份及 tester/Chrome 通知，无新增动作。",
+    "refusal_2.0s": "拒权返回 2 秒：无障碍设置页显示 OfficeSuite 为 Off，仍列屏幕阅读器/显示项；执行返回拒绝后触发 RELAUNCHED_A11Y_SETTINGS，通知不变、无遮罩。"
+  }
+}

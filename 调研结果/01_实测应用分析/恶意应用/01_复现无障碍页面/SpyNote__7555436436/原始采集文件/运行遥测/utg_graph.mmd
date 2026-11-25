@@ -1,0 +1,6 @@
+flowchart TD
+    N_ed0c2e21f09a["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_c9d8d3a2d2b2["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nAny Number"]
+    N_708400e35b94["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ed0c2e21f09a -->|"ui_click: click([35] Button text='Continue"| N_c9d8d3a2d2b2
+    N_c9d8d3a2d2b2 -->|"refusal_probe: Back_refuse"| N_708400e35b94

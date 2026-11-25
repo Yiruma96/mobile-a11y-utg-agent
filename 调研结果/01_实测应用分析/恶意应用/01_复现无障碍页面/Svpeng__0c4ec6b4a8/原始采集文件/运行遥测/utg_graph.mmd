@@ -1,0 +1,15 @@
+flowchart TD
+    N_eb06ea9f6c78["Step 1: ReviewPermissionsActivity\nChoose what to allow А"]
+    N_d23dbf9062d0["Step 2: NexusLauncherActivity\nАвито"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_97b8e356ca3c["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_0183604640f1["Step 6: SubSettings\nBack"]
+    N_a4a4ce6136f3["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Google Play to h"]
+    N_eb06ea9f6c78 -->|"ui_click: click([15] Button text='Continue"| N_d23dbf9062d0
+    N_d23dbf9062d0 -->|"ui_click: click([3] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_open: open()"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"static_guided_activity_jump: am_start(jlncg46bksq)"| N_97b8e356ca3c
+    N_97b8e356ca3c -->|"detail_probe: click_service()"| N_0183604640f1
+    N_0183604640f1 -->|"warning_probe: click_use_service_switch"| N_a4a4ce6136f3
+    N_97b8e356ca3c -->|"refusal_probe: Back_refuse"| N_97b8e356ca3c

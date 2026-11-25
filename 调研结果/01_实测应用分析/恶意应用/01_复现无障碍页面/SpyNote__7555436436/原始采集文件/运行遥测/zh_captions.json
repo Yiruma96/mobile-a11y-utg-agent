@@ -1,0 +1,14 @@
+{
+  "app_chain_summary_zh": "该应用以“Any Number”名义先经系统权限审核页批量索取相机、媒体、通话记录、短信、联系人、麦克风与电话权限，随后跳转无障碍设置页；拒权返回后仍重拉起无障碍设置，呈现明显诱导授权与持久化控制特征。",
+  "observed_lure_rhetoric_zh": [
+    "Choose what to allow Any Number to access -> 选择允许“Any Number”访问的内容（系统权限审核页）",
+    "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 该应用为旧版 Android 构建、可能无法正常运行，请检查更新或联系开发者（无障碍列表页）"
+  ],
+  "frame_captions": {
+    "step_01": "系统权限审核页：为“Any Number”批量列出相机、媒体、通话记录、短信、联系人、麦克风、电话权限；点“Continue”继续，无遮罩。",
+    "step_02": "无障碍列表页：显示“Any Number”和“旧版Android可能无法正常运行”警告及“OK”；已捕获无障碍设置钩子后终止，无遮罩，通知栏有该应用通知。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停在无障碍设置页且未读到文字；无悬浮遮罩，通知栏保留谷歌备份和“Any Number”通知，持续等待。",
+    "post_jump_2.0s": "跳转后2.0秒探针：无障碍设置页仍无可见文字，未出现遮罩；通知栏持续显示谷歌备份与“Any Number”通知，继续等待。",
+    "refusal_2.0s": "拒权返回2.0秒：无障碍页“DOWNLOADED APPS”下“Any Number”为“Off”；返回拒权后应用又重拉起无障碍设置，无遮罩，通知仍在。"
+  }
+}

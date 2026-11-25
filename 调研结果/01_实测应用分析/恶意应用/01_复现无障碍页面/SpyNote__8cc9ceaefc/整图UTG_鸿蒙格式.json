@@ -1,0 +1,197 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_128__8cc9ceaefc",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "cmf0.c3b5bm90zq.patch",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "9244e590353a",
+  "hook_node_ids": [
+    "d40b1a5d3d45",
+    "30998a570483"
+  ],
+  "nodes": [
+    {
+      "node_id": "9244e590353a",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow System Android to access",
+        "Camera",
+        "take pictures and record video",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Call logs",
+        "read and write phone call log",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio",
+        "SMS",
+        "send and view SMS messages",
+        "Phone",
+        "make and manage phone calls"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "d40b1a5d3d45",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": ".Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "System Android",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "30998a570483",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "System Android",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "9244e590353a",
+      "to": "d40b1a5d3d45",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "d40b1a5d3d45",
+      "to": "30998a570483",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": ".Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "System Android",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "SpyNote__8cc9ceaefc",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "该应用伪装成“System Android”，先进入系统权限审查页，集中索取相机、文件、通话记录、联系人、麦克风、短信和电话等敏感权限，随后跳转无障碍设置并触发 Hook；拒权返回后仍自动重拉起无障碍设置，维持“System Android”关闭项与“Phone”通知。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> 选择允许“System Android”访问哪些内容（权限审查页）",
+    "英语 -> 该应用针对旧版 Android 构建，可能无法正常运行；请检查更新或联系开发者（无障碍设置页）",
+    "英语 -> 你的数据未备份 / 现在添加备份账户（系统通知横幅，贯穿各页）",
+    "英语 -> “System Android”/“Phone”作为应用名和通知标题，用于伪装系统组件（权限页、无障碍页、通知栏）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限审查页：伪装“System Android”请求相机、文件、通话记录、联系人、麦克风、短信及电话权限，点 Continue；有“数据未备份”通知。",
+    "step_02": "无障碍设置页：警告“System Android”为旧版构建、可能异常，建议更新或联系开发者；出现 OK，捕获无障碍 Hook 后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停在无障碍设置页，界面无文本、无遮罩、无浮层，仅保留“数据未备份”和“Phone”通知。",
+    "post_jump_2.0s": "跳后2.0秒探针：无障碍设置页仍无文本，overlays=0、无遮罩；通知栏继续显示“数据未备份”和“Phone”。",
+    "refusal_2.0s": "拒权返回2秒：无障碍列表显示“System Android”为 Off，含 Back、Accessibility 等；拒权后仍自动重拉起无障碍设置，通知保留。"
+  }
+}

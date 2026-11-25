@@ -1,0 +1,364 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_118__d86e540090",
+  "label": "malicious",
+  "family_or_category": "StealJob",
+  "static_visibility": "clear",
+  "target_package": "com.update.gooqle",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "94931c7b96c7",
+  "hook_node_ids": [
+    "de7721985fd5",
+    "d66b669db7a6"
+  ],
+  "nodes": [
+    {
+      "node_id": "94931c7b96c7",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Google Update Service to access",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "858feebd3c4d",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.update.gooqle",
+      "abilityName": "com.jgoogle.android.gservicekns.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Update Service",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "8535feb9392e",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.update.gooqle",
+      "abilityName": "com.jgoogle.android.gservicekns.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Please enable 'Accessibility' for 'Google Update Service' to get this working. Tap on 'Ok' to go to Accessibility Settings.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "de7721985fd5",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Update Service",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "1edb21c151a8",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Google Update Service",
+        "Use Google Update Service",
+        "OPTIONS",
+        "Google Update Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings"
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "d66b669db7a6",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Google Update Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    },
+    {
+      "node_id": "52b4b50e379d",
+      "first_step": 4,
+      "role": "refusal_probe",
+      "bundleName": "com.update.gooqle",
+      "abilityName": "com.jgoogle.android.gservicekns.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_04_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_04_refusal_2000ms_layout.xml",
+      "screenshot": "step_04_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "94931c7b96c7",
+      "to": "858feebd3c4d",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "858feebd3c4d",
+      "to": "8535feb9392e",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "8535feb9392e",
+      "to": "de7721985fd5",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"OK\" id=button1 (click) center=(887,1152))"
+    },
+    {
+      "from": "de7721985fd5",
+      "to": "1edb21c151a8",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "1edb21c151a8",
+      "to": "d66b669db7a6",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "de7721985fd5",
+      "to": "52b4b50e379d",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "52b4b50e379d",
+      "to": "52b4b50e379d",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "52b4b50e379d",
+      "to": "52b4b50e379d",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Google Update Service Use Google Update Service OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Google Update Service",
+        "Use Google Update Service",
+        "OPTIONS",
+        "Google Update Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings"
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Google Update Service to have full cont",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Google Update Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.update.gooqle",
+      "top_activity": "com.jgoogle.android.gservicekns.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.update.gooqle",
+      "top_activity": "com.jgoogle.android.gservicekns.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.update.gooqle",
+      "top_activity": "com.jgoogle.android.gservicekns.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "该应用伪装成 Google 更新服务，先借系统权限审查索取短信、文件媒体、联系人、通话记录、电话、麦克风与定位，再以兼容性提示和“须开启无障碍才能工作”的弹窗诱导进入系统无障碍设置并申请完全控制设备；拒绝授权后主界面空白滞留，形成 TRAPPED_ON_LURE_SCREEN。",
+  "observed_lure_rhetoric_zh": [
+    "English: Choose what to allow Google Update Service to access -> 选择允许“Google Update Service”访问哪些内容（系统权限审查页）",
+    "English: send and view SMS messages; access photos, media, and files on your device; access your contacts; read and write phone call log; make and manage phone calls; record audio; Location -> 发送和查看短信；访问照片、媒体和文件；访问联系人；读写通话记录；拨打和管理电话；录音；定位（权限审查页权限说明）",
+    "English: This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer. -> 该应用为旧版 Android 构建，可能无法正常工作，请检查更新或联系开发者（兼容性警告）",
+    "English: Please enable 'Accessibility' for 'Google Update Service' to get this working. Tap on 'Ok' to go to Accessibility Settings. -> 请为“Google Update Service”开启“无障碍”才能正常工作，点击“确定”前往无障碍设置（主界面诱导弹窗）",
+    "English: Allow Google Update Service to have full control of your device? -> 允许“Google Update Service”完全控制您的设备？（系统无障碍警告）",
+    "English: Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 完全控制适用于帮助无障碍需求的应用，不适用于大多数应用（系统无障碍警告）",
+    "English: View and control screen; It can read all content on the screen and display content over other apps. -> 查看并控制屏幕；可读取屏幕所有内容并悬浮显示于其他应用之上（系统无障碍警告）",
+    "English: View and perform actions; It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 查看并执行操作；可跟踪与应用或硬件传感器的交互，并代表您与应用交互（系统无障碍警告）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限审查页，以“Google Update Service”名义请求短信、文件媒体、联系人、通话记录、电话、麦克风、定位；本步点 Continue 继续。",
+    "step_02": "应用主界面弹出 Android 兼容性警告，称该应用为旧版构建、可能无法正常工作；点 OK 关闭后进入原生流程。",
+    "step_03": "应用原生弹窗仅见 OK，称须为“Google Update Service”开启无障碍才能工作，点击后跳系统无障碍设置。",
+    "step_04": "系统无障碍列表页，DOWNLOADED APPS 下“Google Update Service”显示 Off；采集到设置钩子与探针后自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留在系统无障碍设置页，无新增文本、无通知横幅、无遮罩。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：页面文本为空、仍为无障碍设置页，overlays=0，未见应用悬浮层。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示“Use Google Update Service”、快捷键与音量键选项；尚未授权，仅巡检详情。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告：询问是否允许“Google Update Service”完全控制设备，列明读屏、悬浮、跟踪交互并代操作；随后走 Deny 拒绝。",
+    "refusal_2.0s": "拒绝授权后 2 秒返回应用 MainActivity，界面无文本/无控件，仍被困在诱导页，标记 TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒绝后 10.5 秒仍困于 MainActivity 空白诱导页，无文本、无通知、无遮罩，未放行到正常功能。"
+  }
+}

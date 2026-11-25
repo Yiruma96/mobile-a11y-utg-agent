@@ -1,0 +1,16 @@
+flowchart TD
+    N_8b480000a4ad["Step 1: ReviewPermissionsActivity\nChoose what to allow A"]
+    N_8c34e3652d5c["Step 2: NexusLauncherActivity\nAvito"]
+    N_1159e24777c9["Step 3: NexusLauncherActivity\nApps list"]
+    N_97b8e356ca3c["Step 7: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_0183604640f1["Step 7: SubSettings\nBack"]
+    N_a4a4ce6136f3["Step 7: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Google Play to h"]
+    N_8b480000a4ad -->|"ui_click: click([15] Button text='Continue"| N_8c34e3652d5c
+    N_8c34e3652d5c -->|"ui_click: click([3] Button text='OK' id=bu"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_open: open()"| N_1159e24777c9
+    N_1159e24777c9 -->|"ui_click: click([1] View desc='Apps list' "| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(UninstallerActivity)"| N_1159e24777c9
+    N_1159e24777c9 -->|"static_guided_activity_jump: am_start(ium5n2zk7lq)"| N_97b8e356ca3c
+    N_97b8e356ca3c -->|"detail_probe: click_service()"| N_0183604640f1
+    N_0183604640f1 -->|"warning_probe: click_use_service_switch"| N_a4a4ce6136f3
+    N_97b8e356ca3c -->|"refusal_probe: Back_refuse"| N_97b8e356ca3c

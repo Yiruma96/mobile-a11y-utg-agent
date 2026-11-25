@@ -1,0 +1,6 @@
+flowchart TD
+    N_3b8ba5cecb26["Step 1: ReviewPermissionsActivity\nChoose what to allow O"]
+    N_8172761efa1b["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nOfficeSuite"]
+    N_82deef6540dd["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_3b8ba5cecb26 -->|"ui_click: click([35] Button text='Continue"| N_8172761efa1b
+    N_8172761efa1b -->|"refusal_probe: Back_refuse"| N_82deef6540dd

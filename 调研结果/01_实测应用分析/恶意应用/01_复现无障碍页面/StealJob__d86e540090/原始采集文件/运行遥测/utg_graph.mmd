@@ -1,0 +1,16 @@
+flowchart TD
+    N_94931c7b96c7["Step 1: ReviewPermissionsActivity\nChoose what to allow G"]
+    N_858feebd3c4d["Step 2: MainActivity\nGoogle Update Service"]
+    N_8535feb9392e["Step 3: MainActivity\nPlease enable 'Accessi"]
+    N_de7721985fd5["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_1edb21c151a8["Step 4: SubSettings\nBack"]
+    N_d66b669db7a6["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Google Update Se"]
+    N_52b4b50e379d["Step 4: MainActivity\n"]
+    N_94931c7b96c7 -->|"ui_click: click([35] Button text='Continue"| N_858feebd3c4d
+    N_858feebd3c4d -->|"ui_click: click([3] Button text='OK' id=bu"| N_8535feb9392e
+    N_8535feb9392e -->|"ui_click: click([2] Button text='OK' id=bu"| N_de7721985fd5
+    N_de7721985fd5 -->|"detail_probe: click_service()"| N_1edb21c151a8
+    N_1edb21c151a8 -->|"warning_probe: click_use_service_switch"| N_d66b669db7a6
+    N_de7721985fd5 -->|"refusal_probe: Back_refuse"| N_52b4b50e379d
+    N_52b4b50e379d -->|"refusal_probe: wait(5.5s)_after_refusal"| N_52b4b50e379d
+    N_52b4b50e379d -->|"refusal_probe: wait(10.5s)_after_refusal"| N_52b4b50e379d
