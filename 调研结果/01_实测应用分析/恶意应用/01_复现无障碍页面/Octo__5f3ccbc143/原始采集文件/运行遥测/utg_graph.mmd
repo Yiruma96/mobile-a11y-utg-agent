@@ -1,0 +1,12 @@
+flowchart TD
+    N_96136c2cb688["Step 1: RequestIgnoreBatteryOptimiza\nLet app always run in "]
+    N_62f4c8d6841d["Step 2: p040j\nEnable Accessibility S"]
+    N_ffe926a5d606["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_a316287ba9a2["Step 3: SubSettings\nBack"]
+    N_96136c2cb688 -->|"ui_click: click([4] Button text='Allow' id"| N_62f4c8d6841d
+    N_62f4c8d6841d -->|"ui_click: click([8] Button text='Open Sett"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_a316287ba9a2
+    N_a316287ba9a2 -->|"warning_probe: click_use_service_switch"| N_62f4c8d6841d
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_62f4c8d6841d
+    N_62f4c8d6841d -->|"refusal_probe: wait(5.5s)_after_refusal"| N_62f4c8d6841d
+    N_62f4c8d6841d -->|"refusal_probe: wait(10.5s)_after_refusal"| N_62f4c8d6841d

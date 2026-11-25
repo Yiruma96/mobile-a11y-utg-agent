@@ -1,0 +1,21 @@
+{
+  "app_chain_summary_zh": "应用先以“Accessibility Service/Open Settings”引导用户开启无障碍，并持续弹出“Enable service/Chrome”通知；进入系统无障碍列表与服务详情后展示“保护设备”话术，拒权返回仍被困在诱导页，未出现正常退出路径。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “Accessibility Service”：无障碍服务（应用引导页 step_01）",
+    "English -> “Open Settings”：打开设置（应用引导页 step_01）",
+    "English -> “Enable service”/“Chrome”：启用服务/Chrome（通知横幅，贯穿多页）",
+    "English -> “DOWNLOADED SERVICES”：已下载服务（应用引导页 step_01）",
+    "English -> “Enable this service to protect your device.”：启用此服务以保护你的设备（服务详情页 detail_1）",
+    "English -> “Use Chrome”：使用 Chrome（服务详情页 detail_1）"
+  ],
+  "frame_captions": {
+    "step_01": "应用内无障碍引导页，英文“Open Settings”即打开设置；点击后跳系统设置，通知横幅“启用服务/Chrome”常驻，遮罩0。",
+    "step_02": "[无障碍列表页] 系统无障碍设置，列出DOWNLOADED APPS中Chrome为Off；本步命中HOOK_A11Y_SETTINGS并自动终止，通知横幅仍在，遮罩0。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍在系统无障碍设置页，界面文本为空；通知横幅“启用服务/Chrome”仍在，遮罩0，无新弹窗。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍停留系统无障碍设置页，无新界面文本；通知横幅持续，遮罩0，未见系统警告或浮层。",
+    "detail_1_service_detail_page": "服务详情页，英文“Use Chrome/Chrome shortcut”等选项，并称“启用此服务以保护设备”；本步仅检查详情与警告，通知横幅在，遮罩0。",
+    "detail_2_system_warning_dialog": "标题为系统警告弹窗(点Deny)，实际快照回应用p084k同一引导页，“Open Settings”仍诱导；本步检查未见浮层，遮罩0，通知横幅暂缺。",
+    "refusal_2.0s": "拒权返回后2.0秒仍困在应用引导页，仍显示“Open Settings”与无障碍说明；通知横幅恢复，遮罩0，结果TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒权返回后10.5秒仍无退出路径，停留同一诱导页，“Open Settings”继续引导开启无障碍；通知横幅常驻，遮罩0，仍TRAPPED_ON_LURE_SCREEN。"
+  }
+}

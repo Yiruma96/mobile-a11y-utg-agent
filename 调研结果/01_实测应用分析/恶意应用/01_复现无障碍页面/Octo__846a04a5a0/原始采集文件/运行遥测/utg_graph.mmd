@@ -1,0 +1,10 @@
+flowchart TD
+    N_55b8eb4196cc["Step 1: p084k\nChrome"]
+    N_ffe926a5d606["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_218d42b087a4["Step 2: SubSettings\nBack"]
+    N_55b8eb4196cc -->|"ui_click: click([13] Button text='Open Set"| N_ffe926a5d606
+    N_ffe926a5d606 -->|"detail_probe: click_service()"| N_218d42b087a4
+    N_218d42b087a4 -->|"warning_probe: click_use_service_switch"| N_55b8eb4196cc
+    N_ffe926a5d606 -->|"refusal_probe: Back_refuse"| N_55b8eb4196cc
+    N_55b8eb4196cc -->|"refusal_probe: wait(5.5s)_after_refusal"| N_55b8eb4196cc
+    N_55b8eb4196cc -->|"refusal_probe: wait(10.5s)_after_refusal"| N_55b8eb4196cc

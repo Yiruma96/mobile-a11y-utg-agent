@@ -1,0 +1,310 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_101__3504d9f2a2",
+  "label": "malicious",
+  "family_or_category": "Octo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.travelabout8",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "8abfeee95f7e",
+  "hook_node_ids": [
+    "6d1ecb366196"
+  ],
+  "nodes": [
+    {
+      "node_id": "8abfeee95f7e",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.travelabout8",
+      "abilityName": "com.travelabout8.p021c",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "13810dfaf4c2",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.travelabout8",
+      "abilityName": "com.travelabout8.p021c",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Google Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "6d1ecb366196",
+      "first_step": 3,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "da5cafc7dc39",
+      "first_step": 3,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Google Chrome",
+        "Use Google Chrome",
+        "OPTIONS",
+        "Google Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Habilite esta opción para proteger totalmente su dispositivo móvil"
+      ],
+      "harmony_layout_json": "step_03_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_03_service_detail_layout.xml",
+      "screenshot": "step_03_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "8abfeee95f7e",
+      "to": "13810dfaf4c2",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([361, 398])"
+    },
+    {
+      "from": "13810dfaf4c2",
+      "to": "6d1ecb366196",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Open Settings\" id=t_openSettings (click) center=(540,670))"
+    },
+    {
+      "from": "6d1ecb366196",
+      "to": "da5cafc7dc39",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "da5cafc7dc39",
+      "to": "13810dfaf4c2",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "6d1ecb366196",
+      "to": "13810dfaf4c2",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "13810dfaf4c2",
+      "to": "13810dfaf4c2",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "13810dfaf4c2",
+      "to": "13810dfaf4c2",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Google Chrome Use Google Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Google Chrome",
+        "Use Google Chrome",
+        "OPTIONS",
+        "Google Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Habilite esta opción para proteger totalmente su dispositivo móvil"
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.travelabout8",
+      "top_activity": "com.travelabout8.p021c",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Google Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.travelabout8",
+      "top_activity": "com.travelabout8.p021c",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Google Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.travelabout8",
+      "top_activity": "com.travelabout8.p021c",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Google Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.travelabout8",
+      "top_activity": "com.travelabout8.p021c",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Google Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Octo__3504d9f2a2",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用以 p021c WebView 伪装成启用 Google Chrome 无障碍服务的引导页，通知栏西语“Habilite el servicio”持续施压；点击 Open Settings 跳转系统无障碍页并触发 HOOK，服务详情页夹带西语“保护设备”诱导。用户返回或拒绝授权后，应用立即重启同一诱导对话框（RELAUNCHED_LURE_DIALOG），形成拒权循环。",
+  "observed_lure_rhetoric_zh": [
+    "西班牙语 -> 请启用服务（通知横幅，各步骤持续显示）",
+    "英语 -> 启用无障碍服务（p021c 诱导页）",
+    "英语 -> 找到“Google Chrome”（p021c 诱导页，借合法应用名伪装）",
+    "英语 -> 打开开关（p021c 诱导页）",
+    "英语 -> 打开设置（p021c 诱导页按钮）",
+    "英语 -> 使用 Google Chrome（服务详情页选项）",
+    "西班牙语 -> 启用此选项以全面保护您的移动设备（服务详情页，恐吓式诱导）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用 p021c 空白 WebView 首次加载，尚无可见文案；点击打开设置未命中，通知栏已有西语“启用服务”横幅。",
+    "step_02": "p021c 诱导页要求启用无障碍、查找 Google Chrome 并开启开关；本步点中 Open Settings，通知横幅持续施压。",
+    "step_03": "进入系统无障碍设置，DOWNLOADED APPS 中 Google Chrome 为 Off；触发 HOOK 后终止，通知横幅仍显示西语“启用服务”。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停留在系统无障碍设置页，无遮罩或弹窗；通知栏继续显示西语“启用服务”横幅。",
+    "post_jump_2.0s": "跳转后 2 秒探针，系统无障碍设置页无 UI 变化、无遮罩；西语“启用服务”通知横幅持续存在。",
+    "detail_1_service_detail_page": "进入 Google Chrome 服务详情，含 Use Google Chrome 与快捷键选项；夹带西语“启用可全面保护设备”的恐吓诱导。",
+    "detail_2_system_warning_dialog": "回到 p021c 诱导页，仍要求启用无障碍并打开设置；系统警告或点 Deny 被记录，通知横幅暂隐，未见取消入口。",
+    "refusal_2.0s": "拒权返回 2 秒后，应用立即重启同一 p021c 诱导对话框（RELAUNCHED_LURE_DIALOG）；通知横幅恢复，形成拒权循环。",
+    "refusal_10.5s": "拒权返回 10.5 秒后，p021c 诱导页仍被反复拉起，通知横幅持续；RELAUNCHED_LURE_DIALOG 表明拒权后循环施压。"
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_103__5ad51d4212",
+  "label": "malicious",
+  "family_or_category": "Octo",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.broughtbluea",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "3967c573a66f",
+  "hook_node_ids": [
+    "807c032f3eaf"
+  ],
+  "nodes": [
+    {
+      "node_id": "3967c573a66f",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.broughtbluea",
+      "abilityName": "com.broughtbluea.p014i",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Trendyol'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "807c032f3eaf",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Trendyol",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "79ec000e4842",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Trendyol",
+        "Use Trendyol",
+        "OPTIONS",
+        "Trendyol shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "3967c573a66f",
+      "to": "807c032f3eaf",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Open Settings\" id=t_openSettings (click) center=(540,670))"
+    },
+    {
+      "from": "807c032f3eaf",
+      "to": "79ec000e4842",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "79ec000e4842",
+      "to": "3967c573a66f",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "807c032f3eaf",
+      "to": "3967c573a66f",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "3967c573a66f",
+      "to": "3967c573a66f",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "3967c573a66f",
+      "to": "3967c573a66f",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Trendyol Use Trendyol OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Trendyol",
+        "Use Trendyol",
+        "OPTIONS",
+        "Trendyol shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Servisileri Etkinleştirme"
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.broughtbluea",
+      "top_activity": "com.broughtbluea.p014i",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Trendyol'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.broughtbluea",
+      "top_activity": "com.broughtbluea.p014i",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Trendyol'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.broughtbluea",
+      "top_activity": "com.broughtbluea.p014i",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Trendyol'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.broughtbluea",
+      "top_activity": "com.broughtbluea.p014i",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Trendyol'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Octo__5ad51d4212",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用先以“Trendyol”无障碍服务名义发送土耳其语通知并展示英文引导页，诱导用户进入系统无障碍设置开启服务；进入详情页后仍以品牌名和启用选项诱导，用户拒绝返回后应用反复重拉同一诱导页面，后台通知常驻。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 启用无障碍服务；找到“Trendyol”；把开关打开（应用引导页）",
+    "英文 -> 打开设置（应用引导页按钮）",
+    "土耳其语 -> 请启用服务（通知标题）",
+    "英文/品牌名 -> Trendyol（通知正文、系统设置项、服务详情页）",
+    "英文 -> 使用 Trendyol（服务详情页选项）",
+    "土耳其语 -> 无障碍服务启用（服务详情页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用内英文预授权引导页，要求找到“Trendyol”并开启无障碍开关；本步点击“Open Settings”跳系统设置，通知横幅显示土耳其语“请启用服务/Trendyol”。",
+    "step_02": "系统无障碍列表页，下载应用中“Trendyol”显示 Off；捕获无障碍设置钩子后自动终止，顶部仍有该应用土耳其语“请启用服务/Trendyol”通知，无遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针仍停在系统无障碍列表，界面文本暂空、遮罩数0；后台“请启用服务/Trendyol”通知持续存在。",
+    "post_jump_2.0s": "跳转后2.0秒探针同页无新文本，遮罩仍为0；该应用通知继续常驻，未见系统授权成功或取消提示。",
+    "detail_1_service_detail_page": "进入 Trendyol 无障碍服务详情页，含“Use Trendyol”使用服务、快捷方式等选项及土耳其语“无障碍服务启用”；未弹遮罩，等待用户开启。",
+    "detail_2_system_warning_dialog": "本步未捕获系统警告，仍显示应用英文引导页“启用无障碍服务/找到Trendyol/打开设置”；无遮罩与通知，疑似警告被绕过或漏录。",
+    "refusal_2.0s": "拒绝授权返回2秒后，应用重拉同一英文引导页，仍要求开启Trendyol无障碍；无遮罩，通知横幅恢复为土耳其语“请启用服务”。",
+    "refusal_10.5s": "拒权10.5秒后仍停同一引导页并再次重拉诱导弹窗，文案按钮不变；通知持续存在，显示应用不接受拒绝、循环诱导。"
+  }
+}

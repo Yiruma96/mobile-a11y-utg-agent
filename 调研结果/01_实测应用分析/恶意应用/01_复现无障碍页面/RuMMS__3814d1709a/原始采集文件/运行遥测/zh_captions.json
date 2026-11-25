@@ -1,0 +1,24 @@
+{
+  "app_chain_summary_zh": "应用以伪装名“主进程”和俄语通知谎称系统异常、需开启统计权限，将用户引至无障碍服务详情并弹出完全控制警告；点拒绝后先回桌面，随即自动重开无障碍设置继续施压。",
+  "observed_lure_rhetoric_zh": [
+    "Oсновной процесc -> 俄语（含同形字符） -> “主进程”（通知标题/应用显示名，贯穿多个页面）",
+    "Сиcтема не кoррeктнo рaбoтает, вaм неoбходимo включить дoступ к cтaтиcтикe для 'Oсновной процесc' -> 俄语 -> “系统运行异常，您需要为‘主进程’开启统计访问权限”（常驻通知横幅）",
+    "Use Oсновной процесc -> 英语+俄语 -> “使用主进程”（无障碍服务详情页开关项）",
+    "Oсновной процесc shortcut / Hold volume keys / Shortcut settings -> 英语+俄语 -> “主进程快捷方式/按住音量键/快捷方式设置”（服务详情页选项）",
+    "No description provided. -> 英语 -> “未提供描述”（服务详情页）",
+    "Allow Oсновной процесc to have full control of your device? -> 英语 -> “允许主进程完全控制您的设备吗？”（系统警告弹窗）",
+    "Full control is appropriate for apps that help you with accessibility needs, but not for most apps. -> 英语 -> “完全控制适用于辅助无障碍需求的应用，但不适用于大多数应用。”（系统警告弹窗）",
+    "View and control screen / It can read all content on the screen and display content over other apps. -> 英语 -> “查看并控制屏幕/可读取屏幕全部内容并覆盖显示在其他应用上。”（系统警告弹窗）",
+    "View and perform actions / It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf. -> 英语 -> “查看并执行操作/可跟踪您与应用或硬件传感器的交互，并代表您操作应用。”（系统警告弹窗）",
+    "Allow / Deny -> 英语 -> “允许/拒绝”（系统警告弹窗按钮）"
+  ],
+  "frame_captions": {
+    "step_01": "无障碍列表页：伪装“主进程”显示为已下载应用且关闭；俄语通知谎称系统异常需开统计权限，探针命中无障碍钩子后终止。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍在无障碍设置页，未捕获可见控件；伪装“主进程”俄语通知横幅持续显示，无遮罩。",
+    "post_jump_2.0s": "跳后2.0秒探针：无障碍设置页仍无可见控件；伪装“主进程”俄语通知持续误导，未出现遮罩或弹窗。",
+    "detail_1_service_detail_page": "无障碍服务详情页：显示“使用主进程”、快捷方式与音量键选项，并称未提供描述；常驻俄语通知仍在，本步仅检查详情。",
+    "detail_2_system_warning_dialog": "系统高危警告弹窗：英文提示“主进程”将完全控制设备、可读屏并代操作，需选允许/拒绝；本步检查弹窗，未授权。",
+    "refusal_2.0s": "拒绝后2秒回到桌面：显示应用列表、Chrome等，俄语通知仍驻留；随后应用自动重开无障碍设置，表现拒权后重试。",
+    "refusal_5.5s": "拒绝后5.5秒：应用已自动重开无障碍列表，“主进程”仍为关闭；俄语通知继续施压，无遮罩，体现循环诱导授权。"
+  }
+}
