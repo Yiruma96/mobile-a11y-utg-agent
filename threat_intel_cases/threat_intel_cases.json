@@ -1,0 +1,295 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-25",
+  "purpose": "Structured real-world domestic & global threat intelligence cases on Mobile Accessibility Service inducement, remote-control scams, and Restricted Settings bypasses, designed to complement offline dynamic UTG traces and static APK audits.",
+  "cases": [
+    {
+      "case_id": "INTEL_CN_01",
+      "name": "「银联会议」仿冒官方会议远程控屏诈骗",
+      "region": "中国大陆",
+      "period": "2024–2025",
+      "tier": "L4_out_of_band_voice_remote",
+      "app_guise": "银联会议（仿冒中国银联，非官方应用商店侧载 APK）",
+      "out_of_band_channel": "冒充抖音/电商/保险客服来电 → 转接「银联官方解约专员」",
+      "lure_rhetoric_verbatim": [
+        "您误点了「直播会员 / 百万保障」每月将自动扣费 800–9600 元，不及时关闭将影响个人征信",
+        "应用商店系统升级搜不到，请点击专属链接下载「银联会议」App，输入会议号连线专员协助取消",
+        "请开启「屏幕共享」和「无障碍辅助功能」，手机黑屏/卡顿是系统正在后台安全校验注销，千万不要触碰或挂断"
+      ],
+      "in_app_ui_profile": "界面极简类似常规视频会议（输入会议号、加入会议、屏幕共享开关），**应用内几乎无传统银行木马式恐吓文案**，社工恐吓主要发生在通话带外信道",
+      "technical_kill_chain": [
+        "1. 引导绕过官方应用商店通过链接/二维码侧载安装「银联会议」APK",
+        "2. 语音指导输入会议号并开启 MediaProjection 屏幕共享实时窥屏",
+        "3. 语音手把手诱导在系统设置中解除「受限设置」并开启无障碍权限（AccessibilityService）与悬浮窗",
+        "4. 后台结合远控指令与无障碍模拟点击操作手机银行，同时触发黑屏/「系统处理中」遮罩阻断受害人感知与操作（2025 年北京常女士案被隔空转走 30 余万元）"
+      ],
+      "utg_and_system_observables": [
+        "通话中/VoIP 语音并发期间触发无障碍设置跳转（跨信道上下文）",
+        "侧载非商店来源 + 应用名/服务名含金融权威机构关键词（「银联」+「会议」）",
+        "短时间窗口内连续索要「屏幕共享/录屏 + 悬浮窗 + 无障碍」高危权限三联组合",
+        "跨系统页轨迹出现「应用信息 → 允许受限设置 → 无障碍设置」解锁链"
+      ],
+      "harmonyos_mapping": "侧载安装受限管控 + 通话态高危授权拦截 + `AccessibilityExtensionAbility` 与录屏/悬浮窗组合风控",
+      "sources": [
+        "中国银联官方严正声明（unionpay.com）",
+        "国家金融监督管理总局风险提示（nfra.gov.cn）",
+        "上海市人民政府 / 公安反诈预警通报（sh.gov.cn）",
+        "新京报 / 人民网 2025 年「银联会议」案件报道（bjnews.com.cn / people.com.cn）"
+      ]
+    },
+    {
+      "case_id": "INTEL_CN_02",
+      "name": "「中银会议 / 抖音会议 / 国密会议 / 云会议」系列仿冒会议木马",
+      "region": "中国大陆",
+      "period": "2024–2025",
+      "tier": "L4_out_of_band_voice_remote",
+      "app_guise": "中银会议、抖音会议、国密会议、云视听/云端会议等（基于开源远控/WebRTC 框架二次打包换壳）",
+      "out_of_band_channel": "冒充短视频平台、微信/支付宝「百万保障」或银行客服电话",
+      "lure_rhetoric_verbatim": [
+        "您开通了每月扣费 800 元的「百万保障 / 直播保险」，不立即取消将连续扣款并上报征信",
+        "您手机操作太慢看不清，请按我说的在设置里打开「无障碍/辅助功能」方便专员远程代为关闭扣费通道",
+        "为了保护您的资金安全，需要通过官方指定「中银会议/抖音会议」进行屏幕共享与人脸核验"
+      ],
+      "in_app_ui_profile": "表面为会议号输入与一键入会界面，申请 `BIND_ACCESSIBILITY_SERVICE` + `SYSTEM_ALERT_WINDOW` + `RECORD_AUDIO` + 投屏权限；部分样本授权后隐藏图标并在用户尝试卸载时用无障碍自动点「返回」防卸载",
+      "technical_kill_chain": [
+        "1. 电话制造「自动扣费 / 影响征信」紧迫感",
+        "2. 侧载安装仿冒银行/平台名称的会议木马",
+        "3. 诱导开启屏幕共享窥视网银密码与短信验证码，叠加无障碍权限自动点击、填表与防卸载",
+        "4. 关键转账阶段制造黑屏/假死并配合人脸识别欺骗完成盗刷（2025 年 3 月 65 岁徐女士「中银会议」案）"
+      ],
+      "utg_and_system_observables": [
+        "非官方来源 + 金融/政务/主流平台名称拼接「会议/客服/专员」",
+        "低字数极简入口页 + 语音驱动直跳受限设置/无障碍设置",
+        "无障碍授权后拦截设置/应用管理页面（防卸载回弹）"
+      ],
+      "harmonyos_mapping": "结合应用市场签名校验、通话期屏幕共享+无障碍联动阻断、黑屏遮罩窗口监测",
+      "sources": [
+        "北京市人民政府 / 央视新闻反诈通报（beijing.gov.cn / cctv.com）",
+        "福建省人民政府 / 中国银行官方提醒（fujian.gov.cn / bankofchina.com）",
+        "人民网 2025 年 3 月「中银会议」诈骗报道（people.com.cn）"
+      ]
+    },
+    {
+      "case_id": "INTEL_CN_03",
+      "name": "合法远控软件滥用（向日葵 / ToDesk / AirDroid / 腾讯会议）带外诱骗开启无障碍",
+      "region": "中国大陆",
+      "period": "2023–2025",
+      "tier": "L4_out_of_band_voice_remote",
+      "app_guise": "100% 合法上架的远控/会议软件（向日葵、ToDesk、AirDroid、Zoom、腾讯会议等）",
+      "out_of_band_channel": "冒充客服理赔、网课退费、机票退改签、虚假投资理财或婚恋交友语音指导",
+      "lure_rhetoric_verbatim": [
+        "下载正规应用商店的「向日葵/ToDesk」，发给我识别码和验证码，我远程帮您调试设备/操作退费",
+        "系统提示需要打开「辅助功能/无障碍」才能远程帮您点，这是正规大厂软件很安全"
+      ],
+      "in_app_ui_profile": "**应用本身 100% 合规且来自官方商店，静态与常规动态检测均呈良性特征**；恶意性完全来自「陌生人通话并发 + 远控授权后访问手机银行/支付软件」的运行时场景组合",
+      "technical_kill_chain": [
+        "1. 规避侧载拦截：直接诱导受害人从正规应用市场下载合法远控软件",
+        "2. 语音指导开启无障碍权限以启用被控端免 Root 远程操控",
+        "3. 受害人提交设备识别码后，攻击者远程接管手机并诱导进入网银/支付应用转账"
+      ],
+      "utg_and_system_observables": [
+        "该类场景是**纯应用级静态/单次 UTG 判黑的天然边界**（绝不能将向日葵/ToDesk 判为恶意木马）",
+        "正确防御策略：**场景化高风险强提醒而非封杀应用**——检测到「陌生来电/通话中 + 首次开启远控类应用无障碍 + 随后打开银行/支付应用」时弹出强反诈弹窗与敏感界面防窥保护"
+      ],
+      "harmonyos_mapping": "不误报正规远控工具本身；在端侧通过「通话态 + 远控无障碍激活 + 金融 App 前台切换」触发反诈强警示与金融隐私防录屏/防无障碍读取",
+      "sources": [
+        "新华网 / 国家反诈中心 / 光明网 2024–2025 远程控制防骗预警（xinhuanet.com / gmw.cn）",
+        "国家金融监督管理总局风险提示（nfra.gov.cn）"
+      ]
+    },
+    {
+      "case_id": "INTEL_CN_04",
+      "name": "鸿蒙/安卓「受限设置」语音与伪弹窗手把手解锁对抗",
+      "region": "中国大陆及全球",
+      "period": "2024–2025",
+      "tier": "L2_impersonated_guided_flow",
+      "app_guise": "各类侧载涉诈/木马 APK 针对 Android 13–15 与 HarmonyOS「受限设置」的绕过引导",
+      "out_of_band_channel": "应用内图文步骤页、悬浮窗指引，或视频/语音通话实时手把手教学",
+      "lure_rhetoric_verbatim": [
+        "出于安全考虑此设置当前不可用？请先点确定，再进入「应用信息」点右上角三个点，选择「允许受限设置」即可恢复正常",
+        "请按照图示先关闭纯净模式/解除受限保护，这是官方业务办理必需步骤"
+      ],
+      "in_app_ui_profile": "在 UTG 轨迹上呈现典型的「三段跨系统页跳转」：`恶意 App 图文教学页 → 系统应用信息页（App Info / InstalledAppDetails）→ 右上角菜单“允许受限设置” → 系统无障碍列表页`",
+      "technical_kill_chain": [
+        "1. 侧载安装触发 OS 受限设置（无障碍开关灰显锁定）",
+        "2. 应用内展示分步截图或由电诈人员通话指导用户进入应用信息页手动点击「允许受限设置」",
+        "3. 解锁后再次拉起无障碍设置页完成授权"
+      ],
+      "utg_and_system_observables": [
+        "应用内文本出现「受限设置 / Restricted Settings / 右上角三点 / 允许受限设置 / 纯净模式」等系统防护绕过教学词",
+        "UTG 出现 `App → AppInfoActivity → AccessibilitySettingsActivity` 的短时顺序跳转特征",
+        "需与良性开源侧载工具（如本数据集良性样本 `Tapbar`）区分：结合应用身份是否仿冒、是否存在取消/跳过键、是否伴随通话或拒权循环"
+      ],
+      "harmonyos_mapping": "监测 `应用信息页 → 解除受限设置 → 无障碍页` 的连续 UTG 转移链，对侧载应用触发二次延迟冷静期与反诈核验",
+      "sources": [
+        "湖北日报 / IT之家 / 各地警方 2024–2025 鸿蒙与安卓受限设置防骗预警（hubeidaily.net / ithome.com）",
+        "ThreatFabric & Kaspersky Android 13–15 Restricted Settings 绕过技术分析"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_01",
+      "name": "SecuriDropper：滥用 Session 安装 API 绕过 Android 13+「受限设置」",
+      "region": "全球（欧洲/拉美为主）",
+      "period": "2023–2025",
+      "tier": "L2_impersonated_guided_flow",
+      "app_guise": "Dropper-as-a-Service（伪装 Google Chrome / 实用工具 / 杀毒应用，投放 SpyNote、Ermac、Anatsa 等）",
+      "out_of_band_channel": "钓鱼网站、短信链接或第三方商店侧载",
+      "lure_rhetoric_verbatim": [
+        "点击「Reinstall / Update」以完成安装（实则调用 Session-based PackageInstaller 安装二阶段木马）",
+        "为继续使用安全保护，请启用已安装服务中的无障碍开关"
+      ],
+      "in_app_ui_profile": "阶段一壳程序本身**完全不声明 `BIND_ACCESSIBILITY_SERVICE`**，首次运行看起来只是“下载更新器”；安装二阶段载荷后才出现无障碍诱导页（典型的「首启不暴露」多阶段投放）",
+      "technical_kill_chain": [
+        "1. 阶段一 Dropper 申请 `REQUEST_INSTALL_PACKAGES` 并通过 `PackageInstaller.Session` 模仿应用商店安装二阶段载荷",
+        "2. 利用早期 Android 13/14 对 Session 安装器来源校验漏洞，使二阶段木马绕过「受限设置」灰显拦截",
+        "3. 二阶段木马启动后无缝诱导开启无障碍并接管设备"
+      ],
+      "utg_and_system_observables": [
+        "单阶段静态扫描容易漏检阶段一 Dropper；动态 UTG 需追踪「应用内拉起系统安装器（PackageInstaller）→ 新安装子应用首次启动即跳无障碍」的跨包因果链"
+      ],
+      "harmonyos_mapping": "追踪跨应用安装来源链（Installer Provenance），杜绝非官方商店会话安装器获得免受限豁免",
+      "sources": [
+        "ThreatFabric: SecuriDropper bypassing Android 13+ Restricted Settings (threatfabric.com)",
+        "SecurityWeek / CSK India 技术通报"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_02",
+      "name": "Vultur（2024 升级版）：短信+人工来电混合社工 + 伪装 McAfee Security 无障碍接管",
+      "region": "欧洲（英国/荷兰/意大利等）",
+      "period": "2024",
+      "tier": "L4_out_of_band_voice_remote",
+      "app_guise": "伪装 McAfee Security 与 Android Accessibility Suite（内置 Brunhilda Dropper）",
+      "out_of_band_channel": "先发送银行大额未授权交易预警短信 → 诱导受害人主动回拨假客服电话 → 电话发送下载链接",
+      "lure_rhetoric_verbatim": [
+        "检测到您的银行账户发生未授权大额转账，请立即致电客服核实（短信诱饵）",
+        "请安装我们发来的 McAfee Security 安全版本并开启辅助保护以拦截盗刷"
+      ],
+      "in_app_ui_profile": "界面高仿 McAfee 安全扫描界面；获取无障碍后具备远控点击/滑动、**关闭锁屏密码（Disable Keyguard）**、静音与阻止安全软件运行等完整 DTO 能力",
+      "technical_kill_chain": [
+        "1. 短信钓鱼诱导受害人主动呼出电话，建立极高心理信任",
+        "2. 电话引导安装伪装 McAfee 的 Dropper 解密释放 Vultur 载荷",
+        "3. 诱导授予无障碍权限后远程执行点击、滑动、解密锁屏并实施设备端欺诈（ODF）"
+      ],
+      "utg_and_system_observables": [
+        "高仿知名安全品牌（McAfee / Google Play Protect）UI + 非官方签名",
+        "无障碍详情页或启动链路中冒用系统无障碍套件名称（Android Accessibility Suite）"
+      ],
+      "harmonyos_mapping": "品牌图标/服务名与包签名一致性核验 + 电话并发无障碍高危授权阻断",
+      "sources": [
+        "Fox-IT (March 2024): Vultur Android Banking Trojan Upgraded with Remote Control & McAfee Disguise (fox-it.com)"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_03",
+      "name": "Brokewell：假 Chrome 浏览器更新页 + 绕过受限设置 + 全事件无障碍远控",
+      "region": "欧洲及全球",
+      "period": "2024–2025",
+      "tier": "L2_impersonated_guided_flow",
+      "app_guise": "伪装 Google Chrome 浏览器紧急更新页、奥地利数字身份认证 App（ID Austria）等",
+      "out_of_band_channel": "被劫持网站弹出高仿 Chrome 更新提示，诱骗下载 Dropper APK",
+      "lure_rhetoric_verbatim": [
+        "您的 Google Chrome 版本过旧存在安全漏洞，请立即下载并安装最新更新",
+        "请按照屏幕提示完成受限设置解除与辅助服务启用以完成浏览器升级"
+      ],
+      "in_app_ui_profile": "内置定制化 Dropper 绕过 Android 13+ 受限设置；取得无障碍后记录全部触控、输入、打开应用事件，并支持实时录屏与远程点击/滑动",
+      "technical_kill_chain": [
+        "1. 网页伪造 Chrome 紧急更新下载定制 Dropper",
+        "2. Dropper 绕过 Android 13+ 受限设置并诱导授权无障碍",
+        "3. 利用无障碍捕获 WebView Cookie、注入假登录遮罩并开启实时 VNC 远控"
+      ],
+      "utg_and_system_observables": [
+        "声称浏览器/系统更新却请求无障碍权限（典型「功能-权限语义强背离」）",
+        "浏览器更新页 → 安装器 → 无障碍设置页的跨页跳转序列"
+      ],
+      "harmonyos_mapping": "语义一致性检测（声称“更新/升级”却请求无障碍权限直接高危拦截）",
+      "sources": [
+        "ThreatFabric (April 2024): Brokewell Android Banking Malware & Dropper Analysis (threatfabric.com)",
+        "The Hacker News / CyberInsider 2024 技术报道"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_04",
+      "name": "Crocodilus：黑屏遮罩 + 伪造安全提示窃取加密钱包助记词与 OTP",
+      "region": "欧洲（西班牙/波兰）、土耳其、拉美、亚洲",
+      "period": "2025",
+      "tier": "L3_covert_cross_channel",
+      "app_guise": "伪装浏览器更新、金融服务、购物/奖励应用（含本数据集中已采集到的 `Crocodilus` 加壳样本）",
+      "out_of_band_channel": "钓鱼广告（Meta/社媒广告）与定制 Dropper 分发",
+      "lure_rhetoric_verbatim": [
+        "请在 12 小时内备份您的钱包助记词，否则将失去账户访问权限（无障碍配合动态 HTML 假提示）",
+        "正在同步安全配置，请勿关闭屏幕（黑屏遮罩配合静音后台操作）"
+      ],
+      "in_app_ui_profile": "使用高度混淆/加壳外衣（在单次离线动态中呈加壳隐蔽状态）；获得无障碍后通过黑屏遮罩 + 静音隐藏后台操作，专门爬取 Google Authenticator 验证码与加密钱包助记词",
+      "technical_kill_chain": [
+        "1. 社媒广告投放 Dropper 绕过受限设置并释放加壳主体",
+        "2. 诱导开启无障碍后监控金融与加密钱包前台切换",
+        "3. 叠加动态 HTML 假警告与纯黑屏遮罩，静音后台完成设备端盗刷与助记词收割"
+      ],
+      "utg_and_system_observables": [
+        "与本数据集静态审计结果一致：加壳主体首启不暴露完整动态 HTML 诱饵，需静态 + 情报联合刻画其 C2 下发遮罩与黑屏机制"
+      ],
+      "harmonyos_mapping": "监测无障碍启用后的全屏低亮度/纯黑遮罩与异常静音组合行为",
+      "sources": [
+        "ThreatFabric (March 2025): Crocodilus New Android Banking Trojan Targeting Crypto & Banks (threatfabric.com)",
+        "Zimperium / The Hacker News 2025 深度分析"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_05",
+      "name": "ToxicPanda & PlayPraetor：中文背景 MaaS 规模化设备端欺诈（ODF）与高仿 Play 商店诱骗",
+      "region": "欧洲（意/西/法/葡）与拉美（数万台设备感染）",
+      "period": "2024–2025",
+      "tier": "L3_covert_cross_channel",
+      "app_guise": "伪装 Google Chrome、主流银行 App、高仿 Google Play 商店下载页",
+      "out_of_band_channel": "大规模钓鱼落地页、短信与虚假社媒广告（PlayPraetor 2025 感染超万台设备）",
+      "lure_rhetoric_verbatim": [
+        "高仿 Google Play 商店安装页诱骗侧载 APK，随后弹出「需开启辅助服务以完成安装/安全验证」",
+        "面向近 200 家银行/加密应用动态下发高仿覆盖页，配合无障碍远控在受害人本机直接发起转账绕过风控"
+      ],
+      "in_app_ui_profile": "采用极简 WebView 高仿商店页与动态覆盖层，利用无障碍服务在受害者真实设备会话中直接发起转账（On-Device Fraud），绕过传统银行基于设备指纹/IP 的异常检测",
+      "technical_kill_chain": [
+        "1. 钓鱼页面伪装 Google Play 诱导侧载安装",
+        "2. 诱导授予无障碍权限获取全屏幕结构树读取与手势注入能力",
+        "3. 通过 C2 实时下发近 200 家目标银行的覆盖页并远程代操作转账"
+      ],
+      "utg_and_system_observables": [
+        "高仿应用商店 WebView 诱导 + 远程 C2 下发模板（离线沙箱中易呈空白 WebView）",
+        "无障碍授权后跨多款金融 App 频繁触发覆盖窗与自动手势注入"
+      ],
+      "harmonyos_mapping": "金融应用受保护窗口禁止非认证无障碍读取节点与手势注入（对齐 `accessibilityDataSensitive` 机制）",
+      "sources": [
+        "Cleafy Threat Intelligence (Nov 2024): ToxicPanda Android Banking Trojan (cleafy.com)",
+        "Cleafy Threat Intelligence (2025): PlayPraetor Large-Scale Android RAT MaaS (cleafy.com / securityaffairs.com)"
+      ]
+    },
+    {
+      "case_id": "INTEL_GL_06",
+      "name": "Anatsa (TeaBot) Google Play 上架诱饵壳：延迟更新才暴露无障碍请求",
+      "region": "全球（美/英/德/西等官方商店）",
+      "period": "2024–2025",
+      "tier": "L3_covert_cross_channel",
+      "app_guise": "官方 Google Play 上架的 PDF 阅读器、文件清理器、二维码扫描器等（本数据集含 `TeaBot` 动态脱壳实测样张）",
+      "out_of_band_channel": "正规官方应用商店自然搜索下载（前期完全无恶意代码！）",
+      "lure_rhetoric_verbatim": [
+        "应用正常使用数天后弹出「下载核心功能附加组件（Add-On / Update）」",
+        "附加组件伪造系统无障碍设置界面（如本数据集动态实测捕获的 `QR-Code Scanner: Add-On`），引导在已下载服务中开启开关"
+      ],
+      "in_app_ui_profile": "上架审核期是 100% 干净的工具软件（首启完全不申请无障碍！），待过审并积累数万安装量后由 C2 推送更新包或诱导安装 Add-On 才暴露高仿系统设置无障碍诱导页",
+      "technical_kill_chain": [
+        "1. 干净工具壳通过应用商店审核，建立官方背书与高下载量",
+        "2. 数日后按地理围栏（Geofencing）向目标国家用户下发恶意更新或 Add-On 安装请求",
+        "3. 二阶段载荷动态脱壳后呈现高仿 Samsung One UI / Android 无障碍设置页诱导授权"
+      ],
+      "utg_and_system_observables": [
+        "完美解释为何单次冷启动动态检测会有漏检（延迟+地理围栏+多阶段更新）",
+        "一旦进入二阶段脱壳运行（如本数据集 `TeaBot MB_121` 动态捕获），其在 UTG 上立即暴露「高仿系统无障碍列表页（`已安装服务 5 项`）→ 真实系统无障碍页」的双重设置页镜像特征"
+      ],
+      "harmonyos_mapping": "应用热更新/子包安装后的首次无障碍请求重新纳入高危 UTG 实时检测，不能因阶段一历史清白而永久白名单",
+      "sources": [
+        "ThreatFabric (2024–2025): Anatsa (TeaBot) Campaign on Google Play via Clean Dropper Apps (threatfabric.com)",
+        "本课题动态 UTG 实测样张：`08_mal_TeaBot_packed_unpacked`（静态加壳动态脱壳实拍）"
+      ]
+    }
+  ]
+}

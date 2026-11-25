@@ -177,6 +177,8 @@ python tests/test_xml_to_harmony_converter.py
 |---|---|
 | [`a11y_utg_agent/`](./a11y_utg_agent/) | 全部可复用 Python 源码（`gui_agent.py`、`device_bridge.py`、`android_xml_to_harmony_json.py`、`storyboard.py`、`batch_runner.py`、`llm_client.py`） |
 | [`docs/移动端无障碍权限诱骗机理与UTG检测方案研究.pptx`](./docs/移动端无障碍权限诱骗机理与UTG检测方案研究.pptx) | **27 页学术研究汇报 PPT**（涵盖三源 1,769 APK 语料溯源、7 篇顶会文献对比与一页一篇精读附录、25 条诱导模式、70 款良性工具避坑对照、双锚点五类黄金 UTG 捕获页与 99.6%/0% 回测边界） |
+| [`docs/无障碍权限诱骗三源融合话术与手法全景库.md`](./docs/无障碍权限诱骗三源融合话术与手法全景库.md) | **三源融合话术与手法全景库**：打通动态实测 + 418 份静态审计 + 国内外真实涉诈情报（L0–L4 五级隐蔽度分层、8 语种 6 大主题话术库、动态伪装服务名与通知横幅实录），附机器可读 [`results/fused_a11y_inducement_kb.json`](./results/fused_a11y_inducement_kb.json) |
+| [`threat_intel_cases/`](./threat_intel_cases/国内外公开威胁情报与涉诈实战案例集.md) | **国内外公开威胁情报与涉诈实战案例集**（结构化 [`threat_intel_cases.json`](./threat_intel_cases/threat_intel_cases.json) + 中文研判报告）：专门补齐国内「银联会议/中银会议/抖音会议/合法远控滥用」带外语音诱骗、鸿蒙/安卓「受限设置」绕过与 2024–2025 `SecuriDropper`/`Vultur`/`Brokewell`/`Crocodilus`/`ToxicPanda`/`PlayPraetor`/`Anatsa` 实战案例 |
 | [`docs/诱导用户开启无障碍行为模式清单.md`](./docs/诱导用户开启无障碍行为模式清单.md) | 面向纯 UTG 检测机制设计的 **25 条恶意行为模式清单**、**5 类黄金捕获页优先级矩阵**、**3 大良性误报雷区**与 **82 家族速查表** |
 | [`docs/Android无障碍权限诱骗样本分析与正邪对照报告.md`](./docs/Android无障碍权限诱骗样本分析与正邪对照报告.md) | 跨十年（2014–2026）正邪对照完整实证分析报告 |
 | [`results/dataset_provenance_1769.csv`](./results/dataset_provenance_1769.csv) | 1,769 个核验无障碍 APK 的公开来源与 SHA-256 溯源台账（MalRadar + MalwareBazaar + F-Droid / IzzyOnDroid / GitHub） |
