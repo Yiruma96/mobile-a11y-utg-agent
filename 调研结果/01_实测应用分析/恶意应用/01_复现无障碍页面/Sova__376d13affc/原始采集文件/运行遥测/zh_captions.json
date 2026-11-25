@@ -1,0 +1,22 @@
+{
+  "app_chain_summary_zh": "应用从伪造 Chrome 更新/欢迎页入口，以假“继续”按钮和持续通知诱导用户进入系统无障碍设置并为 Chrome 开启服务；采集到设置钩子后，用户拒权返回仍被困在同一诱导页（TRAPPED_ON_LURE_SCREEN），全程无遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "Update app accesses / Enable access for Chrome -> 更新应用访问权限、为“Chrome”启用访问（通知横幅，贯穿各页）",
+    "Welcome to Chrome -> 欢迎使用 Chrome（假 Chrome 警告页/拒权返回页）",
+    "Browser updated successfully -> 浏览器已成功更新（假 Chrome 警告页/拒权返回页）",
+    "To use this application, click the CONTINUE button and then enable Chrome services. -> 要使用此应用，请点击“继续”并随后启用 Chrome 服务（假 Chrome 警告页/拒权返回页）",
+    "1 Open settings / 2 Select Accessibility / 3 Slide the switch to enable -> 1 打开设置、2 选择无障碍、3 滑动开关启用（假 Chrome 警告页/拒权返回页）",
+    "CONTINUE -> 继续（假 Chrome 引导页/警告页/拒权返回页）",
+    "Use Chrome / Service allows Accessibility for Android to scan your device for accessibility issues. -> 使用 Chrome；该服务允许 Android 无障碍扫描设备以检查无障碍问题（服务详情页）"
+  ],
+  "frame_captions": {
+    "step_01": "假 Chrome 引导页，点击伪造“继续”按钮推进；通知横幅称“更新应用访问/为 Chrome 启用访问”，无遮罩。",
+    "step_02": "进入系统无障碍列表，Chrome 显示“关闭”；采集到设置钩子与探针后自动终止，通知仍提示为 Chrome 启用访问。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍在无障碍设置页且无遮罩；通知横幅继续提示“为 Chrome 启用访问”，界面文本为空。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍为无障碍设置页、无遮罩；原应用通知变为空标题/空内容，未见进一步页面变化。",
+    "detail_1_service_detail_page": "Chrome 无障碍服务详情页，显示“使用 Chrome”，说明称可扫描无障碍问题；无遮罩，通知仍提示启用访问。",
+    "detail_2_system_warning_dialog": "假 Chrome 警告/引导页，称“浏览器更新成功”，引导打开设置、无障碍并滑动开启后点“继续”；含混淆串，无遮罩。",
+    "refusal_2.0s": "拒权返回 2 秒后仍被困在假 Chrome 诱导页，提示点“继续”并启用 Chrome 服务，附三步开启说明；无遮罩，通知仍在。",
+    "refusal_10.5s": "拒权返回 10.5 秒仍停留同一假 Chrome 诱导页，三步说明和“继续”未消失，呈 TRAPPED_ON_LURE_SCREEN；无遮罩。"
+  }
+}

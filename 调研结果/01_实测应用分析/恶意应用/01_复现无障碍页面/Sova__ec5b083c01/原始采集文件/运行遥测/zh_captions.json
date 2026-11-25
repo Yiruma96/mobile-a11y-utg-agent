@@ -1,0 +1,23 @@
+{
+  "app_chain_summary_zh": "应用 com.royal.bottom 先展示伪装 Chrome 更新的无障碍引导页，并以「Tinder Platinum」通知催促开启服务；跳转系统无障碍列表/详情页后若拒绝授权，会反复回到同一诱导页并卡死（TRAPPED_ON_LURE_SCREEN），全程无明显取消出口。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “欢迎使用 Chrome”（AccessibilityGuideActivity 伪装引导页）",
+    "英语 -> “浏览器更新成功”（AccessibilityGuideActivity 伪装引导页）",
+    "英语 -> “要使用本应用，请点击 Continue 按钮，然后启用 Chrome 服务”（AccessibilityGuideActivity 伪装引导页）",
+    "英语 -> “1 打开设置；2 选择无障碍；3 滑动开关以启用”（AccessibilityGuideActivity 三步诱导说明）",
+    "英语 -> “继续 / CONTINUE”（AccessibilityGuideActivity 按钮）",
+    "英语 -> “更新应用访问权限 / 为 Tinder Platinum 启用访问”（通知横幅，催促授权）",
+    "英语 -> “使用 Tinder Platinum / 服务允许 Accessibility for Android 扫描设备无障碍问题”（服务详情页，弱化权限风险）",
+    "英语 -> “Tinder Platinum 快捷方式 关闭”（服务详情页选项，显示服务已注册）"
+  ],
+  "frame_captions": {
+    "step_01": "伪装 Chrome 引导页首次出现，含 CONTINUE 按钮；通知横幅显示“更新应用访问权限/为 Tinder Platinum 启用访问”，本步点击 CONTINUE，尚无遮罩。",
+    "step_02": "跳至系统无障碍列表页，DOWNLOADED APPS 下可见 Tinder Platinum 为 Off；通知仍催促启用，本步因捕获无障碍设置钩子自动终止。",
+    "post_jump_0.8s": "跳后 0.8 秒仍停系统无障碍列表，界面文本为空，Tinder Platinum 通知横幅持续；探针显示 overlays=0，未出现遮罩。",
+    "post_jump_2.0s": "跳后 2.0 秒仍停无障碍列表，页面无文本，通知横幅持续显示启用 Tinder Platinum；探针 overlays=0，无遮罩或弹窗。",
+    "detail_1_service_detail_page": "进入 Tinder Platinum 服务详情页，含“使用 Tinder Platinum”、快捷方式 Off 与扫描无障碍问题说明；本步仅检查详情/警告，未授权。",
+    "detail_2_system_warning_dialog": "标题标注系统警告弹窗(点Deny)，实际显示伪装 Chrome 页：欢迎使用、更新成功、三步开启与 CONTINUE；检查详情，overlays=0，无真实系统警告文案。",
+    "refusal_2.0s": "拒绝授权返回 2 秒后仍被锁在同一伪装 Chrome 页，通知横幅继续要求为 Tinder Platinum 开启访问；无取消键，结果为 TRAPPED_ON_LURE_SCREEN。",
+    "refusal_10.5s": "拒绝授权返回 10.5 秒后页面无变化，仍显示 Chrome 更新成功、三步开启与 CONTINUE，通知横幅持续；仍卡死在诱导页，无退出路径。"
+  }
+}

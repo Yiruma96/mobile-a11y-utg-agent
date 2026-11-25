@@ -1,0 +1,255 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_136__0277b5385b",
+  "label": "malicious",
+  "family_or_category": "SpyAgent",
+  "static_visibility": "clear",
+  "target_package": "yps.eton.application",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "entry_node_id": "5bb07f2761bb",
+  "hook_node_ids": [
+    "78a2931b8c7f",
+    "cc3e5472271e"
+  ],
+  "nodes": [
+    {
+      "node_id": "5bb07f2761bb",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow ‎‫كشف رقم واسم المتصل المجهول‬‎ to access",
+        "Camera",
+        "take pictures and record video",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Call logs",
+        "read and write phone call log",
+        "SMS",
+        "send and view SMS messages",
+        "Contacts",
+        "access your contacts",
+        "Microphone",
+        "record audio",
+        "Phone",
+        "make and manage phone calls"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "19ce26b7b737",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": ".applications.specialaccess.deviceadmin.DeviceAdminAdd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "كشف رقم واسم المتصل المجهول",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "99e4db35eb02",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.applications.specialaccess.deviceadmin.DeviceAdminAdd",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Activate device admin app?",
+        "كشف رقم واسم المتصل المجهول",
+        "Activating this admin app will allow the app كشف رقم واسم المتصل المجهول to perform the following operations:",
+        "Erase all data",
+        "Erase the phone's data without warning by performing a factory data reset.",
+        "Lock the screen",
+        "Control how and when the screen locks.",
+        "Activate this device admin app",
+        "Cancel",
+        "Uninstall app"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "78a2931b8c7f",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": ".Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "‎‫كشف رقم واسم المتصل المجهول‬‎ keeps stopping",
+        "App info",
+        "Close app"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "cc3e5472271e",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "كشف رقم واسم المتصل المجهول",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_04_refusal_2000ms_layout.xml",
+      "screenshot": "step_04_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "5bb07f2761bb",
+      "to": "19ce26b7b737",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "19ce26b7b737",
+      "to": "99e4db35eb02",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "99e4db35eb02",
+      "to": "78a2931b8c7f",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"Cancel\" id=cancel_button (click) center=(540,1199))"
+    },
+    {
+      "from": "78a2931b8c7f",
+      "to": "cc3e5472271e",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": ".Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": ".Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "كشف رقم واسم المتصل المجهول",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "SpyAgent__0277b5385b",
+  "refusal_outcome_refined": "RELAUNCHED_A11Y_SETTINGS",
+  "app_chain_summary_zh": "应用以阿拉伯语“未知来电号码与姓名识别”工具为名，先批量申请相机、文件媒体、通话记录、短信、联系人、麦克风和电话权限，再诱导激活可清除数据与锁屏的设备管理员；用户拒绝后跳至无障碍设置并崩溃/终止，随后在无障碍列表拒权仍触发重新拉起无障碍设置。",
+  "observed_lure_rhetoric_zh": [
+    "阿拉伯语 -> “未知来电号码与姓名识别/探测”（应用名，出现在权限页、设备管理页与通知横幅）",
+    "英语+阿拉伯语 -> “选择允许[未知来电识别]访问哪些权限”（系统权限复核页标题）",
+    "英语 -> “此应用为旧版 Android 构建，可能无法正常运行，请检查更新或联系开发者”（设备管理页兼容弹窗）",
+    "英语 -> “激活设备管理应用后，将允许其执行清除全部数据、锁定屏幕等操作”（设备管理激活页说明）",
+    "英语 -> “Activate this device admin app / Erase all data / Lock the screen”（设备管理激活页的授权诱导与高风险能力说明）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "系统权限复核页，列出相机、文件媒体、通话记录、短信、联系人、麦克风和电话权限；点击“Continue”准备批量授权，无遮罩。",
+    "step_02": "设备管理添加页先弹出旧版Android兼容提示，点“OK”关闭；应用通知横幅显示阿拉伯语应用名，遮罩0。",
+    "step_03": "设备管理员激活页，说明可清除全部数据、锁定屏幕；本步点“Cancel”拒绝激活，通知横幅仍在，遮罩0。",
+    "step_04": "无障碍设置页上弹出阿拉伯语应用“屡次停止”崩溃框，含“App info/Close app”；探针命中后终止，通知横幅仍在，遮罩0。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍处无障碍设置页，无可见文案；应用通知横幅持续，遮罩0，未见弹窗或诱导操作。",
+    "post_jump_2.0s": "跳转后2秒探针：无障碍设置页保持空白可见区；应用通知横幅仍活跃，遮罩0，说明跳转后未出现覆盖层。",
+    "refusal_2.0s": "拒权返回后，无障碍列表显示该阿拉伯语应用为“Off”，可返回；动作触发再次拉起无障碍设置（RELAUNCHED_A11Y_SETTINGS）。"
+  }
+}

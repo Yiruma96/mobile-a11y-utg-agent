@@ -1,0 +1,10 @@
+flowchart TD
+    N_5bb07f2761bb["Step 1: ReviewPermissionsActivity\nChoose what to allow ‎"]
+    N_19ce26b7b737["Step 2: DeviceAdminAdd\nكشف رقم واسم المتصل ال"]
+    N_99e4db35eb02["Step 3: DeviceAdminAdd\nActivate device admin "]
+    N_78a2931b8c7f["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\n‎‫كشف رقم واسم المتصل "]
+    N_cc3e5472271e["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_5bb07f2761bb -->|"ui_click: click([35] Button text='Continue"| N_19ce26b7b737
+    N_19ce26b7b737 -->|"ui_click: click([3] Button text='OK' id=bu"| N_99e4db35eb02
+    N_99e4db35eb02 -->|"ui_click: click([10] Button text='Cancel' "| N_78a2931b8c7f
+    N_78a2931b8c7f -->|"refusal_probe: Back_refuse"| N_cc3e5472271e

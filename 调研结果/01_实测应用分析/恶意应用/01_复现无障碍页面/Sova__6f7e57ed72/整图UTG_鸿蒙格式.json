@@ -1,0 +1,323 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_126__6f7e57ed72",
+  "label": "malicious",
+  "family_or_category": "Sova",
+  "static_visibility": "packed_or_encrypted",
+  "target_package": "com.armed.little",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "45a0dd5708f6",
+  "hook_node_ids": [
+    "7a67bbd1feb4",
+    "4190c00716b3"
+  ],
+  "nodes": [
+    {
+      "node_id": "45a0dd5708f6",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.armed.little",
+      "abilityName": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Find Powerful Cleaner, Antivirus and grant usage Access permission",
+        "Powerful Cleaner, Antivirus"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "7a67bbd1feb4",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Aras Kargo",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "4190c00716b3",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Aras Kargo",
+        "Use Aras Kargo",
+        "OPTIONS",
+        "Aras Kargo shortcut",
+        "Off",
+        "Shortcut settings",
+        "Service allows Accessibility for Android to scan your device for accessibility issues."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "06c4dead3041",
+      "first_step": 2,
+      "role": "system_warning_dialog",
+      "bundleName": "com.armed.little",
+      "abilityName": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "360e1156be0a",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.armed.little",
+      "abilityName": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "gtAREXX46EByVjYKZoj9azZA",
+        "Welcome to Aras Kargo",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Aras Kargo services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "45a0dd5708f6",
+      "to": "7a67bbd1feb4",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 1755])"
+    },
+    {
+      "from": "7a67bbd1feb4",
+      "to": "4190c00716b3",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "4190c00716b3",
+      "to": "06c4dead3041",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7a67bbd1feb4",
+      "to": "360e1156be0a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "360e1156be0a",
+      "to": "360e1156be0a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "360e1156be0a",
+      "to": "360e1156be0a",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Aras Kargo Use Aras Kargo OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Aras Kargo",
+        "Use Aras Kargo",
+        "OPTIONS",
+        "Aras Kargo shortcut",
+        "Off",
+        "Shortcut settings",
+        "Service allows Accessibility for Android to scan your device for accessibility issues."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | ",
+      "top_package": "com.armed.little",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.armed.little",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "gtAREXX46EByVjYKZoj9azZA",
+        "Welcome to Aras Kargo",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Aras Kargo services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.armed.little",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "gtAREXX46EByVjYKZoj9azZA",
+        "Welcome to Aras Kargo",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Aras Kargo services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.armed.little",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "gtAREXX46EByVjYKZoj9azZA",
+        "Welcome to Aras Kargo",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Aras Kargo services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Sova__6f7e57ed72",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "该应用以“强力清理/杀毒需授权”和通知“为Aras Kargo启用访问”诱导点击，跳转系统无障碍列表及服务详情；用户拒绝返回后仍被锁在含“浏览器更新成功”和开启无障碍三步指引的诱导页，无法正常退出。",
+  "observed_lure_rhetoric_zh": [
+    "英文“Find Powerful Cleaner, Antivirus and grant usage Access permission” -> “寻找强力清理、杀毒功能并授予使用权限”（Step 1 应用引导页）",
+    "英文“Powerful Cleaner, Antivirus” -> “强力清理、杀毒”（Step 1 应用引导页）",
+    "英文“Update app accesses / Enable access for ‘Aras Kargo’” -> “更新应用访问权限/为‘Aras Kargo’启用访问”（Step 1、服务详情页及拒权页通知横幅）",
+    "英文“Service allows Accessibility for Android to scan your device for accessibility issues.” -> “该服务允许Android无障碍扫描设备无障碍问题”（服务详情页）",
+    "英文“Use Aras Kargo” -> “使用Aras Kargo”（服务详情页）",
+    "英文“Welcome to Aras Kargo / Browser updated successfully” -> “欢迎使用ArasKargo/浏览器已成功更新”（拒权返回页）",
+    "英文“To use this application, click the ‘Continue’ button and then enable Aras Kargo services.” -> “要使用本应用，请点击‘继续’并启用ArasKargo服务”（拒权返回页）",
+    "英文“1 Open settings / 2 Select Accessibility / 3 Slide the switch to enable” -> “1打开设置/2选择无障碍/3滑动开关启用”（拒权返回页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "应用引导页用英文“强力清理/杀毒需授予使用权限”诱导；点击CONTINUE触发“为Aras Kargo启用访问”通知流程，无遮罩。",
+    "step_02": "跳转系统无障碍设置，下载应用列表显示“Aras Kargo”为Off；因捕获无障碍设置钩子与探针自动终止，无遮罩。",
+    "post_jump_0.8s": "跳后0.8秒探针：仍停在系统无障碍设置页，界面空白，无遮罩；仅残留恶意应用空通知，未触发新动作。",
+    "post_jump_2.0s": "跳后2.0秒探针：仍为系统无障碍设置页且无文本，无遮罩；恶意应用空通知残留，未出现进一步跳转。",
+    "detail_1_service_detail_page": "无障碍服务详情页显示“使用Aras Kargo”、快捷方式关闭及“扫描设备无障碍问题”说明，包装成合规服务；通知横幅催启用，无遮罩。",
+    "detail_2_system_warning_dialog": "系统授权警告弹窗浮现于应用内引导页，拟点Deny；界面文本未捕获，无遮罩，通知横幅仍提示为“Aras Kargo”启用访问。",
+    "refusal_2.0s": "拒权返回+2秒仍锁在诱导页：英文“欢迎使用Aras Kargo/浏览器更新成功”并三步教开启无障碍；返回无法退出，通知横幅持续，无遮罩。",
+    "refusal_10.5s": "拒权返回+10.5秒仍停诱导页：英文“欢迎使用Aras Kargo/浏览器更新成功”及开启无障碍三步指引未变；返回无法退出，通知横幅持续，无遮罩。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "app_chain_summary_zh": "应用先以“解锁高级功能”为名，在伪造的无障碍开通页诱导点击 Enable，跳转系统无障碍列表并进入 Blockchain 服务详情；用户拒绝完全控制权限后，应用返回主界面并反复重弹同一诱导页。全程伴随伪装成 Google Play 服务的通知横幅，且无覆盖层。",
+  "observed_lure_rhetoric_zh": [
+    "英文「Accessibility Service / Blockchain / To unlock premium feature, Follow these steps... / Enable」 -> 中文意译：为解锁高级功能，请点击启用并到已安装服务/应用中启用高亮应用；位于伪无障碍开通页（step_01、refusal_5.5s、refusal_10.5s）。",
+    "英文「String (Google Play Services) / String (Tap to learn more...)」 -> 中文意译：伪装成 Google Play 服务的通知，提示点击了解更多，用于增强可信度；位于多数页面的通知横幅。",
+    "英文「Use Blockchain / Blockchain shortcut / Hold volume keys」 -> 中文意译：以使用 Blockchain、音量键快捷键等正常设置项包装恶意无障碍服务；位于服务详情页。",
+    "英文「Allow Blockchain to have full control of your device? ... Allow / Deny」 -> 中文意译：系统警告是否允许 Blockchain 完全控制设备、读屏并代操作；位于系统授权弹窗。"
+  ],
+  "frame_captions": {
+    "step_01": "伪无障碍开通页：以“解锁高级功能”为由，列出三步诱导开启 Blockchain 服务；本步点击 Enable，并见伪 Google Play 通知横幅，无遮罩。",
+    "step_02": "跳转系统无障碍列表：DOWNLOADED APPS 下 Blockchain 显示 Off；因捕获 HOOK_A11Y_SETTINGS 与探针而自动终止，通知横幅仍在，无遮罩。",
+    "post_jump_0.8s": "跳后 0.8 秒探针：仍停留系统无障碍页，界面无可读文本，仅见伪 Google Play 通知；遮罩数为 0，未出现覆盖层。",
+    "post_jump_2.0s": "跳后 2.0 秒探针：页面仍无可见文本，系统无障碍列表未变化，伪 Google Play 通知持续存在；遮罩数为 0。",
+    "detail_1_service_detail_page": "服务详情页：显示 Blockchain 的 Use Blockchain 开关及快捷键选项；此为系统设置包装页，本步仅检查详情，通知仍在，遮罩为 0。",
+    "detail_2_system_warning_dialog": "系统风险弹窗：警告允许 Blockchain 完全控制设备，会读屏并可代操作；提供 Allow/Deny，本步仅检查未授权，遮罩为 0。",
+    "refusal_2.0s": "拒权返回 2 秒：回到 MainActivity，界面无文本；应用随即准备重弹诱导窗，通知仍在，遮罩为 0。",
+    "refusal_5.5s": "拒权后 5.5 秒：恶意无障碍诱导页重新弹出，重复“解锁高级功能”三步话术与 Enable 按钮；通知仍在，遮罩为 0。",
+    "refusal_10.5s": "拒权后 10.5 秒：同一诱导页持续重弹，仍以 Blockchain 与 Enable 按钮催促开启无障碍；通知横幅未撤，遮罩为 0。"
+  }
+}

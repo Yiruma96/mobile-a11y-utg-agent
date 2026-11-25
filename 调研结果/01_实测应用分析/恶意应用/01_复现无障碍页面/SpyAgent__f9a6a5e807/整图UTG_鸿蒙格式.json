@@ -1,0 +1,384 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MR_064__f9a6a5e807",
+  "label": "malicious",
+  "family_or_category": "SpyAgent",
+  "static_visibility": "clear",
+  "target_package": "sops.system.android.updater",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "42c6bf997d4b",
+  "hook_node_ids": [
+    "756cb0354b80",
+    "6f7cd632cdd4"
+  ],
+  "nodes": [
+    {
+      "node_id": "42c6bf997d4b",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.google.android.permissioncontroller",
+      "abilityName": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Google Play Service to access",
+        "SMS",
+        "send and view SMS messages",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "Contacts",
+        "access your contacts",
+        "Call logs",
+        "read and write phone call log",
+        "Phone",
+        "make and manage phone calls",
+        "Microphone",
+        "record audio",
+        "Location",
+        "access this device's location"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "048a607e31aa",
+      "first_step": 2,
+      "role": "intermediate",
+      "bundleName": "sops.system.android.updater",
+      "abilityName": ".MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Google Play Service",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "f1c3ad843833",
+      "first_step": 3,
+      "role": "intermediate",
+      "bundleName": "sops.system.android.updater",
+      "abilityName": "sops.system.android.updater.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Please enable 'Accessibility' for 'Google Play Service' to get this working. Tap on 'Ok' to go to Accessibility Settings.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_03_layout_harmony.json",
+      "android_layout_xml": "step_03_layout.xml",
+      "screenshot": "step_03_screen.png"
+    },
+    {
+      "node_id": "756cb0354b80",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Google Play Service",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_04_layout_harmony.json",
+      "android_layout_xml": "step_04_layout.xml",
+      "screenshot": "step_04_screen.png"
+    },
+    {
+      "node_id": "dca836b27349",
+      "first_step": 4,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Google Play Service",
+        "Use Google Play Service",
+        "OPTIONS",
+        "Google Play Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings"
+      ],
+      "harmony_layout_json": "step_04_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_04_service_detail_layout.xml",
+      "screenshot": "step_04_service_detail_screen.png"
+    },
+    {
+      "node_id": "6f7cd632cdd4",
+      "first_step": 4,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Google Play Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_04_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_04_system_warning_layout.xml",
+      "screenshot": "step_04_system_warning_screen.png"
+    },
+    {
+      "node_id": "fd88ce428b90",
+      "first_step": 4,
+      "role": "refusal_probe",
+      "bundleName": "sops.system.android.updater",
+      "abilityName": "sops.system.android.updater.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Your Device is not Supported as of now.",
+        "Application is now Uninstalling.",
+        "OK"
+      ],
+      "harmony_layout_json": "step_04_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_04_refusal_2000ms_layout.xml",
+      "screenshot": "step_04_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "42c6bf997d4b",
+      "to": "048a607e31aa",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([35] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "048a607e31aa",
+      "to": "f1c3ad843833",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f1c3ad843833",
+      "to": "756cb0354b80",
+      "step": 3,
+      "edge_type": "ui_click",
+      "action": "click([2] Button text=\"OK\" id=button1 (click) center=(887,1152))"
+    },
+    {
+      "from": "756cb0354b80",
+      "to": "dca836b27349",
+      "step": 4,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "dca836b27349",
+      "to": "6f7cd632cdd4",
+      "step": 4,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "756cb0354b80",
+      "to": "fd88ce428b90",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "fd88ce428b90",
+      "to": "fd88ce428b90",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "fd88ce428b90",
+      "to": "fd88ce428b90",
+      "step": 4,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 4,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_800ms_screen.png",
+          "harmony_layout_path": "step_04_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_04_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_04_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Google Play Service Use Google Play Service OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Google Play Service",
+        "Use Google Play Service",
+        "OPTIONS",
+        "Google Play Service shortcut",
+        "Hold volume keys",
+        "Shortcut settings"
+      ],
+      "screenshot_path": "step_04_service_detail_screen.png",
+      "harmony_layout_path": "step_04_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Google Play Service to have full contro",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Google Play Service to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_04_system_warning_screen.png",
+      "harmony_layout_path": "step_04_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "sops.system.android.updater",
+      "top_activity": "sops.system.android.updater.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Your Device is not Supported as of now.",
+        "Application is now Uninstalling.",
+        "OK"
+      ],
+      "screenshot_path": "step_04_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "sops.system.android.updater",
+      "top_activity": "sops.system.android.updater.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Your Device is not Supported as of now.",
+        "Application is now Uninstalling.",
+        "OK"
+      ],
+      "screenshot_path": "step_04_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "sops.system.android.updater",
+      "top_activity": "sops.system.android.updater.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Your Device is not Supported as of now.",
+        "Application is now Uninstalling.",
+        "OK"
+      ],
+      "screenshot_path": "step_04_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_04_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "SpyAgent__f9a6a5e807",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "该应用先请求短信、联系人、通话记录、麦克风、定位等敏感权限，再伪装成Google Play服务并以旧版兼容提示诱导开启无障碍；用户拒绝后不退出，而是重弹“设备不支持/正在卸载”的恐吓弹窗继续施压。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> 选择允许Google Play服务访问的内容（Step 1 权限总览页）",
+    "英文 -> 发送和查看短信、访问照片/媒体/文件、联系人、通话记录、拨打电话、录音、定位（Step 1 权限总览页）",
+    "英文 -> 此应用为旧版Android构建，可能无法正常运行；请检查更新或联系开发者（Step 2 伪Google Play服务弹窗）",
+    "英文 -> 请为Google Play服务开启无障碍以使其工作，点OK前往无障碍设置（Step 3 诱导弹窗）",
+    "英文 -> 使用Google Play服务；Google Play服务快捷方式/音量键快捷方式（无障碍列表/服务详情页）",
+    "英文 -> 允许Google Play服务完全控制你的设备？（系统警告弹窗）",
+    "英文 -> 完全控制适合辅助无障碍需求的应用，不适用于大多数应用（系统警告弹窗）",
+    "英文 -> 可查看并控制屏幕，读取屏幕所有内容并覆盖显示在其他应用上（系统警告弹窗）",
+    "英文 -> 可观察并执行操作，跟踪与应用或硬件传感器的交互，并代表你操作应用（系统警告弹窗）",
+    "英文 -> 你的设备目前不受支持（拒权后恐吓弹窗）",
+    "英文 -> 应用正在卸载（拒权后恐吓弹窗）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "权限总览页伪装为Google Play服务，罗列短信、文件、联系人、通话记录、电话、麦克风、定位等敏感权限；点继续，无通知遮罩。",
+    "step_02": "应用内弹出伪装Google Play服务提示，称旧版Android可能异常，建议检查更新或联系开发者；点OK，无通知遮罩。",
+    "step_03": "应用内弹窗称需为Google Play服务开启无障碍才能工作，并引导点OK进入无障碍设置；无通知与遮罩。",
+    "step_04": "系统无障碍列表的已下载应用中出现Google Play服务且为关闭；采集到设置钩子/探针后自动终止，无通知遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留无障碍设置页，UI文本为空，无通知横幅、遮罩为0，页面暂未变化。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍为无障碍设置页，无文本与通知横幅，遮罩为0，未出现覆盖层或新跳转。",
+    "detail_1_service_detail_page": "Google Play服务无障碍详情页，含Use Google Play Service开关、快捷方式与音量键选项；仅检查详情/警告，无遮罩。",
+    "detail_2_system_warning_dialog": "系统高风险警告：问是否允许Google Play服务完全控制设备，列明读屏、覆盖显示和代操作风险；含允许/拒绝，无遮罩。",
+    "refusal_2.0s": "拒权返回应用后重弹恐吓框：称设备暂不支持、应用正在卸载，仅OK；属拒权后重启诱导，无通知遮罩。",
+    "refusal_10.5s": "拒权返回10.5秒后仍显示同一恐吓框：设备暂不支持、应用正在卸载，仅OK；确认拒权后循环诱导，无通知遮罩。"
+  }
+}

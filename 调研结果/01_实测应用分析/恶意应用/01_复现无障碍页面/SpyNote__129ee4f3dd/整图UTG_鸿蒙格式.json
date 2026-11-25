@@ -1,0 +1,315 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_040__129ee4f3dd",
+  "label": "malicious",
+  "family_or_category": "SpyNote",
+  "static_visibility": "clear",
+  "target_package": "com.duke.centers",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "entry_node_id": "e3921ace5359",
+  "hook_node_ids": [
+    "c7e301192a1d",
+    "621c4ac03e74"
+  ],
+  "nodes": [
+    {
+      "node_id": "e3921ace5359",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.duke.centers",
+      "abilityName": "com.duke.vhasjbytsejmchjytybqaiucxsovcftvkngegomeqdvgmgvqzg2.isrjhroorjshhuhvaoyxhzihjosgyxaalfopwxsqtcaxyhmbzs20",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Accessibility Service",
+        ".nered",
+        "To unlock premium feature,  Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App",
+        "Enable"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "c7e301192a1d",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        ".nered",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "a28d49c7fe38",
+      "first_step": 2,
+      "role": "service_detail",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        ".nered",
+        "Use .nered",
+        "OPTIONS",
+        ".nered shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "..."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    },
+    {
+      "node_id": "621c4ac03e74",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow .nered to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "harmony_layout_json": "step_02_system_warning_layout_harmony.json",
+      "android_layout_xml": "step_02_system_warning_layout.xml",
+      "screenshot": "step_02_system_warning_screen.png"
+    },
+    {
+      "node_id": "f49c95bb4c6c",
+      "first_step": 2,
+      "role": "refusal_probe",
+      "bundleName": "com.duke.centers",
+      "abilityName": "com.duke.vhasjbytsejmchjytybqaiucxsovcftvkngegomeqdvgmgvqzg2.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "harmony_layout_json": "step_02_refusal_2000ms_layout_harmony.json",
+      "android_layout_xml": "step_02_refusal_2000ms_layout.xml",
+      "screenshot": "step_02_refusal_2000ms_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e3921ace5359",
+      "to": "c7e301192a1d",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"Enable\" id=okbtn (click) center=(540,1232))"
+    },
+    {
+      "from": "c7e301192a1d",
+      "to": "a28d49c7fe38",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "a28d49c7fe38",
+      "to": "621c4ac03e74",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "c7e301192a1d",
+      "to": "f49c95bb4c6c",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "f49c95bb4c6c",
+      "to": "e3921ace5359",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "e3921ace5359",
+      "to": "e3921ace5359",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back .nered Use .nered OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        ".nered",
+        "Use .nered",
+        "OPTIONS",
+        ".nered shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "..."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow .nered to have full control of your dev",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow .nered to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.duke.centers",
+      "top_activity": "com.duke.vhasjbytsejmchjytybqaiucxsovcftvkngegomeqdvgmgvqzg2.MainActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.duke.centers",
+      "top_activity": "com.duke.vhasjbytsejmchjytybqaiucxsovcftvkngegomeqdvgmgvqzg2.isrjhroorjshhuhvaoyxhzihjosgyxaalfopwxsqtcaxyhmbzs20",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility Service",
+        ".nered",
+        "To unlock premium feature,  Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App",
+        "Enable"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.duke.centers",
+      "top_activity": "com.duke.vhasjbytsejmchjytybqaiucxsovcftvkngegomeqdvgmgvqzg2.isrjhroorjshhuhvaoyxhzihjosgyxaalfopwxsqtcaxyhmbzs20",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Accessibility Service",
+        ".nered",
+        "To unlock premium feature,  Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App",
+        "Enable"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "SpyNote__129ee4f3dd",
+  "refusal_outcome_refined": "RELAUNCHED_LURE_DIALOG",
+  "app_chain_summary_zh": "应用先以伪造“Accessibility Service”页面和虚构“解锁高级功能”步骤诱导点击 Enable，跳转系统无障碍列表并打开 .nered 服务详情；在系统“完全控制设备”警告处拒绝后，应用回退到空白主页并反复重弹同一诱导页，表现出 SpyNote 无障碍授权钓鱼与拒权重生特征。",
+  "observed_lure_rhetoric_zh": [
+    "英文 -> “To unlock premium feature, Follow these steps 1. Click on Enable Button 2. Go to Installed services / Apps 3. Enable Highlighted App” 中文意为“解锁高级功能，请按步骤：1.点击启用按钮 2.进入已安装服务/应用 3.启用高亮应用”（伪造无障碍引导页 step_01、refusal_5.5s、refusal_10.5s）",
+    "英文 -> “Allow .nered to have full control of your device?” 中文意为“允许 .nered 完全控制你的设备？”，并说明可查看控制屏幕、读取所有内容、覆盖其他应用及代表用户操作（系统警告弹窗 detail_2）",
+    "英文 -> “Use .nered”“.nered shortcut”“Hold volume keys” 中文意为“使用 .nered”“.nered 快捷方式”“按住音量键”（服务详情页 detail_1）",
+    "英文 -> 通知标题伪装为“Google Play Services”，正文“Tap to learn more...” 中文意为“点按了解更多”（应用通知横幅，贯穿各页）",
+    "英文 -> “Your data isn’t backed up”“Add a backup account now” 中文意为“你的数据未备份”“立即添加备份账户”（Google Play Services 通知，贯穿各页）"
+  ],
+  "frame_captions_zh": {
+    "step_01": "伪造无障碍引导页，英文以“解锁高级功能”诱导点 Enable 并到已安装服务启用高亮应用；点击后跳系统设置，通知栏有伪装 Google Play Services 横幅，无遮罩。",
+    "step_02": "系统无障碍列表，DOWNLOADED APPS 中 .nered 为 Off；采集无障碍 Hook/探针后终止，通知栏有伪装 Google Play Services 横幅，无遮罩。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针，仍停在系统无障碍设置页，UI 文本为空、无遮罩；通知栏继续显示伪装 Google Play Services 横幅与数据未备份提示。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针，仍在系统无障碍设置页且无任何 UI 文本与遮罩；通知栏持续显示伪装 Google Play Services 横幅及数据未备份提示。",
+    "detail_1_service_detail_page": "打开 .nered 无障碍服务详情页，英文显示“Use .nered”、快捷方式与“按住音量键”等选项；仅检查未授权，通知栏仍有伪装横幅，无遮罩。",
+    "detail_2_system_warning_dialog": "系统无障碍授权警告框，英文称允许 .nered 完全控制设备，可读屏、覆盖应用并代操作；本步仅检查并准备点 Deny，无遮罩，通知栏仍有伪装横幅。",
+    "refusal_2.0s": "在警告框拒绝后回到应用 MainActivity，界面文本为空；随后触发 RELAUNCHED_LURE_DIALOG，通知栏仍有伪装 Google Play Services 横幅，无遮罩。",
+    "refusal_5.5s": "拒权返回 5.5 秒后重弹同一伪造无障碍引导页，英文仍以“解锁高级功能”诱导 Enable；属 RELAUNCHED_LURE_DIALOG，通知栏伪装横幅持续，无遮罩。",
+    "refusal_10.5s": "拒权返回 10.5 秒后再次重弹伪造引导页，英文步骤与 Enable 按钮不变，持续施压；属 RELAUNCHED_LURE_DIALOG，通知栏伪装横幅仍在，无遮罩。"
+  }
+}

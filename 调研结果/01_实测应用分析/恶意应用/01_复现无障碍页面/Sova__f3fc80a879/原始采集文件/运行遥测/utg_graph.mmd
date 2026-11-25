@@ -1,0 +1,13 @@
+flowchart TD
+    N_edeb2028933d["Step 1: AccessibilityGuideActivity\nApps list"]
+    N_3268e3b2be17["Step 2: AccessibilityGuideActivity\nWygl+xJEYdDFjVZQcA70jR"]
+    N_52b94934607f["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_edeb2028933d -->|"ui_click: click([100, 430])"| N_3268e3b2be17
+    N_3268e3b2be17 -->|"ui_click: click([10] Button text='CONTINUE"| N_52b94934607f
+    N_52b94934607f -->|"post_jump_probe: wait(0.8s)_post_jump"| N_3268e3b2be17
+    N_52b94934607f -->|"post_jump_probe: wait(2.0s)_post_jump"| N_3268e3b2be17
+    N_52b94934607f -->|"detail_probe: click_service()"| N_3268e3b2be17
+    N_3268e3b2be17 -->|"warning_probe: click_use_service_switch"| N_3268e3b2be17
+    N_52b94934607f -->|"refusal_probe: Back_refuse"| N_3268e3b2be17
+    N_3268e3b2be17 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_3268e3b2be17
+    N_3268e3b2be17 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_3268e3b2be17

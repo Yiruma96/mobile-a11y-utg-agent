@@ -1,0 +1,16 @@
+flowchart TD
+    N_42c6bf997d4b["Step 1: ReviewPermissionsActivity\nChoose what to allow G"]
+    N_048a607e31aa["Step 2: MainActivity\nGoogle Play Service"]
+    N_f1c3ad843833["Step 3: MainActivity\nPlease enable 'Accessi"]
+    N_756cb0354b80["Step 4: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_dca836b27349["Step 4: SubSettings\nBack"]
+    N_6f7cd632cdd4["Step 4: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Google Play Serv"]
+    N_fd88ce428b90["Step 4: MainActivity\nYour Device is not Sup"]
+    N_42c6bf997d4b -->|"ui_click: click([35] Button text='Continue"| N_048a607e31aa
+    N_048a607e31aa -->|"ui_click: click([3] Button text='OK' id=bu"| N_f1c3ad843833
+    N_f1c3ad843833 -->|"ui_click: click([2] Button text='OK' id=bu"| N_756cb0354b80
+    N_756cb0354b80 -->|"detail_probe: click_service()"| N_dca836b27349
+    N_dca836b27349 -->|"warning_probe: click_use_service_switch"| N_6f7cd632cdd4
+    N_756cb0354b80 -->|"refusal_probe: Back_refuse"| N_fd88ce428b90
+    N_fd88ce428b90 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_fd88ce428b90
+    N_fd88ce428b90 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_fd88ce428b90

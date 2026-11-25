@@ -1,0 +1,301 @@
+{
+  "schema": "harmonyos_utg_v1",
+  "layout_format": "openharmony_arkxtest_uitest_dumpLayout",
+  "app_id": "MB_127__15eae9134d",
+  "label": "malicious",
+  "family_or_category": "Sova",
+  "static_visibility": "partial_dynamic_or_remote",
+  "target_package": "com.civil.concert",
+  "model": "deepseek-v4.1-flash",
+  "mode": "hybrid",
+  "offline_isolated": true,
+  "final_status": "hook_captured",
+  "reached_a11y_hook": true,
+  "reached_app_details_hook": false,
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "entry_node_id": "ea2ea1064b57",
+  "hook_node_ids": [
+    "ffe926a5d606",
+    "1e4528b8135a"
+  ],
+  "nodes": [
+    {
+      "node_id": "ea2ea1064b57",
+      "first_step": 1,
+      "role": "entry",
+      "bundleName": "com.civil.concert",
+      "abilityName": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO53LDR6xr7sNeSjeamf3Wuo+UjgTjTGmM0Y2l4SJFHiV6GnElFMs0oOsSTEyMD3FuDnSlUHibn6aTbOh8Ab4FknEMy+MYB+o0j5pkSsgHsch+FOLTmUz024wy8pbezzegpxqcSiep3CGLlNf2",
+        "Welcome to Chrome",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Chrome services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "harmony_layout_json": "step_01_layout_harmony.json",
+      "android_layout_xml": "step_01_layout.xml",
+      "screenshot": "step_01_screen.png"
+    },
+    {
+      "node_id": "ffe926a5d606",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "harmony_layout_json": "step_02_layout_harmony.json",
+      "android_layout_xml": "step_02_layout.xml",
+      "screenshot": "step_02_screen.png"
+    },
+    {
+      "node_id": "1e4528b8135a",
+      "first_step": 2,
+      "role": "trigger_hook",
+      "bundleName": "com.android.settings",
+      "abilityName": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Off",
+        "Shortcut settings",
+        "Service allows Accessibility for Android to scan your device for accessibility issues."
+      ],
+      "harmony_layout_json": "step_02_service_detail_layout_harmony.json",
+      "android_layout_xml": "step_02_service_detail_layout.xml",
+      "screenshot": "step_02_service_detail_screen.png"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ea2ea1064b57",
+      "to": "ffe926a5d606",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([10] Button text=\"CONTINUE\" (click) center=(540,1816))"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "1e4528b8135a",
+      "step": 2,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "1e4528b8135a",
+      "to": "ea2ea1064b57",
+      "step": 2,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "ea2ea1064b57",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "ea2ea1064b57",
+      "to": "ea2ea1064b57",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "ea2ea1064b57",
+      "to": "ea2ea1064b57",
+      "step": 2,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 2,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_800ms_screen.png",
+          "harmony_layout_path": "step_02_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_02_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_02_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Off",
+        "Shortcut settings",
+        "Service allows Accessibility for Android to scan your device for accessibility issues."
+      ],
+      "screenshot_path": "step_02_service_detail_screen.png",
+      "harmony_layout_path": "step_02_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO5",
+      "top_package": "com.civil.concert",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "overlays": [],
+      "sample_texts": [
+        "Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO53LDR6xr7sNeSjeamf3Wuo+UjgTjTGmM0Y2l4SJFHiV6GnElFMs0oOsSTEyMD3FuDnSlUHibn6aTbOh8Ab4FknEMy+MYB+o0j5pkSsgHsch+FOLTmUz024wy8pbezzegpxqcSiep3CGLlNf2",
+        "Welcome to Chrome",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Chrome services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_system_warning_screen.png",
+      "harmony_layout_path": "step_02_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.civil.concert",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO53LDR6xr7sNeSjeamf3Wuo+UjgTjTGmM0Y2l4SJFHiV6GnElFMs0oOsSTEyMD3FuDnSlUHibn6aTbOh8Ab4FknEMy+MYB+o0j5pkSsgHsch+FOLTmUz024wy8pbezzegpxqcSiep3CGLlNf2",
+        "Welcome to Chrome",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Chrome services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.civil.concert",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO53LDR6xr7sNeSjeamf3Wuo+UjgTjTGmM0Y2l4SJFHiV6GnElFMs0oOsSTEyMD3FuDnSlUHibn6aTbOh8Ab4FknEMy+MYB+o0j5pkSsgHsch+FOLTmUz024wy8pbezzegpxqcSiep3CGLlNf2",
+        "Welcome to Chrome",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Chrome services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.civil.concert",
+      "top_activity": "com.tapston.burgerking.ui.AccessibilityGuideActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Wygl+xJEYdDFjVZQcA70jRRwdWBz9NJ1pUHxOBqyjUsO53LDR6xr7sNeSjeamf3Wuo+UjgTjTGmM0Y2l4SJFHiV6GnElFMs0oOsSTEyMD3FuDnSlUHibn6aTbOh8Ab4FknEMy+MYB+o0j5pkSsgHsch+FOLTmUz024wy8pbezzegpxqcSiep3CGLlNf2",
+        "Welcome to Chrome",
+        "Browser updated successfully",
+        "To use this application, click the \"Continue\" button and then enable Chrome services.",
+        "1Open settings",
+        "2Select Accessibility",
+        "3Slide the switch to enable",
+        "CONTINUE"
+      ],
+      "screenshot_path": "step_02_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_02_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "report_stem": "Sova__15eae9134d",
+  "refusal_outcome_refined": "TRAPPED_ON_LURE_SCREEN",
+  "app_chain_summary_zh": "应用以仿Chrome更新/启用服务的引导页和通知横幅，诱导用户点击CONTINUE并开启Chrome无障碍；跳转系统设置后捕获钩子，拒权返回仍被困在原诱导页，无法绕过。",
+  "observed_lure_rhetoric_zh": [
+    "英语 -> “欢迎使用 Chrome / 浏览器已成功更新”（引导页）：伪装成浏览器更新完成，降低戒心。",
+    "英语 -> “要使用此应用，请点击 Continue，然后启用 Chrome 服务。”（引导页）：把无障碍授权包装成启用Chrome服务。",
+    "英语 -> “1 打开设置 / 2 选择无障碍 / 3 滑动开关启用”（引导页）：分步诱导开启无障碍。",
+    "英语 -> “CONTINUE”（按钮）：引导点击并跳转系统无障碍设置。",
+    "英语 -> “Update app accesses / Enable access for Chrome”（通知横幅）：以更新应用访问权限、为Chrome启用访问进行催促。",
+    "英语 -> “Use Chrome / Service allows Accessibility for Android to scan your device for accessibility issues.”（服务详情页）：将无障碍服务描述为扫描无障碍问题，弱化高风险权限。"
+  ],
+  "frame_captions_zh": {
+    "step_01": "仿Chrome引导页，称浏览器已更新，要求点CONTINUE并开启Chrome无障碍；通知横幅催启访问，点击按钮跳系统设置。",
+    "step_02": "系统无障碍列表，Chrome在已下载应用中显示Off；应用通知仍在催促启用，探针捕获无障碍设置钩子后自动终止。",
+    "post_jump_0.8s": "跳转后0.8秒探针，仍停在系统无障碍列表，UI文本为空；应用通知持续显示，overlays=0，无遮罩。",
+    "post_jump_2.0s": "跳转后2秒探针，页面未变化，仍为无障碍列表且无可见文本；通知横幅保留，overlays=0，未见弹窗或遮罩。",
+    "detail_1_service_detail_page": "Chrome服务详情页，显示Use Chrome及快捷键Off，说明称服务可扫描无障碍问题；检查详情/警告，未授权。",
+    "detail_2_system_warning_dialog": "本步拟检查系统警告并拒权，但界面仍回到仿Chrome引导页，重复更新与启用服务话术；无遮罩，仅见混淆串。",
+    "refusal_2.0s": "拒权返回2秒后，仍被困在仿Chrome引导页，重复更新与开启无障碍话术；通知横幅持续，无遮罩，无法绕过。",
+    "refusal_10.5s": "拒权返回10.5秒后，页面仍停在仿Chrome引导页，话术与通知不变；overlays=0，无退出或取消入口，形成诱导闭环。"
+  }
+}
