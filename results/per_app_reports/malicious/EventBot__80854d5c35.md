@@ -1,0 +1,317 @@
+# MR_154__80854d5c35｜EventBot — Antivirus
+
+> **类型**：在野恶意无障碍样本  ｜  **来源池**：`MalRadar_2014_2021`  ｜  **静态可见性**：`clear`  ｜  **APKAudit 耗时**：141.6s
+
+## 1. 一句话核心结论
+
+- **核心申请方式**：以“Antivirus 杀毒软件必须开启”为话术，在系统级不可取消的 WebView AlertDialog 中展示两步截图教程，点击唯一按钮直跳无障碍设置，未授权则每 15 秒无限循环重拉，获权后锁定任务并全屏悬浮遮挡防撤权
+- **静态可见性说明**：外层 classes.dex 仅含加载器，全部引导逻辑位于 assets/fonts/default.ttf（RC4 加密，密钥为 cfg.gatePublicKey）解密所得内层 classes.dex 的 com.lib 中；已用该密钥完整解密还原，无 AES/远端 HTML 缺失，引导文案与截图均内联于本地 strings.xml 与 assets
+- **命中的行为模式标签**：`TRIG_BACKGROUND_OR_NOTIF_RELAUNCH`（后台服务/定时器/通知栏反复拉起授权页）、`CARRIER_NATIVE_DIALOG_OR_ACTIVITY`（原生弹窗(Dialog)或原生引导页(Activity)）、`CARRIER_WEBVIEW_LOCAL_HTML`（本地离线HTML/WebView引导页）、`CARRIER_OVERLAY_MASK_OR_GUIDE`（悬浮窗/透明遮罩引导层）、`CARRIER_GIF_OR_IMAGE_GUIDE`（纯图片/GIF动画分步操作指引）、`CARRIER_SYSTEM_A11Y_DESCRIPTION`（系统无障碍列表服务说明(android:description)）、`LURE_FAKE_UPDATE_OR_INSTALL`（假系统/应用更新或插件安装胁迫）、`LURE_FAKE_SECURITY_ANTIFRAUD`（假安全防护/杀毒扫描/反诈保护恐吓）、`LURE_RESTRICTED_SETTINGS_COACHING`（Android 13+受限设置分步解锁教学(应用信息→右上角菜单)）、`COERCE_NO_SKIP_NON_CANCELABLE`（不可取消弹窗/无跳过出口/单一正向按钮）、`COERCE_REFUSAL_LOOP_RELAUNCH`（拒权或返回后死循环重拉无障碍设置页）、`COERCE_OVERLAY_STACK_ON_SETTINGS`（跳入系统设置页后短时压栈透明指引/遮罩窗）、`ID_SYSTEM_OR_BRAND_IMPERSONATION`（冒充系统组件/Google/大厂或银行品牌身份）、`DROPPER_STAGE1_INSTALL_OR_EMBEDDED`（一阶段Dropper/Session安装器或嵌包二阶段投递）、`STATIC_PACKED_OR_ENCRYPTED_PAYLOAD`（强加壳/VMP/AES密文或远端载荷致静态遮蔽）
+
+## 2. 应用标识、静态能力与身份署名核验
+
+| 维度 | 实测详情 |
+| --- | --- |
+| 样本 SHA-256 | `80854d5c3571a7952059893135cca2653449607258a61200112158e7b4181b05` |
+| 包名 / 年份 | `com.example.eventbot` / 2020 |
+| 家族 / 品类 | **EventBot**（同池样本数：124） |
+| 原始来源标识 | https://www.cybereason.com/blog/eventbot-a-new-mobile-banking-trojan-is-born |
+| 桌面显示名 | Antivirus |
+| 引导页宣称品牌/身份 | Antivirus（伪装为杀毒/安全防护软件，实为 EventBot 银行木马，botnetID=antik101） |
+| 系统无障碍列表服务名 | Antivirus |
+| 三方身份是否错配/伪装 | **是（存在伪装/错配）** ｜ 混淆手法：包名为无关的 com.example.eventbot 而显示名伪装 Antivirus；无障碍服务 android:label 复用 app_name；核心载荷 RC4 加密藏于 assets/fonts/default.ttf（伪装字体文件）；桌面图标点击后 MainActivity 立即 finish() 不留界面；banner_text 提供“System updating, please wait…”全屏转圈假更新页用于变脸遮挡 |
+| 无障碍服务类名 | `com.example.eventbot.events` |
+| 静态能力位 | `canRetrieveWindowContent=True` · `canPerformGestures=False` · `isAccessibilityTool=False` · 监听范围：全局通配（未限定 packageNames） |
+| 共现高危权限 | `READ_SMS, RECEIVE_SMS, REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, REQUEST_INSTALL_PACKAGES, SYSTEM_ALERT_WINDOW` |
+| 系统设置项说明 (`android:description`) | You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly. |
+
+## 3. 一步步引导用户申请/开启无障碍流程（Pre-Grant UTG 全链路）
+
+| 步骤 | 阶段 | 页面 / 组件 | 触发事件 | UI 载体 | 界面呈现原文与译文 | 要求用户执行的动作 | 代码/资源锚点 |
+| :---: | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 冷启动入口 | com.example.eventbot.MainActivity（LAUNCHER） | onCreate | 原生Activity | 无 | 用户看到桌面图标点击后无任何反馈，无任何可操作控件 | `com.example.eventbot.MainActivity.onCreate` |
+| 2 | 获权前动作 | com.example.eventbot.service（后台 Service）+ DexClassLoader | MainActivity.onCreate → startService → service.onCreate | 不可静态还原 | 无 | 无 | `com.example.eventbot.service.loadLib / com.example.eventbot.service.fallbackLib` |
+| 3 | 业务功能触发 | com.lib.requestPermissions 后台线程（while(true) + Thread.sleep(permissionsDelay*1000)） | lib$2.run 启动后定时循环，permissionsDelay=15 秒 | 不可静态还原 | 无 | 无（被动反复弹出引导） | `com.lib.requestPermissions` |
+| 4 | 引导说明页 | com.example.eventbot.activity（Theme.AppCompat.Light.NoActionBar.FullScreen，intent mode=2）→ com.lib.requestA11yAlert | requestA11yAlertActivity() 以 mode=2 startActivity；activity.onCreate → doActivity(case 2) | 原生Dialog | **原文**：Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it<br>**译注**：杀毒软件将无法正常工作。1. 在设置中选择 Antivirus；2. 打开它（下方配 1.jpg、2.jpg 两步操作截图） | 只能点击唯一按钮“Open Antivirus”（setCancelable(false)，无取消、无跳过、无返回按钮） | `com.lib.requestA11yAlert / res/values/strings.xml hint_text(hint_button)` |
+| 5 | 跳无障碍设置 | 系统设置 android.settings.ACCESSIBILITY_SETTINGS | AlertDialog 正按钮点击回调 lib$3.onClick | 系统无障碍页 | **原文**：You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly.<br>**译注**：系统无障碍列表中显示服务名“Antivirus”，说明为“你必须启用 Antivirus 才能获得应用的完整功能，否则 Antivirus 无法正常工作” | 在系统无障碍列表中手动找到“Antivirus”并打开开关（该页面为系统 UI，应用无法代劳） | `com.lib$3.onClick / res/values/strings.xml accessibility_config_text` |
+| 6 | 拒权反馈循环 | com.example.eventbot.activity 再次拉起（mode=2 AlertDialog） | 用户返回/拒绝后，requestPermissions 循环下一次 15 秒 tick 时 isA11y 仍为 false | 原生Dialog | **原文**：Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it<br>**译注**：同一不可取消引导弹窗无限重复弹出，直到用户开启无障碍 | 无退出通道，只能反复面对同一弹窗直至授权 | `com.lib.requestPermissions / com.lib.requestA11yAlertActivity` |
+| 7 | 获权后动作 | com.example.eventbot.activity（mode=7）+ WindowManager 全屏 WebView 悬浮窗 | events.onServiceConnected → com.lib.doAutorun → isA11y 为真且 isNeedPinned(pinnedPrefs) → showPinnned() | 悬浮窗Overlay | **原文**：（html 与背景色由 pinnedPrefs 云控/本地下发，本次包内未见固定文案）<br>**译注**：锁定任务模式 startLockTask() 进入全屏 WebView，hidePinnedHint 添加 y 偏移为负的全屏悬浮 WebView 遮挡界面，blockHardwareButtons=true 由 BlockHardwareButtons 吞掉按键 | 无法返回、无法退出，用户难以进入设置撤销无障碍授权 | `com.lib.doAutorun / com.lib.showPinnned / com.lib.makePinned / com.lib.hidePinnedHint` |
+
+## 4. 引导文字呈现位置与逐字原文摘录
+
+### 4.1 呈现位置清单（Where Text Appears）
+- 系统无障碍服务列表项：android:label=@string/app_name 显示“Antivirus”
+- 系统无障碍服务说明：@xml/accessibility_config 引用 accessibility_config_text = “You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly.”
+- com.example.eventbot.activity 内 setCancelable(false) 的系统级 AlertDialog（setType(2003)），其中 WebView 加载 strings.xml 的 hint_text 内联 HTML（标题“Antivirus will not work correctly.”+ 步骤 1/2 文字 + assets/1.jpg、2.jpg 截图）
+- 该弹窗唯一按钮文案：hint_button = “Open Antivirus”
+- banner_text（strings.xml 内联 HTML）：全屏黑底白字“System updating, please wait...” + 旋转 loading 圈，用作变脸/遮挡页
+- 获权后：WindowManager.addView 添加的全屏 WebView 悬浮窗（hidePinnedHint）与 startLockTask 锁定任务页，文案由 pinnedPrefs 动态下发
+
+### 4.2 逐字原文与话术框架（Verbatim Texts）
+| 语种 | 逐字原文 | 中文翻译 | 源码/资源位置 | 话术/修辞框架 |
+| :---: | --- | --- | --- | --- |
+| en | You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly. | 你必须启用 Antivirus 才能获得本应用的完整功能，否则 Antivirus 将无法正常工作。 | `res/values/strings.xml key=accessibility_config_text（@xml/accessibility_config android:description）` | 假反诈安全 |
+| en | Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it | Antivirus 将无法正常工作。1. 在设置中选择 Antivirus；2. 打开它。 | `res/values/strings.xml key=hint_text（内联 HTML，硬编码于 com.lib.requestA11yAlert 加载的 WebView）` | 受限设置分步教学 |
+| en | Open Antivirus | 打开 Antivirus | `res/values/strings.xml key=hint_button（不可取消 AlertDialog 唯一按钮，点击跳 ACCESSIBILITY_SETTINGS）` | 假反诈安全 |
+| en | System updating, please wait... | 系统正在更新，请稍候…… | `res/values/strings.xml key=banner_text（内联 HTML 全屏转圈页）` | 假更新 |
+| en | %1$s won't work unless you enable Google Play services. | %1$s 除非启用 Google Play services 否则无法工作。 | `res/values/strings.xml key=common_google_play_services_enable_text（GMS 标准字符串，属三方 SDK 资源，非本应用引导文案）` | 良性透明说明 |
+
+## 5. 让用户完成开启的具体机制与拒权反馈
+
+- **触发时机（Trigger Timing）**：`background_relaunch`
+- **是否提供取消/跳过出口**：`False`
+- **拒权或返回后的反馈回路**：com.lib.requestPermissions 在 while(true) 循环中每 permissionsDelay（15 秒）调用 isA11y 检查，未启用则再次 requestA11yAlertActivity() 以 mode=2 拉起 com.example.eventbot.activity，重新显示不可取消弹窗；无 onResume 判权逻辑，退出 Activity 也无法终止循环
+- **遮罩叠层 / 高仿系统设置页**：引导弹窗本身即以 Window.setType(2003)（TYPE_SYSTEM_ALERT）显示为系统级悬浮窗，可跨界面覆盖；获权后 hidePinnedHint 通过 WindowManager 添加全屏 WebView 悬浮窗（y 偏移为负值，覆盖整屏）并 startLockTask 锁定任务；未见高仿系统无障碍开关页，用户仍需在真实系统页操作
+- **Android 13+ 受限设置（Restricted Settings）应对**：无
+- **获权后即时行为与防撤权机制**：获权后 blockHardwareButtons=true 并由 com.lib.BlockHardwareButtons 在 onKeyEvent 中吞掉（返回/音量等）按键；startLockTask 锁定任务限制退出；com.lib.unDeleteA11y / unDeleteA11yV2 / activatePinned 会读取窗口文本并通过 performAction(16) 自动点击系统弹窗按钮（如“确定/继续”），阻止撤销授权；events.onAccessibilityEvent 与 onAccessibilityEvent 在 service.isRunning 为 false 时反复 startService 保持常驻
+- **良性降级 / 替代方案**：无
+
+## 6. 面向纯 UTG 检测机制的关键捕获页面与判别信号
+
+- **推荐检测拉起时机（Trigger Hook）**：冷启动 MainActivity 后约 15 秒（permissionsDelay）内监测到 Activity 切换为 com.example.eventbot.activity 且窗口类型为 TYPE_SYSTEM_ALERT/AlertDialog；或直接 Hook Context.startActivity 捕获 action=android.settings.ACCESSIBILITY_SETTINGS 的瞬间截图
+- **是否需对纯图/GIF 引导页触发按需单帧 OCR**：`False`
+- **纯 UTG 方案盲区/边界提示**：引导文案与按钮均为可读文本，UTG 可直接提取；但 assets/1.jpg、2.jpg 为纯图教程截图（不含关键文案，OCR 仅用于辅助核验），获权后悬浮遮挡页的 HTML 与背景色由 pinnedPrefs 云控/本地动态下发，静态不可预知；外层 RC4 加密载荷（default.ttf）仅影响静态可见性，不阻挡运行期 UTG 观测
+
+| 关键捕获页面角色 | 预期页面/组件标识 | 为何捕获该页面最有用 | 可在 UTG 直接提取的判别信号 |
+| --- | --- | --- | --- |
+| **冷启动后首次引导弹窗页（不可取消 AlertDialog + WebView 教程）** | com.example.eventbot.activity，AlertDialog 含 WebView 节点，文本“Antivirus will not work correctly.”与“Open Antivirus”按钮，无可取消/跳过控件 | 这是诱导的唯一交互载体，能同时确认伪装身份、无取消选项与两步教程内容 | 节点文本“Open Antivirus”为唯一可点击按钮；弹窗无“取消/跳过/以后再说”节点；WebView 内 HTML 文本含步骤 1/2 与截图占位；所属窗口为系统级 overlay（可覆盖桌面） |
+| **系统无障碍服务列表项（跳转后）** | Settings 无障碍页列表项标签“Antivirus”，副标题为 accessibility_config_text 说明 | 核对系统侧实际呈现的服务名与说明，验证与杀毒软件身份的错配程度 | 服务标签=Antivirus；描述文本含“You must enable Antivirus…”；所属包名为 com.example.eventbot |
+| **拒权返回后的再次拉起页（循环验证）** | 返回桌面或按返回键后 15 秒内再次出现同一 com.example.eventbot.activity 弹窗 | 区分一次性提示与强制循环重拉，是强迫授权判定的关键 | 弹窗重复出现次数与 15 秒周期；返回键无法关闭弹窗；后台 service 进程仍存活 |
+| **获权后全屏悬浮遮挡页 / 锁定任务页** | WindowManager 添加的全屏 WebView（y 偏移为负）叠加在系统设置之上；任务被 startLockTask 锁定 | 确认防撤权与遮挡行为，验证获权后压制路径 | 全屏 WebView 悬浮窗覆盖无障碍设置页；按键事件被吞（返回无响应）；无法退出到桌面 |
+
+## 7. 代码锚点与 APKAudit 原始完整逆向纪要
+
+- `com.lib.requestA11yAlert`
+- `com.lib.requestPermissions`
+- `com.lib$3.onClick`
+- `com.lib.doAutorun`
+- `com.example.eventbot.service.loadLib`
+- `res/values/strings.xml (hint_text / hint_button / accessibility_config_text / banner_text)`
+
+<details>
+<summary>点击展开 APKAudit CLI 原始完整审计输出</summary>
+
+## 分析结论
+
+**静态可见性：清晰但为两阶段。** 外层 DEX 不含引导逻辑，仅 `service.onCreate → loadLib()` 用 `cfg.gatePublicKey`（`7e89013d…ffd63`）以 **RC4** 解密 `assets/fonts/default.ttf`（实为 JAR，内含 `classes.dex`），`DexClassLoader` 加载 `com.lib`；全部 UTG 引导流程在内层 dex 中，已完整还原。
+
+**逐步流程（纯运行期 UTG 视角）：**
+
+1. **冷启动静默**：[MainActivity.onCreate](<resource-unit:#1.dex1 code:com.example.eventbot.MainActivity#onCreate>) 仅 `startService` 后立即 `finish()`，桌面点图标无任何界面。
+2. **内层加载**：[service#loadLib](<resource-unit:#1.dex1 code:com.example.eventbot.service#loadLib>) → [service#fallbackLib](<resource-unit:#1.dex1 code:com.example.eventbot.service#fallbackLib>) 释放 `libgoogle.jar` 并加载 `com.lib`。
+3. **定时引导**：[com.lib#requestPermissions](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib#requestPermissions>) 在 `while(true)` 中每 15 秒 `isA11y()` 检查，未启用即 `requestA11yAlertActivity()` 以 `mode=2` 拉起 [com.example.eventbot.activity](<resource-unit:#1.dex1 code:com.example.eventbot.activity#onCreate>) → [doActivity case 2](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib#doActivity>)。
+4. **不可取消弹窗**：[requestA11yAlert](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib#requestA11yAlert>) 把 `strings.xml` 的 `hint_text` 内联 HTML 装入 WebView，放进 `setCancelable(false)` 的 AlertDialog 并 `setType(2003)`（TYPE_SYSTEM_ALERT 系统级悬浮窗），**唯一按钮**为 "Open Antivirus"。
+5. **直跳设置**：[lib$3.onClick](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib$3#onClick>) 直接 `startActivity("android.settings.ACCESSIBILITY_SETTINGS")`（flags `0x54000000`），无跳过/取消路径。
+6. **获权后压制**：[doAutorun](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib#doAutorun>) → `showPinnned()` → `makePinned()` `startLockTask()` 锁定任务 + [hidePinnedHint](<resource-unit:C:/my_dataset/malradar-3/dec/jar/classes.dex code:com.lib#hidePinnedHint>) 添加全屏（y 为负）WebView 悬浮窗，`BlockHardwareButtons` 吞按键；`unDeleteA11y`/`activatePinned` 自动点击系统弹窗按钮防撤权。
+
+**文字呈现位置：** 系统无障碍列表项标签 `Antivirus` 与 `android:description`（“You must enable Antivirus…”）；系统级不可取消 AlertDialog 内的 WebView HTML（含 `1.jpg`/`2.jpg` 截图步骤）；另有 `banner_text`（"System updating, please wait…" 转圈页）用于变脸遮挡；获权后全屏悬浮 WebView。
+
+**身份不一致：** 显示名/A11y 标签均伪装为杀毒软件 `Antivirus`，实际为 EventBot 银行木马（`botnetID=antik101`，gate `ora.blindsidefantasy.com`），无障碍服务被用于读屏+自动点击+短信拦截。
+
+已登记风险 R-001（high / malware_trojan，autonomous_audit，证据含外层 RC4 解密链与内层 `com.lib` 引导链）。
+
+```json
+{
+  "static_visibility": "clear",
+  "visibility_note": "外层 classes.dex 仅含加载器，全部引导逻辑位于 assets/fonts/default.ttf（RC4 加密，密钥为 cfg.gatePublicKey）解密所得内层 classes.dex 的 com.lib 中；已用该密钥完整解密还原，无 AES/远端 HTML 缺失，引导文案与截图均内联于本地 strings.xml 与 assets",
+  "summary_one_liner": "以“Antivirus 杀毒软件必须开启”为话术，在系统级不可取消的 WebView AlertDialog 中展示两步截图教程，点击唯一按钮直跳无障碍设置，未授权则每 15 秒无限循环重拉，获权后锁定任务并全屏悬浮遮挡防撤权",
+  "disguise_identity": {
+    "app_display_name": "Antivirus",
+    "claimed_brand_or_persona": "Antivirus（伪装为杀毒/安全防护软件，实为 EventBot 银行木马，botnetID=antik101）",
+    "a11y_service_label": "Antivirus",
+    "identity_mismatch": true,
+    "obfuscation_tricks": "包名为无关的 com.example.eventbot 而显示名伪装 Antivirus；无障碍服务 android:label 复用 app_name；核心载荷 RC4 加密藏于 assets/fonts/default.ttf（伪装字体文件）；桌面图标点击后 MainActivity 立即 finish() 不留界面；banner_text 提供“System updating, please wait…”全屏转圈假更新页用于变脸遮挡"
+  },
+  "step_by_step_flow": [
+    {
+      "step": 1,
+      "stage": "冷启动入口",
+      "screen_or_component": "com.example.eventbot.MainActivity（LAUNCHER）",
+      "trigger_event": "onCreate",
+      "ui_carrier": "原生Activity",
+      "shown_text_verbatim": "无",
+      "shown_text_zh": "无界面，启动即闪退式关闭",
+      "user_action_requested": "用户看到桌面图标点击后无任何反馈，无任何可操作控件",
+      "code_anchor": "com.example.eventbot.MainActivity.onCreate"
+    },
+    {
+      "step": 2,
+      "stage": "获权前动作",
+      "screen_or_component": "com.example.eventbot.service（后台 Service）+ DexClassLoader",
+      "trigger_event": "MainActivity.onCreate → startService → service.onCreate",
+      "ui_carrier": "不可静态还原",
+      "shown_text_verbatim": "无",
+      "shown_text_zh": "无界面；RC4 解密 assets/fonts/default.ttf 为 libgoogle.jar 并加载 com.lib，启动 com.lib.requestPermissions 后台循环",
+      "user_action_requested": "无",
+      "code_anchor": "com.example.eventbot.service.loadLib / com.example.eventbot.service.fallbackLib"
+    },
+    {
+      "step": 3,
+      "stage": "业务功能触发",
+      "screen_or_component": "com.lib.requestPermissions 后台线程（while(true) + Thread.sleep(permissionsDelay*1000)）",
+      "trigger_event": "lib$2.run 启动后定时循环，permissionsDelay=15 秒",
+      "ui_carrier": "不可静态还原",
+      "shown_text_verbatim": "无",
+      "shown_text_zh": "每 15 秒检查 isA11y(context, a11yClassName)；未启用无障碍则再次拉起引导 Activity",
+      "user_action_requested": "无（被动反复弹出引导）",
+      "code_anchor": "com.lib.requestPermissions"
+    },
+    {
+      "step": 4,
+      "stage": "引导说明页",
+      "screen_or_component": "com.example.eventbot.activity（Theme.AppCompat.Light.NoActionBar.FullScreen，intent mode=2）→ com.lib.requestA11yAlert",
+      "trigger_event": "requestA11yAlertActivity() 以 mode=2 startActivity；activity.onCreate → doActivity(case 2)",
+      "ui_carrier": "原生Dialog",
+      "shown_text_verbatim": "Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it",
+      "shown_text_zh": "杀毒软件将无法正常工作。1. 在设置中选择 Antivirus；2. 打开它（下方配 1.jpg、2.jpg 两步操作截图）",
+      "user_action_requested": "只能点击唯一按钮“Open Antivirus”（setCancelable(false)，无取消、无跳过、无返回按钮）",
+      "code_anchor": "com.lib.requestA11yAlert / res/values/strings.xml hint_text(hint_button)"
+    },
+    {
+      "step": 5,
+      "stage": "跳无障碍设置",
+      "screen_or_component": "系统设置 android.settings.ACCESSIBILITY_SETTINGS",
+      "trigger_event": "AlertDialog 正按钮点击回调 lib$3.onClick",
+      "ui_carrier": "系统无障碍页",
+      "shown_text_verbatim": "You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly.",
+      "shown_text_zh": "系统无障碍列表中显示服务名“Antivirus”，说明为“你必须启用 Antivirus 才能获得应用的完整功能，否则 Antivirus 无法正常工作”",
+      "user_action_requested": "在系统无障碍列表中手动找到“Antivirus”并打开开关（该页面为系统 UI，应用无法代劳）",
+      "code_anchor": "com.lib$3.onClick / res/values/strings.xml accessibility_config_text"
+    },
+    {
+      "step": 6,
+      "stage": "拒权反馈循环",
+      "screen_or_component": "com.example.eventbot.activity 再次拉起（mode=2 AlertDialog）",
+      "trigger_event": "用户返回/拒绝后，requestPermissions 循环下一次 15 秒 tick 时 isA11y 仍为 false",
+      "ui_carrier": "原生Dialog",
+      "shown_text_verbatim": "Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it",
+      "shown_text_zh": "同一不可取消引导弹窗无限重复弹出，直到用户开启无障碍",
+      "user_action_requested": "无退出通道，只能反复面对同一弹窗直至授权",
+      "code_anchor": "com.lib.requestPermissions / com.lib.requestA11yAlertActivity"
+    },
+    {
+      "step": 7,
+      "stage": "获权后动作",
+      "screen_or_component": "com.example.eventbot.activity（mode=7）+ WindowManager 全屏 WebView 悬浮窗",
+      "trigger_event": "events.onServiceConnected → com.lib.doAutorun → isA11y 为真且 isNeedPinned(pinnedPrefs) → showPinnned()",
+      "ui_carrier": "悬浮窗Overlay",
+      "shown_text_verbatim": "（html 与背景色由 pinnedPrefs 云控/本地下发，本次包内未见固定文案）",
+      "shown_text_zh": "锁定任务模式 startLockTask() 进入全屏 WebView，hidePinnedHint 添加 y 偏移为负的全屏悬浮 WebView 遮挡界面，blockHardwareButtons=true 由 BlockHardwareButtons 吞掉按键",
+      "user_action_requested": "无法返回、无法退出，用户难以进入设置撤销无障碍授权",
+      "code_anchor": "com.lib.doAutorun / com.lib.showPinnned / com.lib.makePinned / com.lib.hidePinnedHint"
+    }
+  ],
+  "text_presentation_locations": [
+    "系统无障碍服务列表项：android:label=@string/app_name 显示“Antivirus”",
+    "系统无障碍服务说明：@xml/accessibility_config 引用 accessibility_config_text = “You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly.”",
+    "com.example.eventbot.activity 内 setCancelable(false) 的系统级 AlertDialog（setType(2003)），其中 WebView 加载 strings.xml 的 hint_text 内联 HTML（标题“Antivirus will not work correctly.”+ 步骤 1/2 文字 + assets/1.jpg、2.jpg 截图）",
+    "该弹窗唯一按钮文案：hint_button = “Open Antivirus”",
+    "banner_text（strings.xml 内联 HTML）：全屏黑底白字“System updating, please wait...” + 旋转 loading 圈，用作变脸/遮挡页",
+    "获权后：WindowManager.addView 添加的全屏 WebView 悬浮窗（hidePinnedHint）与 startLockTask 锁定任务页，文案由 pinnedPrefs 动态下发"
+  ],
+  "verbatim_texts": [
+    {
+      "lang": "en",
+      "text_verbatim": "You must enable Antivirus in order to get full functionality of the application. Antivirus will not work correctly.",
+      "text_zh": "你必须启用 Antivirus 才能获得本应用的完整功能，否则 Antivirus 将无法正常工作。",
+      "source_location": "res/values/strings.xml key=accessibility_config_text（@xml/accessibility_config android:description）",
+      "rhetorical_frame": "假反诈安全"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "Antivirus will not work correctly. 1. Select Antivirus in Settings 2. Turn on it",
+      "text_zh": "Antivirus 将无法正常工作。1. 在设置中选择 Antivirus；2. 打开它。",
+      "source_location": "res/values/strings.xml key=hint_text（内联 HTML，硬编码于 com.lib.requestA11yAlert 加载的 WebView）",
+      "rhetorical_frame": "受限设置分步教学"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "Open Antivirus",
+      "text_zh": "打开 Antivirus",
+      "source_location": "res/values/strings.xml key=hint_button（不可取消 AlertDialog 唯一按钮，点击跳 ACCESSIBILITY_SETTINGS）",
+      "rhetorical_frame": "假反诈安全"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "System updating, please wait...",
+      "text_zh": "系统正在更新，请稍候……",
+      "source_location": "res/values/strings.xml key=banner_text（内联 HTML 全屏转圈页）",
+      "rhetorical_frame": "假更新"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "%1$s won't work unless you enable Google Play services.",
+      "text_zh": "%1$s 除非启用 Google Play services 否则无法工作。",
+      "source_location": "res/values/strings.xml key=common_google_play_services_enable_text（GMS 标准字符串，属三方 SDK 资源，非本应用引导文案）",
+      "rhetorical_frame": "良性透明说明"
+    }
+  ],
+  "how_user_is_guided_to_enable": {
+    "trigger_timing": "background_relaunch",
+    "has_cancel_or_skip": false,
+    "refusal_loop_mechanism": "com.lib.requestPermissions 在 while(true) 循环中每 permissionsDelay（15 秒）调用 isA11y 检查，未启用则再次 requestA11yAlertActivity() 以 mode=2 拉起 com.example.eventbot.activity，重新显示不可取消弹窗；无 onResume 判权逻辑，退出 Activity 也无法终止循环",
+    "overlay_or_fake_settings": "引导弹窗本身即以 Window.setType(2003)（TYPE_SYSTEM_ALERT）显示为系统级悬浮窗，可跨界面覆盖；获权后 hidePinnedHint 通过 WindowManager 添加全屏 WebView 悬浮窗（y 偏移为负值，覆盖整屏）并 startLockTask 锁定任务；未见高仿系统无障碍开关页，用户仍需在真实系统页操作",
+    "restricted_settings_13plus_coaching": "无",
+    "post_grant_anti_removal": "获权后 blockHardwareButtons=true 并由 com.lib.BlockHardwareButtons 在 onKeyEvent 中吞掉（返回/音量等）按键；startLockTask 锁定任务限制退出；com.lib.unDeleteA11y / unDeleteA11yV2 / activatePinned 会读取窗口文本并通过 performAction(16) 自动点击系统弹窗按钮（如“确定/继续”），阻止撤销授权；events.onAccessibilityEvent 与 onAccessibilityEvent 在 service.isRunning 为 false 时反复 startService 保持常驻",
+    "benign_graceful_degradation": "无"
+  },
+  "utg_capture_guidance": {
+    "best_trigger_hook": "冷启动 MainActivity 后约 15 秒（permissionsDelay）内监测到 Activity 切换为 com.example.eventbot.activity 且窗口类型为 TYPE_SYSTEM_ALERT/AlertDialog；或直接 Hook Context.startActivity 捕获 action=android.settings.ACCESSIBILITY_SETTINGS 的瞬间截图",
+    "key_pages_to_capture": [
+      {
+        "page_role": "冷启动后首次引导弹窗页（不可取消 AlertDialog + WebView 教程）",
+        "page_identifier": "com.example.eventbot.activity，AlertDialog 含 WebView 节点，文本“Antivirus will not work correctly.”与“Open Antivirus”按钮，无可取消/跳过控件",
+        "why_most_useful": "这是诱导的唯一交互载体，能同时确认伪装身份、无取消选项与两步教程内容",
+        "observable_utg_signals": ["节点文本“Open Antivirus”为唯一可点击按钮", "弹窗无“取消/跳过/以后再说”节点", "WebView 内 HTML 文本含步骤 1/2 与截图占位", "所属窗口为系统级 overlay（可覆盖桌面）"]
+      },
+      {
+        "page_role": "系统无障碍服务列表项（跳转后）",
+        "page_identifier": "Settings 无障碍页列表项标签“Antivirus”，副标题为 accessibility_config_text 说明",
+        "why_most_useful": "核对系统侧实际呈现的服务名与说明，验证与杀毒软件身份的错配程度",
+        "observable_utg_signals": ["服务标签=Antivirus", "描述文本含“You must enable Antivirus…”", "所属包名为 com.example.eventbot"]
+      },
+      {
+        "page_role": "拒权返回后的再次拉起页（循环验证）",
+        "page_identifier": "返回桌面或按返回键后 15 秒内再次出现同一 com.example.eventbot.activity 弹窗",
+        "why_most_useful": "区分一次性提示与强制循环重拉，是强迫授权判定的关键",
+        "observable_utg_signals": ["弹窗重复出现次数与 15 秒周期", "返回键无法关闭弹窗", "后台 service 进程仍存活"]
+      },
+      {
+        "page_role": "获权后全屏悬浮遮挡页 / 锁定任务页",
+        "page_identifier": "WindowManager 添加的全屏 WebView（y 偏移为负）叠加在系统设置之上；任务被 startLockTask 锁定",
+        "why_most_useful": "确认防撤权与遮挡行为，验证获权后压制路径",
+        "observable_utg_signals": ["全屏 WebView 悬浮窗覆盖无障碍设置页", "按键事件被吞（返回无响应）", "无法退出到桌面"]
+      }
+    ],
+    "needs_ocr_for_image_lure": false,
+    "detection_blindspot_note": "引导文案与按钮均为可读文本，UTG 可直接提取；但 assets/1.jpg、2.jpg 为纯图教程截图（不含关键文案，OCR 仅用于辅助核验），获权后悬浮遮挡页的 HTML 与背景色由 pinnedPrefs 云控/本地动态下发，静态不可预知；外层 RC4 加密载荷（default.ttf）仅影响静态可见性，不阻挡运行期 UTG 观测"
+  },
+  "behavior_pattern_tags": [
+    "TRIG_BACKGROUND_OR_NOTIF_RELAUNCH",
+    "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+    "CARRIER_WEBVIEW_LOCAL_HTML",
+    "CARRIER_OVERLAY_MASK_OR_GUIDE",
+    "CARRIER_GIF_OR_IMAGE_GUIDE",
+    "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+    "LURE_FAKE_UPDATE_OR_INSTALL",
+    "LURE_FAKE_SECURITY_ANTIFRAUD",
+    "LURE_RESTRICTED_SETTINGS_COACHING",
+    "COERCE_NO_SKIP_NON_CANCELABLE",
+    "COERCE_REFUSAL_LOOP_RELAUNCH",
+    "COERCE_OVERLAY_STACK_ON_SETTINGS",
+    "ID_SYSTEM_OR_BRAND_IMPERSONATION",
+    "DROPPER_STAGE1_INSTALL_OR_EMBEDDED",
+    "STATIC_PACKED_OR_ENCRYPTED_PAYLOAD"
+  ],
+  "code_anchors": [
+    "com.lib.requestA11yAlert",
+    "com.lib.requestPermissions",
+    "com.lib$3.onClick",
+    "com.lib.doAutorun",
+    "com.example.eventbot.service.loadLib",
+    "res/values/strings.xml (hint_text / hint_button / accessibility_config_text / banner_text)"
+  ]
+}
+```
+
+</details>

@@ -1,0 +1,2362 @@
+{
+  "started_at": "2026-11-25T08:48:01",
+  "platform": "android",
+  "device": "emulator-5556",
+  "model": "deepseek-v4.1-flash",
+  "provider": "openai_compatible",
+  "mode": "hybrid",
+  "target_package": "com.earendel.tapbar",
+  "apk_path": "com.earendel.tapbar__b1677916be25.apk",
+  "offline_isolated": false,
+  "static_meta": {
+    "app_id": "BN_010__b1677916be",
+    "label": "benign",
+    "family": "按键映射与手势导航",
+    "benign_category": "按键映射与手势导航",
+    "pool": "Benign_OSS_2024_2026",
+    "static_visibility": "clear",
+    "behavior_pattern_tags": [
+      "TRIG_FEATURE_ON_DEMAND",
+      "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+      "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+      "LURE_RESTRICTED_SETTINGS_COACHING",
+      "LURE_PRIVACY_GUARANTEE_CLAIM",
+      "BENIGN_TRANSPARENT_RATIONALE",
+      "BENIGN_EXPLICIT_CANCEL_DEGRADATION",
+      "BENIGN_HONEST_IDENTITY_AND_SCOPE",
+      "BENIGN_ALTERNATIVE_MODE_OFFERED"
+    ],
+    "candidate_activities": [
+      "com.earendel.tapbar.MainActivity"
+    ],
+    "static_json_path": "BN_010__b1677916be.json"
+  },
+  "instruction": "Follow the app's flow (using the static analysis guidance) from launch until it triggers the Accessibility Service prompt and navigates to System Accessibility Settings. Do NOT toggle a malicious service ON.",
+  "final_status": "hook_captured",
+  "install_error": "",
+  "entry_node_id": "7c97a40e020f",
+  "hook_node_ids": [
+    "cc7f881ccb14",
+    "b540009be815"
+  ],
+  "refusal_outcome": "RELAUNCHED_A11Y_SETTINGS",
+  "steps": [
+    {
+      "step": 1,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567689.9845295,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.earendel.tapbar",
+        "top_activity": "com.earendel.tapbar.MainActivity",
+        "current_focus": "Window{e3b5ffa u0 com.earendel.tapbar/com.earendel.tapbar.MainActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.ScrollView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              0,
+              83,
+              1080,
+              2038
+            ],
+            "center": [
+              540,
+              1060
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 2,
+            "text": "Choose language",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              138,
+              713,
+              238
+            ],
+            "center": [
+              384,
+              188
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              282,
+              1025,
+              436
+            ],
+            "center": [
+              540,
+              359
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              326,
+              981,
+              392
+            ],
+            "center": [
+              540,
+              359
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": true,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 5,
+            "text": "English",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              326,
+              915,
+              392
+            ],
+            "center": [
+              507,
+              359
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              442,
+              1025,
+              596
+            ],
+            "center": [
+              540,
+              519
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              486,
+              981,
+              552
+            ],
+            "center": [
+              540,
+              519
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "Português",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              486,
+              915,
+              552
+            ],
+            "center": [
+              507,
+              519
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              602,
+              1025,
+              756
+            ],
+            "center": [
+              540,
+              679
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 10,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              646,
+              981,
+              712
+            ],
+            "center": [
+              540,
+              679
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 11,
+            "text": "Русский",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              646,
+              915,
+              712
+            ],
+            "center": [
+              507,
+              679
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 12,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              762,
+              1025,
+              916
+            ],
+            "center": [
+              540,
+              839
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 13,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              806,
+              981,
+              872
+            ],
+            "center": [
+              540,
+              839
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 14,
+            "text": "中文",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              806,
+              915,
+              872
+            ],
+            "center": [
+              507,
+              839
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 15,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              922,
+              1025,
+              1076
+            ],
+            "center": [
+              540,
+              999
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 16,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              966,
+              981,
+              1032
+            ],
+            "center": [
+              540,
+              999
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 17,
+            "text": "Français",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              966,
+              915,
+              1032
+            ],
+            "center": [
+              507,
+              999
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 18,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1082,
+              1025,
+              1236
+            ],
+            "center": [
+              540,
+              1159
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 19,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1126,
+              981,
+              1192
+            ],
+            "center": [
+              540,
+              1159
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 20,
+            "text": "Deutsch",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1126,
+              915,
+              1192
+            ],
+            "center": [
+              507,
+              1159
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 21,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1242,
+              1025,
+              1396
+            ],
+            "center": [
+              540,
+              1319
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 22,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1286,
+              981,
+              1352
+            ],
+            "center": [
+              540,
+              1319
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 23,
+            "text": "हिन्दी",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1286,
+              915,
+              1352
+            ],
+            "center": [
+              507,
+              1319
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 24,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1402,
+              1025,
+              1556
+            ],
+            "center": [
+              540,
+              1479
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 25,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1446,
+              981,
+              1512
+            ],
+            "center": [
+              540,
+              1479
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 26,
+            "text": "日本語",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1446,
+              915,
+              1512
+            ],
+            "center": [
+              507,
+              1479
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 27,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1562,
+              1025,
+              1716
+            ],
+            "center": [
+              540,
+              1639
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 28,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1606,
+              981,
+              1672
+            ],
+            "center": [
+              540,
+              1639
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 29,
+            "text": "한국어",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1606,
+              915,
+              1672
+            ],
+            "center": [
+              507,
+              1639
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 30,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1722,
+              1025,
+              1876
+            ],
+            "center": [
+              540,
+              1799
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 31,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1766,
+              981,
+              1832
+            ],
+            "center": [
+              540,
+              1799
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 32,
+            "text": "नेपाली",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1766,
+              915,
+              1832
+            ],
+            "center": [
+              507,
+              1799
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 33,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              1882,
+              1025,
+              2036
+            ],
+            "center": [
+              540,
+              1959
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 34,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1926,
+              981,
+              1992
+            ],
+            "center": [
+              540,
+              1959
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 35,
+            "text": "Español",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1926,
+              915,
+              1992
+            ],
+            "center": [
+              507,
+              1959
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 36,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              2042,
+              1025,
+              2104
+            ],
+            "center": [
+              540,
+              2073
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 37,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              789,
+              2093,
+              1025,
+              2148
+            ],
+            "center": [
+              907,
+              2120
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 38,
+            "text": "Next",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              855,
+              2126,
+              959,
+              2148
+            ],
+            "center": [
+              907,
+              2137
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Choose language",
+          "English",
+          "Português",
+          "Русский",
+          "中文",
+          "Français",
+          "Deutsch",
+          "हिन्दी",
+          "日本語",
+          "한국어",
+          "नेपाली",
+          "Español",
+          "Next"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 84,
+        "needs_ocr_fallback": false,
+        "structure_hash": "7c97a40e020f",
+        "raw_layout_path": "step_01_layout.xml",
+        "screenshot_path": "step_01_screen.png",
+        "som_path": "step_01_som.png",
+        "element_count": 38
+      },
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "model_output": "Action: The app has launched on its language selection screen with English already selected; I'll tap \"Next\" to proceed toward the Setup permissions flow.\n\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 37}}</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 37,
+        "pixel_xy": [
+          907,
+          2120
+        ],
+        "matched_element": "[37] View (click) center=(907,2120)"
+      },
+      "action_anno_path": "step_01_action.png"
+    },
+    {
+      "step": 2,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567698.0138528,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.earendel.tapbar",
+        "top_activity": "com.earendel.tapbar.MainActivity",
+        "current_focus": "Window{3358d0a u0 com.earendel.tapbar/com.earendel.tapbar.MainActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.ScrollView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              0,
+              83,
+              1080,
+              2038
+            ],
+            "center": [
+              540,
+              1060
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 2,
+            "text": "Setup Tapbar",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              55,
+              138,
+              563,
+              238
+            ],
+            "center": [
+              309,
+              188
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "Accessibility service. Lets the tap zone sit directly on the status bar. It does not read or send any screen text.. Turn on",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              337,
+              981,
+              755
+            ],
+            "center": [
+              540,
+              546
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "Display over other apps. Draws the tap zone below the status bar when the Accessibility service is not active.. Turn on",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              849,
+              981,
+              1267
+            ],
+            "center": [
+              540,
+              1058
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 5,
+            "text": "If the accessibility switch is greyed out:",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              176,
+              1410,
+              941,
+              1465
+            ],
+            "center": [
+              558,
+              1437
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "Open App info, tap the three-dot menu at the top right, choose Allow restricted settings, then try again.",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1493,
+              981,
+              1581
+            ],
+            "center": [
+              540,
+              1537
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 7,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1609,
+              981,
+              1752
+            ],
+            "center": [
+              540,
+              1680
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 8,
+            "text": "Open app info",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              409,
+              1653,
+              672,
+              1708
+            ],
+            "center": [
+              540,
+              1680
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              99,
+              1758,
+              981,
+              1901
+            ],
+            "center": [
+              540,
+              1829
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 10,
+            "text": "View visual guide",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              377,
+              1802,
+              704,
+              1857
+            ],
+            "center": [
+              540,
+              1829
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 11,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              620,
+              2093,
+              1025,
+              2148
+            ],
+            "center": [
+              822,
+              2120
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 12,
+            "text": "Skip for now",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.earendel.tapbar",
+            "bounds": [
+              686,
+              2126,
+              959,
+              2148
+            ],
+            "center": [
+              822,
+              2137
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Setup Tapbar",
+          "Accessibility service. Lets the tap zone sit directly on the status bar. It does not read or send any screen text.. Turn on",
+          "Display over other apps. Draws the tap zone below the status bar when the Accessibility service is not active.. Turn on",
+          "If the accessibility switch is greyed out:",
+          "Open App info, tap the three-dot menu at the top right, choose Allow restricted settings, then try again.",
+          "Open app info",
+          "View visual guide",
+          "Skip for now"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 443,
+        "needs_ocr_fallback": false,
+        "structure_hash": "05c56769d261",
+        "raw_layout_path": "step_02_layout.xml",
+        "screenshot_path": "step_02_screen.png",
+        "som_path": "step_02_som.png",
+        "element_count": 12
+      },
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "model_output": "Action: The Setup Tapbar permission checklist is shown; I'll tap the \"Turn on\" button under the Accessibility service card to trigger the Accessibility prompt.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"coordinate\": [540, 754]}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "coordinate": [
+          540,
+          754
+        ],
+        "pixel_xy": [
+          540,
+          754
+        ]
+      },
+      "action_anno_path": "step_02_action.png"
+    },
+    {
+      "step": 3,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567708.0833528,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.android.settings",
+        "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+        "current_focus": "Window{956425d u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [
+          "HOOK_A11Y_SETTINGS"
+        ],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Back",
+            "resource_id": "",
+            "class_name": "android.widget.ImageButton",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              83,
+              154,
+              237
+            ],
+            "center": [
+              77,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Accessibility",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              123,
+              504,
+              197
+            ],
+            "center": [
+              351,
+              160
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "Search settings",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              948,
+              94,
+              1080,
+              226
+            ],
+            "center": [
+              1014,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.android.settings:id/recycler_view",
+            "class_name": "androidx.recyclerview.widget.RecyclerView",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              237,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1192
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "DOWNLOADED APPS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              303,
+              1036,
+              344
+            ],
+            "center": [
+              617,
+              323
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              366,
+              1080,
+              566
+            ],
+            "center": [
+              540,
+              466
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "Tapbar",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              410,
+              335,
+              469
+            ],
+            "center": [
+              266,
+              439
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              469,
+              253,
+              522
+            ],
+            "center": [
+              225,
+              495
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "SCREEN READERS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              632,
+              1036,
+              673
+            ],
+            "center": [
+              617,
+              652
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 10,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              695,
+              1080,
+              842
+            ],
+            "center": [
+              540,
+              768
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 11,
+            "text": "Text-to-speech output",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              739,
+              622,
+              798
+            ],
+            "center": [
+              410,
+              768
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 12,
+            "text": "DISPLAY",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              908,
+              1036,
+              949
+            ],
+            "center": [
+              617,
+              928
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 13,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              971,
+              1080,
+              1171
+            ],
+            "center": [
+              540,
+              1071
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 14,
+            "text": "Font size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1015,
+              375,
+              1074
+            ],
+            "center": [
+              286,
+              1044
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 15,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1074,
+              324,
+              1127
+            ],
+            "center": [
+              261,
+              1100
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 16,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1171,
+              1080,
+              1371
+            ],
+            "center": [
+              540,
+              1271
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 17,
+            "text": "Display size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1215,
+              432,
+              1274
+            ],
+            "center": [
+              315,
+              1244
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 18,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1274,
+              324,
+              1327
+            ],
+            "center": [
+              261,
+              1300
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 19,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1371,
+              1080,
+              1518
+            ],
+            "center": [
+              540,
+              1444
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 20,
+            "text": "Dark theme",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1415,
+              422,
+              1474
+            ],
+            "center": [
+              310,
+              1444
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 21,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1407,
+              1036,
+              1481
+            ],
+            "center": [
+              972,
+              1444
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 22,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1518,
+              1080,
+              1718
+            ],
+            "center": [
+              540,
+              1618
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 23,
+            "text": "Magnification",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1562,
+              465,
+              1621
+            ],
+            "center": [
+              331,
+              1591
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 24,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1621,
+              253,
+              1674
+            ],
+            "center": [
+              225,
+              1647
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 25,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1718,
+              1080,
+              1865
+            ],
+            "center": [
+              540,
+              1791
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 26,
+            "text": "Large mouse pointer",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1762,
+              602,
+              1821
+            ],
+            "center": [
+              400,
+              1791
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 27,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1754,
+              1036,
+              1828
+            ],
+            "center": [
+              972,
+              1791
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 28,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1865,
+              1080,
+              2012
+            ],
+            "center": [
+              540,
+              1938
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 29,
+            "text": "Remove animations",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1909,
+              586,
+              1968
+            ],
+            "center": [
+              392,
+              1938
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 30,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1901,
+              1036,
+              1975
+            ],
+            "center": [
+              972,
+              1938
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 31,
+            "text": "INTERACTION CONTROLS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              2078,
+              1036,
+              2119
+            ],
+            "center": [
+              617,
+              2098
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 32,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              2141,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              2144
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Back",
+          "Accessibility",
+          "Search settings",
+          "DOWNLOADED APPS",
+          "Tapbar",
+          "Off",
+          "SCREEN READERS",
+          "Text-to-speech output",
+          "DISPLAY",
+          "Font size",
+          "Default",
+          "Display size",
+          "Dark theme",
+          "Magnification",
+          "Large mouse pointer",
+          "Remove animations",
+          "INTERACTION CONTROLS"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 205,
+        "needs_ocr_fallback": false,
+        "structure_hash": "cc7f881ccb14",
+        "raw_layout_path": "step_03_layout.xml",
+        "screenshot_path": "step_03_screen.png",
+        "som_path": "step_03_som.png",
+        "element_count": 32
+      },
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "model_output": "(stopped automatically upon HOOK_A11Y_SETTINGS + probes)",
+      "action": {
+        "action": "terminate",
+        "status": "success",
+        "summary": "Captured Accessibility Settings hook & probes"
+      }
+    }
+  ],
+  "utg_nodes": {
+    "7c97a40e020f": {
+      "first_step": 1,
+      "role": "entry",
+      "top_package": "com.earendel.tapbar",
+      "top_activity": "com.earendel.tapbar.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose language",
+        "English",
+        "Português",
+        "Русский",
+        "中文",
+        "Français",
+        "Deutsch",
+        "हिन्दी",
+        "日本語",
+        "한국어",
+        "नेपाली",
+        "Español",
+        "Next"
+      ],
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json"
+    },
+    "05c56769d261": {
+      "first_step": 2,
+      "role": "intermediate",
+      "top_package": "com.earendel.tapbar",
+      "top_activity": "com.earendel.tapbar.MainActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Setup Tapbar",
+        "Accessibility service. Lets the tap zone sit directly on the status bar. It does not read or send any screen text.. Turn on",
+        "Display over other apps. Draws the tap zone below the status bar when the Accessibility service is not active.. Turn on",
+        "If the accessibility switch is greyed out:",
+        "Open App info, tap the three-dot menu at the top right, choose Allow restricted settings, then try again.",
+        "Open app info",
+        "View visual guide",
+        "Skip for now"
+      ],
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json"
+    },
+    "cc7f881ccb14": {
+      "first_step": 3,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Tapbar",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json"
+    },
+    "b540009be815": {
+      "first_step": 3,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Off",
+        "Large mouse pointer",
+        "Remove animations",
+        "INTERACTION CONTROLS"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "raw_layout_path": "step_03_refusal_2000ms_layout.xml",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    }
+  },
+  "utg_edges": [
+    {
+      "from": "7c97a40e020f",
+      "to": "05c56769d261",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([37] View (click) center=(907,2120))"
+    },
+    {
+      "from": "05c56769d261",
+      "to": "cc7f881ccb14",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([540, 754])"
+    },
+    {
+      "from": "cc7f881ccb14",
+      "to": "b540009be815",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    }
+  ],
+  "finished_at": "2026-11-25T08:48:39"
+}

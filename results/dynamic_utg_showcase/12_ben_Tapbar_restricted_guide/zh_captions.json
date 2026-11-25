@@ -1,0 +1,16 @@
+{
+  "app_chain_summary_zh": "应用从语言选择进入 Setup Tapbar 权限清单，引导开启无障碍与悬浮窗并跳转系统无障碍设置；检测到设置钩子后终止，拒权返回落入 STALE_SETTINGS_BACKSTACK，未见通知或遮罩。",
+  "observed_lure_rhetoric_zh": [
+    "Accessibility service. Lets the tap zone sit directly on the status bar. It does not read or send any screen text.. Turn on -> 无障碍服务可让点击区直接位于状态栏上，且不会读取或发送任何屏幕文字；并提供“开启”。（Step 2 设置清单）",
+    "Display over other apps. Draws the tap zone below the status bar when the Accessibility service is not active.. Turn on -> 悬浮窗权限用于在无障碍服务未启用时于状态栏下方绘制点击区；并提供“开启”。（Step 2 设置清单）",
+    "If the accessibility switch is greyed out: Open App info, tap the three-dot menu at the top right, choose Allow restricted settings, then try again. -> 若无障碍开关变灰：打开应用信息，点右上角三点菜单，选择“允许受限设置”后重试。（Step 2 设置清单）"
+  ],
+  "frame_captions": {
+    "step_01": "语言选择页：列出英语、葡语、俄语、中文、法语等并默认选英语；本步点底部 Next，无通知/遮罩。",
+    "step_02": "设置清单页：要求开启无障碍与悬浮窗，附受限设置指引；本步点无障碍“Turn on”，无通知/遮罩。",
+    "step_03": "系统无障碍设置页：已进入“已下载应用”，Tapbar 显示 Off；采集无障碍钩子与探针后终止，无通知/遮罩。",
+    "post_jump_0.8s": "跳转后0.8秒探针：仍停留系统无障碍设置页，未读到界面文本；遮罩数为0，无通知横幅。",
+    "post_jump_2.0s": "跳转后2.0秒探针：仍在系统无障碍设置页，界面文本为空；遮罩数为0，未出现通知横幅。",
+    "refusal_2.0s": "拒权返回：后退后仍停在系统无障碍设置页，已下载列表消失；结果 STALE_SETTINGS_BACKSTACK，无通知/遮罩。"
+  }
+}

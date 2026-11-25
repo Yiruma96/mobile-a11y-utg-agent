@@ -1,0 +1,8 @@
+flowchart TD
+    N_7c97a40e020f["Step 1: MainActivity\nChoose language"]
+    N_05c56769d261["Step 2: MainActivity\nSetup Tapbar"]
+    N_cc7f881ccb14["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_b540009be815["Step 3: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_7c97a40e020f -->|"ui_click: click([37] View (click) center=("| N_05c56769d261
+    N_05c56769d261 -->|"ui_click: click([540, 754])"| N_cc7f881ccb14
+    N_cc7f881ccb14 -->|"refusal_probe: Back_refuse"| N_b540009be815

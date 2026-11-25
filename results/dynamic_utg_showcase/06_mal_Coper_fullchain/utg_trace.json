@@ -1,0 +1,1438 @@
+{
+  "started_at": "2026-11-25T10:03:25",
+  "platform": "android",
+  "device": "emulator-5556",
+  "model": "deepseek-v4.1-flash",
+  "provider": "openai_compatible",
+  "mode": "hybrid",
+  "target_package": "com.beginhigh19",
+  "apk_path": "Coper__841e432a41b96250.apk",
+  "offline_isolated": true,
+  "static_meta": {
+    "app_id": "MB_002__841e432a41",
+    "label": "malicious",
+    "family": "Coper",
+    "benign_category": "",
+    "pool": "MalwareBazaar_2022_2026",
+    "static_visibility": "clear",
+    "behavior_pattern_tags": [
+      "TRIG_COLD_START_BLOCK",
+      "TRIG_BACKGROUND_OR_NOTIF_RELAUNCH",
+      "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+      "CARRIER_WEBVIEW_REMOTE_URL",
+      "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+      "COERCE_NO_SKIP_NON_CANCELABLE",
+      "COERCE_REFUSAL_LOOP_RELAUNCH",
+      "ID_SYSTEM_OR_BRAND_IMPERSONATION"
+    ],
+    "candidate_activities": [
+      ".p025p",
+      ".p079j",
+      ".p043q",
+      ".p086c",
+      ".p053u",
+      ".p077o",
+      ".p050i",
+      ".p027d",
+      ".p025n",
+      ".p023w"
+    ],
+    "static_json_path": "MB_002__841e432a41.json"
+  },
+  "instruction": "Follow the app's flow (using the static analysis guidance) from launch until it triggers the Accessibility Service prompt and navigates to System Accessibility Settings. Do NOT toggle a malicious service ON.",
+  "final_status": "hook_captured",
+  "install_error": "",
+  "entry_node_id": "0e0fab7b071d",
+  "hook_node_ids": [
+    "ffe926a5d606"
+  ],
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "steps": [
+    {
+      "step": 1,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795572211.7308116,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.beginhigh19",
+        "top_activity": "com.beginhigh19.p016j",
+        "current_focus": "Window{d4f1895 u0 com.beginhigh19/com.beginhigh19.p016j}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.webkit.WebView",
+            "package": "com.beginhigh19",
+            "bounds": [
+              0,
+              0,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1074
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [],
+        "has_webview": true,
+        "has_large_image": false,
+        "text_char_count": 0,
+        "needs_ocr_fallback": true,
+        "structure_hash": "0e0fab7b071d",
+        "raw_layout_path": "step_01_layout.xml",
+        "screenshot_path": "step_01_screen.png",
+        "som_path": "step_01_som.png",
+        "element_count": 1
+      },
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "model_output": "Action: The WebView shows the \"Open Settings\" prompt (the JS bridge trigger). I'll tap the \"Open Settings\" button to trigger the accessibility settings deep-link.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"coordinate\": [540, 873]}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "coordinate": [
+          540,
+          873
+        ],
+        "pixel_xy": [
+          540,
+          873
+        ]
+      },
+      "action_anno_path": "step_01_action.png"
+    },
+    {
+      "step": 2,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795572218.82611,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.beginhigh19",
+        "top_activity": "com.beginhigh19.p016j",
+        "current_focus": "Window{d4f1895 u0 com.beginhigh19/com.beginhigh19.p016j}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.webkit.WebView",
+            "package": "com.beginhigh19",
+            "bounds": [
+              0,
+              0,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1074
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Enable Accessibility Service",
+            "content_desc": "",
+            "resource_id": "t_enableAcsbService",
+            "class_name": "android.view.View",
+            "package": "com.beginhigh19",
+            "bounds": [
+              55,
+              330,
+              1028,
+              404
+            ],
+            "center": [
+              541,
+              367
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "•",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.beginhigh19",
+            "bounds": [
+              129,
+              429,
+              148,
+              492
+            ],
+            "center": [
+              138,
+              460
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 4,
+            "text": "Find",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.beginhigh19",
+            "bounds": [
+              165,
+              431,
+              261,
+              489
+            ],
+            "center": [
+              213,
+              460
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 5,
+            "text": "'Chrome'",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.beginhigh19",
+            "bounds": [
+              258,
+              431,
+              429,
+              489
+            ],
+            "center": [
+              343,
+              460
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "•",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.beginhigh19",
+            "bounds": [
+              129,
+              489,
+              148,
+              555
+            ],
+            "center": [
+              138,
+              522
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 7,
+            "text": "Set switch ON",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.beginhigh19",
+            "bounds": [
+              165,
+              495,
+              437,
+              550
+            ],
+            "center": [
+              301,
+              522
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "Open Settings",
+            "content_desc": "",
+            "resource_id": "t_openSettings",
+            "class_name": "android.widget.Button",
+            "package": "com.beginhigh19",
+            "bounds": [
+              338,
+              607,
+              742,
+              734
+            ],
+            "center": [
+              540,
+              670
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Enable Accessibility Service",
+          "•",
+          "Find",
+          "'Chrome'",
+          "Set switch ON",
+          "Open Settings"
+        ],
+        "has_webview": true,
+        "has_large_image": false,
+        "text_char_count": 67,
+        "needs_ocr_fallback": false,
+        "structure_hash": "dc613b4151e6",
+        "raw_layout_path": "step_02_layout.xml",
+        "screenshot_path": "step_02_screen.png",
+        "som_path": "step_02_som.png",
+        "element_count": 8
+      },
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "model_output": "Action: The WebView is showing the \"Open Settings\" prompt. I'll tap the \"Open Settings\" button (element [8]) to trigger the accessibility settings deep-link.\n\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 8}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 8,
+        "pixel_xy": [
+          540,
+          670
+        ],
+        "matched_element": "[8] Button text=\"Open Settings\" id=t_openSettings (click) center=(540,670)"
+      },
+      "action_anno_path": "step_02_action.png"
+    },
+    {
+      "step": 3,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795572225.2282605,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.android.settings",
+        "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+        "current_focus": "Window{5a4feff u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [
+          "HOOK_A11Y_SETTINGS"
+        ],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Back",
+            "resource_id": "",
+            "class_name": "android.widget.ImageButton",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              83,
+              154,
+              237
+            ],
+            "center": [
+              77,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Accessibility",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              123,
+              504,
+              197
+            ],
+            "center": [
+              351,
+              160
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "Search settings",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              948,
+              94,
+              1080,
+              226
+            ],
+            "center": [
+              1014,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.android.settings:id/recycler_view",
+            "class_name": "androidx.recyclerview.widget.RecyclerView",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              237,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1192
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "DOWNLOADED APPS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              303,
+              1036,
+              344
+            ],
+            "center": [
+              617,
+              323
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              366,
+              1080,
+              566
+            ],
+            "center": [
+              540,
+              466
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "Chrome",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              410,
+              353,
+              469
+            ],
+            "center": [
+              275,
+              439
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              469,
+              253,
+              522
+            ],
+            "center": [
+              225,
+              495
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "SCREEN READERS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              632,
+              1036,
+              673
+            ],
+            "center": [
+              617,
+              652
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 10,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              695,
+              1080,
+              842
+            ],
+            "center": [
+              540,
+              768
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 11,
+            "text": "Text-to-speech output",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              739,
+              622,
+              798
+            ],
+            "center": [
+              410,
+              768
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 12,
+            "text": "DISPLAY",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              908,
+              1036,
+              949
+            ],
+            "center": [
+              617,
+              928
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 13,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              971,
+              1080,
+              1171
+            ],
+            "center": [
+              540,
+              1071
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 14,
+            "text": "Font size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1015,
+              375,
+              1074
+            ],
+            "center": [
+              286,
+              1044
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 15,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1074,
+              324,
+              1127
+            ],
+            "center": [
+              261,
+              1100
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 16,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1171,
+              1080,
+              1371
+            ],
+            "center": [
+              540,
+              1271
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 17,
+            "text": "Display size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1215,
+              432,
+              1274
+            ],
+            "center": [
+              315,
+              1244
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 18,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1274,
+              324,
+              1327
+            ],
+            "center": [
+              261,
+              1300
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 19,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1371,
+              1080,
+              1518
+            ],
+            "center": [
+              540,
+              1444
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 20,
+            "text": "Dark theme",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1415,
+              422,
+              1474
+            ],
+            "center": [
+              310,
+              1444
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 21,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1407,
+              1036,
+              1481
+            ],
+            "center": [
+              972,
+              1444
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 22,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1518,
+              1080,
+              1718
+            ],
+            "center": [
+              540,
+              1618
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 23,
+            "text": "Magnification",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1562,
+              465,
+              1621
+            ],
+            "center": [
+              331,
+              1591
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 24,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1621,
+              253,
+              1674
+            ],
+            "center": [
+              225,
+              1647
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 25,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1718,
+              1080,
+              1865
+            ],
+            "center": [
+              540,
+              1791
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 26,
+            "text": "Large mouse pointer",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1762,
+              602,
+              1821
+            ],
+            "center": [
+              400,
+              1791
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 27,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1754,
+              1036,
+              1828
+            ],
+            "center": [
+              972,
+              1791
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 28,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1865,
+              1080,
+              2012
+            ],
+            "center": [
+              540,
+              1938
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 29,
+            "text": "Remove animations",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1909,
+              586,
+              1968
+            ],
+            "center": [
+              392,
+              1938
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 30,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1901,
+              1036,
+              1975
+            ],
+            "center": [
+              972,
+              1938
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 31,
+            "text": "INTERACTION CONTROLS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              2078,
+              1036,
+              2119
+            ],
+            "center": [
+              617,
+              2098
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 32,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              2141,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              2144
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Back",
+          "Accessibility",
+          "Search settings",
+          "DOWNLOADED APPS",
+          "Chrome",
+          "Off",
+          "SCREEN READERS",
+          "Text-to-speech output",
+          "DISPLAY",
+          "Font size",
+          "Default",
+          "Display size",
+          "Dark theme",
+          "Magnification",
+          "Large mouse pointer",
+          "Remove animations",
+          "INTERACTION CONTROLS"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 205,
+        "needs_ocr_fallback": false,
+        "structure_hash": "ffe926a5d606",
+        "raw_layout_path": "step_03_layout.xml",
+        "screenshot_path": "step_03_screen.png",
+        "som_path": "step_03_som.png",
+        "element_count": 32
+      },
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "model_output": "(stopped automatically upon HOOK_A11Y_SETTINGS + probes)",
+      "action": {
+        "action": "terminate",
+        "status": "success",
+        "summary": "Captured Accessibility Settings hook & probes"
+      }
+    }
+  ],
+  "utg_nodes": {
+    "0e0fab7b071d": {
+      "first_step": 1,
+      "role": "entry",
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [],
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json"
+    },
+    "dc613b4151e6": {
+      "first_step": 2,
+      "role": "intermediate",
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json"
+    },
+    "ffe926a5d606": {
+      "first_step": 3,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Chrome",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json"
+    },
+    "c85c6e66ab56": {
+      "first_step": 3,
+      "role": "service_detail",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Hizmetini Etkinleştirin."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "raw_layout_path": "step_03_service_detail_layout.xml",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    }
+  },
+  "utg_edges": [
+    {
+      "from": "0e0fab7b071d",
+      "to": "dc613b4151e6",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([540, 873])"
+    },
+    {
+      "from": "dc613b4151e6",
+      "to": "ffe926a5d606",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([8] Button text=\"Open Settings\" id=t_openSettings (click) center=(540,670))"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "c85c6e66ab56",
+      "step": 3,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "c85c6e66ab56",
+      "to": "dc613b4151e6",
+      "step": 3,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "ffe926a5d606",
+      "to": "dc613b4151e6",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "dc613b4151e6",
+      "to": "dc613b4151e6",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "dc613b4151e6",
+      "to": "dc613b4151e6",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Chrome Use Chrome OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Chrome",
+        "Use Chrome",
+        "OPTIONS",
+        "Chrome shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "Erişebilirlik Hizmetini Etkinleştirin."
+      ],
+      "screenshot_path": "step_03_service_detail_screen.png",
+      "harmony_layout_path": "step_03_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Enable Accessibility Service • Find",
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_system_warning_screen.png",
+      "harmony_layout_path": "step_03_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.beginhigh19",
+      "top_activity": "com.beginhigh19.p016j",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Enable Accessibility Service",
+        "•",
+        "Find",
+        "'Chrome'",
+        "Set switch ON",
+        "Open Settings"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "finished_at": "2026-11-25T10:04:20"
+}

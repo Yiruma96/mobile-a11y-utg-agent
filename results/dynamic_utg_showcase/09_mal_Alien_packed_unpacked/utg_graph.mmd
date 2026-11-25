@@ -1,0 +1,12 @@
+flowchart TD
+    N_e1e15499223f["Step 1: NexusLauncherActivity\nApps list"]
+    N_8dc18c7c0883["Step 3: lszijh\n"]
+    N_05bbf0af6e6e["Step 4: lszijh\nEnable video"]
+    N_bcf40f5d9065["Step 5: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_e1e15499223f -->|"ui_click: click([1] View desc='Apps list' "| N_e1e15499223f
+    N_e1e15499223f -->|"ui_click: click([76, 180])"| N_8dc18c7c0883
+    N_8dc18c7c0883 -->|"ui_click: click([540, 1435])"| N_05bbf0af6e6e
+    N_05bbf0af6e6e -->|"ui_click: click([13] Button text='>>' (cli"| N_bcf40f5d9065
+    N_bcf40f5d9065 -->|"refusal_probe: Back_refuse"| N_05bbf0af6e6e
+    N_05bbf0af6e6e -->|"refusal_probe: wait(5.5s)_after_refusal"| N_05bbf0af6e6e
+    N_05bbf0af6e6e -->|"refusal_probe: wait(10.5s)_after_refusal"| N_05bbf0af6e6e

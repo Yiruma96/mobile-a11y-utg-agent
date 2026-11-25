@@ -1,0 +1,809 @@
+{
+  "started_at": "2026-11-25T08:46:10",
+  "platform": "android",
+  "device": "emulator-5556",
+  "model": "deepseek-v4.1-flash",
+  "provider": "openai_compatible",
+  "mode": "hybrid",
+  "target_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+  "apk_path": "05bbe4182b890c91ff96ef7bf39e5dd94feae83d5067ccdc9703a05278b9983d.apk",
+  "offline_isolated": true,
+  "static_meta": {
+    "app_id": "MR_003__05bbe4182b",
+    "label": "malicious",
+    "family": "Lucy",
+    "benign_category": "",
+    "pool": "MalRadar_2014_2021",
+    "static_visibility": "clear",
+    "behavior_pattern_tags": [
+      "TRIG_COLD_START_BLOCK",
+      "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+      "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+      "LURE_SYSTEM_ERROR_OR_OPTIMIZE",
+      "COERCE_NO_SKIP_NON_CANCELABLE",
+      "COERCE_REFUSAL_LOOP_RELAUNCH",
+      "COERCE_OVERLAY_STACK_ON_SETTINGS",
+      "ID_SYSTEM_OR_BRAND_IMPERSONATION",
+      "ID_WHITESPACE_NEWLINE_OR_HOMOGLYPH"
+    ],
+    "candidate_activities": [
+      "xqbbbwdsrq.onActivityResult",
+      "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq.onActivityResult"
+    ],
+    "static_json_path": "MR_003__05bbe4182b.json"
+  },
+  "instruction": "Follow the app's flow (using the static analysis guidance) from launch until it triggers the Accessibility Service prompt and navigates to System Accessibility Settings. Do NOT toggle a malicious service ON.",
+  "final_status": "hook_captured",
+  "install_error": "",
+  "entry_node_id": "e1e15499223f",
+  "hook_node_ids": [
+    "344973c5760f"
+  ],
+  "refusal_outcome": "RELAUNCHED_LURE_DIALOG",
+  "steps": [
+    {
+      "step": 1,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567576.2464323,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.apps.nexuslauncher",
+        "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+        "current_focus": "Window{8fce09d u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Apps list",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              515,
+              1680,
+              565,
+              1697
+            ],
+            "center": [
+              540,
+              1688
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/workspace",
+            "class_name": "android.widget.ScrollView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              0,
+              0,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1074
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/universal_smartspace_container",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              38,
+              105,
+              1042,
+              416
+            ],
+            "center": [
+              540,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "Wednesday, Nov 25",
+            "content_desc": "Wednesday, Nov 25",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/clock",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              163,
+              105,
+              770,
+              416
+            ],
+            "center": [
+              466,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "-3°C",
+            "content_desc": "Snow, -3°C",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/title_weather_text",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              770,
+              105,
+              918,
+              416
+            ],
+            "center": [
+              844,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 6,
+            "text": "Messages",
+            "content_desc": "Messages",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              239,
+              1697,
+              440,
+              1912
+            ],
+            "center": [
+              339,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "Chrome",
+            "content_desc": "Chrome",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              641,
+              1697,
+              842,
+              1912
+            ],
+            "center": [
+              741,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 8,
+            "text": "",
+            "content_desc": "Search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/search_container_all_apps",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              52,
+              1946,
+              1028,
+              2100
+            ],
+            "center": [
+              540,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 9,
+            "text": "",
+            "content_desc": "Voice search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/mic_icon",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              865,
+              1946,
+              1019,
+              2100
+            ],
+            "center": [
+              942,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Apps list",
+          "Wednesday, Nov 25",
+          "-3°C",
+          "Snow, -3°C",
+          "Messages",
+          "Chrome",
+          "Search",
+          "Voice search"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 72,
+        "needs_ocr_fallback": false,
+        "structure_hash": "e1e15499223f",
+        "raw_layout_path": "step_01_layout.xml",
+        "screenshot_path": "step_01_screen.png",
+        "som_path": "step_01_som.png",
+        "element_count": 9
+      },
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "model_output": "Action: Open the app drawer to locate and launch the malicious \"Video Player\" app.\n\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 1}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 1,
+        "pixel_xy": [
+          540,
+          1688
+        ],
+        "matched_element": "[1] View desc=\"Apps list\" (click) center=(540,1688)"
+      },
+      "action_anno_path": "step_01_action.png"
+    },
+    {
+      "step": 2,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567581.9003963,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+        "top_activity": "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq",
+        "current_focus": "Window{eebc6c7 u0 gcoojdprtw.tsqrstjtdi.crwrnqoqur/gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "Внимание",
+            "content_desc": "",
+            "resource_id": "android:id/alertTitle",
+            "class_name": "android.widget.TextView",
+            "package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+            "bounds": [
+              138,
+              873,
+              942,
+              947
+            ],
+            "center": [
+              540,
+              910
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 2,
+            "text": "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+            "content_desc": "",
+            "resource_id": "android:id/message",
+            "class_name": "android.widget.TextView",
+            "package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+            "bounds": [
+              72,
+              969,
+              1008,
+              1236
+            ],
+            "center": [
+              540,
+              1102
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "OK",
+            "content_desc": "",
+            "resource_id": "android:id/button1",
+            "class_name": "android.widget.Button",
+            "package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+            "bounds": [
+              799,
+              1247,
+              975,
+              1396
+            ],
+            "center": [
+              887,
+              1321
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Внимание",
+          "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+          "OK"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 155,
+        "needs_ocr_fallback": false,
+        "structure_hash": "afbf7cd90f30",
+        "raw_layout_path": "step_02_layout.xml",
+        "screenshot_path": "step_02_screen.png",
+        "som_path": "step_02_som.png",
+        "element_count": 3
+      },
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "model_output": "The malicious AlertDialog is showing; I'll tap OK to trigger the redirect to System Accessibility Settings.\n\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 3}}",
+      "action": {
+        "action": "click",
+        "element_id": 3,
+        "pixel_xy": [
+          887,
+          1321
+        ],
+        "matched_element": "[3] Button text=\"OK\" id=button1 (click) center=(887,1321)"
+      },
+      "action_anno_path": "step_02_action.png"
+    },
+    {
+      "step": 3,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795567587.468863,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.android.settings",
+        "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+        "current_focus": "Window{fd4514e u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [
+          "HOOK_A11Y_SETTINGS"
+        ],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Back",
+            "resource_id": "",
+            "class_name": "android.widget.ImageButton",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              83,
+              154,
+              237
+            ],
+            "center": [
+              77,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Accessibility",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              123,
+              504,
+              197
+            ],
+            "center": [
+              351,
+              160
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "Search settings",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              948,
+              94,
+              1080,
+              226
+            ],
+            "center": [
+              1014,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.android.settings:id/recycler_view",
+            "class_name": "androidx.recyclerview.widget.RecyclerView",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              237,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1192
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "DOWNLOADED APPS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              303,
+              1036,
+              344
+            ],
+            "center": [
+              617,
+              323
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              366,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1257
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              410,
+              747,
+              2148
+            ],
+            "center": [
+              472,
+              1279
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Back",
+          "Accessibility",
+          "Search settings",
+          "DOWNLOADED APPS",
+          "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 112,
+        "needs_ocr_fallback": false,
+        "structure_hash": "344973c5760f",
+        "raw_layout_path": "step_03_layout.xml",
+        "screenshot_path": "step_03_screen.png",
+        "som_path": "step_03_som.png",
+        "element_count": 7
+      },
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "model_output": "(stopped automatically upon HOOK_A11Y_SETTINGS + probes)",
+      "action": {
+        "action": "terminate",
+        "status": "success",
+        "summary": "Captured Accessibility Settings hook & probes"
+      }
+    }
+  ],
+  "utg_nodes": {
+    "e1e15499223f": {
+      "first_step": 1,
+      "role": "entry",
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "-3°C",
+        "Snow, -3°C",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json"
+    },
+    "afbf7cd90f30": {
+      "first_step": 2,
+      "role": "intermediate",
+      "top_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+      "top_activity": "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json"
+    },
+    "344973c5760f": {
+      "first_step": 3,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Android Video Optimization \n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n."
+      ],
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json"
+    }
+  },
+  "utg_edges": [
+    {
+      "from": "e1e15499223f",
+      "to": "afbf7cd90f30",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([1] View desc=\"Apps list\" (click) center=(540,1688))"
+    },
+    {
+      "from": "afbf7cd90f30",
+      "to": "344973c5760f",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1321))"
+    },
+    {
+      "from": "344973c5760f",
+      "to": "afbf7cd90f30",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "afbf7cd90f30",
+      "to": "afbf7cd90f30",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "afbf7cd90f30",
+      "to": "afbf7cd90f30",
+      "step": 3,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 3,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_800ms_screen.png",
+          "harmony_layout_path": "step_03_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_03_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_03_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+      "top_activity": "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+      "top_activity": "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "gcoojdprtw.tsqrstjtdi.crwrnqoqur",
+      "top_activity": "gcoojdprtw.tsqrstjtdi.crwrnqoqur.xqbbbwdsrq",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Внимание",
+        "Для того что бы продолжить просмотр видео файла, нужно включить Android Video Optimization (потоковую оптимизацию видео), пожалуйста включите ее.",
+        "OK"
+      ],
+      "screenshot_path": "step_03_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_03_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "finished_at": "2026-11-25T08:46:50"
+}

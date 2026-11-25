@@ -1,0 +1,25 @@
+{
+  "app_chain_summary_zh": "应用从欢迎、隐私与设置向导进入存储、ADB、Root、用量统计授权，再以说明卡片引导开启无障碍服务；点击后跳转系统无障碍页显示 SD Maid SE 为 Off，探针未见遮罩，拒权返回后停留在陈旧设置返回栈。",
+  "observed_lure_rhetoric_zh": [
+    "Gain storage space by cleaning up behind other apps. -> 通过清理其他应用残留获得存储空间（欢迎页）",
+    "SD Maid has no ads and does not sell user data. -> 无广告且不出售用户数据（隐私页）",
+    "Required for accessibility service based cache deletion. -> 基于无障碍服务的缓存删除所必需（权限设置页）",
+    "The accessibility service allows SD Maid to interact with your screen and automate tedious actions. -> 无障碍服务可代点清除缓存等繁琐操作（无障碍同意卡）",
+    "SD Maid will not use the accessibility service without your consent... will not use it to collect information. -> 未经同意不使用、活跃时显示可取消提示且不收集信息（无障碍同意卡）",
+    "Enable service and grant access -> 启用服务并授予访问（无障碍同意卡）",
+    "If you change your mind, you can alter this option again by going into settings and restarting the setup. -> 可稍后在设置重启向导修改（无障碍同意卡）"
+  ],
+  "frame_captions": {
+    "step_01": "欢迎/功能介绍页：说明 SD Maid 管理文件、应用和存储，可清理残留释放空间；本步点击 Continue 继续向导。",
+    "step_02": "隐私说明页：称无广告、不出售用户数据，可开启更新检查与重要消息；本步点击 Continue 进入下一步。",
+    "step_03": "设置总览页：称会搜索可访问数据、默认安全彻底，提供引导 tour；本步点击 Set up access 进入权限设置。",
+    "step_04": "存储管理弹窗：展示公共存储路径与 Grant access，另有 Help、ADB access 和关闭/选项；本步点击关闭说明弹窗继续。",
+    "step_05": "存储权限详情页：说明公共存储基础访问、存储访问框架及 Android/data、obb 路径；本步下滑寻找自动化/无障碍卡片。",
+    "step_06": "ADB、Root 与用量统计设置页：提供尝试 ADB/root、授予用量统计访问并说明无效果条件；本步继续下滑。",
+    "step_07": "无障碍服务同意卡：称用于自动点清除缓存、需同意、活跃显示可取消提示且不收集信息；本步点击启用并授权。",
+    "step_08": "系统无障碍设置页：DOWNLOADED APPS 下 SD Maid SE 显示 Off；已捕获无障碍设置钩子与探针，流程自动终止。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针：仍停留系统无障碍设置页，UI 文本为空、遮罩数为 0，无通知横幅或覆盖层。",
+    "post_jump_2.0s": "跳转后 2.0 秒探针：系统无障碍设置页无新文本，遮罩数仍为 0，未观察到弹窗、通知或悬浮提示。",
+    "refusal_2.0s": "拒权返回 2 秒：系统无障碍页仅余分类项，SD Maid SE 条目消失；返回被拒并落入 STALE_SETTINGS_BACKSTACK。"
+  }
+}

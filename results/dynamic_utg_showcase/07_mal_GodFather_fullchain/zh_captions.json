@@ -1,0 +1,18 @@
+{
+  "app_chain_summary_zh": "应用先以文件管理器入口停在 vivacissimoselftimer 闪屏，随后跳转系统无障碍列表并投放名为「Şarkı Evreni」的无障碍服务，伴随通知催促启用；进入服务详情触发全屏控制警告，用户点 Deny 返回后应用再次拉起无障碍设置，呈反复诱导授权特征。",
+  "observed_lure_rhetoric_zh": [
+    "English -> “Please activate for updates to be active”＝“请启用以便更新生效”（授权弹窗、拒权后无障碍列表页的通知横幅）",
+    "English -> “No description provided.”＝“未提供描述”（服务详情页，无障碍服务说明缺失）",
+    "Turkish/服务名“Şarkı Evreni” -> 中文“歌曲宇宙”（无障碍列表、服务详情与授权弹窗，服务名被用作伪装）"
+  ],
+  "frame_captions": {
+    "step_01": "应用停在 vivacissimoselftimer 闪屏，界面无可见文案；文件管理器包已挂出空文本通知，本步仅等待其自动跳转无障碍设置页。",
+    "step_02": "系统无障碍列表页，可见 Şarkı Evreni 服务显示 Off；应用通知为空。本步捕获无障碍钩子与探针后终止，属于授权入口。",
+    "post_jump_0.8s": "跳转后 0.8 秒探针仍停在系统无障碍列表页，无 UI 文本、无遮罩；仅见应用空通知，未出现进一步诱导界面。",
+    "post_jump_2.0s": "跳转后 2.0 秒仍停留在系统无障碍列表页，无新增文案或遮罩；应用空通知持续存在，未自动进入服务详情。",
+    "detail_1_service_detail_page": "进入 Şarkı Evreni 服务详情页，显示 Use Şarkı Evreni、Off、Shortcut settings，并标注 No description provided.；本步检查详情与说明。",
+    "detail_2_system_warning_dialog": "系统弹窗警告“允许 Şarkı Evreni 完全控制设备？”，列明读屏与代操作风险；通知同步催促启用，本步检查后点 Deny。",
+    "refusal_2.0s": "点 Deny 后 2 秒应用回到 vivacissimoselftimer 闪屏，界面无文案；随即自动重拉无障碍设置，呈拒权后反复诱导。",
+    "refusal_5.5s": "拒权后 5.5 秒再次停在无障碍列表，Şarkı Evreni 仍为 Off；通知横幅“请启用以便更新生效”持续出现，显示重试拉权。"
+  }
+}

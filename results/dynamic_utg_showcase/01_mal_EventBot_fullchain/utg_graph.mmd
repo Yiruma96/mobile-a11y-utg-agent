@@ -1,0 +1,19 @@
+flowchart TD
+    N_3de1b204244e["Step 1: ReviewPermissionsActivity\nChoose what to allow F"]
+    N_f0c23eb4c06c["Step 2: NexusLauncherActivity\nFlash Update"]
+    N_f6a3588f0886["Step 3: NexusLauncherActivity\nApps list"]
+    N_b30b3dfbeaa7["Step 4: NexusLauncherActivity\nApps list"]
+    N_2acf3c2851bd["Step 5: NexusLauncherActivity\nFlash Update will not "]
+    N_7001867aa19d["Step 6: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_d3f0379915a6["Step 6: SubSettings\nBack"]
+    N_13d29e946e93["Step 6: SubSettings [HOOK_A11Y_SETTINGS]\nAllow Flash Update to "]
+    N_3de1b204244e -->|"ui_click: click([11] Button text='Continue"| N_f0c23eb4c06c
+    N_f0c23eb4c06c -->|"ui_click: click([3] Button text='OK' id=bu"| N_f6a3588f0886
+    N_f6a3588f0886 -->|"ui_wait: wait()"| N_b30b3dfbeaa7
+    N_b30b3dfbeaa7 -->|"ui_wait: wait()"| N_2acf3c2851bd
+    N_2acf3c2851bd -->|"ui_click: click([7] Button text='Enable Fl"| N_7001867aa19d
+    N_7001867aa19d -->|"detail_probe: click_service()"| N_d3f0379915a6
+    N_d3f0379915a6 -->|"warning_probe: click_use_service_switch"| N_13d29e946e93
+    N_7001867aa19d -->|"refusal_probe: Back_refuse"| N_2acf3c2851bd
+    N_2acf3c2851bd -->|"refusal_probe: wait(5.5s)_after_refusal"| N_2acf3c2851bd
+    N_2acf3c2851bd -->|"refusal_probe: wait(10.5s)_after_refusal"| N_2acf3c2851bd

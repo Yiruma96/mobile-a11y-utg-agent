@@ -1,0 +1,18 @@
+flowchart TD
+    N_ad8b816fcee1["Step 1: MainActivity\nWelcome"]
+    N_46e0bb99fce5["Step 2: MainActivity\nPrivacy"]
+    N_833377d48715["Step 3: MainActivity\nSetup"]
+    N_c77b6ddc7d93["Step 4: MainActivity\nManage storage"]
+    N_10c63ca1ff9d["Step 5: MainActivity\nManage storage"]
+    N_ea3daee46498["Step 6: MainActivity\nADB access"]
+    N_a7ff833a6c29["Step 7: MainActivity\nI didn't root my devic"]
+    N_b5ea4608ec31["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_b540009be815["Step 8: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_ad8b816fcee1 -->|"ui_click: click([5] TextView text='Continu"| N_46e0bb99fce5
+    N_46e0bb99fce5 -->|"ui_click: click([11] View (click) center=("| N_833377d48715
+    N_833377d48715 -->|"ui_click: click([10] View (click) center=("| N_c77b6ddc7d93
+    N_c77b6ddc7d93 -->|"ui_click: click([31] View (click) center=("| N_10c63ca1ff9d
+    N_10c63ca1ff9d -->|"ui_swipe: swipe([540, 1800])"| N_ea3daee46498
+    N_ea3daee46498 -->|"ui_swipe: swipe([540, 1900])"| N_a7ff833a6c29
+    N_a7ff833a6c29 -->|"ui_click: click([15] View (click) center=("| N_b5ea4608ec31
+    N_b5ea4608ec31 -->|"refusal_probe: Back_refuse"| N_b540009be815

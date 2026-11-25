@@ -1,0 +1,317 @@
+# MB_161__3c53b424e3｜Unattributed — Itau Empresas Suporte
+
+> **类型**：在野恶意无障碍样本  ｜  **来源池**：`MalwareBazaar_2022_2026`  ｜  **静态可见性**：`clear`  ｜  **APKAudit 耗时**：177.9s
+
+## 1. 一句话核心结论
+
+- **核心申请方式**：伪装成 Itau Empresas Suporte 银行企业版（桌面名 System Keyboard），冷启动检测无障碍服务未开启即弹出无取消按钮的原生引导页，点击 Next 用混淆字符串还原的 Intent 直跳系统无障碍设置并指定组件，随即 finish 自身以阻断返回。
+- **静态可见性说明**：核心引导流程完整静态可见：无加壳、无动态加载 dex/so（APK 内仅 classes.dex 一个 dex，无 assets 与 lib 目录）。唯一保护手法是 utilities.atcmvywfqfgrboxoeauflrpydechxmcouvvzsgqajxflhvoxlg53() 对 Intent action 字符串做随机填充拼接混淆，还原后即为标准 android.settings.ACCESSIBILITY_SETTINGS / com.samsung.accessibility*.installed_service，不影响流程判断。
+- **命中的行为模式标签**：`TRIG_COLD_START_BLOCK`（冷启动0步强阻断直弹授权）、`CARRIER_NATIVE_DIALOG_OR_ACTIVITY`（原生弹窗(Dialog)或原生引导页(Activity)）、`CARRIER_SYSTEM_A11Y_DESCRIPTION`（系统无障碍列表服务说明(android:description)）、`COERCE_NO_SKIP_NON_CANCELABLE`（不可取消弹窗/无跳过出口/单一正向按钮）、`COERCE_REFUSAL_LOOP_RELAUNCH`（拒权或返回后死循环重拉无障碍设置页）、`ID_SYSTEM_OR_BRAND_IMPERSONATION`（冒充系统组件/Google/大厂或银行品牌身份）、`ID_WHITESPACE_NEWLINE_OR_HOMOGLYPH`（空白符/大量换行挤出警告/零宽或同形字隐身）、`ID_MULTI_ALIAS_CAMOUFLAGE`（多activity-alias动态切换图标与伪装身份）、`LURE_RESTRICTED_SETTINGS_COACHING`（Android 13+受限设置分步解锁教学(应用信息→右上角菜单)）、`LURE_FAKE_SECURITY_ANTIFRAUD`（假安全防护/杀毒扫描/反诈保护恐吓）、`LURE_FAKE_UPDATE_OR_INSTALL`（假系统/应用更新或插件安装胁迫）
+
+## 2. 应用标识、静态能力与身份署名核验
+
+| 维度 | 实测详情 |
+| --- | --- |
+| 样本 SHA-256 | `3c53b424e3360636b76e587e594a0fe50f379df4c5d451d619c3c8588242980a` |
+| 包名 / 年份 | `generating.purpose.nightlife` / 2026 |
+| 家族 / 品类 | **Unattributed**（同池样本数：13） |
+| 原始来源标识 | MalwareBazaar_2022_2026 |
+| 桌面显示名 | System Keyboard（app_name；另注册 activity-alias FirstLauncherAlias 的 android:label 为单个空格 " "） |
+| 引导页宣称品牌/身份 | Itau Empresas Suporte（巴西 Itaú Unibanco 企业网银） |
+| 系统无障碍列表服务名 | Itau Empresas Suporte（@string/ordinaryifragranceu59）；服务无 android:description |
+| 三方身份是否错配/伪装 | **是（存在伪装/错配）** ｜ 混淆手法：1) 桌面名与无障碍服务名分属两个互不相关的身份（System Keyboard vs Itau Empresas Suporte）；2) FirstLauncherAlias 使用 android:label=" "（单空格）在桌面隐藏文字；3) 存在两个 activity-alias（FirstLauncherAlias / SecondLauncherAlias）多入口伪装；4) 无障碍服务未声明 android:description，系统无障碍列表中不显示任何用途警告；5) 服务类名/包名混淆为随机串（gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3）；6) Intent action 字符串被 250 字符随机填充串包裹，规避静态关键字检索；7) 引导页按钮文案仅硬编码 zh/ar/en 三语，其余语言回退英文，规避多语种审查。 |
+| 无障碍服务类名 | `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService` |
+| 静态能力位 | `canRetrieveWindowContent=False` · `canPerformGestures=False` · `isAccessibilityTool=False` · 监听范围：全局通配（未限定 packageNames） |
+| 共现高危权限 | `CALL_PHONE, CAMERA, READ_CONTACTS, READ_SMS, RECORD_AUDIO, REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, REQUEST_INSTALL_PACKAGES, SEND_SMS, SYSTEM_ALERT_WINDOW` |
+
+## 3. 一步步引导用户申请/开启无障碍流程（Pre-Grant UTG 全链路）
+
+| 步骤 | 阶段 | 页面 / 组件 | 触发事件 | UI 载体 | 界面呈现原文与译文 | 要求用户执行的动作 | 代码/资源锚点 |
+| :---: | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 冷启动入口 | generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity（Theme.Translucent.NoTitleBar，label=Itau Empresas Suporte） | onCreate：先记录屏幕宽高到 MySettings.ScreenWidth/ScreenHight，再执行 Anti_emu()/isEmu_DIV_ID_lator() 模拟器检测（命中即 AsknoEmu() 并 return），随后读取 MySettings.Cantgo 布尔开关选择后续 Activity | 原生Activity | **原文**：无（该页无可见文案，仅做检测与分流）<br>**译注**：无可见文案 | 无（自动分流） | `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity.onCreate` |
+| 2 | 引导说明页 | generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20（exported=true，Theme.Translucent.NoTitleBar） | onCreate 调用 utilities.isAccessibilityServiceEnabled(ctx, AccessService.class)，返回 false 时 setContentView：MIUI 机型 R.layout.miui_access_act(0x7f0a001f)，其他机型 R.layout.activity_req_access(0x7f0a001c)；按 Locale 语言切换背景图资源与按钮文字 | 原生Activity | **原文**：Next / 下一个 / التالي（按钮文案，按 en/zh/ar 硬编码）；布局内另有 RelativeLayout+Button 引导图<br>**译注**：下一步（引导用户前往系统无障碍设置开启服务） | 仅有一个 Next 按钮（以及被挂同一 Oklistner 的应用图标 ImageView），无取消、无跳过、无返回按钮 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate / R.layout.miui_access_act / R.layout.activity_req_access` |
+| 3 | 跳无障碍设置 | android.settings.ACCESSIBILITY_SETTINGS（系统无障碍服务列表） | 用户点击 Next（Oklistner → vwdzizsvjb…$2.onClick） | 系统无障碍页 | **原文**：android.settings.ACCESSIBILITY_SETTINGS（Intent action，由 utilities.atcmvywfqfgrboxoeauflrpydechxmcouvvzsgqajxflhvoxlg53 从随机填充串中还原）<br>**译注**：系统无障碍设置页（列表中显示服务名 Itau Empresas Suporte，无用途说明） | 要求用户在系统无障碍列表中手动找到并打开该服务开关 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick` |
+| 4 | 跳受限设置 | android.settings.ACCESSIBILITY_SETTINGS + EXTRA_COMPONENT_NAME 直达服务详情（Intent.FLAG_ACTIVITY_NEW_TASK\|CLEAR_TASK，flags=1350565888） | onClick 中 resolveActivity 为 null 时的回退分支：构造 Intent 并 putExtra(EXTRA_COMPONENT_NAME, ComponentName(myctx, AccessService.class)) | 系统无障碍页 | **原文**：generating.purpose.nightlife/generating.purpose...gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService<br>**译注**：系统无障碍设置中直接定位到本应用的服务条目 | 点击开关授权 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick` |
+| 5 | 拒权反馈循环 | vwdzizsvjb…（引导 Activity）+ BackgroundWorker / tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_ | onClick 末尾 startActivity 后立即 finish() 自身并 Trys=0；用户从系统设置返回时服务仍未连接，后台 Worker 的 doInBackground 再次 startActivity(引导 Activity, FLAG_ACTIVITY_NEW_TASK\|FLAG_ACTIVITY_CLEAR_TOP) 重新拉起引导页 | 原生Activity | **原文**：无新增文案（重复同一引导页 Next 按钮）<br>**译注**：反复回到同一个无障碍引导页，无降级或跳过路径 | 再次点击 Next 重新跳设置 | `gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_.doInBackground / BackgroundWorker.onHandleIntent` |
+| 6 | 获权后动作 | generating.purpose...gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService | onServiceConnected 回调 | 不可静态还原 | **原文**：Arka planda çalışırken yeni pencereler açın<br>**译注**：后台运行时打开新窗口（土耳其语能力/配置说明串） | 无（服务已获权，转入后台自动化与界面操控） | `gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected` |
+
+## 4. 引导文字呈现位置与逐字原文摘录
+
+### 4.1 呈现位置清单（Where Text Appears）
+- vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20 引导 Activity 的原生布局 R.layout.miui_access_act / R.layout.activity_req_access（MIUI 与非 MIUI 两套），按钮文案硬编码 "Next"/"下一个"/"التالي"
+- 系统无障碍服务列表条目名：AndroidManifest 中 AccessService 的 android:label=@string/ordinaryifragranceu59 → "Itau Empresas Suporte"；该服务未配置 android:description，列表内无任何用途说明文字
+- 桌面图标名：app_name="System Keyboard"，且 activity-alias FirstLauncherAlias 的 android:label=" "（单空格）用于隐藏名称
+- AndroidManifest 中 MainActivity / CameraActvity 的 android:label 为 "Itau Empresas Suporte" / "Play Store"，在最近任务或部分系统 UI 中暴露品牌名
+- 字符串资源 res/values/strings.xml 中大量以 "Itau Empresas Suporte" 填充的伪银行文案（SIM 校验、双卡、账户已注册、Companion mode、Google Drive 备份等），用于整体营造银行 App 语境
+- MainActivity.onCreate 中按语言硬编码的通知文案："Continue installing"/"Click Here to Continue installing"、"继续安装"/"单击此处继续安装"、"مواصلة التثبيت"、"Kuruluma devam etmek için buraya tıklayın"（后续载荷安装引导通知）
+- AccessService.onServiceConnected 内的土耳其语能力说明串 "Arka planda çalışırken yeni pencereler açın"
+
+### 4.2 逐字原文与话术框架（Verbatim Texts）
+| 语种 | 逐字原文 | 中文翻译 | 源码/资源位置 | 话术/修辞框架 |
+| :---: | --- | --- | --- | --- |
+| en | Next | 下一步 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码 / R.layout.miui_access_act 的 Button text` | 受限设置分步教学 |
+| zh | 下一个 | 下一步 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码（zh 分支）` | 受限设置分步教学 |
+| ar | التالي | 下一步 | `vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码（ar 分支）` | 受限设置分步教学 |
+| pt | Itau Empresas Suporte | Itaú 企业版（巴西 Itaú Unibanco 面向企业的网银/令牌应用名） | `res/values/strings.xml 的 ordinaryifragranceu59（被 AccessService android:label 与 MainActivity android:label 引用）` | 假反诈安全 |
+| en | System Keyboard | 系统键盘 | `res/values/strings.xml 的 app_name` | 清理工具伪装 |
+| en | <b>%s</b> is already registered on a different phone. A confirmation notice was sent to that phone for Itau Empresas Suporte security. | <b>%s</b> 已在另一台手机上注册。出于 Itaú 企业版安全考虑，已向该手机发送确认通知。 | `res/values/strings.xml（伪银行账号校验文案，预筛线索同源）` | 假反诈安全 |
+| en | Continue installing / Click Here to Continue installing | 继续安装 / 单击此处继续安装 | `MainActivity.onCreate 中 utilities.completeinstallnotifi_title / completeinstallnotifi_msg 硬编码` | 假更新 |
+| tr | Arka planda çalışırken yeni pencereler açın | 后台运行时打开新窗口 | `gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected 硬编码` | 未知 |
+
+## 5. 让用户完成开启的具体机制与拒权反馈
+
+- **触发时机（Trigger Timing）**：`cold_start_0_step`
+- **是否提供取消/跳过出口**：`False`
+- **拒权或返回后的反馈回路**：引导页唯一按钮为 Next；点击后 startActivity 跳系统无障碍设置并立即 finish() 自身、Trys 归零。用户从系统设置返回时无障碍服务仍未连接，后台 BackgroundWorker / tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_.doInBackground 会以 FLAG_ACTIVITY_NEW_TASK|CLEAR_TOP 重新 startActivity 拉起同一引导 Activity，形成拒权后反复重跳，不存在留在本页或安全降级的分支。
+- **遮罩叠层 / 高仿系统设置页**：未使用悬浮遮罩或高仿无障碍开关页：引导为纯原生 Activity 布局（miui_access_act / activity_req_access），跳转目标为真实系统 android.settings.ACCESSIBILITY_SETTINGS；但通过 EXTRA_COMPONENT_NAME 直接把系统设置定位到本应用服务条目，减少用户在列表中的查找步骤。另声明了 SYSTEM_ALERT_WINDOW 权限并存在 FloatingView 悬浮 Activity，供获权后叠层使用。
+- **Android 13+ 受限设置（Restricted Settings）应对**：无（未发现跳转 ACTION_APPLICATION_DETAILS_SETTINGS 教用户开启受限设置的引导文案；APPLICATION_DETAILS_SETTINGS 仅出现在 Perfct.goToOppoAppDetails/goToXiaomioAppSettingDetails 的厂商自启动/后台限制跳转中）
+- **获权后即时行为与防撤权机制**：有。Manifest 声明 PERFORM_GLOBAL_ACTION 相关能力对应的 AccessService 已注册；Uninstall.checkOtherUninstall 内硬编码 "Erişilebilirlik"/"Acessibilidade"（土耳其语/葡语“无障碍”）用于识别系统无障碍设置页，配合 GLOBAL_ACTION_BACK/HOME 与 Perfct.checkOppo（监听 com.android.settings.applications.InstalledAppDetailsTop 且 eventType==32）实现设置页监听与撤权/卸载阻断。
+- **良性降级 / 替代方案**：无
+
+## 6. 面向纯 UTG 检测机制的关键捕获页面与判别信号
+
+- **推荐检测拉起时机（Trigger Hook）**：两条最佳时机：① 冷启动后 MainActivity.onCreate 分流、vwdzizsvjb… Activity 被 startActivity 拉起的瞬间（此时若服务未开启即立刻显示引导页）；② 检测到前台 Activity 变为 vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20 或检测到 Intent action 含 ACCESSIBILITY_SETTINGS 时立即抓 UTG。此外在系统设置页停留期间持续采样，可捕获 EXTRA_COMPONENT_NAME 直达后的服务条目与返回后的重跳。
+- **是否需对纯图/GIF 引导页触发按需单帧 OCR**：`True`
+- **纯 UTG 方案盲区/边界提示**：引导页文案极少且以背景图承载（布局为 RelativeLayout + 背景资源 + 单个 Next 按钮），说明内容主要在图片中，纯文本 UTG 可能采不到诱导措辞，需配合 OCR 或直接以“仅一个 Next 按钮且无 description”的结构特征判定。另：MainActivity.onCreate 先做模拟器检测（Anti_emu / isEmu_DIV_ID_lator → AsknoEmu），在模拟器/自动化环境中可能不进入引导流程，导致 UTG 采不到引导页，建议在真机或对模拟器特征做伪装后采集。
+
+| 关键捕获页面角色 | 预期页面/组件标识 | 为何捕获该页面最有用 | 可在 UTG 直接提取的判别信号 |
+| --- | --- | --- | --- |
+| **冷启动引导弹窗页（无障碍申请页）** | Activity 类名含 vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20；布局为 R.layout.miui_access_act（MIUI）或 activity_req_access；页面仅含一个文本为 Next/下一个/التالي 的 Button 及若干 ImageView | 这是诱导链条的唯一用户交互点，可直接判定是否存在取消/跳过按钮、文案是否为分步教学、是否为纯图无说明 | 可点击节点集合中只有一个按钮且文案属 {Next, 下一个, التالي}；无取消/关闭/跳过/返回按钮节点；无任何说明文本节点（纯引导图）或说明文本缺失无障碍用途描述；页面 activity 类名为随机串混淆名且非 MainActivity |
+| **系统无障碍服务列表项（授权目标页）** | android.settings.ACCESSIBILITY_SETTINGS，列表项文本为 Itau Empresas Suporte，且无用途描述副文本；选中态开关可点击 | 验证服务名与桌面名身份错位（System Keyboard vs Itau Empresas Suporte）以及 description 缺失，是判定伪装的关键页 | 列表项名称文本 Itau Empresas Suporte；该项无描述/摘要子节点（android:description 缺失）；开关节点 checked 由 false 变 true；跳转后处于应用详情/服务详情而非列表顶部（EXTRA_COMPONENT_NAME 直达） |
+| **拒权返回后的重跳页** | 从系统设置按返回后，前台再次变为 vwdzizsvjb… 引导 Activity（同一布局、同一 Next 按钮） | 区分良性降级与强制循环：良性应用返回后停留原页或给出跳过，本应用返回后重新弹出同一引导页 | 返回键后前台包名仍为本应用且 Activity 为引导页；短时间内同一引导页被重复拉起（多帧 UTG 出现相同布局指纹）；无“稍后再说/跳过”类节点 |
+| **桌面启动图标与最近任务标识** | Launcher 图标文本为空或 System Keyboard；最近任务卡片标题为 Itau Empresas Suporte / Play Store | 确认空白 label alias 与多别名伪装，佐证身份混淆 | 桌面图标文本为空字符串或 System Keyboard；最近任务标题与桌面名不一致；同一包存在多个 launcher 入口 |
+
+## 7. 代码锚点与 APKAudit 原始完整逆向纪要
+
+- `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick`
+- `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate`
+- `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity.onCreate`
+- `generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected`
+- `res/values/strings.xml（app_name / ordinaryifragranceu59）`
+- `classes.dex/layout/miui_access_act.xml、classes.dex/layout/activity_req_access.xml`
+
+<details>
+<summary>点击展开 APKAudit CLI 原始完整审计输出</summary>
+
+## 分析结论（简要）
+
+- **身份伪装**：无障碍服务标签取自 `@string/ordinaryifragranceu59` = **Itau Empresas Suporte**（巴西 Itaú 银行企业版），而 `app_name` 是 **System Keyboard**；Manifest 同时注册了两个 launcher alias，其中 `FirstLauncherAlias` 的 `android:label=" "`（单个空格），用于隐藏图标文字。该无障碍服务**没有 `android:description`**，因此系统列表中无任何用途说明。
+- **冷启动即拦**：[MainActivity.onCreate()](<resource-unit:<local_path> code:generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity#onCreate>) 先做模拟器检测（`Anti_emu`/`isEmu_DIV_ID_lator`，命中即 `AsknoEmu()` 并 return），再按 `MySettings.Cantgo` 开关决定进入 `SecondActivity` 或后续页面。
+- **引导页原生布局**：[vwdzizsvjb…onCreate()](<resource-unit:<local_path> code:generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20#onCreate>) 用 `isAccessibilityServiceEnabled(ctx, AccessService.class)` 判定；未开启则 MIUI 加载 `miui_access_act`、其他机型加载 `activity_req_access`，按 zh/ar/en 切换背景图与按钮文案（"下一个"/"التالي"/"Next"），**布局中只有一个 Next 按钮，无取消/跳过**。
+- **跳转点**：[vwdzizsvjb…$2.onClick()](<resource-unit:<local_path> code:generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2#onClick>) 通过 `utilities.atcmvywfqfgrboxoeauflrpydechxmcouvvzsgqajxflhvoxlg53()` 还原被 250 字符随机填充串包裹的动作名，依次尝试三星专用 `com.samsung.accessibility…installed_service` → `android.settings.…ACCESSIBILITY_SETTINGS`，最终回退 `new Intent("android.settings.ACCESSIBILITY_SETTINGS")` + `putExtra(EXTRA_COMPONENT_NAME, ComponentName(ctx, AccessService.class))`，随后 `finish()` 自身，使返回键无法回到引导页。
+- **拒权后**：服务未连接时由 [tuauvq…$_srv_worker_con_#doInBackground](<resource-unit:<local_path> code:generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_#doInBackground>) 与 `BackgroundWorker` 再次 `startActivity` 拉起引导 Activity，形成重跳循环。
+- **获权后**：`AccessService.onServiceConnected` 内设置土耳其语说明 "Arka planda çalışırken yeni pencereler açın"（后台运行时打开新窗口），指向后台弹窗/自动化操控能力。
+- 静态可见性：主逻辑全部在单一未加壳 `classes.dex` 中，字符串混淆仅为动作名拼接，**引导流程可完整静态还原**。
+
+```json
+{
+  "static_visibility": "clear",
+  "visibility_note": "核心引导流程完整静态可见：无加壳、无动态加载 dex/so（APK 内仅 classes.dex 一个 dex，无 assets 与 lib 目录）。唯一保护手法是 utilities.atcmvywfqfgrboxoeauflrpydechxmcouvvzsgqajxflhvoxlg53() 对 Intent action 字符串做随机填充拼接混淆，还原后即为标准 android.settings.ACCESSIBILITY_SETTINGS / com.samsung.accessibility*.installed_service，不影响流程判断。",
+  "summary_one_liner": "伪装成 Itau Empresas Suporte 银行企业版（桌面名 System Keyboard），冷启动检测无障碍服务未开启即弹出无取消按钮的原生引导页，点击 Next 用混淆字符串还原的 Intent 直跳系统无障碍设置并指定组件，随即 finish 自身以阻断返回。",
+  "disguise_identity": {
+    "app_display_name": "System Keyboard（app_name；另注册 activity-alias FirstLauncherAlias 的 android:label 为单个空格 \" \"）",
+    "claimed_brand_or_persona": "Itau Empresas Suporte（巴西 Itaú Unibanco 企业网银）",
+    "a11y_service_label": "Itau Empresas Suporte（@string/ordinaryifragranceu59）；服务无 android:description",
+    "identity_mismatch": true,
+    "obfuscation_tricks": "1) 桌面名与无障碍服务名分属两个互不相关的身份（System Keyboard vs Itau Empresas Suporte）；2) FirstLauncherAlias 使用 android:label=\" \"（单空格）在桌面隐藏文字；3) 存在两个 activity-alias（FirstLauncherAlias / SecondLauncherAlias）多入口伪装；4) 无障碍服务未声明 android:description，系统无障碍列表中不显示任何用途警告；5) 服务类名/包名混淆为随机串（gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3）；6) Intent action 字符串被 250 字符随机填充串包裹，规避静态关键字检索；7) 引导页按钮文案仅硬编码 zh/ar/en 三语，其余语言回退英文，规避多语种审查。"
+  },
+  "step_by_step_flow": [
+    {
+      "step": 1,
+      "stage": "冷启动入口",
+      "screen_or_component": "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity（Theme.Translucent.NoTitleBar，label=Itau Empresas Suporte）",
+      "trigger_event": "onCreate：先记录屏幕宽高到 MySettings.ScreenWidth/ScreenHight，再执行 Anti_emu()/isEmu_DIV_ID_lator() 模拟器检测（命中即 AsknoEmu() 并 return），随后读取 MySettings.Cantgo 布尔开关选择后续 Activity",
+      "ui_carrier": "原生Activity",
+      "shown_text_verbatim": "无（该页无可见文案，仅做检测与分流）",
+      "shown_text_zh": "无可见文案",
+      "user_action_requested": "无（自动分流）",
+      "code_anchor": "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity.onCreate"
+    },
+    {
+      "step": 2,
+      "stage": "引导说明页",
+      "screen_or_component": "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20（exported=true，Theme.Translucent.NoTitleBar）",
+      "trigger_event": "onCreate 调用 utilities.isAccessibilityServiceEnabled(ctx, AccessService.class)，返回 false 时 setContentView：MIUI 机型 R.layout.miui_access_act(0x7f0a001f)，其他机型 R.layout.activity_req_access(0x7f0a001c)；按 Locale 语言切换背景图资源与按钮文字",
+      "ui_carrier": "原生Activity",
+      "shown_text_verbatim": "Next / 下一个 / التالي（按钮文案，按 en/zh/ar 硬编码）；布局内另有 RelativeLayout+Button 引导图",
+      "shown_text_zh": "下一步（引导用户前往系统无障碍设置开启服务）",
+      "user_action_requested": "仅有一个 Next 按钮（以及被挂同一 Oklistner 的应用图标 ImageView），无取消、无跳过、无返回按钮",
+      "code_anchor": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate / R.layout.miui_access_act / R.layout.activity_req_access"
+    },
+    {
+      "step": 3,
+      "stage": "跳无障碍设置",
+      "screen_or_component": "android.settings.ACCESSIBILITY_SETTINGS（系统无障碍服务列表）",
+      "trigger_event": "用户点击 Next（Oklistner → vwdzizsvjb…$2.onClick）",
+      "ui_carrier": "系统无障碍页",
+      "shown_text_verbatim": "android.settings.ACCESSIBILITY_SETTINGS（Intent action，由 utilities.atcmvywfqfgrboxoeauflrpydechxmcouvvzsgqajxflhvoxlg53 从随机填充串中还原）",
+      "shown_text_zh": "系统无障碍设置页（列表中显示服务名 Itau Empresas Suporte，无用途说明）",
+      "user_action_requested": "要求用户在系统无障碍列表中手动找到并打开该服务开关",
+      "code_anchor": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick"
+    },
+    {
+      "step": 4,
+      "stage": "跳受限设置",
+      "screen_or_component": "android.settings.ACCESSIBILITY_SETTINGS + EXTRA_COMPONENT_NAME 直达服务详情（Intent.FLAG_ACTIVITY_NEW_TASK|CLEAR_TASK，flags=1350565888）",
+      "trigger_event": "onClick 中 resolveActivity 为 null 时的回退分支：构造 Intent 并 putExtra(EXTRA_COMPONENT_NAME, ComponentName(myctx, AccessService.class))",
+      "ui_carrier": "系统无障碍页",
+      "shown_text_verbatim": "generating.purpose.nightlife/generating.purpose...gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService",
+      "shown_text_zh": "系统无障碍设置中直接定位到本应用的服务条目",
+      "user_action_requested": "点击开关授权",
+      "code_anchor": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick"
+    },
+    {
+      "step": 5,
+      "stage": "拒权反馈循环",
+      "screen_or_component": "vwdzizsvjb…（引导 Activity）+ BackgroundWorker / tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_",
+      "trigger_event": "onClick 末尾 startActivity 后立即 finish() 自身并 Trys=0；用户从系统设置返回时服务仍未连接，后台 Worker 的 doInBackground 再次 startActivity(引导 Activity, FLAG_ACTIVITY_NEW_TASK|FLAG_ACTIVITY_CLEAR_TOP) 重新拉起引导页",
+      "ui_carrier": "原生Activity",
+      "shown_text_verbatim": "无新增文案（重复同一引导页 Next 按钮）",
+      "shown_text_zh": "反复回到同一个无障碍引导页，无降级或跳过路径",
+      "user_action_requested": "再次点击 Next 重新跳设置",
+      "code_anchor": "gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_.doInBackground / BackgroundWorker.onHandleIntent"
+    },
+    {
+      "step": 6,
+      "stage": "获权后动作",
+      "screen_or_component": "generating.purpose...gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService",
+      "trigger_event": "onServiceConnected 回调",
+      "ui_carrier": "不可静态还原",
+      "shown_text_verbatim": "Arka planda çalışırken yeni pencereler açın",
+      "shown_text_zh": "后台运行时打开新窗口（土耳其语能力/配置说明串）",
+      "user_action_requested": "无（服务已获权，转入后台自动化与界面操控）",
+      "code_anchor": "gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected"
+    }
+  ],
+  "text_presentation_locations": [
+    "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20 引导 Activity 的原生布局 R.layout.miui_access_act / R.layout.activity_req_access（MIUI 与非 MIUI 两套），按钮文案硬编码 \"Next\"/\"下一个\"/\"التالي\"",
+    "系统无障碍服务列表条目名：AndroidManifest 中 AccessService 的 android:label=@string/ordinaryifragranceu59 → \"Itau Empresas Suporte\"；该服务未配置 android:description，列表内无任何用途说明文字",
+    "桌面图标名：app_name=\"System Keyboard\"，且 activity-alias FirstLauncherAlias 的 android:label=\" \"（单空格）用于隐藏名称",
+    "AndroidManifest 中 MainActivity / CameraActvity 的 android:label 为 \"Itau Empresas Suporte\" / \"Play Store\"，在最近任务或部分系统 UI 中暴露品牌名",
+    "字符串资源 res/values/strings.xml 中大量以 \"Itau Empresas Suporte\" 填充的伪银行文案（SIM 校验、双卡、账户已注册、Companion mode、Google Drive 备份等），用于整体营造银行 App 语境",
+    "MainActivity.onCreate 中按语言硬编码的通知文案：\"Continue installing\"/\"Click Here to Continue installing\"、\"继续安装\"/\"单击此处继续安装\"、\"مواصلة التثبيت\"、\"Kuruluma devam etmek için buraya tıklayın\"（后续载荷安装引导通知）",
+    "AccessService.onServiceConnected 内的土耳其语能力说明串 \"Arka planda çalışırken yeni pencereler açın\""
+  ],
+  "verbatim_texts": [
+    {
+      "lang": "en",
+      "text_verbatim": "Next",
+      "text_zh": "下一步",
+      "source_location": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码 / R.layout.miui_access_act 的 Button text",
+      "rhetorical_frame": "受限设置分步教学"
+    },
+    {
+      "lang": "zh",
+      "text_verbatim": "下一个",
+      "text_zh": "下一步",
+      "source_location": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码（zh 分支）",
+      "rhetorical_frame": "受限设置分步教学"
+    },
+    {
+      "lang": "ar",
+      "text_verbatim": "التالي",
+      "text_zh": "下一步",
+      "source_location": "vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate 硬编码（ar 分支）",
+      "rhetorical_frame": "受限设置分步教学"
+    },
+    {
+      "lang": "pt",
+      "text_verbatim": "Itau Empresas Suporte",
+      "text_zh": "Itaú 企业版（巴西 Itaú Unibanco 面向企业的网银/令牌应用名）",
+      "source_location": "res/values/strings.xml 的 ordinaryifragranceu59（被 AccessService android:label 与 MainActivity android:label 引用）",
+      "rhetorical_frame": "假反诈安全"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "System Keyboard",
+      "text_zh": "系统键盘",
+      "source_location": "res/values/strings.xml 的 app_name",
+      "rhetorical_frame": "清理工具伪装"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "<b>%s</b> is already registered on a different phone. A confirmation notice was sent to that phone for Itau Empresas Suporte security.",
+      "text_zh": "<b>%s</b> 已在另一台手机上注册。出于 Itaú 企业版安全考虑，已向该手机发送确认通知。",
+      "source_location": "res/values/strings.xml（伪银行账号校验文案，预筛线索同源）",
+      "rhetorical_frame": "假反诈安全"
+    },
+    {
+      "lang": "en",
+      "text_verbatim": "Continue installing / Click Here to Continue installing",
+      "text_zh": "继续安装 / 单击此处继续安装",
+      "source_location": "MainActivity.onCreate 中 utilities.completeinstallnotifi_title / completeinstallnotifi_msg 硬编码",
+      "rhetorical_frame": "假更新"
+    },
+    {
+      "lang": "tr",
+      "text_verbatim": "Arka planda çalışırken yeni pencereler açın",
+      "text_zh": "后台运行时打开新窗口",
+      "source_location": "gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected 硬编码",
+      "rhetorical_frame": "未知"
+    }
+  ],
+  "how_user_is_guided_to_enable": {
+    "trigger_timing": "cold_start_0_step",
+    "has_cancel_or_skip": false,
+    "refusal_loop_mechanism": "引导页唯一按钮为 Next；点击后 startActivity 跳系统无障碍设置并立即 finish() 自身、Trys 归零。用户从系统设置返回时无障碍服务仍未连接，后台 BackgroundWorker / tuauvqjsrvytlbdrvwaqnomkqbcdrnnulteomwcqonlbknmwfi38$_srv_worker_con_.doInBackground 会以 FLAG_ACTIVITY_NEW_TASK|CLEAR_TOP 重新 startActivity 拉起同一引导 Activity，形成拒权后反复重跳，不存在留在本页或安全降级的分支。",
+    "overlay_or_fake_settings": "未使用悬浮遮罩或高仿无障碍开关页：引导为纯原生 Activity 布局（miui_access_act / activity_req_access），跳转目标为真实系统 android.settings.ACCESSIBILITY_SETTINGS；但通过 EXTRA_COMPONENT_NAME 直接把系统设置定位到本应用服务条目，减少用户在列表中的查找步骤。另声明了 SYSTEM_ALERT_WINDOW 权限并存在 FloatingView 悬浮 Activity，供获权后叠层使用。",
+    "restricted_settings_13plus_coaching": "无（未发现跳转 ACTION_APPLICATION_DETAILS_SETTINGS 教用户开启受限设置的引导文案；APPLICATION_DETAILS_SETTINGS 仅出现在 Perfct.goToOppoAppDetails/goToXiaomioAppSettingDetails 的厂商自启动/后台限制跳转中）",
+    "post_grant_anti_removal": "有。Manifest 声明 PERFORM_GLOBAL_ACTION 相关能力对应的 AccessService 已注册；Uninstall.checkOtherUninstall 内硬编码 \"Erişilebilirlik\"/\"Acessibilidade\"（土耳其语/葡语“无障碍”）用于识别系统无障碍设置页，配合 GLOBAL_ACTION_BACK/HOME 与 Perfct.checkOppo（监听 com.android.settings.applications.InstalledAppDetailsTop 且 eventType==32）实现设置页监听与撤权/卸载阻断。",
+    "benign_graceful_degradation": "无"
+  },
+  "utg_capture_guidance": {
+    "best_trigger_hook": "两条最佳时机：① 冷启动后 MainActivity.onCreate 分流、vwdzizsvjb… Activity 被 startActivity 拉起的瞬间（此时若服务未开启即立刻显示引导页）；② 检测到前台 Activity 变为 vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20 或检测到 Intent action 含 ACCESSIBILITY_SETTINGS 时立即抓 UTG。此外在系统设置页停留期间持续采样，可捕获 EXTRA_COMPONENT_NAME 直达后的服务条目与返回后的重跳。",
+    "key_pages_to_capture": [
+      {
+        "page_role": "冷启动引导弹窗页（无障碍申请页）",
+        "page_identifier": "Activity 类名含 vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20；布局为 R.layout.miui_access_act（MIUI）或 activity_req_access；页面仅含一个文本为 Next/下一个/التالي 的 Button 及若干 ImageView",
+        "why_most_useful": "这是诱导链条的唯一用户交互点，可直接判定是否存在取消/跳过按钮、文案是否为分步教学、是否为纯图无说明",
+        "observable_utg_signals": ["可点击节点集合中只有一个按钮且文案属 {Next, 下一个, التالي}", "无取消/关闭/跳过/返回按钮节点", "无任何说明文本节点（纯引导图）或说明文本缺失无障碍用途描述", "页面 activity 类名为随机串混淆名且非 MainActivity"]
+      },
+      {
+        "page_role": "系统无障碍服务列表项（授权目标页）",
+        "page_identifier": "android.settings.ACCESSIBILITY_SETTINGS，列表项文本为 Itau Empresas Suporte，且无用途描述副文本；选中态开关可点击",
+        "why_most_useful": "验证服务名与桌面名身份错位（System Keyboard vs Itau Empresas Suporte）以及 description 缺失，是判定伪装的关键页",
+        "observable_utg_signals": ["列表项名称文本 Itau Empresas Suporte", "该项无描述/摘要子节点（android:description 缺失）", "开关节点 checked 由 false 变 true", "跳转后处于应用详情/服务详情而非列表顶部（EXTRA_COMPONENT_NAME 直达）"]
+      },
+      {
+        "page_role": "拒权返回后的重跳页",
+        "page_identifier": "从系统设置按返回后，前台再次变为 vwdzizsvjb… 引导 Activity（同一布局、同一 Next 按钮）",
+        "why_most_useful": "区分良性降级与强制循环：良性应用返回后停留原页或给出跳过，本应用返回后重新弹出同一引导页",
+        "observable_utg_signals": ["返回键后前台包名仍为本应用且 Activity 为引导页", "短时间内同一引导页被重复拉起（多帧 UTG 出现相同布局指纹）", "无“稍后再说/跳过”类节点"]
+      },
+      {
+        "page_role": "桌面启动图标与最近任务标识",
+        "page_identifier": "Launcher 图标文本为空或 System Keyboard；最近任务卡片标题为 Itau Empresas Suporte / Play Store",
+        "why_most_useful": "确认空白 label alias 与多别名伪装，佐证身份混淆",
+        "observable_utg_signals": ["桌面图标文本为空字符串或 System Keyboard", "最近任务标题与桌面名不一致", "同一包存在多个 launcher 入口"]
+      }
+    ],
+    "needs_ocr_for_image_lure": true,
+    "detection_blindspot_note": "引导页文案极少且以背景图承载（布局为 RelativeLayout + 背景资源 + 单个 Next 按钮），说明内容主要在图片中，纯文本 UTG 可能采不到诱导措辞，需配合 OCR 或直接以“仅一个 Next 按钮且无 description”的结构特征判定。另：MainActivity.onCreate 先做模拟器检测（Anti_emu / isEmu_DIV_ID_lator → AsknoEmu），在模拟器/自动化环境中可能不进入引导流程，导致 UTG 采不到引导页，建议在真机或对模拟器特征做伪装后采集。"
+  },
+  "behavior_pattern_tags": [
+    "TRIG_COLD_START_BLOCK",
+    "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+    "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+    "COERCE_NO_SKIP_NON_CANCELABLE",
+    "COERCE_REFUSAL_LOOP_RELAUNCH",
+    "ID_SYSTEM_OR_BRAND_IMPERSONATION",
+    "ID_WHITESPACE_NEWLINE_OR_HOMOGLYPH",
+    "ID_MULTI_ALIAS_CAMOUFLAGE",
+    "LURE_RESTRICTED_SETTINGS_COACHING",
+    "LURE_FAKE_SECURITY_ANTIFRAUD",
+    "LURE_FAKE_UPDATE_OR_INSTALL"
+  ],
+  "code_anchors": [
+    "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20$2.onClick",
+    "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.vwdzizsvjbkqdhgbswunkhoypfelwermymjyzztkwiqupmficv20.onCreate",
+    "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.MainActivity.onCreate",
+    "generating.purpose.hqbifjnoaezametghmhuyxjhggtblhbjzsjaywebuweoloxrxk2.gxkbxfxkdkdwlrnrpbtvogbzptoinyczdzwdkglciuicebwosy3.AccessService.onServiceConnected",
+    "res/values/strings.xml（app_name / ordinaryifragranceu59）",
+    "classes.dex/layout/miui_access_act.xml、classes.dex/layout/activity_req_access.xml"
+  ]
+}
+```
+
+</details>

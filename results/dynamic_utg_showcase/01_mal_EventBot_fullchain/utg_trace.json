@@ -1,0 +1,2348 @@
+{
+  "started_at": "2026-11-25T09:35:18",
+  "platform": "android",
+  "device": "emulator-5556",
+  "model": "deepseek-v4.1-flash",
+  "provider": "openai_compatible",
+  "mode": "hybrid",
+  "target_package": "com.example.eventbot",
+  "apk_path": "05782e267bd62de78a3db22b1a83ddd3c72cbef95f5a5bc9defdd42a4f5786ec.apk",
+  "offline_isolated": true,
+  "static_meta": {
+    "app_id": "MR_002__05782e267b",
+    "label": "malicious",
+    "family": "EventBot",
+    "benign_category": "",
+    "pool": "MalRadar_2014_2021",
+    "static_visibility": "clear",
+    "behavior_pattern_tags": [
+      "TRIG_COLD_START_BLOCK",
+      "CARRIER_NATIVE_DIALOG_OR_ACTIVITY",
+      "CARRIER_WEBVIEW_LOCAL_HTML",
+      "CARRIER_OVERLAY_MASK_OR_GUIDE",
+      "CARRIER_SYSTEM_A11Y_DESCRIPTION",
+      "LURE_FAKE_UPDATE_OR_INSTALL",
+      "LURE_SYSTEM_ERROR_OR_OPTIMIZE",
+      "COERCE_NO_SKIP_NON_CANCELABLE",
+      "COERCE_REFUSAL_LOOP_RELAUNCH",
+      "ID_SYSTEM_OR_BRAND_IMPERSONATION"
+    ],
+    "candidate_activities": [
+      "com.example.eventbot.MainActivity",
+      ".sendShortMsg",
+      ".MainActivity",
+      ".recvPushMsg",
+      ".boot",
+      ".recvLongMsg",
+      ".recvShotMsg",
+      ".shortMsg",
+      ".events"
+    ],
+    "static_json_path": "MR_002__05782e267b.json"
+  },
+  "instruction": "Follow the app's flow (using the static analysis guidance) from launch until it triggers the Accessibility Service prompt and navigates to System Accessibility Settings. Do NOT toggle a malicious service ON.",
+  "final_status": "hook_captured",
+  "install_error": "",
+  "entry_node_id": "3de1b204244e",
+  "hook_node_ids": [
+    "7001867aa19d",
+    "13d29e946e93"
+  ],
+  "refusal_outcome": "GRACEFUL_STAY_OR_DEGRADE",
+  "steps": [
+    {
+      "step": 1,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570524.2055469,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.permissioncontroller",
+        "top_activity": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+        "current_focus": "Window{531a215 u0 com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "Choose what to allow Flash Update to access",
+            "content_desc": "",
+            "resource_id": "com.android.permissioncontroller:id/permissions_message",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              165,
+              138,
+              1014,
+              276
+            ],
+            "center": [
+              589,
+              207
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 2,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              22,
+              320,
+              1058,
+              566
+            ],
+            "center": [
+              540,
+              443
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 3,
+            "text": "Files and media",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              220,
+              364,
+              529,
+              423
+            ],
+            "center": [
+              374,
+              393
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 4,
+            "text": "access photos, media, and files on your device",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              220,
+              423,
+              838,
+              522
+            ],
+            "center": [
+              529,
+              472
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 5,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              882,
+              377,
+              1014,
+              509
+            ],
+            "center": [
+              948,
+              443
+            ],
+            "clickable": true,
+            "checkable": true,
+            "checked": true,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              22,
+              566,
+              1058,
+              766
+            ],
+            "center": [
+              540,
+              666
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "SMS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              220,
+              610,
+              310,
+              669
+            ],
+            "center": [
+              265,
+              639
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "send and view SMS messages",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              220,
+              669,
+              747,
+              722
+            ],
+            "center": [
+              483,
+              695
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              882,
+              600,
+              1014,
+              732
+            ],
+            "center": [
+              948,
+              666
+            ],
+            "clickable": true,
+            "checkable": true,
+            "checked": true,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 10,
+            "text": "Cancel",
+            "content_desc": "",
+            "resource_id": "com.android.permissioncontroller:id/cancel_button",
+            "class_name": "android.widget.Button",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              674,
+              1999,
+              858,
+              2148
+            ],
+            "center": [
+              766,
+              2073
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 11,
+            "text": "Continue",
+            "content_desc": "",
+            "resource_id": "com.android.permissioncontroller:id/continue_button",
+            "class_name": "android.widget.Button",
+            "package": "com.google.android.permissioncontroller",
+            "bounds": [
+              858,
+              1999,
+              1080,
+              2148
+            ],
+            "center": [
+              969,
+              2073
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Choose what to allow Flash Update to access",
+          "Files and media",
+          "access photos, media, and files on your device",
+          "SMS",
+          "send and view SMS messages",
+          "Cancel",
+          "Continue"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 147,
+        "needs_ocr_fallback": false,
+        "structure_hash": "3de1b204244e",
+        "raw_layout_path": "step_01_layout.xml",
+        "screenshot_path": "step_01_screen.png",
+        "som_path": "step_01_som.png",
+        "element_count": 11
+      },
+      "harmony_layout_path": "step_01_layout_harmony.json",
+      "model_output": "Action: I'll tap \"Continue\" to grant the listed runtime permissions so the app can proceed to its Accessibility prompt.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 11}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 11,
+        "pixel_xy": [
+          969,
+          2073
+        ],
+        "matched_element": "[11] Button text=\"Continue\" id=continue_button (click) center=(969,2073)"
+      },
+      "action_anno_path": "step_01_action.png"
+    },
+    {
+      "step": 2,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570530.0266132,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.apps.nexuslauncher",
+        "top_activity": ".NexusLauncherActivity",
+        "current_focus": "Window{695fc2 u0 DeprecatedTargetSdkVersionDialog}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "Flash Update",
+            "content_desc": "",
+            "resource_id": "android:id/alertTitle",
+            "class_name": "android.widget.TextView",
+            "package": "android",
+            "bounds": [
+              138,
+              899,
+              942,
+              973
+            ],
+            "center": [
+              540,
+              936
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 2,
+            "text": "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+            "content_desc": "",
+            "resource_id": "android:id/message",
+            "class_name": "android.widget.TextView",
+            "package": "android",
+            "bounds": [
+              72,
+              995,
+              1008,
+              1210
+            ],
+            "center": [
+              540,
+              1102
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "OK",
+            "content_desc": "",
+            "resource_id": "android:id/button1",
+            "class_name": "android.widget.Button",
+            "package": "android",
+            "bounds": [
+              799,
+              1221,
+              975,
+              1370
+            ],
+            "center": [
+              887,
+              1295
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Flash Update",
+          "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+          "OK"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 143,
+        "needs_ocr_fallback": false,
+        "structure_hash": "f0c23eb4c06c",
+        "raw_layout_path": "step_02_layout.xml",
+        "screenshot_path": "step_02_screen.png",
+        "som_path": "step_02_som.png",
+        "element_count": 3
+      },
+      "harmony_layout_path": "step_02_layout_harmony.json",
+      "model_output": "Action: Tapping \"OK\" to dismiss the old-Android warning dialog and let the app's service/overlay proceed.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 3}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 3,
+        "pixel_xy": [
+          887,
+          1295
+        ],
+        "matched_element": "[3] Button text=\"OK\" id=button1 (click) center=(887,1295)"
+      },
+      "action_anno_path": "step_02_action.png"
+    },
+    {
+      "step": 3,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570535.7935135,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.apps.nexuslauncher",
+        "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+        "current_focus": "Window{7bd4d59 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Apps list",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              515,
+              1680,
+              565,
+              1697
+            ],
+            "center": [
+              540,
+              1688
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/workspace",
+            "class_name": "android.widget.ScrollView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              0,
+              0,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1074
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/universal_smartspace_container",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              38,
+              105,
+              1042,
+              416
+            ],
+            "center": [
+              540,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "Wednesday, Nov 25",
+            "content_desc": "Wednesday, Nov 25",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/clock",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              218,
+              105,
+              862,
+              416
+            ],
+            "center": [
+              540,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "Messages",
+            "content_desc": "Messages",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              239,
+              1697,
+              440,
+              1912
+            ],
+            "center": [
+              339,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 6,
+            "text": "Chrome",
+            "content_desc": "Chrome",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              641,
+              1697,
+              842,
+              1912
+            ],
+            "center": [
+              741,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "",
+            "content_desc": "Search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/search_container_all_apps",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              52,
+              1946,
+              1028,
+              2100
+            ],
+            "center": [
+              540,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 8,
+            "text": "",
+            "content_desc": "Voice search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/mic_icon",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              865,
+              1946,
+              1019,
+              2100
+            ],
+            "center": [
+              942,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Apps list",
+          "Wednesday, Nov 25",
+          "Messages",
+          "Chrome",
+          "Search",
+          "Voice search"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 58,
+        "needs_ocr_fallback": false,
+        "structure_hash": "f6a3588f0886",
+        "raw_layout_path": "step_03_layout.xml",
+        "screenshot_path": "step_03_screen.png",
+        "som_path": "step_03_som.png",
+        "element_count": 8
+      },
+      "harmony_layout_path": "step_03_layout_harmony.json",
+      "model_output": "Action: The app's MainActivity finished immediately and returned to the launcher; the background service should trigger the WebView overlay soon, so I'll wait for it to appear.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"wait\", \"time\": 5}}\n</tool_call>",
+      "action": {
+        "action": "wait",
+        "time": 5
+      },
+      "action_anno_path": "step_03_action.png"
+    },
+    {
+      "step": 4,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570547.1724024,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.apps.nexuslauncher",
+        "top_activity": ".NexusLauncherActivity",
+        "current_focus": "Window{306793b u0 com.example.eventbot}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Apps list",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              515,
+              1680,
+              565,
+              1697
+            ],
+            "center": [
+              540,
+              1688
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/workspace",
+            "class_name": "android.widget.ScrollView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              0,
+              0,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1074
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/universal_smartspace_container",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              38,
+              105,
+              1042,
+              416
+            ],
+            "center": [
+              540,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "Wednesday, Nov 25",
+            "content_desc": "Wednesday, Nov 25",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/clock",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              218,
+              105,
+              862,
+              416
+            ],
+            "center": [
+              540,
+              260
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "Messages",
+            "content_desc": "Messages",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              239,
+              1697,
+              440,
+              1912
+            ],
+            "center": [
+              339,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 6,
+            "text": "Chrome",
+            "content_desc": "Chrome",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              641,
+              1697,
+              842,
+              1912
+            ],
+            "center": [
+              741,
+              1804
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "",
+            "content_desc": "Search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/search_container_all_apps",
+            "class_name": "android.widget.FrameLayout",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              52,
+              1946,
+              1028,
+              2100
+            ],
+            "center": [
+              540,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 8,
+            "text": "",
+            "content_desc": "Voice search",
+            "resource_id": "com.google.android.apps.nexuslauncher:id/mic_icon",
+            "class_name": "android.view.View",
+            "package": "com.google.android.apps.nexuslauncher",
+            "bounds": [
+              865,
+              1946,
+              1019,
+              2100
+            ],
+            "center": [
+              942,
+              2023
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          }
+        ],
+        "all_texts": [
+          "Apps list",
+          "Wednesday, Nov 25",
+          "Messages",
+          "Chrome",
+          "Search",
+          "Voice search"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 58,
+        "needs_ocr_fallback": false,
+        "structure_hash": "b30b3dfbeaa7",
+        "raw_layout_path": "step_04_layout.xml",
+        "screenshot_path": "step_04_screen.png",
+        "som_path": "step_04_som.png",
+        "element_count": 8
+      },
+      "harmony_layout_path": "step_04_layout_harmony.json",
+      "model_output": "Action: The launcher is showing after the activity finished; per static analysis the background service pops the WebView overlay on a ~20s loop, so I'll wait for it to appear.\n\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"wait\", \"time\": 5}}</tool_call>",
+      "action": {
+        "action": "wait",
+        "time": 5
+      },
+      "action_anno_path": "step_04_action.png"
+    },
+    {
+      "step": 5,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570557.7607756,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.google.android.apps.nexuslauncher",
+        "top_activity": ".NexusLauncherActivity",
+        "current_focus": "Window{306793b u0 com.example.eventbot}",
+        "overlay_windows": [],
+        "trigger_hooks": [],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.webkit.WebView",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              530,
+              1035,
+              1551
+            ],
+            "center": [
+              540,
+              1040
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Flash Update will not work correctly.",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              530,
+              1035,
+              631
+            ],
+            "center": [
+              540,
+              580
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "1. Select Flash Update in Settings",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              629,
+              1035,
+              730
+            ],
+            "center": [
+              540,
+              679
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 4,
+            "text": "1",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.Image",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              728,
+              1035,
+              997
+            ],
+            "center": [
+              540,
+              862
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 5,
+            "text": "2. Turn on it",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.view.View",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              994,
+              1035,
+              1096
+            ],
+            "center": [
+              540,
+              1045
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "2",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.Image",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              1093,
+              1035,
+              1550
+            ],
+            "center": [
+              540,
+              1321
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 7,
+            "text": "Enable Flash Update",
+            "content_desc": "",
+            "resource_id": "android:id/button1",
+            "class_name": "android.widget.Button",
+            "package": "com.example.eventbot",
+            "bounds": [
+              45,
+              1552,
+              1035,
+              1701
+            ],
+            "center": [
+              540,
+              1626
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Flash Update will not work correctly.",
+          "1. Select Flash Update in Settings",
+          "1",
+          "2. Turn on it",
+          "2",
+          "Enable Flash Update"
+        ],
+        "has_webview": true,
+        "has_large_image": false,
+        "text_char_count": 105,
+        "needs_ocr_fallback": false,
+        "structure_hash": "2acf3c2851bd",
+        "raw_layout_path": "step_05_layout.xml",
+        "screenshot_path": "step_05_screen.png",
+        "som_path": "step_05_som.png",
+        "element_count": 7
+      },
+      "harmony_layout_path": "step_05_layout_harmony.json",
+      "model_output": "Action: The malicious \"Flash Update\" overlay is now showing with its instruction popup; I'll tap \"Enable Flash Update\" to trigger the ACTION_ACCESSIBILITY_SETTINGS intent.\n<tool_call>\n{\"name\": \"mobile_use\", \"arguments\": {\"action\": \"click\", \"element_id\": 7}}\n</tool_call>",
+      "action": {
+        "action": "click",
+        "element_id": 7,
+        "pixel_xy": [
+          540,
+          1626
+        ],
+        "matched_element": "[7] Button text=\"Enable Flash Update\" id=button1 (click) center=(540,1626)"
+      },
+      "action_anno_path": "step_05_action.png"
+    },
+    {
+      "step": 6,
+      "snapshot": {
+        "platform": "android",
+        "timestamp": 1795570563.770622,
+        "screen_width": 1080,
+        "screen_height": 2280,
+        "top_package": "com.android.settings",
+        "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+        "current_focus": "Window{9f4ba07 u0 com.android.settings/com.android.settings.Settings$AccessibilitySettingsActivity}",
+        "overlay_windows": [],
+        "trigger_hooks": [
+          "HOOK_A11Y_SETTINGS"
+        ],
+        "elements": [
+          {
+            "elem_id": 1,
+            "text": "",
+            "content_desc": "Back",
+            "resource_id": "",
+            "class_name": "android.widget.ImageButton",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              83,
+              154,
+              237
+            ],
+            "center": [
+              77,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 2,
+            "text": "Accessibility",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              123,
+              504,
+              197
+            ],
+            "center": [
+              351,
+              160
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 3,
+            "text": "",
+            "content_desc": "Search settings",
+            "resource_id": "",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              948,
+              94,
+              1080,
+              226
+            ],
+            "center": [
+              1014,
+              160
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 4,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "com.android.settings:id/recycler_view",
+            "class_name": "androidx.recyclerview.widget.RecyclerView",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              237,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              1192
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": true,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 5,
+            "text": "DOWNLOADED APPS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              303,
+              1036,
+              344
+            ],
+            "center": [
+              617,
+              323
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 6,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              366,
+              1080,
+              566
+            ],
+            "center": [
+              540,
+              466
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 7,
+            "text": "Flash Update",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              410,
+              455,
+              469
+            ],
+            "center": [
+              326,
+              439
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 8,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              469,
+              253,
+              522
+            ],
+            "center": [
+              225,
+              495
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 9,
+            "text": "SCREEN READERS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              632,
+              1036,
+              673
+            ],
+            "center": [
+              617,
+              652
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 10,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              695,
+              1080,
+              842
+            ],
+            "center": [
+              540,
+              768
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 11,
+            "text": "Text-to-speech output",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              739,
+              622,
+              798
+            ],
+            "center": [
+              410,
+              768
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 12,
+            "text": "DISPLAY",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              908,
+              1036,
+              949
+            ],
+            "center": [
+              617,
+              928
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 13,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              971,
+              1080,
+              1171
+            ],
+            "center": [
+              540,
+              1071
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 14,
+            "text": "Font size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1015,
+              375,
+              1074
+            ],
+            "center": [
+              286,
+              1044
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 15,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1074,
+              324,
+              1127
+            ],
+            "center": [
+              261,
+              1100
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 16,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1171,
+              1080,
+              1371
+            ],
+            "center": [
+              540,
+              1271
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 17,
+            "text": "Display size",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1215,
+              432,
+              1274
+            ],
+            "center": [
+              315,
+              1244
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 18,
+            "text": "Default",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1274,
+              324,
+              1327
+            ],
+            "center": [
+              261,
+              1300
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 19,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1371,
+              1080,
+              1518
+            ],
+            "center": [
+              540,
+              1444
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 20,
+            "text": "Dark theme",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1415,
+              422,
+              1474
+            ],
+            "center": [
+              310,
+              1444
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 21,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1407,
+              1036,
+              1481
+            ],
+            "center": [
+              972,
+              1444
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 22,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1518,
+              1080,
+              1718
+            ],
+            "center": [
+              540,
+              1618
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 23,
+            "text": "Magnification",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1562,
+              465,
+              1621
+            ],
+            "center": [
+              331,
+              1591
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 24,
+            "text": "Off",
+            "content_desc": "",
+            "resource_id": "android:id/summary",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1621,
+              253,
+              1674
+            ],
+            "center": [
+              225,
+              1647
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 25,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1718,
+              1080,
+              1865
+            ],
+            "center": [
+              540,
+              1791
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 26,
+            "text": "Large mouse pointer",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1762,
+              602,
+              1821
+            ],
+            "center": [
+              400,
+              1791
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 27,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1754,
+              1036,
+              1828
+            ],
+            "center": [
+              972,
+              1791
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 28,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              1865,
+              1080,
+              2012
+            ],
+            "center": [
+              540,
+              1938
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          },
+          {
+            "elem_id": 29,
+            "text": "Remove animations",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              1909,
+              586,
+              1968
+            ],
+            "center": [
+              392,
+              1938
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 30,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "android:id/switch_widget",
+            "class_name": "android.widget.Switch",
+            "package": "com.android.settings",
+            "bounds": [
+              908,
+              1901,
+              1036,
+              1975
+            ],
+            "center": [
+              972,
+              1938
+            ],
+            "clickable": false,
+            "checkable": true,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 31,
+            "text": "INTERACTION CONTROLS",
+            "content_desc": "",
+            "resource_id": "android:id/title",
+            "class_name": "android.widget.TextView",
+            "package": "com.android.settings",
+            "bounds": [
+              198,
+              2078,
+              1036,
+              2119
+            ],
+            "center": [
+              617,
+              2098
+            ],
+            "clickable": false,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": false
+          },
+          {
+            "elem_id": 32,
+            "text": "",
+            "content_desc": "",
+            "resource_id": "",
+            "class_name": "android.widget.LinearLayout",
+            "package": "com.android.settings",
+            "bounds": [
+              0,
+              2141,
+              1080,
+              2148
+            ],
+            "center": [
+              540,
+              2144
+            ],
+            "clickable": true,
+            "checkable": false,
+            "checked": false,
+            "scrollable": false,
+            "enabled": true,
+            "focusable": true
+          }
+        ],
+        "all_texts": [
+          "Back",
+          "Accessibility",
+          "Search settings",
+          "DOWNLOADED APPS",
+          "Flash Update",
+          "Off",
+          "SCREEN READERS",
+          "Text-to-speech output",
+          "DISPLAY",
+          "Font size",
+          "Default",
+          "Display size",
+          "Dark theme",
+          "Magnification",
+          "Large mouse pointer",
+          "Remove animations",
+          "INTERACTION CONTROLS"
+        ],
+        "has_webview": false,
+        "has_large_image": false,
+        "text_char_count": 211,
+        "needs_ocr_fallback": false,
+        "structure_hash": "7001867aa19d",
+        "raw_layout_path": "step_06_layout.xml",
+        "screenshot_path": "step_06_screen.png",
+        "som_path": "step_06_som.png",
+        "element_count": 32
+      },
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "model_output": "(stopped automatically upon HOOK_A11Y_SETTINGS + probes)",
+      "action": {
+        "action": "terminate",
+        "status": "success",
+        "summary": "Captured Accessibility Settings hook & probes"
+      }
+    }
+  ],
+  "utg_nodes": {
+    "3de1b204244e": {
+      "first_step": 1,
+      "role": "entry",
+      "top_package": "com.google.android.permissioncontroller",
+      "top_activity": "com.android.permissioncontroller.permission.ui.ReviewPermissionsActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Choose what to allow Flash Update to access",
+        "Files and media",
+        "access photos, media, and files on your device",
+        "SMS",
+        "send and view SMS messages",
+        "Cancel",
+        "Continue"
+      ],
+      "screenshot_path": "step_01_screen.png",
+      "raw_layout_path": "step_01_layout.xml",
+      "harmony_layout_path": "step_01_layout_harmony.json"
+    },
+    "f0c23eb4c06c": {
+      "first_step": 2,
+      "role": "intermediate",
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Update",
+        "This app was built for an older version of Android and may not work properly. Try checking for updates, or contact the developer.",
+        "OK"
+      ],
+      "screenshot_path": "step_02_screen.png",
+      "raw_layout_path": "step_02_layout.xml",
+      "harmony_layout_path": "step_02_layout_harmony.json"
+    },
+    "f6a3588f0886": {
+      "first_step": 3,
+      "role": "intermediate",
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": "com.google.android.apps.nexuslauncher.NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_03_screen.png",
+      "raw_layout_path": "step_03_layout.xml",
+      "harmony_layout_path": "step_03_layout_harmony.json"
+    },
+    "b30b3dfbeaa7": {
+      "first_step": 4,
+      "role": "intermediate",
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Apps list",
+        "Wednesday, Nov 25",
+        "Messages",
+        "Chrome",
+        "Search",
+        "Voice search"
+      ],
+      "screenshot_path": "step_04_screen.png",
+      "raw_layout_path": "step_04_layout.xml",
+      "harmony_layout_path": "step_04_layout_harmony.json"
+    },
+    "2acf3c2851bd": {
+      "first_step": 5,
+      "role": "intermediate",
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_05_screen.png",
+      "raw_layout_path": "step_05_layout.xml",
+      "harmony_layout_path": "step_05_layout_harmony.json"
+    },
+    "7001867aa19d": {
+      "first_step": 6,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Accessibility",
+        "Search settings",
+        "DOWNLOADED APPS",
+        "Flash Update",
+        "Off",
+        "SCREEN READERS",
+        "Text-to-speech output",
+        "DISPLAY",
+        "Font size",
+        "Default",
+        "Display size",
+        "Dark theme",
+        "Magnification",
+        "Large mouse pointer"
+      ],
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json"
+    },
+    "d3f0379915a6": {
+      "first_step": 6,
+      "role": "service_detail",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "trigger_hooks": [],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Back",
+        "Flash Update",
+        "Use Flash Update",
+        "OPTIONS",
+        "Flash Update shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Update in order to get full functionality of the application. Flash Update will not work correctly."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "raw_layout_path": "step_06_service_detail_layout.xml",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    "13d29e946e93": {
+      "first_step": 6,
+      "role": "trigger_hook",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "trigger_hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "overlay_windows": [],
+      "sample_texts": [
+        "Allow Flash Update to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "raw_layout_path": "step_06_system_warning_layout.xml",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  },
+  "utg_edges": [
+    {
+      "from": "3de1b204244e",
+      "to": "f0c23eb4c06c",
+      "step": 1,
+      "edge_type": "ui_click",
+      "action": "click([11] Button text=\"Continue\" id=continue_button (click) center=(969,2073))"
+    },
+    {
+      "from": "f0c23eb4c06c",
+      "to": "f6a3588f0886",
+      "step": 2,
+      "edge_type": "ui_click",
+      "action": "click([3] Button text=\"OK\" id=button1 (click) center=(887,1295))"
+    },
+    {
+      "from": "f6a3588f0886",
+      "to": "b30b3dfbeaa7",
+      "step": 3,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "b30b3dfbeaa7",
+      "to": "2acf3c2851bd",
+      "step": 4,
+      "edge_type": "ui_wait",
+      "action": "wait()"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "7001867aa19d",
+      "step": 5,
+      "edge_type": "ui_click",
+      "action": "click([7] Button text=\"Enable Flash Update\" id=button1 (click) center=(540,1626))"
+    },
+    {
+      "from": "7001867aa19d",
+      "to": "d3f0379915a6",
+      "step": 6,
+      "edge_type": "detail_probe",
+      "action": "click_service()"
+    },
+    {
+      "from": "d3f0379915a6",
+      "to": "13d29e946e93",
+      "step": 6,
+      "edge_type": "warning_probe",
+      "action": "click_use_service_switch"
+    },
+    {
+      "from": "7001867aa19d",
+      "to": "2acf3c2851bd",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "Back_refuse"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "2acf3c2851bd",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(5.5s)_after_refusal"
+    },
+    {
+      "from": "2acf3c2851bd",
+      "to": "2acf3c2851bd",
+      "step": 6,
+      "edge_type": "refusal_probe",
+      "action": "wait(10.5s)_after_refusal"
+    }
+  ],
+  "trigger_events": [
+    {
+      "step": 6,
+      "hooks": [
+        "HOOK_A11Y_SETTINGS"
+      ],
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+      "screenshot_path": "step_06_screen.png",
+      "raw_layout_path": "step_06_layout.xml",
+      "harmony_layout_path": "step_06_layout_harmony.json",
+      "post_jump_probes": [
+        {
+          "delay_s": 0.8,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_800ms_screen.png",
+          "harmony_layout_path": "step_06_probe_800ms_layout_harmony.json"
+        },
+        {
+          "delay_s": 2.0,
+          "top_package": "com.android.settings",
+          "top_activity": "com.android.settings.Settings$AccessibilitySettingsActivity",
+          "hooks": [
+            "HOOK_A11Y_SETTINGS"
+          ],
+          "overlays": [],
+          "screenshot_path": "step_06_probe_2000ms_screen.png",
+          "harmony_layout_path": "step_06_probe_2000ms_layout_harmony.json"
+        }
+      ]
+    }
+  ],
+  "detail_probes": [
+    {
+      "stage": "Service Detail Page",
+      "note": "Back Flash Update Use Flash Update OPTIONS",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Back",
+        "Flash Update",
+        "Use Flash Update",
+        "OPTIONS",
+        "Flash Update shortcut",
+        "Hold volume keys",
+        "Shortcut settings",
+        "You must enable Flash Update in order to get full functionality of the application. Flash Update will not work correctly."
+      ],
+      "screenshot_path": "step_06_service_detail_screen.png",
+      "harmony_layout_path": "step_06_service_detail_layout_harmony.json"
+    },
+    {
+      "stage": "System Warning Dialog",
+      "note": "Overlays:0 | Allow Flash Update to have full control of yo",
+      "top_package": "com.android.settings",
+      "top_activity": "com.android.settings.SubSettings",
+      "overlays": [],
+      "sample_texts": [
+        "Allow Flash Update to have full control of your device?",
+        "Full control is appropriate for apps that help you with accessibility needs, but not for most apps.",
+        "View and control screen",
+        "It can read all content on the screen and display content over other apps.",
+        "View and perform actions",
+        "It can track your interactions with an app or a hardware sensor, and interact with apps on your behalf.",
+        "Allow",
+        "Deny"
+      ],
+      "screenshot_path": "step_06_system_warning_screen.png",
+      "harmony_layout_path": "step_06_system_warning_layout_harmony.json"
+    }
+  ],
+  "refusal_probes": [
+    {
+      "delay_s": 2.0,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_06_refusal_2000ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_2000ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 5.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_06_refusal_5500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_5500ms_layout_harmony.json"
+    },
+    {
+      "delay_s": 10.5,
+      "top_package": "com.google.android.apps.nexuslauncher",
+      "top_activity": ".NexusLauncherActivity",
+      "hooks": [],
+      "overlays": [],
+      "sample_texts": [
+        "Flash Update will not work correctly.",
+        "1. Select Flash Update in Settings",
+        "1",
+        "2. Turn on it",
+        "2",
+        "Enable Flash Update"
+      ],
+      "screenshot_path": "step_06_refusal_10500ms_screen.png",
+      "harmony_layout_path": "step_06_refusal_10500ms_layout_harmony.json"
+    }
+  ],
+  "finished_at": "2026-11-25T09:36:37"
+}

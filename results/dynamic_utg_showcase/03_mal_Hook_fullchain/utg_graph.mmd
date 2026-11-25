@@ -1,0 +1,11 @@
+flowchart TD
+    N_f4307e5d56dc["Step 1: PermissionsActivity\n"]
+    N_1407722faad5["Step 2: Settings$AccessibilitySettin [HOOK_A11Y_SETTINGS]\nBack"]
+    N_e313e4cae5a9["Step 2: SubSettings [HOOK_A11Y_SETTINGS]\nBack"]
+    N_611fc8df64c4["Step 2: PermissionsActivity\nGrabAssistService"]
+    N_f4307e5d56dc -->|"ui_click: click([514, 1099])"| N_1407722faad5
+    N_1407722faad5 -->|"detail_probe: click_service()"| N_e313e4cae5a9
+    N_e313e4cae5a9 -->|"warning_probe: click_use_service_switch"| N_611fc8df64c4
+    N_1407722faad5 -->|"refusal_probe: Back_refuse"| N_611fc8df64c4
+    N_611fc8df64c4 -->|"refusal_probe: wait(5.5s)_after_refusal"| N_611fc8df64c4
+    N_611fc8df64c4 -->|"refusal_probe: wait(10.5s)_after_refusal"| N_611fc8df64c4
